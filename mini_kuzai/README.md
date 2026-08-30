@@ -1,19 +1,31 @@
-# Mini-Kuzai Model Code
+# Mini-Kuzai model code
 
-This directory contains the model implementation itself, separate from installation notes and experimental scripts.
+This directory contains the clean model implementations produced during MINI-KUZAI PHASE 01.
 
-`mini_kuzai_padding.py` implements the Phase 01 final architecture:
+## Implementations
 
-- token embeddings
-- learned positional embeddings
-- pre-LayerNorm Transformer blocks
-- causal multi-head self-attention
-- padding-key attention masks
-- residual connections
-- GELU MLP
-- final LayerNorm
-- bias-free LM head
+- `mini_kuzai.py` — original single-head, single-block model.
+- `mini_kuzai_mha.py` — multi-head attention version.
+- `mini_kuzai_deep.py` — stacked Transformer-block version.
+- `mini_kuzai_batch.py` — batched model using `[batch, sequence, embedding]` tensors.
+- `mini_kuzai_padding.py` — final Phase 01 architecture with batching, padding support, causal masking and padding-key masking.
 
 The final Phase 01 configuration uses two Transformer blocks, two attention heads, an embedding dimension of 8, and an MLP hidden dimension of 32.
 
-Historical intermediate implementations from the learning process can be kept in the test/experiment history. This directory is intended to hold the clean model implementation used as the project baseline.
+The historical source files are also preserved unchanged under `tests/phase-01/lab/`. The copy in this package is the canonical source view for reuse. `mini_kuzai_deep.py` uses a package-relative import so it can be imported normally through `mini_kuzai`.
+
+Example:
+
+```python
+from mini_kuzai import MiniKuzaiPadding
+
+model = MiniKuzaiPadding(
+    vocab_size=26,
+    embedding_dim=8,
+    hidden_dim=32,
+    num_heads=2,
+    num_layers=2,
+    max_sequence_length=32,
+    pad_token_id=0,
+)
+```
