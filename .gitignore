@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.log
+.ipynb_checkpoints/
+.DS_Store
+.env
