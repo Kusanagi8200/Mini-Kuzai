@@ -4,7 +4,7 @@ Phase 01 establishes the first complete Mini-Kuzai language-model laboratory.
 
 ## Scope
 
-The phase starts with a simple word-level tokenizer and progressively builds the complete decoder-only Transformer used in the final checkpoint.
+The phase starts with a simple word-level tokenizer and progressively builds the complete decoder-only Transformer used in the final checkpoint. The source archive preserved in this repository contains the full numbered sequence from `01_tokenizer.py` through `67_beta_additive_identity.py`.
 
 ## Main milestones
 
@@ -67,10 +67,30 @@ Best epoch            : 11
 Validation loss       : 0.665633
 ```
 
+## Preserved source snapshot
+
+The recovered Phase 01 local directory contained:
+
+```text
+67 numbered experiment scripts
+5 historical Mini-Kuzai model modules
+1 corpus file
+1 original project note
+9 PyTorch checkpoints
+```
+
+The numbered scripts, corpus, original note, and historical model modules are preserved under `tests/phase-01/lab/`.
+
+Clean reusable model implementations are stored under `mini_kuzai/`.
+
+Checkpoint binaries remain outside normal Git and are documented by filename and SHA-256 under `technical/checkpoints/README.md`.
+
 ## Key result
 
 Phase 01 demonstrates the full path from raw text to a trained autoregressive Transformer and then opens the model for direct inspection. The emphasis is on understanding mechanisms experimentally rather than treating the LLM as an opaque API.
 
 ## End of phase
 
-The Phase 01 model is frozen and kept as the baseline for later work. Further changes to tokenizer design, dataset size, architecture, performance, and GPU utilization belong to subsequent phases.
+**MINI-KUZAI PHASE 01 is frozen at experiment 67.**
+
+The next planned experiment, gamma context dependence, belongs to the continuation after this frozen Phase 01 snapshot.
