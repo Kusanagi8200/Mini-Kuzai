@@ -4,7 +4,7 @@ import torch.nn as nn
 
 
 # ==================================================
-# Multi-Head Attention with padding mask
+# Batched Multi-Head Attention
 # ==================================================
 
 class MultiHeadAttention(nn.Module):
@@ -42,13 +42,24 @@ class MultiHeadAttention(nn.Module):
             bias=False
         )
 
-    def forward(self, x, attention_mask=None):
+    def forward(self, x):
+
+        # x:
+        # [batch, sequence, embedding]
 
         batch_size, sequence_length, _ = x.shape
 
         Q = self.q_proj(x)
         K = self.k_proj(x)
         V = self.v_proj(x)
+
+        # ------------------------------------------
+        # [B, T, C]
+        #      ↓
+        # [B, T, H, D]
+        #      ↓
+        # [B, H, T, D]
+        # ------------------------------------------
 
         Q = Q.view(
             batch_size,
@@ -71,14 +82,17 @@ class MultiHeadAttention(nn.Module):
             self.head_dim
         ).transpose(1, 2)
 
+        # ------------------------------------------
+        # Attention
+        #
+        # [B,H,T,D] @ [B,H,D,T]
+        #       ↓
+        # [B,H,T,T]
+        # ------------------------------------------
+
         scores = (
             Q @ K.transpose(-2, -1)
         ) / math.sqrt(self.head_dim)
-
-        # --------------------------------------------------
-        # Causal mask
-        # Future tokens cannot be seen
-        # --------------------------------------------------
 
         causal_mask = torch.triu(
             torch.ones(
@@ -95,34 +109,22 @@ class MultiHeadAttention(nn.Module):
             float("-inf")
         )
 
-        # --------------------------------------------------
-        # Padding mask
-        #
-        # attention_mask:
-        # 1 = real token
-        # 0 = padding
-        #
-        # Shape:
-        # [B,T] -> [B,1,1,T]
-        # --------------------------------------------------
-
-        if attention_mask is not None:
-
-            key_mask = attention_mask[
-                :, None, None, :
-            ].bool()
-
-            scores = scores.masked_fill(
-                ~key_mask,
-                float("-inf")
-            )
-
         weights = torch.softmax(
             scores,
             dim=-1
         )
 
         context = weights @ V
+
+        # ------------------------------------------
+        # Merge heads
+        #
+        # [B,H,T,D]
+        #    ↓
+        # [B,T,H,D]
+        #    ↓
+        # [B,T,C]
+        # ------------------------------------------
 
         context = (
             context
@@ -189,15 +191,10 @@ class TransformerBlock(nn.Module):
             hidden_dim
         )
 
-    def forward(
-        self,
-        x,
-        attention_mask=None
-    ):
+    def forward(self, x):
 
         x = x + self.attention(
-            self.norm1(x),
-            attention_mask
+            self.norm1(x)
         )
 
         x = x + self.mlp(
@@ -208,10 +205,10 @@ class TransformerBlock(nn.Module):
 
 
 # ==================================================
-# Mini-Kuzai with padding support
+# Batched Mini-Kuzai
 # ==================================================
 
-class MiniKuzaiPadding(nn.Module):
+class MiniKuzaiBatch(nn.Module):
 
     def __init__(
         self,
@@ -220,17 +217,13 @@ class MiniKuzaiPadding(nn.Module):
         hidden_dim=32,
         num_heads=2,
         num_layers=2,
-        max_sequence_length=32,
-        pad_token_id=0
+        max_sequence_length=32
     ):
         super().__init__()
 
-        self.pad_token_id = pad_token_id
-
         self.token_embedding = nn.Embedding(
             vocab_size,
-            embedding_dim,
-            padding_idx=pad_token_id
+            embedding_dim
         )
 
         self.position_embedding = nn.Embedding(
@@ -257,11 +250,10 @@ class MiniKuzaiPadding(nn.Module):
             bias=False
         )
 
-    def forward(
-        self,
-        token_ids,
-        attention_mask=None
-    ):
+    def forward(self, token_ids):
+
+        # token_ids:
+        # [batch, sequence]
 
         batch_size, sequence_length = (
             token_ids.shape
@@ -278,11 +270,7 @@ class MiniKuzaiPadding(nn.Module):
         )
 
         for block in self.blocks:
-
-            x = block(
-                x,
-                attention_mask
-            )
+            x = block(x)
 
         x = self.final_norm(x)
 
