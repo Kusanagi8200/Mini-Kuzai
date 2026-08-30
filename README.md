@@ -2,39 +2,45 @@
 
 **Build a language model from scratch, train it locally, and inspect what happens inside a Transformer.**
 
-Mini-Kuzai is an educational and experimental project focused on constructing a small autoregressive language model without starting from a pretrained model. The objective is not to build a production chatbot, but to understand the mechanics of a modern LLM by implementing, training, testing, and inspecting each component directly.
+Mini-Kuzai is an educational and experimental project focused on constructing a small autoregressive language model without starting from a pretrained model. The goal is not to produce a production chatbot. The goal is to implement the mechanisms of a modern decoder-only Transformer directly, train the resulting model, measure it, and inspect the learned behavior layer by layer.
 
-The project is developed locally with Python and PyTorch on an NVIDIA GPU. Every major mechanism is introduced as working code, measured experimentally, and then integrated into the complete model.
+The project is developed with Python and PyTorch and was trained locally on an NVIDIA CUDA GPU. MINI-KUZAI PHASE 01 preserves the complete incremental lab sequence that led from a word-level tokenizer to a batched, padded, multi-head Transformer with a frozen final checkpoint.
 
 ## Project goals
 
-Mini-Kuzai is designed to explore the complete path from raw text to next-token prediction:
+Mini-Kuzai explores the complete path from raw text to next-token prediction:
 
 - word-level tokenization and vocabulary construction
 - token embeddings
 - positional embeddings
 - query, key, and value projections
 - causal self-attention
-- multi-head attention
+- context vectors
 - residual connections
 - feed-forward / MLP layers
 - LayerNorm
-- stacked Transformer blocks
+- Transformer blocks
 - language-model head and logits
 - cross-entropy loss
 - backpropagation and optimizer updates
 - autoregressive generation and EOS handling
 - sampling and temperature
+- multi-head attention
+- model depth
 - train / validation / test separation
 - overfitting and early stopping
 - deterministic training and reproducibility
 - compositional generalization
-- batching, dynamic padding, and attention masks
-- internal analysis through attention inspection, ablations, residual-stream tracing, logit margins, and LayerNorm decomposition
+- batch dimensions
+- dynamic padding and attention masks
+- DataLoader-based training
+- learning-rate search
+- attention-head and component ablations
+- residual-stream tracing
+- logit-margin analysis
+- LayerNorm gamma / beta analysis
 
-## Current model
-
-The Phase 01 final checkpoint was trained with the following compact architecture:
+## Phase 01 final model
 
 | Component | Value |
 | --- | --- |
@@ -47,9 +53,11 @@ The Phase 01 final checkpoint was trained with the following compact architectur
 | Batch size | 4 |
 | Optimizer | AdamW |
 | Learning rate | 0.04 |
-| Training device | NVIDIA CUDA GPU |
+| Seed | 42 |
+| Best epoch | 11 |
+| Best validation loss | 0.665633 |
 
-The model is intentionally tiny. Its purpose is to make every matrix, vector, gradient, attention head, and prediction small enough to inspect directly.
+The architecture is deliberately tiny so every matrix, gradient, attention head, residual update, and token probability can be inspected directly.
 
 ## Repository structure
 
@@ -59,14 +67,30 @@ Mini-Kuzai/
 ├── requirements.txt
 ├── .gitignore
 │
+├── mini_kuzai/
+│   ├── mini_kuzai.py
+│   ├── mini_kuzai_mha.py
+│   ├── mini_kuzai_deep.py
+│   ├── mini_kuzai_batch.py
+│   ├── mini_kuzai_padding.py
+│   └── README.md
+│
 ├── technical/
 │   ├── installation/
 │   ├── commands/
 │   ├── training-process/
-│   └── architecture-notes/
+│   ├── architecture-notes/
+│   ├── checkpoints/
+│   └── PHASE-01-SOURCE-MANIFEST.md
 │
 ├── tests/
 │   └── phase-01/
+│       ├── lab/
+│       │   ├── 01_tokenizer.py
+│       │   ├── ...
+│       │   ├── 67_beta_additive_identity.py
+│       │   ├── corpus.txt
+│       │   └── historical model modules
 │       ├── tokenizer/
 │       ├── embeddings/
 │       ├── attention/
@@ -75,43 +99,71 @@ Mini-Kuzai/
 │       ├── generalization/
 │       └── interpretability/
 │
-├── mini_kuzai/
-│   └── mini_kuzai_padding.py
-│
 └── phases/
     └── MINI-KUZAI-PHASE-01.md
 ```
 
+## Two source views
+
+The repository intentionally contains two complementary views of the code.
+
+`mini_kuzai/` contains the clean model implementations used as the project baseline. The deep-model package import is adapted for normal Python package use.
+
+`tests/phase-01/lab/` preserves the original local lab snapshot. The numbered scripts and historical model modules are kept with their original imports and filenames so the learning sequence remains traceable.
+
 ## MINI-KUZAI PHASE 01
 
-Phase 01 covers the construction of the model from the first tokenizer experiment through a complete batched Transformer and a detailed analysis of its internal behavior.
+Phase 01 contains 67 numbered Python experiments, beginning with `01_tokenizer.py` and ending with `67_beta_additive_identity.py`.
 
-The phase includes experiments on:
+Major stages include:
 
-- model depth and multi-head attention
-- validation leakage and clean test methodology
-- early stopping
-- reproducibility
-- generalization beyond exact training prefixes
-- batched training with dynamic padding
-- learning-rate search
-- blind evaluation
-- attention-head ablation
-- Transformer-component ablation
-- residual-stream / logit tracing
-- LayerNorm gamma and beta analysis
-- vocabulary bias induced by the final LayerNorm beta vector
+1. tokenizer, embeddings and positions;
+2. Q/K/V and causal self-attention;
+3. context, residuals, MLP and first Transformer block;
+4. complete model, training and generation;
+5. EOS, sampling, temperature and parameter inspection;
+6. multi-head attention and model depth;
+7. validation methodology, early stopping and deterministic reproducibility;
+8. compositional generalization and clean train/validation/test separation;
+9. batching, dynamic padding, DataLoader and batched training;
+10. learning-rate search and frozen final training;
+11. independent and blind evaluation;
+12. attention/head/component ablation;
+13. residual-stream and logit tracing;
+14. LayerNorm decomposition and gamma/beta analysis;
+15. beta vocabulary bias, target-frequency analysis, regression and additive logit identity.
 
-The frozen Phase 01 checkpoint is named `mini-kuzai-final.pt`. Model checkpoints are intentionally excluded from Git by default because they are generated artifacts.
+See [`phases/MINI-KUZAI-PHASE-01.md`](phases/MINI-KUZAI-PHASE-01.md) for the phase summary and [`technical/PHASE-01-SOURCE-MANIFEST.md`](technical/PHASE-01-SOURCE-MANIFEST.md) for the imported source inventory.
+
+## Checkpoints
+
+The local Phase 01 lab produced several PyTorch `.pt` checkpoints, including the frozen `mini-kuzai-final.pt`. Checkpoint binaries are not stored in normal Git and are excluded by `.gitignore`.
+
+Their filenames, sizes, and SHA-256 hashes are recorded in [`technical/checkpoints/README.md`](technical/checkpoints/README.md), allowing a local checkpoint to be verified against the Phase 01 archive.
+
+## Environment
+
+Phase 01 reference environment:
+
+```text
+Ubuntu 24.04.x
+Python 3.12.3
+PyTorch 2.13.0+cu130
+CUDA 13.0
+NumPy 2.5.2
+NVIDIA GeForce RTX 5060 Laptop GPU
+```
+
+See [`technical/installation/README.md`](technical/installation/README.md) for setup commands.
 
 ## Philosophy
 
-The project follows a practical approach: implement one mechanism, run it, inspect the tensors and outputs, verify the behavior, then move to the next mechanism. Theory is introduced when it becomes necessary to explain an observed result.
+The project follows a practical sequence: implement one mechanism, execute it, inspect tensors and outputs, verify the behavior, then integrate it into the next stage. Theory is introduced when needed to explain an observed result.
 
-Mini-Kuzai is therefore both a small language model and a laboratory for understanding how language models actually work under the hood.
+Mini-Kuzai is therefore both a tiny language model and a laboratory for understanding how language models work under the hood.
 
 ## Status
 
-**MINI-KUZAI PHASE 01: complete.**
+**MINI-KUZAI PHASE 01: complete and source-frozen.**
 
-The model architecture and Phase 01 checkpoint are frozen. Future phases can extend the tokenizer, dataset, model capacity, training pipeline, evaluation methodology, GPU profiling, and inference performance while preserving Phase 01 as a reproducible baseline.
+The source archive imported into this repository preserves the Phase 01 baseline. Future work can extend tokenizer design, dataset scale, model capacity, training methodology, GPU profiling, and inference performance without rewriting the Phase 01 history.
