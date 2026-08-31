@@ -1,14 +1,16 @@
-# Mini-Kuzai
+##### **``Mini-Kuzai - LLM``**
 
-**Build a language model from scratch, train it locally, and inspect what happens inside a Transformer.**
+##### **``Build a language model from scratch, train it locally, and inspect what happens inside a Transformer.``**
 
-Mini-Kuzai is an educational and experimental project focused on constructing a small autoregressive language model without starting from a pretrained model. The goal is not to produce a production chatbot. The goal is to implement the mechanisms of a modern decoder-only Transformer directly, train the resulting model, measure it, and inspect the learned behavior layer by layer.
+**Mini-Kuzai is an educational and experimental project focused on constructing a small autoregressive language model without starting from a pretrained model. The goal is not to produce a production chatbot. The goal is to implement the mechanisms of a modern decoder-only Transformer directly, train the resulting model, measure it, and inspect the learned behavior layer by layer.**
 
-The project is developed with Python and PyTorch and was trained locally on an NVIDIA CUDA GPU. MINI-KUZAI PHASE 01 preserves the complete incremental lab sequence that led from a word-level tokenizer to a batched, padded, multi-head Transformer with a frozen final checkpoint.
+**The project is developed with Python and PyTorch and was trained locally on an NVIDIA CUDA GPU. MINI-KUZAI PHASE 01 preserves the complete incremental lab sequence that led from a word-level tokenizer to a batched, padded, multi-head Transformer with a frozen final checkpoint.**
 
-## Project goals
+--- 
 
-Mini-Kuzai explores the complete path from raw text to next-token prediction:
+##### **``PROJECT GOALS``**
+
+**``Mini-Kuzai explores the complete path from raw text to next-token prediction -->``**
 
 - word-level tokenization and vocabulary construction
 - token embeddings
@@ -40,7 +42,9 @@ Mini-Kuzai explores the complete path from raw text to next-token prediction:
 - logit-margin analysis
 - LayerNorm gamma / beta analysis
 
-## Phase 01 final model
+---
+
+##### **``PHASE 01 FINAL MODEL``**
 
 | Component | Value |
 | --- | --- |
@@ -57,9 +61,11 @@ Mini-Kuzai explores the complete path from raw text to next-token prediction:
 | Best epoch | 11 |
 | Best validation loss | 0.665633 |
 
-The architecture is deliberately tiny so every matrix, gradient, attention head, residual update, and token probability can be inspected directly.
+**``The architecture is deliberately tiny so every matrix, gradient, attention head, residual update, and token probability can be inspected directly.``**
 
-## Repository structure
+---
+
+#### **`REPOSITORY STRUCTURE`**
 
 ```text
 Mini-Kuzai/
@@ -103,19 +109,23 @@ Mini-Kuzai/
     └── MINI-KUZAI-PHASE-01.md
 ```
 
-## Two source views
+---
 
-The repository intentionally contains two complementary views of the code.
+####  **`TWO SOURCES VIEW`**
 
-`mini_kuzai/` contains the clean model implementations used as the project baseline. The deep-model package import is adapted for normal Python package use.
+ **`The repository intentionally contains two complementary views of the code.`**
 
-`tests/phase-01/lab/` preserves the original local lab snapshot. The numbered scripts and historical model modules are kept with their original imports and filenames so the learning sequence remains traceable.
+**`mini_kuzai/` contains the clean model implementations used as the project baseline. The deep-model package import is adapted for normal Python package use.**
 
-## MINI-KUZAI PHASE 01
+**`tests/phase-01/lab/` preserves the original local lab snapshot. The numbered scripts and historical model modules are kept with their original imports and filenames so the learning sequence remains traceable.**
 
-Phase 01 contains 67 numbered Python experiments, beginning with `01_tokenizer.py` and ending with `67_beta_additive_identity.py`.
+---
 
-Major stages include:
+####  **`MINI-KUZAI PHASE 01`**
+
+**Phase 01 contains 67 numbered Python experiments, beginning with `01_tokenizer.py` and ending with `67_beta_additive_identity.py`.**
+
+ **`Major stages include -->`** 
 
 1. tokenizer, embeddings and positions;
 2. Q/K/V and causal self-attention;
@@ -133,17 +143,21 @@ Major stages include:
 14. LayerNorm decomposition and gamma/beta analysis;
 15. beta vocabulary bias, target-frequency analysis, regression and additive logit identity.
 
-See [`phases/MINI-KUZAI-PHASE-01.md`](phases/MINI-KUZAI-PHASE-01.md) for the phase summary and [`technical/PHASE-01-SOURCE-MANIFEST.md`](technical/PHASE-01-SOURCE-MANIFEST.md) for the imported source inventory.
+**See [`phases/MINI-KUZAI-PHASE-01.md`](phases/MINI-KUZAI-PHASE-01.md) for the phase summary and [`technical/PHASE-01-SOURCE-MANIFEST.md`](technical/PHASE-01-SOURCE-MANIFEST.md) for the imported source inventory.**
 
-## Checkpoints
+---
 
-The local Phase 01 lab produced several PyTorch `.pt` checkpoints, including the frozen `mini-kuzai-final.pt`. Checkpoint binaries are not stored in normal Git and are excluded by `.gitignore`.
+####  **`CHECKPOINTS`**
 
-Their filenames, sizes, and SHA-256 hashes are recorded in [`technical/checkpoints/README.md`](technical/checkpoints/README.md), allowing a local checkpoint to be verified against the Phase 01 archive.
+**The local Phase 01 lab produced several PyTorch `.pt` checkpoints, including the frozen `mini-kuzai-final.pt`. Checkpoint binaries are not stored in normal Git and are excluded by `.gitignore`.**
 
-## Environment
+**Their filenames, sizes, and SHA-256 hashes are recorded in [`technical/checkpoints/README.md`](technical/checkpoints/README.md), allowing a local checkpoint to be verified against the Phase 01 archive.**
 
-Phase 01 reference environment:
+---
+
+#### **`ENVIRONMENT`**
+
+**`Phase 01 reference environment -->`**
 
 ```text
 Ubuntu 24.04.x
@@ -154,16 +168,25 @@ NumPy 2.5.2
 NVIDIA GeForce RTX 5060 Laptop GPU
 ```
 
-See [`technical/installation/README.md`](technical/installation/README.md) for setup commands.
+**See [`technical/installation/README.md`](technical/installation/README.md) for setup commands.**
 
-## Philosophy
+---
 
-The project follows a practical sequence: implement one mechanism, execute it, inspect tensors and outputs, verify the behavior, then integrate it into the next stage. Theory is introduced when needed to explain an observed result.
+#### **`PHILOSOPHY`**
+
+**`The project follows a practical sequence: implement one mechanism, execute it, inspect tensors and outputs, verify the behavior, then integrate it into the next stage. Theory is introduced when needed to explain an observed result.``**
 
 Mini-Kuzai is therefore both a tiny language model and a laboratory for understanding how language models work under the hood.
 
-## Status
+---
 
-**MINI-KUZAI PHASE 01: complete and source-frozen.**
+#### **`STATUS`**
+
+**`MINI-KUZAI PHASE 01 --> Complete and source-frozen.`**
 
 The source archive imported into this repository preserves the Phase 01 baseline. Future work can extend tokenizer design, dataset scale, model capacity, training methodology, GPU profiling, and inference performance without rewriting the Phase 01 history.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
+
