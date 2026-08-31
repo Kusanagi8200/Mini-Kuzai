@@ -2,6 +2,12 @@
 
 ##### **``Build a language model from scratch, train it locally, and inspect what happens inside a Transformer.``**
 
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Mini-Kuzai/blob/main/Mini-Kuzai.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/Mini-Kuzai/blob/main/Mini-Kuzai.png">
+ <img alt="" src="">
+</picture> 
+
 **Mini-Kuzai is an educational and experimental project focused on constructing a small autoregressive language model without starting from a pretrained model. The goal is not to produce a production chatbot. The goal is to implement the mechanisms of a modern decoder-only Transformer directly, train the resulting model, measure it, and inspect the learned behavior layer by layer.**
 
 **The project is developed with Python and PyTorch and was trained locally on an NVIDIA CUDA GPU. MINI-KUZAI PHASE 01 preserves the complete incremental lab sequence that led from a word-level tokenizer to a batched, padded, multi-head Transformer with a frozen final checkpoint.**
