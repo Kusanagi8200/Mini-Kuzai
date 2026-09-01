@@ -4,11 +4,11 @@ This directory contains the clean model implementations produced during MINI-KUZ
 
 ## Implementations
 
-- `mini_kuzai.py` — original single-head, single-block model.
-- `mini_kuzai_mha.py` — multi-head attention version.
-- `mini_kuzai_deep.py` — stacked Transformer-block version.
-- `mini_kuzai_batch.py` — batched model using `[batch, sequence, embedding]` tensors.
-- `mini_kuzai_padding.py` — final Phase 01 architecture with batching, padding support, causal masking and padding-key masking.
+- `mini_kuzai.py` - original single-head, single-block model.
+- `mini_kuzai_mha.py` - multi-head attention version.
+- `mini_kuzai_deep.py` - stacked Transformer-block version.
+- `mini_kuzai_batch.py` - batched model using `[batch, sequence, embedding]` tensors.
+- `mini_kuzai_padding.py` - final Phase 01 architecture with batching, padding support, causal masking and padding-key masking.
 
 The final Phase 01 configuration uses two Transformer blocks, two attention heads, an embedding dimension of 8, and an MLP hidden dimension of 32.
 
