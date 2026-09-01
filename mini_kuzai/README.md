@@ -14,7 +14,7 @@ The final Phase 01 configuration uses two Transformer blocks, two attention head
 
 The historical source files are also preserved unchanged under `tests/phase-01/lab/`. The copy in this package is the canonical source view for reuse. `mini_kuzai_deep.py` uses a package-relative import so it can be imported normally through `mini_kuzai`.
 
-Example:
+Example -->
 
 ```python
 from mini_kuzai import MiniKuzaiPadding
