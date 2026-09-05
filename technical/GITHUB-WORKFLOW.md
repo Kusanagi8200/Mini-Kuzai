@@ -29,6 +29,14 @@ When a synchronization point is reached, the working convention is:
 7. Commit the changes directly to the Mini-Kuzai GitHub repository when GitHub access is available.
 8. Verify that the repository branch contains the expected files after the update.
 
+## Text style rule
+
+Use the ASCII hyphen-minus character `-` for separators, ranges, headings, prose punctuation, and project documentation.
+
+Do not use the Unicode em dash character in project files, generated documentation, commit-oriented text, or project conversations.
+
+This rule applies to all current and future Mini-Kuzai phases unless explicitly changed later.
+
 ## Repository
 
 ```text
