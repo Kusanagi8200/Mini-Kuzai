@@ -1,10 +1,10 @@
 # MINI-KUZAI PHASE 02
 
-Phase 02 focuses on inference engineering, performance measurement, KV caching, GPU profiling, and later controlled scaling of the Mini-Kuzai model while preserving the frozen Phase 01 baseline.
+Phase 02 focuses on inference engineering, performance measurement, KV caching, GPU profiling, and controlled inference experiments while preserving the frozen Phase 01 baseline.
 
 ## Current milestone
 
-The first Phase 02 milestone establishes a reproducible no-cache benchmark and implements a functionally equivalent KV cache without modifying or retraining the Phase 01 weights.
+The Phase 02 milestone establishes a reproducible no-cache benchmark and implements a functionally equivalent KV cache without modifying or retraining the Phase 01 weights.
 
 ### Step 69 - baseline benchmark
 
@@ -105,7 +105,7 @@ Maximum logit error  : 0.0000009537
 
 The remaining numerical difference is at float32 rounding scale and does not alter token decisions in this test.
 
-## Current status
+## Phase 02 status
 
 ```text
 PHASE 01 checkpoint preserved : YES
@@ -113,7 +113,9 @@ KV cache implemented          : YES
 Weight changes                : NO
 Retraining                    : NO
 Functional equivalence        : VALIDATED
-Performance comparison        : NEXT
+Performance comparison        : DEFERRED
 ```
 
-The next step is a controlled stabilized benchmark comparing the original no-cache path against the KV-cache path under the same warmup and measurement protocol.
+The controlled no-cache versus KV-cache performance comparison remains available as a later engineering experiment, but it is not required before continuing the project.
+
+The project now continues with MINI-KUZAI PHASE 03, focused on training, identity, personality, laboratory-specific knowledge, and chatbot behavior.
