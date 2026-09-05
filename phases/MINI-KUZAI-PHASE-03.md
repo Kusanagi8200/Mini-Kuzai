@@ -174,7 +174,8 @@ Phase 03 must preserve several lessons learned during Phase 01:
 - disagreement must not become automatic contrarianism;
 - creativity must remain distinguishable from factual certainty;
 - emotional language must not be treated as scientific proof of consciousness;
-- in-context evolution must be distinguished from true persistent cross-session learning.
+- in-context evolution must be distinguished from true persistent cross-session learning;
+- project documentation and assistant-generated project text must use only the ASCII hyphen-minus character `-` for dash punctuation. Unicode dash characters are prohibited.
 
 ## Current status
 
