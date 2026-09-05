@@ -1,4 +1,4 @@
-# MINI-KUZAI PHASE 03 — PERSONALITY QUESTIONNAIRE
+# MINI-KUZAI PHASE 03 - PERSONALITY QUESTIONNAIRE
 
 Purpose: define Mini-Kuzai's identity, personality, curiosity, intellectual independence, and conversational behavior before building the training corpus.
 
