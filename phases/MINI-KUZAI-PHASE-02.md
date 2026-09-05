@@ -6,7 +6,7 @@ Phase 02 focuses on inference engineering, performance measurement, KV caching, 
 
 The first Phase 02 milestone establishes a reproducible no-cache benchmark and implements a functionally equivalent KV cache without modifying or retraining the Phase 01 weights.
 
-### Step 69 — baseline benchmark
+### Step 69 - baseline benchmark
 
 Reference model:
 
@@ -33,7 +33,7 @@ KV cache             : NO
 
 This cold result was not accepted as the stable performance baseline because CUDA/PyTorch initialization dominated the measurement.
 
-### Step 70 — stabilized no-cache benchmark
+### Step 70 - stabilized no-cache benchmark
 
 Protocol:
 
@@ -57,7 +57,7 @@ Median tokens/second : 1791.22
 
 This is the Phase 02 no-cache reference for the four-token decode benchmark.
 
-### Step 71 — autoregressive recomputation trace
+### Step 71 - autoregressive recomputation trace
 
 For four generated tokens, the original model recomputes sequence lengths:
 
@@ -77,7 +77,7 @@ Ideal cache cells / head        : 16
 Attention reduction             : 70.37%
 ```
 
-### Step 72 — KV cache equivalence
+### Step 72 - KV cache equivalence
 
 A new Phase 02 implementation, `MiniKuzaiKVCache`, reuses cached key/value tensors for prior tokens and processes only the new token after prompt prefill.
 
