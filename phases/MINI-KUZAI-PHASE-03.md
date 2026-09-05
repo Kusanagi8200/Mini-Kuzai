@@ -125,6 +125,8 @@ phases/MINI-KUZAI-PHASE-03-IDENTITY.md
 phases/MINI-KUZAI-PHASE-03-BEHAVIOR-MATRIX.md
 phases/MINI-KUZAI-PHASE-03-KNOWLEDGE-MAP.md
 phases/MINI-KUZAI-PHASE-03-DATASET-SCHEMA.md
+phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-ASSESSMENT.md
+phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md
 ```
 
 The questionnaire records the intended character choices.
@@ -137,6 +139,56 @@ The knowledge map separates stable self-knowledge, laboratory knowledge, technic
 
 The dataset schema defines the research record format, anti-leakage grouping, behavioral labels, knowledge labels, split rules, provenance, and reproducibility requirements before corpus generation.
 
+The external dataset documentation records the acquisition, filtering, auditing, and final Phase 03 decision concerning SmolTalk and OASST1.
+
+## External dataset checkpoint
+
+External data exploration is complete for the current Phase 03 cycle.
+
+### SmolTalk
+
+The current validated external candidate reservoir is:
+
+```text
+HuggingFaceTB/smol-smoltalk
+pool: external-candidate-pool-v0.4.jsonl
+records: 8000
+```
+
+Source quotas:
+
+```text
+smol-magpie-ultra-short   : 5000
+openhermes-50k            : 1500
+explore-instruct-rewrite  : 500
+self-oss-instruct         : 1000
+```
+
+The v0.4 pool passed structural, duplicate, persona, and refined persona checks.
+
+It is retained as the primary external reservoir for general English, dialogue mechanics, technical language, factual question-answer patterns, and task-oriented language.
+
+It is not a final training corpus and must not define Mini-Kuzai identity or personality.
+
+### OASST1
+
+`OpenAssistant/oasst1` was downloaded, structurally reconstructed, quality-audited, and behaviorally compared against SmolTalk.
+
+The targeted final audit reduced 2558 quality-safe paths to only 15 behavior candidates, equal to 0.59 percent of the source paths.
+
+Those 15 candidates were mixed in quality and do not justify maintaining OASST1 as a second broad training reservoir for the current Phase 03 cycle.
+
+Current decision:
+
+```text
+OASST1
+ASSESSED
+NOT SELECTED FOR CURRENT TRAINING MIX
+KEEP AS RESEARCH SOURCE
+```
+
+OASST1 remains stored locally and may be revisited for future experiments.
+
 ## Proposed development sequence
 
 The Phase 03 sequence is:
@@ -146,25 +198,26 @@ The Phase 03 sequence is:
 3. convert identity into a behavioral training and evaluation matrix;
 4. define the laboratory-specific knowledge map and intentional unknowns;
 5. define the dataset schema and split methodology;
-6. define the first semantic group inventory;
-7. write the first controlled conversational dataset;
-8. establish a new tokenizer and vocabulary strategy suitable for dialogue;
-9. freeze train, validation, and untouched blind-test groups before training;
-10. select a model size that is realistic for the RTX 5060 8 GB GPU;
-11. train the first Phase 03 model from scratch;
-12. test identity retention and factual recall;
-13. test paraphrases and unseen formulations;
-14. test curiosity, disagreement, initiative, and uncertainty behavior;
-15. identify memorization versus generalization;
-16. expand the corpus while preserving clean evaluation sets;
-17. add more varied conversational behavior;
-18. evaluate personality consistency;
-19. evaluate multi-turn behavior;
-20. evaluate in-context opinion and relationship evolution;
-21. study requirements for persistent cross-session evolution;
-22. iterate architecture and dataset size based on measured results;
-23. freeze stable checkpoints at meaningful milestones;
-24. document methods that are transferable to the future KUZAI-LLM.
+6. assess, filter, and compare external conversational sources;
+7. define the first semantic group inventory from behavior families B01-B18;
+8. write the first controlled Mini-Kuzai conversational dataset;
+9. establish a new tokenizer and vocabulary strategy suitable for dialogue;
+10. freeze train, validation, and untouched blind-test groups before training;
+11. select a model size that is realistic for the RTX 5060 8 GB GPU;
+12. train the first Phase 03 model from scratch;
+13. test identity retention and factual recall;
+14. test paraphrases and unseen formulations;
+15. test curiosity, disagreement, initiative, and uncertainty behavior;
+16. identify memorization versus generalization;
+17. expand the corpus while preserving clean evaluation sets;
+18. add more varied conversational behavior;
+19. evaluate personality consistency;
+20. evaluate multi-turn behavior;
+21. evaluate in-context opinion and relationship evolution;
+22. study requirements for persistent cross-session evolution;
+23. iterate architecture and dataset size based on measured results;
+24. freeze stable checkpoints at meaningful milestones;
+25. document methods that are transferable to the future KUZAI-LLM.
 
 ## Methodological constraints
 
@@ -185,12 +238,15 @@ Phase 03 must preserve several lessons learned during Phase 01:
 - in-context evolution must be distinguished from true persistent cross-session learning;
 - paraphrases and semantic variants derived from the same scenario must remain in the same dataset split;
 - research metadata must remain separate from model-visible conversational text;
+- external conversational data must not define Mini-Kuzai identity or personality;
+- OASST1 is not authorized for the current training mix;
+- SmolTalk v0.4 is a candidate reservoir, not a final training file;
 - project documentation and assistant-generated project text must use only the ASCII hyphen-minus character `-` for dash punctuation. Unicode dash characters are prohibited.
 
 ## Current status
 
 ```text
-PHASE 03                  : ACTIVE
+PHASE 03                  : PAUSED
 Primary axis              : TRAINING AND PERSONALIZATION
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -199,6 +255,9 @@ Identity specification    : V0.2 CANDIDATE
 Behavior matrix           : V0.1 CANDIDATE
 Knowledge map             : V0.1 CANDIDATE
 Dataset schema            : V0.1 CANDIDATE
+External dataset study    : COMPLETE FOR CURRENT CYCLE
+SmolTalk v0.4             : VALIDATED PRIMARY EXTERNAL RESERVOIR
+OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
 Semantic group inventory  : NEXT
 Training corpus           : NOT CREATED
 Tokenizer                 : NOT SELECTED YET
@@ -206,4 +265,19 @@ New model architecture    : NOT SELECTED YET
 Training                  : NOT STARTED
 ```
 
-The next operation is to define the first semantic group inventory before writing any conversational training records.
+## Pause checkpoint
+
+Phase 03 was intentionally paused on 2026-09-05 after completion of the current external dataset assessment cycle.
+
+No training operation is authorized at this checkpoint.
+
+No tokenizer or Phase 03 architecture decision has been made.
+
+The next operation when work resumes is:
+
+```text
+SEMANTIC GROUP INVENTORY
+B01-B18
+```
+
+This inventory should define controlled scenario families before any model-visible Mini-Kuzai training conversations are authored.
