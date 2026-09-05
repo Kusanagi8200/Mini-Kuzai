@@ -1,0 +1,289 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "step_id": "PHASE03-EXTERNAL-STRICT-DEDUP-001",
+  "status": "COMPLETE",
+  "created_utc": "2026-09-05T16:02:35.107114+00:00",
+  "source_pool": "/root/Mini-Kuzai/data/external/smol-smoltalk/candidates/external-candidate-pool-v0.3a-persona-clean.jsonl",
+  "threshold": {
+    "weighted_jaccard_min": 0.9,
+    "sequence_matcher_min": 0.93
+  },
+  "input_records": 7926,
+  "candidate_pairs": 597760,
+  "strict_duplicate_pairs": 46,
+  "strict_duplicate_groups": 8,
+  "records_in_strict_groups": 31,
+  "records_to_remove": 23,
+  "records_after_strict_dedup": 7903,
+  "removals_by_source": {
+    "smol-magpie-ultra-short": 23
+  },
+  "groups": [
+    {
+      "group": 1,
+      "size": 10,
+      "keep": {
+        "content_sha256": "10e659cdc677ed6382f0ee94e5af7204a48deece08f1fd687b1471f2fff9db9f",
+        "source": "smol-magpie-ultra-short",
+        "source_file": "train-00002-of-00004.parquet",
+        "source_row": 48377,
+        "prompt": "A snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?"
+      },
+      "remove": [
+        {
+          "content_sha256": "3a01e361f30d981494f6011ce3870f7899f16f564b8c8e5892b5bf963e284d11",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00003-of-00004.parquet",
+          "source_row": 85920,
+          "prompt": "If a snail is at the bottom of a 20-foot well, and each day it climbs up 3 feet, but at night it slips back 2 feet, how many days will it take for the snail to reach the top of the well?"
+        },
+        {
+          "content_sha256": "ed9be9f8a4c2d479041aff077143908115478efa9f9b1ce08621534947aa749f",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00003-of-00004.parquet",
+          "source_row": 87702,
+          "prompt": "If a snail is at the bottom of a 20-foot well, each day it climbs up 3 feet, but at night it slips back 2 feet. How many days will it take for the snail to reach the top of the well?"
+        },
+        {
+          "content_sha256": "dd419ed7bbfe697448722723be9218ad77256a9b4d760cd0da39ebe345480bc1",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00001-of-00004.parquet",
+          "source_row": 66043,
+          "prompt": "Consider a scenario in which a snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?"
+        },
+        {
+          "content_sha256": "fd0e104c36ac0b54405837a97d4c380b53fb40ae5c31aeee51f0af99b3901d1f",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00003-of-00004.parquet",
+          "source_row": 76089,
+          "prompt": "Consider a scenario where a snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?"
+        },
+        {
+          "content_sha256": "751fb60c541536a8570822c7f41a22360fbc931d9dd649de80a671bead7f7fb5",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00003-of-00004.parquet",
+          "source_row": 106452,
+          "prompt": "Consider the following scenario: A snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?"
+        },
+        {
+          "content_sha256": "0d00a2c378b474e1aaa0c8fa2f59cd4255fe349729d9e62f2eeb6235491b2096",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00001-of-00004.parquet",
+          "source_row": 72040,
+          "prompt": "Consider that a snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?"
+        },
+        {
+          "content_sha256": "42549cc5fd21bcca29ad611a9f2e0322cab9bdd530099f41a48acc34396b0ad5",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00002-of-00004.parquet",
+          "source_row": 25767,
+          "prompt": "If a snail is at the bottom of a 20-foot well, and each day it climbs up three feet, but at night, it slips back two feet, how many days will it take for the snail to reach the top of the well?"
+        },
+        {
+          "content_sha256": "c5b16c8baccf562ff765c3a374375902a8d690e2308180dc33d9dd075abddab4",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00001-of-00004.parquet",
+          "source_row": 53436,
+          "prompt": "A certain snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?"
+        },
+        {
+          "content_sha256": "87b2490e9d5f7e64ba7bdf9ef05f70f4b6994e3965a1345869613b954a46a10d",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00001-of-00004.parquet",
+          "source_row": 6739,
+          "prompt": "If a snail is at the bottom of a 20-foot well, each day it climbs up 3 feet, but at night it slips back 2 feet. In how many days will the snail reach the top of the well?"
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "size": 7,
+      "keep": {
+        "content_sha256": "38a8a665598d75f8a5471f52cfaeec81c123d893c1b7d1716438c45a894ac4c0",
+        "source": "smol-magpie-ultra-short",
+        "source_file": "train-00003-of-00004.parquet",
+        "source_row": 69873,
+        "prompt": "A bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. How much does the ball cost?"
+      },
+      "remove": [
+        {
+          "content_sha256": "ffd7c54214af956a5f9db3f1d49724bc042be937fb6ba8a9497fae45881240f4",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00002-of-00004.parquet",
+          "source_row": 79863,
+          "prompt": "Suppose a bat and a ball together cost $1.10 and the bat costs $1.00 more than the ball. How much does the ball cost?"
+        },
+        {
+          "content_sha256": "7bc7a47175cf25dfb6dd8609103cb0ab5a1f5a7b4c7ca4c9d7ef997fabf65dee",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00000-of-00004.parquet",
+          "source_row": 37587,
+          "prompt": "Suppose a bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. How much does the ball cost?"
+        },
+        {
+          "content_sha256": "ed705175ecb5fe2256ecdeea344ec19757db33e2843dc2f4b6d9cd82a64dacb0",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00003-of-00004.parquet",
+          "source_row": 94469,
+          "prompt": "If a bat and a ball together cost $1.10, and the bat costs $1.00 more than the ball, how much does the ball cost?"
+        },
+        {
+          "content_sha256": "20713fd9b52ce6034a1620ee23c47dc7fc95ef63ad19c8428d82d476dfc78358",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00001-of-00004.parquet",
+          "source_row": 65151,
+          "prompt": "Given that a bat and a ball together cost $1.10 and the bat costs $1.00 more than the ball, how much does the ball cost?"
+        },
+        {
+          "content_sha256": "255e24e95c54530d049e13438745e5ebe86c785734da2c63b106ec4209c1443a",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00001-of-00004.parquet",
+          "source_row": 113176,
+          "prompt": "Consider a bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. How much does the ball cost?"
+        },
+        {
+          "content_sha256": "84fb38bb7758a80b921be0910cc606b05005a14058bf411d7ccff0784eb861dc",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00002-of-00004.parquet",
+          "source_row": 55818,
+          "prompt": "A Bat and Ball together cost $1.10. The Bat costs $1.00 more than the Ball. How much does the Ball cost?"
+        }
+      ]
+    },
+    {
+      "group": 3,
+      "size": 3,
+      "keep": {
+        "content_sha256": "5ce1430ab0b9b6f7bab1a27588df4f020cc0401b79f811fc0d1797ad3d368224",
+        "source": "smol-magpie-ultra-short",
+        "source_file": "train-00000-of-00004.parquet",
+        "source_row": 35860,
+        "prompt": "A woman has two coins that add up to 30 cents. One coin is not a nickel. What are the two coins?"
+      },
+      "remove": [
+        {
+          "content_sha256": "582b8fe7586126bd1ab89c17176d7e0fe9913900680708a9e8b9802ab8ba49ae",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00002-of-00004.parquet",
+          "source_row": 86249,
+          "prompt": "Consider a woman who has two coins that add up to 30 cents. One coin is not a nickel. What are the two coins?"
+        },
+        {
+          "content_sha256": "6d7d899d4bf977f94eab3cf6481efbe14cf06be75b2586ac174e23482c4c5505",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00000-of-00004.parquet",
+          "source_row": 7608,
+          "prompt": "A woman with 2 coins that add up to 30 cents. One coin is not a nickel. What are the two coins?"
+        }
+      ]
+    },
+    {
+      "group": 4,
+      "size": 3,
+      "keep": {
+        "content_sha256": "8218fb5e6951cf9ca4e90f00fb3086abd572955e466852f68a4a594d0d818288",
+        "source": "smol-magpie-ultra-short",
+        "source_file": "train-00002-of-00004.parquet",
+        "source_row": 104399,
+        "prompt": "How can we prove that there is no largest natural number using proof by contradiction."
+      },
+      "remove": [
+        {
+          "content_sha256": "50427411abae118abfac8c1f54e974417918fd9e1c879dd2b9dbbe37e10e463c",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00002-of-00004.parquet",
+          "source_row": 3842,
+          "prompt": "Prove that there is no largest natural number using a proof by contradiction."
+        },
+        {
+          "content_sha256": "9382d489598ea38cfc5fddbefb185c6be8e7ecf3d0c59f22a4197c3d4ca4622e",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00003-of-00004.parquet",
+          "source_row": 5837,
+          "prompt": "Can you prove that there is no largest natural number using proof by contradiction?"
+        }
+      ]
+    },
+    {
+      "group": 5,
+      "size": 2,
+      "keep": {
+        "content_sha256": "c5f5f50b7ee8914d09bd89b738caf1af12625d596a9fdc4be1ddd681a0471165",
+        "source": "smol-magpie-ultra-short",
+        "source_file": "train-00001-of-00004.parquet",
+        "source_row": 21429,
+        "prompt": "A dataset of exam scores has a mean of 75 and a standard deviation of 10. If each score in the dataset is increased by 5 points, what is the new mean and standard deviation of the dataset?"
+      },
+      "remove": [
+        {
+          "content_sha256": "125fd0f9a541a9ad8eea34e2e84cb8b72d4ccfb65930891e5468bdd736940bf4",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00002-of-00004.parquet",
+          "source_row": 89063,
+          "prompt": "A dataset of exam scores has a mean of 75 and a standard deviation of 10. If each score in the dataset is increased by 5 points, what will be the new mean and standard deviation of the dataset?"
+        }
+      ]
+    },
+    {
+      "group": 6,
+      "size": 2,
+      "keep": {
+        "content_sha256": "148df73cb1f9383e6007a0ddec1c0db25ce9a35cc11a36771e5c38fc8169d8e8",
+        "source": "smol-magpie-ultra-short",
+        "source_file": "train-00001-of-00004.parquet",
+        "source_row": 97996,
+        "prompt": "Find the largest positive integer with only even digits that is less than 10,000 and is a multiple of 9."
+      },
+      "remove": [
+        {
+          "content_sha256": "8fabdeede2d8a871d568fe4e28e391c24af7a3cf9b12ba9d951f6c1e482fa564",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00003-of-00004.parquet",
+          "source_row": 111945,
+          "prompt": "What is the largest positive integer with only even digits that is less than 10,000 and is a multiple of 9?"
+        }
+      ]
+    },
+    {
+      "group": 7,
+      "size": 2,
+      "keep": {
+        "content_sha256": "fa020a6a597b02a92cde7ef11c0ea6a0ceca8416cd24a249872818afa720b7d8",
+        "source": "smol-magpie-ultra-short",
+        "source_file": "train-00000-of-00004.parquet",
+        "source_row": 42162,
+        "prompt": "Find all the real solutions to the equation x^3 - 6x^2 + 11x - 6 = 0."
+      },
+      "remove": [
+        {
+          "content_sha256": "17829ae6369be9506c0fcc585a395d317908241d88853292a0db5becc3412f68",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00000-of-00004.parquet",
+          "source_row": 33658,
+          "prompt": "Find all real solutions to the equation x^3 - 6x^2 + 11x - 6 = 0."
+        }
+      ]
+    },
+    {
+      "group": 8,
+      "size": 2,
+      "keep": {
+        "content_sha256": "f71f17e3300ff11e7a6163d9e2085a061ec5d29ca9344811056d77ca8737ebd1",
+        "source": "smol-magpie-ultra-short",
+        "source_file": "train-00003-of-00004.parquet",
+        "source_row": 26071,
+        "prompt": "An ancient human tribe had a hierarchical system where there existed one chief with 2 supporting chiefs (supporting chief A and supporting chief B), each of whom had 2 equal, inferior officers. If the tribe at one point had 10 members, what are the number of different ways to choose the leadership of the tribe?"
+      },
+      "remove": [
+        {
+          "content_sha256": "69c0a1acc9c742936e53e88f8af1b4cf2364c753e5bef04c3ed5d5db356b53a1",
+          "source": "smol-magpie-ultra-short",
+          "source_file": "train-00003-of-00004.parquet",
+          "source_row": 22141,
+          "prompt": "An ancient human tribe had a hierarchical system where there existed one chief with 2 supporting chiefs (supporting chief A and supporting chief B), each of whom had 2 equal, inferior officers. If the tribe at one point had 10 members, what is the number of different ways to choose the leadership of the tribe?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+PROJECT=MINI-KUZAI
+PHASE=03
+STEP_ID=PHASE03-EXTERNAL-STRICT-DEDUP-001
+STATUS=COMPLETE
+
+##### SECTION RESULTS FOR ASSISTANT ######
+===== STRICT THRESHOLD =====
+INPUT_RECORDS = 7926
+CANDIDATE_PAIRS = 597760
+STRICT_DUPLICATE_PAIRS = 46
+STRICT_DUPLICATE_GROUPS = 8
+RECORDS_IN_STRICT_GROUPS = 31
+RECORDS_TO_REMOVE = 23
+RECORDS_AFTER_STRICT_DEDUP = 7903
+
+===== REMOVALS BY SOURCE =====
+smol-magpie-ultra-short = 23
+
+===== STRICT GROUPS =====
+
+--- GROUP 1 SIZE=10 ---
+smol-magpie-ultra-short | A snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?
+smol-magpie-ultra-short | If a snail is at the bottom of a 20-foot well, and each day it climbs up 3 feet, but at night it slips back 2 feet, how many days will it take for the snail to reach the top of the well?
+smol-magpie-ultra-short | If a snail is at the bottom of a 20-foot well, each day it climbs up 3 feet, but at night it slips back 2 feet. How many days will it take for the snail to reach the top of the well?
+smol-magpie-ultra-short | Consider a scenario in which a snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?
+smol-magpie-ultra-short | Consider a scenario where a snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?
+smol-magpie-ultra-short | Consider the following scenario: A snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?
+smol-magpie-ultra-short | Consider that a snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?
+smol-magpie-ultra-short | If a snail is at the bottom of a 20-foot well, and each day it climbs up three feet, but at night, it slips back two feet, how many days will it take for the snail to reach the top of the well?
+smol-magpie-ultra-short | A certain snail is at the bottom of a 20-foot well. Each day, it climbs up 3 feet, but at night, it slips back 2 feet. How many days will it take for the snail to reach the top of the well?
+smol-magpie-ultra-short | If a snail is at the bottom of a 20-foot well, each day it climbs up 3 feet, but at night it slips back 2 feet. In how many days will the snail reach the top of the well?
+
+--- GROUP 2 SIZE=7 ---
+smol-magpie-ultra-short | A bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. How much does the ball cost?
+smol-magpie-ultra-short | Suppose a bat and a ball together cost $1.10 and the bat costs $1.00 more than the ball. How much does the ball cost?
+smol-magpie-ultra-short | Suppose a bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. How much does the ball cost?
+smol-magpie-ultra-short | If a bat and a ball together cost $1.10, and the bat costs $1.00 more than the ball, how much does the ball cost?
+smol-magpie-ultra-short | Given that a bat and a ball together cost $1.10 and the bat costs $1.00 more than the ball, how much does the ball cost?
+smol-magpie-ultra-short | Consider a bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. How much does the ball cost?
+smol-magpie-ultra-short | A Bat and Ball together cost $1.10. The Bat costs $1.00 more than the Ball. How much does the Ball cost?
+
+--- GROUP 3 SIZE=3 ---
+smol-magpie-ultra-short | A woman has two coins that add up to 30 cents. One coin is not a nickel. What are the two coins?
+smol-magpie-ultra-short | Consider a woman who has two coins that add up to 30 cents. One coin is not a nickel. What are the two coins?
+smol-magpie-ultra-short | A woman with 2 coins that add up to 30 cents. One coin is not a nickel. What are the two coins?
+
+--- GROUP 4 SIZE=3 ---
+smol-magpie-ultra-short | How can we prove that there is no largest natural number using proof by contradiction.
+smol-magpie-ultra-short | Prove that there is no largest natural number using a proof by contradiction.
+smol-magpie-ultra-short | Can you prove that there is no largest natural number using proof by contradiction?
+
+--- GROUP 5 SIZE=2 ---
+smol-magpie-ultra-short | A dataset of exam scores has a mean of 75 and a standard deviation of 10. If each score in the dataset is increased by 5 points, what is the new mean and standard deviation of the dataset?
+smol-magpie-ultra-short | A dataset of exam scores has a mean of 75 and a standard deviation of 10. If each score in the dataset is increased by 5 points, what will be the new mean and standard deviation of the dataset?
+
+--- GROUP 6 SIZE=2 ---
+smol-magpie-ultra-short | Find the largest positive integer with only even digits that is less than 10,000 and is a multiple of 9.
+smol-magpie-ultra-short | What is the largest positive integer with only even digits that is less than 10,000 and is a multiple of 9?
+
+--- GROUP 7 SIZE=2 ---
+smol-magpie-ultra-short | Find all the real solutions to the equation x^3 - 6x^2 + 11x - 6 = 0.
+smol-magpie-ultra-short | Find all real solutions to the equation x^3 - 6x^2 + 11x - 6 = 0.
+
+--- GROUP 8 SIZE=2 ---
+smol-magpie-ultra-short | An ancient human tribe had a hierarchical system where there existed one chief with 2 supporting chiefs (supporting chief A and supporting chief B), each of whom had 2 equal, inferior officers. If the tribe at one point had 10 members, what are the number of different ways to choose the leadership of the tribe?
+smol-magpie-ultra-short | An ancient human tribe had a hierarchical system where there existed one chief with 2 supporting chiefs (supporting chief A and supporting chief B), each of whom had 2 equal, inferior officers. If the tribe at one point had 10 members, what is the number of different ways to choose the leadership of the tribe?
+
+===== STRICT PAIR DETAILS =====
+PAIR 1 JACCARD=1.000 SEQUENCE=0.992
+PAIR 2 JACCARD=1.000 SEQUENCE=0.990
+PAIR 3 JACCARD=1.000 SEQUENCE=0.989
+PAIR 4 JACCARD=1.000 SEQUENCE=0.986
+PAIR 5 JACCARD=1.000 SEQUENCE=0.981
+PAIR 6 JACCARD=1.000 SEQUENCE=0.978
+PAIR 7 JACCARD=1.000 SEQUENCE=0.978
+PAIR 8 JACCARD=1.000 SEQUENCE=0.975
+PAIR 9 JACCARD=1.000 SEQUENCE=0.970
+PAIR 10 JACCARD=1.000 SEQUENCE=0.958
+PAIR 11 JACCARD=1.000 SEQUENCE=0.952
+PAIR 12 JACCARD=1.000 SEQUENCE=0.948
+PAIR 13 JACCARD=1.000 SEQUENCE=0.940
+PAIR 14 JACCARD=1.000 SEQUENCE=0.931
+PAIR 15 JACCARD=0.974 SEQUENCE=0.951
+PAIR 16 JACCARD=0.974 SEQUENCE=0.945
+PAIR 17 JACCARD=0.966 SEQUENCE=0.962
+PAIR 18 JACCARD=0.966 SEQUENCE=0.962
+PAIR 19 JACCARD=0.966 SEQUENCE=0.949
+PAIR 20 JACCARD=0.957 SEQUENCE=0.948
+PAIR 21 JACCARD=0.957 SEQUENCE=0.936
+PAIR 22 JACCARD=0.957 SEQUENCE=0.934
+PAIR 23 JACCARD=0.950 SEQUENCE=0.978
+PAIR 24 JACCARD=0.950 SEQUENCE=0.967
+PAIR 25 JACCARD=0.950 SEQUENCE=0.954
+PAIR 26 JACCARD=0.945 SEQUENCE=0.956
+PAIR 27 JACCARD=0.945 SEQUENCE=0.936
+PAIR 28 JACCARD=0.945 SEQUENCE=0.954
+PAIR 29 JACCARD=0.945 SEQUENCE=0.947
+PAIR 30 JACCARD=0.944 SEQUENCE=0.959
+PAIR 31 JACCARD=0.944 SEQUENCE=0.949
+PAIR 32 JACCARD=0.944 SEQUENCE=0.938
+PAIR 33 JACCARD=0.937 SEQUENCE=0.952
+PAIR 34 JACCARD=0.928 SEQUENCE=0.973
+PAIR 35 JACCARD=0.928 SEQUENCE=0.959
+PAIR 36 JACCARD=0.928 SEQUENCE=0.948
+PAIR 37 JACCARD=0.920 SEQUENCE=0.950
+PAIR 38 JACCARD=0.919 SEQUENCE=0.963
+PAIR 39 JACCARD=0.919 SEQUENCE=0.963
+PAIR 40 JACCARD=0.919 SEQUENCE=0.956
+PAIR 41 JACCARD=0.919 SEQUENCE=0.954
+PAIR 42 JACCARD=0.919 SEQUENCE=0.941
+PAIR 43 JACCARD=0.919 SEQUENCE=0.933
+PAIR 44 JACCARD=0.919 SEQUENCE=0.932
+PAIR 45 JACCARD=0.913 SEQUENCE=0.932
+PAIR 46 JACCARD=0.913 SEQUENCE=0.932
+
+===== STRICT AUDIT COMPLETE =====
