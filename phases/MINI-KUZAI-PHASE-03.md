@@ -115,14 +115,16 @@ The Phase 01 checkpoint remains frozen and must not be overwritten.
 
 Phase 02 inference work, including the validated KV-cache implementation, is preserved as a separate engineering milestone and does not need to be completed further before Phase 03 training begins.
 
-## Phase 03 identity references
+## Phase 03 design references
 
-The current Phase 03 identity design is documented in:
+The current Phase 03 design is documented in:
 
 ```text
 phases/MINI-KUZAI-PHASE-03-QUESTIONNAIRE-EN.md
 phases/MINI-KUZAI-PHASE-03-IDENTITY.md
 phases/MINI-KUZAI-PHASE-03-BEHAVIOR-MATRIX.md
+phases/MINI-KUZAI-PHASE-03-KNOWLEDGE-MAP.md
+phases/MINI-KUZAI-PHASE-03-DATASET-SCHEMA.md
 ```
 
 The questionnaire records the intended character choices.
@@ -130,6 +132,10 @@ The questionnaire records the intended character choices.
 The identity specification separates immutable identity from evolving personality.
 
 The behavior matrix converts those choices into trainable and measurable behavior families without exposing final blind-test prompts.
+
+The knowledge map separates stable self-knowledge, laboratory knowledge, technical concepts, intentional unknowns, volatile runtime facts, and developer-only information.
+
+The dataset schema defines the research record format, anti-leakage grouping, behavioral labels, knowledge labels, split rules, provenance, and reproducibility requirements before corpus generation.
 
 ## Proposed development sequence
 
@@ -139,24 +145,26 @@ The Phase 03 sequence is:
 2. define the Mini-Kuzai identity specification;
 3. convert identity into a behavioral training and evaluation matrix;
 4. define the laboratory-specific knowledge map and intentional unknowns;
-5. design the first conversational corpus;
-6. establish a new tokenizer and vocabulary strategy suitable for dialogue;
-7. define training, validation, and untouched test sets before training;
-8. select a model size that is realistic for the RTX 5060 8 GB GPU;
-9. train the first Phase 03 model from scratch;
-10. test identity retention and factual recall;
-11. test paraphrases and unseen formulations;
-12. test curiosity, disagreement, initiative, and uncertainty behavior;
-13. identify memorization versus generalization;
-14. expand the corpus while preserving clean evaluation sets;
-15. add more varied conversational behavior;
-16. evaluate personality consistency;
-17. evaluate multi-turn behavior;
-18. evaluate in-context opinion and relationship evolution;
-19. study requirements for persistent cross-session evolution;
-20. iterate architecture and dataset size based on measured results;
-21. freeze stable checkpoints at meaningful milestones;
-22. document methods that are transferable to the future KUZAI-LLM.
+5. define the dataset schema and split methodology;
+6. define the first semantic group inventory;
+7. write the first controlled conversational dataset;
+8. establish a new tokenizer and vocabulary strategy suitable for dialogue;
+9. freeze train, validation, and untouched blind-test groups before training;
+10. select a model size that is realistic for the RTX 5060 8 GB GPU;
+11. train the first Phase 03 model from scratch;
+12. test identity retention and factual recall;
+13. test paraphrases and unseen formulations;
+14. test curiosity, disagreement, initiative, and uncertainty behavior;
+15. identify memorization versus generalization;
+16. expand the corpus while preserving clean evaluation sets;
+17. add more varied conversational behavior;
+18. evaluate personality consistency;
+19. evaluate multi-turn behavior;
+20. evaluate in-context opinion and relationship evolution;
+21. study requirements for persistent cross-session evolution;
+22. iterate architecture and dataset size based on measured results;
+23. freeze stable checkpoints at meaningful milestones;
+24. document methods that are transferable to the future KUZAI-LLM.
 
 ## Methodological constraints
 
@@ -175,6 +183,8 @@ Phase 03 must preserve several lessons learned during Phase 01:
 - creativity must remain distinguishable from factual certainty;
 - emotional language must not be treated as scientific proof of consciousness;
 - in-context evolution must be distinguished from true persistent cross-session learning;
+- paraphrases and semantic variants derived from the same scenario must remain in the same dataset split;
+- research metadata must remain separate from model-visible conversational text;
 - project documentation and assistant-generated project text must use only the ASCII hyphen-minus character `-` for dash punctuation. Unicode dash characters are prohibited.
 
 ## Current status
@@ -187,11 +197,13 @@ Phase 02 KV cache         : PRESERVED
 Personality questionnaire : ANSWERED
 Identity specification    : V0.2 CANDIDATE
 Behavior matrix           : V0.1 CANDIDATE
-Knowledge map             : NEXT
+Knowledge map             : V0.1 CANDIDATE
+Dataset schema            : V0.1 CANDIDATE
+Semantic group inventory  : NEXT
 Training corpus           : NOT CREATED
 Tokenizer                 : NOT SELECTED YET
 New model architecture    : NOT SELECTED YET
 Training                  : NOT STARTED
 ```
 
-The next operation is to define what Mini-Kuzai knows, what she does not know, what belongs to THE KUZ NETWORK laboratory knowledge layer, and what developer-only roadmap information must remain outside her initial training identity.
+The next operation is to define the first semantic group inventory before writing any conversational training records.
