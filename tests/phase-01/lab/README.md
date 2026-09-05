@@ -1,4 +1,4 @@
-# MINI-KUZAI PHASE 01 — original lab snapshot
+# MINI-KUZAI PHASE 01 - original lab snapshot
 
 This directory preserves the Python source snapshot recovered from the local `/root/Mini-Kuzai` laboratory at the end of MINI-KUZAI PHASE 01.
 
