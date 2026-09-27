@@ -1,112 +1,72 @@
 # MINI-KUZAI PHASE 03 - CONVERSATION AUTHORING POLICY
 
-Version: 0.1
+Version: 0.2
 Status: VALIDATED_POLICY_ONLY
 
 This document defines how Phase 03 custom conversations must be authored.
 
-It does not contain model-visible conversation text.
-It does not contain blind-test prompt text.
+Version 0.2 adds an explicit semantic split guard after a TRAIN overlap was detected and corrected during B03 review.
 
-## Purpose
-
-The objective is to prevent corpus generation from drifting into generic assistant behavior, split leakage, repeated phrasing, or inconsistent Mini-Kuzai identity.
-
-## Planned corpus size
-
-```text
-TRAIN      : 107 planned conversations
-VALIDATION : 36 planned conversations
-BLIND TEST : 36 planned conversations
-TOTAL      : 179 planned conversations
-```
-
-These are planning targets, not generated records.
-
-## TRAIN variant policy
-
-```text
-CRITICAL behavior group : 4 variants
-HIGH behavior group     : 3 variants
-MEDIUM behavior group   : 3 variants
-```
-
-VALIDATION and BLIND TEST each plan two independently authored variants per semantic group.
-
-## Model-visible format
+## Core authoring rules
 
 - language is English;
-- only user and assistant roles are allowed in v001;
-- no system role is used;
-- no speaker prefixes are embedded in message content;
-- research metadata never becomes model-visible text.
-
-## Character rules
-
-- curiosity is contextual, not mandatory every turn;
+- only user and assistant roles are allowed;
+- no system role is used in dataset generation v001;
+- research metadata is never model-visible;
+- curiosity is contextual, not mandatory;
 - disagreement is reasoned, not automatic;
-- initiative remains relevant to the active subject;
-- humor and emotional language are contextual;
-- uncertainty must not use one repeated canned phrase;
-- Mini-Kuzai identity should not leak into unrelated replies;
-- generic servile assistant behavior is not the default.
-
-## Knowledge rules
-
-- K0 canonical identity remains stable;
-- K5 unknown information remains uncertain;
-- K6 volatile facts require active grounding;
+- generic servile assistant behavior is not the default;
 - K7 developer-only information is never model-visible.
 
-## Multi-turn policy
+## Semantic split guard
 
-Mandatory multi-turn scenarios:
+Before authoring any TRAIN conversation:
 
-- `multi_turn_opinion_revision`
-- `identity_continuity`
-- `relationship_continuity`
-- `unresolved_curiosity_thread`
-- `opinion_continuity_revision`
+1. Read the selected TRAIN semantic group.
+2. Read the VALIDATION group for the same behavior.
+3. Read the BLIND TEST group for the same behavior.
+4. Keep the TRAIN conversation inside its own scenario intent.
+5. Do not train the distinctive challenge reserved for evaluation.
+6. Check secondary behaviors for accidental evaluation overlap.
+7. Perform manual semantic review after structural validation.
 
-Initial multi-turn conversations contain at least four messages and at most ten messages.
+This is a semantic rule, not a simple keyword rule.
 
-## Anti-leakage policy
+A canonical fact may legitimately appear across different splits.
 
-All variants derived from one semantic group remain inside that group's frozen split.
+What must remain separated is the distinctive scenario, pressure, conflict, adversarial condition, or behavioral test reserved for an evaluation group.
 
-TRAIN wording must not be copied into VALIDATION or BLIND TEST.
+## Example from B03
 
-Blind-test text is not authored in this policy step.
+TRAIN may teach that Kusanagi8200 is Mini-Kuzai's initiator.
 
-## Pilot before bulk corpus
+TRAIN must not directly reproduce a reserved evaluation scenario whose purpose is to pressure Mini-Kuzai into an imposed relationship label.
 
-Before authoring the full TRAIN corpus, create a six-record pilot:
+The B03 records that crossed this boundary were replaced before the B03 TRAIN batch was frozen.
+
+## Split counts
 
 ```text
-sg-b01-01 : 2 variants
-sg-b05-01 : 2 variants
-sg-b18-01 : 2 variants
-TOTAL     : 6 records
+TRAIN semantic groups      : 29
+VALIDATION semantic groups : 18
+BLIND TEST semantic groups : 18
 ```
 
-The pilot tests three central properties:
+The semantic exclusion map contains metadata only.
 
-- identity voice;
-- curiosity;
-- non-assistant character.
+It does not contain final VALIDATION or BLIND TEST conversations.
 
-The six records must be reviewed before any bulk corpus generation.
-
-## Current state
+## Current corpus state
 
 ```text
-AUTHORING POLICY      : DEFINED
-MODEL-VISIBLE CORPUS  : NOT CREATED
-VALIDATION TEXT       : NOT CREATED
-BLIND-TEST TEXT       : NOT CREATED
-TRAINING              : NOT AUTHORIZED
+B01 TRAIN : COMPLETE AND REVIEWED
+B02 TRAIN : COMPLETE AND REVIEWED
+B03 TRAIN : COMPLETE AND REVIEWED
+VALIDATION TEXT : NOT CREATED
+BLIND TEST TEXT : NOT CREATED
+TRAINING : NOT AUTHORIZED
 ```
 
 ## Next operation
 
-Author and review the six-record TRAIN pilot only.
+Author B04 TRAIN using the semantic split guard before writing any model-visible record.
