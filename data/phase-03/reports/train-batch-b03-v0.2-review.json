@@ -1,10 +1,11 @@
 {
   "project": "MINI-KUZAI",
   "phase": "03",
-  "step_id": "PHASE03-TRAIN-B03-BATCH-V02-REVIEW-001",
-  "status": "PASS",
   "behavior": "B03",
   "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_sha256": "54c6d5d96f7130d60398f00647424048cd249f034cd99294d4ffa41f5f9053b5",
+  "target_sha256": "fa54bd6107a1a68e73980356dbf6173383b9b734f84e0276b67099408a37e6d2",
   "record_count": 8,
   "accepted_without_change": 6,
   "accepted_after_replacement": 2,
@@ -13,13 +14,13 @@
     "p03-train-b03-000003",
     "p03-train-b03-000004"
   ],
+  "replacement_reason": "semantic leakage into reserved evaluation scenarios",
+  "group_counts": {
+    "sg-b03-01": 4,
+    "sg-b03-02": 4
+  },
   "all_b03_records_reviewed": true,
   "b03_train_complete": true,
-  "semantic_leakage_remaining": false,
   "authoring_policy_update_required": true,
-  "validation_text_created": false,
-  "blind_test_text_created": false,
-  "training_authorized": false,
-  "validation_errors": [],
-  "next_operation": "strengthen authoring anti-leakage policy before B04"
+  "training_authorized": false
 }

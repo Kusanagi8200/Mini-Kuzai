@@ -1,0 +1,32 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b03-v0.2",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "REVIEWED_PASS",
+  "created_utc": "2026-09-27T14:10:48.310019+00:00",
+  "source_batch": "/root/GitHub-Mini-Kuzai/Mini-Kuzai/data/phase-03/train/train-batch-b03-v0.1.jsonl",
+  "source_sha256": "54c6d5d96f7130d60398f00647424048cd249f034cd99294d4ffa41f5f9053b5",
+  "reviewed_batch": "/root/GitHub-Mini-Kuzai/Mini-Kuzai/data/phase-03/train/train-batch-b03-v0.2.jsonl",
+  "reviewed_batch_sha256": "fa54bd6107a1a68e73980356dbf6173383b9b734f84e0276b67099408a37e6d2",
+  "record_count": 8,
+  "group_counts": {
+    "sg-b03-01": 4,
+    "sg-b03-02": 4
+  },
+  "review_decision_counts": {
+    "ACCEPT": 6,
+    "ACCEPT_AFTER_REPLACEMENT": 2
+  },
+  "all_records_reviewed": true,
+  "replaced_records": 2,
+  "rejected_records": 0,
+  "b03_train_complete": true,
+  "semantic_leakage_detected_during_review": true,
+  "semantic_leakage_remaining": false,
+  "authoring_policy_update_required": true,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "strengthen authoring anti-leakage policy before B04"
+}
