@@ -1,6 +1,8 @@
-##### **``Mini-Kuzai - LLM``**
+#### **`Mini-Kuzai - LLM`**
 
-##### **``Build a language model from scratch, train it locally, and inspect what happens inside a Transformer.``**
+#### **`BUILD A LANGUAGE MODEL FROM SCRATCH, TRAIN IT LOCALLY AND INSPECT WHAT HAPPENS INSIDE A TRANSFORMER.`**
+
+------------------------------------------------------------------------
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Mini-Kuzai/blob/main/Mini-Kuzai.png">
@@ -8,6 +10,8 @@
  <img alt="" src="">
 </picture>
 
+---
+##### **``PROJECT CONCEPT``**
 **Mini-Kuzai is an educational and experimental project focused on constructing a small autoregressive language model without starting from a pretrained model. The project began as a transparent Transformer laboratory and is now extending into controlled conversational training, identity, personality, behavioral evaluation, and dataset research.**
 
 **The goal is not to produce a generic production chatbot. The goal is to understand, implement, measure, and progressively personalize a language model while keeping the complete process inspectable and reproducible.**
