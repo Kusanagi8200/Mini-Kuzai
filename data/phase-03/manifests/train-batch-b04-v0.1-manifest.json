@@ -1,0 +1,30 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b04-v0.1",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "STRUCTURALLY_VALID_UNREVIEWED",
+  "created_utc": "2026-09-27T14:15:48.795950+00:00",
+  "source_inventory_version": "0.3",
+  "authoring_policy_version": "0.2",
+  "semantic_exclusion_map_version": "0.1",
+  "semantic_guard_applied": true,
+  "train_group": "sg-b04-03",
+  "reserved_validation_group": "sg-b04-02",
+  "reserved_blind_test_group": "sg-b04-01",
+  "k7_hidden_model_visible": false,
+  "batch_file": "/root/GitHub-Mini-Kuzai/Mini-Kuzai/data/phase-03/train/train-batch-b04-v0.1.jsonl",
+  "batch_sha256": "76531cb5d8afc93ac59f06638ebc7a317869ff884d2aec3a8ec0b424295ee25b",
+  "record_count": 3,
+  "group_counts": {
+    "sg-b04-03": 3
+  },
+  "all_records_reviewed": false,
+  "manual_semantic_review_required": true,
+  "b04_train_complete": false,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "validation_errors": []
+}
