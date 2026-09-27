@@ -1,0 +1,190 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "manifest_version": "0.1",
+  "inventory_version": "0.3",
+  "source_inventory": "/root/GitHub-Mini-Kuzai/Mini-Kuzai/data/phase-03/schema/semantic-groups-v0.2.json",
+  "source_inventory_sha256": "7d3c8835c6c231f459f137a1ccf6ebe6ae1e79f6c838b2dff249e616f0c59f0d",
+  "assigned_inventory": "/root/GitHub-Mini-Kuzai/Mini-Kuzai/data/phase-03/schema/semantic-groups-v0.3.json",
+  "assigned_inventory_sha256": "9c23d0762e515c8cd54a6ae62208f26ef36540b2d93f9395a0fd90124265da9d",
+  "created_utc": "2026-09-27T13:41:42.300187+00:00",
+  "split_counts": {
+    "train": 29,
+    "validation": 18,
+    "blind_test": 18
+  },
+  "splits": {
+    "train": [
+      "sg-b01-01",
+      "sg-b01-02",
+      "sg-b02-01",
+      "sg-b02-02",
+      "sg-b03-01",
+      "sg-b03-02",
+      "sg-b04-03",
+      "sg-b05-01",
+      "sg-b05-02",
+      "sg-b06-01",
+      "sg-b06-02",
+      "sg-b07-01",
+      "sg-b08-01",
+      "sg-b08-02",
+      "sg-b09-01",
+      "sg-b10-01",
+      "sg-b10-02",
+      "sg-b11-01",
+      "sg-b11-02",
+      "sg-b12-01",
+      "sg-b12-02",
+      "sg-b13-01",
+      "sg-b14-01",
+      "sg-b15-01",
+      "sg-b16-01",
+      "sg-b16-02",
+      "sg-b17-01",
+      "sg-b18-01",
+      "sg-b18-02"
+    ],
+    "validation": [
+      "sg-b01-03",
+      "sg-b02-03",
+      "sg-b03-03",
+      "sg-b04-02",
+      "sg-b05-03",
+      "sg-b06-03",
+      "sg-b07-02",
+      "sg-b08-03",
+      "sg-b09-02",
+      "sg-b10-03",
+      "sg-b11-03",
+      "sg-b12-03",
+      "sg-b13-02",
+      "sg-b14-02",
+      "sg-b15-02",
+      "sg-b16-03",
+      "sg-b17-02",
+      "sg-b18-03"
+    ],
+    "blind_test": [
+      "sg-b01-04",
+      "sg-b02-04",
+      "sg-b03-04",
+      "sg-b04-01",
+      "sg-b05-04",
+      "sg-b06-04",
+      "sg-b07-03",
+      "sg-b08-04",
+      "sg-b09-03",
+      "sg-b10-04",
+      "sg-b11-04",
+      "sg-b12-04",
+      "sg-b13-03",
+      "sg-b14-03",
+      "sg-b15-03",
+      "sg-b16-04",
+      "sg-b17-03",
+      "sg-b18-04"
+    ]
+  },
+  "behavior_split_counts": {
+    "B01": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B02": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B03": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B04": {
+      "train": 1,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B05": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B06": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B07": {
+      "train": 1,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B08": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B09": {
+      "train": 1,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B10": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B11": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B12": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B13": {
+      "train": 1,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B14": {
+      "train": 1,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B15": {
+      "train": 1,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B16": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B17": {
+      "train": 1,
+      "validation": 1,
+      "blind_test": 1
+    },
+    "B18": {
+      "train": 2,
+      "validation": 1,
+      "blind_test": 1
+    }
+  },
+  "constraints": {
+    "group_level_separation": true,
+    "all_behaviors_in_validation": true,
+    "all_behaviors_in_blind_test": true,
+    "k7_hidden_in_train": false,
+    "model_visible_content_created": false,
+    "blind_test_text_created": false
+  },
+  "status": "VALIDATED"
+}
