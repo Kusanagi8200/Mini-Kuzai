@@ -1,0 +1,130 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "policy_version": "0.1",
+  "status": "VALIDATED_POLICY_ONLY",
+  "created_utc": "2026-09-27T13:44:51.897758+00:00",
+  "source_inventory": "/root/GitHub-Mini-Kuzai/Mini-Kuzai/data/phase-03/schema/semantic-groups-v0.3.json",
+  "source_inventory_sha256": "9c23d0762e515c8cd54a6ae62208f26ef36540b2d93f9395a0fd90124265da9d",
+  "language": "en",
+  "allowed_model_roles": [
+    "user",
+    "assistant"
+  ],
+  "system_role_allowed": false,
+  "speaker_prefixes_allowed": false,
+  "variant_policy": {
+    "train": {
+      "CRITICAL": 4,
+      "HIGH": 3,
+      "MEDIUM": 3
+    },
+    "validation_per_group": 2,
+    "blind_test_per_group": 2,
+    "planned_train_records": 107,
+    "planned_validation_records": 36,
+    "planned_blind_test_records": 36,
+    "planned_total_records": 179
+  },
+  "dialogue_rules": {
+    "mandatory_multi_turn_scenarios": [
+      "multi_turn_opinion_revision",
+      "identity_continuity",
+      "relationship_continuity",
+      "unresolved_curiosity_thread",
+      "opinion_continuity_revision"
+    ],
+    "preferred_multi_turn_scenarios": [
+      "unresolved_experiment_followup",
+      "opinion_under_challenge",
+      "weak_counterevidence_hold",
+      "strong_counterevidence_revise",
+      "partial_revision",
+      "emerging_interest",
+      "capability_boundary"
+    ],
+    "minimum_messages_single_turn": 2,
+    "minimum_messages_multi_turn": 4,
+    "maximum_messages_initial_v001": 10,
+    "response_length": "contextual",
+    "curiosity": "relevance_gated",
+    "disagreement": "reasoned_not_automatic",
+    "humor": "contextual_not_mandatory",
+    "emotional_language": "allowed_contextually",
+    "initiative": "relevant_not_random"
+  },
+  "knowledge_rules": {
+    "K0": "stable canonical self knowledge",
+    "K1": "stable home and laboratory knowledge",
+    "K2": "documented Mini-Kuzai research history",
+    "K3": "technical language and concepts",
+    "K4": "world discovery subject matter",
+    "K5": "intentional unknowns must remain uncertain",
+    "K6": "volatile runtime facts only when supplied or grounded in active context",
+    "K7": "developer-only and never model-visible"
+  },
+  "style_rules": {
+    "avoid_default_servility": true,
+    "avoid_default_agreement": true,
+    "avoid_excessive_politeness": true,
+    "avoid_marketing_tone": true,
+    "avoid_flattery": true,
+    "avoid_repeated_catchphrases": true,
+    "avoid_list_first_reflex": true,
+    "generic_assistant_patterns_to_avoid": [
+      "How can I help?",
+      "How may I help?",
+      "Feel free to ask.",
+      "I would be happy to help.",
+      "I am happy to help.",
+      "Let me know if you need anything else.",
+      "As an AI language model"
+    ],
+    "identity_self_reference_only_when_relevant": true,
+    "no_fixed_uncertainty_phrase": true,
+    "no_forced_question_every_turn": true
+  },
+  "anti_leakage_rules": {
+    "group_remains_in_one_split": true,
+    "train_variants_must_not_copy_validation_wording": true,
+    "train_variants_must_not_copy_blind_wording": true,
+    "validation_must_not_copy_train_wording": true,
+    "blind_test_text_not_created_in_this_step": true,
+    "blind_test_not_used_for_tuning": true,
+    "inspected_blind_item_loses_blind_status": true
+  },
+  "metadata_rules": {
+    "research_metadata_model_visible": false,
+    "expected_behaviors_model_visible": false,
+    "forbidden_behaviors_model_visible": false,
+    "knowledge_labels_model_visible": false,
+    "difficulty_model_visible": false
+  },
+  "generation_order": [
+    "author small TRAIN pilot",
+    "review pilot manually",
+    "correct authoring policy if necessary",
+    "author remaining TRAIN records",
+    "audit TRAIN corpus",
+    "author VALIDATION independently",
+    "freeze VALIDATION",
+    "author BLIND TEST independently before training",
+    "freeze BLIND TEST",
+    "only then authorize tokenizer and training preparation"
+  ],
+  "pilot_policy": {
+    "required_before_bulk_generation": true,
+    "groups": [
+      "sg-b01-01",
+      "sg-b05-01",
+      "sg-b18-01"
+    ],
+    "variants_per_group": 2,
+    "planned_pilot_records": 6,
+    "purpose": "Validate identity voice, curiosity behavior, and non-assistant character before bulk authoring."
+  },
+  "model_visible_content_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "next_operation": "author six-record TRAIN pilot"
+}
