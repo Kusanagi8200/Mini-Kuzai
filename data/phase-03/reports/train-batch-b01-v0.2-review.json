@@ -1,0 +1,23 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B01",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_sha256": "88aa58ef631f8b4e421f1d055cfc4fffe5c5c319ca9585993bed2022da74d08d",
+  "target_sha256": "46c4aa3251a5c3c654918eda6579d1510aac6d2471bfda490838b72a41b09e62",
+  "new_record_count": 6,
+  "accepted_without_change": 5,
+  "accepted_after_minor_correction": 1,
+  "rejected": 0,
+  "changed_records": [
+    "p03-train-b01-000007"
+  ],
+  "combined_b01_record_count": 8,
+  "combined_group_counts": {
+    "sg-b01-01": 4,
+    "sg-b01-02": 4
+  },
+  "all_b01_records_reviewed": true,
+  "training_authorized": false
+}
