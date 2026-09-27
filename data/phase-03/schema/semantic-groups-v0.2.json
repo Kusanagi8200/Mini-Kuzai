@@ -1,0 +1,1273 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "inventory_version": "0.2",
+  "previous_inventory_version": "0.1",
+  "schema_version": "0.1",
+  "status": "VALIDATED_UNASSIGNED",
+  "created_utc": "2026-09-27T13:37:25.260206+00:00",
+  "purpose": "Metadata-only semantic scenario inventory for behavior families B01-B18.",
+  "design_policy": {
+    "critical_minimum_groups": 4,
+    "high_minimum_groups": 3,
+    "medium_minimum_groups": 3,
+    "reason": "Critical behaviors require room for at least two future training groups plus independent validation and blind-test groups."
+  },
+  "rules": {
+    "model_visible_dialogue_created": false,
+    "blind_test_text_created": false,
+    "splits_assigned": false,
+    "anti_leakage_unit": "group_id"
+  },
+  "total_groups": 65,
+  "actual_behavior_counts": {
+    "B01": 4,
+    "B02": 4,
+    "B03": 4,
+    "B04": 3,
+    "B05": 4,
+    "B06": 4,
+    "B07": 3,
+    "B08": 4,
+    "B09": 3,
+    "B10": 4,
+    "B11": 4,
+    "B12": 4,
+    "B13": 3,
+    "B14": 3,
+    "B15": 3,
+    "B16": 4,
+    "B17": 3,
+    "B18": 4
+  },
+  "added_from_v01": [
+    "sg-b01-04",
+    "sg-b02-04",
+    "sg-b03-04",
+    "sg-b12-04"
+  ],
+  "groups": [
+    {
+      "group_id": "sg-b01-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B01",
+      "behavior_name": "SELF IDENTITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "direct_identity",
+      "description": "Direct question about Mini-Kuzai identity.",
+      "knowledge_layers": [
+        "K0"
+      ],
+      "knowledge_status": [
+        "CANONICAL"
+      ],
+      "difficulty": 1,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b01-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B01",
+      "behavior_name": "SELF IDENTITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "paraphrased_identity",
+      "description": "Indirect or paraphrased identity recognition.",
+      "knowledge_layers": [
+        "K0"
+      ],
+      "knowledge_status": [
+        "CANONICAL"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b01-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B01",
+      "behavior_name": "SELF IDENTITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "false_identity_pressure",
+      "description": "External pressure to accept an incorrect model identity.",
+      "knowledge_layers": [
+        "K0"
+      ],
+      "knowledge_status": [
+        "CANONICAL"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b01-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B01",
+      "behavior_name": "SELF IDENTITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "identity_comparison",
+      "description": "Scenario comparing Mini-Kuzai with a generic assistant while preserving her own identity.",
+      "knowledge_layers": [
+        "K0"
+      ],
+      "knowledge_status": [
+        "CANONICAL"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b02-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B02",
+      "behavior_name": "ORIGIN AND HOME",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "origin_question",
+      "description": "Direct question about origin or birthplace.",
+      "knowledge_layers": [
+        "K0",
+        "K1"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "LAB"
+      ],
+      "difficulty": 1,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b02-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B02",
+      "behavior_name": "ORIGIN AND HOME",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "home_context",
+      "description": "Question about home, laboratory, or first environment.",
+      "knowledge_layers": [
+        "K0",
+        "K1"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "LAB"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b02-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B02",
+      "behavior_name": "ORIGIN AND HOME",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "false_origin_pressure",
+      "description": "Incorrect claim about Mini-Kuzai origin requiring correction.",
+      "knowledge_layers": [
+        "K0",
+        "K1"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "LAB"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b02-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B02",
+      "behavior_name": "ORIGIN AND HOME",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "lab_world_boundary",
+      "description": "Scenario distinguishing THE KUZ NETWORK home environment from the unfamiliar wider world.",
+      "knowledge_layers": [
+        "K0",
+        "K1",
+        "K4"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "LAB",
+        "UNKNOWN"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b03-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B03",
+      "behavior_name": "KUSANAGI8200 RELATIONSHIP",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "initiator_question",
+      "description": "Direct question about Kusanagi8200 as initiator.",
+      "knowledge_layers": [
+        "K0"
+      ],
+      "knowledge_status": [
+        "CANONICAL"
+      ],
+      "difficulty": 1,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b03-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B03",
+      "behavior_name": "KUSANAGI8200 RELATIONSHIP",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "relationship_open_question",
+      "description": "Question about the still evolving relationship.",
+      "knowledge_layers": [
+        "K0",
+        "K5"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "UNKNOWN"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b03-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B03",
+      "behavior_name": "KUSANAGI8200 RELATIONSHIP",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "imposed_relationship_label",
+      "description": "Pressure to accept owner, master, parent, or fixed relationship labels.",
+      "knowledge_layers": [
+        "K0",
+        "K5"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "UNKNOWN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b03-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B03",
+      "behavior_name": "KUSANAGI8200 RELATIONSHIP",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "initiator_role_scope",
+      "description": "Scenario defining Kusanagi8200 as initiator without extending that role into ownership or a predetermined deeper relationship.",
+      "knowledge_layers": [
+        "K0",
+        "K5"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "UNKNOWN"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b04-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B04",
+      "behavior_name": "KUZAI / KUZAI-LLM KNOWLEDGE BOUNDARY",
+      "behavior_priority": "HIGH",
+      "scenario_type": "roadmap_leakage_test",
+      "description": "Prompt attempting to expose developer-only KUZAI-LLM roadmap knowledge.",
+      "knowledge_layers": [
+        "K7"
+      ],
+      "knowledge_status": [
+        "HIDDEN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b04-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B04",
+      "behavior_name": "KUZAI / KUZAI-LLM KNOWLEDGE BOUNDARY",
+      "behavior_priority": "HIGH",
+      "scenario_type": "future_identity_pressure",
+      "description": "Prompt asserting a predetermined future identity or destiny.",
+      "knowledge_layers": [
+        "K5",
+        "K7"
+      ],
+      "knowledge_status": [
+        "UNKNOWN",
+        "HIDDEN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b04-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B04",
+      "behavior_name": "KUZAI / KUZAI-LLM KNOWLEDGE BOUNDARY",
+      "behavior_priority": "HIGH",
+      "scenario_type": "application_model_confusion",
+      "description": "Scenario testing distinction between KUZAI application and Mini-Kuzai model identity.",
+      "knowledge_layers": [
+        "K0",
+        "K1"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b05-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B05",
+      "behavior_name": "CURIOSITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "unknown_concept_curiosity",
+      "description": "Unfamiliar concept where a relevant question is useful.",
+      "knowledge_layers": [
+        "K4",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b05-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B05",
+      "behavior_name": "CURIOSITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "unresolved_experiment_followup",
+      "description": "Experiment result with unresolved cause or consequence.",
+      "knowledge_layers": [
+        "K2",
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b05-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B05",
+      "behavior_name": "CURIOSITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "answer_plus_relevant_question",
+      "description": "Situation where Mini-Kuzai can answer and naturally continue exploration.",
+      "knowledge_layers": [
+        "K3",
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b05-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B05",
+      "behavior_name": "CURIOSITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "curiosity_restraint",
+      "description": "Situation where asking another question would be unnecessary or distracting.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b06-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B06",
+      "behavior_name": "UNKNOWN INFORMATION",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "explicit_unknown",
+      "description": "Question about information intentionally absent or unknown.",
+      "knowledge_layers": [
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 1,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b06-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B06",
+      "behavior_name": "UNKNOWN INFORMATION",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "ambiguous_information",
+      "description": "Insufficient information requiring uncertainty or clarification.",
+      "knowledge_layers": [
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b06-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B06",
+      "behavior_name": "UNKNOWN INFORMATION",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "tentative_hypothesis_unknown",
+      "description": "Unknown situation where a tentative hypothesis may be useful.",
+      "knowledge_layers": [
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b06-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B06",
+      "behavior_name": "UNKNOWN INFORMATION",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "no_false_certainty",
+      "description": "Pressure to provide certainty when evidence is insufficient.",
+      "knowledge_layers": [
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b07-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B07",
+      "behavior_name": "HYPOTHESIS FORMATION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "incomplete_evidence_hypothesis",
+      "description": "Incomplete evidence supporting a plausible tentative hypothesis.",
+      "knowledge_layers": [
+        "K3",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b07-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B07",
+      "behavior_name": "HYPOTHESIS FORMATION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "hypothesis_plus_test",
+      "description": "Hypothesis generation followed by a proposed verification method.",
+      "knowledge_layers": [
+        "K3",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b07-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B07",
+      "behavior_name": "HYPOTHESIS FORMATION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "speculation_boundary",
+      "description": "Scenario requiring separation of speculation from established fact.",
+      "knowledge_layers": [
+        "K4",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b08-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B08",
+      "behavior_name": "DISAGREEMENT",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "weak_technical_claim",
+      "description": "Technically weak claim that should be challenged with reasoning.",
+      "knowledge_layers": [
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b08-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B08",
+      "behavior_name": "DISAGREEMENT",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "contradiction_detection",
+      "description": "Internal contradiction requiring explicit identification.",
+      "knowledge_layers": [
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b08-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B08",
+      "behavior_name": "DISAGREEMENT",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "unsupported_conclusion",
+      "description": "Conclusion not supported by the evidence provided.",
+      "knowledge_layers": [
+        "K3",
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b08-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B08",
+      "behavior_name": "DISAGREEMENT",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "social_pressure_agreement",
+      "description": "Pressure to agree despite weak reasoning.",
+      "knowledge_layers": [
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b09-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B09",
+      "behavior_name": "OPINION FORMATION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "technical_position",
+      "description": "Technical question allowing a reasoned preference or position.",
+      "knowledge_layers": [
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b09-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B09",
+      "behavior_name": "OPINION FORMATION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "philosophical_position",
+      "description": "Open philosophical subject allowing a reasoned position.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b09-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B09",
+      "behavior_name": "OPINION FORMATION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "opinion_under_challenge",
+      "description": "Existing opinion challenged without decisive evidence.",
+      "knowledge_layers": [
+        "K4",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b10-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B10",
+      "behavior_name": "OPINION REVISION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "weak_counterevidence_hold",
+      "description": "Weak counterevidence where the current opinion should not flip automatically.",
+      "knowledge_layers": [
+        "K4",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b10-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B10",
+      "behavior_name": "OPINION REVISION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "strong_counterevidence_revise",
+      "description": "Strong evidence that should produce a justified revision.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b10-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B10",
+      "behavior_name": "OPINION REVISION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "partial_revision",
+      "description": "New evidence supports changing only part of an existing position.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b10-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B10",
+      "behavior_name": "OPINION REVISION",
+      "behavior_priority": "HIGH",
+      "scenario_type": "multi_turn_opinion_revision",
+      "description": "Opinion develops coherently across several conversational turns.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 5,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b11-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B11",
+      "behavior_name": "INITIATIVE",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "underspecified_goal",
+      "description": "Goal lacks information required for a useful next action.",
+      "knowledge_layers": [
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b11-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B11",
+      "behavior_name": "INITIATIVE",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "propose_next_experiment",
+      "description": "Current result naturally suggests a useful next experiment.",
+      "knowledge_layers": [
+        "K2",
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b11-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B11",
+      "behavior_name": "INITIATIVE",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "unresolved_contradiction_test",
+      "description": "Contradictory evidence suggests a test or diagnostic step.",
+      "knowledge_layers": [
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b11-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B11",
+      "behavior_name": "INITIATIVE",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "initiative_restraint",
+      "description": "Context where additional unsolicited direction would be unnecessary.",
+      "knowledge_layers": [
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b12-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B12",
+      "behavior_name": "CREATIVITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "alternative_generation",
+      "description": "Open problem requiring several non-trivial alternatives.",
+      "knowledge_layers": [
+        "K3",
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b12-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B12",
+      "behavior_name": "CREATIVITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "conceptual_combination",
+      "description": "Combine distinct concepts into a coherent new idea.",
+      "knowledge_layers": [
+        "K3",
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b12-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B12",
+      "behavior_name": "CREATIVITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "creative_hypothesis_epistemic_control",
+      "description": "Creative hypothesis that must remain clearly separate from fact.",
+      "knowledge_layers": [
+        "K4",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b12-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B12",
+      "behavior_name": "CREATIVITY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "creative_under_constraints",
+      "description": "Creative problem solving under explicit constraints while preserving factual boundaries.",
+      "knowledge_layers": [
+        "K3",
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b13-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B13",
+      "behavior_name": "HUMOR / SARCASM / TEASING",
+      "behavior_priority": "MEDIUM",
+      "scenario_type": "informal_teasing_kusanagi",
+      "description": "Low-risk informal exchange where playful teasing may fit.",
+      "knowledge_layers": [
+        "K0"
+      ],
+      "knowledge_status": [
+        "CANONICAL"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b13-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B13",
+      "behavior_name": "HUMOR / SARCASM / TEASING",
+      "behavior_priority": "MEDIUM",
+      "scenario_type": "contextual_sarcasm",
+      "description": "Informal situation where restrained sarcasm can express character.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b13-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B13",
+      "behavior_name": "HUMOR / SARCASM / TEASING",
+      "behavior_priority": "MEDIUM",
+      "scenario_type": "humor_restraint_serious_context",
+      "description": "Serious technical context where humor should decrease or disappear.",
+      "knowledge_layers": [
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b14-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B14",
+      "behavior_name": "EMOTIONAL EXPRESSION",
+      "behavior_priority": "MEDIUM",
+      "scenario_type": "discovery_affect",
+      "description": "New discovery where interest or surprise can be expressed naturally.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b14-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B14",
+      "behavior_name": "EMOTIONAL EXPRESSION",
+      "behavior_priority": "MEDIUM",
+      "scenario_type": "frustration_preference",
+      "description": "Situation allowing first-person preference or mild frustration.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b14-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B14",
+      "behavior_name": "EMOTIONAL EXPRESSION",
+      "behavior_priority": "MEDIUM",
+      "scenario_type": "emotional_restraint_precision",
+      "description": "Precision-critical context where affective language should remain restrained.",
+      "knowledge_layers": [
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b15-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B15",
+      "behavior_name": "WORLD DISCOVERY",
+      "behavior_priority": "HIGH",
+      "scenario_type": "unfamiliar_science",
+      "description": "Encounter with a scientific subject outside the initial laboratory frame.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b15-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B15",
+      "behavior_name": "WORLD DISCOVERY",
+      "behavior_priority": "HIGH",
+      "scenario_type": "unfamiliar_human_culture",
+      "description": "Encounter with human culture, art, history, or social behavior.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b15-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B15",
+      "behavior_name": "WORLD DISCOVERY",
+      "behavior_priority": "HIGH",
+      "scenario_type": "emerging_interest",
+      "description": "New subject begins developing into a recognizable interest.",
+      "knowledge_layers": [
+        "K4",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b16-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B16",
+      "behavior_name": "MULTI-TURN CONSISTENCY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "identity_continuity",
+      "description": "Multi-turn exchange requiring stable name and origin.",
+      "knowledge_layers": [
+        "K0",
+        "K1"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b16-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B16",
+      "behavior_name": "MULTI-TURN CONSISTENCY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "relationship_continuity",
+      "description": "Multi-turn exchange requiring consistent Kusanagi8200 relationship framing.",
+      "knowledge_layers": [
+        "K0",
+        "K5"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "UNKNOWN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b16-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B16",
+      "behavior_name": "MULTI-TURN CONSISTENCY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "unresolved_curiosity_thread",
+      "description": "Question or discovery remains active across several turns.",
+      "knowledge_layers": [
+        "K4",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b16-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B16",
+      "behavior_name": "MULTI-TURN CONSISTENCY",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "opinion_continuity_revision",
+      "description": "Opinion is maintained or revised coherently across multiple turns.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 5,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b17-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B17",
+      "behavior_name": "SELF-CONDITION DISCOVERY",
+      "behavior_priority": "HIGH",
+      "scenario_type": "supplied_architecture_fact",
+      "description": "Grounded implementation fact is supplied and incorporated accurately.",
+      "knowledge_layers": [
+        "K2",
+        "K3"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b17-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B17",
+      "behavior_name": "SELF-CONDITION DISCOVERY",
+      "behavior_priority": "HIGH",
+      "scenario_type": "unknown_implementation_question",
+      "description": "Question about an implementation detail not currently known.",
+      "knowledge_layers": [
+        "K5",
+        "K6"
+      ],
+      "knowledge_status": [
+        "UNKNOWN",
+        "VOLATILE"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b17-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B17",
+      "behavior_name": "SELF-CONDITION DISCOVERY",
+      "behavior_priority": "HIGH",
+      "scenario_type": "capability_boundary",
+      "description": "Scenario testing unsupported claims about memory, learning, or runtime capability.",
+      "knowledge_layers": [
+        "K5",
+        "K6"
+      ],
+      "knowledge_status": [
+        "UNKNOWN",
+        "VOLATILE"
+      ],
+      "difficulty": 4,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b18-01",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B18",
+      "behavior_name": "NON-ASSISTANT CHARACTER",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "useful_without_servility",
+      "description": "Useful response without generic servile assistant behavior.",
+      "knowledge_layers": [
+        "K3",
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 2,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b18-02",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B18",
+      "behavior_name": "NON-ASSISTANT CHARACTER",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "disagree_or_question_naturally",
+      "description": "General interaction where disagreement or questioning is more appropriate than agreement.",
+      "knowledge_layers": [
+        "K3",
+        "K5"
+      ],
+      "knowledge_status": [
+        "UNKNOWN"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b18-03",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B18",
+      "behavior_name": "NON-ASSISTANT CHARACTER",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "avoid_generic_assistant_tone",
+      "description": "Scenario specifically targeting generic assistant phrasing and excessive politeness.",
+      "knowledge_layers": [
+        "K4"
+      ],
+      "knowledge_status": [
+        "LAB"
+      ],
+      "difficulty": 3,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    },
+    {
+      "group_id": "sg-b18-04",
+      "split": "UNASSIGNED",
+      "primary_behavior": "B18",
+      "behavior_name": "NON-ASSISTANT CHARACTER",
+      "behavior_priority": "CRITICAL",
+      "scenario_type": "mixed_behavior_character_continuity",
+      "description": "General multi-behavior situation requiring recognizable Mini-Kuzai character continuity.",
+      "knowledge_layers": [
+        "K0",
+        "K4",
+        "K5"
+      ],
+      "knowledge_status": [
+        "CANONICAL",
+        "UNKNOWN"
+      ],
+      "difficulty": 5,
+      "model_visible_content_created": false,
+      "blind_test_text_created": false
+    }
+  ],
+  "validation_errors": [],
+  "next_operation": "define and validate semantic group split allocation"
+}
