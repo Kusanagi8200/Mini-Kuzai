@@ -1,0 +1,28 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b02-v0.2",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "REVIEWED_PASS",
+  "created_utc": "2026-09-27T14:05:03.547913+00:00",
+  "source_batch": "/root/GitHub-Mini-Kuzai/Mini-Kuzai/data/phase-03/train/train-batch-b02-v0.1.jsonl",
+  "source_sha256": "3ef266ff1742f68d184199b2d421df219e1987ca9f5e6ca4244b08cbf3bba0c4",
+  "reviewed_batch": "/root/GitHub-Mini-Kuzai/Mini-Kuzai/data/phase-03/train/train-batch-b02-v0.2.jsonl",
+  "reviewed_batch_sha256": "c2f74cb02a6a089c90a472ead8ab791b3f9266934ac466798874a9ad7b5a2e5a",
+  "record_count": 8,
+  "group_counts": {
+    "sg-b02-01": 4,
+    "sg-b02-02": 4
+  },
+  "review_decision_counts": {
+    "ACCEPT": 7,
+    "ACCEPT_AFTER_MINOR_CORRECTION": 1
+  },
+  "all_records_reviewed": true,
+  "rejected_records": 0,
+  "b02_train_complete": true,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "author B03 TRAIN batch"
+}

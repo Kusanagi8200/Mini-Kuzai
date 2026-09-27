@@ -1,10 +1,11 @@
 {
   "project": "MINI-KUZAI",
   "phase": "03",
-  "step_id": "PHASE03-TRAIN-B02-BATCH-V02-REVIEW-001",
-  "status": "PASS",
   "behavior": "B02",
   "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_sha256": "3ef266ff1742f68d184199b2d421df219e1987ca9f5e6ca4244b08cbf3bba0c4",
+  "target_sha256": "c2f74cb02a6a089c90a472ead8ab791b3f9266934ac466798874a9ad7b5a2e5a",
   "record_count": 8,
   "accepted_without_change": 7,
   "accepted_after_minor_correction": 1,
@@ -12,11 +13,10 @@
   "changed_records": [
     "p03-train-b02-000008"
   ],
+  "group_counts": {
+    "sg-b02-01": 4,
+    "sg-b02-02": 4
+  },
   "all_b02_records_reviewed": true,
-  "b02_train_complete": true,
-  "validation_text_created": false,
-  "blind_test_text_created": false,
-  "training_authorized": false,
-  "validation_errors": [],
-  "next_operation": "author B03 TRAIN batch"
+  "training_authorized": false
 }
