@@ -1,0 +1,31 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "pilot-v0.1",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "STRUCTURALLY_VALID_UNREVIEWED",
+  "created_utc": "2026-09-27T13:48:32.645285+00:00",
+  "source_inventory_version": "0.3",
+  "authoring_policy_version": "0.1",
+  "pilot_file": "/root/GitHub-Mini-Kuzai/Mini-Kuzai/data/phase-03/train/train-pilot-v0.1.jsonl",
+  "pilot_sha256": "cac19259beee0de0ea63ee46d9c0e403b1b130ce44680423c3f141603c017c38",
+  "record_count": 6,
+  "message_count": 12,
+  "group_counts": {
+    "sg-b01-01": 2,
+    "sg-b05-01": 2,
+    "sg-b18-01": 2
+  },
+  "behavior_counts": {
+    "B01": 2,
+    "B05": 2,
+    "B18": 2
+  },
+  "assistant_word_count_min": 32,
+  "assistant_word_count_max": 47,
+  "all_records_reviewed": false,
+  "manual_review_required": true,
+  "validation_errors": [],
+  "training_authorized": false
+}
