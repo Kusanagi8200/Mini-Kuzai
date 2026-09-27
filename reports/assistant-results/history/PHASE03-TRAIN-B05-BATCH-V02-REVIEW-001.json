@@ -1,0 +1,22 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "step_id": "PHASE03-TRAIN-B05-BATCH-V02-REVIEW-001",
+  "status": "PASS",
+  "behavior": "B05",
+  "batch_version": "0.2",
+  "new_record_count": 6,
+  "combined_b05_record_count": 8,
+  "accepted_without_change": 6,
+  "accepted_after_correction": 0,
+  "rejected": 0,
+  "all_b05_records_reviewed": true,
+  "b05_train_complete": true,
+  "semantic_guard_review": "PASS",
+  "semantic_leakage_remaining": false,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "pause checkpoint"
+}

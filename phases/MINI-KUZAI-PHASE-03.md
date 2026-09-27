@@ -127,6 +127,8 @@ phases/MINI-KUZAI-PHASE-03-KNOWLEDGE-MAP.md
 phases/MINI-KUZAI-PHASE-03-DATASET-SCHEMA.md
 phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-ASSESSMENT.md
 phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md
+phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md
+phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md
 ```
 
 The questionnaire records the intended character choices.
@@ -246,38 +248,64 @@ Phase 03 must preserve several lessons learned during Phase 01:
 ## Current status
 
 ```text
-PHASE 03                  : PAUSED
+PHASE 03                  : PAUSED - 2026-09-27
 Primary axis              : TRAINING AND PERSONALIZATION
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Personality questionnaire : ANSWERED
 Identity specification    : V0.2 CANDIDATE
 Behavior matrix           : V0.1 CANDIDATE
 Knowledge map             : V0.1 CANDIDATE
 Dataset schema            : V0.1 CANDIDATE
-External dataset study    : COMPLETE FOR CURRENT CYCLE
+Semantic inventory        : V0.3 - 65 GROUPS
+TRAIN semantic groups     : 9 / 29 COMPLETE
+Custom TRAIN records      : 35 / 107 REVIEWED
+Authoring policy          : V0.2
+Semantic split guard      : ACTIVE
+VALIDATION records        : 0 / 36 CREATED
+BLIND TEST records        : 0 / 36 CREATED
 SmolTalk v0.4             : VALIDATED PRIMARY EXTERNAL RESERVOIR
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
-Semantic group inventory  : NEXT
-Training corpus           : NOT CREATED
 Tokenizer                 : NOT SELECTED YET
 New model architecture    : NOT SELECTED YET
 Training                  : NOT STARTED
+Training authorized       : NO
 ```
 
 ## Pause checkpoint
 
-Phase 03 was intentionally paused on 2026-09-05 after completion of the current external dataset assessment cycle.
+Phase 03 is intentionally paused on 2026-09-27 after manual review of the B05 TRAIN batch.
+
+B01 through B05 are complete and reviewed:
+
+```text
+B01 SELF IDENTITY                  : 8
+B02 ORIGIN AND HOME                : 8
+B03 KUSANAGI8200 RELATIONSHIP      : 8
+B04 KUZAI / Mini-Kuzai BOUNDARY    : 3
+B05 CURIOSITY                      : 8
+TOTAL REVIEWED CUSTOM TRAIN        : 35
+```
+
+The semantic inventory contains 65 groups allocated as 29 TRAIN, 18 VALIDATION, and 18 BLIND TEST groups.
+
+Authoring policy v0.2 and the semantic split exclusion map are active. They were introduced after B03 review detected and corrected semantic overlap between TRAIN examples and reserved evaluation scenarios.
+
+No VALIDATION or BLIND TEST conversation text has been created.
 
 No training operation is authorized at this checkpoint.
 
 No tokenizer or Phase 03 architecture decision has been made.
 
+Full checkpoint documentation:
+
+```text
+phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md
+```
+
 The next operation when work resumes is:
 
 ```text
-SEMANTIC GROUP INVENTORY
-B01-B18
+AUTHOR B06 TRAIN BATCH
 ```
 
-This inventory should define controlled scenario families before any model-visible Mini-Kuzai training conversations are authored.
+B06 must be authored under conversation authoring policy v0.2 with the semantic split guard active.

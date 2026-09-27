@@ -1,0 +1,38 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b05-v0.2",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "REVIEWED_PASS",
+  "created_utc": "2026-09-27T14:26:00Z",
+  "source_batch": "data/phase-03/train/train-batch-b05-v0.1.jsonl",
+  "reviewed_batch": "data/phase-03/train/train-batch-b05-v0.2.jsonl",
+  "new_record_count": 6,
+  "pilot_b05_record_count": 2,
+  "combined_b05_record_count": 8,
+  "batch_group_counts": {
+    "sg-b05-01": 2,
+    "sg-b05-02": 4
+  },
+  "combined_b05_group_counts": {
+    "sg-b05-01": 4,
+    "sg-b05-02": 4
+  },
+  "multi_turn_new_records": 4,
+  "review_decision_counts": {
+    "ACCEPT": 6
+  },
+  "semantic_guard_applied": true,
+  "semantic_guard_review": "PASS",
+  "semantic_leakage_remaining": false,
+  "all_new_records_reviewed": true,
+  "all_b05_records_reviewed": true,
+  "rejected_records": 0,
+  "b05_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "pause checkpoint; resume with B06 TRAIN authoring"
+}

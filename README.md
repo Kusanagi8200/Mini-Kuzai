@@ -179,7 +179,11 @@ Phase 03 has already defined:
 - behavior matrix B01-B18;
 - knowledge map;
 - dataset schema and anti-leakage rules;
-- external dataset evaluation methodology.
+- external dataset evaluation methodology;
+- semantic group inventory v0.3 with 65 groups;
+- TRAIN / VALIDATION / BLIND TEST split allocation;
+- conversation authoring policy v0.2;
+- semantic split exclusion map and manual anti-leakage review.
 
 External dataset research has also been completed for the current cycle.
 
@@ -210,6 +214,8 @@ See:
 - [`phases/MINI-KUZAI-PHASE-03-KNOWLEDGE-MAP.md`](phases/MINI-KUZAI-PHASE-03-KNOWLEDGE-MAP.md)
 - [`phases/MINI-KUZAI-PHASE-03-DATASET-SCHEMA.md`](phases/MINI-KUZAI-PHASE-03-DATASET-SCHEMA.md)
 - [`phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md`](phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md)
+- [`phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md`](phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md)
+- [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md)
 
 ---
 
@@ -254,20 +260,30 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : PAUSED
+Phase 03                  : PAUSED - 2026-09-27
 External dataset study    : COMPLETE FOR CURRENT CYCLE
 SmolTalk v0.4             : VALIDATED PRIMARY EXTERNAL RESERVOIR
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
-Semantic group inventory  : NEXT
-Custom training corpus    : NOT CREATED
+Semantic inventory        : V0.3 - 65 GROUPS
+TRAIN semantic groups     : 9 / 29 COMPLETE
+Custom TRAIN records      : 35 / 107 REVIEWED
+Authoring policy          : V0.2
+Semantic split guard      : ACTIVE
+VALIDATION records        : 0 / 36 CREATED
+BLIND TEST records        : 0 / 36 CREATED
 Tokenizer                 : NOT SELECTED YET
 Phase 03 architecture     : NOT SELECTED YET
 Phase 03 training         : NOT STARTED
+Training authorized       : NO
 ```
 
-Phase 03 was intentionally paused on 2026-09-05 after completion of the current external dataset assessment cycle.
+B01 through B05 TRAIN are complete and manually reviewed. The current custom TRAIN corpus contains 35 reviewed records, including multi-turn B05 experiment follow-ups.
 
-When development resumes, the next operation is the semantic group inventory based on behavior families B01-B18. The inventory will be defined before model-visible Mini-Kuzai training conversations are written.
+Phase 03 is intentionally paused after B05. No VALIDATION or BLIND TEST conversation text has been created, preserving the evaluation boundary.
+
+The next operation on resume is B06 UNKNOWN INFORMATION authoring under authoring policy v0.2 and the semantic split guard.
+
+See [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) for the detailed checkpoint and the work completed on 2026-09-27.
 
 ---
 

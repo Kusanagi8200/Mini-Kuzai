@@ -1,0 +1,27 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B05",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "record_count": 6,
+  "combined_b05_record_count": 8,
+  "combined_group_counts": {
+    "sg-b05-01": 4,
+    "sg-b05-02": 4
+  },
+  "accepted_without_change": 6,
+  "accepted_after_correction": 0,
+  "accepted_after_replacement": 0,
+  "rejected": 0,
+  "model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "reserved_validation_overlap": false,
+  "reserved_blind_test_overlap": false,
+  "all_new_records_reviewed": true,
+  "all_b05_records_reviewed": true,
+  "b05_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
