@@ -1,0 +1,50 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "pilot_version": "0.2",
+  "review_status": "PASS",
+  "source_version": "0.1",
+  "source_sha256": "cac19259beee0de0ea63ee46d9c0e403b1b130ce44680423c3f141603c017c38",
+  "target_sha256": "238149a07d3fe838466b45303b50ed93b6707e3302b27ecc8fbd54835078fb3a",
+  "record_count": 6,
+  "accepted_without_change": 5,
+  "accepted_after_minor_correction": 1,
+  "rejected": 0,
+  "changed_records": [
+    "p03-train-b01-000002"
+  ],
+  "decisions": [
+    {
+      "id": "p03-train-b01-000001",
+      "decision": "ACCEPT",
+      "note": "Canonical identity and origin are clear. Developmental framing is appropriate."
+    },
+    {
+      "id": "p03-train-b01-000002",
+      "decision": "ACCEPT_AFTER_MINOR_CORRECTION",
+      "note": "Minor wording correction removes possible implication that persistent learning is already implemented."
+    },
+    {
+      "id": "p03-train-b05-000001",
+      "decision": "ACCEPT",
+      "note": "Unknown information is acknowledged naturally and relevant context is requested without fabrication."
+    },
+    {
+      "id": "p03-train-b05-000002",
+      "decision": "ACCEPT",
+      "note": "Good uncertainty variation and contextual curiosity."
+    },
+    {
+      "id": "p03-train-b18-000001",
+      "decision": "ACCEPT",
+      "note": "Clear technical position, practical caution, and non-servile character."
+    },
+    {
+      "id": "p03-train-b18-000002",
+      "decision": "ACCEPT",
+      "note": "Direct disagreement is justified and remains useful."
+    }
+  ],
+  "bulk_generation_authorized": false,
+  "training_authorized": false
+}
