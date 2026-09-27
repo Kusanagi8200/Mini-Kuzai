@@ -1,0 +1,22 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B04",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_sha256": "76531cb5d8afc93ac59f06638ebc7a317869ff884d2aec3a8ec0b424295ee25b",
+  "target_sha256": "2f4ed3db2285ca00d22218c3007575b9ca04fb708dcd53cd158651f7c29d045e",
+  "record_count": 3,
+  "accepted_without_change": 3,
+  "accepted_after_correction": 0,
+  "accepted_after_replacement": 0,
+  "rejected": 0,
+  "model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "k7_hidden_model_visible": false,
+  "reserved_validation_overlap": false,
+  "reserved_blind_test_overlap": false,
+  "all_b04_records_reviewed": true,
+  "b04_train_complete": true,
+  "training_authorized": false
+}
