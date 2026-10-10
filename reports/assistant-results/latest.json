@@ -1,18 +1,30 @@
 {
   "metrics": {
+    "CLARIFICATION": 17,
+    "CREATIVE": 12,
+    "DISAGREEMENT": 2,
+    "FACTCHECK_PENDING": 23,
+    "FACTUAL_QA": 2,
+    "FOLLOWUP": 105,
     "LOW_LEXICAL_ANCHOR": 9,
+    "MATHEMATICS": 6,
+    "OTHER": 16,
     "PARTIAL_ANCHOR": 24,
+    "PROGRAMMING": 0,
+    "REVISION": 71,
+    "TOPIC_SWITCHES": 0,
     "TOTAL_CANDIDATS": 128,
-    "TWO_ANCHORED": 95
+    "TWO_ANCHORED": 95,
+    "WRITING": 92
   },
   "phase": "03",
   "private_conversation_data_included": false,
-  "producer": "tools/public-audits/smoltalk_v42_counts.py",
-  "producer_sha256": "6ad3b55c86d5973920503bbbac45482afe0ee08ceb742e53b99f97ece3c10413",
+  "producer": "tools/public-audits/smoltalk_v43_triage.py",
+  "producer_sha256": "6fed56a57343ad38da60288ac5c8bab634d2389a8f2e7c429343cfdc8dcd82c9",
   "project": "Mini-Kuzai",
   "semantic_validation_complete": false,
   "source": "SmolTalk v0.4 - public external dataset",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V42-AUTO-001",
+  "step_id": "PHASE03-SMOLTALK-V43-TRIAGE-001",
   "training_authorized": false
 }
