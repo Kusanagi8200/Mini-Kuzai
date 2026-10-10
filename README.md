@@ -211,6 +211,16 @@ OASST1 was fully downloaded, reconstructed, quality-audited, behaviorally compar
 
 The Mini-Kuzai-specific corpus will remain responsible for identity, curiosity, disagreement, initiative, creativity, opinion behavior, relationship continuity, and non-assistant character.
 
+### External SmolTalk curation and pause checkpoint (2026-10-10)
+
+The public SmolTalk v0.4 reservoir contains 8,000 candidate records, but is not an approved training dataset. V44 produced a provisional stratified selection of 1,139 conversations (679 multi-turn, 460 single-turn). A keyword-based creative category reached 69 of its 130 target records. V46 found broader creative signals and produced a 68-record **local review queue**; neither these signals nor the queue are validated training examples.
+
+The next step is V47: inspect the full conversations for actual continuity, coherent topic progression, useful corrections, factual reliability, semantic grouping, and possible conflicts with reserved evaluation scenarios. Until that review, the V44 pool is unchanged and final mixture ratios remain undecided.
+
+Public aggregate results are transmitted using the reviewed [gogit workflow](tools/GOGIT.md): the local script publishes only allowlisted numerical SmolTalk metrics to `reports/assistant-results/`, and the user then requests retrieval with `gogit`. This mechanism does not run in the background and must never be used for private conversation data or private-derived results.
+
+**Phase 03 work is paused after V46.** See the [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
+
 ### Private local corpus pipeline
 
 Phase 03 includes a local-only pipeline for evaluating private conversational corpora as possible future training material.
@@ -283,34 +293,32 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION ACTIVE
+Phase 03                  : DATA PREPARATION PAUSED AFTER V46
 Custom authoring track    : PAUSED AFTER B05
-External dataset study    : COMPLETE FOR CURRENT CYCLE
-SmolTalk v0.4             : VALIDATED PRIMARY EXTERNAL RESERVOIR
+External dataset study    : V46 REVIEW QUEUE CREATED - V47 PENDING
+SmolTalk v0.4             : VALIDATED EXTERNAL CANDIDATE RESERVOIR
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
-Private corpus pipeline   : LOCAL-ONLY CURATION ACTIVE
+Private corpus pipeline   : LOCAL-ONLY - PAUSED
 Private source material   : NOT COMMITTED
 Derived private metrics   : NOT COMMITTED
 Semantic inventory        : V0.3 - 65 GROUPS
 TRAIN semantic groups     : 9 / 29 COMPLETE
-Custom TRAIN records      : 35 / 107 REVIEWED
+Custom TRAIN exchanges    : 35 REVIEWED (31 JSONL RECORDS)
 Authoring policy          : V0.2
 Semantic split guard      : ACTIVE
 VALIDATION records        : 0 / 36 CREATED
 BLIND TEST records        : 0 / 36 CREATED
-Tokenizer                 : NOT SELECTED YET
+Tokenizer                 : FINAL VOCABULARY NOT FROZEN
 Phase 03 architecture     : NOT SELECTED YET
 Phase 03 training         : NOT STARTED
 Training authorized       : NO
 ```
 
-B01 through B05 TRAIN are complete and manually reviewed. The current custom TRAIN corpus contains 35 reviewed records, including multi-turn B05 experiment follow-ups.
+B01 through B05 custom TRAIN batches are preserved and reviewed (31 JSONL records containing 35 USER/ASSISTANT exchanges). Custom authoring remains paused after B05 and no VALIDATION or BLIND TEST conversation text has been created.
 
-The controlled custom authoring track remains paused after B05. No VALIDATION or BLIND TEST conversation text has been created, preserving the evaluation boundary.
+The external SmolTalk review is paused after V46, with the provisional V44 selection unchanged. The V46 local review queue has not yet been manually validated. Private-source curation remains exclusively local and is also paused. B06 UNKNOWN INFORMATION authoring is not resumed.
 
-Private corpus curation continues exclusively in the local workspace. The public repository records only the generic pipeline design and project-level decisions. B06 UNKNOWN INFORMATION authoring remains paused until that controlled custom-corpus track is deliberately resumed.
-
-See [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) for the B05 checkpoint and [`phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md`](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md) for the local-only corpus methodology.
+See the [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md), the [earlier B05 checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md), and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
 
 ---
 
