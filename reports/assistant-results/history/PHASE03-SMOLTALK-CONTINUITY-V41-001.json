@@ -1,0 +1,15 @@
+{
+  "step_id": "PHASE03-SMOLTALK-CONTINUITY-V41-001",
+  "project": "Mini-Kuzai",
+  "phase": "03",
+  "source": "SmolTalk v0.4 - public external dataset",
+  "total_records": 8000,
+  "smol_magpie_records": 5000,
+  "reference_turn_2": 400,
+  "reference_turn_3": 362,
+  "reference_both_turns": 128,
+  "status": "HEURISTIC_REVIEW_REQUIRED",
+  "training_authorized": false,
+  "private_conversation_data_included": false,
+  "next_operation": "Qualitative review of continuity candidates"
+}
