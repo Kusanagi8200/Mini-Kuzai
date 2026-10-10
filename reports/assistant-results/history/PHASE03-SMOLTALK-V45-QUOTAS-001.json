@@ -1,0 +1,31 @@
+{
+  "metrics": {
+    "CATEGORY_SHORTFALL_TOTAL": 61,
+    "CREATIVE_AVAILABLE": 69,
+    "CREATIVE_SELECTED": 69,
+    "CREATIVE_SHORTFALL": 61,
+    "MULTITURN": 679,
+    "SINGLE_TURN": 460,
+    "SOURCE_HERMES_SELECTED": 311,
+    "SOURCE_HERMES_SHORTFALL": 19,
+    "SOURCE_OSS_SELECTED": 100,
+    "SOURCE_OSS_SHORTFALL": 0,
+    "SOURCE_REWRITE_SELECTED": 50,
+    "SOURCE_REWRITE_SHORTFALL": 0,
+    "SOURCE_SHORTFALL_TOTAL": 61,
+    "SOURCE_SMOL_SELECTED": 678,
+    "SOURCE_SMOL_SHORTFALL": 42,
+    "TOTAL_CANDIDATS": 1139,
+    "TOTAL_SOURCE": 8000
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/smoltalk_v45_quota_diagnostic.py",
+  "producer_sha256": "d0bafbf0d24c85d646e5330b4d3318b8fcdae80dfcd0cd69940850a171c82ca1",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "SmolTalk v0.4 - public external dataset",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V45-QUOTAS-001",
+  "training_authorized": false
+}
