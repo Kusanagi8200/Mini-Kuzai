@@ -1,0 +1,1173 @@
+{
+  "step_id": "PHASE03-SMOLTALK-CONTINUITY-V42-001",
+  "project": "Mini-Kuzai",
+  "phase": "03",
+  "source": "SmolTalk v0.4 - public external dataset",
+  "total_records": 8000,
+  "source_records": 5000,
+  "heuristic_candidates": 128,
+  "lexical_distribution": {
+    "PARTIAL_ANCHOR": 24,
+    "TWO_ANCHORED": 95,
+    "LOW_LEXICAL_ANCHOR": 9
+  },
+  "candidate_metrics": [
+    {
+      "source_index": 3,
+      "source_content_sha256": "709121951deb20caa361c5097c9ed951433139efba36edae9308c308696b8bb5",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 11,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 32,
+      "source_content_sha256": "10e659cdc677ed6382f0ee94e5af7204a48deece08f1fd687b1471f2fff9db9f",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 50,
+      "source_content_sha256": "21ba0ffcf6e26b6cc8ce34c9c67f4c4cb1ed01adfe9eecbfb7f8813363d2b2ee",
+      "overlap_turn_2": 10,
+      "overlap_turn_3": 7,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 60,
+      "source_content_sha256": "90ebc660a0d58cab40bf3ee0b2697c0dc69017f83d160c3f0e4e38abf9932d91",
+      "overlap_turn_2": 44,
+      "overlap_turn_3": 8,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 116,
+      "source_content_sha256": "a097cf9c859360c2fc750d5813a8f6a5d2b3c8e61f85d06bc2660407df53a808",
+      "overlap_turn_2": 6,
+      "overlap_turn_3": 31,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 166,
+      "source_content_sha256": "1224143d415c9288da027630ae21e0e76512844b5c9a354256bdf3a8441e1819",
+      "overlap_turn_2": 11,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 232,
+      "source_content_sha256": "3494899b1ad05aadc0d0866dbb105fdd7dbd4b59d8e6d0851cfc35e863d3cc11",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 293,
+      "source_content_sha256": "6228cec576751cb695c77afb7c78792af4923bfd2de720d8efa9b3d461b9fb04",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 2,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 323,
+      "source_content_sha256": "411f37bca3f949969f640c07309ce421f34e7ee5e8c8a4d676b518804c33e32d",
+      "overlap_turn_2": 9,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 344,
+      "source_content_sha256": "696141930001e6828d5cc786c73f3f84212f1a74b9078e4f037451bd95deb434",
+      "overlap_turn_2": 21,
+      "overlap_turn_3": 59,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 458,
+      "source_content_sha256": "533969e6c55bce8756d3cab49a55f14b193b5ba0729b9c7e3a658ed7f00f9f82",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 0,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 465,
+      "source_content_sha256": "48d6df6262c664fbd09602ce2ea665bb81278c8dfe2e9ff4de265171cebfc010",
+      "overlap_turn_2": 5,
+      "overlap_turn_3": 7,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 468,
+      "source_content_sha256": "2b948f2ea8401db35afd84ad6b4630fd7537fbd890f9f28dcc467aaa9c26aebe",
+      "overlap_turn_2": 18,
+      "overlap_turn_3": 17,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 486,
+      "source_content_sha256": "4c3b22696368a854e89c943cf0ace382bdc59ec159d2b71d6624a73c62ec8432",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 1,
+      "heuristic_category": "LOW_LEXICAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 491,
+      "source_content_sha256": "d3782cfae56b0aa38919519ee79210abf2c170ef7356d3befd43571d65b306e0",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 532,
+      "source_content_sha256": "85f435fddb69d7c28907bcbdd0c9dab0c7e6f06c9bc26c43711d1657c3a216e8",
+      "overlap_turn_2": 18,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 578,
+      "source_content_sha256": "b34f74fb21e96d7e4286160cab3e3bd407f9805947e8848691fa8035cd625983",
+      "overlap_turn_2": 4,
+      "overlap_turn_3": 14,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 581,
+      "source_content_sha256": "9de62c999b02b0994f5850d8e011c19b9a3b13668e0567828b7d63c63ea6308d",
+      "overlap_turn_2": 4,
+      "overlap_turn_3": 5,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 683,
+      "source_content_sha256": "753e21f5a08c15ff68318adec6efdecb6af6780cc723770f681aa61213a40ee4",
+      "overlap_turn_2": 16,
+      "overlap_turn_3": 51,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 694,
+      "source_content_sha256": "0505590172d131754805eefd7725f6471b5d45b15914ec32a3f38949f8b88fd4",
+      "overlap_turn_2": 5,
+      "overlap_turn_3": 11,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 739,
+      "source_content_sha256": "223929cb4d1e5009a0c31e25f415988deb94017e816a089a3a4bdedfea84a5c6",
+      "overlap_turn_2": 6,
+      "overlap_turn_3": 6,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 831,
+      "source_content_sha256": "93f1b8ab2f1dc90aef6572e99580471518ab43c8f2ae0b7a0b8c860f790946b8",
+      "overlap_turn_2": 12,
+      "overlap_turn_3": 9,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 869,
+      "source_content_sha256": "0e335f6d5cc0568f0edc58b1f939b0e77b3070d188fcd153118ef080f826c9ee",
+      "overlap_turn_2": 16,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 994,
+      "source_content_sha256": "03bb257ff8ab316a1785965dbf2b61f639aee76bab739515b9fe773da8fc6e23",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 7,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1021,
+      "source_content_sha256": "5baff24b85d5f69824c079cf9473a11f61219e44fbae885f4fdb9bd5a08e1cc2",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 69,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1023,
+      "source_content_sha256": "3910883d17a5ff63784d3c3999aaba51a59decf323521c685ed77c5e2e5e4260",
+      "overlap_turn_2": 6,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1142,
+      "source_content_sha256": "9d0bc9c6e0c2fdebc79d3af36bdeb3fb5671acf7de9f9dca102ecd32ccae3798",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 9,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1172,
+      "source_content_sha256": "194ced26ae77d267bff5843bb3f65fa54ddbc68d01d4369fcd84f01c63d6dad7",
+      "overlap_turn_2": 4,
+      "overlap_turn_3": 11,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1197,
+      "source_content_sha256": "2350055abfbbace5fbb7c5dfa184778ff295e8c573f94736f9b1f2ba03d6cc45",
+      "overlap_turn_2": 11,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1239,
+      "source_content_sha256": "83eaa50a15044909a51793362cecccb0673fb39a9eaabb7831942af15c995eba",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1266,
+      "source_content_sha256": "e5fa50a53961e7ebc67756eeccb52e4fb2debcae42923339d616c097fd5d52a9",
+      "overlap_turn_2": 10,
+      "overlap_turn_3": 6,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1305,
+      "source_content_sha256": "8d1fa4491e9b2ca5a69c03a336cf93c14a8f22144c548fa76f332b7d10b80329",
+      "overlap_turn_2": 6,
+      "overlap_turn_3": 15,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1306,
+      "source_content_sha256": "706e0e592bffc117d82008e0b4325c53e9bc9a06582e809cf4dd742e3adfc379",
+      "overlap_turn_2": 25,
+      "overlap_turn_3": 24,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1463,
+      "source_content_sha256": "112ae86b368ee19acf8fbdc1fa34f8e1751f6ed7ff416424be77543cb8af82d4",
+      "overlap_turn_2": 12,
+      "overlap_turn_3": 10,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1465,
+      "source_content_sha256": "4fc2b5316f1d3d15f23afcd17cfa290c0da22ef0a89ecac3c0dd8d3e59f8657c",
+      "overlap_turn_2": 10,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1519,
+      "source_content_sha256": "eadd84f8d768615d0cf5a7f0f4beaca26ed86fa1814e09bc073f020be77ddd03",
+      "overlap_turn_2": 9,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1535,
+      "source_content_sha256": "67586159f2449696be2f1e6c3ca821d65f4ff12d6dde81475483b2f7e4cad5ee",
+      "overlap_turn_2": 18,
+      "overlap_turn_3": 9,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1571,
+      "source_content_sha256": "ffdac2ae97b1e998ee84e37251dc33a73f71ae1188d92cee3ceb621503cb9299",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1654,
+      "source_content_sha256": "35e5846aa7ac16f09f94fd673f8ae521ae123645694696956497ef7bc4dd87ac",
+      "overlap_turn_2": 5,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1657,
+      "source_content_sha256": "f677439a756855a47b2083528785170392a8a4c8655e6d0a098a8a48989dd9b6",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 3,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1678,
+      "source_content_sha256": "fdf74c4c92b6d462234814393375f53b28881010f13b0c19b521c01da25f22bd",
+      "overlap_turn_2": 6,
+      "overlap_turn_3": 6,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1790,
+      "source_content_sha256": "6faac45f10c321d3ef48c8295f1bd655351a095505887ee321cababad9c59d0f",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1839,
+      "source_content_sha256": "d014dd46ef8652d31cdd552455d0095390be8c153b12f49bd79f97e2d33bf95b",
+      "overlap_turn_2": 5,
+      "overlap_turn_3": 5,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1842,
+      "source_content_sha256": "94462dc00a998b3211085f236288c65bbcd9fcc34d1fd2439e48d1cc890a6cbf",
+      "overlap_turn_2": 21,
+      "overlap_turn_3": 21,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1900,
+      "source_content_sha256": "3cc457d42d93049743bb5a629b5b2e463989010b7ee76fe5cee407670cb21225",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1923,
+      "source_content_sha256": "a76f8f608525be17674c458779f64240eaed3fd8c3f52bd5b8b12332bd15d9cb",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 0,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1928,
+      "source_content_sha256": "30c78210173e3a4f51f5aa81b2a0925b98005da687e069238628f5ef228c8f2b",
+      "overlap_turn_2": 28,
+      "overlap_turn_3": 30,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1964,
+      "source_content_sha256": "fa2ef67e8a12b45971eb33360992003fa0c967ab3db688a2c22aec241f6601d3",
+      "overlap_turn_2": 13,
+      "overlap_turn_3": 5,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 1974,
+      "source_content_sha256": "9014d1da982f02da135ff1775248807dd3c1c0c8a58598bc8e8ce885e473721c",
+      "overlap_turn_2": 4,
+      "overlap_turn_3": 17,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2001,
+      "source_content_sha256": "ea880c71a3d7f9aa506c147ff272944ed9a6fb58f736fa37999688fe1611ccb7",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 6,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2011,
+      "source_content_sha256": "291f185c6bed929e54ceb34b29b148ec95f1a20de9ab1378f4ac9bbb1397adf6",
+      "overlap_turn_2": 4,
+      "overlap_turn_3": 16,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2109,
+      "source_content_sha256": "fb8bab8a938daae37563b6fa885ae99c9a09398db4e6c7c597269b6004516025",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 0,
+      "heuristic_category": "LOW_LEXICAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2124,
+      "source_content_sha256": "bdc1fbe21b83fe6d5b6996333c6ebad50db8f39040099ac877b2a2a08cf93a8b",
+      "overlap_turn_2": 7,
+      "overlap_turn_3": 15,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2126,
+      "source_content_sha256": "962dd8653bc5c24b8ff8c66a55473afc1bb2aea2842cd21253572b47a27099a7",
+      "overlap_turn_2": 13,
+      "overlap_turn_3": 25,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2255,
+      "source_content_sha256": "b53adbb8530f01653415f2173fa65361bb09c96481e77c860ee0c4cdd1e255db",
+      "overlap_turn_2": 7,
+      "overlap_turn_3": 11,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2258,
+      "source_content_sha256": "4d55f03618da494917e29a2533691de17ad05e802983c840733541948b440b65",
+      "overlap_turn_2": 11,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2303,
+      "source_content_sha256": "510ff30222efd3e6bf1ee6da38e3b607be4bdf2443a829b283575dc79c1b5513",
+      "overlap_turn_2": 26,
+      "overlap_turn_3": 23,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2306,
+      "source_content_sha256": "d2a01bb17c01aac4180a6f1bfd7cb88b662d72d9d53ebc3186fe67c27f589e96",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2414,
+      "source_content_sha256": "94134e7696e3512f7812906325300596851a62715470b894a9cfec978fb90286",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 20,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2472,
+      "source_content_sha256": "d9e9666424bfc4b773472ba4da6236bb17c64bad8314e36fc74c487a0cb46fb7",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2491,
+      "source_content_sha256": "59027bb600242853e67a155063f9682ffe7b137d775c77648130d4ff5e20d65f",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 0,
+      "heuristic_category": "LOW_LEXICAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2566,
+      "source_content_sha256": "b19344d1995cfb8d0a9c9c05d8ba0b883aa9207f52aff12c8d702dea7d51d123",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 11,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2583,
+      "source_content_sha256": "e4edd86be8af0936aec5883bd9e6b69c20bc559deb823d05ba1043e55a4e5000",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2646,
+      "source_content_sha256": "c1f2ded42fe82bd8d016fb63d9b98c486f342ad84b54596bbccdca7c32695fda",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 1,
+      "heuristic_category": "LOW_LEXICAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2697,
+      "source_content_sha256": "784570a1254164917e6a170c324fd7e77260d1b8e42e345ca0cc4f531934d450",
+      "overlap_turn_2": 20,
+      "overlap_turn_3": 33,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2724,
+      "source_content_sha256": "bb0742f16ceeb4bedc140ef26c1a86635ab41d71a8c246671a44ba16a56171b6",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 1,
+      "heuristic_category": "LOW_LEXICAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2781,
+      "source_content_sha256": "534b836bee5ee21338d0fcb893d66524b5db8506f44bc4ef3fdb541ec2efb91b",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2804,
+      "source_content_sha256": "1d0533de698c3ea6bdef963f7ef832af2dfe6623368ca3b1e6e95d1c22cde379",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2836,
+      "source_content_sha256": "6714548c3d84b582320fe86855a4877dd839b4fdeaa8b60a778e49a06a8eb999",
+      "overlap_turn_2": 8,
+      "overlap_turn_3": 13,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2907,
+      "source_content_sha256": "2ba9590dbbe897fada2f0e9826db2c3b5729da0522ff385ab6712847f8ad1ab1",
+      "overlap_turn_2": 4,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 2977,
+      "source_content_sha256": "430eaeb02aa09341c101662f103129a18b0e8b4846268d83268e450b81fc5a15",
+      "overlap_turn_2": 8,
+      "overlap_turn_3": 7,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3040,
+      "source_content_sha256": "5c19d5da599d760381f6d428bd1760e084310bdb192132fd408ef5b423673f8b",
+      "overlap_turn_2": 15,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3055,
+      "source_content_sha256": "46a29abddd6eab7b7896c4841bfcd3e427fdb62ab46ed8e08a2702e0ab1f956c",
+      "overlap_turn_2": 17,
+      "overlap_turn_3": 20,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3079,
+      "source_content_sha256": "688b9094130c5df25612772ff107e3d3b1ef13e6fe5f6341dfcd5f3d5adf143b",
+      "overlap_turn_2": 5,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3140,
+      "source_content_sha256": "5639026ad99ca14840abadeb9a66bf983631ee19f534f19dff71093216c54669",
+      "overlap_turn_2": 11,
+      "overlap_turn_3": 9,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3164,
+      "source_content_sha256": "e602093f96ae97eba31f683a7231f63e345cb52cd7fafb08539616966073fc85",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 21,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3187,
+      "source_content_sha256": "2c0159899b21e9de476122b0274d233bce0d0302f3349519b8abc8d3f37e1b75",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 8,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3207,
+      "source_content_sha256": "e930e8b6f16727d85c22c82a0e31d7eefc4c786dfead81ccc98b98701856244b",
+      "overlap_turn_2": 17,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3223,
+      "source_content_sha256": "88ffa8befc24f925d62fec92142542539340f47189b442a4003952cd1e05002e",
+      "overlap_turn_2": 27,
+      "overlap_turn_3": 11,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3269,
+      "source_content_sha256": "1c617cc906455f27b19605e31ccb5cceeeae05bddf4c402694a150ce36fb2982",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3311,
+      "source_content_sha256": "3d0a015cd712a1292aa4d487baac928b7ce941ea52f35fc3ab9055f1888d4f5b",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 6,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3379,
+      "source_content_sha256": "27d4bc8f416f7a435148fbf3977a6edcd3c0ea6106a32fbd0a242712ca701db6",
+      "overlap_turn_2": 6,
+      "overlap_turn_3": 29,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3394,
+      "source_content_sha256": "cdf2b016edfbf295ce006b343a6d1246cbd5e200e907f00a17950da4236731d5",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 66,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3452,
+      "source_content_sha256": "43f5c83f92808a8b6314b70b72b0767505cba3367bede7f5ae6ca55fd9346e26",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3482,
+      "source_content_sha256": "857160f80f3e2a7a8b72f21082761ff4a3e29a98844c9f6d6348d7a017648b81",
+      "overlap_turn_2": 6,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3506,
+      "source_content_sha256": "8bb2c468c62183cf85aa8723b05096ae436348a7ef9e4183bdee6a1df2aa8a70",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3522,
+      "source_content_sha256": "8719ad37e0d6bc5794c0abead8a3e792fb8784a90efad605f1a87ef13619fd6d",
+      "overlap_turn_2": 4,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3535,
+      "source_content_sha256": "0aea1ac46cf98eb778befa0aaf0e68e4888e796b0f5a6d003eb3c403b81d9ed2",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 3,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3550,
+      "source_content_sha256": "cbafdc84d4b21d686b2f413028ba9c29943f115e43e5c90d27964a86296c400c",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 5,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3607,
+      "source_content_sha256": "24cf29d4398a1132bbd2fe65b6e3f2837544061daab0d42fe29e8250da69c61b",
+      "overlap_turn_2": 21,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3634,
+      "source_content_sha256": "4cbf95f35abd8b374801fd4157c6c4ba9598f75fa839eba53453aad57452f697",
+      "overlap_turn_2": 12,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3639,
+      "source_content_sha256": "bec3566e2224d8f7a810b6964c1e9e49889815e5eae55c25701fc8c8ea743f3a",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 1,
+      "heuristic_category": "LOW_LEXICAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3699,
+      "source_content_sha256": "dba1c1fa50dc83a14381c08c35e192bb3ed86018c895f3f48bfd40f11da0e0e0",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 9,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3728,
+      "source_content_sha256": "c1e0436f810b5fc91e90336ecdf6cd87d57dcbc72bc8cc7f0ea6533605196607",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3748,
+      "source_content_sha256": "cc73c6eb5888e5175fd024f5f63017f4e4f6bb9e8bf7ae2f9e2f89e21b941414",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 15,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3803,
+      "source_content_sha256": "6cee739c12029c04c5b66da2bfcc8445a486caabbcdfe6a3ac7050d3fea75101",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3805,
+      "source_content_sha256": "1addf7c34fca98f5ff7c79ec68ebf6ab164bebf0f2c35406791d27ff6b417068",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3815,
+      "source_content_sha256": "008c0852447cfadb9f0cfc8eb1101b681b373624f7201ad1d2d7164700ccf48a",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3822,
+      "source_content_sha256": "51e71c93c1f7c5d3719405a737379886bbd7d8a07139923930f08eb1fe5f825a",
+      "overlap_turn_2": 16,
+      "overlap_turn_3": 5,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3843,
+      "source_content_sha256": "044687aa97200d2b232187ad462e176d3ec0734d90f57694e52ccd37970cb1e0",
+      "overlap_turn_2": 13,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3857,
+      "source_content_sha256": "926e7e38b7dc57447fbe49df5ae13ed4f1a04811c841a53dea61b01563039101",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 20,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3874,
+      "source_content_sha256": "75779d63ff8304e399c8582673cca22804c8b6e06ebdf077594f144a96a7c30b",
+      "overlap_turn_2": 5,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3912,
+      "source_content_sha256": "ad7626d46cc3facc446eed1cb1b860894229ae8d1a5a6984aa752177e6695c20",
+      "overlap_turn_2": 10,
+      "overlap_turn_3": 6,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3930,
+      "source_content_sha256": "babb2898f837c79b97314f17e738b61f30a3d0da6251c76353b42cdd138e16a8",
+      "overlap_turn_2": 11,
+      "overlap_turn_3": 16,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 3934,
+      "source_content_sha256": "b270b98fea97851699a43bc8ba4f796026ce04945757ca89ff76e020cc6f5add",
+      "overlap_turn_2": 16,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4001,
+      "source_content_sha256": "6dbd85d69da56884c938898e75113dd8bde3cbb8ebc286245c0762a167f53ea4",
+      "overlap_turn_2": 8,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4040,
+      "source_content_sha256": "19130a1cc3889db37307dc0f6d5634e8e72dedb851781f9c71532d8c26c815df",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 25,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4062,
+      "source_content_sha256": "253e96a89e1cfd11ee07e600b7a4790a711c425fa0d16c030fc6df74135f97f1",
+      "overlap_turn_2": 18,
+      "overlap_turn_3": 11,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4075,
+      "source_content_sha256": "7379e9dc67156c8604b0cf00d01e2716600cb8c9f6e8dd8a0623edec344bf8f4",
+      "overlap_turn_2": 22,
+      "overlap_turn_3": 20,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4090,
+      "source_content_sha256": "a004375715e0c5cc52717955770726c7c52bb4cad522d1d408dd4d1c65b5385c",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4142,
+      "source_content_sha256": "79052667c73441f744bf6cb03966303895edc13fc6074ebaf23593d5a88dd994",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4173,
+      "source_content_sha256": "43e360b0cd91d7ed7db9f863412a3dc79b366f2d48020b95e0f749696d912cc4",
+      "overlap_turn_2": 4,
+      "overlap_turn_3": 2,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4175,
+      "source_content_sha256": "dd6f6fbd73280371f7a36ce94f2561b7efcdc5ca072e3e80870baa4524796905",
+      "overlap_turn_2": 5,
+      "overlap_turn_3": 5,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4220,
+      "source_content_sha256": "4889bc5702eb021360b392fd40e4739f2012bd2d59b9d5e3d3cd01b8ad27ce1c",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4290,
+      "source_content_sha256": "a1a90e9f4164ca2daaaca37b44d1377e8c5301b3ec6dda9656279e6e7c467791",
+      "overlap_turn_2": 38,
+      "overlap_turn_3": 1,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4361,
+      "source_content_sha256": "466ad225310124262495411482e1dcc25bf0e4e7ef73b4ca395bd8e4472aae16",
+      "overlap_turn_2": 50,
+      "overlap_turn_3": 4,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4387,
+      "source_content_sha256": "fba2b6c67edd4d9f4e2c1de5135621c64acd284c5213a4662f23fed7f13fa26b",
+      "overlap_turn_2": 3,
+      "overlap_turn_3": 8,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4446,
+      "source_content_sha256": "753216ce19333df28b659578e8a00eda694efb3db71080609ebdf8a207f4bb47",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 2,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4468,
+      "source_content_sha256": "451b71d89a20aa939e20e6f8da2d161ce8fe868f475e595dd7a3be76df2c92d6",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 0,
+      "heuristic_category": "PARTIAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4482,
+      "source_content_sha256": "4e7f0a35f12057a57e7f5dbb0d134b0b6d6a65d0e73c097baa8b05ec4087d2ea",
+      "overlap_turn_2": 7,
+      "overlap_turn_3": 10,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4568,
+      "source_content_sha256": "f2fae37dd891d59779ef5e330e9947fab2b0666c3f0f4255bc9c9f982b9c2f8c",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 1,
+      "heuristic_category": "LOW_LEXICAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4624,
+      "source_content_sha256": "ee194d5e8ca52e478693457af1f7245edabde295c667e2e3c654b828990cb935",
+      "overlap_turn_2": 2,
+      "overlap_turn_3": 5,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4626,
+      "source_content_sha256": "21a241f5cf90deaa573c75f954e468e71b6b3cfa48390964db013845ace7239a",
+      "overlap_turn_2": 16,
+      "overlap_turn_3": 3,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4816,
+      "source_content_sha256": "9cdb8f98fdb1409686d70397b9b3c8c67ef003ddb34928cf5b5f4ebe688bd982",
+      "overlap_turn_2": 1,
+      "overlap_turn_3": 0,
+      "heuristic_category": "LOW_LEXICAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4872,
+      "source_content_sha256": "8707c755a0071859a1b25aaa650ea0026230eae0eb293e22d9092535406b422c",
+      "overlap_turn_2": 11,
+      "overlap_turn_3": 11,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4933,
+      "source_content_sha256": "7e77f2ab25931817c9f27c3ff8c6dc24f2410a48109fe3a3bb49177efa6223cb",
+      "overlap_turn_2": 9,
+      "overlap_turn_3": 5,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4939,
+      "source_content_sha256": "d44626c57cc71711453f1865cc026abbf14d218f1cd69887594a477337ab8fc7",
+      "overlap_turn_2": 7,
+      "overlap_turn_3": 26,
+      "heuristic_category": "TWO_ANCHORED",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    },
+    {
+      "source_index": 4976,
+      "source_content_sha256": "6b71623aa3c34bae61b84afff92695d2b1404ce3f7caa0cffa96e08274aab661",
+      "overlap_turn_2": 0,
+      "overlap_turn_3": 1,
+      "heuristic_category": "LOW_LEXICAL_ANCHOR",
+      "review_status": "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+      "training_approved": false
+    }
+  ],
+  "status": "QUALITATIVE_REVIEW_REQUIRED",
+  "semantic_validation_complete": false,
+  "training_authorized": false,
+  "private_conversation_data_included": false,
+  "next_operation": "Review semantic continuity and factual quality before selection"
+}
