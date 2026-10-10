@@ -174,6 +174,14 @@ Only the generic processing methodology is documented publicly in:
 phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md
 ```
 
+### Private multi-turn curation gate
+
+The private conversational pipeline distinguishes source-faithful dialogue, translated or abstracted user text, and reconstructed assistant targets. User feedback and chronological order must remain traceable, and a proposed correction must never be treated as a verified outcome without supporting evidence.
+
+Topic segmentation is permitted only with preserved context dependencies and semantic lineage locks. Material reviewed during corpus construction is ineligible for untouched VALIDATION or BLIND TEST. Editorial admission to a private candidate pool does not modify official TRAIN files or approve a training run.
+
+The next preparation gate is a local balance audit of dialogue lengths, multi-turn dynamics, behavioral coverage, and potential source dominance across the controlled identity corpus, private candidates, and the external reservoir. Token-level weighting cannot be finalized until a Phase 03 tokenizer is chosen.
+
 ## External dataset checkpoint
 
 External data exploration is complete for the current Phase 03 cycle.
