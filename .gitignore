@@ -10,3 +10,10 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 .env
+
+# Local-only private corpus material
+private-corpus/
+local-corpus/
+data/private/
+*.private.jsonl
+*.private.jsonl.gz

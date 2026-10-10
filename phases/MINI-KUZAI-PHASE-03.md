@@ -127,6 +127,7 @@ phases/MINI-KUZAI-PHASE-03-KNOWLEDGE-MAP.md
 phases/MINI-KUZAI-PHASE-03-DATASET-SCHEMA.md
 phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-ASSESSMENT.md
 phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md
+phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md
 phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md
 phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md
 ```
@@ -142,6 +143,36 @@ The knowledge map separates stable self-knowledge, laboratory knowledge, technic
 The dataset schema defines the research record format, anti-leakage grouping, behavioral labels, knowledge labels, split rules, provenance, and reproducibility requirements before corpus generation.
 
 The external dataset documentation records the acquisition, filtering, auditing, and final Phase 03 decision concerning SmolTalk and OASST1.
+
+The private corpus pipeline document defines a local-only workflow for reconstructing, segmenting, curating, validating, and mapping private conversational sources without publishing source-derived information.
+
+## Private conversation source role
+
+Phase 03 also uses a personal ChatGPT export locally as a private conversational research source.
+
+The purpose is to derive Mini-Kuzai-specific conversation data from real interaction structures rather than to copy complete exported chats into training.
+
+The local curation process targets reusable patterns such as:
+
+- multi-turn troubleshooting;
+- correction after failed hypotheses;
+- interpretation of real feedback;
+- explanation and clarification;
+- reasoning and comparison;
+- planning and decision support;
+- technical dialogue;
+- general conversation;
+- language and reformulation patterns.
+
+This source remains separate from the controlled Mini-Kuzai identity and behavior corpus. It also remains separate from the general external English reservoir.
+
+No exported conversation, excerpt, source-specific statistic, candidate queue, or derived review material is committed to the public repository.
+
+Only the generic processing methodology is documented publicly in:
+
+```text
+phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md
+```
 
 ## External dataset checkpoint
 
@@ -243,12 +274,14 @@ Phase 03 must preserve several lessons learned during Phase 01:
 - external conversational data must not define Mini-Kuzai identity or personality;
 - OASST1 is not authorized for the current training mix;
 - SmolTalk v0.4 is a candidate reservoir, not a final training file;
+- private conversational sources remain local-only research material until explicitly approved for dataset integration;
+- source conversations and source-derived information must not be committed to the public repository;
 - project documentation and assistant-generated project text must use only the ASCII hyphen-minus character `-` for dash punctuation. Unicode dash characters are prohibited.
 
 ## Current status
 
 ```text
-PHASE 03                  : PAUSED - 2026-09-27
+PHASE 03                  : DATA PREPARATION ACTIVE
 Primary axis              : TRAINING AND PERSONALIZATION
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -265,15 +298,19 @@ VALIDATION records        : 0 / 36 CREATED
 BLIND TEST records        : 0 / 36 CREATED
 SmolTalk v0.4             : VALIDATED PRIMARY EXTERNAL RESERVOIR
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
+Private corpus pipeline   : LOCAL-ONLY CURATION ACTIVE
+ChatGPT export source     : LOCAL-ONLY RESEARCH SOURCE
+Private source material   : NOT COMMITTED
+Derived private metrics   : NOT COMMITTED
 Tokenizer                 : NOT SELECTED YET
 New model architecture    : NOT SELECTED YET
 Training                  : NOT STARTED
 Training authorized       : NO
 ```
 
-## Pause checkpoint
+## Current checkpoint
 
-Phase 03 is intentionally paused on 2026-09-27 after manual review of the B05 TRAIN batch.
+The controlled custom authoring track remains paused after the B05 TRAIN batch while additional dataset-preparation work continues locally.
 
 B01 through B05 are complete and reviewed:
 
@@ -296,16 +333,11 @@ No training operation is authorized at this checkpoint.
 
 No tokenizer or Phase 03 architecture decision has been made.
 
-Full checkpoint documentation:
+Checkpoint documentation:
 
 ```text
 phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md
+phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md
 ```
 
-The next operation when work resumes is:
-
-```text
-AUTHOR B06 TRAIN BATCH
-```
-
-B06 must be authored under conversation authoring policy v0.2 with the semantic split guard active.
+Private-corpus review continues exclusively in the local workspace. The next controlled custom-corpus authoring operation remains B06 UNKNOWN INFORMATION under conversation authoring policy v0.2 with the semantic split guard active.

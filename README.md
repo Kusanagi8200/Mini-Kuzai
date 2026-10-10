@@ -5,8 +5,8 @@
 ------------------------------------------------------------------------
 
 <picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Mini-Kuzai/blob/main/Mini-Kuzai.2.png">
- <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/Mini-Kuzai/blob/main/Mini-Kuzai.2.png">
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Mini-Kuzai/blob/main/Mini-Kuzai-Project.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/Mini-Kuzai/blob/main/Mini-Kuzai-Project.png">
  <img alt="" src="">
 </picture>
 
@@ -127,7 +127,8 @@ Mini-Kuzai/
     |-- MINI-KUZAI-PHASE-03-KNOWLEDGE-MAP.md
     |-- MINI-KUZAI-PHASE-03-DATASET-SCHEMA.md
     |-- MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-ASSESSMENT.md
-    `-- MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md
+    |-- MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md
+    `-- MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md
 ```
 
 Large raw external datasets and local training artifacts are stored in the local Mini-Kuzai workspace and are not committed to the normal Git repository.
@@ -210,6 +211,19 @@ OASST1 was fully downloaded, reconstructed, quality-audited, behaviorally compar
 
 The Mini-Kuzai-specific corpus will remain responsible for identity, curiosity, disagreement, initiative, creativity, opinion behavior, relationship continuity, and non-assistant character.
 
+### Private local corpus pipeline
+
+Phase 03 includes a local-only pipeline for evaluating private conversational corpora as possible future training material.
+
+A personal ChatGPT export is used locally as one private source for building conversation-specific data. Its purpose is to capture real multi-turn interaction patterns such as troubleshooting, correction after feedback, explanation, reasoning, planning, technical dialogue, and general conversation. The export is never treated as ready-to-train data.
+
+The public repository contains only the generic processing methodology. No source conversation, source-derived excerpt, source-specific statistic, candidate queue, review output, or other information originating from private discussions is committed.
+
+The local pipeline covers conversation reconstruction, topic segmentation, failed-step curation, factual validation, semantic mapping, duplicate control, language-policy decisions, and TRAIN / VALIDATION / BLIND anti-leakage checks.
+
+The private conversation source is intended to complement the controlled Mini-Kuzai identity/behavior corpus and the general English reservoir. Private corpus work does not authorize training and does not modify the existing controlled Phase 03 dataset until explicit integration approval.
+
+See [`phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md`](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md) for the public methodology.
 See:
 
 - [`phases/MINI-KUZAI-PHASE-03.md`](phases/MINI-KUZAI-PHASE-03.md)
@@ -218,6 +232,7 @@ See:
 - [`phases/MINI-KUZAI-PHASE-03-KNOWLEDGE-MAP.md`](phases/MINI-KUZAI-PHASE-03-KNOWLEDGE-MAP.md)
 - [`phases/MINI-KUZAI-PHASE-03-DATASET-SCHEMA.md`](phases/MINI-KUZAI-PHASE-03-DATASET-SCHEMA.md)
 - [`phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md`](phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md)
+- [`phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md`](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md)
 - [`phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md`](phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md)
 - [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md)
 
@@ -264,10 +279,14 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : PAUSED - 2026-09-27
+Phase 03                  : DATA PREPARATION ACTIVE
+Custom authoring track    : PAUSED AFTER B05
 External dataset study    : COMPLETE FOR CURRENT CYCLE
 SmolTalk v0.4             : VALIDATED PRIMARY EXTERNAL RESERVOIR
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
+Private corpus pipeline   : LOCAL-ONLY CURATION ACTIVE
+Private source material   : NOT COMMITTED
+Derived private metrics   : NOT COMMITTED
 Semantic inventory        : V0.3 - 65 GROUPS
 TRAIN semantic groups     : 9 / 29 COMPLETE
 Custom TRAIN records      : 35 / 107 REVIEWED
@@ -283,11 +302,11 @@ Training authorized       : NO
 
 B01 through B05 TRAIN are complete and manually reviewed. The current custom TRAIN corpus contains 35 reviewed records, including multi-turn B05 experiment follow-ups.
 
-Phase 03 is intentionally paused after B05. No VALIDATION or BLIND TEST conversation text has been created, preserving the evaluation boundary.
+The controlled custom authoring track remains paused after B05. No VALIDATION or BLIND TEST conversation text has been created, preserving the evaluation boundary.
 
-The next operation on resume is B06 UNKNOWN INFORMATION authoring under authoring policy v0.2 and the semantic split guard.
+Private corpus curation continues exclusively in the local workspace. The public repository records only the generic pipeline design and project-level decisions. B06 UNKNOWN INFORMATION authoring remains paused until that controlled custom-corpus track is deliberately resumed.
 
-See [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) for the detailed checkpoint and the work completed on 2026-09-27.
+See [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) for the B05 checkpoint and [`phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md`](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md) for the local-only corpus methodology.
 
 ---
 
