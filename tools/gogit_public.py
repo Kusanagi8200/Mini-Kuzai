@@ -1,0 +1,225 @@
+#!/usr/bin/env python3
+"""Execute a reviewed public SmolTalk audit and publish numeric-only gogit reports.
+
+Only committed Python scripts in tools/public-audits are accepted.
+Raw stdout, conversations, commands, prose and unapproved keys are never published.
+"""
+
+import argparse
+import hashlib
+import json
+import os
+import re
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[1]
+AUDITS = REPO / "tools" / "public-audits"
+REPORTS = REPO / "reports" / "assistant-results"
+SOURCE = "SmolTalk v0.4 - public external dataset"
+MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
+METRIC_KEYS = {
+    "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
+    "PARTIAL_ANCHOR", "LOW_LEXICAL_ANCHOR", "REVIEWED",
+    "RETAINED", "HELD", "REJECTED", "FACTCHECK_PENDING",
+    "SEMANTICALLY_COHERENT", "TOPIC_SWITCHES", "UNVERIFIED_CLAIMS",
+    "MULTITURN", "SINGLE_TURN", "FOLLOWUP", "CLARIFICATION",
+    "REVISION", "DISAGREEMENT", "CREATIVE", "FACTUAL_QA",
+    "PROGRAMMING", "MATHEMATICS", "WRITING", "OTHER",
+}
+STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
+METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
+
+
+def git(*args):
+    p = subprocess.run(["git", "-C", str(REPO), *args], text=True,
+                       stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                       check=False)
+    if p.returncode != 0:
+        raise RuntimeError(
+            f"Git command failed ({' '.join(args[:2])}): {p.stderr.strip()}"
+        )
+    return p.stdout.strip()
+
+
+def require_clean_synchronized():
+    if git("branch", "--show-current") != "main":
+        raise RuntimeError("Expected branch main")
+    if git("status", "--porcelain"):
+        raise RuntimeError("Git worktree/index not clean; publication blocked")
+    git("fetch", "--quiet", "origin", "main")
+    if git("rev-parse", "HEAD") != git("rev-parse", "origin/main"):
+        raise RuntimeError("Local and remote main differ; synchronize before publishing")
+
+
+def checked_audit(path_string):
+    path = (REPO / path_string).resolve()
+    try:
+        rel = path.relative_to(AUDITS.resolve())
+    except ValueError as exc:
+        raise RuntimeError("Audit is outside tools/public-audits") from exc
+    if not path.is_file() or path.suffix != ".py" or rel.parent != Path("."):
+        raise RuntimeError("Only direct tools/public-audits/*.py files are allowed")
+    tracked = str(path.relative_to(REPO))
+    git("ls-files", "--error-unmatch", "--", tracked)
+    if git("status", "--porcelain", "--", tracked):
+        raise RuntimeError("Audit script must be committed and clean")
+    return path, tracked
+
+
+def numeric_metrics(raw):
+    if raw.count(MARKER) != 1:
+        raise RuntimeError("Expected exactly one results marker")
+    suffix = raw.split(MARKER, 1)[1].strip()
+    if not suffix:
+        raise RuntimeError("No public numeric results found")
+    metrics = {}
+    for line in suffix.splitlines():
+        match = METRIC_RE.fullmatch(line.strip())
+        if not match:
+            raise RuntimeError("Non-numeric or unstructured result rejected")
+        key, value = match.groups()
+        if key not in METRIC_KEYS or key in metrics:
+            raise RuntimeError("Unknown or repeated metric rejected")
+        metrics[key] = int(value)
+        if metrics[key] > 100000000:
+            raise RuntimeError("Unreasonably large metric rejected")
+    if len(metrics) > 30:
+        raise RuntimeError("Too many metrics")
+    return dict(sorted(metrics.items()))
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Run a vetted public SmolTalk audit, commit and push numeric reports"
+    )
+    parser.add_argument("--step", required=True)
+    parser.add_argument("--audit", required=True)
+    args = parser.parse_args()
+    if not STEP_RE.fullmatch(args.step):
+        parser.error("STEP_ID must match PHASE03-SMOLTALK-[A-Z0-9-]")
+    try:
+        require_clean_synchronized()
+        audit_path, tracked = checked_audit(args.audit)
+        history = REPORTS / "history"
+        out_json = history / (args.step + ".json")
+        out_txt = history / (args.step + ".txt")
+        if out_json.exists() or out_txt.exists():
+            raise RuntimeError("STEP_ID history exists; overwriting forbidden")
+        if not (REPORTS / "latest.json").is_file() or not (
+            REPORTS / "latest.txt"
+        ).is_file():
+            raise RuntimeError("Existing latest reports not found")
+
+        execution = subprocess.run(
+            [sys.executable, str(audit_path)],
+            cwd=REPO, capture_output=True, text=True, timeout=300,
+            check=False
+        )
+        if execution.returncode:
+            raise RuntimeError(
+                f"Audit exited with status {execution.returncode}; nothing published"
+            )
+        metrics = numeric_metrics(execution.stdout)
+        report = {
+            "step_id": args.step,
+            "project": "Mini-Kuzai",
+            "phase": "03",
+            "source": SOURCE,
+            "producer": tracked,
+            "producer_sha256": hashlib.sha256(
+                audit_path.read_bytes()
+            ).hexdigest(),
+            "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+            "metrics": metrics,
+            "semantic_validation_complete": False,
+            "training_authorized": False,
+            "private_conversation_data_included": False,
+        }
+        text_json = json.dumps(
+            report, indent=2, ensure_ascii=True, sort_keys=True
+        ) + "\n"
+        text_txt = (
+            f"STEP_ID: {args.step}\n{MARKER}\n"
+            + "".join(f"{k}: {v}\n" for k, v in metrics.items())
+            + "STATUS: PUBLIC_AGGREGATE_REVIEW_ONLY\n"
+            + "TRAINING_AUTHORIZED: FALSE\n"
+        )
+
+        old_files = {
+            name: (REPORTS / name).read_bytes()
+            for name in ("latest.json", "latest.txt")
+        }
+        backup_root = Path("/root/Mini-Kuzai/backups/gogit")
+        backup_root.mkdir(parents=True, exist_ok=True, mode=0o700)
+        backup = Path(
+            tempfile.mkdtemp(prefix="auto-", dir=backup_root)
+        )
+        os.chmod(backup, 0o700)
+        for name, blob in old_files.items():
+            (backup / name).write_bytes(blob)
+        print("BACKUP:", backup)
+
+        allowed = {
+            str((REPORTS / "latest.json").relative_to(REPO)),
+            str((REPORTS / "latest.txt").relative_to(REPO)),
+            str(out_json.relative_to(REPO)),
+            str(out_txt.relative_to(REPO)),
+        }
+        committed = False
+        try:
+            (REPORTS / "latest.json").write_text(
+                text_json, encoding="utf-8"
+            )
+            (REPORTS / "latest.txt").write_text(
+                text_txt, encoding="utf-8"
+            )
+            out_json.write_text(text_json, encoding="utf-8")
+            out_txt.write_text(text_txt, encoding="utf-8")
+            git("add", "--", *sorted(allowed))
+            staged = set(git("diff", "--cached", "--name-only").splitlines())
+            if staged != allowed:
+                raise RuntimeError("Unexpected staged files; commit blocked")
+            git("diff", "--cached", "--check")
+            git(
+                "commit", "-m",
+                f"Phase03 public SmolTalk audit {args.step}"
+            )
+            committed = True
+        except Exception:
+            if not committed:
+                git("reset", "--quiet", "--", *sorted(allowed))
+                for name, blob in old_files.items():
+                    (REPORTS / name).write_bytes(blob)
+                out_json.unlink(missing_ok=True)
+                out_txt.unlink(missing_ok=True)
+            raise
+
+        push = subprocess.run(
+            ["git", "-C", str(REPO), "push", "origin", "main"],
+            capture_output=True, text=True, check=False
+        )
+        if push.returncode:
+            raise RuntimeError(
+                "Commit created but push failed. Inspect Git; never force push."
+            )
+        git("fetch", "--quiet", "origin", "main")
+        if git("rev-parse", "HEAD") != git("rev-parse", "origin/main"):
+            raise RuntimeError("Push successful but remote verification failed")
+        print(MARKER)
+        print("PUSH: OK")
+        print("STEP_ID:", args.step)
+        print("PUBLIC_METRICS:", len(metrics))
+        print("HEAD:", git("rev-parse", "--short", "HEAD"))
+        print("GOGIT: READY")
+    except (RuntimeError, subprocess.TimeoutExpired) as exc:
+        print(MARKER)
+        print("PUSH: NOT_CONFIRMED")
+        print("ERROR:", str(exc))
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
