@@ -18,15 +18,27 @@ One terminal command:
 
 The user then says "gogit" in ChatGPT. ChatGPT reads latest.json from public GitHub.
 
-## First safe verification (V42 only)
+## Historical first-run verification (V42 - already completed)
 
-After pulling the new tool files on the server, run:
+The first successful automatic publication used:
 
+```bash
 python tools/gogit_public.py --step PHASE03-SMOLTALK-V42-AUTO-001 --audit tools/public-audits/smoltalk_v42_counts.py
+```
 
-This automatically commits/pushes four PUBLIC report files when the checks pass.
-No manual git add, git commit or git push is needed.
-History STEP_ID must be unique for each run. Repeating the same STEP_ID is blocked.
+Do not rerun this exact command: the historical STEP_ID already exists and the wrapper deliberately refuses to overwrite it.
+
+Each completed run commits and pushes four **public numerical report** files when checks pass. No manual git add, commit or push is needed. Every new run requires a new, unique STEP_ID.
+
+## Pause status - 2026-10-10
+
+Phase 03 is paused after public external SmolTalk audit `PHASE03-SMOLTALK-V46-CREATIVE-001`. The current published report is under `reports/assistant-results/history/` and `latest.json`.
+
+The exact next project step is V47: a local qualitative review of V46 candidates. No new audit, commit, push, tokenizer operation, or training run is scheduled while paused.
+
+Resume only when explicitly requested by the user. New V47 publication, if authorized, must use a reviewed public SmolTalk-only audit script, an unused STEP_ID, and the same restricted numerical-output policy. The local review queue and full conversations stay outside Git.
+
+See [Phase 03 pause checkpoint](../phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md).
 
 ## Adding a future audit
 
