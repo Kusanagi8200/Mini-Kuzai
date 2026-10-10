@@ -286,10 +286,30 @@ Phase 03 must preserve several lessons learned during Phase 01:
 - source conversations and source-derived information must not be committed to the public repository;
 - project documentation and assistant-generated project text must use only the ASCII hyphen-minus character `-` for dash punctuation. Unicode dash characters are prohibited.
 
+## External public SmolTalk audit checkpoint - V41 to V46
+
+The V41-V46 workflow uses only the public SmolTalk v0.4 candidate reservoir. This public research is distinct from the local-only private-conversation pipeline.
+
+- V41-V43: context-reference and follow-up heuristics established a writing-heavy initial candidate shortlist; lexical anchors were not interpreted as independently verified conversational continuity.
+- V44: a deterministic, stratified **provisional** sample selected 1,139 conversations from the 8,000-record reservoir, with 679 multi-turn and 460 single-turn examples.
+- V45: the creative keyword quota selected 69 out of a target of 130. The 61-record shortfall is a feature of the classifier and quota allocation, not proof of a lack of creative dialogue in the source.
+- V46: a broader creative-candidate signal matched 339 records across the reservoir, including 47 selected in other V44 categories and 234 not selected by V44. This remains a hypothesis-generating filter, not a factual or pedagogical quality decision.
+- V46: a local 68-record review queue was prepared (32 baseline samples, 12 reclassification checks, 24 potential recoveries). No item in this queue was approved for TRAIN by the automatic process.
+
+The public workflow is `tools/gogit_public.py`: each reviewed audit script under `tools/public-audits/` is run locally, publishes allowlisted numeric-only external SmolTalk aggregates, commits and pushes four report files, and can then be inspected from ChatGPT when the user says `gogit`. Full conversation text and local review notes are not published.
+
+**Checkpoint 2026-10-10: PAUSED.** Exact point of resumption is V47, starting with human semantic and factual review of the targeted V46 review dossiers, then assessing the baseline samples. The V44 selection and the official TRAIN, VALIDATION and BLIND datasets remain unchanged. No final tokenizer vocabulary, training mixture, model architecture, or Phase 03 model-training approval exists.
+
+Checkpoint and method documentation:
+
+- [Phase 03 pause - 2026-10-10](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md)
+- [Public audit reporter](../tools/GOGIT.md)
+- [Private corpus methodology](MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md)
+
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION ACTIVE
+PHASE 03                  : DATA PREPARATION PAUSED AFTER V46
 Primary axis              : TRAINING AND PERSONALIZATION
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -299,18 +319,18 @@ Knowledge map             : V0.1 CANDIDATE
 Dataset schema            : V0.1 CANDIDATE
 Semantic inventory        : V0.3 - 65 GROUPS
 TRAIN semantic groups     : 9 / 29 COMPLETE
-Custom TRAIN records      : 35 / 107 REVIEWED
+Custom TRAIN exchanges    : 35 REVIEWED (31 JSONL RECORDS)
 Authoring policy          : V0.2
 Semantic split guard      : ACTIVE
 VALIDATION records        : 0 / 36 CREATED
 BLIND TEST records        : 0 / 36 CREATED
-SmolTalk v0.4             : VALIDATED PRIMARY EXTERNAL RESERVOIR
+SmolTalk v0.4             : VALIDATED EXTERNAL CANDIDATE RESERVOIR
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
-Private corpus pipeline   : LOCAL-ONLY CURATION ACTIVE
+Private corpus pipeline   : LOCAL-ONLY - PAUSED
 ChatGPT export source     : LOCAL-ONLY RESEARCH SOURCE
 Private source material   : NOT COMMITTED
 Derived private metrics   : NOT COMMITTED
-Tokenizer                 : NOT SELECTED YET
+Tokenizer                 : FINAL VOCABULARY NOT FROZEN
 New model architecture    : NOT SELECTED YET
 Training                  : NOT STARTED
 Training authorized       : NO
@@ -318,7 +338,7 @@ Training authorized       : NO
 
 ## Current checkpoint
 
-The controlled custom authoring track remains paused after the B05 TRAIN batch while additional dataset-preparation work continues locally.
+The controlled custom authoring track remains paused after the B05 TRAIN batch. As of 2026-10-10, external SmolTalk review is also paused after V46; no additional dataset-preparation or training task is active.
 
 B01 through B05 are complete and reviewed:
 
@@ -337,15 +357,10 @@ Authoring policy v0.2 and the semantic split exclusion map are active. They were
 
 No VALIDATION or BLIND TEST conversation text has been created.
 
-No training operation is authorized at this checkpoint.
+No Phase 03 model training is authorized at this checkpoint.
 
-No tokenizer or Phase 03 architecture decision has been made.
+The tokenizer strategy has been explored, but its final production vocabulary is not frozen. The Phase 03 architecture remains undecided.
 
-Checkpoint documentation:
+The current pause checkpoint is [2026-10-10](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md), superseding the operational status of the [B05 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) without replacing its historical content.
 
-```text
-phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md
-phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md
-```
-
-Private-corpus review continues exclusively in the local workspace. The next controlled custom-corpus authoring operation remains B06 UNKNOWN INFORMATION under conversation authoring policy v0.2 with the semantic split guard active.
+Private-corpus review stays in the local workspace and is paused. Future controlled custom-corpus authoring would resume at B06 UNKNOWN INFORMATION under authoring policy v0.2 and the existing semantic split guard, only after an explicit request.
