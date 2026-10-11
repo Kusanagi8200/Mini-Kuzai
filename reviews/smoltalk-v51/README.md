@@ -2,7 +2,9 @@
 
 Pilot batch: 24 external-public SmolTalk conversations.
 HIGH: 12, MEDIUM: 6, LOW: 6. Previous V48 cases excluded.
-All initial states are PENDING; no TRAIN approval.
+Initial PENDING states have been reviewed: 9 A, 8 B, 7 C, 0 HOLD.
+All 24 cases have separate scores and rationales; no TRAIN approval.
+See [V51 review results](RESULTS-001.md) for findings and limitations.
 
 This is heuristic sampling for semantic review, not final corpus selection.
 Never add private ChatGPT data or private-derived information.
