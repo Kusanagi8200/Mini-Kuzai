@@ -219,9 +219,9 @@ V47 verified the integrity of all 68 local review records against their public S
 
 Public aggregate results are transmitted using the reviewed [gogit workflow](tools/GOGIT.md): the local script publishes only allowlisted numerical SmolTalk metrics to `reports/assistant-results/`, and the user then requests retrieval with `gogit`. This mechanism does not run in the background and must never be used for private conversation data or private-derived results.
 
-**GitHub-native V48 reviews:** All 68 *external public SmolTalk* conversations are published as individually editable Markdown pages. The initial review is complete: 23 RETAIN, 31 REJECT and 14 HOLD, with justifications in each page. See the [V48 results](reviews/smoltalk-v48/V48-REVIEW-RESULTS.md) and [GitHub review guide](tools/V48-GITHUB-REVIEW.md). No private ChatGPT-source material is included.
+**GitHub-native SmolTalk reviews:** All 68 public external case files were reviewed in V48 and the 14 HOLD cases were resolved in V49. Current results: 24 RETAIN, 44 REJECT and 0 HOLD. See the [V49 results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), [historical V48 report](reviews/smoltalk-v48/V48-REVIEW-RESULTS.md) and [GitHub review guide](tools/V48-GITHUB-REVIEW.md). No private ChatGPT-source material is included.
 
-**Phase 03 has completed the V48 first-pass external SmolTalk review.** The [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) is preserved as historical documentation. See [V48 review instructions](tools/V48-REVIEW.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
+**Phase 03 has completed the V49 follow-up assessment of all 14 SmolTalk HOLD cases.** The [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) is preserved as historical documentation. See [V48 review instructions](tools/V48-REVIEW.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
 
 ### Private local corpus pipeline
 
@@ -295,9 +295,9 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V48 FIRST PASS COMPLETE
+Phase 03                  : DATA PREPARATION - V49 HOLD RESOLVED
 Custom authoring track    : PAUSED AFTER B05
-External dataset study    : V48 68 REVIEWED - 14 HOLD UNRESOLVED
+External dataset study    : V49 68 REVIEWED - 0 HOLD REMAINING
 SmolTalk v0.4             : VALIDATED EXTERNAL CANDIDATE RESERVOIR
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
@@ -318,9 +318,9 @@ Training authorized       : NO
 
 B01 through B05 custom TRAIN batches are preserved and reviewed (31 JSONL records containing 35 USER/ASSISTANT exchanges). Custom authoring remains paused after B05 and no VALIDATION or BLIND TEST conversation text has been created.
 
-The external SmolTalk review completed its V48 first pass across all 68 public GitHub case files, leaving 14 HOLD for additional checking. V44 remains provisional and unchanged. Private-source curation remains exclusively local and paused. B06 UNKNOWN INFORMATION authoring is not resumed.
+The external SmolTalk review has completed V49, resolving all 14 provisional HOLD cases from the 68-record quality diagnostic. V44 remains provisional and unchanged; this diagnostic does not establish the acceptance rate of the full candidate reservoir. Private-source curation remains exclusively local and paused. B06 UNKNOWN INFORMATION authoring is not resumed.
 
-See the [V48 review results](reviews/smoltalk-v48/V48-REVIEW-RESULTS.md), [GitHub review procedure](tools/V48-GITHUB-REVIEW.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md), the [earlier B05 checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md), and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
+See the [current V49 results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), [historical V48 results](reviews/smoltalk-v48/V48-REVIEW-RESULTS.md), [GitHub review procedure](tools/V48-GITHUB-REVIEW.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md), the [earlier B05 checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md), and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
 
 ---
 
