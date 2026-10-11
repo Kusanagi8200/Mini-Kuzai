@@ -357,11 +357,11 @@ or training authorization follow from V50 preparation.
 
 The [V51 plan](MINI-KUZAI-PHASE-03-V51-SEMANTIC-REVIEW.md)
 and [source-verified GitHub review workflow](../tools/V51-GITHUB-REVIEW.md)
-are now published. The new exporter will select 24 fresh public
+document the completed deterministic selection of 24 distinct public
 SmolTalk cases from the verified V50 queue (12 HIGH, 6 MEDIUM, 6 LOW),
 with source and category diversification, excluding all previously
-published V48/V49 diagnostics. The nine independent review fields
-evaluate cognitive value, creativity, continuity, correction,
+published V48/V49 diagnostics. Nine independent review fields
+assessed cognitive value, creativity, continuity, correction,
 communication, factual risk, instruction fit and overall A/B/C/HOLD.
 
 The 24 V51 public-source cases were exported from fhc2 and assessed directly on GitHub: 9 A, 8 B, 7 C, 0 HOLD across 12 HIGH, 6 MEDIUM and 6 LOW heuristic-priority strata. Their individual rationales and scores are complete. The [V51 results](../reviews/smoltalk-v51/RESULTS-001.md) record methodological caveats and false-negative examples. The [numeric V51 GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V51-PILOT-REVIEW-001.json) was published and verified on 2026-10-11. V50 priorities remain heuristic hints, and V48/V49 history remains untouched.
