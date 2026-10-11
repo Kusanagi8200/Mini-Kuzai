@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V52 public semantic-review batch
 
-Status: **32-case exporter and GOGIT progress audit prepared, not yet executed on fhc2**.
+Status as of 2026-10-11: **32 public V52 review cases exported, individually annotated and published on GitHub (8 A, 12 B, 12 C). Final source-integrity/numeric GOGIT audit remains pending.** See [V52 results](../reviews/smoltalk-v52/RESULTS-001.md).
 The [V52 inventory](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-INVENTORY-001.json)
 was published and verified on GitHub under commit `3c1ca914`.
 
@@ -47,47 +47,36 @@ private ChatGPT exports. Public reviewed source conversations and
 source attribution may be placed on GitHub; all other datasets remain
 local. Prior published files remain unchanged.
 
-All 32 newly published cases begin `PENDING` with nine editable V52
-fields: grade, rationale, cognition, creativity, continuity, correction,
-communication, factual risk, and instruction fit. Review the *whole*
+The 32 case pages were originally published with nine `PENDING` review fields: grade, rationale, cognition, creativity, continuity, correction, communication, factual risk, and instruction fit. They have since all been annotated on GitHub. Review the *whole*
 original dialogue before assigning A/B/C/HOLD. A factual defect is
 not automatically disqualifying for behavioral analysis, but an
 uncorrected false assertion is not an approved positive target.
 No independent human assessment is implied.
 
-## One-command fhc2 execution
+## Execution history and final GOGIT gate
 
-Run from a clean local main, using the existing verified Python venv.
-The command fast-forwards the repository, checks Python syntax, runs
-all offline V52 tests, publishes the 32 public review pages with the
-source-verifying publisher, and publishes numeric-only pending/progress
-counters through GOGIT. Every stage stops on failure.
+**Completed on fhc2:**
+
+1. The source-verifying exporter published 32 new public V52 cases under GitHub commit [`bef66d09`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/bef66d092f702073072e07084848ef5d3d52fff0).
+2. The initial numeric-only GOGIT audit [`PHASE03-SMOLTALK-V52-REVIEW-INIT-001`](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-INIT-001.json) confirmed 32 public cases, initially 32 PENDING.
+3. Eight HIGH cases were annotated, and GOGIT [`PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001`](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json) captured **8 reviewed / 24 pending**.
+4. The remaining 24 public V52 cases were subsequently annotated directly on GitHub; the last case commit is [`7e27e730`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7e27e73033fdf6ab9bce227c379e4b00794af925). Their individual case pages show 8 A, 12 B, 12 C across the full 32-case batch.
+
+**Still pending:** `PHASE03-SMOLTALK-V52-REVIEW-FINAL-001` was not found in the public audit history as of this documentation checkpoint. The GOGIT `latest.json` record is therefore an earlier 8/32 snapshot, not a contradiction in the case annotations. Never change it by hand to imply an audit that has not run.
+
+At the next authorized resumption, run this **final audit only** on fhc2, from a clean and synchronized `main`:
 
 ```bash
-cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python -m py_compile tools/publish_smoltalk_v52_github_reviews.py tools/public-audits/smoltalk_v52_github_progress.py tools/gogit_public.py tests/phase-03/test_smoltalk_v52_publisher.py && /root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests/phase-03 -p 'test_smoltalk_v52_publisher.py' -v && /root/Mini-Kuzai/.venv/bin/python tools/publish_smoltalk_v52_github_reviews.py && /root/Mini-Kuzai/.venv/bin/python tools/gogit_public.py --step PHASE03-SMOLTALK-V52-REVIEW-INIT-001 --audit tools/public-audits/smoltalk_v52_github_progress.py
+cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/gogit_public.py --step PHASE03-SMOLTALK-V52-REVIEW-FINAL-001 --audit tools/public-audits/smoltalk_v52_github_progress.py
 ```
 
-Do not paste terminal results into ChatGPT. Reply `gogit` after execution.
-Read the published state directly from:
+Do not re-run the one-time V52 source exporter: it refuses an already existing destination. GOGIT will verify the source immutability and the nine review fields before writing numerical reports. If it fails, diagnose before retrying; never force-push or forge an audit. No terminal results need to be pasted into ChatGPT: after execution, request `gogit` to inspect the published record.
 
-- `reviews/smoltalk-v52/README.md`
-- `reviews/smoltalk-v52/cases/`
-- `reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-INIT-001.json`
-
-GOGIT publishes only approved numeric counters and creates an automatic
-local timestamped backup of previous `latest` reports.
-
-If a command fails, the next action is diagnosis, not automatic
-retry or force-push. An initial V52 case publication may succeed while
-the later GOGIT numeric report fails; inspect GitHub before retrying
-a publisher that deliberately refuses any existing V52 cases.
+The [V52 results](../reviews/smoltalk-v52/RESULTS-001.md) and [V52 case index](../reviews/smoltalk-v52/README.md) preserve the current GitHub-annotated status until that final report exists.
 
 ## Future steps
 
-After a 32-case GitHub publication, review the 32 independent cases
-for reasoning, creative expression, conversational continuity and
-responsive correction. Verify annotations through the immutable-source
-numeric audit with a **new** STEP_ID for each report.
+The 32 public V52 cases are already annotated. The next required gate is the **one-time final source-integrity/numeric GOGIT audit**, followed by documentation of any discrepancies. Do not re-export or relabel the cases merely to change aggregate totals. Only after that validation should candidate segmentation, factual repair, leakage checks, and broader semantic sampling resume.
 
 Do not change official TRAIN/VALIDATION/BLIND, the final tokenizer, or
 model architecture. Phase 03 training remains unauthorized.
