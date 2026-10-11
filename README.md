@@ -223,7 +223,7 @@ Public aggregate results are transmitted using the reviewed [gogit workflow](too
 
 **V50 - revised training-data direction:** Mini-Kuzai now prioritizes cognitive exploration, multi-turn understanding, imagination, character development, creative writing, nuanced dialogue, correction after feedback and contextual expression. Specialized IT and programming proficiency is secondary. An imperfect conversational example is not automatically excluded for a technical fault, but an incorrect answer cannot be promoted as a correct supervised target. V48/V49 verdicts are historical quality assessments, not permanent bans on behavioral analysis.
 
-V50 provides a new **local-only heuristic prioritization of all 1,139 provisional V44 public SmolTalk candidates**. Hints are not semantic verdicts, and no candidates have yet been re-evaluated by the V50 script. See the [V50 cognitive/creative policy](phases/MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md) and [V50 execution guide](tools/V50-COGNITIVE-SCREEN.md). The queue is created on fhc2 only when the audited command runs. The tokenizer and TRAIN allocation remain unchanged.
+V50 provides a new **local-only heuristic prioritization of all 1,139 provisional V44 public SmolTalk candidates**. Hints are not semantic verdicts, and no candidates have yet been re-evaluated by the V50 script. See the [V50 cognitive/creative policy](phases/MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md) and [V50 execution guide](tools/V50-COGNITIVE-SCREEN.md). The queue is created on fhc2 only when the audited command runs. An [eight-case V50 cognitive/creative pilot](reviews/smoltalk-v50/PILOT-001.md) has already been recorded from public GitHub review cases, without changing V49 verdicts. The tokenizer and TRAIN allocation remain unchanged.
 
 **Phase 03 has opened V50 cognitive/creative data prioritization following V49.** The [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) is preserved as historical documentation. See [V48 review instructions](tools/V48-REVIEW.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
 
@@ -299,7 +299,7 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V50 SCREENING READY
+Phase 03                  : DATA PREPARATION - V50 SCREENING PREPARED
 Custom authoring track    : PAUSED AFTER B05
 External dataset study    : V50 V44 1139 CANDIDATES - AUDIT PENDING
 SmolTalk v0.4             : VALIDATED EXTERNAL CANDIDATE RESERVOIR
