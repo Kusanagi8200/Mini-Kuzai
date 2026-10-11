@@ -55,6 +55,22 @@ class V52InventoryTests(unittest.TestCase):
         )
         self.assertEqual(gogit.numeric_metrics(raw), metrics)
 
+    def test_v48_review_has_24_rescues_outside_v44(self):
+        import re
+        index = (REPO / "reviews/smoltalk-v48/README.md").read_text(
+            encoding="utf-8"
+        )
+        reasons = re.findall(
+            r"(?m)^\\|\\s*\\d+\\s*\\|\\s*(RELABEL|RESCUE|BASE)\\s*\\|",
+            index,
+        )
+        self.assertEqual(len(reasons), 68)
+        self.assertEqual(reasons.count("RELABEL"), 12)
+        self.assertEqual(reasons.count("BASE"), 32)
+        self.assertEqual(reasons.count("RESCUE"), 24)
+        # In-V44 exclusions = BASE + RELABEL, never RESCUE.
+        self.assertEqual(reasons.count("BASE") + reasons.count("RELABEL"), 44)
+
     def test_duplicate_source_is_rejected(self):
         row = self.row("a" * 64, "HIGH", "smol-magpie-ultra-short", 2)
         with self.assertRaises(RuntimeError):
