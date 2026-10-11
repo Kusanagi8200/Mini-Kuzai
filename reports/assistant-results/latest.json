@@ -2,11 +2,11 @@
   "metrics": {
     "TOTAL_CANDIDATS": 68,
     "V48_BASELINE_REVIEWED": 32,
-    "V48_HELD": 14,
+    "V48_HELD": 0,
     "V48_PRIORITY_REVIEWED": 36,
     "V48_QUEUE_TOTAL": 68,
-    "V48_REJECTED": 31,
-    "V48_RETAINED": 23,
+    "V48_REJECTED": 44,
+    "V48_RETAINED": 24,
     "V48_REVIEWED": 68,
     "V48_TRAIN_APPROVED": 0,
     "V48_UNREVIEWED": 0
@@ -19,6 +19,6 @@
   "semantic_validation_complete": false,
   "source": "SmolTalk v0.4 - public external dataset",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V48-GITHUB-REVIEW-001",
+  "step_id": "PHASE03-SMOLTALK-V49-HOLD-RESOLVED-001",
   "training_authorized": false
 }
