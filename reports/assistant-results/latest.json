@@ -1,24 +1,25 @@
 {
   "metrics": {
-    "TOTAL_CANDIDATS": 1139,
-    "TOTAL_SOURCE": 8000,
-    "V47_BASELINE": 32,
-    "V47_PRIORITY": 36,
-    "V47_QUEUE_TOTAL": 68,
-    "V47_RECLASS": 12,
-    "V47_RESCUE": 24,
-    "V47_SOURCE_MATCHED": 68,
-    "V47_TRAIN_APPROVED": 0,
-    "V47_UNREVIEWED": 68
+    "TOTAL_CANDIDATS": 68,
+    "V48_BASELINE_REVIEWED": 0,
+    "V48_HELD": 0,
+    "V48_PRIORITY_REVIEWED": 0,
+    "V48_QUEUE_TOTAL": 68,
+    "V48_REJECTED": 0,
+    "V48_RETAINED": 0,
+    "V48_REVIEWED": 0,
+    "V48_REVISIONS": 0,
+    "V48_TRAIN_APPROVED": 0,
+    "V48_UNREVIEWED": 68
   },
   "phase": "03",
   "private_conversation_data_included": false,
-  "producer": "tools/public-audits/smoltalk_v47_queue_integrity.py",
-  "producer_sha256": "159601ab89c86d3852c0f74ed911d32164dce838a40a02324d2c38ef6c097d32",
+  "producer": "tools/public-audits/smoltalk_v48_progress.py",
+  "producer_sha256": "8b65dc64460e636eee013d1935d92ca8f5339f1572ab6bf5b9f693d4b016e426",
   "project": "Mini-Kuzai",
   "semantic_validation_complete": false,
   "source": "SmolTalk v0.4 - public external dataset",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V47-INTEGRITY-001",
+  "step_id": "PHASE03-SMOLTALK-V48-INIT-001",
   "training_authorized": false
 }
