@@ -211,11 +211,11 @@ OASST1 was fully downloaded, reconstructed, quality-audited, behaviorally compar
 
 The Mini-Kuzai-specific corpus will remain responsible for identity, curiosity, disagreement, initiative, creativity, opinion behavior, relationship continuity, and non-assistant character.
 
-### External SmolTalk curation and pause checkpoint (2026-10-10)
+### External SmolTalk curation - status 2026-10-11 (Phase 03 paused)
 
 The public SmolTalk v0.4 reservoir contains 8,000 candidate records, but is not an approved training dataset. V44 produced a provisional stratified selection of 1,139 conversations (679 multi-turn, 460 single-turn). A keyword-based creative category reached 69 of its 130 target records. V46 found broader creative signals and produced a 68-record **local review queue**; neither these signals nor the queue are validated training examples.
 
-V47 verified the integrity of all 68 local review records against their public SmolTalk sources. V48 now provides an interactive, local-only human review tool for 36 priority items followed by 32 baseline examples. The V44 pool is unchanged and final mixture ratios remain undecided.
+V47 verified the integrity of all 68 local review records against their public SmolTalk sources. V48/V49 subsequently reviewed those 68 public-source cases on GitHub (36 priority and 32 baseline); historical local review tools remain available but are not the active completion status. The V44 pool is unchanged and final mixture ratios remain undecided.
 
 Public aggregate results are transmitted using the reviewed [gogit workflow](tools/GOGIT.md): the local script publishes only allowlisted numerical SmolTalk metrics to `reports/assistant-results/`, and the user then requests retrieval with `gogit`. This mechanism does not run in the background and must never be used for private conversation data or private-derived results.
 
@@ -225,9 +225,11 @@ Public aggregate results are transmitted using the reviewed [gogit workflow](too
 
 V50 has completed a **local-only heuristic screening of all 1,139 provisional V44 public SmolTalk candidates**: 200 HIGH, 431 MEDIUM and 508 LOW. These are selection hints, not semantic or quality verdicts. See the [V50 cognitive/creative policy](phases/MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md), [public numeric report](reports/assistant-results/history/PHASE03-SMOLTALK-V50-COGNITIVE-SCREEN-001.json) and [eight-case methodology pilot](reviews/smoltalk-v50/PILOT-001.md). The full queue remains on fhc2; V44, tokenizer and TRAIN allocation are unchanged.
 
-**V51 - first semantic review completed:** 24 new public SmolTalk conversations were evaluated on GitHub: 9 A, 8 B, 7 C, 0 HOLD. These include 12 HIGH, 6 MEDIUM and 6 LOW V50 hint examples. The results demonstrate both underestimated creative/contextual examples in MEDIUM/LOW and an invalid HIGH example. See the [V51 qualitative results](reviews/smoltalk-v51/RESULTS-001.md), [24 reviewed cases](reviews/smoltalk-v51/README.md) and [V51 methodology](phases/MINI-KUZAI-PHASE-03-V51-SEMANTIC-REVIEW.md). Only public external SmolTalk cases were reviewed. The numeric-only V51 progress report still requires regeneration on fhc2.
+**V51 - first semantic review completed:** 24 new public SmolTalk conversations were evaluated on GitHub: 9 A, 8 B, 7 C, 0 HOLD. These include 12 HIGH, 6 MEDIUM and 6 LOW V50 hint examples. The results demonstrate both underestimated creative/contextual examples in MEDIUM/LOW and an invalid HIGH example. See the [V51 qualitative results](reviews/smoltalk-v51/RESULTS-001.md), [24 reviewed cases](reviews/smoltalk-v51/README.md) and [V51 methodology](phases/MINI-KUZAI-PHASE-03-V51-SEMANTIC-REVIEW.md). Only public external SmolTalk cases were reviewed. The [V51 numeric GOGIT audit](reports/assistant-results/history/PHASE03-SMOLTALK-V51-PILOT-REVIEW-001.json) was published and verified.
 
-**Phase 03 has completed the first 24-case V51 semantic review; broader V44 assessment remains open.** The [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) is preserved as historical documentation. See [V48 review instructions](tools/V48-REVIEW.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
+**V52 - 32-case semantic review annotated:** The [source-verified V52 inventory](reports/assistant-results/history/PHASE03-SMOLTALK-V52-INVENTORY-001.json) identified 1,071 candidates still available in the provisional V44 selection before the V52 batch (after excluding 44 V48 in-V44 examples and 24 V51 examples). A further 32 distinct public-external cases were published (8 HIGH, 12 MEDIUM and 12 LOW; 20 multi-turn) and all 32 were subsequently annotated on GitHub: **8 A, 12 B, 12 C, 0 HOLD**. See the [V52 qualitative summary](reviews/smoltalk-v52/RESULTS-001.md), [case index](reviews/smoltalk-v52/README.md) and [V52 workflow](tools/V52-GITHUB-REVIEW.md). The [last V52 GOGIT progress snapshot](reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json) still records **8/32** because it was published before the remaining 24 annotations; the **final V52 GOGIT integrity/numeric audit is not yet published**. The report files must not be updated manually.
+
+**Phase 03 is paused after completion of the 32 V52 annotations, pending the final GOGIT audit.** The 2026-10-10 [historical pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) remains preserved. Across V48/V49, V51 and V52, 124 distinct public SmolTalk examples have been reviewed; none is automatically approved for TRAIN. Broader V44 assessment remains open. No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
 
 ### Private local corpus pipeline
 
@@ -301,11 +303,13 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V51 24 REVIEWED
+Phase 03                  : DATA PREPARATION - V52 32/32 ANNOTATED - PAUSED
 Custom authoring track    : PAUSED AFTER B05
-External dataset study    : V51 9 A / 8 B / 7 C - NUMERIC AUDIT PENDING
-SmolTalk v0.4             : VALIDATED EXTERNAL CANDIDATE RESERVOIR
+External dataset study    : V51 9A/8B/7C AUDITED; V52 8A/12B/12C ANNOTATED
+SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
+V52 final GOGIT audit     : PENDING - LATEST IS 8/32 HISTORICAL SNAPSHOT
+Public external TRAIN     : 0 APPROVED
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
 Private source material   : NOT COMMITTED
 Derived private metrics   : NOT COMMITTED
@@ -324,9 +328,9 @@ Training authorized       : NO
 
 B01 through B05 custom TRAIN batches are preserved and reviewed (31 JSONL records containing 35 USER/ASSISTANT exchanges). Custom authoring remains paused after B05 and no VALIDATION or BLIND TEST conversation text has been created.
 
-The external SmolTalk review has completed V49, resolving all 14 provisional HOLD cases from the 68-record quality diagnostic. V44 remains provisional and unchanged; this diagnostic does not establish the acceptance rate of the full candidate reservoir. Private-source curation remains exclusively local and paused. B06 UNKNOWN INFORMATION authoring is not resumed.
+The external SmolTalk review completed V49 (24 RETAIN, 44 REJECT), V51 (9 A, 8 B, 7 C, numeric audit confirmed) and 32 V52 qualitative annotations (8 A, 12 B, 12 C; final numeric audit pending). V44 remains provisional and unchanged; these purposefully sampled reviews cannot establish an acceptance rate for the full reservoir. Private-source curation remains exclusively local and paused. B06 UNKNOWN INFORMATION authoring is not resumed.
 
-See the [current V49 results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), [historical V48 results](reviews/smoltalk-v48/V48-REVIEW-RESULTS.md), [GitHub review procedure](tools/V48-GITHUB-REVIEW.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md), the [earlier B05 checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md), and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
+See the [V52 annotated results and pending final audit](reviews/smoltalk-v52/RESULTS-001.md), [V51 verified results](reviews/smoltalk-v51/RESULTS-001.md), [V49 completed results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), [historical V48 results](reviews/smoltalk-v48/V48-REVIEW-RESULTS.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md), the [B05 checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
 
 ---
 
