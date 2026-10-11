@@ -32,7 +32,9 @@ CATEGORIES = {
 }
 CREATIVE = re.compile(
     r"\b(?:fiction|fictional|story|stories|storytelling|novel|poem|poetry|"
-    r"character|characters|plot|screenplay|worldbuild(?:ing)?|fantasy|"
+    r"character (?:arc|development|traits?|motivations?|backstory)|"
+    r"(?:invent|create|develop|imagine) (?:a |an )?character|"
+    r"plot|screenplay|worldbuild(?:ing)?|fantasy|"
     r"imaginary|imagine|brainstorm|roleplay|role-play|creative|"
     r"narrative voice|alternate ending|dialogue scene)\b", re.I
 )
