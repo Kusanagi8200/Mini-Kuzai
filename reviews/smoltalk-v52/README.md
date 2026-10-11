@@ -1,10 +1,19 @@
 # Mini-Kuzai V52 - public persona-first semantic review
 
+**Status on 2026-10-11: 32/32 public cases annotated on GitHub (8 A, 12 B, 12 C, 0 HOLD). Final numeric/source-integrity GOGIT audit NOT YET PUBLISHED.**
+
 32 distinct public-external SmolTalk cases, not previously published
-in V48/V49 or V51. All nine V52 fields begin PENDING.
+in V48/V49 or V51. All nine V52 fields were initially PENDING when exported;
+the case pages now contain their individual reasoned qualitative annotations.
 Heuristic HIGH/MEDIUM/LOW are NOT quality judgments.
 No private ChatGPT conversation or private-derived content.
 No TRAIN, tokenizer or evaluation split approval.
+
+See the [V52 annotated results](RESULTS-001.md) for counts, examples, limitations and audit provenance.
+The last published [V52 numeric progress report](../../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json)
+records 8/32 reviewed **at the time of that historical snapshot**.
+It predates the other 24 GitHub annotations and must not be hand-edited.
+A fresh final GOGIT audit remains the next integrity gate.
 
 | Case | V50 hint | V44 category | Public source | Review |
 | ---: | --- | --- | --- | --- |
