@@ -75,19 +75,14 @@ other future research.
 None of A/B/C is a benchmark score, a test result for model
 capabilities, or permission to introduce a conversation into TRAIN.
 
-## Recommended next gate
+## Subsequent audit and review progression (2026-10-11)
 
-1. Run the public source-verification and numeric-only V51 GitHub
-   progress audit on fhc2, after synchronizing a clean `main`.
-2. Continue V51 with further **distinct, stratified** batches.
-   Pay special attention to MEDIUM/LOW cases containing overlooked
-   creativity, context retention, user feedback and meaningful
-   behavioral correction.
-3. Avoid replacing V44's 1,139 candidates with this tiny pilot.
-   Re-evaluate mixture quotas and final tokenizer only after
-   substantially broader manual semantic quality assessment.
-4. Retain separate controls for correctness, meaningful cognition,
-   creative content, identity design and untouched evaluation cases.
+The V51 numeric-only source-verification audit was **completed and published**, see [PHASE03-SMOLTALK-V51-PILOT-REVIEW-001.json](../../reports/assistant-results/history/PHASE03-SMOLTALK-V51-PILOT-REVIEW-001.json). It confirms 24 reviewed cases (9 A, 8 B, 7 C, 0 HOLD), with no TRAIN approval. The original V51 recommendation to execute this audit is now a historical completed action, not an outstanding next step.
+
+A separate [V52 public review](../smoltalk-v52/RESULTS-001.md) then selected 32 distinct cases to sample MEDIUM/LOW possible false negatives, rather than expanding or relabeling the 24 V51 dossiers. All 32 V52 case pages have been annotated on GitHub. **V52's final GOGIT source-integrity/numeric report remains outstanding**, and the last V52 numeric progress snapshot predates the remaining 24 annotations.
+
+The V44 selection is still provisional. Future decisions must maintain independent controls for factual correctness, cognition and creativity, deduplication and reserved evaluation examples before considering a final mixture or tokenizer.
+
 
 The original V48/V49 pages and outcomes remain unchanged. The V44
 pool and all TRAIN/VALIDATION/BLIND assignments remain unchanged.
