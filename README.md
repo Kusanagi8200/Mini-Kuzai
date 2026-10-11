@@ -223,9 +223,11 @@ Public aggregate results are transmitted using the reviewed [gogit workflow](too
 
 **V50 - revised training-data direction:** Mini-Kuzai now prioritizes cognitive exploration, multi-turn understanding, imagination, character development, creative writing, nuanced dialogue, correction after feedback and contextual expression. Specialized IT and programming proficiency is secondary. An imperfect conversational example is not automatically excluded for a technical fault, but an incorrect answer cannot be promoted as a correct supervised target. V48/V49 verdicts are historical quality assessments, not permanent bans on behavioral analysis.
 
-V50 provides a new **local-only heuristic prioritization of all 1,139 provisional V44 public SmolTalk candidates**. Hints are not semantic verdicts, and no candidates have yet been re-evaluated by the V50 script. See the [V50 cognitive/creative policy](phases/MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md) and [V50 execution guide](tools/V50-COGNITIVE-SCREEN.md). The queue is created on fhc2 only when the audited command runs. An [eight-case V50 cognitive/creative pilot](reviews/smoltalk-v50/PILOT-001.md) has already been recorded from public GitHub review cases, without changing V49 verdicts. The tokenizer and TRAIN allocation remain unchanged.
+V50 has completed a **local-only heuristic screening of all 1,139 provisional V44 public SmolTalk candidates**: 200 HIGH, 431 MEDIUM and 508 LOW. These are selection hints, not semantic or quality verdicts. See the [V50 cognitive/creative policy](phases/MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md), [public numeric report](reports/assistant-results/history/PHASE03-SMOLTALK-V50-COGNITIVE-SCREEN-001.json) and [eight-case methodology pilot](reviews/smoltalk-v50/PILOT-001.md). The full queue remains on fhc2; V44, tokenizer and TRAIN allocation are unchanged.
 
-**Phase 03 has opened V50 cognitive/creative data prioritization following V49.** The [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) is preserved as historical documentation. See [V48 review instructions](tools/V48-REVIEW.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
+**V51 - semantic evaluation opened:** A deterministic, source-verified exporter and independent scoring rubric are ready for a first controlled public batch of 24 *new* conversations (12 HIGH, 6 MEDIUM, 6 LOW). Full case publication and review have not yet taken place. See the [V51 plan](phases/MINI-KUZAI-PHASE-03-V51-SEMANTIC-REVIEW.md) and [GitHub export/review procedure](tools/V51-GITHUB-REVIEW.md). No private ChatGPT-derived material can enter this workflow.
+
+**Phase 03 has completed V50 heuristic screening and opened V51 semantic review preparation.** The [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) is preserved as historical documentation. See [V48 review instructions](tools/V48-REVIEW.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
 
 ### Private local corpus pipeline
 
@@ -299,9 +301,9 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V50 SCREENING PREPARED
+Phase 03                  : DATA PREPARATION - V51 REVIEW EXPORT READY
 Custom authoring track    : PAUSED AFTER B05
-External dataset study    : V50 V44 1139 CANDIDATES - AUDIT PENDING
+External dataset study    : V50 1139 SCREENED - V51 24 CASES PENDING
 SmolTalk v0.4             : VALIDATED EXTERNAL CANDIDATE RESERVOIR
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
