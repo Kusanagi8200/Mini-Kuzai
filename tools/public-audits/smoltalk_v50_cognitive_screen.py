@@ -213,14 +213,20 @@ def main():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     lines = "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in candidates)
     document = json.dumps(result, ensure_ascii=True, indent=2, sort_keys=True) + "\n"
+    created_queue = False
+    created_report = False
     try:
         exclusive_bytes(OUTPUT, lines.encode("utf-8"))
+        created_queue = True
         exclusive_bytes(REPORT, document.encode("utf-8"))
+        created_report = True
     except Exception:
-        # Roll back a partially created run. Never replace an older file.
-        # Preconditions require neither destination to exist beforehand.
-        OUTPUT.unlink(missing_ok=True)
-        REPORT.unlink(missing_ok=True)
+        # Do not delete pre-existing files in a concurrent execution.
+        # An interrupted write can be diagnosed by a later explicit check.
+        if created_queue:
+            OUTPUT.unlink(missing_ok=True)
+        if created_report:
+            REPORT.unlink(missing_ok=True)
         raise
     metrics = {
         "V50_QUEUE_TOTAL": 1139,
