@@ -109,8 +109,11 @@ def main():
     # candidates, computed heuristic signals and all 68 V48 filenames.
     after_v48 = publisher.verified_candidates()
     excluded_v48 = 1139 - len(after_v48)
-    if excluded_v48 != 68:
-        raise RuntimeError("Expected V48 exclusions do not match V50 population")
+    # The V48 review has 68 cases, but 24 V46 RESCUE cases were
+    # deliberately sampled OUTSIDE the 1,139-record V44 selection.
+    # Only the 12 RELABEL and 32 BASE cases can be excluded from V44.
+    if excluded_v48 != 44:
+        raise RuntimeError("Expected 44 V48 in-V44 exclusions")
     selected_v51 = validated_v51_sha(publisher, progress, after_v48)
     remaining = [
         row for row in after_v48
