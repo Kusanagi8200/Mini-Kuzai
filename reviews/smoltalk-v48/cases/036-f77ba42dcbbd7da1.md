@@ -1,7 +1,7 @@
 # V48 public SmolTalk review 36/68
 
-Review status: PENDING
-Review rationale: NOT_REVIEWED
+Review status: HOLD
+Review rationale: Multi-turn low-light garden and water-conservation advice remains broadly topical and useful, but the last answer makes an unqualified numerical claim of up to 70 percent water savings and omits local greywater health or legal constraints. The conversation is practical guidance rather than creativity; hold for fact checking and domain placement.
 
 Reason: RESCUE
 External subset: smol-magpie-ultra-short
