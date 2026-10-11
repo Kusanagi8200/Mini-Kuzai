@@ -348,21 +348,31 @@ The Phase 03 development task is resumed for external dataset quality review onl
 
 ## V50 screening execution
 
-The [V50 execution guide](../tools/V50-COGNITIVE-SCREEN.md) and
-[public SmolTalk-only candidate screening code](../tools/public-audits/smoltalk_v50_cognitive_screen.py)
-are published. The tool checks the 8,000 public-source records against
-the unchanged V44 selection and writes a separate, local-only 1,139-item
-review queue with broad priority signals. The public `gogit` mechanism
-permits only approved numeric V50 metrics. The queue has **not yet been
-generated or quality-reviewed** by this publication.
+V50 was successfully executed on fhc2 and verified through the numeric-only public `gogit` report. It processed all 1,139 provisional V44 external-public candidates and created a separate local-only queue of 200 HIGH, 431 MEDIUM and 508 LOW heuristic priorities. These groups have **not** been semantically validated. The public report contains only allowlisted numeric counts; source conversations remain in the fhc2 workspace.
 
 No changes to TRAIN, VALIDATION, BLIND, model architecture, tokenizer,
 or training authorization follow from V50 preparation.
 
+## V51 controlled public semantic review
+
+The [V51 plan](MINI-KUZAI-PHASE-03-V51-SEMANTIC-REVIEW.md)
+and [source-verified GitHub review workflow](../tools/V51-GITHUB-REVIEW.md)
+are now published. The new exporter will select 24 fresh public
+SmolTalk cases from the verified V50 queue (12 HIGH, 6 MEDIUM, 6 LOW),
+with source and category diversification, excluding all previously
+published V48/V49 diagnostics. The nine independent review fields
+evaluate cognitive value, creativity, continuity, correction,
+communication, factual risk, instruction fit and overall A/B/C/HOLD.
+
+The exporter and integrity audit are committed, but actual V51 case
+publication, scoring and numeric progress reporting have not yet
+been executed on fhc2. V50 priority is an unvalidated screening hint,
+not a review verdict. Historic V48/V49 outcomes are preserved.
+
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION - V50 PRELIMINARY SCREEN PREPARED
+PHASE 03                  : DATA PREPARATION - V51 PUBLIC REVIEW READY
 Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -414,6 +424,6 @@ No Phase 03 model training is authorized at this checkpoint.
 
 The tokenizer strategy has been explored, but its final production vocabulary is not frozen. The Phase 03 architecture remains undecided.
 
-The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The current operational checkpoint is [V50 cognitive and creative screening](MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md). Its executable audit has been published but is pending local tests and execution on fhc2; no semantic quality verdict exists yet for the full V44 pool. V49 remains the previous completed diagnostic step.
+The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The current operational checkpoint is [V51 controlled semantic review](MINI-KUZAI-PHASE-03-V51-SEMANTIC-REVIEW.md), following the completed V50 numeric screening. The first 24 public V51 cases are ready for controlled export to GitHub from fhc2, not yet published. No V51 semantic decision has been recorded.
 
 Private-corpus review stays in the local workspace and is paused. Future controlled custom-corpus authoring would resume at B06 UNKNOWN INFORMATION under authoring policy v0.2 and the existing semantic split guard, only after an explicit request.
