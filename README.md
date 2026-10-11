@@ -219,6 +219,8 @@ V47 verified the integrity of all 68 local review records against their public S
 
 Public aggregate results are transmitted using the reviewed [gogit workflow](tools/GOGIT.md): the local script publishes only allowlisted numerical SmolTalk metrics to `reports/assistant-results/`, and the user then requests retrieval with `gogit`. This mechanism does not run in the background and must never be used for private conversation data or private-derived results.
 
+**GitHub-native V48 reviews:** A verified exporter can publish the 68 *external public SmolTalk* conversations as separately editable Markdown review pages, each initially marked PENDING. After the one-time server export, reviews can be read and recorded directly on GitHub. This workflow never exports private ChatGPT material or the local decision ledger. See the [V48 GitHub review guide](tools/V48-GITHUB-REVIEW.md). The review cases have not yet been exported by this documentation update.
+
 **Phase 03 has resumed for V48 qualitative review tooling.** The [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) is preserved as historical documentation. See [V48 review instructions](tools/V48-REVIEW.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
 
 ### Private local corpus pipeline
