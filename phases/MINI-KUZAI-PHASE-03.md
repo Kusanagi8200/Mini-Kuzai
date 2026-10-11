@@ -364,15 +364,19 @@ published V48/V49 diagnostics. The nine independent review fields
 evaluate cognitive value, creativity, continuity, correction,
 communication, factual risk, instruction fit and overall A/B/C/HOLD.
 
-The exporter and integrity audit are committed, but actual V51 case
-publication, scoring and numeric progress reporting have not yet
-been executed on fhc2. V50 priority is an unvalidated screening hint,
-not a review verdict. Historic V48/V49 outcomes are preserved.
+The 24 new V51 public-source cases were exported from fhc2 and
+assessed directly on GitHub: 9 A, 8 B, 7 C, 0 HOLD across 12 HIGH,
+6 MEDIUM and 6 LOW heuristic-priority strata. Their individual
+rationales and scores are complete. The [V51 results](../reviews/smoltalk-v51/RESULTS-001.md)
+record methodological caveats and false-negative examples. The
+numeric-only progress audit has not yet been regenerated through
+gogit. V50 priorities remain heuristic hints, and V48/V49 history
+remains untouched.
 
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION - V51 PUBLIC REVIEW READY
+PHASE 03                  : DATA PREPARATION - V51 24 REVIEWED
 Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -424,6 +428,6 @@ No Phase 03 model training is authorized at this checkpoint.
 
 The tokenizer strategy has been explored, but its final production vocabulary is not frozen. The Phase 03 architecture remains undecided.
 
-The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The current operational checkpoint is [V51 controlled semantic review](MINI-KUZAI-PHASE-03-V51-SEMANTIC-REVIEW.md), following the completed V50 numeric screening. The first 24 public V51 cases are ready for controlled export to GitHub from fhc2, not yet published. No V51 semantic decision has been recorded.
+The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The current operational checkpoint is the [completed V51 24-case qualitative review](../reviews/smoltalk-v51/RESULTS-001.md), following V50 numeric screening. The next gate is to publish the verified numeric V51 progress report from fhc2 and continue stratified semantic review beyond these 24 cases. The provisional V44 selection and the training/split/tokenizer gates remain unchanged.
 
 Private-corpus review stays in the local workspace and is paused. Future controlled custom-corpus authoring would resume at B06 UNKNOWN INFORMATION under authoring policy v0.2 and the existing semantic split guard, only after an explicit request.
