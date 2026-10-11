@@ -1,7 +1,7 @@
 # V48 public SmolTalk review 53/68
 
-Review status: PENDING
-Review rationale: NOT_REVIEWED
+Review status: REJECT
+Review rationale: The proposed ten-step Lyapunov calculation is numerically wrong and omits reproducible intermediate values. With x0=0.3 and r=3.8, x2 is about 0.612545 rather than 0.613104, and the ten-term average logarithmic derivative is about 0.2292, not 0.426. Unsuitable mathematics target.
 
 Reason: BASE
 External subset: openhermes-50k
