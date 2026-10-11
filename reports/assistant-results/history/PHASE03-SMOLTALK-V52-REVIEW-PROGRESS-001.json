@@ -1,0 +1,30 @@
+{
+  "metrics": {
+    "V52_PUBLIC_A": 5,
+    "V52_PUBLIC_B": 2,
+    "V52_PUBLIC_C": 1,
+    "V52_PUBLIC_HELD": 0,
+    "V52_PUBLIC_HERMES": 6,
+    "V52_PUBLIC_HIGH": 8,
+    "V52_PUBLIC_LOW": 12,
+    "V52_PUBLIC_MEDIUM": 12,
+    "V52_PUBLIC_MULTITURN": 20,
+    "V52_PUBLIC_OSS": 3,
+    "V52_PUBLIC_PENDING": 24,
+    "V52_PUBLIC_QUEUE_TOTAL": 32,
+    "V52_PUBLIC_REVIEWED": 8,
+    "V52_PUBLIC_REWRITE": 3,
+    "V52_PUBLIC_SMOL": 20,
+    "V52_PUBLIC_TRAIN_APPROVED": 0
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/smoltalk_v52_github_progress.py",
+  "producer_sha256": "af0561afb139fc4e5a906a64411914616e4de12425707a3b10d9d9c2f4ee9abc",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "SmolTalk v0.4 - public external dataset",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001",
+  "training_authorized": false
+}
