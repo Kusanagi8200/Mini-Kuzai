@@ -1,7 +1,7 @@
 # V48 public SmolTalk review 36/68
 
-Review status: HOLD
-Review rationale: Multi-turn low-light garden and water-conservation advice remains broadly topical and useful, but the last answer makes an unqualified numerical claim of up to 70 percent water savings and omits local greywater health or legal constraints. The conversation is practical guidance rather than creativity; hold for fact checking and domain placement.
+Review status: REJECT
+Review rationale: V49: This coherent gardening advice remains outside the intended creative-rescue category. It recommends greywater reuse without noting applicable health and legal constraints and asserts up to seventy percent savings from clay-pot irrigation without establishing a source or reference conditions. The unqualified technical claims make the complete record unsuitable as a high-confidence target.
 
 Reason: RESCUE
 External subset: smol-magpie-ultra-short
