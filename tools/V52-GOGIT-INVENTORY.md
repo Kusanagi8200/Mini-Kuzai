@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V52 public inventory through GOGIT
 
-Status: audit script and offline checks published; **V52 inventory not yet executed**.
+Status: **V52 inventory completed and confirmed by GOGIT** (commit `3c1ca914`); 1,071 remaining candidates. Subsequent 32-case qualitative review publisher is documented in [V52-GITHUB-REVIEW.md](V52-GITHUB-REVIEW.md).
 
 ## Scope
 
