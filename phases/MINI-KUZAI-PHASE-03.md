@@ -306,10 +306,24 @@ Checkpoint and method documentation:
 - [Public audit reporter](../tools/GOGIT.md)
 - [Private corpus methodology](MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md)
 
+## V47 integrity gate and V48 human review - resumed 2026-10-11
+
+V47 verified that all 68 queued public SmolTalk conversations match their source records, with no queue-level duplicates and no TRAIN approvals. The queue still contains 68 unreviewed candidates: 12 RELABEL, 24 RESCUE, and 32 BASE.
+
+V48 has published an interactive terminal tool for human triage. It displays full public-source conversations locally and requires an explicit `RETAIN`, `REJECT`, or `HOLD` decision with justification. The append-only decision ledger is stored outside Git under the local SmolTalk review directory. Revisions preserve history.
+
+The separate numeric-only V48 progress audit can be run under `gogit` once synchronized. Its public metrics do not contain conversations, source IDs, or human explanations. No human decision is assumed to exist simply because the tool was published.
+
+- [V48 local review instructions](../tools/V48-REVIEW.md)
+- [V47 public integrity report](../reports/assistant-results/history/PHASE03-SMOLTALK-V47-INTEGRITY-001.json)
+- [2026-10-10 historical pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md)
+
+The Phase 03 development task is resumed for external dataset quality review only. TRAIN, VALIDATION, BLIND, tokenizer and model-training authorization gates remain unchanged.
+
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION PAUSED AFTER V46
+PHASE 03                  : DATA PREPARATION - V48 TOOL READY
 Primary axis              : TRAINING AND PERSONALIZATION
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -338,7 +352,7 @@ Training authorized       : NO
 
 ## Current checkpoint
 
-The controlled custom authoring track remains paused after the B05 TRAIN batch. As of 2026-10-10, external SmolTalk review is also paused after V46; no additional dataset-preparation or training task is active.
+The controlled custom authoring track remains paused after the B05 TRAIN batch. On 2026-10-11, external SmolTalk quality-review preparation resumed. V47 verified the local queue's integrity, and the V48 human review tool is ready; no human decisions have been confirmed.
 
 B01 through B05 are complete and reviewed:
 
@@ -361,6 +375,6 @@ No Phase 03 model training is authorized at this checkpoint.
 
 The tokenizer strategy has been explored, but its final production vocabulary is not frozen. The Phase 03 architecture remains undecided.
 
-The current pause checkpoint is [2026-10-10](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md), superseding the operational status of the [B05 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) without replacing its historical content.
+The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The operational resume point is [V48 human review](../tools/V48-REVIEW.md).
 
 Private-corpus review stays in the local workspace and is paused. Future controlled custom-corpus authoring would resume at B06 UNKNOWN INFORMATION under authoring policy v0.2 and the existing semantic split guard, only after an explicit request.
