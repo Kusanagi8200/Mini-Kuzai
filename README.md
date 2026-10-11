@@ -225,9 +225,9 @@ Public aggregate results are transmitted using the reviewed [gogit workflow](too
 
 V50 has completed a **local-only heuristic screening of all 1,139 provisional V44 public SmolTalk candidates**: 200 HIGH, 431 MEDIUM and 508 LOW. These are selection hints, not semantic or quality verdicts. See the [V50 cognitive/creative policy](phases/MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md), [public numeric report](reports/assistant-results/history/PHASE03-SMOLTALK-V50-COGNITIVE-SCREEN-001.json) and [eight-case methodology pilot](reviews/smoltalk-v50/PILOT-001.md). The full queue remains on fhc2; V44, tokenizer and TRAIN allocation are unchanged.
 
-**V51 - semantic evaluation opened:** A deterministic, source-verified exporter and independent scoring rubric are ready for a first controlled public batch of 24 *new* conversations (12 HIGH, 6 MEDIUM, 6 LOW). Full case publication and review have not yet taken place. See the [V51 plan](phases/MINI-KUZAI-PHASE-03-V51-SEMANTIC-REVIEW.md) and [GitHub export/review procedure](tools/V51-GITHUB-REVIEW.md). No private ChatGPT-derived material can enter this workflow.
+**V51 - first semantic review completed:** 24 new public SmolTalk conversations were evaluated on GitHub: 9 A, 8 B, 7 C, 0 HOLD. These include 12 HIGH, 6 MEDIUM and 6 LOW V50 hint examples. The results demonstrate both underestimated creative/contextual examples in MEDIUM/LOW and an invalid HIGH example. See the [V51 qualitative results](reviews/smoltalk-v51/RESULTS-001.md), [24 reviewed cases](reviews/smoltalk-v51/README.md) and [V51 methodology](phases/MINI-KUZAI-PHASE-03-V51-SEMANTIC-REVIEW.md). Only public external SmolTalk cases were reviewed. The numeric-only V51 progress report still requires regeneration on fhc2.
 
-**Phase 03 has completed V50 heuristic screening and opened V51 semantic review preparation.** The [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) is preserved as historical documentation. See [V48 review instructions](tools/V48-REVIEW.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
+**Phase 03 has completed the first 24-case V51 semantic review; broader V44 assessment remains open.** The [2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) is preserved as historical documentation. See [V48 review instructions](tools/V48-REVIEW.md). No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
 
 ### Private local corpus pipeline
 
@@ -301,9 +301,9 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V51 REVIEW EXPORT READY
+Phase 03                  : DATA PREPARATION - V51 24 REVIEWED
 Custom authoring track    : PAUSED AFTER B05
-External dataset study    : V50 1139 SCREENED - V51 24 CASES PENDING
+External dataset study    : V51 9 A / 8 B / 7 C - NUMERIC AUDIT PENDING
 SmolTalk v0.4             : VALIDATED EXTERNAL CANDIDATE RESERVOIR
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
