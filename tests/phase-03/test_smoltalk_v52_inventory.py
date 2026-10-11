@@ -61,7 +61,7 @@ class V52InventoryTests(unittest.TestCase):
             encoding="utf-8"
         )
         reasons = re.findall(
-            r"(?m)^\\|\\s*\\d+\\s*\\|\\s*(RELABEL|RESCUE|BASE)\\s*\\|",
+            r"(?m)^\|\s*\d+\s*\|\s*(RELABEL|RESCUE|BASE)\s*\|",
             index,
         )
         self.assertEqual(len(reasons), 68)
