@@ -310,11 +310,12 @@ Checkpoint and method documentation:
 
 V47 verified that all 68 queued public SmolTalk conversations match their source records, with no queue-level duplicates and no TRAIN approvals. The queue still contains 68 unreviewed candidates: 12 RELABEL, 24 RESCUE, and 32 BASE.
 
-V48 includes a local terminal tool and a separate GitHub-native review workflow. All 68 public external SmolTalk case files now have a first-pass assessment with justification: 23 RETAIN, 31 REJECT and 14 HOLD. The local-only terminal ledger is separate and was not imported.
+V48 provided the first-pass GitHub review of 68 public external SmolTalk cases. V49 resolved all 14 HOLD cases, producing 24 RETAIN, 44 REJECT and 0 HOLD. Each case has a GitHub-tracked justification. The local-only terminal review ledger is separate and was not imported.
 
-The numeric-only GitHub V48 progress audit can be run under `gogit` after synchronizing the repository on fhc2. Its counters are generated from published public-source case files, not from private dialogue or the separate local terminal ledger. The 14 HOLD cases require further review; RETAIN never implies TRAIN authorization.
+The numeric-only GitHub progress audit can be run under `gogit` after synchronizing the repository on fhc2. Its counters are generated solely from verified public external case files; RETAIN never implies TRAIN authorization. The 68 diagnostic reviews are insufficient to generalize an acceptance rate to the full 1,139-record provisional V44 sample or the 8,000-record source reservoir.
 
-- [V48 review results](../reviews/smoltalk-v48/V48-REVIEW-RESULTS.md)
+- [V49 current review results](../reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md)
+- [V48 historical first-pass results](../reviews/smoltalk-v48/V48-REVIEW-RESULTS.md)
 - [V48 GitHub-native review instructions](../tools/V48-GITHUB-REVIEW.md)
 - [V48 local review instructions](../tools/V48-REVIEW.md)
 - [V47 public integrity report](../reports/assistant-results/history/PHASE03-SMOLTALK-V47-INTEGRITY-001.json)
@@ -325,7 +326,7 @@ The Phase 03 development task is resumed for external dataset quality review onl
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION - V48 FIRST PASS COMPLETE
+PHASE 03                  : DATA PREPARATION - V49 HOLD RESOLVED
 Primary axis              : TRAINING AND PERSONALIZATION
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -354,7 +355,7 @@ Training authorized       : NO
 
 ## Current checkpoint
 
-The controlled custom authoring track remains paused after the B05 TRAIN batch. External SmolTalk review resumed on 2026-10-11. V47 verified local queue integrity, and V48 completed the first pass for 68 public SmolTalk cases with 14 HOLD still unresolved. These outcomes do not modify TRAIN.
+The controlled custom authoring track remains paused after the B05 TRAIN batch. External public SmolTalk review completed V48 and V49 on 2026-10-11; all 68 diagnostic cases were assessed and the 14 HOLD were resolved. The underlying V44 provisional selection and TRAIN/VALIDATION/BLIND assignments remain unchanged.
 
 B01 through B05 are complete and reviewed:
 
@@ -377,6 +378,6 @@ No Phase 03 model training is authorized at this checkpoint.
 
 The tokenizer strategy has been explored, but its final production vocabulary is not frozen. The Phase 03 architecture remains undecided.
 
-The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The current operational checkpoint is [V48 review results](../reviews/smoltalk-v48/V48-REVIEW-RESULTS.md); the next quality gate is resolution of HOLD cases and assessment of V44 pool selection.
+The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The current operational checkpoint is [V49 HOLD resolution](../reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md); the next quality gate is broader V44 pool assessment, diagnostic category review and contamination prevention before final tokenizer selection.
 
 Private-corpus review stays in the local workspace and is paused. Future controlled custom-corpus authoring would resume at B06 UNKNOWN INFORMATION under authoring policy v0.2 and the existing semantic split guard, only after an explicit request.
