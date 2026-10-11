@@ -16,6 +16,29 @@ The model should progressively demonstrate a stable core identity together with 
 
 Efficiency remains useful to understand, but it is no longer the primary development criterion. The available hardware is treated as the practical ceiling for Phase 03 experiments.
 
+ 
+### V50 priority update: cognition and creativity
+
+The primary learning target is a recognizable conversational persona that
+can follow intentions, infer context, explore alternative ideas, create
+characters and stories, respond to disagreement, and revise behavior after
+feedback. Specialized software, systems and networking correctness is no
+longer a primary selection criterion, although seriously wrong answers
+must never be used as correct examples without explicit restructuring.
+
+Dataset triage now separates **behavioral relevance** from **factual
+reliability**. Imperfect but expressive conversations may be valuable
+for contextual or creative learning. Uncorrected technical falsehoods,
+fabricated evidence and misleading certainty must not be rewarded as
+correct target responses.
+
+[V50 cognitive and creative priorities](MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md)
+describe the revised rubric. V50 is a new screening pass over the 1,139
+provisional V44 public SmolTalk candidates; V48/V49 historical quality
+decisions remain available and no TRAIN approval follows from a
+priority hint.
+
+
 Reference hardware:
 
 ```text
@@ -323,11 +346,24 @@ The numeric-only GitHub progress audit can be run under `gogit` after synchroniz
 
 The Phase 03 development task is resumed for external dataset quality review only. TRAIN, VALIDATION, BLIND, tokenizer and model-training authorization gates remain unchanged.
 
+## V50 screening execution
+
+The [V50 execution guide](../tools/V50-COGNITIVE-SCREEN.md) and
+[public SmolTalk-only candidate screening code](../tools/public-audits/smoltalk_v50_cognitive_screen.py)
+are published. The tool checks the 8,000 public-source records against
+the unchanged V44 selection and writes a separate, local-only 1,139-item
+review queue with broad priority signals. The public `gogit` mechanism
+permits only approved numeric V50 metrics. The queue has **not yet been
+generated or quality-reviewed** by this publication.
+
+No changes to TRAIN, VALIDATION, BLIND, model architecture, tokenizer,
+or training authorization follow from V50 preparation.
+
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION - V49 HOLD RESOLVED
-Primary axis              : TRAINING AND PERSONALIZATION
+PHASE 03                  : DATA PREPARATION - V50 PRELIMINARY SCREEN PREPARED
+Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
 Identity specification    : V0.2 CANDIDATE
@@ -378,6 +414,6 @@ No Phase 03 model training is authorized at this checkpoint.
 
 The tokenizer strategy has been explored, but its final production vocabulary is not frozen. The Phase 03 architecture remains undecided.
 
-The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The current operational checkpoint is [V49 HOLD resolution](../reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md); the next quality gate is broader V44 pool assessment, diagnostic category review and contamination prevention before final tokenizer selection.
+The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The current operational checkpoint is [V50 cognitive and creative screening](MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md). Its executable audit has been published but is pending local tests and execution on fhc2; no semantic quality verdict exists yet for the full V44 pool. V49 remains the previous completed diagnostic step.
 
 Private-corpus review stays in the local workspace and is paused. Future controlled custom-corpus authoring would resume at B06 UNKNOWN INFORMATION under authoring policy v0.2 and the existing semantic split guard, only after an explicit request.
