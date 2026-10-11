@@ -2,9 +2,11 @@
 
 68 public-source conversations. Initial PENDING states have been reviewed.
 
-**First-pass case review: 68/68 completed - 23 RETAIN, 31 REJECT, 14 HOLD.**
-The HOLD cases remain unresolved and TRAIN remains unchanged.
-See [V48 review results and next quality gates](V48-REVIEW-RESULTS.md).
+**V49 re-review completed: 68/68 resolved - 24 RETAIN, 44 REJECT, 0 HOLD.**
+All 14 V48 HOLD cases received a second review (1 RETAIN, 13 REJECT).
+See [V49 HOLD resolution](V49-HOLD-RESOLUTION.md) and the
+[historical V48 first-pass report](V48-REVIEW-RESULTS.md).
+TRAIN remains unchanged and training is not authorized.
 Only external SmolTalk material is included. Never publish private
 ChatGPT exports, private review ledgers or private-derived metrics.
 
