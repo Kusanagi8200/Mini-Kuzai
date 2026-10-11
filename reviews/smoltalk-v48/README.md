@@ -1,6 +1,10 @@
 # Phase 03 - V48 public SmolTalk reviews
 
-68 public-source conversations, initially all PENDING.
+68 public-source conversations. Initial PENDING states have been reviewed.
+
+**First-pass case review: 68/68 completed - 23 RETAIN, 31 REJECT, 14 HOLD.**
+The HOLD cases remain unresolved and TRAIN remains unchanged.
+See [V48 review results and next quality gates](V48-REVIEW-RESULTS.md).
 Only external SmolTalk material is included. Never publish private
 ChatGPT exports, private review ledgers or private-derived metrics.
 
