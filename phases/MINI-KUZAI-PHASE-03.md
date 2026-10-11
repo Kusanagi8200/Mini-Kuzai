@@ -321,7 +321,7 @@ The V41-V46 workflow uses only the public SmolTalk v0.4 candidate reservoir. Thi
 
 The public workflow is `tools/gogit_public.py`: each reviewed audit script under `tools/public-audits/` is run locally, publishes allowlisted numeric-only external SmolTalk aggregates, commits and pushes four report files, and can then be inspected from ChatGPT when the user says `gogit`. Full conversation text and local review notes are not published.
 
-**Checkpoint 2026-10-10: PAUSED.** Exact point of resumption is V47, starting with human semantic and factual review of the targeted V46 review dossiers, then assessing the baseline samples. The V44 selection and the official TRAIN, VALIDATION and BLIND datasets remain unchanged. No final tokenizer vocabulary, training mixture, model architecture, or Phase 03 model-training approval exists.
+**Historical checkpoint 2026-10-10: PAUSED before V47.** That resumption point is now superseded by the 2026-10-11 V52 annotation checkpoint below. The V44 selection and the official TRAIN, VALIDATION and BLIND datasets remain unchanged. No final tokenizer vocabulary, training mixture, model architecture, or Phase 03 model-training approval exists.
 
 Checkpoint and method documentation:
 
@@ -335,7 +335,7 @@ V47 verified that all 68 queued public SmolTalk conversations match their source
 
 V48 provided the first-pass GitHub review of 68 public external SmolTalk cases. V49 resolved all 14 HOLD cases, producing 24 RETAIN, 44 REJECT and 0 HOLD. Each case has a GitHub-tracked justification. The local-only terminal review ledger is separate and was not imported.
 
-The numeric-only GitHub progress audit can be run under `gogit` after synchronizing the repository on fhc2. Its counters are generated solely from verified public external case files; RETAIN never implies TRAIN authorization. The 68 diagnostic reviews are insufficient to generalize an acceptance rate to the full 1,139-record provisional V44 sample or the 8,000-record source reservoir.
+The V48/V49 numeric-only GitHub progress audit was published through `gogit` after synchronization on fhc2. Its counters were generated solely from verified public external case files; RETAIN never implies TRAIN authorization. The 68 diagnostic reviews are insufficient to generalize an acceptance rate to the full 1,139-record provisional V44 sample or the 8,000-record source reservoir.
 
 - [V49 current review results](../reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md)
 - [V48 historical first-pass results](../reviews/smoltalk-v48/V48-REVIEW-RESULTS.md)
@@ -364,19 +364,22 @@ published V48/V49 diagnostics. The nine independent review fields
 evaluate cognitive value, creativity, continuity, correction,
 communication, factual risk, instruction fit and overall A/B/C/HOLD.
 
-The 24 new V51 public-source cases were exported from fhc2 and
-assessed directly on GitHub: 9 A, 8 B, 7 C, 0 HOLD across 12 HIGH,
-6 MEDIUM and 6 LOW heuristic-priority strata. Their individual
-rationales and scores are complete. The [V51 results](../reviews/smoltalk-v51/RESULTS-001.md)
-record methodological caveats and false-negative examples. The
-numeric-only progress audit has not yet been regenerated through
-gogit. V50 priorities remain heuristic hints, and V48/V49 history
-remains untouched.
+The 24 V51 public-source cases were exported from fhc2 and assessed directly on GitHub: 9 A, 8 B, 7 C, 0 HOLD across 12 HIGH, 6 MEDIUM and 6 LOW heuristic-priority strata. Their individual rationales and scores are complete. The [V51 results](../reviews/smoltalk-v51/RESULTS-001.md) record methodological caveats and false-negative examples. The [numeric V51 GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V51-PILOT-REVIEW-001.json) was published and verified on 2026-10-11. V50 priorities remain heuristic hints, and V48/V49 history remains untouched.
+
+## V52 inventory and completed GitHub annotations - 2026-10-11
+
+The [V52 public inventory GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-INVENTORY-001.json) verified 1,071 available candidates in the 1,139-record provisional V44 selection after subtracting 44 earlier in-V44 V48 cases and 24 V51 cases. The other 24 V48 RESCUE cases originated outside V44 and must not be subtracted from it.
+
+A distinct 32-case V52 stratified pilot was then published: 8 HIGH, 12 MEDIUM and 12 LOW V50 priorities, with 20 multi-turn examples. All 32 public GitHub case pages now have complete AI-assisted qualitative annotations: **8 A, 12 B, 12 C, 0 HOLD**. See the [V52 case index](../reviews/smoltalk-v52/README.md), [qualitative summary](../reviews/smoltalk-v52/RESULTS-001.md) and [methodology](../tools/V52-GITHUB-REVIEW.md). These findings are not representative acceptance rates and do not authorize TRAIN.
+
+**Audit timing:** The confirmed [initial V52 GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-INIT-001.json) reported 32 PENDING. The most recent [progress GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json) records 8 REVIEWED and 24 PENDING because it predates the remaining 24 GitHub case annotations. This is a **historical snapshot**, not the current annotation state. The final V52 source-integrity/numeric GOGIT report `PHASE03-SMOLTALK-V52-REVIEW-FINAL-001` **has not been published**. Do not rewrite `latest.json` or audit histories manually to align them; generate the final report only through the verified local GOGIT workflow when the project resumes.
+
+V48/V49, V51 and V52 have together reviewed **124 distinct public external SmolTalk examples**. The V50 eight-case methodology pilot re-reviewed V48 examples and is not counted twice. The provisional V44 pool and TRAIN/VALIDATION/BLIND allocation have not been modified.
 
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION - V51 24 REVIEWED
+PHASE 03                  : DATA PREPARATION - V52 32/32 ANNOTATED - PAUSED
 Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -391,8 +394,12 @@ Authoring policy          : V0.2
 Semantic split guard      : ACTIVE
 VALIDATION records        : 0 / 36 CREATED
 BLIND TEST records        : 0 / 36 CREATED
-SmolTalk v0.4             : VALIDATED EXTERNAL CANDIDATE RESERVOIR
+SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
+V51 GOGIT                 : COMPLETED - 9A/8B/7C
+V52 annotations           : 32/32 - 8A/12B/12C
+V52 final GOGIT audit     : PENDING (LATEST SNAPSHOT: 8/32)
+Public external TRAIN     : 0 APPROVED
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
 ChatGPT export source     : LOCAL-ONLY RESEARCH SOURCE
 Private source material   : NOT COMMITTED
@@ -405,7 +412,7 @@ Training authorized       : NO
 
 ## Current checkpoint
 
-The controlled custom authoring track remains paused after the B05 TRAIN batch. External public SmolTalk review completed V48 and V49 on 2026-10-11; all 68 diagnostic cases were assessed and the 14 HOLD were resolved. The underlying V44 provisional selection and TRAIN/VALIDATION/BLIND assignments remain unchanged.
+The controlled custom authoring track remains paused after the B05 TRAIN batch. External public SmolTalk review completed V48/V49 (68 cases), V51 (24 cases) and qualitative V52 annotations (32 cases) on 2026-10-11. V52 still requires its final GOGIT source-integrity and numeric report. The underlying V44 provisional selection and TRAIN/VALIDATION/BLIND assignments remain unchanged.
 
 B01 through B05 are complete and reviewed:
 
@@ -428,6 +435,6 @@ No Phase 03 model training is authorized at this checkpoint.
 
 The tokenizer strategy has been explored, but its final production vocabulary is not frozen. The Phase 03 architecture remains undecided.
 
-The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The current operational checkpoint is the [completed V51 24-case qualitative review](../reviews/smoltalk-v51/RESULTS-001.md), following V50 numeric screening. The next gate is to publish the verified numeric V51 progress report from fhc2 and continue stratified semantic review beyond these 24 cases. The provisional V44 selection and the training/split/tokenizer gates remain unchanged.
+The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The **current operational checkpoint is the [completed 32-case V52 qualitative annotation pass](../reviews/smoltalk-v52/RESULTS-001.md), with its final GOGIT audit still outstanding**. At resumption, first publish the verified source-integrity and numeric V52 report from fhc2, then consolidate corpus-quality decisions and carry out the remaining deduplication, factual validation, semantic split and tokenizer gates. No model training is authorized.
 
 Private-corpus review stays in the local workspace and is paused. Future controlled custom-corpus authoring would resume at B06 UNKNOWN INFORMATION under authoring policy v0.2 and the existing semantic split guard, only after an explicit request.
