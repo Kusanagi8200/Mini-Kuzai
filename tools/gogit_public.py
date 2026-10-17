@@ -264,6 +264,11 @@ METRIC_KEYS = {
     "VALIDATION_BATCH_FROZEN",
     "VALIDATION_FROZEN_RECORDS",
     "VALIDATION_BEHAVIORS_FROZEN",
+    "VALIDATION_RECORDS", "VALIDATION_GROUPS",
+    "VALIDATION_FREEZE_HISTORIES", "VALIDATION_SIGNOFFS",
+    "VALIDATION_SEMANTIC_PASSES", "VALIDATION_EXACT_PROMPT_DUPLICATES",
+    "BLIND_TEST_RECORDS", "BLIND_TEST_GROUPS_RESERVED",
+    "SEMANTIC_VALIDATION_COMPLETE", "BLIND_AUTHORING_AUTHORIZED",
     "TRAINING_AUTHORIZED",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
@@ -310,6 +315,15 @@ def source_for_audit(tracked):
     if tracked.startswith("tools/public-audits/phase03_v54_"):
         return SOURCE_PHASE03_VALIDATION
     return SOURCE
+
+
+def semantic_validation_complete_for_audit(tracked, metrics):
+    return (
+        tracked == "tools/public-audits/phase03_v54_validation_closure.py"
+        and metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+        and metrics.get("BLIND_AUTHORING_AUTHORIZED") == 1
+        and metrics.get("TRAINING_AUTHORIZED") == 0
+    )
 
 
 def numeric_metrics(raw):
@@ -377,7 +391,7 @@ def main():
             ).hexdigest(),
             "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
             "metrics": metrics,
-            "semantic_validation_complete": False,
+            "semantic_validation_complete": semantic_validation_complete_for_audit(tracked, metrics),
             "training_authorized": False,
             "private_conversation_data_included": False,
         }
@@ -388,6 +402,9 @@ def main():
             f"STEP_ID: {args.step}\n{MARKER}\n"
             + "".join(f"{k}: {v}\n" for k, v in metrics.items())
             + "STATUS: PUBLIC_AGGREGATE_REVIEW_ONLY\n"
+            + "SEMANTIC_VALIDATION_COMPLETE: {}\n".format(
+                "TRUE" if semantic_validation_complete_for_audit(tracked, metrics) else "FALSE"
+            )
             + "TRAINING_AUTHORIZED: FALSE\n"
         )
 
