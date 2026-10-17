@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "V53_B10C_BEHAVIOR_COMPLETE": 1,
+    "V53_B10C_CANONICAL_TRAIN_RECORDS": 89,
+    "V53_B10C_MODEL_TRAINING_AUTHORIZED": 0,
+    "V53_B10C_MODEL_VISIBLE_CHANGES": 0,
+    "V53_B10C_POLICY_TARGET_VALID": 1,
+    "V53_B10C_RESERVED_OVERLAP": 0,
+    "V53_B10C_REVIEWED_RECORDS": 6,
+    "V53_B10C_SG01_RECORDS": 3,
+    "V53_B10C_SG02_RECORDS": 3,
+    "V53_B10C_SINGLE_TURN_RECORDS": 6,
+    "V53_B10C_TOTAL_RECORDS": 6,
+    "V53_B10C_VALIDATION_TEXT_CREATED": 0
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/smoltalk_v53_b10_behavior_complete.py",
+  "producer_sha256": "f4e40117a24ef6adf4bf35b068938ef6d9fbed5845e395fe9a34365c93de07fe",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "SmolTalk v0.4 - public external dataset",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V53-B10-BEHAVIOR-COMPLETE-001",
+  "training_authorized": false
+}
