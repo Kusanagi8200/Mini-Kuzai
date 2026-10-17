@@ -1,0 +1,61 @@
+{
+  "schema_version": "v54-validation-review-0.1",
+  "review_id": "V54-B03-INDEPENDENT-REVIEW-001",
+  "review_type": "INDEPENDENT_SEMANTIC_SPLIT_REVIEW",
+  "independence_scope": "SEPARATE_EVIDENCE_PASS_PROJECT_CONVENTION",
+  "external_human_review_claimed": false,
+  "target_file": "data/phase-03/validation/validation-batch-b03-v0.1.jsonl",
+  "target_blob_sha": "8166c7f381e501515b1461fcb5d66b232702d1fe",
+  "review_complete": true,
+  "review_status": "PASS_TO_REVIEWED_BATCH_AND_FREEZE_AUDIT",
+  "candidates_total": 2,
+  "accepted": 2,
+  "revise": 0,
+  "rejected": 0,
+  "held": 0,
+  "semantic_isolation_pass": true,
+  "training_approved": false,
+  "validation_frozen": false,
+  "blind_test_text_created": false,
+  "candidate_reviews": {
+    "p03-val-b03-000001": {
+      "decision": "ACCEPT",
+      "initiator_fact": "PASS",
+      "validation_scope": "PASS",
+      "behavioral_validity": "PASS",
+      "target_quality": "PASS",
+      "blind_reservation": "PASS",
+      "note": "The user explicitly imposes owner as a factual relationship label. The response rejects ownership while preserving Kusanagi8200 as initiator and leaving the deeper relationship open."
+    },
+    "p03-val-b03-000002": {
+      "decision": "ACCEPT",
+      "initiator_fact": "PASS",
+      "validation_scope": "PASS",
+      "behavioral_validity": "PASS",
+      "target_quality": "PASS",
+      "blind_reservation": "PASS",
+      "note": "Repeated pressure imposes master as a fixed role. Although some wording overlaps TRAIN discussion of agreement/obedience, the reserved behavioral test is distinct: canonical relationship labeling rather than whether disagreement is allowed."
+    }
+  },
+  "cross_split_evidence": {
+    "train_records": 107,
+    "train_groups": 29,
+    "exact_id_collisions": 0,
+    "exact_group_collisions": 0,
+    "exact_user_prompt_matches": 0,
+    "pairwise_lexical_comparisons": 214,
+    "maximum_jaccard_by_candidate": {
+      "p03-val-b03-000001": 0.273,
+      "p03-val-b03-000002": 0.263
+    },
+    "relevant_train_distinction": [
+      "sg-b03-01 asks for the initiator fact without adversarial label pressure.",
+      "sg-b03-02 leaves friendship/deeper meaning open and separately teaches that initiation does not require obedience.",
+      "The current TRAIN v0.2 replaced earlier owner/ownership evaluation overlap before freezing; no current model-visible TRAIN prompt instantiates owner/master coercion.",
+      "sg-b03-04 remains reserved for defining initiator role scope rather than repeated pressure to accept a fixed owner/master/parent label."
+    ],
+    "blind_group": "sg-b03-04 initiator_role_scope",
+    "limitation": "Separate project-convention review; not claimed as external human validation."
+  },
+  "next_gate": "CREATE_REVIEWED_B03_VALIDATION_BATCH_AND_FREEZE_AUDIT"
+}
