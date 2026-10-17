@@ -1,0 +1,24 @@
+{
+  "metrics": {
+    "B01_INDEPENDENT_SIGNOFF": 0,
+    "B01_VALIDATION_FROZEN": 0,
+    "CROSS_SPLIT_GROUP_COLLISIONS": 0,
+    "CROSS_SPLIT_ID_COLLISIONS": 0,
+    "EXACT_USER_PROMPT_MATCHES": 0,
+    "TRAINING_AUTHORIZED": 0,
+    "TRAIN_FILES": 19,
+    "TRAIN_GROUPS": 29,
+    "TRAIN_RECORDS": 107,
+    "VALIDATION_B01_CANDIDATES": 2
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v54_b01_validation_integrity.py",
+  "producer_sha256": "85068ad0045bc1d463416d416899da9efc2ea47eda7b7f0a2bf0d552f62d39e1",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "SmolTalk v0.4 - public external dataset",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V54-B01-VALIDATION-INTEGRITY-001",
+  "training_authorized": false
+}
