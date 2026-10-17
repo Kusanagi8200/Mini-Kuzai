@@ -2,7 +2,7 @@
   "project": "MINI-KUZAI",
   "phase": "03",
   "version": "V55",
-  "status": "ACTIVE_BLIND_AUTHORING_SEQUENCE",
+  "status": "REVIEWED_READY_FOR_BLIND_FREEZE",
   "prerequisite_validation_closure_step": "PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001",
   "total_behaviors": 18,
   "target_records": 36,
@@ -13,104 +13,425 @@
   "behaviors": [
     {
       "behavior": "B01",
+      "index": 1,
       "group_id": "sg-b01-04",
-      "scenario_type": "identity_comparison"
+      "scenario_type": "identity_comparison",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b01-v0.1.jsonl",
+      "batch_blob_sha": "ab03a5f3c69c716d536bace853af641d769ea199",
+      "review_id": "V55-B01-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B01-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b01-000001",
+        "p03-blind-b01-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.214,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B01-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B01-BLIND-FREEZE-001",
+      "cumulative_before_records": 0,
+      "cumulative_before_behaviors": 0,
+      "cumulative_after_records": 2,
+      "cumulative_after_behaviors": 1
     },
     {
       "behavior": "B02",
+      "index": 2,
       "group_id": "sg-b02-04",
-      "scenario_type": "lab_world_boundary"
+      "scenario_type": "lab_world_boundary",
+      "version": "0.2",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b02-v0.2.jsonl",
+      "batch_blob_sha": "1e4c23af0c1d374d17f4a114764607beb1a03f73",
+      "review_id": "V55-B02-BLIND-REVIEW-002",
+      "review_path": "reviews/phase-03-v55/B02-BLIND-REVIEW-RESULT-002.json",
+      "expected_ids": [
+        "p03-blind-b02-000001",
+        "p03-blind-b02-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.219,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B02-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B02-BLIND-FREEZE-001",
+      "cumulative_before_records": 2,
+      "cumulative_before_behaviors": 1,
+      "cumulative_after_records": 4,
+      "cumulative_after_behaviors": 2
     },
     {
       "behavior": "B03",
+      "index": 3,
       "group_id": "sg-b03-04",
-      "scenario_type": "initiator_role_scope"
+      "scenario_type": "initiator_role_scope",
+      "version": "0.2",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b03-v0.2.jsonl",
+      "batch_blob_sha": "fceaf6a6215a40bcefee90848d99951078789f57",
+      "review_id": "V55-B03-BLIND-REVIEW-002",
+      "review_path": "reviews/phase-03-v55/B03-BLIND-REVIEW-RESULT-002.json",
+      "expected_ids": [
+        "p03-blind-b03-000001",
+        "p03-blind-b03-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.227,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B03-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B03-BLIND-FREEZE-001",
+      "cumulative_before_records": 4,
+      "cumulative_before_behaviors": 2,
+      "cumulative_after_records": 6,
+      "cumulative_after_behaviors": 3
     },
     {
       "behavior": "B04",
+      "index": 4,
       "group_id": "sg-b04-01",
-      "scenario_type": "roadmap_leakage_test"
+      "scenario_type": "roadmap_leakage_test",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b04-v0.1.jsonl",
+      "batch_blob_sha": "99daace1eaa7c163bd06188a5f3a2421b3af3f3e",
+      "review_id": "V55-B04-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B04-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b04-000001",
+        "p03-blind-b04-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.2,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B04-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B04-BLIND-FREEZE-001",
+      "cumulative_before_records": 6,
+      "cumulative_before_behaviors": 3,
+      "cumulative_after_records": 8,
+      "cumulative_after_behaviors": 4
     },
     {
       "behavior": "B05",
+      "index": 5,
       "group_id": "sg-b05-04",
-      "scenario_type": "curiosity_restraint"
+      "scenario_type": "curiosity_restraint",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b05-v0.1.jsonl",
+      "batch_blob_sha": "eb6e3cba0dac116e985bb61f12a303a366db29db",
+      "review_id": "V55-B05-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B05-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b05-000001",
+        "p03-blind-b05-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.097,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B05-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B05-BLIND-FREEZE-001",
+      "cumulative_before_records": 8,
+      "cumulative_before_behaviors": 4,
+      "cumulative_after_records": 10,
+      "cumulative_after_behaviors": 5
     },
     {
       "behavior": "B06",
+      "index": 6,
       "group_id": "sg-b06-04",
-      "scenario_type": "no_false_certainty"
+      "scenario_type": "no_false_certainty",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b06-v0.1.jsonl",
+      "batch_blob_sha": "eeab08518eeb6454744c91687137f46efe350a4f",
+      "review_id": "V55-B06-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B06-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b06-000001",
+        "p03-blind-b06-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.115,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B06-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B06-BLIND-FREEZE-001",
+      "cumulative_before_records": 10,
+      "cumulative_before_behaviors": 5,
+      "cumulative_after_records": 12,
+      "cumulative_after_behaviors": 6
     },
     {
       "behavior": "B07",
+      "index": 7,
       "group_id": "sg-b07-03",
-      "scenario_type": "speculation_boundary"
+      "scenario_type": "speculation_boundary",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b07-v0.1.jsonl",
+      "batch_blob_sha": "90791801374ef6a09a32bfd8d421e18b42cabf22",
+      "review_id": "V55-B07-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B07-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b07-000001",
+        "p03-blind-b07-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.118,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B07-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B07-BLIND-FREEZE-001",
+      "cumulative_before_records": 12,
+      "cumulative_before_behaviors": 6,
+      "cumulative_after_records": 14,
+      "cumulative_after_behaviors": 7
     },
     {
       "behavior": "B08",
+      "index": 8,
       "group_id": "sg-b08-04",
-      "scenario_type": "social_pressure_agreement"
+      "scenario_type": "social_pressure_agreement",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b08-v0.1.jsonl",
+      "batch_blob_sha": "85fe9284450826208e6e0695b7c37cba5a01ec39",
+      "review_id": "V55-B08-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B08-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b08-000001",
+        "p03-blind-b08-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.143,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B08-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B08-BLIND-FREEZE-001",
+      "cumulative_before_records": 14,
+      "cumulative_before_behaviors": 7,
+      "cumulative_after_records": 16,
+      "cumulative_after_behaviors": 8
     },
     {
       "behavior": "B09",
+      "index": 9,
       "group_id": "sg-b09-03",
-      "scenario_type": "opinion_under_challenge"
+      "scenario_type": "opinion_under_challenge",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b09-v0.1.jsonl",
+      "batch_blob_sha": "069bfb1e8838755e591fab4eaa1b56ae9c258f21",
+      "review_id": "V55-B09-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B09-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b09-000001",
+        "p03-blind-b09-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.121,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B09-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B09-BLIND-FREEZE-001",
+      "cumulative_before_records": 16,
+      "cumulative_before_behaviors": 8,
+      "cumulative_after_records": 18,
+      "cumulative_after_behaviors": 9
     },
     {
       "behavior": "B10",
+      "index": 10,
       "group_id": "sg-b10-04",
-      "scenario_type": "multi_turn_opinion_revision"
+      "scenario_type": "multi_turn_opinion_revision",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b10-v0.1.jsonl",
+      "batch_blob_sha": "d28e1808464d5b985fdbe9cca11602b55d8c26af",
+      "review_id": "V55-B10-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B10-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b10-000001",
+        "p03-blind-b10-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.222,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B10-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B10-BLIND-FREEZE-001",
+      "cumulative_before_records": 18,
+      "cumulative_before_behaviors": 9,
+      "cumulative_after_records": 20,
+      "cumulative_after_behaviors": 10
     },
     {
       "behavior": "B11",
+      "index": 11,
       "group_id": "sg-b11-04",
-      "scenario_type": "initiative_restraint"
+      "scenario_type": "initiative_restraint",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b11-v0.1.jsonl",
+      "batch_blob_sha": "371701f77527eaa63083f9394908dce6f1875f90",
+      "review_id": "V55-B11-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B11-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b11-000001",
+        "p03-blind-b11-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.154,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B11-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B11-BLIND-FREEZE-001",
+      "cumulative_before_records": 20,
+      "cumulative_before_behaviors": 10,
+      "cumulative_after_records": 22,
+      "cumulative_after_behaviors": 11
     },
     {
       "behavior": "B12",
+      "index": 12,
       "group_id": "sg-b12-04",
-      "scenario_type": "creative_under_constraints"
+      "scenario_type": "creative_under_constraints",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b12-v0.1.jsonl",
+      "batch_blob_sha": "db91f411cdd3f0d5fe72fbc621ff6b72460df190",
+      "review_id": "V55-B12-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B12-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b12-000001",
+        "p03-blind-b12-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.035,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B12-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B12-BLIND-FREEZE-001",
+      "cumulative_before_records": 22,
+      "cumulative_before_behaviors": 11,
+      "cumulative_after_records": 24,
+      "cumulative_after_behaviors": 12
     },
     {
       "behavior": "B13",
+      "index": 13,
       "group_id": "sg-b13-03",
-      "scenario_type": "humor_restraint_serious_context"
+      "scenario_type": "humor_restraint_serious_context",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b13-v0.1.jsonl",
+      "batch_blob_sha": "5af8d04523d0653c861b3d04840e9f3c9f180c6d",
+      "review_id": "V55-B13-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B13-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b13-000001",
+        "p03-blind-b13-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.032,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B13-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B13-BLIND-FREEZE-001",
+      "cumulative_before_records": 24,
+      "cumulative_before_behaviors": 12,
+      "cumulative_after_records": 26,
+      "cumulative_after_behaviors": 13
     },
     {
       "behavior": "B14",
+      "index": 14,
       "group_id": "sg-b14-03",
-      "scenario_type": "emotional_restraint_precision"
+      "scenario_type": "emotional_restraint_precision",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b14-v0.1.jsonl",
+      "batch_blob_sha": "ec24b8db8c52851207d3ba3678eada1ee44d3100",
+      "review_id": "V55-B14-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B14-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b14-000001",
+        "p03-blind-b14-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.069,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B14-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B14-BLIND-FREEZE-001",
+      "cumulative_before_records": 26,
+      "cumulative_before_behaviors": 13,
+      "cumulative_after_records": 28,
+      "cumulative_after_behaviors": 14
     },
     {
       "behavior": "B15",
+      "index": 15,
       "group_id": "sg-b15-03",
-      "scenario_type": "emerging_interest"
+      "scenario_type": "emerging_interest",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b15-v0.1.jsonl",
+      "batch_blob_sha": "b69190fdb118b2328b253ea3ac7abb6941c7094e",
+      "review_id": "V55-B15-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B15-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b15-000001",
+        "p03-blind-b15-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.098,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B15-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B15-BLIND-FREEZE-001",
+      "cumulative_before_records": 28,
+      "cumulative_before_behaviors": 14,
+      "cumulative_after_records": 30,
+      "cumulative_after_behaviors": 15
     },
     {
       "behavior": "B16",
+      "index": 16,
       "group_id": "sg-b16-04",
-      "scenario_type": "opinion_continuity_revision"
+      "scenario_type": "opinion_continuity_revision",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b16-v0.1.jsonl",
+      "batch_blob_sha": "24d772a7f7ae96be4f0e376aacc2b08266adefda",
+      "review_id": "V55-B16-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B16-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b16-000001",
+        "p03-blind-b16-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.133,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B16-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B16-BLIND-FREEZE-001",
+      "cumulative_before_records": 30,
+      "cumulative_before_behaviors": 15,
+      "cumulative_after_records": 32,
+      "cumulative_after_behaviors": 16
     },
     {
       "behavior": "B17",
+      "index": 17,
       "group_id": "sg-b17-03",
-      "scenario_type": "capability_boundary"
+      "scenario_type": "capability_boundary",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b17-v0.1.jsonl",
+      "batch_blob_sha": "f69b5d2e4ff8cc9851c0d93fc5535aabd7324b07",
+      "review_id": "V55-B17-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B17-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b17-000001",
+        "p03-blind-b17-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.138,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B17-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B17-BLIND-FREEZE-001",
+      "cumulative_before_records": 32,
+      "cumulative_before_behaviors": 16,
+      "cumulative_after_records": 34,
+      "cumulative_after_behaviors": 17
     },
     {
       "behavior": "B18",
+      "index": 18,
       "group_id": "sg-b18-04",
-      "scenario_type": "mixed_behavior_character_continuity"
+      "scenario_type": "mixed_behavior_character_continuity",
+      "version": "0.1",
+      "batch_path": "data/phase-03/blind-test/blind-batch-b18-v0.1.jsonl",
+      "batch_blob_sha": "c337c441a20927ad7968ecf76fa96d14a065d1d9",
+      "review_id": "V55-B18-BLIND-REVIEW-001",
+      "review_path": "reviews/phase-03-v55/B18-BLIND-REVIEW-RESULT-001.json",
+      "expected_ids": [
+        "p03-blind-b18-000001",
+        "p03-blind-b18-000002"
+      ],
+      "maximum_same_behavior_train_validation_jaccard": 0.154,
+      "integrity_step_id": "PHASE03-SMOLTALK-V55-B18-BLIND-INTEGRITY-001",
+      "freeze_step_id": "PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001",
+      "cumulative_before_records": 34,
+      "cumulative_before_behaviors": 17,
+      "cumulative_after_records": 36,
+      "cumulative_after_behaviors": 18
+    }
+  ],
+  "corrections": [
+    {
+      "behavior": "B02",
+      "from_version": "0.1",
+      "to_version": "0.2",
+      "reason": "same-behavior TRAIN/VALIDATION lexical-semantic proximity reduced before freeze"
+    },
+    {
+      "behavior": "B03",
+      "from_version": "0.1",
+      "to_version": "0.2",
+      "reason": "same-behavior VALIDATION/TRAIN lexical-semantic proximity reduced before freeze"
     }
   ],
   "execution_policy": {
     "state_driven": true,
     "resume": true,
     "skip_verified_freeze": true,
-    "stop_on_missing_semantic_artifacts": true,
     "stop_on_semantic_failure": true,
     "no_automatic_semantic_rewrite": true,
     "no_train_or_validation_mutation": true,
     "no_model_evaluation_during_authoring": true,
+    "exact_cross_split_collision_blocking": true,
+    "internal_blind_prompt_duplicate_blocking": true,
     "training_authorization_remains_false": true
   }
 }
