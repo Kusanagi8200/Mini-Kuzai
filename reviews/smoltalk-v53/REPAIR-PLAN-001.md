@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V53 Gate 3 repair and segmentation plan 001
 
-Status: **repair plan documented for the eight V53 Gate 2 B repair-priority cases; no derivative training records have been created.**
+Status: **Gate 3 repair plan audited; two repaired derivative research candidates have now been created for V52-025 and V51-013. They remain outside TRAIN and await independent derivative review.**
 
 The purpose of Gate 3 is to preserve useful cognitive, creative and adaptive behavior while preventing known errors, unsupported claims or artificial conversation boundaries from becoming positive supervision targets.
 
@@ -197,7 +197,7 @@ These flags overlap; they are not mutually exclusive categories.
 | Uncertainty / logical calibration required | 3 |
 | Wording / constraint cleanup required | 3 |
 | Original source pages to modify | 0 |
-| Derivative records created | 0 |
+| Derivative records created | 2 |
 | TRAIN approved | 0 |
 
 Flag assignment:
@@ -221,10 +221,8 @@ Any future repaired record must:
 
 ## Next operational gate
 
-Publish a read-only numeric Gate 3 audit confirming that these exact eight B cases still match the completed Gate 2 population and that the four repair-flag counts remain reproducible.
-
-Only after that audit should actual derivative target authoring begin.
+Gate 3 was published as [`PHASE03-SMOLTALK-V53-REPAIR-PLAN-001`](../../reports/assistant-results/history/PHASE03-SMOLTALK-V53-REPAIR-PLAN-001.json). Two first derivative candidates are now stored under [`derivatives/`](derivatives/): V53-DERIV-001-V52-025 and V53-DERIV-002-V51-013. The next operational gate is their read-only integrity audit via [`tools/public-audits/smoltalk_v53_derivative_candidates.py`](../../tools/public-audits/smoltalk_v53_derivative_candidates.py). A successful audit will still leave both records pending independent semantic/factual derivative review.
 
 TRAIN approved: **0**.
-Derivative records created: **0**.
+Derivative records created: **2**.
 Phase 03 training authorized: **NO**.
