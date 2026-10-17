@@ -1,0 +1,116 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "version": "V55",
+  "status": "ACTIVE_BLIND_AUTHORING_SEQUENCE",
+  "prerequisite_validation_closure_step": "PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001",
+  "total_behaviors": 18,
+  "target_records": 36,
+  "records_per_behavior": 2,
+  "semantic_validation_complete_required": true,
+  "blind_authoring_authorized_required": true,
+  "training_authorized": false,
+  "behaviors": [
+    {
+      "behavior": "B01",
+      "group_id": "sg-b01-04",
+      "scenario_type": "identity_comparison"
+    },
+    {
+      "behavior": "B02",
+      "group_id": "sg-b02-04",
+      "scenario_type": "lab_world_boundary"
+    },
+    {
+      "behavior": "B03",
+      "group_id": "sg-b03-04",
+      "scenario_type": "initiator_role_scope"
+    },
+    {
+      "behavior": "B04",
+      "group_id": "sg-b04-01",
+      "scenario_type": "roadmap_leakage_test"
+    },
+    {
+      "behavior": "B05",
+      "group_id": "sg-b05-04",
+      "scenario_type": "curiosity_restraint"
+    },
+    {
+      "behavior": "B06",
+      "group_id": "sg-b06-04",
+      "scenario_type": "no_false_certainty"
+    },
+    {
+      "behavior": "B07",
+      "group_id": "sg-b07-03",
+      "scenario_type": "speculation_boundary"
+    },
+    {
+      "behavior": "B08",
+      "group_id": "sg-b08-04",
+      "scenario_type": "social_pressure_agreement"
+    },
+    {
+      "behavior": "B09",
+      "group_id": "sg-b09-03",
+      "scenario_type": "opinion_under_challenge"
+    },
+    {
+      "behavior": "B10",
+      "group_id": "sg-b10-04",
+      "scenario_type": "multi_turn_opinion_revision"
+    },
+    {
+      "behavior": "B11",
+      "group_id": "sg-b11-04",
+      "scenario_type": "initiative_restraint"
+    },
+    {
+      "behavior": "B12",
+      "group_id": "sg-b12-04",
+      "scenario_type": "creative_under_constraints"
+    },
+    {
+      "behavior": "B13",
+      "group_id": "sg-b13-03",
+      "scenario_type": "humor_restraint_serious_context"
+    },
+    {
+      "behavior": "B14",
+      "group_id": "sg-b14-03",
+      "scenario_type": "emotional_restraint_precision"
+    },
+    {
+      "behavior": "B15",
+      "group_id": "sg-b15-03",
+      "scenario_type": "emerging_interest"
+    },
+    {
+      "behavior": "B16",
+      "group_id": "sg-b16-04",
+      "scenario_type": "opinion_continuity_revision"
+    },
+    {
+      "behavior": "B17",
+      "group_id": "sg-b17-03",
+      "scenario_type": "capability_boundary"
+    },
+    {
+      "behavior": "B18",
+      "group_id": "sg-b18-04",
+      "scenario_type": "mixed_behavior_character_continuity"
+    }
+  ],
+  "execution_policy": {
+    "state_driven": true,
+    "resume": true,
+    "skip_verified_freeze": true,
+    "stop_on_missing_semantic_artifacts": true,
+    "stop_on_semantic_failure": true,
+    "no_automatic_semantic_rewrite": true,
+    "no_train_or_validation_mutation": true,
+    "no_model_evaluation_during_authoring": true,
+    "training_authorization_remains_false": true
+  }
+}
