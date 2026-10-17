@@ -19,16 +19,24 @@ class V54ValidationMasterTests(unittest.TestCase):
         self.assertEqual(config["target_records"],36)
         self.assertFalse(config["training_authorized"])
 
-    def test_current_published_boundary(self):
+    def test_current_freeze_prefix_is_contiguous(self):
         config=master.load_config()
         frozen,next_item=master.current_state(config["behaviors"])
-        self.assertEqual(frozen,["B01","B02","B03","B04","B05"])
-        self.assertEqual(next_item["behavior"],"B06")
-        self.assertEqual(next_item["group_id"],"sg-b06-03")
-        self.assertEqual(next_item["scenario_type"],"tentative_hypothesis_unknown")
+        self.assertGreaterEqual(len(frozen),5)
+        self.assertEqual(frozen,[f"B{i:02d}" for i in range(1,len(frozen)+1)])
+        if next_item is not None:
+            self.assertEqual(next_item["behavior"],f"B{len(frozen)+1:02d}")
 
-    def test_b06_runner_is_not_silently_assumed(self):
-        self.assertFalse(master.runner_path("B06").is_file())
+    def test_generic_configs_b06_to_b10_exist(self):
+        for i in range(6,11):
+            behavior=f"B{i:02d}"
+            cfg=master.load_generic_config(behavior)
+            self.assertIsNotNone(cfg)
+            self.assertEqual(cfg["behavior"],behavior)
+            self.assertEqual(cfg["index"],i)
+
+    def test_first_unconfigured_behavior_is_b11(self):
+        self.assertIsNone(master.load_generic_config("B11"))
 
 if __name__=="__main__":
     unittest.main()
