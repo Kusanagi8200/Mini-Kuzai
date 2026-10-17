@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V53 public corpus consolidation plan
 
-Status: **V53 methodology documented on 2026-10-17; no V53 corpus audit or dataset admission has been executed.**
+Status: **V53 methodology and read-only cross-cycle audit implementation documented on 2026-10-17; the V53 GOGIT audit has not yet been executed and no dataset admission has occurred.**
 Scope: previously published, external-public SmolTalk v0.4 reviews only.
 This plan does not approve TRAIN, change split assignments, freeze a tokenizer, select an architecture or authorize Phase 03 model training.
 
@@ -97,4 +97,4 @@ Gate 5 - **Decision summary.** Produce public, non-sensitive aggregate findings 
 
 ## Immediate operational next step
 
-Implement and inspect a **read-only V53 cross-cycle public-review inventory** that checks the 124 published case files, their statuses, source provenance and distinctness; it must not relabel or alter the original dossiers. Publish only allowlisted numerical aggregates through a new GOGIT audit after its source and tests have been reviewed. Interpret the results before selecting individual repair candidates.
+The read-only V53 cross-cycle public-review inventory is now implemented in [`tools/public-audits/smoltalk_v53_cross_cycle_inventory.py`](../tools/public-audits/smoltalk_v53_cross_cycle_inventory.py), with an offline test and a dedicated [GOGIT execution guide](../tools/V53-GOGIT-CROSS-CYCLE.md). The next operational action is the one-time GOGIT execution on a clean synchronized `main` on fhc2. Interpret the published result before selecting individual repair candidates.
