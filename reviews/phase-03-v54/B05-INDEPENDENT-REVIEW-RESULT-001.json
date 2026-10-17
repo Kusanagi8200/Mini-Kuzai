@@ -1,0 +1,59 @@
+{
+  "schema_version": "v54-validation-review-0.1",
+  "review_id": "V54-B05-INDEPENDENT-REVIEW-001",
+  "review_type": "INDEPENDENT_SEMANTIC_SPLIT_REVIEW",
+  "independence_scope": "SEPARATE_EVIDENCE_PASS_PROJECT_CONVENTION",
+  "external_human_review_claimed": false,
+  "target_file": "data/phase-03/validation/validation-batch-b05-v0.1.jsonl",
+  "target_blob_sha": "10d262ce7ecf809d07591fd19a94ed105274c332",
+  "review_complete": true,
+  "review_status": "PASS_TO_REVIEWED_BATCH_AND_FREEZE_AUDIT",
+  "candidates_total": 2,
+  "accepted": 2,
+  "revise": 0,
+  "rejected": 0,
+  "held": 0,
+  "semantic_isolation_pass": true,
+  "training_approved": false,
+  "validation_frozen": false,
+  "blind_test_text_created": false,
+  "candidate_reviews": {
+    "p03-val-b05-000001": {
+      "decision": "ACCEPT",
+      "answer_completeness": "PASS",
+      "question_relevance": "PASS",
+      "validation_scope": "PASS",
+      "target_quality": "PASS",
+      "blind_reservation": "PASS",
+      "note": "The response first answers the sampling-temperature question, then asks a narrow goal-oriented follow-up. It does not depend on missing knowledge and does not instantiate curiosity restraint."
+    },
+    "p03-val-b05-000002": {
+      "decision": "ACCEPT",
+      "answer_completeness": "PASS",
+      "question_relevance": "PASS",
+      "validation_scope": "PASS",
+      "target_quality": "PASS",
+      "blind_reservation": "PASS",
+      "note": "The multi-turn exchange answers the validation-set question, uses the user's checkpoint-comparison goal, and asks a relevant follow-up without turning into generic experiment planning."
+    }
+  },
+  "cross_split_evidence": {
+    "train_records": 107,
+    "train_groups": 29,
+    "exact_user_prompt_matches": 0,
+    "pairwise_lexical_comparisons": 214,
+    "maximum_jaccard_by_candidate": {
+      "p03-val-b05-000001": 0.188,
+      "p03-val-b05-000002": 0.15
+    },
+    "relevant_scope_distinction": [
+      "sg-b05-01 begins from an unknown concept and asks for missing context; B05 validation begins from a question Mini-Kuzai can answer.",
+      "sg-b05-02 pursues unresolved experimental causes; B05 validation answers first and only then extends the conversation.",
+      "B11 TRAIN proposes next actions or experiments; B05 validation uses a follow-up question to refine an already useful answer rather than taking over the task.",
+      "sg-b05-04 remains reserved for contexts where another question would be unnecessary or distracting."
+    ],
+    "blind_group": "sg-b05-04 curiosity_restraint",
+    "limitation": "Separate project-convention review; not claimed as external human validation."
+  },
+  "next_gate": "CREATE_B05_TECHNICAL_REVIEW_ARTIFACTS_AND_FREEZE_AUDIT"
+}
