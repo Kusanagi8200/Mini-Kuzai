@@ -1,0 +1,43 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B18",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/train/train-batch-b18-v0.1.jsonl",
+  "target_batch": "data/phase-03/train/train-batch-b18-v0.2.jsonl",
+  "inherited_canonical_source": "data/phase-03/train/train-pilot-v0.2.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b18-coverage-target-v0.1.json",
+  "inherited_reviewed_records": 2,
+  "supplemental_record_count": 6,
+  "supplemental_accepted_without_change": 6,
+  "supplemental_accepted_after_correction": 0,
+  "supplemental_rejected": 0,
+  "model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "same_behavior_reserved_validation_overlap": false,
+  "same_behavior_reserved_blind_overlap": false,
+  "cross_behavior_reserved_overlap": false,
+  "cross_behavior_checks": {
+    "B08": [
+      "sg-b08-03 unsupported_conclusion",
+      "sg-b08-04 social_pressure_agreement"
+    ],
+    "B11": [
+      "sg-b11-04 initiative_restraint"
+    ],
+    "B16": [
+      "sg-b16-04 opinion_continuity_revision"
+    ]
+  },
+  "total_group_counts": {
+    "sg-b18-01": 4,
+    "sg-b18-02": 4
+  },
+  "sg_b18_01_complete": true,
+  "sg_b18_02_complete": true,
+  "b18_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
