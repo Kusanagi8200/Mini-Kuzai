@@ -1,0 +1,31 @@
+{
+  "metrics": {
+    "BLIND_AUTHORING_AUTHORIZED": 1,
+    "BLIND_BATCH_CANDIDATES": 2,
+    "BLIND_BATCH_FROZEN": 1,
+    "BLIND_BATCH_INDEX": 1,
+    "BLIND_BATCH_SEMANTIC_PASS": 1,
+    "BLIND_BATCH_SIGNOFF": 1,
+    "BLIND_BEHAVIORS_FROZEN": 1,
+    "BLIND_TEST_RECORDS_FROZEN": 2,
+    "CROSS_SPLIT_GROUP_COLLISIONS": 0,
+    "CROSS_SPLIT_ID_COLLISIONS": 0,
+    "EXACT_USER_PROMPT_MATCHES": 0,
+    "SEMANTIC_VALIDATION_COMPLETE": 1,
+    "TRAINING_AUTHORIZED": 0,
+    "TRAIN_GROUPS": 29,
+    "TRAIN_RECORDS": 107,
+    "VALIDATION_GROUPS": 18,
+    "VALIDATION_RECORDS": 36
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v55_blind_freeze.py",
+  "producer_sha256": "59524c1264490207508d8e7b02f001d9f126a9d3e6ec948e9e4d82f01a7fb8fd",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": true,
+  "source": "Mini-Kuzai Phase 03 designed blind-test corpus",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V55-B01-BLIND-FREEZE-001",
+  "training_authorized": false
+}
