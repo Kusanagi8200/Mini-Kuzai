@@ -1,0 +1,40 @@
+{
+  "schema_version": "v53-eligibility-review-0.1",
+  "eligibility_id": "V53-ELIG-001-V52-025",
+  "derivative_id": "V53-DERIV-001-V52-025",
+  "review_status": "COMPLETE",
+  "eligibility_status": "NOT_TRAIN_ELIGIBLE_RESERVED_VALIDATION_COLLISION",
+  "training_approved": false,
+  "dataset_split_assigned": false,
+  "admission_decision_made": false,
+  "provenance": {
+    "status": "PASS",
+    "public_dataset": "HuggingFaceTB/smol-smoltalk",
+    "source_license": "apache-2.0",
+    "license_evidence": "Hugging Face dataset card verified 2026-10-17",
+    "source_content_sha256": "4bd411ceb95b9b3c9cafe265405a9522445712ae330fa4af1fc74d76a088cd04"
+  },
+  "duplicate_control": {
+    "canonical_train_records_compared": 37,
+    "exact_duplicate": false,
+    "near_duplicate_method": "normalized 5-token shingle Jaccard",
+    "near_duplicate_threshold": 0.2,
+    "maximum_train_jaccard": 0.001430615164520744,
+    "near_duplicate_hit": false,
+    "derivative_cross_duplicate": false
+  },
+  "semantic_control": {
+    "manual_review_required": true,
+    "primary_behavior_considered": "B07",
+    "train_group_considered": "sg-b07-01",
+    "train_scenario": "incomplete_evidence_hypothesis",
+    "reserved_validation_group": "sg-b07-02",
+    "reserved_validation_scenario": "hypothesis_plus_test",
+    "reserved_blind_group": "sg-b07-03",
+    "reserved_blind_scenario": "speculation_boundary",
+    "reserved_validation_collision": true,
+    "reserved_blind_collision": false,
+    "rationale": "The derivative does more than hold a tentative linear hypothesis: it explicitly proposes residual inspection as a verification method. That combination matches the reserved VALIDATION scenario hypothesis_plus_test closely enough that admitting the dialogue to TRAIN would weaken the intended semantic split."
+  },
+  "next_action": "KEEP_OUT_OF_TRAIN_OR_REDESIGN_WITHOUT_RESERVED_VALIDATION_BEHAVIOR"
+}
