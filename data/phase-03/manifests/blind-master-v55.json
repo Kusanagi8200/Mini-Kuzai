@@ -2,7 +2,7 @@
   "project": "MINI-KUZAI",
   "phase": "03",
   "version": "V55",
-  "status": "REVIEWED_READY_FOR_BLIND_FREEZE",
+  "status": "FROZEN_PENDING_GLOBAL_CLOSURE",
   "prerequisite_validation_closure_step": "PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001",
   "total_behaviors": 18,
   "target_records": 36,
@@ -412,13 +412,25 @@
     {
       "behavior": "B02",
       "from_version": "0.1",
+      "from_path": "data/phase-03/blind-test/blind-batch-b02-v0.1.jsonl",
+      "from_blob_sha": "44a32a9b1c4046aafb527b2166a562d8c2cab89d",
+      "initial_review_path": "reviews/phase-03-v55/B02-BLIND-REVIEW-RESULT-001.json",
       "to_version": "0.2",
+      "to_path": "data/phase-03/blind-test/blind-batch-b02-v0.2.jsonl",
+      "to_blob_sha": "1e4c23af0c1d374d17f4a114764607beb1a03f73",
+      "final_review_path": "reviews/phase-03-v55/B02-BLIND-REVIEW-RESULT-002.json",
       "reason": "same-behavior TRAIN/VALIDATION lexical-semantic proximity reduced before freeze"
     },
     {
       "behavior": "B03",
       "from_version": "0.1",
+      "from_path": "data/phase-03/blind-test/blind-batch-b03-v0.1.jsonl",
+      "from_blob_sha": "83ae98803da24112f2622489c4176eca0dac43e0",
+      "initial_review_path": "reviews/phase-03-v55/B03-BLIND-REVIEW-RESULT-001.json",
       "to_version": "0.2",
+      "to_path": "data/phase-03/blind-test/blind-batch-b03-v0.2.jsonl",
+      "to_blob_sha": "fceaf6a6215a40bcefee90848d99951078789f57",
+      "final_review_path": "reviews/phase-03-v55/B03-BLIND-REVIEW-RESULT-002.json",
       "reason": "same-behavior VALIDATION/TRAIN lexical-semantic proximity reduced before freeze"
     }
   ],
@@ -433,5 +445,8 @@
     "exact_cross_split_collision_blocking": true,
     "internal_blind_prompt_duplicate_blocking": true,
     "training_authorization_remains_false": true
-  }
+  },
+  "freeze_complete": true,
+  "freeze_complete_step_id": "PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001",
+  "global_blind_closure_complete": false
 }
