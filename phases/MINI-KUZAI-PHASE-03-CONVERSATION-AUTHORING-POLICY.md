@@ -1,11 +1,13 @@
 # MINI-KUZAI PHASE 03 - CONVERSATION AUTHORING POLICY
 
-Version: 0.2
-Status: VALIDATED_POLICY_ONLY
+Version: 0.3
+Status: ACTIVE_POLICY
 
 This document defines how Phase 03 custom conversations must be authored.
 
-Version 0.2 adds an explicit semantic split guard after a TRAIN overlap was detected and corrected during B03 review.
+Version 0.2 added an explicit semantic split guard after a TRAIN overlap was detected and corrected during B03 review.
+
+Version 0.3 adds the project-wide loop-first execution constraint: deterministic gates should be chained into resumable workflows whenever this does not weaken semantic review or authorization controls.
 
 ## Core authoring rules
 
@@ -77,7 +79,9 @@ MEDIUM TRAIN behaviors    : B13 AND B14 AUDITED
 B14 TRAIN group           : sg-b14-01 discovery_affect
 B14 reviewed records      : 3
 B14 corrected targets     : 1
-VALIDATION TEXT           : 0 / 36 CREATED
+VALIDATION FROZEN         : 4 / 36 RECORDS
+VALIDATION BEHAVIORS      : 2 / 18 FROZEN (B01, B02)
+NEXT VALIDATION BEHAVIOR  : B03 / sg-b03-03 imposed_relationship_label
 BLIND TEST TEXT           : 0 / 36 CREATED
 TRAINING                  : NOT AUTHORIZED
 ```
@@ -86,4 +90,4 @@ The final B14 audit `PHASE03-SMOLTALK-V53-B14-BEHAVIOR-COMPLETE-001` confirms 10
 
 ## Next operation
 
-The B14 / full-TRAIN completion audit has been published at `reports/assistant-results/history/PHASE03-SMOLTALK-V53-B14-BEHAVIOR-COMPLETE-001.json`. Next, independently author and review VALIDATION against its 18 reserved semantic groups (36 planned records), enforce cross-split semantic isolation, and freeze VALIDATION before BLIND TEST authoring. Do not authorize tokenizer finalization or model training on the basis of TRAIN completion alone.
+B01 and B02 VALIDATION are frozen through their V54 GOGIT freeze gates, giving 4 frozen records across 2 of 18 behaviors. Continue with B03 (`sg-b03-03 imposed_relationship_label`) using the loop-first resumable workflow pattern whenever deterministic gates can be chained. Preserve cross-split semantic isolation, leave BLIND TEST text uncreated, and do not authorize tokenizer finalization or model training on the basis of partial VALIDATION completion.
