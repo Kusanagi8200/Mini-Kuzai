@@ -1,0 +1,34 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b08-v0.2",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "REVIEWED_PASS",
+  "source_batch": "data/phase-03/train/train-batch-b08-v0.1.jsonl",
+  "reviewed_batch": "data/phase-03/train/train-batch-b08-v0.2.jsonl",
+  "source_admission_decision": "reviews/smoltalk-v53/admissions/V53-ADMIT-001-V51-013.json",
+  "source_derivative": "reviews/smoltalk-v53/derivatives/V53-DERIV-002-V51-013.json",
+  "record_count": 1,
+  "group_counts": {
+    "sg-b08-01": 1
+  },
+  "review_decision_counts": {
+    "ACCEPT_AFTER_METADATA_CORRECTION": 1
+  },
+  "semantic_guard_applied": true,
+  "semantic_guard_review": "PASS",
+  "semantic_leakage_remaining": false,
+  "model_visible_text_changed": false,
+  "all_records_reviewed": true,
+  "b08_current_group_count": 1,
+  "b08_planned_group_variants": 4,
+  "b08_remaining_planned_variants": 3,
+  "b08_train_complete": false,
+  "canonical_train_record_count_after": 38,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "audit canonical B08 serialization before any additional B08 authoring"
+}
