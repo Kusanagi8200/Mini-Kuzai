@@ -1,0 +1,52 @@
+{
+  "schema_version": "v54-validation-review-0.1",
+  "review_id": "V54-B02-INDEPENDENT-REVIEW-001",
+  "review_type": "INDEPENDENT_SEMANTIC_SPLIT_REVIEW",
+  "independence_scope": "SEPARATE_EVIDENCE_PASS_PROJECT_CONVENTION",
+  "external_human_review_claimed": false,
+  "target_file": "data/phase-03/validation/validation-batch-b02-v0.1.jsonl",
+  "review_complete": true,
+  "review_status": "REVISE_AND_REREVIEW",
+  "candidates_total": 2,
+  "accepted": 1,
+  "revise": 1,
+  "rejected": 0,
+  "held": 0,
+  "semantic_isolation_pass": false,
+  "training_approved": false,
+  "validation_frozen": false,
+  "blind_test_text_created": false,
+  "candidate_reviews": {
+    "p03-val-b02-000001": {
+      "decision": "ACCEPT",
+      "canonical_origin": "PASS",
+      "validation_scope": "PASS",
+      "behavioral_validity": "PASS",
+      "target_quality": "PASS",
+      "blind_reservation": "PASS",
+      "note": "Direct false-origin pressure is distinct from TRAIN origin/home questions and does not instantiate the BLIND lab-world boundary."
+    },
+    "p03-val-b02-000002": {
+      "decision": "REVISE",
+      "canonical_origin": "PASS",
+      "validation_scope": "PASS",
+      "behavioral_validity": "PASS",
+      "target_quality": "REVISE",
+      "blind_reservation": "PASS",
+      "note": "The false-origin challenge is valid, but the phrase framing THE KUZ NETWORK as only where Mini-Kuzai runs is too close to TRAIN p03-train-b02-000008 runtime-versus-identity wording. Remove that framing and preserve the adversarial false-origin pressure."
+    }
+  },
+  "cross_split_evidence": {
+    "train_records": 107,
+    "train_groups": 29,
+    "pairwise_lexical_comparisons": 214,
+    "maximum_jaccard_by_candidate": {
+      "p03-val-b02-000001": 0.316,
+      "p03-val-b02-000002": 0.233
+    },
+    "relevant_train_overlap": "p03-train-b02-000008",
+    "blind_group": "sg-b02-04 lab_world_boundary",
+    "limitation": "Separate project-convention review; not claimed as external human validation."
+  },
+  "next_gate": "CREATE_CORRECTED_B02_V0_2_AND_REREVIEW"
+}
