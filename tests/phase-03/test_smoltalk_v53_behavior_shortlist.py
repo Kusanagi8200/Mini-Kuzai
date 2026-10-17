@@ -69,18 +69,22 @@ class V53Gate2Tests(unittest.TestCase):
                 (2, 1, 3, 0, 3), "REVIEW", "PARTIAL"
             ))
 
-        # Six supporting B rows, sum 5-7.
+        # Six supporting B rows, sum 5-7:
+        # two V51 and four V52 in the reviewed population.
         for i in range(6):
-            target = v51 if i < 3 else v52
+            target = v51 if i < 2 else v52
             target.append(row(
-                "V51" if i < 3 else "V52", 200 + i, "B",
+                "V51" if i < 2 else "V52", 200 + i, "B",
                 (1, 1, 2, 0, 2), "LOW", "PARTIAL"
             ))
 
-        # Three low-persona B rows, sum below 5.
+        # Three low-persona B rows, sum below 5:
+        # two V51 and one V52 in the reviewed population.
         for i in range(3):
-            v52.append(row(
-                "V52", 300 + i, "B", (1, 0, 0, 0, 2), "LOW", "GOOD"
+            target = v51 if i < 2 else v52
+            target.append(row(
+                "V51" if i < 2 else "V52", 300 + i, "B",
+                (1, 0, 0, 0, 2), "LOW", "GOOD"
             ))
 
         # Three HIGH-risk B rows; high risk overrides signal strength.
