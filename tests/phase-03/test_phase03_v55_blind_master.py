@@ -34,5 +34,19 @@ class V55BlindMasterTests(unittest.TestCase):
         if next_cfg is not None:
             self.assertEqual(next_cfg["behavior"],f"B{len(frozen)+1:02d}")
 
+    def test_v55_freeze_is_complete_but_global_closure_is_pending(self):
+        data=master.load_master()
+        frozen,next_cfg=master.current_state(data)
+        self.assertEqual(data["status"],"FROZEN_PENDING_GLOBAL_CLOSURE")
+        self.assertTrue(data["freeze_complete"])
+        self.assertEqual(
+            data["freeze_complete_step_id"],
+            "PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001",
+        )
+        self.assertFalse(data["global_blind_closure_complete"])
+        self.assertEqual(len(frozen),18)
+        self.assertIsNone(next_cfg)
+        self.assertFalse(data["training_authorized"])
+
 if __name__=="__main__":
     unittest.main()
