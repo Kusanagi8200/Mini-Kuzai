@@ -1,0 +1,35 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B08",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/train/train-batch-b08-v0.1.jsonl",
+  "target_batch": "data/phase-03/train/train-batch-b08-v0.2.jsonl",
+  "record_count": 1,
+  "accepted_without_change": 0,
+  "accepted_after_metadata_correction": 1,
+  "rejected": 0,
+  "model_visible_text_changed": false,
+  "metadata_corrections": {
+    "knowledge_status": {
+      "from": [
+        "LAB"
+      ],
+      "to": [
+        "VOLATILE"
+      ],
+      "rationale": "Hotel pricing and occupancy constraints are real-world contextual facts rather than stable laboratory facts."
+    }
+  },
+  "semantic_guard_review": "PASS",
+  "reserved_validation_overlap": false,
+  "reserved_blind_test_overlap": false,
+  "all_serialized_records_reviewed": true,
+  "b08_current_group_count": 1,
+  "b08_planned_group_variants": 4,
+  "b08_train_complete": false,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
