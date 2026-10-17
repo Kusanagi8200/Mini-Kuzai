@@ -7,7 +7,7 @@ Status: **B08 TRAIN completion and independent review of V53-DERIV-003 are prepa
 Canonical reviewed batch:
 
 ```text
-data/phase-03/train/train-batch-b08-v0.4.jsonl
+data/phase-03/train/train-batch-b08-v0.5.jsonl
 ```
 
 Coverage:
@@ -18,7 +18,7 @@ sg-b08-02 contradiction_detection: 4 / 4
 B08 TRAIN behavior complete      : yes
 ```
 
-The four new `sg-b08-02` records require explicit contradiction detection.
+The four `sg-b08-02` records require explicit contradiction detection. A first prepublication `v0.4` serialization attempt was rejected by the audit because three records had shifted constructor arguments; corrected `v0.5` restores IDs `p03-train-b08-000006` through `000008` and valid user/assistant message pairs.
 They are designed not to instantiate:
 
 - B08 validation `sg-b08-03 unsupported_conclusion`;
@@ -77,7 +77,7 @@ From the current repository shell with the project virtual environment active:
 git pull --ff-only origin main && python -m py_compile tools/public-audits/smoltalk_v53_b08_behavior_complete.py tools/public-audits/smoltalk_v53_deriv003_review.py tests/phase-03/test_smoltalk_v53_b08_behavior_complete.py tests/phase-03/test_smoltalk_v53_deriv003_review.py tools/gogit_public.py && python -m unittest discover -s tests/phase-03 -p 'test_smoltalk_v53_b08_behavior_complete.py' -v && python -m unittest discover -s tests/phase-03 -p 'test_smoltalk_v53_deriv003_review.py' -v && python tools/gogit_public.py --step PHASE03-SMOLTALK-V53-B08-BEHAVIOR-COMPLETE-001 --audit tools/public-audits/smoltalk_v53_b08_behavior_complete.py && python tools/gogit_public.py --step PHASE03-SMOLTALK-V53-DERIV003-REVIEW-001 --audit tools/public-audits/smoltalk_v53_deriv003_review.py
 ```
 
-The two publications remain separate immutable GOGIT steps.
+The two publications remain separate immutable GOGIT steps. Neither STEP_ID was published by the failed prepublication attempt.
 
 No terminal output needs to be copied into ChatGPT. After completion, request
 `gogit`.
