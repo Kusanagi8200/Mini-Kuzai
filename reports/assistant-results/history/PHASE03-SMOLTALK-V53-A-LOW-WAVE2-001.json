@@ -1,0 +1,23 @@
+{
+  "metrics": {
+    "V53_AW2_B12_ROUTE_VALID": 1,
+    "V53_AW2_DEFER_NO_GROUP": 1,
+    "V53_AW2_DEFER_RESERVED": 1,
+    "V53_AW2_DERIVATIVE_CREATED": 1,
+    "V53_AW2_DERIVATIVE_READY": 1,
+    "V53_AW2_INSPECTED": 3,
+    "V53_AW2_LOW_RISK_A": 3,
+    "V53_AW2_SOURCE_MATCHED": 3,
+    "V53_AW2_TRAIN_APPROVED": 0
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/smoltalk_v53_a_low_wave2.py",
+  "producer_sha256": "6d124c404facf08080ea3b2f3058334553338669afcf3deaedf335065bd96710",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "SmolTalk v0.4 - public external dataset",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V53-A-LOW-WAVE2-001",
+  "training_authorized": false
+}
