@@ -1,0 +1,35 @@
+{
+  "schema_version": "v53-derivative-review-0.1",
+  "review_id": "V53-DERIV-REVIEW-001-V52-025",
+  "derivative_id": "V53-DERIV-001-V52-025",
+  "review_type": "INDEPENDENT_SEMANTIC_FACTUAL",
+  "review_status": "PASS_TO_ELIGIBILITY_CONTROLS",
+  "review_complete": true,
+  "quality_gate_passed": true,
+  "further_repair_required": false,
+  "training_approved": false,
+  "dataset_split_assigned": false,
+  "semantic_validation_complete": false,
+  "checks": {
+    "factual_accuracy": "PASS",
+    "multi_turn_coherence": "PASS",
+    "behavioral_value": "PASS",
+    "instruction_fit": "PASS",
+    "uncertainty_calibration": "PASS",
+    "new_error_introduced": false
+  },
+  "evidence": {
+    "verified_mean_f": 68,
+    "verified_pearson_r": 0.9386793281621157,
+    "verified_slope_f_per_day": 1.4685314685314685,
+    "verified_intercept_f": 58.45454545454545,
+    "notes": [
+      "The twelve temperatures sum to 816 and average exactly 68.0 F.",
+      "The derivative's rounded Pearson correlation, slope and intercept are numerically correct.",
+      "The rewrite avoids labeling local deviations as anomalies without a criterion.",
+      "Linear regression is framed as a descriptive first model to test, with residual and time-dependence caveats.",
+      "No new factual or instruction-following defect was identified in the rewritten assistant turns."
+    ]
+  },
+  "next_gate": "PROVENANCE_DEDUP_SEMANTIC_SPLIT_ELIGIBILITY"
+}
