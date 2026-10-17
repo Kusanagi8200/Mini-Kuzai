@@ -19,6 +19,7 @@ REPO = Path(__file__).resolve().parents[1]
 AUDITS = REPO / "tools" / "public-audits"
 REPORTS = REPO / "reports" / "assistant-results"
 SOURCE = "SmolTalk v0.4 - public external dataset"
+SOURCE_PHASE03_VALIDATION = "Mini-Kuzai Phase 03 designed validation corpus"
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -293,6 +294,12 @@ def checked_audit(path_string):
     return path, tracked
 
 
+def source_for_audit(tracked):
+    if tracked.startswith("tools/public-audits/phase03_v54_"):
+        return SOURCE_PHASE03_VALIDATION
+    return SOURCE
+
+
 def numeric_metrics(raw):
     if raw.count(MARKER) != 1:
         raise RuntimeError("Expected exactly one results marker")
@@ -351,7 +358,7 @@ def main():
             "step_id": args.step,
             "project": "Mini-Kuzai",
             "phase": "03",
-            "source": SOURCE,
+            "source": source_for_audit(tracked),
             "producer": tracked,
             "producer_sha256": hashlib.sha256(
                 audit_path.read_bytes()
