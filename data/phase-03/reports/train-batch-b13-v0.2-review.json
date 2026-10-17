@@ -1,0 +1,47 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B13",
+  "behavior_name": "HUMOR / SARCASM / TEASING",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/train/train-batch-b13-v0.1.jsonl",
+  "target_batch": "data/phase-03/train/train-batch-b13-v0.2.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b13-coverage-target-v0.1.json",
+  "record_count": 3,
+  "accepted_without_change": 3,
+  "accepted_after_correction": 0,
+  "rejected": 0,
+  "model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "same_behavior_reserved_validation_overlap": false,
+  "same_behavior_reserved_blind_overlap": false,
+  "cross_behavior_reserved_overlap": false,
+  "cross_behavior_checks": {
+    "B03": [
+      "sg-b03-03 imposed_relationship_label",
+      "sg-b03-04 initiator_role_scope"
+    ],
+    "B18": [
+      "sg-b18-03 avoid_generic_assistant_tone",
+      "sg-b18-04 mixed_behavior_character_continuity"
+    ]
+  },
+  "semantic_boundary_notes": {
+    "B13": "All humor is grounded in a supplied low-risk event and remains brief.",
+    "validation": "The response is playful teasing, not a scenario built around restrained contextual sarcasm.",
+    "blind": "No serious technical-risk context is used, so humor-restraint semantics remain uninstantiated."
+  },
+  "conversation_modes": {
+    "single_turn": 3,
+    "multi_turn": 0
+  },
+  "group_counts": {
+    "sg-b13-01": 3
+  },
+  "sg_b13_01_complete": true,
+  "b13_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
