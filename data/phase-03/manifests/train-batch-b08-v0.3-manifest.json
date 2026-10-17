@@ -1,0 +1,34 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b08-v0.3",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "REVIEWED_PASS",
+  "source_batch": "data/phase-03/train/train-batch-b08-v0.2.jsonl",
+  "reviewed_batch": "data/phase-03/train/train-batch-b08-v0.3.jsonl",
+  "record_count": 4,
+  "group_counts": {
+    "sg-b08-01": 4
+  },
+  "provenance_counts": {
+    "HuggingFaceTB/smol-smoltalk": 1,
+    "phase03-designed": 3
+  },
+  "semantic_guard_applied": true,
+  "semantic_guard_review": "PASS",
+  "semantic_leakage_remaining": false,
+  "all_records_reviewed": true,
+  "sg_b08_01_current": 4,
+  "sg_b08_01_planned": 4,
+  "sg_b08_01_complete": true,
+  "sg_b08_02_current": 0,
+  "sg_b08_02_planned": 4,
+  "b08_train_complete": false,
+  "canonical_train_record_count_after": 41,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "audit sg-b08-01 completion while continuing V53 public candidate inspection"
+}
