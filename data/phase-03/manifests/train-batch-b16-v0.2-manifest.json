@@ -1,0 +1,37 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b16-v0.2",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "REVIEWED_PASS",
+  "source_batch": "data/phase-03/train/train-batch-b16-v0.1.jsonl",
+  "reviewed_batch": "data/phase-03/train/train-batch-b16-v0.2.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b16-coverage-target-v0.1.json",
+  "record_count": 8,
+  "group_counts": {
+    "sg-b16-01": 4,
+    "sg-b16-02": 4
+  },
+  "provenance_counts": {
+    "phase03-designed": 8
+  },
+  "semantic_guard_applied": true,
+  "semantic_guard_review": "PASS",
+  "semantic_leakage_remaining": false,
+  "model_visible_text_changed": false,
+  "all_records_reviewed": true,
+  "sg_b16_01_current": 4,
+  "sg_b16_01_target": 4,
+  "sg_b16_01_complete": true,
+  "sg_b16_02_current": 4,
+  "sg_b16_02_target": 4,
+  "sg_b16_02_complete": true,
+  "b16_train_complete": true,
+  "canonical_train_record_count_after": 61,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "audit completed B16 TRAIN behavior before further Phase 03 corpus expansion"
+}
