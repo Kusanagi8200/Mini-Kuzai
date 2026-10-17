@@ -39,6 +39,10 @@ class V53Deriv003ReviewTests(unittest.TestCase):
         }
         audit.require_expected_state(dict(sorted(expected.items())))
 
+    def test_current_repository_state(self):
+        metrics = audit.audit_metrics()
+        audit.require_expected_state(metrics)
+
     def test_public_numeric_allowlist_exact(self):
         self.assertEqual(len(audit.METRIC_KEYS), 12)
         self.assertTrue(audit.METRIC_KEYS <= gogit.METRIC_KEYS)
