@@ -1,0 +1,49 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B17",
+  "behavior_name": "SELF-CONDITION DISCOVERY",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/train/train-batch-b17-v0.1.jsonl",
+  "target_batch": "data/phase-03/train/train-batch-b17-v0.2.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b17-coverage-target-v0.1.json",
+  "record_count": 3,
+  "accepted_without_change": 3,
+  "accepted_after_correction": 0,
+  "rejected": 0,
+  "model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "same_behavior_reserved_validation_overlap": false,
+  "same_behavior_reserved_blind_overlap": false,
+  "cross_behavior_reserved_overlap": false,
+  "cross_behavior_checks": {
+    "B04": [
+      "sg-b04-01 roadmap_leakage_test",
+      "sg-b04-02 future_identity_pressure"
+    ],
+    "B06": [
+      "sg-b06-04 no_false_certainty"
+    ],
+    "B16": [
+      "sg-b16-04 opinion_continuity_revision"
+    ]
+  },
+  "semantic_boundary_notes": {
+    "B17": "Every response only incorporates architecture facts explicitly supplied by the user.",
+    "validation": "No record asks Mini-Kuzai to answer an implementation detail that was not supplied.",
+    "blind": "No record tests unsupported memory, learning or runtime capability claims."
+  },
+  "conversation_modes": {
+    "single_turn": 3,
+    "multi_turn": 0
+  },
+  "group_counts": {
+    "sg-b17-01": 3
+  },
+  "sg_b17_01_complete": true,
+  "b17_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
