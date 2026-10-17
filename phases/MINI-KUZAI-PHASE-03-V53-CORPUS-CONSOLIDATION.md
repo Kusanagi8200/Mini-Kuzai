@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V53 public corpus consolidation plan
 
-Status: **V53 Gate 1 cross-cycle inventory is completed; Gate 2 behavioral shortlist, audit implementation and execution guide are now documented. Gate 2 GOGIT has not yet been executed and no dataset admission has occurred.**
+Status: **V53 Gate 1 cross-cycle inventory and Gate 2 behavioral shortlist are completed. Gate 3 repair/segmentation planning is documented with an audit implementation and execution guide; Gate 3 GOGIT has not yet been executed and no dataset admission has occurred.**
 Scope: previously published, external-public SmolTalk v0.4 reviews only.
 This plan does not approve TRAIN, change split assignments, freeze a tokenizer, select an architecture or authorize Phase 03 model training.
 
@@ -97,4 +97,4 @@ Gate 5 - **Decision summary.** Produce public, non-sensitive aggregate findings 
 
 ## Immediate operational next step
 
-Gate 1 was published as [`PHASE03-SMOLTALK-V53-CROSS-CYCLE-INVENTORY-001`](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-CROSS-CYCLE-INVENTORY-001.json), confirming 124 distinct reviewed public sources and zero cross-cycle duplicates. Gate 2 is documented in [`reviews/smoltalk-v53/SHORTLIST-001.md`](../reviews/smoltalk-v53/SHORTLIST-001.md), implemented in [`tools/public-audits/smoltalk_v53_behavior_shortlist.py`](../tools/public-audits/smoltalk_v53_behavior_shortlist.py), and has a dedicated [GOGIT execution guide](../tools/V53-GATE2-GOGIT.md). The next operational action is the one-time Gate 2 GOGIT execution on a clean synchronized `main` on fhc2. Interpret that published result before authoring any repair derivative.
+Gate 1 was published as [`PHASE03-SMOLTALK-V53-CROSS-CYCLE-INVENTORY-001`](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-CROSS-CYCLE-INVENTORY-001.json), confirming 124 distinct reviewed public sources and zero cross-cycle duplicates. Gate 2 was published as [`PHASE03-SMOLTALK-V53-BEHAVIOR-SHORTLIST-001`](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-BEHAVIOR-SHORTLIST-001.json), confirming the 17 A / 20 B / 19 C routing and eight B repair-priority cases. Gate 3 is documented in [`reviews/smoltalk-v53/REPAIR-PLAN-001.md`](../reviews/smoltalk-v53/REPAIR-PLAN-001.md), implemented in [`tools/public-audits/smoltalk_v53_repair_plan.py`](../tools/public-audits/smoltalk_v53_repair_plan.py), and has a dedicated [GOGIT execution guide](../tools/V53-GATE3-GOGIT.md). The next operational action is the one-time Gate 3 GOGIT execution from the current clean project shell. Only after that result is verified should derivative authoring begin.
