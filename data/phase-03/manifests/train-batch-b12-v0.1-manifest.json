@@ -1,0 +1,22 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b12-v0.1",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "STRUCTURALLY_VALID_UNREVIEWED",
+  "source_admission_decision": "reviews/smoltalk-v53/admissions/V53-ADMIT-002-V51-002.json",
+  "source_derivative": "reviews/smoltalk-v53/a-low-wave2/V53-DERIV-003-V51-002.json",
+  "batch_file": "data/phase-03/train/train-batch-b12-v0.1.jsonl",
+  "record_count": 1,
+  "group_counts": {
+    "sg-b12-01": 1
+  },
+  "reserved_record_id": "p03-train-b12-000001",
+  "all_records_reviewed": false,
+  "manual_review_required": true,
+  "b12_train_complete": false,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
