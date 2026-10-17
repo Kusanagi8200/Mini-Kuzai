@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "V53_DERIV_REVIEW_BEHAVIOR_PASS": 2,
+    "V53_DERIV_REVIEW_COHERENCE_PASS": 2,
+    "V53_DERIV_REVIEW_COMPLETE": 2,
+    "V53_DERIV_REVIEW_ELIGIBILITY_READY": 2,
+    "V53_DERIV_REVIEW_FACTUAL_PASS": 2,
+    "V53_DERIV_REVIEW_FURTHER_REPAIR": 0,
+    "V53_DERIV_REVIEW_INSTRUCTION_PASS": 2,
+    "V53_DERIV_REVIEW_NEW_ERRORS": 0,
+    "V53_DERIV_REVIEW_QUALITY_PASS": 2,
+    "V53_DERIV_REVIEW_SEMANTIC_VALIDATED": 0,
+    "V53_DERIV_REVIEW_SPLIT_ASSIGNED": 0,
+    "V53_DERIV_REVIEW_TOTAL": 2,
+    "V53_DERIV_REVIEW_TRAIN_APPROVED": 0
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/smoltalk_v53_derivative_review.py",
+  "producer_sha256": "0767191aa8b88a1eb75ecbec9ca8cc886ec2d8d5d11447006bbf715e66f725a0",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "SmolTalk v0.4 - public external dataset",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V53-DERIVATIVE-REVIEW-001",
+  "training_authorized": false
+}
