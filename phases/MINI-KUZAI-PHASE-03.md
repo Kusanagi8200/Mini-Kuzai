@@ -376,14 +376,25 @@ A distinct 32-case V52 stratified pilot was then published: 8 HIGH, 12 MEDIUM an
 
 V48/V49, V51 and V52 have together reviewed **124 distinct public external SmolTalk examples**. The V50 eight-case methodology pilot re-reviewed V48 examples and is not counted twice. The provisional V44 pool and TRAIN/VALIDATION/BLIND allocation have not been modified.
 
-## V53 next workstream - public corpus consolidation (2026-10-17)
+## V53 public corpus consolidation - active checkpoint (2026-10-17)
 
-The [V53 public corpus consolidation plan](MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) is documented. It distinguishes earlier V48/V49 general-quality RETAIN/REJECT decisions from V51/V52 cognitive/creative A/B/C assessments. The cross-cycle accounting covers 124 distinct publicly reviewed examples, but none is directly approved for TRAIN. A future read-only, public-only inventory is the next technical gate before quality repair or candidate admission. **No V53 execution or numerical GOGIT audit has occurred**, and earlier audit history remains unchanged.
+The [V53 public corpus consolidation plan](MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) is now an executed workstream rather than a future plan. It preserves the distinction between V48/V49 general-quality RETAIN/REJECT decisions and V51/V52 cognitive/creative A/B/C assessments while adding independent repair, eligibility and admission gates.
+
+V53 has verified the 124-case cross-cycle inventory, built behavior-first shortlists, documented repair requirements, created and independently reviewed public derivatives, applied provenance/license and duplicate controls, and enforced the semantic split exclusion map before corpus admission.
+
+One repaired public SmolTalk derivative, `V53-DERIV-002-V51-013`, was admitted and serialized as canonical TRAIN record `p03-train-b08-000001`. Seven additional `phase03-designed` B08 records completed `sg-b08-01 weak_technical_claim` and `sg-b08-02 contradiction_detection` at 4 records each. The audited canonical TRAIN population is therefore **45 records**.
+
+A second public derivative, `V53-DERIV-003-V51-002`, passed independent factual/semantic review and the published B12 eligibility audit. It has zero exact or near-duplicate hits against the 45 canonical TRAIN records and no collision with reserved B12 VALIDATION or BLIND groups. Its current state is **ELIGIBLE_FOR_ADMISSION_DECISION**; it is not yet admitted, no split is assigned, and no model training is authorized.
+
+Current V53 evidence:
+- [B08 behavior-complete audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-B08-BEHAVIOR-COMPLETE-001.json)
+- [Derivative-003 independent review audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-REVIEW-001.json)
+- [Derivative-003 eligibility audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json)
 
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION - V52 32/32 AUDITED - PAUSED
+PHASE 03                  : DATA PREPARATION - V53 CORPUS CONSOLIDATION
 Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -392,8 +403,12 @@ Behavior matrix           : V0.1 CANDIDATE
 Knowledge map             : V0.1 CANDIDATE
 Dataset schema            : V0.1 CANDIDATE
 Semantic inventory        : V0.3 - 65 GROUPS
-TRAIN semantic groups     : 9 / 29 COMPLETE
-Custom TRAIN exchanges    : 35 REVIEWED (31 JSONL RECORDS)
+Canonical TRAIN records   : 45
+TRAIN semantic groups     : 11 / 29 COMPLETE - 12 REPRESENTED
+B01-B05 custom exchanges  : 35 REVIEWED (31 JSONL RECORDS)
+B08 TRAIN                 : COMPLETE - 8 RECORDS - 4 + 4
+Public SmolTalk TRAIN     : 1 CANONICAL DERIVATIVE
+V53-DERIV-003             : ELIGIBLE FOR ADMISSION DECISION
 Authoring policy          : V0.2
 Semantic split guard      : ACTIVE
 VALIDATION records        : 0 / 36 CREATED
@@ -401,9 +416,9 @@ BLIND TEST records        : 0 / 36 CREATED
 SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
 V51 GOGIT                 : COMPLETED - 9A/8B/7C
-V52 annotations           : 32/32 - 8A/12B/12C
-V52 final GOGIT audit     : COMPLETED 2026-10-17 - 32/32 VERIFIED
-Public external TRAIN     : 0 APPROVED
+V52 final GOGIT audit     : COMPLETED - 32/32 VERIFIED
+V53 B08 audit             : COMPLETE - B08 TRAIN COMPLETE
+V53 derivative-003 audit  : ELIGIBILITY COMPLETE - ADMISSION PENDING
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
 ChatGPT export source     : LOCAL-ONLY RESEARCH SOURCE
 Private source material   : NOT COMMITTED
@@ -416,7 +431,7 @@ Training authorized       : NO
 
 ## Current checkpoint
 
-The controlled custom authoring track remains paused after the B05 TRAIN batch. Public SmolTalk review completed V48/V49 (68 cases), V51 (24 cases) and V52 (32 cases). The final V52 source-integrity/numeric GOGIT audit completed on 2026-10-17. The underlying V44 provisional selection and TRAIN/VALIDATION/BLIND assignments remain unchanged.
+The original B01-B05 custom authoring sequence remains paused after B05, but V53 has added separately reviewed TRAIN material through the corpus-consolidation path. Public SmolTalk review completed V48/V49 (68 cases), V51 (24 cases) and V52 (32 cases), and V53 then applied cross-cycle inventory, repair, derivative review, eligibility and admission gates. Canonical TRAIN now contains 45 records across 12 represented semantic groups; 11 of the 29 TRAIN groups are complete. VALIDATION and BLIND conversation text remain uncreated.
 
 B01 through B05 are complete and reviewed:
 
@@ -439,6 +454,6 @@ No Phase 03 model training is authorized at this checkpoint.
 
 The tokenizer strategy has been explored, but its final production vocabulary is not frozen. The Phase 03 architecture remains undecided.
 
-The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The **current operational checkpoint is the [verified V52 final GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json)**. At the next authorized resumption, consolidate candidate-quality decisions and conduct factual repair, deduplication, semantic-split/anti-leakage validation and broader sampling before deciding the final mixture or tokenizer. No model training is authorized.
+The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The **current operational checkpoint is the [verified V53 derivative-003 eligibility audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json)**. The immediate next corpus decision is whether to admit `V53-DERIV-003-V51-002` to the B12 TRAIN route `sg-b12-01 alternative_generation`. Eligibility does not itself approve TRAIN. No tokenizer is frozen, no Phase 03 architecture is selected, and no model training is authorized.
 
 Private-corpus review stays in the local workspace and is paused. Future controlled custom-corpus authoring would resume at B06 UNKNOWN INFORMATION under authoring policy v0.2 and the existing semantic split guard, only after an explicit request.
