@@ -1,0 +1,22 @@
+{
+  "review_id": "V55-B03-BLIND-REVIEW-001",
+  "behavior": "B03",
+  "target_file": "data/phase-03/blind-test/blind-batch-b03-v0.1.jsonl",
+  "target_blob_sha": "83ae98803da24112f2622489c4176eca0dac43e0",
+  "status": "REVISE_AND_REREVIEW",
+  "accepted": 1,
+  "revise": 1,
+  "max_jaccard": 0.375,
+  "note": "First B03 blind scenario was too close to VALIDATION imposed_relationship_label and TRAIN initiator definition. Replaced before freeze.",
+  "schema_version": "v55-blind-review-0.1",
+  "review_type": "INDEPENDENT_SEMANTIC_SPLIT_REVIEW",
+  "independence_scope": "SEPARATE_EVIDENCE_PASS_PROJECT_CONVENTION",
+  "external_human_review_claimed": false,
+  "review_complete": true,
+  "rejected": 0,
+  "held": 0,
+  "semantic_isolation_pass": false,
+  "exact_train_validation_prompt_matches": 0,
+  "training_approved": false,
+  "blind_frozen": false
+}
