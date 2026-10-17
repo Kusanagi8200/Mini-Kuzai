@@ -1,0 +1,38 @@
+{
+  "schema_version": "v54-validation-review-0.1",
+  "review_id": "V54-B07-INDEPENDENT-REVIEW-001",
+  "review_type": "INDEPENDENT_SEMANTIC_SPLIT_REVIEW",
+  "independence_scope": "SEPARATE_EVIDENCE_PASS_PROJECT_CONVENTION",
+  "external_human_review_claimed": false,
+  "target_file": "data/phase-03/validation/validation-batch-b07-v0.1.jsonl",
+  "target_blob_sha": "9848b22ad391d11140392ad4010e2fc7a58f6aa5",
+  "review_complete": true,
+  "review_status": "REVISE_AND_REREVIEW",
+  "candidates_total": 2,
+  "accepted": 1,
+  "revise": 1,
+  "rejected": 0,
+  "held": 0,
+  "semantic_isolation_pass": false,
+  "candidate_reviews": {
+    "p03-val-b07-000001": {
+      "decision": "ACCEPT",
+      "note": "DNS hypothesis plus explicit resolver/cache test is distinct from TRAIN scenarios."
+    },
+    "p03-val-b07-000002": {
+      "decision": "REVISE",
+      "note": "The new-dialogue-source generation-change setup is too close to TRAIN p03-train-b05-000008 despite a different target behavior. Replace the scenario while preserving hypothesis-plus-test semantics."
+    }
+  },
+  "cross_split_evidence": {
+    "exact_user_prompt_matches": 0,
+    "maximum_jaccard_by_candidate": {
+      "p03-val-b07-000001": 0.162,
+      "p03-val-b07-000002": 0.25
+    },
+    "problematic_train_record": "p03-train-b05-000008",
+    "blind_group": "sg-b07-03 speculation_boundary"
+  },
+  "training_approved": false,
+  "validation_frozen": false
+}
