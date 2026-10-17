@@ -48,6 +48,12 @@ class V54B01ValidationFreezeTests(unittest.TestCase):
         self.assertTrue(review["semantic_isolation_pass"])
         self.assertFalse(review["external_human_review_claimed"])
 
+    def test_v54_source_metadata(self):
+        self.assertEqual(
+            gogit.source_for_audit("tools/public-audits/phase03_v54_b01_validation_freeze.py"),
+            "Mini-Kuzai Phase 03 designed validation corpus",
+        )
+
     def test_public_numeric_allowlist(self):
         expected = {
             "TRAIN_FILES",
