@@ -211,7 +211,7 @@ OASST1 was fully downloaded, reconstructed, quality-audited, behaviorally compar
 
 The Mini-Kuzai-specific corpus will remain responsible for identity, curiosity, disagreement, initiative, creativity, opinion behavior, relationship continuity, and non-assistant character.
 
-### External SmolTalk curation - status 2026-10-17 (Phase 03 data preparation paused)
+### External SmolTalk curation - status 2026-10-17 (V53 corpus consolidation active)
 
 The public SmolTalk v0.4 reservoir contains 8,000 candidate records, but is not an approved training dataset. V44 produced a provisional stratified selection of 1,139 conversations (679 multi-turn, 460 single-turn). A keyword-based creative category reached 69 of its 130 target records. V46 found broader creative signals and produced a 68-record **local review queue**; neither these signals nor the queue are validated training examples.
 
@@ -229,9 +229,9 @@ V50 has completed a **local-only heuristic screening of all 1,139 provisional V4
 
 **V52 - 32-case semantic review annotated:** The [source-verified V52 inventory](reports/assistant-results/history/PHASE03-SMOLTALK-V52-INVENTORY-001.json) identified 1,071 candidates still available in the provisional V44 selection before the V52 batch (after excluding 44 V48 in-V44 examples and 24 V51 examples). A further 32 distinct public-external cases were published (8 HIGH, 12 MEDIUM and 12 LOW; 20 multi-turn) and all 32 were subsequently annotated on GitHub: **8 A, 12 B, 12 C, 0 HOLD**. See the [V52 qualitative summary](reviews/smoltalk-v52/RESULTS-001.md), [case index](reviews/smoltalk-v52/README.md) and [V52 workflow](tools/V52-GITHUB-REVIEW.md). The [historical V52 GOGIT progress snapshot](reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json) recorded 8/32 before the remaining annotations. The [final V52 GOGIT audit](reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) was published and verified on 2026-10-17 at commit [`8a28e956`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/8a28e95637377f29d7204f51d49a174f2518929f): **32/32 reviewed, 8 A, 12 B, 12 C, 0 HOLD, 0 PENDING, 0 TRAIN approved**. Historical reports must not be rewritten.
 
-**Phase 03 data preparation is paused after the completed V52 final GOGIT audit.** The 2026-10-10 [historical pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) remains preserved. Across V48/V49, V51 and V52, 124 distinct public SmolTalk examples have been reviewed; none is automatically approved for TRAIN. Broader V44 assessment, source-level curation and anti-leakage checks remain open. No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
+The V52 pause checkpoint is now historical. V53 resumed public-only corpus consolidation while preserving all earlier review reports. Across V48/V49, V51 and V52, 124 distinct public SmolTalk examples remain the reviewed source population; V53 adds independent repair, derivative, eligibility and admission gates rather than redefining those historical grades. No tokenizer vocabulary has been frozen and no Phase 03 model training has started or been authorized.
 
-**V53 - public corpus consolidation plan:** After V52 closure, the next workstream is to reconcile historical V48/V49 quality decisions with V51/V52 persona-oriented A/B/C assessments while keeping their rubrics distinct. The [V53 review and quality-gate plan](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) documents 124 reviewed public cases, the proposed A/B/C handling, examples requiring correction, and the next read-only cross-cycle inventory. **This is documentation only: no V53 audit has run, no records have been admitted to TRAIN, and no model training is authorized.**
+**V53 - public corpus consolidation executed:** The [V53 review and quality-gate workstream](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) has progressed from cross-cycle accounting through repair planning, derivative review, eligibility and controlled corpus admission. One repaired public SmolTalk derivative, `V53-DERIV-002-V51-013`, is now canonical TRAIN record `p03-train-b08-000001`. Seven additional `phase03-designed` B08 records complete `sg-b08-01 weak_technical_claim` and `sg-b08-02 contradiction_detection`, bringing the canonical TRAIN corpus to **45 records**. A second public derivative, `V53-DERIV-003-V51-002`, has passed independent review and the published B12 eligibility audit with zero exact/near duplicates and zero reserved B12 collisions. It is **eligible for an admission decision but not yet admitted**. Model training remains unauthorized.
 
 ### Private local corpus pipeline
 
@@ -260,6 +260,7 @@ See:
 - [`phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md`](phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md)
 - [`phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md`](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md)
 - [`phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md`](phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md)
+- [`phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md`](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md)
 - [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md)
 
 ---
@@ -305,19 +306,22 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V52 32/32 AUDITED - PAUSED
-Custom authoring track    : PAUSED AFTER B05
-External dataset study    : V51 9A/8B/7C AUDITED; V52 8A/12B/12C AUDITED
+Phase 03                  : DATA PREPARATION - V53 CORPUS CONSOLIDATION
+B01-B05 authoring         : PAUSED
+Canonical TRAIN records   : 45
+TRAIN semantic groups     : 11 / 29 COMPLETE - 12 REPRESENTED
+B08 TRAIN                 : COMPLETE - 8 RECORDS - 4 + 4
+Public SmolTalk TRAIN     : 1 CANONICAL DERIVATIVE
+V53-DERIV-003             : ELIGIBLE FOR ADMISSION DECISION
+External dataset study    : V51 9A/8B/7C; V52 8A/12B/12C; V53 ACTIVE
 SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
-V52 final GOGIT audit     : COMPLETE 2026-10-17 - 32/32 - 0 PENDING
-Public external TRAIN     : 0 APPROVED
+Latest V53 GOGIT          : DERIV003 ELIGIBILITY COMPLETE
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
 Private source material   : NOT COMMITTED
 Derived private metrics   : NOT COMMITTED
 Semantic inventory        : V0.3 - 65 GROUPS
-TRAIN semantic groups     : 9 / 29 COMPLETE
-Custom TRAIN exchanges    : 35 REVIEWED (31 JSONL RECORDS)
+B01-B05 custom exchanges  : 35 REVIEWED (31 JSONL RECORDS)
 Authoring policy          : V0.2
 Semantic split guard      : ACTIVE
 VALIDATION records        : 0 / 36 CREATED
@@ -328,11 +332,11 @@ Phase 03 training         : NOT STARTED
 Training authorized       : NO
 ```
 
-B01 through B05 custom TRAIN batches are preserved and reviewed (31 JSONL records containing 35 USER/ASSISTANT exchanges). Custom authoring remains paused after B05 and no VALIDATION or BLIND TEST conversation text has been created.
+B01 through B05 custom TRAIN batches remain preserved and reviewed (31 JSONL records containing 35 USER/ASSISTANT exchanges). Their original authoring sequence remains paused. V53 added a separately governed B08 batch with 8 reviewed records: one admitted public SmolTalk derivative and seven `phase03-designed` records. No VALIDATION or BLIND TEST conversation text has been created.
 
-The external SmolTalk review completed V49 (24 RETAIN, 44 REJECT), V51 (9 A, 8 B, 7 C, numeric audit confirmed) and V52 (8 A, 12 B, 12 C; final source-integrity/numeric GOGIT audit confirmed on 2026-10-17). V44 remains provisional and unchanged; these purposefully sampled reviews cannot establish an acceptance rate for the full reservoir. Private-source curation remains exclusively local and paused. B06 UNKNOWN INFORMATION authoring is not resumed.
+The external SmolTalk review completed V49 (24 RETAIN, 44 REJECT), V51 (9 A, 8 B, 7 C) and V52 (8 A, 12 B, 12 C). V53 then verified cross-cycle accounting and applied repair, review, deduplication and semantic anti-leakage gates. The current canonical TRAIN corpus contains 45 records. `V53-DERIV-003-V51-002` is the next public candidate and is eligible for an admission decision only. V44 remains provisional; these purposefully sampled reviews cannot establish an acceptance rate for the full reservoir. Private-source curation remains exclusively local and paused. B06 UNKNOWN INFORMATION authoring is not resumed.
 
-See the [V52 annotated results and verified final audit](reviews/smoltalk-v52/RESULTS-001.md), [V51 verified results](reviews/smoltalk-v51/RESULTS-001.md), [V49 completed results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), [historical V48 results](reviews/smoltalk-v48/V48-REVIEW-RESULTS.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md), the [B05 checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
+See the [V53 corpus consolidation status](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md), [latest derivative-003 eligibility audit](reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json), [B08 completion audit](reports/assistant-results/history/PHASE03-SMOLTALK-V53-B08-BEHAVIOR-COMPLETE-001.json), [V52 annotated results](reviews/smoltalk-v52/RESULTS-001.md), [V51 verified results](reviews/smoltalk-v51/RESULTS-001.md), [V49 completed results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md), the [B05 checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
 
 ---
 
