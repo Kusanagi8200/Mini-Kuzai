@@ -79,7 +79,7 @@ capabilities, or permission to introduce a conversation into TRAIN.
 
 The V51 numeric-only source-verification audit was **completed and published**, see [PHASE03-SMOLTALK-V51-PILOT-REVIEW-001.json](../../reports/assistant-results/history/PHASE03-SMOLTALK-V51-PILOT-REVIEW-001.json). It confirms 24 reviewed cases (9 A, 8 B, 7 C, 0 HOLD), with no TRAIN approval. The original V51 recommendation to execute this audit is now a historical completed action, not an outstanding next step.
 
-A separate [V52 public review](../smoltalk-v52/RESULTS-001.md) then selected 32 distinct cases to sample MEDIUM/LOW possible false negatives, rather than expanding or relabeling the 24 V51 dossiers. All 32 V52 case pages have been annotated on GitHub. **V52's final GOGIT source-integrity/numeric report remains outstanding**, and the last V52 numeric progress snapshot predates the remaining 24 annotations.
+A separate [V52 public review](../smoltalk-v52/RESULTS-001.md) then selected 32 distinct cases to sample MEDIUM/LOW possible false negatives, rather than expanding or relabeling the 24 V51 dossiers. All 32 V52 case pages were annotated on GitHub, and the [final V52 GOGIT source-integrity/numeric report](../../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) was published on 2026-10-17, confirming 32/32 reviewed (8 A, 12 B, 12 C, 0 HOLD, 0 PENDING). The older 8/32 progress snapshot remains historical.
 
 The V44 selection is still provisional. Future decisions must maintain independent controls for factual correctness, cognition and creativity, deduplication and reserved evaluation examples before considering a final mixture or tokenizer.
 
