@@ -59,20 +59,21 @@ It does not contain final VALIDATION or BLIND TEST conversations.
 ## Current corpus state
 
 ```text
-Canonical TRAIN records   : 104 UNIQUE
-TRAIN semantic groups     : 28 / 29 COMPLETE - 28 REPRESENTED
+Canonical TRAIN records   : 104 AUDITED / 107 PREPARED
+TRAIN semantic groups     : 28 / 29 AUDITED - 29 / 29 PREPARED
 CRITICAL TRAIN behaviors  : ALL COMPLETE
 HIGH TRAIN behaviors      : ALL COMPLETE
-MEDIUM TRAIN behaviors    : B13 COMPLETE - B14 REMAINING
+MEDIUM TRAIN behaviors    : B13 AUDITED - B14 REVIEWED / AUDIT PENDING
 B14 TRAIN group           : sg-b14-01 discovery_affect
-B14 policy target         : 3 RECORDS
+B14 reviewed records      : 3
+B14 corrected targets     : 1
 VALIDATION TEXT           : 0 / 36 CREATED
 BLIND TEST TEXT           : 0 / 36 CREATED
 TRAINING                  : NOT AUTHORIZED
 ```
 
-The 104 canonical TRAIN records currently comprise 102 `phase03-designed` records and 2 admitted public SmolTalk derivatives. B14 is the only TRAIN semantic group not yet represented.
+The last audited TRAIN state contains 104 records: 102 `phase03-designed` records and 2 admitted public SmolTalk derivatives. B14 now adds three reviewed `phase03-designed` records in the prepared corpus. A successful final B14 audit would therefore confirm 107 records, 105 `phase03-designed` plus 2 public SmolTalk derivatives, with all 29 TRAIN groups complete.
 
 ## Next operation
 
-Author and manually review B14 `sg-b14-01 discovery_affect` using the semantic split guard. If its three-record MEDIUM target passes audit, canonical TRAIN reaches the policy-planned 107 records and all 29 TRAIN semantic groups are complete. VALIDATION must then be authored independently and frozen before any BLIND TEST authoring or tokenizer/training authorization.
+Run the final B14 / full-TRAIN audit documented in `tools/V53-B14-COMPLETION-GOGIT.md`. If it passes, canonical TRAIN reaches the policy-planned 107 records and all 29 TRAIN semantic groups are complete. VALIDATION must then be authored independently and frozen before any BLIND TEST authoring or tokenizer/training authorization.
