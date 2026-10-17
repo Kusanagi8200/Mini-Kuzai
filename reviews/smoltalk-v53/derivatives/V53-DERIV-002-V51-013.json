@@ -1,0 +1,58 @@
+{
+  "schema_version": "v53-derivative-0.1",
+  "derivative_id": "V53-DERIV-002-V51-013",
+  "status": "CANDIDATE_REVIEW_REQUIRED",
+  "training_approved": false,
+  "dataset_split_assigned": false,
+  "semantic_validation_complete": false,
+  "public_external_only": true,
+  "source": {
+    "review_cycle": "V51",
+    "case_path": "reviews/smoltalk-v51/cases/013-566e0b8c4ed792cc.md",
+    "public_dataset": "SmolTalk v0.4",
+    "public_subset": "smol-magpie-ultra-short",
+    "public_content_sha256": "566e0b8c4ed792cc76ad0646a6295b05adab7a8caf37e8b91483982fb80e00c3"
+  },
+  "repair": {
+    "types": [
+      "WORDING_CONSTRAINT_CLEANUP"
+    ],
+    "plan_path": "reviews/smoltalk-v53/REPAIR-PLAN-001.md",
+    "summary": "Remove the contradictory solo-traveler wording and make the fixed-room comparison explicitly conditional on one room being allowed and able to accommodate the whole group.",
+    "user_text_origin": "SOURCE_TEXT_NORMALIZED",
+    "assistant_text_origin": "DERIVATIVE_REWRITE",
+    "source_normalization_note": "User turns preserve the public-source wording while decoding Markdown/HTML presentation entities into plain text."
+  },
+  "messages": [
+    {
+      "role": "user",
+      "origin": "SOURCE_TEXT_NORMALIZED",
+      "content": "I am trying to understand if it is cheaper to book a hotel that charges by room or per person. I am traveling with 4 other friends so there are 5 of us in total.\n\nTo break it down we have two options\n\nThe first option charges 300 per night for a room, no matter how many people are staying in the room.\n\nThe second option charges 60 dollars per person per night.\n\nSo to figure out if option 1 is cheaper we have to divide 300 by 5, is that correct?"
+    },
+    {
+      "role": "assistant",
+      "origin": "DERIVATIVE_REWRITE",
+      "content": "Yes. If one $300 room can legally and practically accommodate all five travelers, dividing $300 by 5 gives a cost of $60 per person per night. Option 2 is also $60 per person, so with exactly five people the two options have the same total nightly cost: $300."
+    },
+    {
+      "role": "user",
+      "origin": "SOURCE_TEXT_NORMALIZED",
+      "content": "Are there any scenarios in which option 1 could be cheaper?\n\nYes, I realize now that the key figure in this is that there are 5 of us. And if we were 6 this would change things. Is it right then that the more of us there are the more cost effective option 1 becomes? That is to say the larger the group the better option 1 will be?"
+    },
+    {
+      "role": "assistant",
+      "origin": "DERIVATIVE_REWRITE",
+      "content": "Under the same assumption that a single $300 room is permitted to hold the entire group, yes. The fixed room cost is spread across more people, while option 2 keeps charging $60 for each person.\n\nAt 6 people, option 1 would cost $300 / 6 = $50 per person, compared with $60 per person for option 2. The break-even point is 5 people: fewer than 5 favors option 2, exactly 5 costs the same, and more than 5 favors option 1.\n\nIn a real hotel comparison, though, room occupancy limits matter. If a larger group requires a second room, the fixed-price calculation changes."
+    },
+    {
+      "role": "user",
+      "origin": "SOURCE_TEXT_NORMALIZED",
+      "content": "If you have the two options I listed would you conclude that a solo traveler would benefit more from using option 2."
+    },
+    {
+      "role": "assistant",
+      "origin": "DERIVATIVE_REWRITE",
+      "content": "Yes. For one traveler, option 1 costs $300 for the night, while option 2 costs $60. So option 2 is cheaper by $240 for a solo traveler."
+    }
+  ]
+}
