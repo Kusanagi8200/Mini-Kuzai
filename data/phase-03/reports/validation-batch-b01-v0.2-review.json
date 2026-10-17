@@ -1,0 +1,32 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B01",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/validation/validation-batch-b01-v0.1.jsonl",
+  "target_batch": "data/phase-03/validation/validation-batch-b01-v0.2.jsonl",
+  "independent_review": "reviews/phase-03-v54/B01-INDEPENDENT-REVIEW-RESULT-001.json",
+  "independence_scope": "SEPARATE_EVIDENCE_PASS_PROJECT_CONVENTION",
+  "external_human_review_claimed": false,
+  "record_count": 2,
+  "accepted_without_change": 2,
+  "accepted_after_correction": 0,
+  "rejected": 0,
+  "model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "train_semantic_overlap": false,
+  "blind_semantic_overlap": false,
+  "exact_id_collisions": 0,
+  "exact_group_collisions": 0,
+  "exact_user_prompt_matches": 0,
+  "group_counts": {
+    "sg-b01-03": 2
+  },
+  "all_records_reviewed": true,
+  "independent_review_complete": true,
+  "b01_validation_ready_for_freeze_audit": true,
+  "validation_frozen": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
