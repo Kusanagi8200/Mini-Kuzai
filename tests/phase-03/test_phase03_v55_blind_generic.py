@@ -60,6 +60,13 @@ class V55GenericBlindTests(unittest.TestCase):
         self.assertTrue(gogit.semantic_validation_complete_for_audit(
             "tools/public-audits/phase03_v55_blind_integrity.py",metrics
         ))
+        self.assertFalse(gogit.semantic_validation_complete_for_audit(
+            "tools/public-audits/phase03_v55_other.py",metrics
+        ))
+        self.assertEqual(
+            gogit.source_for_audit("tools/public-audits/phase03_v55_other.py"),
+            gogit.SOURCE,
+        )
 
     def test_correction_lineage_is_preserved(self):
         master_data=engine.load_master()
