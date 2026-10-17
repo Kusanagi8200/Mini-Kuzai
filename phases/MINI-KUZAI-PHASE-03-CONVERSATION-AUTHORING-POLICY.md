@@ -18,6 +18,16 @@ Version 0.2 adds an explicit semantic split guard after a TRAIN overlap was dete
 - generic servile assistant behavior is not the default;
 - K7 developer-only information is never model-visible.
 
+## Execution-loop constraint
+
+Conversation authoring and validation should follow the project-wide loop-first execution policy whenever multiple deterministic gates can be chained safely.
+
+Allowed automation includes structural validation, exact duplicate checks, reproducible lexical screening, test execution, manifest consistency, GOGIT publication, published-state verification, and restart-safe skipping of already validated gates.
+
+Automation must not fabricate semantic acceptance. Any `REVISE`, `REJECT` or `HOLD` result stops semantic progression until a versioned correction is created and reviewed again. TRAIN / VALIDATION / BLIND separation, K7 restrictions, provenance and training authorization remain stronger constraints than execution speed.
+
+See `PROJECT-WORKFLOW-POLICY.md` at repository root.
+
 ## Semantic split guard
 
 Before authoring any TRAIN conversation:
