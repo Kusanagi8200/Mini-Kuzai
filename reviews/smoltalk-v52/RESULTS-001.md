@@ -1,8 +1,8 @@
 # Mini-Kuzai Phase 03 - V52 public semantic review results
 
-**Documentation checkpoint: 2026-10-11. Status: all 32 public V52 review pages annotated on GitHub; final source-integrity/numeric GOGIT audit is still pending.**
+**Documentation checkpoint: 2026-10-17. Status: all 32 public V52 review pages annotated on GitHub and final source-integrity/numeric GOGIT audit completed (8 A, 12 B, 12 C, 0 HOLD, 0 PENDING).**
 
-This is a review of public external SmolTalk v0.4 examples. The individual notes and nine review fields on the [32 V52 case pages](README.md) are the current evidence of completion. This document records those *GitHub annotations*; it is not a substitute for a GOGIT report, independent human validation, or authorization to train.
+This is a review of public external SmolTalk v0.4 examples. The individual notes and nine review fields on the [32 V52 case pages](README.md) record the qualitative assessments. The [final GOGIT report](../../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) now confirms the numeric totals and published review/source integrity; this is neither independent human validation nor authorization to train.
 
 ## Annotated outcomes
 
@@ -48,7 +48,7 @@ V52 inventory confirmed 1,139 provisional V44 candidates, less 44 earlier in-V44
 
 The broader 8,000-record public external reservoir and the 1,139-record provisional V44 selection remain unchanged. Neither TRAIN/VALIDATION/BLIND splits nor the final tokenizer/model architecture were changed or approved.
 
-## Audit provenance and outstanding gate
+## Audit provenance and completed final gate
 
 | Record | Reported state |
 | --- | --- |
@@ -56,8 +56,8 @@ The broader 8,000-record public external reservoir and the 1,139-record provisio
 | [V52 initial GOGIT](../../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-INIT-001.json) | Confirmed: 32 published, 32 PENDING initially |
 | [V52 progress GOGIT](../../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json) | Confirmed historical snapshot: 8 reviewed and 24 pending **at that time** |
 | [32 current case pages](README.md) | 32 annotated on GitHub after the progress report |
-| `PHASE03-SMOLTALK-V52-REVIEW-FINAL-001` | **NOT PUBLISHED** at this checkpoint |
+| [V52 final GOGIT](../../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) | **Completed 2026-10-17**: 32 reviewed, 8 A, 12 B, 12 C, 0 HOLD, 0 PENDING, 0 TRAIN approved ([commit `8a28e956`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/8a28e95637377f29d7204f51d49a174f2518929f)) |
 
-Do not edit `reports/assistant-results/latest.json` or a historical audit by hand to make the figures match the review pages. The final numeric report must be generated from a clean, synchronized `main` on fhc2 with `tools/gogit_public.py` and `tools/public-audits/smoltalk_v52_github_progress.py` under a new STEP_ID, to revalidate original source content and the nine editable review fields.
+The final report was generated on fhc2 through `tools/gogit_public.py` and `tools/public-audits/smoltalk_v52_github_progress.py` under the unique STEP_ID `PHASE03-SMOLTALK-V52-REVIEW-FINAL-001`. Do not re-run that STEP_ID or edit `reports/assistant-results/latest.json` or historical audit records manually. The older 8/32 progress snapshot is correctly preserved as historical evidence.
 
-**Pause state:** V52 annotated 32/32; final GOGIT audit pending; custom authoring paused after B05; tokenizer not frozen; Phase 03 training not started or authorized.
+**Pause state:** V52 annotated and final GOGIT audited 32/32; custom authoring paused after B05; tokenizer not frozen; Phase 03 training not started or authorized.
