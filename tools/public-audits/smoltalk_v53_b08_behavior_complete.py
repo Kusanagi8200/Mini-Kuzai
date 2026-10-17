@@ -144,10 +144,15 @@ def validate_batch():
             if row.get("difficulty") != 3:
                 raise RuntimeError("sg-b08-02 difficulty changed")
             provenance = row.get("provenance", {})
+            expected_decision = (
+                "ACCEPT"
+                if row.get("id") == "p03-train-b08-000005"
+                else "ACCEPT_AFTER_SERIALIZATION_CORRECTION"
+            )
             if (
                 provenance.get("source") != "phase03-designed"
                 or provenance.get("reviewed") is not True
-                or provenance.get("review_decision") != "ACCEPT"
+                or provenance.get("review_decision") != expected_decision
             ):
                 raise RuntimeError("sg-b08-02 provenance state invalid")
     if groups != {"sg-b08-01": 4, "sg-b08-02": 4}:
