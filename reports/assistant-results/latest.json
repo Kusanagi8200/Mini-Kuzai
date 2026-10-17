@@ -1,26 +1,22 @@
 {
   "metrics": {
-    "V53_ELIG_ADMISSION_READY": 1,
-    "V53_ELIG_CANONICAL_TRAIN_RECORDS": 37,
-    "V53_ELIG_EXACT_DUP_HITS": 0,
-    "V53_ELIG_LICENSE_PASS": 2,
-    "V53_ELIG_NEAR_DUP_HITS": 0,
-    "V53_ELIG_PROVENANCE_PASS": 2,
-    "V53_ELIG_RESERVED_VALIDATION_COLLISIONS": 1,
-    "V53_ELIG_SEMANTIC_BLOCKED": 1,
-    "V53_ELIG_SEMANTIC_PASS": 1,
-    "V53_ELIG_SPLIT_ASSIGNED": 0,
-    "V53_ELIG_TOTAL": 2,
-    "V53_ELIG_TRAIN_APPROVED": 0
+    "V53_ADMIT_CANONICAL_TRAIN_RECORDS": 37,
+    "V53_ADMIT_CORPUS_APPROVED": 1,
+    "V53_ADMIT_DECISIONS_TOTAL": 1,
+    "V53_ADMIT_GROUP_VALID": 1,
+    "V53_ADMIT_MODEL_TRAINING_AUTHORIZED": 0,
+    "V53_ADMIT_RESERVED_ID_FREE": 1,
+    "V53_ADMIT_SERIALIZED": 0,
+    "V53_ADMIT_TARGET_TRAIN": 1
   },
   "phase": "03",
   "private_conversation_data_included": false,
-  "producer": "tools/public-audits/smoltalk_v53_eligibility.py",
-  "producer_sha256": "d591ae5b4ef05538e5150e8e572c78cd4e5f102cb4a1815a50284746927a522b",
+  "producer": "tools/public-audits/smoltalk_v53_admission_decision.py",
+  "producer_sha256": "8c09beff2a1a4faf0230b456f9afe2b635b2da52c3d4f611130d27170e294381",
   "project": "Mini-Kuzai",
   "semantic_validation_complete": false,
   "source": "SmolTalk v0.4 - public external dataset",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V53-ELIGIBILITY-001",
+  "step_id": "PHASE03-SMOLTALK-V53-ADMISSION-DECISION-001",
   "training_authorized": false
 }

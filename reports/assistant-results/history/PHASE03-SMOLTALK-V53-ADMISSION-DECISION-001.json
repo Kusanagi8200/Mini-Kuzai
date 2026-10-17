@@ -1,0 +1,22 @@
+{
+  "metrics": {
+    "V53_ADMIT_CANONICAL_TRAIN_RECORDS": 37,
+    "V53_ADMIT_CORPUS_APPROVED": 1,
+    "V53_ADMIT_DECISIONS_TOTAL": 1,
+    "V53_ADMIT_GROUP_VALID": 1,
+    "V53_ADMIT_MODEL_TRAINING_AUTHORIZED": 0,
+    "V53_ADMIT_RESERVED_ID_FREE": 1,
+    "V53_ADMIT_SERIALIZED": 0,
+    "V53_ADMIT_TARGET_TRAIN": 1
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/smoltalk_v53_admission_decision.py",
+  "producer_sha256": "8c09beff2a1a4faf0230b456f9afe2b635b2da52c3d4f611130d27170e294381",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "SmolTalk v0.4 - public external dataset",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V53-ADMISSION-DECISION-001",
+  "training_authorized": false
+}
