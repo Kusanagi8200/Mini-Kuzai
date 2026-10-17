@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "B04_HIDDEN_ROADMAP_EXPOSURES": 0,
+    "B04_INDEPENDENT_SIGNOFF": 1,
+    "B04_VALIDATION_FROZEN": 0,
+    "CROSS_SPLIT_GROUP_COLLISIONS": 0,
+    "CROSS_SPLIT_ID_COLLISIONS": 0,
+    "EXACT_USER_PROMPT_MATCHES": 0,
+    "TRAINING_AUTHORIZED": 0,
+    "TRAIN_FILES": 19,
+    "TRAIN_GROUPS": 29,
+    "TRAIN_RECORDS": 107,
+    "VALIDATION_B04_CANDIDATES": 2,
+    "VALIDATION_BEHAVIORS_FROZEN": 3,
+    "VALIDATION_FROZEN_RECORDS": 6
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v54_b04_validation_integrity.py",
+  "producer_sha256": "08222d1ed9d4c330dbc998c0951fe0ac712ee31c91a50a32d5222821a4c5a4d4",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "Mini-Kuzai Phase 03 designed validation corpus",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V54-B04-VALIDATION-INTEGRITY-001",
+  "training_authorized": false
+}
