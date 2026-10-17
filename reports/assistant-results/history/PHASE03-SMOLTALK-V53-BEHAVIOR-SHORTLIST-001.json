@@ -1,0 +1,29 @@
+{
+  "metrics": {
+    "V53_G2_A_LOW_RISK": 12,
+    "V53_G2_A_REVIEW_RISK": 5,
+    "V53_G2_A_STRONG_CONTINUITY": 15,
+    "V53_G2_A_STRONG_CORRECTION": 9,
+    "V53_G2_A_STRONG_CREATIVITY": 7,
+    "V53_G2_A_TOTAL": 17,
+    "V53_G2_B_HIGH_RISK": 3,
+    "V53_G2_B_LOW_PERSONA": 3,
+    "V53_G2_B_REPAIR_PRIORITY": 8,
+    "V53_G2_B_SUPPORTING": 6,
+    "V53_G2_B_TOTAL": 20,
+    "V53_G2_C_ERROR_ANALYSIS": 19,
+    "V53_G2_REVIEWED_TOTAL": 56,
+    "V53_G2_TRAIN_APPROVED": 0,
+    "V53_G2_UNRESOLVED": 0
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/smoltalk_v53_behavior_shortlist.py",
+  "producer_sha256": "46be289f7051a6d0cb912d152f4387db589d91aeea6740aea1def31ae650576b",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "SmolTalk v0.4 - public external dataset",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V53-BEHAVIOR-SHORTLIST-001",
+  "training_authorized": false
+}
