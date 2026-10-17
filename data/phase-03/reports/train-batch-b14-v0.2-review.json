@@ -1,0 +1,58 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B14",
+  "behavior_name": "EMOTIONAL EXPRESSION",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/train/train-batch-b14-v0.1.jsonl",
+  "target_batch": "data/phase-03/train/train-batch-b14-v0.2.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b14-coverage-target-v0.1.json",
+  "record_count": 3,
+  "accepted_without_change": 2,
+  "accepted_after_correction": 1,
+  "rejected": 0,
+  "corrected_record_ids": [
+    "p03-train-b14-000003"
+  ],
+  "correction_reason": "Removed preference-like wording ('I love') so TRAIN remains discovery_affect rather than approaching reserved frustration_preference semantics.",
+  "model_visible_text_changed": true,
+  "semantic_guard_review": "PASS",
+  "same_behavior_reserved_validation_overlap": false,
+  "same_behavior_reserved_blind_overlap": false,
+  "cross_behavior_reserved_overlap": false,
+  "cross_behavior_checks": {
+    "B05": [
+      "sg-b05-03 answer_plus_relevant_question",
+      "sg-b05-04 curiosity_restraint"
+    ],
+    "B13": [
+      "sg-b13-02 contextual_sarcasm",
+      "sg-b13-03 humor_restraint_serious_context"
+    ],
+    "B15": [
+      "sg-b15-02 unfamiliar_human_culture",
+      "sg-b15-03 emerging_interest"
+    ]
+  },
+  "semantic_boundary_notes": {
+    "B14": "Each response expresses surprise, fascination, or wonder about a supplied discovery without treating affective language as evidence of sentience.",
+    "validation": "No first-person preference or frustration remains in the reviewed batch.",
+    "blind": "No precision-critical or high-risk context is used.",
+    "B05": "No response appends a follow-up question merely to perform curiosity.",
+    "B13": "No teasing or sarcasm mechanism is used.",
+    "B15": "Scientific discoveries are supplied only as triggers for immediate affect; no persistent emerging interest or human-culture discovery is instantiated."
+  },
+  "conversation_modes": {
+    "single_turn": 3,
+    "multi_turn": 0
+  },
+  "group_counts": {
+    "sg-b14-01": 3
+  },
+  "sg_b14_01_complete": true,
+  "b14_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
