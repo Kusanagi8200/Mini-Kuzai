@@ -1,0 +1,64 @@
+{
+  "schema_version": "v53-derivative-0.1",
+  "derivative_id": "V53-DERIV-003-V51-002",
+  "status": "CANDIDATE_REVIEW_REQUIRED",
+  "training_approved": false,
+  "dataset_split_assigned": false,
+  "semantic_validation_complete": false,
+  "public_external_only": true,
+  "source": {
+    "review_cycle": "V51",
+    "case_path": "reviews/smoltalk-v51/cases/002-383f5926f407ae18.md",
+    "public_dataset": "SmolTalk v0.4",
+    "public_subset": "smol-magpie-ultra-short",
+    "public_content_sha256": "383f5926f407ae183de348a6aae660e952a4e03887ba2ed275d259969e23fc9a"
+  },
+  "routing": {
+    "proposed_primary_behavior": "B12",
+    "proposed_train_group": "sg-b12-01",
+    "proposed_scenario_type": "alternative_generation",
+    "reserved_validation_checked": "sg-b12-03",
+    "reserved_blind_checked": "sg-b12-04"
+  },
+  "transform": {
+    "types": [
+      "BEHAVIOR_PRESERVING_REWRITE",
+      "CONCISION"
+    ],
+    "summary": "Preserve multi-turn creative reframing and alternative generation while reducing generic writing-advice filler and keeping fictional possibilities explicitly framed as story choices.",
+    "user_text_origin": "SOURCE_TEXT_NORMALIZED",
+    "assistant_text_origin": "DERIVATIVE_REWRITE"
+  },
+  "messages": [
+    {
+      "role": "user",
+      "origin": "SOURCE_TEXT_NORMALIZED",
+      "content": "I want to write a story about a group of survivors trying to rebuild society after a global pandemic. How do I make the premise interesting?"
+    },
+    {
+      "role": "assistant",
+      "origin": "DERIVATIVE_REWRITE",
+      "content": "Make the rebuilding itself a conflict between different ideas of what should come next. You could combine several layers: communities disagreeing over rules and leadership, survivors carrying incompatible memories of the old world, scarce resources forcing uncomfortable choices, or a fictional environmental change that makes familiar solutions unreliable. Pick two or three pressures that affect each other rather than adding twists at random. Then give the main characters different answers to the same question: what is worth rebuilding, and what should be left behind?"
+    },
+    {
+      "role": "user",
+      "origin": "SOURCE_TEXT_NORMALIZED",
+      "content": "How can a story about rebuilding be so rich? Isn't rebuilding simply about gathering building materials and starting up again?"
+    },
+    {
+      "role": "assistant",
+      "origin": "DERIVATIVE_REWRITE",
+      "content": "Physical reconstruction is only one layer. A society also has to rebuild trust, rules, ownership, cooperation, memory, and a sense of legitimacy. A group can agree that a bridge must be repaired while fighting over who controls it, who gets scarce supplies first, or whether old laws still deserve authority. That turns construction into character and social conflict: the interesting question is not only how they rebuild, but which version of society they choose to rebuild."
+    },
+    {
+      "role": "user",
+      "origin": "SOURCE_TEXT_NORMALIZED",
+      "content": "Would a first- or third-person narrative serve this kind of story best?"
+    },
+    {
+      "role": "assistant",
+      "origin": "DERIVATIVE_REWRITE",
+      "content": "Use first person if the story is mainly about one survivor's changing understanding of the new society; the narrow viewpoint can make uncertainty and loss feel immediate. Use third person if the larger rebuilding process matters just as much as one character, because you can follow competing groups and show consequences that no single survivor sees. For a story centered on several conflicting visions of the future, third person is probably the stronger starting point. For a more intimate survival-and-transformation story, first person may be better."
+    }
+  ]
+}
