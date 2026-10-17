@@ -1,0 +1,29 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B12",
+  "batch_version": "0.3",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/train/train-batch-b12-v0.2.jsonl",
+  "target_batch": "data/phase-03/train/train-batch-b12-v0.3.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b12-coverage-target-v0.1.json",
+  "record_count": 8,
+  "inherited_reviewed_records": 1,
+  "newly_authored_records": 7,
+  "accepted_records": 8,
+  "rejected": 0,
+  "inherited_model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "reserved_validation_overlap": false,
+  "reserved_blind_test_overlap": false,
+  "group_counts": {
+    "sg-b12-01": 4,
+    "sg-b12-02": 4
+  },
+  "sg_b12_01_complete": true,
+  "sg_b12_02_complete": true,
+  "b12_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
