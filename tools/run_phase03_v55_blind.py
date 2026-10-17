@@ -181,6 +181,11 @@ def main():
     try:
         sync()
         compile_pipeline()
+        print("RUN V55 BLIND MASTER: state tests")
+        p=run([PY,"-m","unittest","discover","-s","tests/phase-03",
+               "-p","test_phase03_v55_blind_master.py","-v"],capture=True)
+        if p.returncode:
+            raise RuntimeError("V55 BLIND master tests failed:\n"+(p.stdout or ""))
         master=load_master()
         start,_=current_state(master)
         print("STATE: {} / 18 BLIND behaviors frozen".format(len(start)))
