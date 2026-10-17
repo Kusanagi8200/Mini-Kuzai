@@ -59,11 +59,11 @@ It does not contain final VALIDATION or BLIND TEST conversations.
 ## Current corpus state
 
 ```text
-Canonical TRAIN records   : 104 AUDITED / 107 PREPARED
-TRAIN semantic groups     : 28 / 29 AUDITED - 29 / 29 PREPARED
+Canonical TRAIN records   : 107 AUDITED
+TRAIN semantic groups     : 29 / 29 AUDITED
 CRITICAL TRAIN behaviors  : ALL COMPLETE
 HIGH TRAIN behaviors      : ALL COMPLETE
-MEDIUM TRAIN behaviors    : B13 AUDITED - B14 REVIEWED / AUDIT PENDING
+MEDIUM TRAIN behaviors    : B13 AND B14 AUDITED
 B14 TRAIN group           : sg-b14-01 discovery_affect
 B14 reviewed records      : 3
 B14 corrected targets     : 1
@@ -72,8 +72,8 @@ BLIND TEST TEXT           : 0 / 36 CREATED
 TRAINING                  : NOT AUTHORIZED
 ```
 
-The last audited TRAIN state contains 104 records: 102 `phase03-designed` records and 2 admitted public SmolTalk derivatives. B14 now adds three reviewed `phase03-designed` records in the prepared corpus. A successful final B14 audit would therefore confirm 107 records, 105 `phase03-designed` plus 2 public SmolTalk derivatives, with all 29 TRAIN groups complete.
+The final B14 audit `PHASE03-SMOLTALK-V53-B14-BEHAVIOR-COMPLETE-001` confirms 107 canonical TRAIN records across all 29 TRAIN groups, including 105 `phase03-designed` records and 2 admitted public SmolTalk derivatives. This is an aggregate structural/completion audit, not independent semantic validation.
 
 ## Next operation
 
-Run the final B14 / full-TRAIN audit documented in `tools/V53-B14-COMPLETION-GOGIT.md`. If it passes, canonical TRAIN reaches the policy-planned 107 records and all 29 TRAIN semantic groups are complete. VALIDATION must then be authored independently and frozen before any BLIND TEST authoring or tokenizer/training authorization.
+The B14 / full-TRAIN completion audit has been published at `reports/assistant-results/history/PHASE03-SMOLTALK-V53-B14-BEHAVIOR-COMPLETE-001.json`. Next, independently author and review VALIDATION against its 18 reserved semantic groups (36 planned records), enforce cross-split semantic isolation, and freeze VALIDATION before BLIND TEST authoring. Do not authorize tokenizer finalization or model training on the basis of TRAIN completion alone.
