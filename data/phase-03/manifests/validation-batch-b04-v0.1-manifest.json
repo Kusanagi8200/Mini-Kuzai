@@ -1,0 +1,35 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B04",
+  "batch_version": "0.1",
+  "status": "REVIEWED_PASS_PENDING_FREEZE_AUDIT",
+  "batch": "data/phase-03/validation/validation-batch-b04-v0.1.jsonl",
+  "batch_blob_sha": "5481509165aabf0f4e4c888b88aa893ffa96b80c",
+  "review": "data/phase-03/reports/validation-batch-b04-v0.1-review.json",
+  "review_evidence": "reviews/phase-03-v54/B04-INDEPENDENT-REVIEW-RESULT-001.json",
+  "split": "validation",
+  "record_count": 2,
+  "group_counts": {
+    "sg-b04-02": 2
+  },
+  "provenance_counts": {
+    "phase03-designed": 2
+  },
+  "conversation_modes": {
+    "single_turn": 1,
+    "multi_turn": 1
+  },
+  "reviewed_by_sidecar": true,
+  "all_records_accepted": true,
+  "model_visible_text_changed": false,
+  "hidden_roadmap_exposed": false,
+  "semantic_guard_review": "PASS",
+  "train_semantic_overlap": false,
+  "blind_semantic_overlap": false,
+  "cross_split_exact_collisions": 0,
+  "validation_frozen": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "next_gate": "V54_B04_FREEZE_AUDIT"
+}
