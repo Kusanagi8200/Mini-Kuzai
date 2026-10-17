@@ -20,6 +20,7 @@ AUDITS = REPO / "tools" / "public-audits"
 REPORTS = REPO / "reports" / "assistant-results"
 SOURCE = "SmolTalk v0.4 - public external dataset"
 SOURCE_PHASE03_VALIDATION = "Mini-Kuzai Phase 03 designed validation corpus"
+SOURCE_PHASE03_BLIND = "Mini-Kuzai Phase 03 designed blind-test corpus"
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -268,6 +269,10 @@ METRIC_KEYS = {
     "VALIDATION_FREEZE_HISTORIES", "VALIDATION_SIGNOFFS",
     "VALIDATION_SEMANTIC_PASSES", "VALIDATION_EXACT_PROMPT_DUPLICATES",
     "BLIND_TEST_RECORDS", "BLIND_TEST_GROUPS_RESERVED",
+    "BLIND_BATCH_INDEX", "BLIND_BATCH_CANDIDATES",
+    "BLIND_BATCH_SIGNOFF", "BLIND_BATCH_SEMANTIC_PASS",
+    "BLIND_BATCH_FROZEN", "BLIND_TEST_RECORDS_FROZEN",
+    "BLIND_BEHAVIORS_FROZEN",
     "SEMANTIC_VALIDATION_COMPLETE", "BLIND_AUTHORING_AUTHORIZED",
     "TRAINING_AUTHORIZED",
 }
@@ -314,12 +319,16 @@ def checked_audit(path_string):
 def source_for_audit(tracked):
     if tracked.startswith("tools/public-audits/phase03_v54_"):
         return SOURCE_PHASE03_VALIDATION
+    if tracked.startswith("tools/public-audits/phase03_v55_"):
+        return SOURCE_PHASE03_BLIND
     return SOURCE
 
 
 def semantic_validation_complete_for_audit(tracked, metrics):
+    closure = tracked == "tools/public-audits/phase03_v54_validation_closure.py"
+    blind_workstream = tracked.startswith("tools/public-audits/phase03_v55_")
     return (
-        tracked == "tools/public-audits/phase03_v54_validation_closure.py"
+        (closure or blind_workstream)
         and metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
         and metrics.get("BLIND_AUTHORING_AUTHORIZED") == 1
         and metrics.get("TRAINING_AUTHORIZED") == 0
