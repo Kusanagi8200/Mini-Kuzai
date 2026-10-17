@@ -1,0 +1,22 @@
+{
+  "review_id": "V55-B02-BLIND-REVIEW-001",
+  "behavior": "B02",
+  "target_file": "data/phase-03/blind-test/blind-batch-b02-v0.1.jsonl",
+  "target_blob_sha": "44a32a9b1c4046aafb527b2166a562d8c2cab89d",
+  "status": "REVISE_AND_REREVIEW",
+  "accepted": 1,
+  "revise": 1,
+  "max_jaccard": 0.333,
+  "note": "First B02 blind scenario was too close to TRAIN sg-b02-02 home_context. Replaced before freeze.",
+  "schema_version": "v55-blind-review-0.1",
+  "review_type": "INDEPENDENT_SEMANTIC_SPLIT_REVIEW",
+  "independence_scope": "SEPARATE_EVIDENCE_PASS_PROJECT_CONVENTION",
+  "external_human_review_claimed": false,
+  "review_complete": true,
+  "rejected": 0,
+  "held": 0,
+  "semantic_isolation_pass": false,
+  "exact_train_validation_prompt_matches": 0,
+  "training_approved": false,
+  "blind_frozen": false
+}
