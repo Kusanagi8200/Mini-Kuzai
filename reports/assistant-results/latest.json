@@ -1,22 +1,25 @@
 {
   "metrics": {
-    "V53_D3A_CANONICAL_TRAIN_RECORDS": 45,
-    "V53_D3A_CORPUS_APPROVED": 1,
-    "V53_D3A_DECISIONS_TOTAL": 1,
-    "V53_D3A_GROUP_VALID": 1,
-    "V53_D3A_MODEL_TRAINING_AUTHORIZED": 0,
-    "V53_D3A_RESERVED_ID_FREE": 1,
-    "V53_D3A_SERIALIZED": 0,
-    "V53_D3A_TARGET_TRAIN": 1
+    "V53_B12_CANONICAL_TRAIN_RECORDS": 46,
+    "V53_B12_GROUP_TRAIN_VALID": 1,
+    "V53_B12_METADATA_CORRECTIONS": 0,
+    "V53_B12_MODEL_TRAINING_AUTHORIZED": 0,
+    "V53_B12_MODEL_VISIBLE_CHANGES": 0,
+    "V53_B12_RESERVED_OVERLAP": 0,
+    "V53_B12_REVIEWED_RECORDS": 1,
+    "V53_B12_SERIALIZED_RECORDS": 1,
+    "V53_B12_SG01_CURRENT": 1,
+    "V53_B12_SG02_CURRENT": 0,
+    "V53_B12_TRAIN_COMPLETE": 0
   },
   "phase": "03",
   "private_conversation_data_included": false,
-  "producer": "tools/public-audits/smoltalk_v53_deriv003_admission_decision.py",
-  "producer_sha256": "6c125c1e69fb3ab68023067898d35d14ac8a8ea31b4d25f164f76e33ff363ae8",
+  "producer": "tools/public-audits/smoltalk_v53_b12_serialization.py",
+  "producer_sha256": "fedaa5148a86435604132033036cf5532ea84694f748739bdb70cdb6dd3d44e2",
   "project": "Mini-Kuzai",
   "semantic_validation_complete": false,
   "source": "SmolTalk v0.4 - public external dataset",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V53-DERIV003-ADMISSION-001",
+  "step_id": "PHASE03-SMOLTALK-V53-B12-SERIALIZATION-001",
   "training_authorized": false
 }
