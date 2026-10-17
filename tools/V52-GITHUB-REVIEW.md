@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V52 public semantic-review batch
 
-Status as of 2026-10-11: **32 public V52 review cases exported, individually annotated and published on GitHub (8 A, 12 B, 12 C). Final source-integrity/numeric GOGIT audit remains pending.** See [V52 results](../reviews/smoltalk-v52/RESULTS-001.md).
+Status as of 2026-10-17: **32 public V52 review cases annotated and final source-integrity/numeric GOGIT audit completed (8 A, 12 B, 12 C, 0 HOLD, 0 PENDING).** See [V52 results](../reviews/smoltalk-v52/RESULTS-001.md) and the [final audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json).
 The [V52 inventory](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-INVENTORY-001.json)
 was published and verified on GitHub under commit `3c1ca914`.
 
@@ -53,7 +53,7 @@ not automatically disqualifying for behavioral analysis, but an
 uncorrected false assertion is not an approved positive target.
 No independent human assessment is implied.
 
-## Execution history and final GOGIT gate
+## Execution history and completed GOGIT gate
 
 **Completed on fhc2:**
 
@@ -62,21 +62,21 @@ No independent human assessment is implied.
 3. Eight HIGH cases were annotated, and GOGIT [`PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001`](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json) captured **8 reviewed / 24 pending**.
 4. The remaining 24 public V52 cases were subsequently annotated directly on GitHub; the last case commit is [`7e27e730`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7e27e73033fdf6ab9bce227c379e4b00794af925). Their individual case pages show 8 A, 12 B, 12 C across the full 32-case batch.
 
-**Still pending:** `PHASE03-SMOLTALK-V52-REVIEW-FINAL-001` was not found in the public audit history as of this documentation checkpoint. The GOGIT `latest.json` record is therefore an earlier 8/32 snapshot, not a contradiction in the case annotations. Never change it by hand to imply an audit that has not run.
+5. On 2026-10-17, GOGIT published the [final V52 numeric/source-integrity report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) under [commit `8a28e956`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/8a28e95637377f29d7204f51d49a174f2518929f). The audited totals are **32/32 reviewed, 8 A, 12 B, 12 C, 0 HOLD, 0 PENDING, 0 TRAIN approved**. The earlier 8/32 report remains a valid historical snapshot.
 
-At the next authorized resumption, run this **final audit only** on fhc2, from a clean and synchronized `main`:
+The exact one-time command already executed on fhc2 is preserved below for historical reproducibility. **Do not re-run the published STEP_ID:**
 
 ```bash
 cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/gogit_public.py --step PHASE03-SMOLTALK-V52-REVIEW-FINAL-001 --audit tools/public-audits/smoltalk_v52_github_progress.py
 ```
 
-Do not re-run the one-time V52 source exporter: it refuses an already existing destination. GOGIT will verify the source immutability and the nine review fields before writing numerical reports. If it fails, diagnose before retrying; never force-push or forge an audit. No terminal results need to be pasted into ChatGPT: after execution, request `gogit` to inspect the published record.
+Do not re-run the one-time V52 exporter or the completed final-audit STEP_ID. GOGIT performed source-integrity and nine-field review checks before publishing the numeric report. Historical reports must never be manually altered, and future independent audits require new STEP_ID values. No terminal results need to be pasted into ChatGPT when a fresh GOGIT audit is authorized.
 
-The [V52 results](../reviews/smoltalk-v52/RESULTS-001.md) and [V52 case index](../reviews/smoltalk-v52/README.md) preserve the current GitHub-annotated status until that final report exists.
+The [V52 results](../reviews/smoltalk-v52/RESULTS-001.md) and [V52 case index](../reviews/smoltalk-v52/README.md) now reference the verified final audit; the original case pages and previous GOGIT snapshots remain unchanged.
 
 ## Future steps
 
-The 32 public V52 cases are already annotated. The next required gate is the **one-time final source-integrity/numeric GOGIT audit**, followed by documentation of any discrepancies. Do not re-export or relabel the cases merely to change aggregate totals. Only after that validation should candidate segmentation, factual repair, leakage checks, and broader semantic sampling resume.
+The 32 public V52 cases have been annotated and the final source-integrity/numeric GOGIT audit completed. The next substantive work is candidate segmentation, factual repair, deduplication, anti-leakage checks and broader semantic sampling. Do not re-export or relabel the audited cases merely to change aggregate totals.
 
 Do not change official TRAIN/VALIDATION/BLIND, the final tokenizer, or
 model architecture. Phase 03 training remains unauthorized.
