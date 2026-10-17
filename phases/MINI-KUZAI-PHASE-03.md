@@ -527,6 +527,7 @@ No tokenizer is frozen, no Phase 03 architecture is selected, no training mixtur
 See:
 
 - [V55 BLIND freeze checkpoint](MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md)
+- [V55 code and documentation review](../reviews/phase-03-v55/CODE-DOC-REVIEW-2026-10-17.md)
 - [V54 VALIDATION closure checkpoint](MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md)
 - [V53 TRAIN corpus consolidation](MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md)
 - [project workflow policy](../PROJECT-WORKFLOW-POLICY.md)
