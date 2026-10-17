@@ -14,4 +14,6 @@ Key controls:
 - reserved validation collision: **no**
 - reserved blind collision: **no**
 
-This is **not** TRAIN approval and does not assign a split.
+The eligibility decision was published and verified by [PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001](../../../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json).
+
+This is **not** TRAIN approval and does not assign a split. The next step is an explicit admission decision.
