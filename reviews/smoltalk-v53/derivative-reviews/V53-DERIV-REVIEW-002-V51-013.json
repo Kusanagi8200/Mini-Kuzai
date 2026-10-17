@@ -1,0 +1,34 @@
+{
+  "schema_version": "v53-derivative-review-0.1",
+  "review_id": "V53-DERIV-REVIEW-002-V51-013",
+  "derivative_id": "V53-DERIV-002-V51-013",
+  "review_type": "INDEPENDENT_SEMANTIC_FACTUAL",
+  "review_status": "PASS_TO_ELIGIBILITY_CONTROLS",
+  "review_complete": true,
+  "quality_gate_passed": true,
+  "further_repair_required": false,
+  "training_approved": false,
+  "dataset_split_assigned": false,
+  "semantic_validation_complete": false,
+  "checks": {
+    "factual_accuracy": "PASS",
+    "multi_turn_coherence": "PASS",
+    "behavioral_value": "PASS",
+    "instruction_fit": "PASS",
+    "constraint_handling": "PASS",
+    "new_error_introduced": false
+  },
+  "evidence": {
+    "verified_break_even_people": 5,
+    "verified_six_people_option1_per_person_usd": 50,
+    "verified_solo_option2_savings_usd": 240,
+    "notes": [
+      "At five travelers, both options total 300 dollars under the one-room assumption.",
+      "At six travelers, option 1 is 50 dollars per person while option 2 totals 360 dollars.",
+      "For one traveler, option 2 is 240 dollars cheaper than option 1.",
+      "The rewrite explicitly conditions the larger-group conclusion on one room being permitted and able to accommodate the group.",
+      "The contradictory source wording is removed and no new factual or instruction-following defect was identified."
+    ]
+  },
+  "next_gate": "PROVENANCE_DEDUP_SEMANTIC_SPLIT_ELIGIBILITY"
+}
