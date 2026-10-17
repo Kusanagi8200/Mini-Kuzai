@@ -64,6 +64,16 @@
 
 ---
 
+##### **``PROJECT EXECUTION POLICY``**
+
+Mini-Kuzai uses a **loop-first, resumable workflow policy** for project operations. When several deterministic gates can be chained safely, they should be executed by one idempotent runner that verifies state, skips already validated gates, publishes evidence, and continues until a genuine semantic, authorization, destructive, or non-verifiable decision boundary is reached.
+
+This policy applies project-wide to suitable dataset, audit, test, GOGIT, documentation-consistency, training-preparation, and evaluation workflows. Automation must never weaken semantic split protection, provenance, private-data restrictions, historical evidence, checkpoint protection, or explicit training authorization.
+
+See [`PROJECT-WORKFLOW-POLICY.md`](PROJECT-WORKFLOW-POLICY.md).
+
+---
+
 ##### **``PHASE 01 FINAL MODEL``**
 
 | Component | Value |
