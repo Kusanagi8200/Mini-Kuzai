@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V52 public inventory through GOGIT
 
-Status: **V52 inventory completed and confirmed by GOGIT** (commit [`3c1ca914`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/3c1ca9143e4573ac2b0c2eb4b7bf3f51acc05ad9)); **1,071 candidates available before V52 sampling**. The 32-case qualitative review has since been published and fully annotated (8 A, 12 B, 12 C); its final GOGIT audit remains pending. See [V52 results](../reviews/smoltalk-v52/RESULTS-001.md) and [V52 review guide](V52-GITHUB-REVIEW.md).
+Status: **V52 inventory completed and confirmed by GOGIT** (commit [`3c1ca914`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/3c1ca9143e4573ac2b0c2eb4b7bf3f51acc05ad9)); **1,071 candidates available before V52 sampling**. The 32-case qualitative review was fully annotated (8 A, 12 B, 12 C), and its [final GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) was published on 2026-10-17 (32/32 reviewed, 0 pending). See [V52 results](../reviews/smoltalk-v52/RESULTS-001.md) and [V52 review guide](V52-GITHUB-REVIEW.md).
 
 ## Scope
 
@@ -33,6 +33,6 @@ If publication fails, GOGIT does not claim success. Check the local failure befo
 
 ## Subsequent decision completed
 
-The inventory supported a distinct 32-case stratified V52 review focused on MEDIUM/LOW false negatives, context retention, behavioral self-correction and creative continuity. All 32 case pages were later annotated on GitHub. The next outstanding integrity gate is the final V52 review GOGIT audit; see [the current review guide](V52-GITHUB-REVIEW.md).
+The inventory supported a distinct 32-case stratified V52 review focused on MEDIUM/LOW false negatives, context retention, behavioral self-correction and creative continuity. All 32 case pages were annotated on GitHub, then verified by the completed [V52 final GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json). See the [review history](V52-GITHUB-REVIEW.md).
 
 TRAIN, VALIDATION, BLIND and the tokenizer remain unchanged. Model training is not authorized.
