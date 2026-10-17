@@ -16,7 +16,7 @@ It remains outside TRAIN, but its independent review and eligibility controls ar
 
 - [independent review evidence](reviews/V53-DERIV-REVIEW-003-V51-002.json)
 - [eligibility evidence](eligibility/V53-ELIG-003-V51-002.json)
-- [published eligibility GOGIT audit](../../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json)
+- [published eligibility GOGIT audit](../../../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json)
 
 Current derivative state: **ELIGIBLE_FOR_ADMISSION_DECISION**.
 
