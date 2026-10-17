@@ -1,0 +1,9 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B03",
+  "status": "REVIEWED_PASS_PENDING_FREEZE_AUDIT",
+  "record_count": 2,
+  "validation_frozen": false,
+  "training_authorized": false
+}
