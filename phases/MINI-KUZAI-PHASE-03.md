@@ -461,66 +461,75 @@ Current V53 evidence:
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION - V53 CORPUS CONSOLIDATION
+PHASE 03                  : DATA PREPARATION - V55 BLIND FROZEN / REVIEW PAUSE
 Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
+
 Identity specification    : V0.2 CANDIDATE
 Behavior matrix           : V0.1 CANDIDATE
 Knowledge map             : V0.1 CANDIDATE
 Dataset schema            : V0.1 CANDIDATE
 Semantic inventory        : V0.3 - 65 GROUPS
-Canonical TRAIN records   : 45
-TRAIN semantic groups     : 11 / 29 COMPLETE - 12 REPRESENTED
-B01-B05 custom exchanges  : 35 REVIEWED (31 JSONL RECORDS)
-B08 TRAIN                 : COMPLETE - 8 RECORDS - 4 + 4
-Public SmolTalk TRAIN     : 1 CANONICAL DERIVATIVE
-V53-DERIV-003             : ELIGIBLE FOR ADMISSION DECISION
-Authoring policy          : V0.2
+
+Canonical TRAIN records   : 107
+TRAIN semantic groups     : 29 / 29 COMPLETE
+TRAIN provenance          : 105 PHASE03-DESIGNED / 2 SMOLTALK
+
+VALIDATION records        : 36 / 36 FROZEN
+VALIDATION groups         : 18 / 18 FROZEN
+Validation closure        : COMPLETE
+SEMANTIC VALIDATION       : COMPLETE
+
+BLIND TEST records        : 36 / 36 FROZEN
+BLIND TEST groups         : 18 / 18 FROZEN
+BLIND behavior freezes    : 18 / 18 VERIFIED
+Global BLIND closure      : PENDING
+
+Cross-split exact IDs     : 0
+Cross-split group overlap : 0
+Exact cross-split prompts : 0
+Total controlled corpus   : 179 RECORDS / 65 GROUPS
+
+Authoring policy          : V0.5
 Semantic split guard      : ACTIVE
-VALIDATION records        : 0 / 36 CREATED
-BLIND TEST records        : 0 / 36 CREATED
+Loop-first workflow       : ACTIVE
+
 SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
-V51 GOGIT                 : COMPLETED - 9A/8B/7C
-V52 final GOGIT audit     : COMPLETED - 32/32 VERIFIED
-V53 B08 audit             : COMPLETE - B08 TRAIN COMPLETE
-V53 derivative-003 audit  : ELIGIBILITY COMPLETE - ADMISSION PENDING
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
-ChatGPT export source     : LOCAL-ONLY RESEARCH SOURCE
 Private source material   : NOT COMMITTED
 Derived private metrics   : NOT COMMITTED
+
 Tokenizer                 : FINAL VOCABULARY NOT FROZEN
 New model architecture    : NOT SELECTED YET
+Training mixture          : NOT FINALIZED
 Training                  : NOT STARTED
 Training authorized       : NO
 ```
 
 ## Current checkpoint
 
-The original B01-B05 custom authoring sequence remains paused after B05, but V53 has added separately reviewed TRAIN material through the corpus-consolidation path. Public SmolTalk review completed V48/V49 (68 cases), V51 (24 cases) and V52 (32 cases), and V53 then applied cross-cycle inventory, repair, derivative review, eligibility and admission gates. Canonical TRAIN now contains 45 records across 12 represented semantic groups; 11 of the 29 TRAIN groups are complete. VALIDATION and BLIND conversation text remain uncreated.
+V53 completed the canonical TRAIN corpus at 107 records across all 29 TRAIN semantic groups.
 
-B01 through B05 are complete and reviewed:
+V54 completed and globally closed VALIDATION at 36 records across all 18 reserved validation groups. The closure gate is `PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001`.
 
-```text
-B01 SELF IDENTITY                  : 8
-B02 ORIGIN AND HOME                : 8
-B03 KUSANAGI8200 RELATIONSHIP      : 8
-B04 KUZAI / Mini-Kuzai BOUNDARY    : 3
-B05 CURIOSITY                      : 8
-TOTAL REVIEWED CUSTOM TRAIN        : 35
-```
+V55 then authored, reviewed, integrity-checked and froze 36 BLIND TEST records across all 18 reserved blind groups. B02 and B03 required explicit versioned correction and rereview before freeze because initial blind scenarios were too close to existing same-behavior material. The final behavior-level freeze step is `PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001`.
 
-The semantic inventory contains 65 groups allocated as 29 TRAIN, 18 VALIDATION, and 18 BLIND TEST groups.
+The BLIND master manifest is now `FROZEN_PENDING_GLOBAL_CLOSURE`.
 
-Authoring policy v0.2 and the semantic split exclusion map are active. They were introduced after B03 review detected and corrected semantic overlap between TRAIN examples and reserved evaluation scenarios.
+The project is intentionally paused at this point for code and documentation review.
 
-No VALIDATION or BLIND TEST conversation text has been created.
+No global BLIND closure has been executed.
 
-No Phase 03 model training is authorized at this checkpoint.
+No tokenizer is frozen, no Phase 03 architecture is selected, no training mixture is finalized, and no model training is authorized.
 
-The tokenizer strategy has been explored, but its final production vocabulary is not frozen. The Phase 03 architecture remains undecided.
+See:
 
-The [2026-10-10 pause checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and [B05 checkpoint](MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md) remain historical records. The **current operational checkpoint is the [verified V53 derivative-003 eligibility audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json)**. The immediate next corpus decision is whether to admit `V53-DERIV-003-V51-002` to the B12 TRAIN route `sg-b12-01 alternative_generation`. Eligibility does not itself approve TRAIN. No tokenizer is frozen, no Phase 03 architecture is selected, and no model training is authorized.
+- [V55 BLIND freeze checkpoint](MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md)
+- [V54 VALIDATION closure checkpoint](MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md)
+- [V53 TRAIN corpus consolidation](MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md)
+- [project workflow policy](../PROJECT-WORKFLOW-POLICY.md)
 
-Private-corpus review stays in the local workspace and is paused. Future controlled custom-corpus authoring would resume at B06 UNKNOWN INFORMATION under authoring policy v0.2 and the existing semantic split guard, only after an explicit request.
+Private-corpus review remains local-only and paused. Historical V48-V53 review and admission sections above remain preserved as chronology; they must not be read as the current corpus state.
+
