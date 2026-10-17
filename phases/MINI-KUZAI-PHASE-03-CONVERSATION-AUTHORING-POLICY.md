@@ -1,13 +1,15 @@
 # MINI-KUZAI PHASE 03 - CONVERSATION AUTHORING POLICY
 
-Version: 0.3
+Version: 0.4
 Status: ACTIVE_POLICY
 
 This document defines how Phase 03 custom conversations must be authored.
 
 Version 0.2 added an explicit semantic split guard after a TRAIN overlap was detected and corrected during B03 review.
 
-Version 0.3 adds the project-wide loop-first execution constraint: deterministic gates should be chained into resumable workflows whenever this does not weaken semantic review or authorization controls.
+Version 0.3 added the project-wide loop-first execution constraint: deterministic gates should be chained into resumable workflows whenever this does not weaken semantic review or authorization controls.
+
+Version 0.4 records the completed V54 VALIDATION closure and opens BLIND TEST authoring while keeping model training unauthorized.
 
 ## Core authoring rules
 
@@ -71,23 +73,43 @@ It does not contain final VALIDATION or BLIND TEST conversations.
 ## Current corpus state
 
 ```text
-Canonical TRAIN records   : 107 AUDITED
-TRAIN semantic groups     : 29 / 29 AUDITED
-CRITICAL TRAIN behaviors  : ALL COMPLETE
-HIGH TRAIN behaviors      : ALL COMPLETE
-MEDIUM TRAIN behaviors    : B13 AND B14 AUDITED
-B14 TRAIN group           : sg-b14-01 discovery_affect
-B14 reviewed records      : 3
-B14 corrected targets     : 1
-VALIDATION FROZEN         : 4 / 36 RECORDS
-VALIDATION BEHAVIORS      : 2 / 18 FROZEN (B01, B02)
-NEXT VALIDATION BEHAVIOR  : B03 / sg-b03-03 imposed_relationship_label
-BLIND TEST TEXT           : 0 / 36 CREATED
-TRAINING                  : NOT AUTHORIZED
+Canonical TRAIN records      : 107 AUDITED
+TRAIN semantic groups        : 29 / 29 AUDITED
+TRAIN provenance             : 105 PHASE03-DESIGNED / 2 SMOLTALK
+VALIDATION records           : 36 / 36 FROZEN
+VALIDATION semantic groups   : 18 / 18 FROZEN
+VALIDATION freeze histories  : 18 / 18
+VALIDATION semantic passes   : 18 / 18
+SEMANTIC VALIDATION COMPLETE : YES
+BLIND authoring authorized   : YES
+BLIND TEST text              : 0 / 36 CREATED
+BLIND TEST groups reserved   : 18 / 18
+TRAINING                     : NOT AUTHORIZED
 ```
 
-The final B14 audit `PHASE03-SMOLTALK-V53-B14-BEHAVIOR-COMPLETE-001` confirms 107 canonical TRAIN records across all 29 TRAIN groups, including 105 `phase03-designed` records and 2 admitted public SmolTalk derivatives. This is an aggregate structural/completion audit, not independent semantic validation.
+The V53 TRAIN completion audit confirms 107 canonical TRAIN records across all 29 TRAIN groups, including 105 `phase03-designed` records and 2 admitted public SmolTalk derivatives.
+
+The V54 closure gate `PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001` confirms that all 36 VALIDATION records across all 18 reserved validation groups are frozen, semantically signed off, and free of exact TRAIN collisions. The published GOGIT state records `semantic_validation_complete=true`, `BLIND_AUTHORING_AUTHORIZED=1`, and `TRAINING_AUTHORIZED=0`.
+
+See `MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md`.
+
+## BLIND TEST authoring rules
+
+BLIND authoring is now permitted, but the future BLIND evaluation must remain untouched by model development.
+
+Before authoring a BLIND conversation:
+
+1. Read the selected BLIND semantic group.
+2. Read the same behavior's TRAIN and VALIDATION groups.
+3. Do not paraphrase an existing TRAIN or VALIDATION prompt into BLIND.
+4. Preserve the distinctive BLIND challenge rather than recycling another split's challenge.
+5. Keep canonical identity facts separate from scenario-specific evaluation pressure.
+6. Do not use BLIND examples for tokenizer selection, model selection, training, tuning, or checkpoint choice.
+7. If a BLIND prompt is later inspected during model development, it loses untouched-test status and must be reclassified as diagnostic.
+8. Any `REVISE`, `REJECT`, or `HOLD` semantic decision stops automated progression until corrected and rereviewed.
 
 ## Next operation
 
-B01 and B02 VALIDATION are frozen through their V54 GOGIT freeze gates, giving 4 frozen records across 2 of 18 behaviors. Continue with B03 (`sg-b03-03 imposed_relationship_label`) using the loop-first resumable workflow pattern whenever deterministic gates can be chained. Preserve cross-split semantic isolation, leave BLIND TEST text uncreated, and do not authorize tokenizer finalization or model training on the basis of partial VALIDATION completion.
+Author and freeze the 18 reserved BLIND TEST groups, targeting 36 records, using the loop-first resumable workflow where deterministic gates can be chained safely.
+
+Do not authorize tokenizer finalization or model training until BLIND TEST authoring, review, freeze, and global closure are complete and the remaining pre-training gates explicitly pass.
