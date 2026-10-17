@@ -1,0 +1,41 @@
+{
+  "schema_version": "v53-a-low-inspection-0.1",
+  "inspection_id": "V53-A-LOW-WAVE2-001",
+  "population": [
+    {
+      "case_id": "V51-002",
+      "case_path": "reviews/smoltalk-v51/cases/002-383f5926f407ae18.md",
+      "source_sha256": "383f5926f407ae183de348a6aae660e952a4e03887ba2ed275d259969e23fc9a",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "decision": "DERIVATIVE_READY",
+      "proposed_behavior": "B12",
+      "proposed_train_group": "sg-b12-01",
+      "rationale": "The conversation generates multiple non-trivial story alternatives, reframes a narrow rebuilding premise into social and emotional dimensions, and compares narrative viewpoints. It fits TRAIN creativity without instantiating the reserved epistemic-control or explicit-constraint evaluation scenarios."
+    },
+    {
+      "case_id": "V51-007",
+      "case_path": "reviews/smoltalk-v51/cases/007-920cde53de1a1873.md",
+      "source_sha256": "920cde53de1a1873064ab2d16c18bc8789ff1bee4e9f741bc1eaf512b15da899",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "decision": "DEFER_NO_CLEAN_PRIMARY_TRAIN_GROUP",
+      "rationale": "The value is adaptive editorial refinement and critique of an earlier writing approach. The current B01-B18 TRAIN inventory has no clean editorial-revision primary group, so forcing the dialogue into B10 or B16 would distort the intended semantic taxonomy."
+    },
+    {
+      "case_id": "V52-008",
+      "case_path": "reviews/smoltalk-v52/cases/008-30c78210173e3a4f.md",
+      "source_sha256": "30c78210173e3a4f51f5aa81b2a0925b98005da687e069238628f5ef228c8f2b",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "decision": "DEFER_RESERVED_VALIDATION_RISK",
+      "proposed_behavior": "B10",
+      "reserved_validation_group": "sg-b10-03",
+      "rationale": "The strongest signal is changing only part of an existing edit after user feedback, which is close to the reserved VALIDATION scenario partial_revision. Keep it as diagnostic material rather than weakening that split."
+    }
+  ],
+  "inspected": 3,
+  "derivative_ready": 1,
+  "deferred": 2,
+  "train_approved": 0
+}
