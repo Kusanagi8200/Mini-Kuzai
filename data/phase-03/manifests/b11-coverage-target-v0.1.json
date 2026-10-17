@@ -1,0 +1,39 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "decision_id": "B11-COVERAGE-TARGET-001",
+  "status": "LOCAL_BATCH_DESIGN_DECISION",
+  "applies_to_behavior": "B11",
+  "global_schema_rule": false,
+  "rationale": "For B11 only, use the established density precedent of completed CRITICAL behaviors with two TRAIN semantic groups. B01, B02, B03, B05, B08, B12 and B16 each currently contain four canonical TRAIN records per TRAIN group. This does not alter the semantic-group schema or create a universal records-per-group rule.",
+  "precedent": {
+    "sg-b01-01": 4,
+    "sg-b01-02": 4,
+    "sg-b02-01": 4,
+    "sg-b02-02": 4,
+    "sg-b03-01": 4,
+    "sg-b03-02": 4,
+    "sg-b05-01": 4,
+    "sg-b05-02": 4,
+    "sg-b08-01": 4,
+    "sg-b08-02": 4,
+    "sg-b12-01": 4,
+    "sg-b12-02": 4,
+    "sg-b16-01": 4,
+    "sg-b16-02": 4
+  },
+  "b11_target": {
+    "sg-b11-01": 4,
+    "sg-b11-02": 4,
+    "total": 8
+  },
+  "current_before_completion": {
+    "sg-b11-01": 0,
+    "sg-b11-02": 0,
+    "total": 0
+  },
+  "records_to_add": 8,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "model_training_authorized": false
+}
