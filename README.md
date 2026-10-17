@@ -197,7 +197,7 @@ Phase 03 has already defined:
 - external dataset evaluation methodology;
 - semantic group inventory v0.3 with 65 groups;
 - TRAIN / VALIDATION / BLIND TEST split allocation;
-- conversation authoring policy v0.2;
+- conversation authoring policy v0.4;
 - semantic split exclusion map and manual anti-leakage review.
 
 External dataset research has also been completed for the current cycle.
@@ -241,7 +241,7 @@ V50 has completed a **local-only heuristic screening of all 1,139 provisional V4
 
 The V52 pause checkpoint is now historical. V53 resumed public-only corpus consolidation while preserving all earlier review reports. Across V48/V49, V51 and V52, 124 distinct public SmolTalk examples remain the reviewed source population; V53 adds independent repair, derivative, eligibility and admission gates rather than redefining those historical grades. No tokenizer vocabulary has been frozen and no Phase 03 model training has started or been authorized.
 
-**V53 - public corpus consolidation and controlled TRAIN expansion:** The [V53 workstream](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) has progressed from cross-cycle accounting through repair planning, derivative review, eligibility, admission and behavior-by-behavior TRAIN completion. The last published GoGit state contains **107 unique canonical TRAIN records across all 29 TRAIN semantic groups**. B14 EMOTIONAL EXPRESSION has now been authored and reviewed at the three-record MEDIUM target; one target wording was corrected during semantic review. The audited corpus contains **107 unique records across all 29 TRAIN groups**, confirmed by the published B14C GOGIT audit. Audited provenance is **105 `phase03-designed` records plus 2 admitted public SmolTalk derivatives**. No VALIDATION or BLIND TEST conversation text has been created. Model training remains unauthorized.
+**V53 - public corpus consolidation and controlled TRAIN expansion:** The [V53 workstream](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) has progressed from cross-cycle accounting through repair planning, derivative review, eligibility, admission and behavior-by-behavior TRAIN completion. The last published GoGit state contains **107 unique canonical TRAIN records across all 29 TRAIN semantic groups**. B14 EMOTIONAL EXPRESSION has now been authored and reviewed at the three-record MEDIUM target; one target wording was corrected during semantic review. The audited TRAIN corpus contains **107 unique records across all 29 TRAIN groups**, confirmed by the published B14C GOGIT audit. Audited provenance is **105 `phase03-designed` records plus 2 admitted public SmolTalk derivatives**. V54 subsequently completed and globally closed the **36-record / 18-group VALIDATION corpus**. BLIND TEST authoring is now authorized, no BLIND records existed at V54 closure, and model training remains unauthorized.
 
 ### Private local corpus pipeline
 
@@ -271,6 +271,7 @@ See:
 - [`phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md`](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md)
 - [`phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md`](phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md)
 - [`phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md`](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md)
+- [`phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md`](phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md)
 - [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md)
 
 ---
@@ -316,40 +317,38 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V53 TRAIN COMPLETION
-B01-B05 batches           : HISTORICAL BATCHES PRESERVED
+Phase 03                  : DATA PREPARATION - BLIND TEST AUTHORING
 Canonical TRAIN records   : 107 AUDITED
 TRAIN semantic groups     : 29 / 29 AUDITED
-CRITICAL TRAIN            : ALL COMPLETE
-HIGH TRAIN                : ALL COMPLETE
-MEDIUM TRAIN              : B13 AND B14 AUDITED
-B14 TRAIN                 : 3 REVIEWED - 1 TARGET CORRECTION
-Public SmolTalk TRAIN     : 2 CANONICAL DERIVATIVES
-Prepared provenance       : 105 PHASE03-DESIGNED / 2 SMOLTALK
-External dataset study    : V49/V51/V52 REVIEWED - V53 ACTIVE
+TRAIN provenance          : 105 PHASE03-DESIGNED / 2 SMOLTALK
+VALIDATION records        : 36 / 36 FROZEN
+VALIDATION groups         : 18 / 18 FROZEN
+Validation closure        : COMPLETE - SEMANTIC_VALIDATION_COMPLETE=1
+BLIND authoring           : AUTHORIZED
+BLIND TEST records        : 0 / 36 AT V54 CLOSURE
+BLIND TEST groups         : 18 / 18 RESERVED
+Cross-split exact IDs     : 0
+Cross-split group overlap : 0
+Exact TRAIN/VALID prompts : 0
+Authoring policy          : V0.4
+Semantic split guard      : ACTIVE
 SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
-Latest V53 GOGIT          : B14C COMPLETE - 107 TRAIN
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
 Private source material   : NOT COMMITTED
-Derived private metrics   : NOT COMMITTED
-Semantic inventory        : V0.3 - 65 GROUPS
-B01-B05 custom exchanges  : 35 REVIEWED (31 JSONL RECORDS)
-Authoring policy          : V0.2
-Semantic split guard      : ACTIVE
-VALIDATION records        : 0 / 36 CREATED
-BLIND TEST records        : 0 / 36 CREATED
 Tokenizer                 : FINAL VOCABULARY NOT FROZEN
 Phase 03 architecture     : NOT SELECTED YET
 Phase 03 training         : NOT STARTED
 Training authorized       : NO
 ```
 
-B01 through B05 custom TRAIN batches remain preserved and reviewed (31 JSONL records containing 35 USER/ASSISTANT exchanges). V53 subsequently expanded the controlled corpus across the remaining behavior families. The last audited corpus contains **107 unique records** across **all 29 TRAIN semantic groups**. B14 `sg-b14-01 discovery_affect` is now authored and reviewed with three records; one target was corrected to remove preference-like wording. The published B14C audit confirms TRAIN at the policy-planned **107 unique records across all 29 groups**, with **105 `phase03-designed` records and 2 admitted public SmolTalk derivatives**. No VALIDATION or BLIND TEST conversation text has been created.
+V53 froze the canonical TRAIN corpus at **107 records across all 29 TRAIN groups**, with **105 `phase03-designed` records and 2 admitted public SmolTalk derivatives**.
 
-The external SmolTalk review completed V49 (24 RETAIN, 44 REJECT), V51 (9 A, 8 B, 7 C) and V52 (8 A, 12 B, 12 C). V53 then applied repair, independent review, deduplication, semantic anti-leakage, eligibility and admission gates. Both accepted public derivatives are now canonical, while V44 remains provisional; the purposefully sampled reviews still do not establish an acceptance rate for the full reservoir. Private-source curation remains exclusively local and paused. Tokenizer vocabulary, Phase 03 architecture and model training remain unfrozen / unselected / unauthorized.
+V54 then authored, independently reviewed, integrity-checked and froze **36 VALIDATION records across all 18 reserved validation groups**. The global closure step `PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001` independently confirmed all 18 freeze histories, 18 signoffs, 18 semantic passes, zero exact TRAIN/VALIDATION collisions and zero duplicate normalized validation prompts. The GOGIT state now records `semantic_validation_complete=true` and `BLIND_AUTHORING_AUTHORIZED=1`.
 
-See the [V53 corpus consolidation status](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md), [B13 completion audit](reports/assistant-results/history/PHASE03-SMOLTALK-V53-B13-BEHAVIOR-COMPLETE-001.json), [B17 completion audit](reports/assistant-results/history/PHASE03-SMOLTALK-V53-B17-BEHAVIOR-COMPLETE-001.json), [B15 completion audit](reports/assistant-results/history/PHASE03-SMOLTALK-V53-B15-BEHAVIOR-COMPLETE-001.json), [V52 annotated results](reviews/smoltalk-v52/RESULTS-001.md), [V51 verified results](reviews/smoltalk-v51/RESULTS-001.md), [V49 completed results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
+BLIND TEST authoring is the active Phase 03 data-preparation workstream. At validation closure, **0 / 36 BLIND records** existed. Training, tokenizer finalization, model architecture selection and training-mixture finalization remain unauthorized or unfrozen.
+
+See the [V54 validation closure checkpoint](phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md), [V53 corpus consolidation status](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md), [V52 annotated results](reviews/smoltalk-v52/RESULTS-001.md), [V51 verified results](reviews/smoltalk-v51/RESULTS-001.md), [V49 completed results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
 
 ---
 
