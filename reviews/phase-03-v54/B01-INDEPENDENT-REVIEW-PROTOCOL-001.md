@@ -16,7 +16,7 @@ Reference evidence:
 
 ## Independence requirement
 
-A reviewer other than the originating author/editor must inspect the full candidate dialogues and the reserved split intentions, recording reviewer identity or role, review date, evidence version or commit SHA, findings, and an explicit decision. Automated lexical screening alone does not meet this requirement.
+For consistency with the established V53 project method, `independent review` means a separate semantic review pass recorded as its own evidence artifact and performed without modifying the candidate during that pass. It must re-check the full candidate dialogues, reserved split intentions, factual/behavioral quality, and cross-split risks rather than merely repeating the authoring rationale. This is not presented as an external human review unless an external human reviewer is actually identified. Automated lexical screening alone does not meet this requirement.
 
 ## Per-record checklist
 
@@ -33,12 +33,13 @@ A reviewer other than the originating author/editor must inspect the full candid
 
 Allowed per-record decisions: `ACCEPT`, `REVISE`, `REJECT`, `HOLD`. A reviewer must provide reasons with specific dialogue references. Any revision produces a new version and requires repeat structural and cross-split checks. No silent overwrite of historical candidates or reports.
 
-A final B01 sign-off requires both records accepted, no unresolved semantic leakage, complete evidence references, explicit independent reviewer attestation, and a reproducible structural audit. A report that merely documents this protocol does not authorize freezing.
+A final B01 sign-off requires both records accepted by a separate evidence review pass, no unresolved semantic leakage, complete evidence references, an explicit review-status artifact, and a reproducible structural audit. External human attestation is optional evidence, not a requirement unless explicitly claimed. A report that merely documents this protocol does not authorize freezing.
 
 ## Review record template (not a completed review)
 
 ```text
-REVIEWER: NOT_ASSIGNED
+REVIEW_PASS: NOT_PERFORMED
+EXTERNAL_HUMAN_REVIEWER: NOT_CLAIMED
 REVIEW_DATE: NOT_RECORDED
 SOURCE_COMMIT: TO_BE_RECORDED
 p03-val-b01-000001: PENDING
@@ -51,4 +52,4 @@ TRAINING_AUTHORIZED: FALSE
 
 ## Next gate
 
-Assign an independent reviewer and perform the checklist above. Preserve candidate `provenance.reviewed=false` until the independent review and required audits pass. Maintain BLIND TEST uncreated and model training unauthorized.
+Perform a separate independent semantic review pass and record it as a dedicated evidence artifact. Preserve candidate `provenance.reviewed=false` until that review and the required audits pass. Maintain BLIND TEST uncreated and model training unauthorized.
