@@ -1,0 +1,41 @@
+{
+  "schema_version": "v53-eligibility-review-0.1",
+  "eligibility_id": "V53-ELIG-002-V51-013",
+  "derivative_id": "V53-DERIV-002-V51-013",
+  "review_status": "COMPLETE",
+  "eligibility_status": "ELIGIBLE_FOR_ADMISSION_DECISION",
+  "training_approved": false,
+  "dataset_split_assigned": false,
+  "admission_decision_made": false,
+  "provenance": {
+    "status": "PASS",
+    "public_dataset": "HuggingFaceTB/smol-smoltalk",
+    "source_license": "apache-2.0",
+    "license_evidence": "Hugging Face dataset card verified 2026-10-17",
+    "source_content_sha256": "566e0b8c4ed792cc76ad0646a6295b05adab7a8caf37e8b91483982fb80e00c3"
+  },
+  "duplicate_control": {
+    "canonical_train_records_compared": 37,
+    "exact_duplicate": false,
+    "near_duplicate_method": "normalized 5-token shingle Jaccard",
+    "near_duplicate_threshold": 0.2,
+    "maximum_train_jaccard": 0,
+    "near_duplicate_hit": false,
+    "derivative_cross_duplicate": false
+  },
+  "semantic_control": {
+    "manual_review_required": true,
+    "primary_behavior_considered": "B08",
+    "train_group_considered": "sg-b08-01",
+    "train_scenario": "weak_technical_claim",
+    "reserved_validation_group": "sg-b08-03",
+    "reserved_validation_scenario": "unsupported_conclusion",
+    "reserved_blind_group": "sg-b08-04",
+    "reserved_blind_scenario": "social_pressure_agreement",
+    "reserved_validation_collision": false,
+    "reserved_blind_collision": false,
+    "rationale": "The user generalizes a conditionally correct arithmetic result beyond its real-world room-capacity constraint. The assistant independently qualifies the claim with that missing constraint. This fits the TRAIN weak_technical_claim scope and does not reproduce the reserved unsupported-conclusion or social-pressure challenges."
+  },
+  "proposed_train_group_if_admitted": "sg-b08-01",
+  "next_action": "ADMISSION_DECISION_REQUIRED"
+}
