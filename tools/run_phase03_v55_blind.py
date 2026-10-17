@@ -48,12 +48,20 @@ def load_master():
     if not MASTER.is_file() or MASTER.is_symlink():
         raise RuntimeError("Missing or unsafe V55 BLIND master manifest")
     data=json.loads(MASTER.read_text(encoding="utf-8"))
+    allowed_statuses={"REVIEWED_READY_FOR_BLIND_FREEZE","FROZEN_PENDING_GLOBAL_CLOSURE"}
     if (data.get("version")!="V55"
-        or data.get("status")!="REVIEWED_READY_FOR_BLIND_FREEZE"
+        or data.get("status") not in allowed_statuses
         or data.get("total_behaviors")!=18
         or data.get("target_records")!=36
         or data.get("training_authorized") is not False):
         raise RuntimeError("Unexpected V55 BLIND master state")
+    if data.get("status")=="FROZEN_PENDING_GLOBAL_CLOSURE":
+        if data.get("freeze_complete") is not True:
+            raise RuntimeError("Frozen V55 BLIND master missing freeze_complete=true")
+        if data.get("freeze_complete_step_id")!="PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001":
+            raise RuntimeError("Frozen V55 BLIND master has unexpected completion STEP_ID")
+        if data.get("global_blind_closure_complete") is not False:
+            raise RuntimeError("BLIND global closure must remain pending at this checkpoint")
     behaviors=data.get("behaviors")
     if not isinstance(behaviors,list) or len(behaviors)!=18:
         raise RuntimeError("V55 BLIND behavior inventory invalid")
