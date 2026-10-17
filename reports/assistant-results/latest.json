@@ -1,22 +1,22 @@
 {
   "metrics": {
-    "V53_G3_FACTUAL_NUMERIC_FIX": 4,
-    "V53_G3_GATE2_PRIORITY_CONFIRMED": 8,
-    "V53_G3_REPAIR_TOTAL": 8,
-    "V53_G3_SEGMENTATION_REQUIRED": 3,
-    "V53_G3_SOURCE_MATCHED": 8,
-    "V53_G3_TRAIN_APPROVED": 0,
-    "V53_G3_UNCERTAINTY_LOGIC_CALIBRATION": 3,
-    "V53_G3_WORDING_CONSTRAINT_CLEANUP": 3
+    "V53_DERIVATIVE_ASSISTANT_REWRITES": 6,
+    "V53_DERIVATIVE_REVIEW_PENDING": 2,
+    "V53_DERIVATIVE_SEMANTIC_VALIDATED": 0,
+    "V53_DERIVATIVE_SOURCE_MATCHED": 2,
+    "V53_DERIVATIVE_SPLIT_ASSIGNED": 0,
+    "V53_DERIVATIVE_TOTAL": 2,
+    "V53_DERIVATIVE_TRAIN_APPROVED": 0,
+    "V53_DERIVATIVE_USER_SOURCE_TURNS": 6
   },
   "phase": "03",
   "private_conversation_data_included": false,
-  "producer": "tools/public-audits/smoltalk_v53_repair_plan.py",
-  "producer_sha256": "32a205d4b14ea62dbcc5fd7bbe5ffc87962724cfce821f16e4e91de325a4a772",
+  "producer": "tools/public-audits/smoltalk_v53_derivative_candidates.py",
+  "producer_sha256": "96180dbac4afc9419b8b22b5447ec42be6020c0164654769a943ba191e7f2cc1",
   "project": "Mini-Kuzai",
   "semantic_validation_complete": false,
   "source": "SmolTalk v0.4 - public external dataset",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V53-REPAIR-PLAN-001",
+  "step_id": "PHASE03-SMOLTALK-V53-DERIVATIVE-CANDIDATES-001",
   "training_authorized": false
 }
