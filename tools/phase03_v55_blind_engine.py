@@ -62,12 +62,20 @@ def prompts(row):
 
 def load_master():
     master=load_json(MASTER)
+    allowed_statuses={"REVIEWED_READY_FOR_BLIND_FREEZE","FROZEN_PENDING_GLOBAL_CLOSURE"}
     if (master.get("version")!="V55"
-        or master.get("status")!="REVIEWED_READY_FOR_BLIND_FREEZE"
+        or master.get("status") not in allowed_statuses
         or master.get("total_behaviors")!=18
         or master.get("target_records")!=36
         or master.get("training_authorized") is not False):
         raise RuntimeError("Unexpected BLIND master manifest state")
+    if master.get("status")=="FROZEN_PENDING_GLOBAL_CLOSURE":
+        if master.get("freeze_complete") is not True:
+            raise RuntimeError("Frozen BLIND master missing freeze_complete=true")
+        if master.get("freeze_complete_step_id")!="PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001":
+            raise RuntimeError("Frozen BLIND master has unexpected completion STEP_ID")
+        if master.get("global_blind_closure_complete") is not False:
+            raise RuntimeError("BLIND global closure must remain pending at this checkpoint")
     behaviors=master.get("behaviors")
     if not isinstance(behaviors,list) or len(behaviors)!=18:
         raise RuntimeError("BLIND behavior inventory invalid")
@@ -207,10 +215,31 @@ def canonical_blind_rows(master):
         raise RuntimeError("Duplicate normalized user prompts inside canonical BLIND corpus")
 
     blind_dir=ROOT/"data/phase-03/blind-test"
-    allowed_superseded={
-        (blind_dir/"blind-batch-b02-v0.1.jsonl").resolve(),
-        (blind_dir/"blind-batch-b03-v0.1.jsonl").resolve(),
-    }
+    allowed_superseded=set()
+    corrections=master.get("corrections",[])
+    if not isinstance(corrections,list) or len(corrections)!=2:
+        raise RuntimeError("Expected exactly two recorded BLIND correction lineages")
+    for correction in corrections:
+        from_path=ROOT/correction["from_path"]
+        to_path=ROOT/correction["to_path"]
+        if correction.get("behavior") not in ("B02","B03"):
+            raise RuntimeError("Unexpected corrected BLIND behavior")
+        if not from_path.is_file() or from_path.is_symlink():
+            raise RuntimeError("Missing or unsafe superseded BLIND batch: "+str(from_path.relative_to(ROOT)))
+        if git_blob_sha(from_path)!=correction.get("from_blob_sha"):
+            raise RuntimeError("Superseded BLIND batch changed: "+correction["behavior"])
+        if not to_path.is_file() or to_path.is_symlink():
+            raise RuntimeError("Missing or unsafe corrected BLIND batch: "+str(to_path.relative_to(ROOT)))
+        if git_blob_sha(to_path)!=correction.get("to_blob_sha"):
+            raise RuntimeError("Corrected BLIND batch changed: "+correction["behavior"])
+        initial_review=load_json(ROOT/correction["initial_review_path"])
+        final_review=load_json(ROOT/correction["final_review_path"])
+        if initial_review.get("status")!="REVISE_AND_REREVIEW":
+            raise RuntimeError("Initial correction review status changed: "+correction["behavior"])
+        if final_review.get("status")!="PASS_TO_BLIND_FREEZE_AUDIT":
+            raise RuntimeError("Final correction review status changed: "+correction["behavior"])
+        allowed_superseded.add(from_path.resolve())
+
     actual={p.resolve() for p in blind_dir.glob("*.jsonl") if p.is_file() and not p.is_symlink()}
     unexpected=actual-canonical_paths-allowed_superseded
     if unexpected:
