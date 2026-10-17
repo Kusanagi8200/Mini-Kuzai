@@ -240,7 +240,14 @@ def canonical_blind_rows(master):
             raise RuntimeError("Final correction review status changed: "+correction["behavior"])
         allowed_superseded.add(from_path.resolve())
 
-    actual={p.resolve() for p in blind_dir.glob("*.jsonl") if p.is_file() and not p.is_symlink()}
+    candidates=list(blind_dir.glob("*.jsonl"))
+    symlinks=[p for p in candidates if p.is_symlink()]
+    if symlinks:
+        raise RuntimeError(
+            "Unexpected BLIND JSONL symlink(s): "
+            + ", ".join(sorted(str(p.relative_to(ROOT)) for p in symlinks))
+        )
+    actual={p.resolve() for p in candidates if p.is_file()}
     unexpected=actual-canonical_paths-allowed_superseded
     if unexpected:
         raise RuntimeError("Unexpected BLIND JSONL files: "+", ".join(sorted(str(p.relative_to(ROOT)) for p in unexpected)))
