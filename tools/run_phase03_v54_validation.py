@@ -93,12 +93,15 @@ def verify_freeze(behavior,index):
     metrics=report.get("metrics",{})
     required={
         "{}_VALIDATION_FROZEN".format(behavior):1,
-        "VALIDATION_FROZEN_RECORDS":index*2,
-        "VALIDATION_BEHAVIORS_FROZEN":index,
         "TRAINING_AUTHORIZED":0,
         "TRAIN_RECORDS":107,
         "TRAIN_GROUPS":29,
     }
+    # B01 predates the cumulative validation counters. From B02 onward those
+    # counters are mandatory and must advance exactly by 2 records / 1 behavior.
+    if index>=2:
+        required["VALIDATION_FROZEN_RECORDS"]=index*2
+        required["VALIDATION_BEHAVIORS_FROZEN"]=index
     for key,value in required.items():
         if metrics.get(key)!=value:
             raise RuntimeError("{} freeze metric mismatch: {} expected {} got {}".format(
