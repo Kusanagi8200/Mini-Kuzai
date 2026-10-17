@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Execute a reviewed public SmolTalk audit and publish numeric-only gogit reports.
+"""Execute a reviewed public Phase 03 audit and publish numeric-only GOGIT reports.
 
 Only committed Python scripts in tools/public-audits are accepted.
 Raw stdout, conversations, commands, prose and unapproved keys are never published.
@@ -359,7 +359,7 @@ def numeric_metrics(raw):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run a vetted public SmolTalk audit, commit and push numeric reports"
+        description="Run a vetted public Phase 03 audit, commit and push numeric reports"
     )
     parser.add_argument("--step", required=True)
     parser.add_argument("--audit", required=True)
@@ -454,7 +454,7 @@ def main():
             git("diff", "--cached", "--check")
             git(
                 "commit", "-m",
-                f"Phase03 public SmolTalk audit {args.step}"
+                f"Phase03 public audit {args.step}"
             )
             committed = True
         except Exception:
