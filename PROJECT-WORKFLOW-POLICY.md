@@ -1,6 +1,6 @@
 # MINI-KUZAI - PROJECT WORKFLOW POLICY
 
-Version: 0.1
+Version: 0.2
 Status: ACTIVE_PROJECT_CONSTRAINT
 
 This policy defines the default execution method for Mini-Kuzai project work.
@@ -174,19 +174,27 @@ Stop and request intervention only at a genuine boundary.
 
 ## 10. Current Phase 03 application
 
-The V54 B02 validation pipeline is the reference implementation of this policy:
+The policy evolved from the V54 per-behavior validation runner into the generic V54/V55 master-loop architecture.
 
-- one initial command;
-- prerequisite verification;
-- integrity gate;
+The current reference implementation is the V55 BLIND pipeline:
+
+- one master command for B01-B18;
+- prerequisite verification against V54 VALIDATION closure;
+- committed canonical batch hashes;
+- explicit semantic review evidence;
+- integrity gate for each behavior;
 - GOGIT publication and verification;
-- freeze gate;
+- freeze gate for each behavior;
 - second GOGIT publication and verification;
-- restart-safe behavior;
+- restart-safe skipping of already verified histories;
+- automatic stop on semantic or authorization failure;
 - no automatic semantic rewriting;
+- immutable correction lineage for revised candidates;
 - training authorization preserved at false.
 
-Future Phase 03 validation families and other suitable Mini-Kuzai workflows should reuse or generalize this pattern rather than returning to unnecessary step-by-step manual execution.
+The V55 run completed all 18 behavior-level BLIND freezes. The project is paused before global BLIND closure.
+
+Future Mini-Kuzai workflows should reuse this state-driven generic pattern where appropriate rather than returning to unnecessary one-command / one-feedback cycles.
 
 ## 11. Priority relative to other project constraints
 
