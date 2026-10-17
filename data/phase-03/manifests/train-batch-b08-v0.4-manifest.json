@@ -1,0 +1,32 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b08-v0.4",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "REVIEWED_PASS",
+  "source_batch": "data/phase-03/train/train-batch-b08-v0.3.jsonl",
+  "reviewed_batch": "data/phase-03/train/train-batch-b08-v0.4.jsonl",
+  "record_count": 8,
+  "group_counts": {
+    "sg-b08-01": 4,
+    "sg-b08-02": 4
+  },
+  "semantic_guard_applied": true,
+  "semantic_guard_review": "PASS",
+  "semantic_leakage_remaining": false,
+  "all_records_reviewed": true,
+  "sg_b08_01_current": 4,
+  "sg_b08_01_planned": 4,
+  "sg_b08_01_complete": true,
+  "sg_b08_02_current": 4,
+  "sg_b08_02_planned": 4,
+  "sg_b08_02_complete": true,
+  "b08_train_complete": true,
+  "canonical_train_record_count_after": 45,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "audit completed B08 TRAIN behavior and continue V53 public derivative review"
+}
