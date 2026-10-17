@@ -1,23 +1,25 @@
 {
   "metrics": {
-    "V53_AW2_B12_ROUTE_VALID": 1,
-    "V53_AW2_DEFER_NO_GROUP": 1,
-    "V53_AW2_DEFER_RESERVED": 1,
-    "V53_AW2_DERIVATIVE_CREATED": 1,
-    "V53_AW2_DERIVATIVE_READY": 1,
-    "V53_AW2_INSPECTED": 3,
-    "V53_AW2_LOW_RISK_A": 3,
-    "V53_AW2_SOURCE_MATCHED": 3,
-    "V53_AW2_TRAIN_APPROVED": 0
+    "V53_B08D_B11_TEST_OVERLAP": 0,
+    "V53_B08D_BEHAVIOR_COMPLETE": 1,
+    "V53_B08D_CANONICAL_TRAIN_RECORDS": 45,
+    "V53_B08D_MODEL_TRAINING_AUTHORIZED": 0,
+    "V53_B08D_RESERVED_OVERLAP": 0,
+    "V53_B08D_SG01_COMPLETE": 1,
+    "V53_B08D_SG01_RECORDS": 4,
+    "V53_B08D_SG02_COMPLETE": 1,
+    "V53_B08D_SG02_RECORDS": 4,
+    "V53_B08D_TOTAL_RECORDS": 8,
+    "V53_B08D_VALIDATION_TEXT_CREATED": 0
   },
   "phase": "03",
   "private_conversation_data_included": false,
-  "producer": "tools/public-audits/smoltalk_v53_a_low_wave2.py",
-  "producer_sha256": "6d124c404facf08080ea3b2f3058334553338669afcf3deaedf335065bd96710",
+  "producer": "tools/public-audits/smoltalk_v53_b08_behavior_complete.py",
+  "producer_sha256": "c95ccdfbb12edec05889be9c44084136fb15f4fbcaaf2e1e046dd8e9c6ac29a8",
   "project": "Mini-Kuzai",
   "semantic_validation_complete": false,
   "source": "SmolTalk v0.4 - public external dataset",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V53-A-LOW-WAVE2-001",
+  "step_id": "PHASE03-SMOLTALK-V53-B08-BEHAVIOR-COMPLETE-001",
   "training_authorized": false
 }
