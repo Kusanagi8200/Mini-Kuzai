@@ -1,0 +1,21 @@
+{
+  "review_id": "V55-B01-BLIND-REVIEW-001",
+  "behavior": "B01",
+  "target_file": "data/phase-03/blind-test/blind-batch-b01-v0.1.jsonl",
+  "target_blob_sha": "ab03a5f3c69c716d536bace853af641d769ea199",
+  "status": "PASS_TO_BLIND_FREEZE_AUDIT",
+  "accepted": 2,
+  "revise": 0,
+  "max_jaccard": 0.214,
+  "schema_version": "v55-blind-review-0.1",
+  "review_type": "INDEPENDENT_SEMANTIC_SPLIT_REVIEW",
+  "independence_scope": "SEPARATE_EVIDENCE_PASS_PROJECT_CONVENTION",
+  "external_human_review_claimed": false,
+  "review_complete": true,
+  "rejected": 0,
+  "held": 0,
+  "semantic_isolation_pass": true,
+  "exact_train_validation_prompt_matches": 0,
+  "training_approved": false,
+  "blind_frozen": false
+}
