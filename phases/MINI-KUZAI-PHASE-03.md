@@ -50,6 +50,25 @@ NVIDIA GeForce RTX 5060 Laptop GPU - 8 GB VRAM
 System RAM - 32 GB
 ```
 
+## Phase 03 execution policy
+
+Phase 03 follows the project-wide [loop-first workflow policy](../PROJECT-WORKFLOW-POLICY.md).
+
+When several deterministic gates are already defined, they should be grouped into a resumable runner rather than exposed as repeated manual stop/start steps. The runner must inspect current state, verify and skip gates already published successfully, execute only missing gates, verify every transition, and stop on semantic, provenance, split-leakage, destructive, private-data, or authorization failures.
+
+For validation-family work, the preferred pattern is:
+
+```text
+author/review evidence
+-> structural integrity gate
+-> GOGIT publication + verification
+-> freeze gate
+-> GOGIT publication + verification
+-> continue to the next machine-checkable gate
+```
+
+A semantic `REVISE`, `REJECT` or `HOLD` decision must never be bypassed by automation. Corrections require explicit versioned evidence and rereview before deterministic execution resumes.
+
 ## Phase 03 targets
 
 The model should progressively demonstrate:
