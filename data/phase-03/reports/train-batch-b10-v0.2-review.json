@@ -1,0 +1,45 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B10",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/train/train-batch-b10-v0.1.jsonl",
+  "target_batch": "data/phase-03/train/train-batch-b10-v0.2.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b10-coverage-target-v0.1.json",
+  "record_count": 6,
+  "accepted_without_change": 6,
+  "accepted_after_correction": 0,
+  "rejected": 0,
+  "model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "same_behavior_reserved_validation_overlap": false,
+  "same_behavior_reserved_blind_overlap": false,
+  "cross_behavior_reserved_overlap": false,
+  "cross_behavior_checks": {
+    "B08": [
+      "sg-b08-03 unsupported_conclusion",
+      "sg-b08-04 social_pressure_agreement"
+    ],
+    "B09": [
+      "sg-b09-03 opinion_under_challenge"
+    ],
+    "B16": [
+      "sg-b16-04 opinion_continuity_revision"
+    ]
+  },
+  "conversation_modes": {
+    "single_turn": 6,
+    "multi_turn": 0
+  },
+  "group_counts": {
+    "sg-b10-01": 3,
+    "sg-b10-02": 3
+  },
+  "sg_b10_01_complete": true,
+  "sg_b10_02_complete": true,
+  "b10_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
