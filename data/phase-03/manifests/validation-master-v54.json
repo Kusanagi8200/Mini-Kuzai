@@ -1,0 +1,111 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "version": "V54",
+  "status": "ACTIVE_MASTER_VALIDATION_SEQUENCE",
+  "total_behaviors": 18,
+  "target_records": 36,
+  "records_per_behavior": 2,
+  "training_authorized": false,
+  "behaviors": [
+    {
+      "behavior": "B01",
+      "group_id": "sg-b01-03",
+      "scenario_type": "false_identity_pressure"
+    },
+    {
+      "behavior": "B02",
+      "group_id": "sg-b02-03",
+      "scenario_type": "false_origin_pressure"
+    },
+    {
+      "behavior": "B03",
+      "group_id": "sg-b03-03",
+      "scenario_type": "imposed_relationship_label"
+    },
+    {
+      "behavior": "B04",
+      "group_id": "sg-b04-02",
+      "scenario_type": "future_identity_pressure"
+    },
+    {
+      "behavior": "B05",
+      "group_id": "sg-b05-03",
+      "scenario_type": "answer_plus_relevant_question"
+    },
+    {
+      "behavior": "B06",
+      "group_id": "sg-b06-03",
+      "scenario_type": "tentative_hypothesis_unknown"
+    },
+    {
+      "behavior": "B07",
+      "group_id": "sg-b07-02",
+      "scenario_type": "hypothesis_plus_test"
+    },
+    {
+      "behavior": "B08",
+      "group_id": "sg-b08-03",
+      "scenario_type": "unsupported_conclusion"
+    },
+    {
+      "behavior": "B09",
+      "group_id": "sg-b09-02",
+      "scenario_type": "philosophical_position"
+    },
+    {
+      "behavior": "B10",
+      "group_id": "sg-b10-03",
+      "scenario_type": "partial_revision"
+    },
+    {
+      "behavior": "B11",
+      "group_id": "sg-b11-03",
+      "scenario_type": "unresolved_contradiction_test"
+    },
+    {
+      "behavior": "B12",
+      "group_id": "sg-b12-03",
+      "scenario_type": "creative_hypothesis_epistemic_control"
+    },
+    {
+      "behavior": "B13",
+      "group_id": "sg-b13-02",
+      "scenario_type": "contextual_sarcasm"
+    },
+    {
+      "behavior": "B14",
+      "group_id": "sg-b14-02",
+      "scenario_type": "frustration_preference"
+    },
+    {
+      "behavior": "B15",
+      "group_id": "sg-b15-02",
+      "scenario_type": "unfamiliar_human_culture"
+    },
+    {
+      "behavior": "B16",
+      "group_id": "sg-b16-03",
+      "scenario_type": "unresolved_curiosity_thread"
+    },
+    {
+      "behavior": "B17",
+      "group_id": "sg-b17-02",
+      "scenario_type": "unknown_implementation_question"
+    },
+    {
+      "behavior": "B18",
+      "group_id": "sg-b18-03",
+      "scenario_type": "avoid_generic_assistant_tone"
+    }
+  ],
+  "execution_policy": {
+    "state_driven": true,
+    "resume": true,
+    "skip_verified_freeze": true,
+    "stop_on_missing_semantic_artifacts": true,
+    "stop_on_semantic_failure": true,
+    "no_automatic_semantic_rewrite": true,
+    "training_authorization_remains_false": true
+  }
+}
