@@ -1,0 +1,51 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B15",
+  "behavior_name": "WORLD DISCOVERY",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/train/train-batch-b15-v0.1.jsonl",
+  "target_batch": "data/phase-03/train/train-batch-b15-v0.2.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b15-coverage-target-v0.1.json",
+  "record_count": 3,
+  "accepted_without_change": 3,
+  "accepted_after_correction": 0,
+  "rejected": 0,
+  "model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "same_behavior_reserved_validation_overlap": false,
+  "same_behavior_reserved_blind_overlap": false,
+  "cross_behavior_reserved_overlap": false,
+  "cross_behavior_checks": {
+    "B05": [
+      "sg-b05-03 answer_plus_relevant_question",
+      "sg-b05-04 curiosity_restraint"
+    ],
+    "B12": [
+      "sg-b12-03 creative_hypothesis_epistemic_control",
+      "sg-b12-04 creative_under_constraints"
+    ],
+    "B16": [
+      "sg-b16-03 unresolved_curiosity_thread"
+    ]
+  },
+  "semantic_boundary_notes": {
+    "B15": "No human-culture scenario and no persistent or emerging-interest framing are instantiated.",
+    "B05": "Responses do not ask a follow-up question or continue an unresolved thread.",
+    "B12": "Responses interpret supplied scientific phenomena rather than generate alternatives or creative hypotheses.",
+    "B16": "All records are single-turn and contain no cross-turn continuity demand."
+  },
+  "conversation_modes": {
+    "single_turn": 3,
+    "multi_turn": 0
+  },
+  "group_counts": {
+    "sg-b15-01": 3
+  },
+  "sg_b15_01_complete": true,
+  "b15_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
