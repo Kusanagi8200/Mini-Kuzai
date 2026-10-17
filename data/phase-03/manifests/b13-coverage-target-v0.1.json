@@ -1,0 +1,24 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "decision_id": "B13-COVERAGE-TARGET-001",
+  "status": "POLICY_DERIVED_BATCH_TARGET",
+  "applies_to_behavior": "B13",
+  "behavior_name": "HUMOR / SARCASM / TEASING",
+  "source_authoring_policy": "data/phase-03/schema/conversation-authoring-policy-v0.2.json",
+  "behavior_priority": "MEDIUM",
+  "policy_train_variants_per_group": 3,
+  "global_schema_rule": false,
+  "b13_target": {
+    "sg-b13-01": 3,
+    "total": 3
+  },
+  "current_before_completion": {
+    "sg-b13-01": 0,
+    "total": 0
+  },
+  "records_to_add": 3,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "model_training_authorized": false
+}
