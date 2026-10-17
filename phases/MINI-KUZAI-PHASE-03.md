@@ -376,6 +376,10 @@ A distinct 32-case V52 stratified pilot was then published: 8 HIGH, 12 MEDIUM an
 
 V48/V49, V51 and V52 have together reviewed **124 distinct public external SmolTalk examples**. The V50 eight-case methodology pilot re-reviewed V48 examples and is not counted twice. The provisional V44 pool and TRAIN/VALIDATION/BLIND allocation have not been modified.
 
+## V53 next workstream - public corpus consolidation (2026-10-17)
+
+The [V53 public corpus consolidation plan](MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) is documented. It distinguishes earlier V48/V49 general-quality RETAIN/REJECT decisions from V51/V52 cognitive/creative A/B/C assessments. The cross-cycle accounting covers 124 distinct publicly reviewed examples, but none is directly approved for TRAIN. A future read-only, public-only inventory is the next technical gate before quality repair or candidate admission. **No V53 execution or numerical GOGIT audit has occurred**, and earlier audit history remains unchanged.
+
 ## Current status
 
 ```text
