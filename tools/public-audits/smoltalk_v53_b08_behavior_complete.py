@@ -19,9 +19,9 @@ PRIOR_REPORT = REPO / (
     "reports/assistant-results/history/"
     "PHASE03-SMOLTALK-V53-B08-GROUP-COMPLETE-001.json"
 )
-BATCH = REPO / "data/phase-03/train/train-batch-b08-v0.4.jsonl"
-REVIEW = REPO / "data/phase-03/reports/train-batch-b08-v0.4-review.json"
-MANIFEST = REPO / "data/phase-03/manifests/train-batch-b08-v0.4-manifest.json"
+BATCH = REPO / "data/phase-03/train/train-batch-b08-v0.5.jsonl"
+REVIEW = REPO / "data/phase-03/reports/train-batch-b08-v0.5-review.json"
+MANIFEST = REPO / "data/phase-03/manifests/train-batch-b08-v0.5-manifest.json"
 EXCLUSION = REPO / "data/phase-03/schema/semantic-split-exclusion-map-v0.1.json"
 
 TRAIN_FILES = (
@@ -31,7 +31,7 @@ TRAIN_FILES = (
     REPO / "data/phase-03/train/train-batch-b03-v0.2.jsonl",
     REPO / "data/phase-03/train/train-batch-b04-v0.2.jsonl",
     REPO / "data/phase-03/train/train-batch-b05-v0.2.jsonl",
-    REPO / "data/phase-03/train/train-batch-b08-v0.4.jsonl",
+    REPO / "data/phase-03/train/train-batch-b08-v0.5.jsonl",
 )
 
 EXPECTED_SG02_IDS = {
@@ -111,13 +111,13 @@ def validate_semantic_scope():
 def validate_batch():
     rows = load_jsonl(BATCH)
     if len(rows) != 8:
-        raise RuntimeError("B08 v0.4 must contain eight records")
+        raise RuntimeError("B08 v0.5 must contain eight records")
     groups = {"sg-b08-01": 0, "sg-b08-02": 0}
     sg02_ids = set()
     for row in rows:
         gid = row.get("group_id")
         if gid not in groups:
-            raise RuntimeError("Unexpected B08 group in v0.4")
+            raise RuntimeError("Unexpected B08 group in v0.5")
         groups[gid] += 1
         if (
             row.get("split") != "train"
@@ -126,6 +126,19 @@ def validate_batch():
             != ("weak_technical_claim" if gid == "sg-b08-01" else "contradiction_detection")
         ):
             raise RuntimeError("B08 record structure changed")
+        messages = row.get("messages")
+        if (
+            not isinstance(messages, list)
+            or len(messages) < 2
+            or any(
+                not isinstance(message, dict)
+                or message.get("role") not in {"user", "assistant"}
+                or not isinstance(message.get("content"), str)
+                or not message.get("content").strip()
+                for message in messages
+            )
+        ):
+            raise RuntimeError("B08 record contains an invalid or empty message")
         if gid == "sg-b08-02":
             sg02_ids.add(row.get("id"))
             if row.get("difficulty") != 3:
@@ -168,8 +181,15 @@ def audit_metrics():
     if (
         review.get("review_status") != "PASS"
         or review.get("record_count") != 8
-        or review.get("inherited_reviewed_records") != 4
-        or review.get("newly_authored_records") != 4
+        or review.get("inherited_reviewed_records") != 5
+        or review.get("corrected_serialization_records") != 3
+        or review.get("corrected_record_ids") != [
+            "p03-train-b08-000006",
+            "p03-train-b08-000007",
+            "p03-train-b08-000008",
+        ]
+        or review.get("serialization_defect_caught_by_prepublication_audit") is not True
+        or review.get("semantic_content_changed_from_intended_authoring") is not False
         or review.get("accepted_records") != 8
         or review.get("rejected") != 0
         or review.get("semantic_guard_review") != "PASS"
@@ -181,13 +201,19 @@ def audit_metrics():
         or review.get("b08_train_complete") is not True
         or review.get("training_authorized") is not False
     ):
-        raise RuntimeError("B08 v0.4 review state changed")
+        raise RuntimeError("B08 v0.5 review state changed")
 
     manifest = load_json(MANIFEST)
     if (
         manifest.get("status") != "REVIEWED_PASS"
         or manifest.get("record_count") != 8
         or manifest.get("group_counts") != {"sg-b08-01": 4, "sg-b08-02": 4}
+        or manifest.get("serialization_corrections") != 3
+        or manifest.get("corrected_record_ids") != [
+            "p03-train-b08-000006",
+            "p03-train-b08-000007",
+            "p03-train-b08-000008",
+        ]
         or manifest.get("semantic_guard_review") != "PASS"
         or manifest.get("semantic_leakage_remaining") is not False
         or manifest.get("all_records_reviewed") is not True
@@ -197,7 +223,7 @@ def audit_metrics():
         or manifest.get("canonical_train_record_count_after") != 45
         or manifest.get("training_authorized") is not False
     ):
-        raise RuntimeError("B08 v0.4 manifest state changed")
+        raise RuntimeError("B08 v0.5 manifest state changed")
 
     metrics = {
         "V53_B08D_TOTAL_RECORDS": 8,
