@@ -1,0 +1,41 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "decision_id": "B18-COVERAGE-TARGET-001",
+  "status": "LOCAL_BATCH_DESIGN_DECISION",
+  "applies_to_behavior": "B18",
+  "global_schema_rule": false,
+  "rationale": "For B18 only, use the established density precedent of completed CRITICAL behaviors with two TRAIN semantic groups. B01, B02, B03, B05, B08, B11, B12 and B16 each currently contain four canonical TRAIN records per TRAIN group. B18 already has two canonical sg-b18-01 records in the reviewed pilot, so only six supplemental records are required to reach a local 4+4 target.",
+  "precedent": {
+    "sg-b01-01": 4,
+    "sg-b01-02": 4,
+    "sg-b02-01": 4,
+    "sg-b02-02": 4,
+    "sg-b03-01": 4,
+    "sg-b03-02": 4,
+    "sg-b05-01": 4,
+    "sg-b05-02": 4,
+    "sg-b08-01": 4,
+    "sg-b08-02": 4,
+    "sg-b11-01": 4,
+    "sg-b11-02": 4,
+    "sg-b12-01": 4,
+    "sg-b12-02": 4,
+    "sg-b16-01": 4,
+    "sg-b16-02": 4
+  },
+  "b18_target": {
+    "sg-b18-01": 4,
+    "sg-b18-02": 4,
+    "total": 8
+  },
+  "current_before_completion": {
+    "sg-b18-01": 2,
+    "sg-b18-02": 0,
+    "total": 2
+  },
+  "supplemental_records_to_add": 6,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "model_training_authorized": false
+}
