@@ -2,7 +2,7 @@
   "project": "MINI-KUZAI",
   "phase": "03",
   "version": "V54",
-  "status": "PENDING_GLOBAL_CLOSURE_GOGIT",
+  "status": "CLOSED",
   "prerequisite_step_id": "PHASE03-SMOLTALK-V54-B18-VALIDATION-FREEZE-001",
   "target_step_id": "PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001",
   "target_train_records": 107,
@@ -13,5 +13,10 @@
   "semantic_validation_complete_after_success": true,
   "blind_authoring_authorized_after_success": true,
   "training_authorized_after_success": false,
-  "note": "Successful global closure opens BLIND TEST authoring only. It does not authorize tokenizer finalization or model training."
+  "note": "Successful global closure opens BLIND TEST authoring only. It does not authorize tokenizer finalization or model training.",
+  "closure_complete": true,
+  "closure_step_id": "PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001",
+  "semantic_validation_complete": true,
+  "blind_authoring_authorized": true,
+  "training_authorized": false
 }
