@@ -43,6 +43,10 @@ class V53B08BehaviorCompleteTests(unittest.TestCase):
         self.assertIn("p03-train-b08-000005", audit.EXPECTED_SG02_IDS)
         self.assertIn("p03-train-b08-000008", audit.EXPECTED_SG02_IDS)
 
+    def test_current_repository_state(self):
+        metrics = audit.audit_metrics()
+        audit.require_expected_state(metrics)
+
     def test_public_numeric_allowlist_exact(self):
         self.assertEqual(len(audit.METRIC_KEYS), 11)
         self.assertTrue(audit.METRIC_KEYS <= gogit.METRIC_KEYS)
