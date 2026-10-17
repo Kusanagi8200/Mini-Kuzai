@@ -1,0 +1,20 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B04",
+  "declaration_id": "V54-B04-VALIDATION-FREEZE-001",
+  "status": "PENDING_SUCCESSFUL_GOGIT_AUDIT",
+  "target_step_id": "PHASE03-SMOLTALK-V54-B04-VALIDATION-FREEZE-001",
+  "integrity_step_id": "PHASE03-SMOLTALK-V54-B04-VALIDATION-INTEGRITY-001",
+  "prerequisite_b03_step_id": "PHASE03-SMOLTALK-V54-B03-VALIDATION-FREEZE-001",
+  "target_batch": "data/phase-03/validation/validation-batch-b04-v0.1.jsonl",
+  "target_batch_blob_sha": "5481509165aabf0f4e4c888b88aa893ffa96b80c",
+  "records": 2,
+  "group_id": "sg-b04-02",
+  "review_complete": true,
+  "semantic_guard_pass": true,
+  "hidden_roadmap_exposed": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "freeze_condition": "A successful target_step_id GOGIT audit freezes exactly the referenced B04 batch. A failed or absent audit leaves B04 unfrozen."
+}
