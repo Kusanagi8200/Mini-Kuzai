@@ -1,0 +1,44 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b18-v0.2",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "REVIEWED_PASS",
+  "inherited_canonical_source": "data/phase-03/train/train-pilot-v0.2.jsonl",
+  "source_batch": "data/phase-03/train/train-batch-b18-v0.1.jsonl",
+  "reviewed_batch": "data/phase-03/train/train-batch-b18-v0.2.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b18-coverage-target-v0.1.json",
+  "inherited_record_count": 2,
+  "supplemental_record_count": 6,
+  "behavior_total_record_count": 8,
+  "supplemental_group_counts": {
+    "sg-b18-01": 2,
+    "sg-b18-02": 4
+  },
+  "total_group_counts": {
+    "sg-b18-01": 4,
+    "sg-b18-02": 4
+  },
+  "provenance_counts": {
+    "phase03-designed": 8
+  },
+  "semantic_guard_applied": true,
+  "semantic_guard_review": "PASS",
+  "semantic_leakage_remaining": false,
+  "model_visible_text_changed": false,
+  "all_records_reviewed": true,
+  "sg_b18_01_current": 4,
+  "sg_b18_01_target": 4,
+  "sg_b18_01_complete": true,
+  "sg_b18_02_current": 4,
+  "sg_b18_02_target": 4,
+  "sg_b18_02_complete": true,
+  "b18_train_complete": true,
+  "canonical_train_record_count_after": 75,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "audit completed B18 TRAIN behavior before further Phase 03 corpus expansion"
+}
