@@ -231,6 +231,8 @@ V50 has completed a **local-only heuristic screening of all 1,139 provisional V4
 
 **Phase 03 data preparation is paused after the completed V52 final GOGIT audit.** The 2026-10-10 [historical pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) remains preserved. Across V48/V49, V51 and V52, 124 distinct public SmolTalk examples have been reviewed; none is automatically approved for TRAIN. Broader V44 assessment, source-level curation and anti-leakage checks remain open. No tokenizer vocabulary has been frozen and no Phase 03 training has started or been authorized.
 
+**V53 - public corpus consolidation plan:** After V52 closure, the next workstream is to reconcile historical V48/V49 quality decisions with V51/V52 persona-oriented A/B/C assessments while keeping their rubrics distinct. The [V53 review and quality-gate plan](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) documents 124 reviewed public cases, the proposed A/B/C handling, examples requiring correction, and the next read-only cross-cycle inventory. **This is documentation only: no V53 audit has run, no records have been admitted to TRAIN, and no model training is authorized.**
+
 ### Private local corpus pipeline
 
 Phase 03 includes a local-only pipeline for evaluating private conversational corpora as possible future training material.
