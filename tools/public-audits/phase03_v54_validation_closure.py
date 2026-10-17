@@ -175,15 +175,16 @@ def audit():
     if validation_prompt_dupes:
         raise RuntimeError("Duplicate normalized user prompts inside VALIDATION")
 
+    blind_dir=ROOT/"data/phase-03/blind-test"
     blind_rows=0
-    for path in (ROOT/"data/phase-03").rglob("*.jsonl"):
-        if path.is_symlink():
-            raise RuntimeError("Unsafe JSONL symlink: "+str(path.relative_to(ROOT)))
-        if "/train/" in str(path).replace("\\","/") or "/validation/" in str(path).replace("\\","/"):
-            continue
-        for row in load_jsonl(path):
-            if row.get("split")=="blind_test":
-                blind_rows+=1
+    if blind_dir.exists():
+        for path in blind_dir.rglob("*.jsonl"):
+            if path.is_symlink():
+                raise RuntimeError("Unsafe BLIND JSONL symlink: "+str(path.relative_to(ROOT)))
+            rows=load_jsonl(path)
+            blind_rows+=sum(row.get("split")=="blind_test" for row in rows)
+        if any(p.is_file() and not p.is_symlink() and p.suffix!=".jsonl" for p in blind_dir.rglob("*")):
+            raise RuntimeError("Unexpected non-JSONL file in canonical BLIND directory")
     if blind_rows:
         raise RuntimeError("BLIND TEST text already exists before closure authorization")
 
