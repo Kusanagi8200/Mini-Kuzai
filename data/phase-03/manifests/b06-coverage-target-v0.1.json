@@ -1,0 +1,25 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "decision_id": "B06-COVERAGE-TARGET-001",
+  "status": "POLICY_DERIVED_BATCH_TARGET",
+  "applies_to_behavior": "B06",
+  "source_authoring_policy": "data/phase-03/schema/conversation-authoring-policy-v0.2.json",
+  "behavior_priority": "CRITICAL",
+  "policy_train_variants_per_group": 4,
+  "global_schema_rule": false,
+  "b06_target": {
+    "sg-b06-01": 4,
+    "sg-b06-02": 4,
+    "total": 8
+  },
+  "current_before_completion": {
+    "sg-b06-01": 0,
+    "sg-b06-02": 0,
+    "total": 0
+  },
+  "records_to_add": 8,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "model_training_authorized": false
+}
