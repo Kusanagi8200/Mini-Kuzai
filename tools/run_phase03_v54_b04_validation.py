@@ -89,11 +89,12 @@ def ensure_gogit_allowlist():
     if all('"{}"'.format(k) in raw for k in B04_KEYS):
         print("SKIP B04_GOGIT_ALLOWLIST: already installed")
         return
-    anchor='    "B02_VALIDATION_FROZEN", "VALIDATION_FROZEN_RECORDS",\n'
+    anchor='    "B03_INDEPENDENT_SIGNOFF", "B03_VALIDATION_FROZEN",\n    "VALIDATION_FROZEN_RECORDS",\n'
     if anchor not in raw:
-        raise RuntimeError("GOGIT B02 allowlist anchor not found")
+        raise RuntimeError("GOGIT B03 allowlist anchor not found")
     replacement=(
-        '    "B02_VALIDATION_FROZEN", "VALIDATION_B04_CANDIDATES",\n'
+        '    "B03_INDEPENDENT_SIGNOFF", "B03_VALIDATION_FROZEN",\n'
+        '    "VALIDATION_B04_CANDIDATES", "B04_HIDDEN_ROADMAP_EXPOSURES",\n'
         '    "B04_INDEPENDENT_SIGNOFF", "B04_VALIDATION_FROZEN",\n'
         '    "VALIDATION_FROZEN_RECORDS",\n'
     )
