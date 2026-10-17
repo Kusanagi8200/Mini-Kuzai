@@ -30,15 +30,13 @@ Do not rerun this exact command: the historical STEP_ID already exists and the w
 
 Each completed run commits and pushes four **public numerical report** files when checks pass. No manual git add, commit or push is needed. Every new run requires a new, unique STEP_ID.
 
-## Pause status - 2026-10-10
+## Current status - 2026-10-17
 
-Phase 03 is paused after public external SmolTalk audit `PHASE03-SMOLTALK-V46-CREATIVE-001`. The current published report is under `reports/assistant-results/history/` and `latest.json`.
+Phase 03 remains in dataset preparation. V48/V49 reviewed 68 public cases; V51 reviewed 24; V52 reviewed 32. The last GOGIT publication is the [V52 final numeric/source-integrity report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json), committed on 2026-10-17 as [`8a28e956`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/8a28e95637377f29d7204f51d49a174f2518929f). It confirms 32/32 reviewed, 8 A, 12 B, 12 C, 0 HOLD, 0 PENDING, 0 TRAIN approved.
 
-The exact next project step is V47: a local qualitative review of V46 candidates. No new audit, commit, push, tokenizer operation, or training run is scheduled while paused.
+The earlier V52 8/32 progress report and the [2026-10-10 V46 pause checkpoint](../phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) are historical records. Do not rewrite them or re-use a published STEP_ID. Use `reports/assistant-results/latest.json` to identify the newest public numeric audit and `reports/assistant-results/history/` for immutable previous reports.
 
-Resume only when explicitly requested by the user. New V47 publication, if authorized, must use a reviewed public SmolTalk-only audit script, an unused STEP_ID, and the same restricted numerical-output policy. The local review queue and full conversations stay outside Git.
-
-See [Phase 03 pause checkpoint](../phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md).
+Next research work requires explicit resumption: corpus-quality consolidation, factual repair, deduplication, semantic anti-leakage checks and broader candidate sampling. The V44 provisional selection, tokenizer, TRAIN/VALIDATION/BLIND assignments and training authorization remain unchanged. Private corpus content and derived metrics stay local and are never published through GOGIT.
 
 ## Adding a future audit
 
