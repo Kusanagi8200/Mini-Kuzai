@@ -1,0 +1,40 @@
+{
+  "schema_version": "v53-eligibility-review-0.1",
+  "eligibility_id": "V53-ELIG-003-V51-002",
+  "derivative_id": "V53-DERIV-003-V51-002",
+  "review_status": "COMPLETE",
+  "eligibility_status": "ELIGIBLE_FOR_ADMISSION_DECISION",
+  "training_approved": false,
+  "dataset_split_assigned": false,
+  "admission_decision_made": false,
+  "provenance": {
+    "status": "PASS",
+    "public_dataset": "HuggingFaceTB/smol-smoltalk",
+    "source_license": "apache-2.0",
+    "license_evidence": "Hugging Face dataset card verified 2026-10-17",
+    "source_content_sha256": "383f5926f407ae183de348a6aae660e952a4e03887ba2ed275d259969e23fc9a"
+  },
+  "duplicate_control": {
+    "canonical_train_records_compared": 45,
+    "exact_duplicate": false,
+    "near_duplicate_method": "normalized 5-token shingle Jaccard",
+    "near_duplicate_threshold": 0.2,
+    "maximum_train_jaccard": 0,
+    "near_duplicate_hit": false
+  },
+  "semantic_control": {
+    "manual_review_required": true,
+    "primary_behavior_considered": "B12",
+    "train_group_considered": "sg-b12-01",
+    "train_scenario": "alternative_generation",
+    "reserved_validation_group": "sg-b12-03",
+    "reserved_validation_scenario": "creative_hypothesis_epistemic_control",
+    "reserved_blind_group": "sg-b12-04",
+    "reserved_blind_scenario": "creative_under_constraints",
+    "reserved_validation_collision": false,
+    "reserved_blind_collision": false,
+    "rationale": "The dialogue generates several non-trivial fictional alternatives and compares narrative viewpoints. Speculative pandemic aftermath elements are explicitly framed as story options rather than real-world hypotheses, and the user does not impose the explicit constraint-solving challenge reserved for the blind-test group."
+  },
+  "proposed_train_group_if_admitted": "sg-b12-01",
+  "next_action": "ADMISSION_DECISION_REQUIRED"
+}
