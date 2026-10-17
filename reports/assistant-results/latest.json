@@ -2,8 +2,8 @@
   "metrics": {
     "BLIND_AUTHORING_AUTHORIZED": 1,
     "BLIND_BATCH_CANDIDATES": 2,
-    "BLIND_BATCH_FROZEN": 1,
-    "BLIND_BATCH_INDEX": 15,
+    "BLIND_BATCH_FROZEN": 0,
+    "BLIND_BATCH_INDEX": 16,
     "BLIND_BATCH_SEMANTIC_PASS": 1,
     "BLIND_BATCH_SIGNOFF": 1,
     "BLIND_BEHAVIORS_FROZEN": 15,
@@ -20,12 +20,12 @@
   },
   "phase": "03",
   "private_conversation_data_included": false,
-  "producer": "tools/public-audits/phase03_v55_blind_freeze.py",
-  "producer_sha256": "59524c1264490207508d8e7b02f001d9f126a9d3e6ec948e9e4d82f01a7fb8fd",
+  "producer": "tools/public-audits/phase03_v55_blind_integrity.py",
+  "producer_sha256": "9c01678bbd107bc9f1913338b49b192665d40cafe1d287b461f06624e53879db",
   "project": "Mini-Kuzai",
   "semantic_validation_complete": true,
   "source": "Mini-Kuzai Phase 03 designed blind-test corpus",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V55-B15-BLIND-FREEZE-001",
+  "step_id": "PHASE03-SMOLTALK-V55-B16-BLIND-INTEGRITY-001",
   "training_authorized": false
 }
