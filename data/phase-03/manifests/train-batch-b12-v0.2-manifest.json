@@ -1,0 +1,33 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "dataset_generation": "train-batch-b12-v0.2",
+  "schema_version": "0.1",
+  "split": "train",
+  "status": "REVIEWED_PASS",
+  "source_batch": "data/phase-03/train/train-batch-b12-v0.1.jsonl",
+  "reviewed_batch": "data/phase-03/train/train-batch-b12-v0.2.jsonl",
+  "source_admission_decision": "reviews/smoltalk-v53/admissions/V53-ADMIT-002-V51-002.json",
+  "source_derivative": "reviews/smoltalk-v53/a-low-wave2/V53-DERIV-003-V51-002.json",
+  "record_count": 1,
+  "group_counts": {
+    "sg-b12-01": 1
+  },
+  "review_decision_counts": {
+    "ACCEPT": 1
+  },
+  "semantic_guard_applied": true,
+  "semantic_guard_review": "PASS",
+  "semantic_leakage_remaining": false,
+  "model_visible_text_changed": false,
+  "all_records_reviewed": true,
+  "b12_sg01_current": 1,
+  "b12_sg02_current": 0,
+  "b12_train_complete": false,
+  "canonical_train_record_count_after": 46,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false,
+  "validation_errors": [],
+  "next_operation": "audit canonical B12 serialization before any additional B12 authoring or admission"
+}
