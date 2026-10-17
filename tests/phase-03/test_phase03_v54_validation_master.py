@@ -17,6 +17,11 @@ class V54ValidationMasterTests(unittest.TestCase):
         config=master.load_config()
         self.assertEqual(config["total_behaviors"],18)
         self.assertEqual(config["target_records"],36)
+        self.assertEqual(config["status"],"CLOSED")
+        self.assertTrue(config["freeze_complete"])
+        self.assertTrue(config["global_validation_closure_complete"])
+        self.assertTrue(config["semantic_validation_complete"])
+        self.assertTrue(config["blind_authoring_authorized"])
         self.assertFalse(config["training_authorized"])
 
     def test_current_freeze_prefix_is_contiguous(self):
