@@ -1,6 +1,6 @@
 # MINI-KUZAI PHASE 03 - CONVERSATION AUTHORING POLICY
 
-Version: 0.4
+Version: 0.5
 Status: ACTIVE_POLICY
 
 This document defines how Phase 03 custom conversations must be authored.
@@ -9,7 +9,9 @@ Version 0.2 added an explicit semantic split guard after a TRAIN overlap was det
 
 Version 0.3 added the project-wide loop-first execution constraint: deterministic gates should be chained into resumable workflows whenever this does not weaken semantic review or authorization controls.
 
-Version 0.4 records the completed V54 VALIDATION closure and opens BLIND TEST authoring while keeping model training unauthorized.
+Version 0.4 recorded the completed V54 VALIDATION closure and opened BLIND TEST authoring while keeping model training unauthorized.
+
+Version 0.5 records the completed V55 behavior-level BLIND freeze, preserves the B02/B03 correction lineage, and explicitly distinguishes behavior-level freeze from the still-pending global BLIND closure.
 
 ## Core authoring rules
 
@@ -76,22 +78,31 @@ It does not contain final VALIDATION or BLIND TEST conversations.
 Canonical TRAIN records      : 107 AUDITED
 TRAIN semantic groups        : 29 / 29 AUDITED
 TRAIN provenance             : 105 PHASE03-DESIGNED / 2 SMOLTALK
+
 VALIDATION records           : 36 / 36 FROZEN
 VALIDATION semantic groups   : 18 / 18 FROZEN
 VALIDATION freeze histories  : 18 / 18
 VALIDATION semantic passes   : 18 / 18
 SEMANTIC VALIDATION COMPLETE : YES
-BLIND authoring authorized   : YES
-BLIND TEST text              : 0 / 36 CREATED
-BLIND TEST groups reserved   : 18 / 18
+
+BLIND TEST records           : 36 / 36 FROZEN
+BLIND TEST semantic groups   : 18 / 18 FROZEN
+BLIND behavior freezes       : 18 / 18
+BLIND global closure         : PENDING
+
+TOTAL controlled corpus      : 179 RECORDS / 65 GROUPS
 TRAINING                     : NOT AUTHORIZED
 ```
 
 The V53 TRAIN completion audit confirms 107 canonical TRAIN records across all 29 TRAIN groups, including 105 `phase03-designed` records and 2 admitted public SmolTalk derivatives.
 
-The V54 closure gate `PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001` confirms that all 36 VALIDATION records across all 18 reserved validation groups are frozen, semantically signed off, and free of exact TRAIN collisions. The published GOGIT state records `semantic_validation_complete=true`, `BLIND_AUTHORING_AUTHORIZED=1`, and `TRAINING_AUTHORIZED=0`.
+The V54 closure gate `PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001` confirms that all 36 VALIDATION records across all 18 reserved validation groups are frozen, semantically signed off, and free of exact TRAIN collisions.
 
-See `MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md`.
+V55 then froze all 36 BLIND TEST records across all 18 reserved blind groups. B02 and B03 were explicitly revised and rereviewed before freeze after semantic screening detected excessive proximity to existing same-behavior material. The final V55 behavior-level freeze step is `PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001`.
+
+The BLIND master manifest is now `FROZEN_PENDING_GLOBAL_CLOSURE`. This status does not authorize training.
+
+See `MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md` and `MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md`.
 
 ## BLIND TEST authoring rules
 
@@ -108,8 +119,12 @@ Before authoring a BLIND conversation:
 7. If a BLIND prompt is later inspected during model development, it loses untouched-test status and must be reclassified as diagnostic.
 8. Any `REVISE`, `REJECT`, or `HOLD` semantic decision stops automated progression until corrected and rereviewed.
 
-## Next operation
+## Current pause boundary
 
-Author and freeze the 18 reserved BLIND TEST groups, targeting 36 records, using the loop-first resumable workflow where deterministic gates can be chained safely.
+BLIND TEST authoring, review and behavior-level freeze are complete.
 
-Do not authorize tokenizer finalization or model training until BLIND TEST authoring, review, freeze, and global closure are complete and the remaining pre-training gates explicitly pass.
+The project is intentionally paused before global BLIND closure.
+
+No tokenizer finalization, architecture selection, training-mixture finalization or model training is authorized at this checkpoint.
+
+When work resumes, the next semantic transition must be an explicit global BLIND closure gate that independently verifies the frozen 36-record / 18-group BLIND corpus and the complete TRAIN / VALIDATION / BLIND separation. That closure must remain distinct from any later training-authorization gate.
