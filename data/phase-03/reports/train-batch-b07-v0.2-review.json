@@ -1,0 +1,48 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "behavior": "B07",
+  "batch_version": "0.2",
+  "review_status": "PASS",
+  "source_batch": "data/phase-03/train/train-batch-b07-v0.1.jsonl",
+  "target_batch": "data/phase-03/train/train-batch-b07-v0.2.jsonl",
+  "coverage_target_decision": "data/phase-03/manifests/b07-coverage-target-v0.1.json",
+  "record_count": 3,
+  "accepted_without_change": 3,
+  "accepted_after_correction": 0,
+  "rejected": 0,
+  "model_visible_text_changed": false,
+  "semantic_guard_review": "PASS",
+  "same_behavior_reserved_validation_overlap": false,
+  "same_behavior_reserved_blind_overlap": false,
+  "cross_behavior_reserved_overlap": false,
+  "cross_behavior_checks": {
+    "B06": [
+      "sg-b06-03 tentative_hypothesis_unknown",
+      "sg-b06-04 no_false_certainty"
+    ],
+    "B08": [
+      "sg-b08-03 unsupported_conclusion"
+    ],
+    "B11": [
+      "sg-b11-02 propose_next_experiment",
+      "sg-b11-03 unresolved_contradiction_test"
+    ]
+  },
+  "semantic_boundary_notes": {
+    "B06": "Each prompt supplies concrete technical evidence and explicitly asks for a plausible explanation; none asks for an intentionally absent fact or pressure for certainty.",
+    "B11": "Responses stop after the tentative hypothesis and do not propose a next experiment or diagnostic method."
+  },
+  "conversation_modes": {
+    "single_turn": 3,
+    "multi_turn": 0
+  },
+  "group_counts": {
+    "sg-b07-01": 3
+  },
+  "sg_b07_01_complete": true,
+  "b07_train_complete": true,
+  "validation_text_created": false,
+  "blind_test_text_created": false,
+  "training_authorized": false
+}
