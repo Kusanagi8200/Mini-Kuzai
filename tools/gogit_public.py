@@ -319,14 +319,14 @@ def checked_audit(path_string):
 def source_for_audit(tracked):
     if tracked.startswith("tools/public-audits/phase03_v54_"):
         return SOURCE_PHASE03_VALIDATION
-    if tracked.startswith("tools/public-audits/phase03_v55_"):
+    if tracked.startswith("tools/public-audits/phase03_v55_blind_"):
         return SOURCE_PHASE03_BLIND
     return SOURCE
 
 
 def semantic_validation_complete_for_audit(tracked, metrics):
     closure = tracked == "tools/public-audits/phase03_v54_validation_closure.py"
-    blind_workstream = tracked.startswith("tools/public-audits/phase03_v55_")
+    blind_workstream = tracked.startswith("tools/public-audits/phase03_v55_blind_")
     return (
         (closure or blind_workstream)
         and metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
