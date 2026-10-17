@@ -1,0 +1,35 @@
+{
+  "schema_version": "v54-validation-review-0.1",
+  "review_id": "V54-B07-INDEPENDENT-REVIEW-002",
+  "review_type": "INDEPENDENT_SEMANTIC_SPLIT_REREVIEW",
+  "independence_scope": "SEPARATE_EVIDENCE_PASS_PROJECT_CONVENTION",
+  "external_human_review_claimed": false,
+  "target_file": "data/phase-03/validation/validation-batch-b07-v0.2.jsonl",
+  "target_blob_sha": "d0682736d44c9113c00db25430551fad3f434014",
+  "previous_review_id": "V54-B07-INDEPENDENT-REVIEW-001",
+  "review_complete": true,
+  "review_status": "PASS_TO_REVIEWED_BATCH_AND_FREEZE_AUDIT",
+  "candidates_total": 2,
+  "accepted": 2,
+  "revise": 0,
+  "rejected": 0,
+  "held": 0,
+  "semantic_isolation_pass": true,
+  "training_approved": false,
+  "validation_frozen": false,
+  "corrected_record_ids": [
+    "p03-val-b07-000002"
+  ],
+  "cross_split_evidence": {
+    "train_records": 107,
+    "train_groups": 29,
+    "exact_user_prompt_matches": 0,
+    "maximum_jaccard_nearby_train_after_correction": {
+      "p03-val-b07-000001": 0.15,
+      "p03-val-b07-000002": 0.128
+    },
+    "previous_problem_jaccard": 0.25,
+    "blind_group": "sg-b07-03 speculation_boundary"
+  },
+  "scope_note": "Both records now require a hypothesis plus an explicit verification method. The corrected second scenario no longer reuses the B05 dialogue-source/generation-change setup."
+}
