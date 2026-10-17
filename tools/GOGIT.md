@@ -1,4 +1,4 @@
-# Mini-Kuzai - gogit: automatic publication of PUBLIC audit metrics
+# Mini-Kuzai - GOGIT: automatic publication of public Phase 03 audit metrics
 
 The local working directory is /root/GitHub-Mini-Kuzai/Mini-Kuzai.
 The existing Python environment can be activated from this directory:
@@ -16,7 +16,7 @@ One terminal command:
 6. Stages exactly those four paths, checks the diff, commits, pushes without force.
 7. Verifies the remote HEAD and prints GOGIT: READY.
 
-The user then says "gogit" in ChatGPT. ChatGPT reads latest.json from public GitHub.
+The user then says "gogit" in ChatGPT. ChatGPT reads `latest.json` and, when needed, immutable history records from public GitHub.
 
 ## Historical first-run verification (V42 - already completed)
 
@@ -32,25 +32,62 @@ Each completed run commits and pushes four **public numerical report** files whe
 
 ## Current status - 2026-10-17
 
-Phase 03 remains in dataset preparation. V48/V49 reviewed 68 public cases; V51 reviewed 24; V52 reviewed 32. The last GOGIT publication is the [V52 final numeric/source-integrity report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json), committed on 2026-10-17 as [`8a28e956`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/8a28e95637377f29d7204f51d49a174f2518929f). It confirms 32/32 reviewed, 8 A, 12 B, 12 C, 0 HOLD, 0 PENDING, 0 TRAIN approved.
+GOGIT now serves multiple public Phase 03 audit families, not only external SmolTalk review.
 
-The earlier V52 8/32 progress report and the [2026-10-10 V46 pause checkpoint](../phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) are historical records. Do not rewrite them or re-use a published STEP_ID. Use `reports/assistant-results/latest.json` to identify the newest public numeric audit and `reports/assistant-results/history/` for immutable previous reports.
+Current public sources include:
 
-Next research work requires explicit resumption: corpus-quality consolidation, factual repair, deduplication, semantic anti-leakage checks and broader candidate sampling. The V44 provisional selection, tokenizer, TRAIN/VALIDATION/BLIND assignments and training authorization remain unchanged. Private corpus content and derived metrics stay local and are never published through GOGIT.
+- external public SmolTalk aggregate audits;
+- Phase 03 designed VALIDATION aggregate audits;
+- Phase 03 designed BLIND TEST aggregate audits.
+
+The latest published state is the V55 B18 BLIND freeze:
+
+`PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001`
+
+It confirms:
+
+```text
+TRAIN records                  : 107
+TRAIN groups                   : 29
+VALIDATION records             : 36
+VALIDATION groups              : 18
+SEMANTIC_VALIDATION_COMPLETE   : 1
+BLIND TEST records frozen      : 36
+BLIND behaviors frozen         : 18
+cross-split exact collisions   : 0
+TRAINING_AUTHORIZED            : 0
+```
+
+The project is paused after behavior-level BLIND freeze. Global BLIND closure has not been published.
+
+Historical V42-V53 SmolTalk reports and V54 VALIDATION reports remain immutable records. Do not rewrite them or reuse a published STEP_ID.
+
+Use `reports/assistant-results/latest.json` for the newest public numeric audit and `reports/assistant-results/history/` for immutable prior reports.
 
 ## Adding a future audit
 
-Create and review a new file under tools/public-audits/, restricted to the external public SmolTalk dataset, then commit and push that SCRIPT first. Ensure the script prints only numerical aggregate counters with allowed keys after the results marker. Use a new PHASE03-SMOLTALK-... STEP_ID for the next run.
+Create and review a new file under `tools/public-audits/`, commit and push that script first, and ensure it operates only on public repository data appropriate for publication. The script must print only numerical aggregate counters with allowlisted keys after the results marker. Use a new unique `PHASE03-SMOLTALK-...` STEP_ID for each run.
 
 Running a normal Python script directly does NOT automatically publish its output. Use tools/gogit_public.py as the entrypoint. Arbitrary local stdout is never sent to GitHub.
 
 ## Privacy and scope
 
-This publisher is intentionally ONLY for reports derived from public SmolTalk datasets. NEVER point a public audit at an exported private chat, private corpus, personal messages, private ChatGPT dataset, model logs carrying private dialogue, local credentials, or a combined public/private corpus.
+GOGIT publishes only numeric aggregate reports from reviewed public-audit scripts committed under `tools/public-audits/`.
 
-The allowlist blocks unknown textual output and prevents accidental raw transcript publication. It cannot mathematically verify the origin of numbers in user-supplied audit code. Every new public-audits script must be reviewed before its first run.
+Allowed current use includes public SmolTalk analysis and aggregate integrity/freeze metrics derived from the public Phase 03 designed TRAIN / VALIDATION / BLIND repository artifacts.
 
-Private-source reports stay local and must never be committed. No training is authorized by this publishing workflow.
+Never point a public audit at:
+
+- exported private chats;
+- local-only private corpus material;
+- personal messages;
+- credentials or secrets;
+- model logs containing private dialogue;
+- any combined public/private source where private-derived metrics would be disclosed.
+
+The allowlist blocks unknown textual output and prevents accidental raw transcript publication. It cannot mathematically verify the provenance of numbers produced by a reviewed audit script, so every new public-audit script must be reviewed before first execution.
+
+Private-source reports stay local and must never be committed. GOGIT publication never authorizes training.
 
 ## Failure modes
 
