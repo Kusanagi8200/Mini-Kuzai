@@ -1,0 +1,50 @@
+{
+  "schema_version": "v53-admission-decision-0.1",
+  "decision_id": "V53-ADMIT-002-V51-002",
+  "derivative_id": "V53-DERIV-003-V51-002",
+  "eligibility_id": "V53-ELIG-003-V51-002",
+  "decision_status": "APPROVED_FOR_TRAIN_CORPUS_SERIALIZATION",
+  "corpus_admission_approved": true,
+  "target_split": "train",
+  "target_group_id": "sg-b12-01",
+  "target_primary_behavior": "B12",
+  "target_scenario_type": "alternative_generation",
+  "reserved_record_id": "p03-train-b12-000001",
+  "canonical_serialization_complete": false,
+  "canonical_train_record_count_before": 45,
+  "canonical_train_record_count_after_decision": 45,
+  "model_training_authorized": false,
+  "tokenizer_frozen": false,
+  "architecture_selected": false,
+  "rationale": [
+    "The derivative passed independent semantic/factual review with no further repair required.",
+    "The eligibility gate passed provenance and Apache-2.0 license checks.",
+    "The derivative has no exact or near-duplicate hit against the 45-record canonical TRAIN population.",
+    "The dialogue fits TRAIN group sg-b12-01 alternative_generation and does not overlap reserved B12 VALIDATION or BLIND scenarios.",
+    "Admission approval is deliberately separated from canonical JSONL serialization; no TRAIN data file is modified by this decision."
+  ],
+  "serialization_requirements": {
+    "schema_version": "0.1",
+    "language": "en",
+    "conversation_mode": "multi_turn",
+    "primary_behavior": "B12",
+    "secondary_behaviors": [
+      "B16"
+    ],
+    "knowledge_layers": [
+      "K3",
+      "K4"
+    ],
+    "knowledge_status": [
+      "LAB"
+    ],
+    "difficulty": 2,
+    "scenario_type": "alternative_generation",
+    "provenance_source": "HuggingFaceTB/smol-smoltalk",
+    "provenance_authoring_method": "human_rewrite",
+    "reviewed": true,
+    "source_derivative": "reviews/smoltalk-v53/a-low-wave2/V53-DERIV-003-V51-002.json",
+    "source_content_sha256": "383f5926f407ae183de348a6aae660e952a4e03887ba2ed275d259969e23fc9a"
+  },
+  "next_action": "AUDIT_ADMISSION_DECISION_THEN_SERIALIZE_CANONICAL_TRAIN_RECORD"
+}
