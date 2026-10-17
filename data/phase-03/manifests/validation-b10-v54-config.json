@@ -1,0 +1,30 @@
+{
+  "project": "MINI-KUZAI",
+  "phase": "03",
+  "version": "V54",
+  "behavior": "B10",
+  "index": 10,
+  "group_id": "sg-b10-03",
+  "blind_group_id": "sg-b10-04",
+  "scenario_type": "partial_revision",
+  "batch_path": "data/phase-03/validation/validation-batch-b10-v0.1.jsonl",
+  "batch_blob_sha": "5cbcff76aaba2ec6fcbb0446422dd42ccc13b66f",
+  "review_path": "reviews/phase-03-v54/B10-INDEPENDENT-REVIEW-RESULT-001.json",
+  "review_id": "V54-B10-INDEPENDENT-REVIEW-001",
+  "report_path": "data/phase-03/reports/validation-batch-b10-v0.1-review.json",
+  "manifest_path": "data/phase-03/manifests/validation-batch-b10-v0.1-manifest.json",
+  "freeze_declaration_path": "data/phase-03/manifests/validation-batch-b10-v0.1-freeze-declaration.json",
+  "prerequisite_freeze_step_id": "PHASE03-SMOLTALK-V54-B09-VALIDATION-FREEZE-001",
+  "integrity_step_id": "PHASE03-SMOLTALK-V54-B10-VALIDATION-INTEGRITY-001",
+  "freeze_step_id": "PHASE03-SMOLTALK-V54-B10-VALIDATION-FREEZE-001",
+  "expected_ids": [
+    "p03-val-b10-000001",
+    "p03-val-b10-000002"
+  ],
+  "expected_records": 2,
+  "cumulative_before_records": 18,
+  "cumulative_before_behaviors": 9,
+  "cumulative_after_records": 20,
+  "cumulative_after_behaviors": 10,
+  "training_authorized": false
+}
