@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V53 public corpus consolidation plan
 
-Status: **V53 methodology and read-only cross-cycle audit implementation documented on 2026-10-17; the V53 GOGIT audit has not yet been executed and no dataset admission has occurred.**
+Status: **V53 Gate 1 cross-cycle inventory is completed; Gate 2 behavioral shortlist, audit implementation and execution guide are now documented. Gate 2 GOGIT has not yet been executed and no dataset admission has occurred.**
 Scope: previously published, external-public SmolTalk v0.4 reviews only.
 This plan does not approve TRAIN, change split assignments, freeze a tokenizer, select an architecture or authorize Phase 03 model training.
 
@@ -97,4 +97,4 @@ Gate 5 - **Decision summary.** Produce public, non-sensitive aggregate findings 
 
 ## Immediate operational next step
 
-The read-only V53 cross-cycle public-review inventory is now implemented in [`tools/public-audits/smoltalk_v53_cross_cycle_inventory.py`](../tools/public-audits/smoltalk_v53_cross_cycle_inventory.py), with an offline test and a dedicated [GOGIT execution guide](../tools/V53-GOGIT-CROSS-CYCLE.md). The next operational action is the one-time GOGIT execution on a clean synchronized `main` on fhc2. Interpret the published result before selecting individual repair candidates.
+Gate 1 was published as [`PHASE03-SMOLTALK-V53-CROSS-CYCLE-INVENTORY-001`](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-CROSS-CYCLE-INVENTORY-001.json), confirming 124 distinct reviewed public sources and zero cross-cycle duplicates. Gate 2 is documented in [`reviews/smoltalk-v53/SHORTLIST-001.md`](../reviews/smoltalk-v53/SHORTLIST-001.md), implemented in [`tools/public-audits/smoltalk_v53_behavior_shortlist.py`](../tools/public-audits/smoltalk_v53_behavior_shortlist.py), and has a dedicated [GOGIT execution guide](../tools/V53-GATE2-GOGIT.md). The next operational action is the one-time Gate 2 GOGIT execution on a clean synchronized `main` on fhc2. Interpret that published result before authoring any repair derivative.
