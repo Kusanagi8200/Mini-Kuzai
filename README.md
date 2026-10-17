@@ -231,7 +231,7 @@ V50 has completed a **local-only heuristic screening of all 1,139 provisional V4
 
 The V52 pause checkpoint is now historical. V53 resumed public-only corpus consolidation while preserving all earlier review reports. Across V48/V49, V51 and V52, 124 distinct public SmolTalk examples remain the reviewed source population; V53 adds independent repair, derivative, eligibility and admission gates rather than redefining those historical grades. No tokenizer vocabulary has been frozen and no Phase 03 model training has started or been authorized.
 
-**V53 - public corpus consolidation and controlled TRAIN expansion:** The [V53 workstream](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) has progressed from cross-cycle accounting through repair planning, derivative review, eligibility, admission and behavior-by-behavior TRAIN completion. The last published GoGit state contains **104 unique canonical TRAIN records across 28 of 29 TRAIN semantic groups**. B14 EMOTIONAL EXPRESSION has now been authored and reviewed at the three-record MEDIUM target; one target wording was corrected during semantic review. The prepared corpus therefore contains **107 unique records across all 29 TRAIN groups**, pending the final B14 GoGit audit. Provenance after a successful audit would be **105 `phase03-designed` records plus 2 admitted public SmolTalk derivatives**. No VALIDATION or BLIND TEST conversation text has been created. Model training remains unauthorized.
+**V53 - public corpus consolidation and controlled TRAIN expansion:** The [V53 workstream](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) has progressed from cross-cycle accounting through repair planning, derivative review, eligibility, admission and behavior-by-behavior TRAIN completion. The last published GoGit state contains **107 unique canonical TRAIN records across all 29 TRAIN semantic groups**. B14 EMOTIONAL EXPRESSION has now been authored and reviewed at the three-record MEDIUM target; one target wording was corrected during semantic review. The audited corpus contains **107 unique records across all 29 TRAIN groups**, confirmed by the published B14C GOGIT audit. Provenance after a successful audit would be **105 `phase03-designed` records plus 2 admitted public SmolTalk derivatives**. No VALIDATION or BLIND TEST conversation text has been created. Model training remains unauthorized.
 
 ### Private local corpus pipeline
 
@@ -308,18 +308,18 @@ Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
 Phase 03                  : DATA PREPARATION - V53 TRAIN COMPLETION
 B01-B05 batches           : HISTORICAL BATCHES PRESERVED
-Canonical TRAIN records   : 104 AUDITED / 107 PREPARED
-TRAIN semantic groups     : 28 / 29 AUDITED - 29 / 29 PREPARED
+Canonical TRAIN records   : 107 AUDITED
+TRAIN semantic groups     : 29 / 29 AUDITED
 CRITICAL TRAIN            : ALL COMPLETE
 HIGH TRAIN                : ALL COMPLETE
-MEDIUM TRAIN              : B13 AUDITED - B14 REVIEWED / AUDIT PENDING
+MEDIUM TRAIN              : B13 AND B14 AUDITED
 B14 TRAIN                 : 3 REVIEWED - 1 TARGET CORRECTION
 Public SmolTalk TRAIN     : 2 CANONICAL DERIVATIVES
 Prepared provenance       : 105 PHASE03-DESIGNED / 2 SMOLTALK
 External dataset study    : V49/V51/V52 REVIEWED - V53 ACTIVE
 SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
-Latest V53 GOGIT          : B13 COMPLETE - 104 TRAIN
+Latest V53 GOGIT          : B14C COMPLETE - 107 TRAIN
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
 Private source material   : NOT COMMITTED
 Derived private metrics   : NOT COMMITTED
@@ -335,7 +335,7 @@ Phase 03 training         : NOT STARTED
 Training authorized       : NO
 ```
 
-B01 through B05 custom TRAIN batches remain preserved and reviewed (31 JSONL records containing 35 USER/ASSISTANT exchanges). V53 subsequently expanded the controlled corpus across the remaining behavior families. The last audited corpus contains **104 unique records** across **28 of 29 TRAIN semantic groups**. B14 `sg-b14-01 discovery_affect` is now authored and reviewed with three records; one target was corrected to remove preference-like wording. If its final audit passes, TRAIN reaches the policy-planned **107 unique records across all 29 groups**, with **105 `phase03-designed` records and 2 admitted public SmolTalk derivatives**. No VALIDATION or BLIND TEST conversation text has been created.
+B01 through B05 custom TRAIN batches remain preserved and reviewed (31 JSONL records containing 35 USER/ASSISTANT exchanges). V53 subsequently expanded the controlled corpus across the remaining behavior families. The last audited corpus contains **107 unique records** across **all 29 TRAIN semantic groups**. B14 `sg-b14-01 discovery_affect` is now authored and reviewed with three records; one target was corrected to remove preference-like wording. The published B14C audit confirms TRAIN at the policy-planned **107 unique records across all 29 groups**, with **105 `phase03-designed` records and 2 admitted public SmolTalk derivatives**. No VALIDATION or BLIND TEST conversation text has been created.
 
 The external SmolTalk review completed V49 (24 RETAIN, 44 REJECT), V51 (9 A, 8 B, 7 C) and V52 (8 A, 12 B, 12 C). V53 then applied repair, independent review, deduplication, semantic anti-leakage, eligibility and admission gates. Both accepted public derivatives are now canonical, while V44 remains provisional; the purposefully sampled reviews still do not establish an acceptance rate for the full reservoir. Private-source curation remains exclusively local and paused. Tokenizer vocabulary, Phase 03 architecture and model training remain unfrozen / unselected / unauthorized.
 
