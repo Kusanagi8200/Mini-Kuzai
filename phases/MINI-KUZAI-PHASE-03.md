@@ -56,7 +56,7 @@ Phase 03 follows the project-wide [loop-first workflow policy](../PROJECT-WORKFL
 
 When several deterministic gates are already defined, they should be grouped into a resumable runner rather than exposed as repeated manual stop/start steps. The runner must inspect current state, verify and skip gates already published successfully, execute only missing gates, verify every transition, and stop on semantic, provenance, split-leakage, destructive, private-data, or authorization failures.
 
-For validation-family work, the preferred pattern is:
+For validation and BLIND authoring work, the preferred deterministic pattern is:
 
 ```text
 author/review evidence
@@ -171,6 +171,7 @@ phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-ASSESSMENT.md
 phases/MINI-KUZAI-PHASE-03-EXTERNAL-DATASET-DECISION.md
 phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md
 phases/MINI-KUZAI-PHASE-03-CONVERSATION-AUTHORING-POLICY.md
+phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md
 phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md
 ```
 
@@ -271,6 +272,53 @@ KEEP AS RESEARCH SOURCE
 ```
 
 OASST1 remains stored locally and may be revisited for future experiments.
+
+## V54 VALIDATION closure checkpoint
+
+V54 completed the controlled VALIDATION phase after V53 froze the canonical TRAIN corpus.
+
+Published closure step:
+
+`PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001`
+
+Current controlled corpus state:
+
+```text
+TRAIN records                  : 107
+TRAIN semantic groups          : 29 / 29
+VALIDATION records             : 36 / 36 FROZEN
+VALIDATION semantic groups     : 18 / 18 FROZEN
+VALIDATION freeze histories    : 18 / 18
+VALIDATION semantic passes     : 18 / 18
+VALIDATION signoffs            : 18 / 18
+TRAIN / VALIDATION collisions  : 0
+BLIND TEST records             : 0 / 36 AT CLOSURE
+BLIND TEST groups reserved     : 18 / 18
+SEMANTIC_VALIDATION_COMPLETE   : 1
+BLIND_AUTHORING_AUTHORIZED     : 1
+TRAINING_AUTHORIZED            : 0
+```
+
+The global closure audit independently aggregates the committed validation batches rather than relying only on the final B18 counter. It verifies all 18 behavior freeze histories, complete reserved-group coverage, exact split separation, and zero duplicate normalized validation prompts.
+
+This closes VALIDATION for the current corpus design and opens BLIND TEST authoring.
+
+It does not authorize tokenizer finalization, architecture selection, model training, checkpoint selection, or any use of BLIND examples for model development.
+
+See [V54 VALIDATION closure](MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md).
+
+## Active next workstream - BLIND TEST
+
+The next controlled data-preparation task is to author, review, and freeze the 18 reserved BLIND TEST groups, targeting 36 records total.
+
+The BLIND authoring workflow should reuse the loop-first, resumable infrastructure developed during V54 VALIDATION, but with a stricter untouched-test boundary:
+
+- BLIND prompts must not be paraphrases of TRAIN or VALIDATION prompts;
+- BLIND prompts must not be used for tokenizer, training, tuning, model selection, or checkpoint selection;
+- future model outputs on BLIND must remain uninspected until the intended blind evaluation stage;
+- any inspected blind prompt loses untouched status and becomes diagnostic;
+- semantic `REVISE`, `REJECT`, or `HOLD` decisions stop automated progression;
+- training remains unauthorized until BLIND authoring and global closure complete and later pre-training gates explicitly pass.
 
 ## Proposed development sequence
 
