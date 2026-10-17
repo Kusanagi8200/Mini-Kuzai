@@ -61,5 +61,15 @@ class V55GenericBlindTests(unittest.TestCase):
             "tools/public-audits/phase03_v55_blind_integrity.py",metrics
         ))
 
+    def test_correction_lineage_is_preserved(self):
+        master_data=engine.load_master()
+        self.assertEqual(len(master_data["corrections"]),2)
+        self.assertEqual(
+            [item["behavior"] for item in master_data["corrections"]],
+            ["B02","B03"],
+        )
+        rows=engine.canonical_blind_rows(master_data)
+        self.assertEqual(len(rows),36)
+
 if __name__=="__main__":
     unittest.main()
