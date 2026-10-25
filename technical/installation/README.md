@@ -54,3 +54,24 @@ PY
 - NVIDIA GeForce RTX 5060 Laptop GPU
 
 The model itself does not require a large GPU; the small architecture is intentionally designed for direct inspection and experimentation.
+
+## Phase 03 current reference environment - 2026-10-25
+
+The V58 architecture baseline was validated on the following local environment:
+
+- Ubuntu 24.04.x
+- Linux kernel 7.0.0-38-generic
+- Python 3.12.3
+- PyTorch 2.13.0+cu130
+- CUDA 13.0
+- NVIDIA driver 580.178.04
+- NVIDIA GeForce RTX 5060 Laptop GPU
+- 8151 MiB reported GPU memory
+- compute capability 12.0
+- BF16 supported
+- system RAM 32 GB
+
+The NVIDIA 580 open kernel module is installed for the active 7.0.0-38 kernel. CUDA availability and the V58 model smoke test were verified after the driver and kernel-module stack was realigned.
+
+This environment is the current Phase 03 execution reference. The Phase 01 environment above remains historical.
+
