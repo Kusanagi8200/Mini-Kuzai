@@ -21,6 +21,9 @@ REPORTS = REPO / "reports" / "assistant-results"
 SOURCE = "SmolTalk v0.4 - public external dataset"
 SOURCE_PHASE03_VALIDATION = "Mini-Kuzai Phase 03 designed validation corpus"
 SOURCE_PHASE03_BLIND = "Mini-Kuzai Phase 03 designed blind-test corpus"
+SOURCE_PHASE03_TOKENIZER = (
+    "Mini-Kuzai V56 tokenizer scope - canonical TRAIN plus public SmolTalk reservoir"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -275,6 +278,14 @@ METRIC_KEYS = {
     "BLIND_BEHAVIORS_FROZEN",
     "SEMANTIC_VALIDATION_COMPLETE", "BLIND_AUTHORING_AUTHORIZED",
     "TRAINING_AUTHORIZED",
+    "V56_TOKENIZER_SCOPE_TRAIN_MESSAGES",
+    "V56_TOKENIZER_SCOPE_SMOLTALK_RECORDS",
+    "V56_TOKENIZER_SCOPE_SMOLTALK_MESSAGES",
+    "V56_TOKENIZER_SCOPE_SMOLTALK_SOURCES",
+    "V56_TOKENIZER_SCOPE_VALIDATION_INCLUDED",
+    "V56_TOKENIZER_SCOPE_BLIND_INCLUDED",
+    "V56_TOKENIZER_SCOPE_PRIVATE_INCLUDED",
+    "V56_TOKENIZER_FINALIZED",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -321,14 +332,19 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_VALIDATION
     if tracked.startswith("tools/public-audits/phase03_v55_blind_"):
         return SOURCE_PHASE03_BLIND
+    if tracked.startswith("tools/public-audits/phase03_v56_tokenizer_"):
+        return SOURCE_PHASE03_TOKENIZER
     return SOURCE
 
 
 def semantic_validation_complete_for_audit(tracked, metrics):
     closure = tracked == "tools/public-audits/phase03_v54_validation_closure.py"
     blind_workstream = tracked.startswith("tools/public-audits/phase03_v55_blind_")
+    tokenizer_workstream = tracked.startswith(
+        "tools/public-audits/phase03_v56_tokenizer_"
+    )
     return (
-        (closure or blind_workstream)
+        (closure or blind_workstream or tokenizer_workstream)
         and metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
         and metrics.get("BLIND_AUTHORING_AUTHORIZED") == 1
         and metrics.get("TRAINING_AUTHORIZED") == 0
