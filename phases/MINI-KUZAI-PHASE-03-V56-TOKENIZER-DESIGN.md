@@ -1,6 +1,6 @@
 # MINI-KUZAI PHASE 03 - V56 TOKENIZER DESIGN
 
-Status: TOKENIZER SCOPE AUDIT
+Status: TOKENIZER CANDIDATES IMPLEMENTED
 
 ## Purpose
 
@@ -64,3 +64,72 @@ VOCABULARY FROZEN         : NO
 ARCHITECTURE SELECTED     : NO
 TRAINING MIX FINALIZED    : NO
 TRAINING AUTHORIZED       : NO
+
+## V56.2 implemented candidates
+
+Three deterministic tokenizer families are now available for benchmarking.
+
+1. byte_baseline
+
+Pure UTF-8 byte tokenizer.
+
+Base vocabulary:
+
+259 tokens total
+
+- 3 special tokens
+- 256 byte tokens
+
+This candidate provides the universal lossless baseline.
+
+2. byte_bpe_whitespace
+
+Deterministic byte-level BPE.
+
+BPE merges are learned inside whitespace-delimited chunks.
+
+It retains complete byte fallback and therefore cannot produce an unknown
+character or unknown word.
+
+3. byte_bpe_unicode
+
+Deterministic byte-level BPE.
+
+Pretokenization separates Unicode words, punctuation and whitespace before
+learning byte-level merges.
+
+It also retains complete byte fallback.
+
+## V56.2 invariants
+
+All three candidate families must remain:
+
+- lossless for valid Python Unicode strings;
+- deterministic for identical corpus and parameters;
+- serializable;
+- independent of external tokenizer libraries;
+- capable of representing arbitrary UTF-8 text without an UNK token.
+
+The BPE implementations are research candidates.
+
+Their efficiency and vocabulary sizes have not yet been selected.
+
+No benchmark result from V56.2 constitutes tokenizer selection.
+
+## Next gate
+
+V56.3 will train and measure candidate vocabulary configurations against the
+authorized tokenizer-learning corpus.
+
+The comparison must measure at least:
+
+- resulting vocabulary size;
+- token count;
+- compression relative to byte baseline;
+- average tokens per message;
+- high-percentile sequence lengths;
+- round-trip integrity;
+- estimated embedding/output parameter cost.
+
+VALIDATION, BLIND TEST and private conversation material remain excluded from
+tokenizer learning.
