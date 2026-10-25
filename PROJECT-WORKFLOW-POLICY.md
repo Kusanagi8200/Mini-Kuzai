@@ -192,7 +192,7 @@ The current reference implementation is the V55 BLIND pipeline:
 - immutable correction lineage for revised candidates;
 - training authorization preserved at false.
 
-The V55 run completed all 18 behavior-level BLIND freezes. The project is paused before global BLIND closure.
+The V55 run completed all 18 behavior-level BLIND freezes and the global BLIND closure gate. The controlled corpus boundary is closed; training authorization remains false.
 
 Future Mini-Kuzai workflows should reuse this state-driven generic pattern where appropriate rather than returning to unnecessary one-command / one-feedback cycles.
 

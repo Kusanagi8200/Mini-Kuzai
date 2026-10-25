@@ -319,7 +319,7 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V55 BLIND FROZEN / REVIEW PAUSE
+Phase 03                  : DATA PREPARATION - V55 GLOBAL BLIND CLOSED
 Canonical TRAIN records   : 107 AUDITED
 TRAIN semantic groups     : 29 / 29 AUDITED
 TRAIN provenance          : 105 PHASE03-DESIGNED / 2 SMOLTALK
@@ -329,12 +329,12 @@ Validation closure        : COMPLETE - SEMANTIC_VALIDATION_COMPLETE=1
 BLIND TEST records        : 36 / 36 FROZEN
 BLIND TEST groups         : 18 / 18 FROZEN
 BLIND behavior freezes    : 18 / 18 VERIFIED
-Global BLIND closure      : PENDING
+Global BLIND closure      : COMPLETE - PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001
 Total controlled corpus   : 179 RECORDS / 65 GROUPS
 Cross-split exact IDs     : 0
 Cross-split group overlap : 0
 Exact cross-split prompts : 0
-Authoring policy          : V0.5
+Authoring policy          : V0.6
 Semantic split guard      : ACTIVE
 SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
@@ -352,7 +352,7 @@ V54 then authored, independently reviewed, integrity-checked and froze **36 VALI
 
 V55 then authored, reviewed, integrity-checked and froze **36 BLIND TEST records across all 18 reserved blind groups**. B02 and B03 required explicit versioned correction before freeze because screening detected excessive proximity to existing same-behavior material. The final behavior-level state is **36 / 36 BLIND records and 18 / 18 BLIND behaviors frozen**, with zero exact cross-split ID, semantic-group or normalized user-prompt collisions.
 
-The project is intentionally paused after behavior-level BLIND freeze. **Global BLIND closure has not yet been executed.** Training, tokenizer finalization, model architecture selection and training-mixture finalization remain unauthorized or unfrozen.
+The V55 global BLIND closure gate `PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001` has now been executed and published successfully. The controlled TRAIN / VALIDATION / BLIND corpus boundary is closed. Training, tokenizer finalization, model architecture selection and training-mixture finalization remain unauthorized or unfrozen.
 
 See the [V55 BLIND freeze checkpoint](phases/MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md), [V54 validation closure checkpoint](phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md), [V53 corpus consolidation status](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md), [V52 annotated results](reviews/smoltalk-v52/RESULTS-001.md), [V51 verified results](reviews/smoltalk-v51/RESULTS-001.md), [V49 completed results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
 

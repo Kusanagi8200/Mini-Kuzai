@@ -30,7 +30,7 @@ Do not rerun this exact command: the historical STEP_ID already exists and the w
 
 Each completed run commits and pushes four **public numerical report** files when checks pass. No manual git add, commit or push is needed. Every new run requires a new, unique STEP_ID.
 
-## Current status - 2026-10-17
+## Current status - 2026-10-25
 
 GOGIT now serves multiple public Phase 03 audit families, not only external SmolTalk review.
 
@@ -40,9 +40,9 @@ Current public sources include:
 - Phase 03 designed VALIDATION aggregate audits;
 - Phase 03 designed BLIND TEST aggregate audits.
 
-The latest published state is the V55 B18 BLIND freeze:
+The latest published audit state is the V55 global BLIND closure:
 
-`PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001`
+`PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001`
 
 It confirms:
 
@@ -58,7 +58,7 @@ cross-split exact collisions   : 0
 TRAINING_AUTHORIZED            : 0
 ```
 
-The project is paused after behavior-level BLIND freeze. Global BLIND closure has not been published.
+Global BLIND closure has been published and verified. The controlled corpus boundary is closed, while `TRAINING_AUTHORIZED` remains `0`.
 
 Historical V42-V53 SmolTalk reports and V54 VALIDATION reports remain immutable records. Do not rewrite them or reuse a published STEP_ID.
 

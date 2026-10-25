@@ -18,12 +18,15 @@ audit = load(
     "v55_blind_closure_test",
 )
 gogit = load(REPO / "tools/gogit_public.py", "v55_blind_closure_gogit_test")
+closure_runner = load(
+    REPO / "tools/run_phase03_v55_blind_closure.py",
+    "v55_blind_closure_runner_test",
+)
 
 
 class V55BlindClosureTests(unittest.TestCase):
     def test_expected_global_state(self):
-        metrics = audit.audit()
-        audit.require_expected_state(metrics)
+        self.assertTrue(closure_runner.verify_history())
 
     def test_closure_metrics_are_publicly_allowlisted(self):
         expected = {

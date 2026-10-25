@@ -307,9 +307,9 @@ It does not authorize tokenizer finalization, architecture selection, model trai
 
 See [V54 VALIDATION closure](MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md).
 
-## Active next workstream - BLIND TEST
+## Historical V55 workstream - BLIND TEST
 
-The next controlled data-preparation task is to author, review, and freeze the 18 reserved BLIND TEST groups, targeting 36 records total.
+V55 authored, reviewed, integrity-checked and froze the 18 reserved BLIND TEST groups, producing 36 records total. This section preserves the constraints used during that workstream.
 
 The BLIND authoring workflow should reuse the loop-first, resumable infrastructure developed during V54 VALIDATION, but with a stricter untouched-test boundary:
 
@@ -461,7 +461,7 @@ Current V53 evidence:
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION - V55 BLIND FROZEN / REVIEW PAUSE
+PHASE 03                  : DATA PREPARATION - V55 GLOBAL BLIND CLOSED
 Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -484,14 +484,14 @@ SEMANTIC VALIDATION       : COMPLETE
 BLIND TEST records        : 36 / 36 FROZEN
 BLIND TEST groups         : 18 / 18 FROZEN
 BLIND behavior freezes    : 18 / 18 VERIFIED
-Global BLIND closure      : PENDING
+Global BLIND closure      : COMPLETE
 
 Cross-split exact IDs     : 0
 Cross-split group overlap : 0
 Exact cross-split prompts : 0
 Total controlled corpus   : 179 RECORDS / 65 GROUPS
 
-Authoring policy          : V0.5
+Authoring policy          : V0.6
 Semantic split guard      : ACTIVE
 Loop-first workflow       : ACTIVE
 
@@ -516,11 +516,11 @@ V54 completed and globally closed VALIDATION at 36 records across all 18 reserve
 
 V55 then authored, reviewed, integrity-checked and froze 36 BLIND TEST records across all 18 reserved blind groups. B02 and B03 required explicit versioned correction and rereview before freeze because initial blind scenarios were too close to existing same-behavior material. The final behavior-level freeze step is `PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001`.
 
-The BLIND master manifest is now `FROZEN_PENDING_GLOBAL_CLOSURE`.
+The BLIND master manifest is now `CLOSED`.
 
-The project is intentionally paused at this point for code and documentation review.
+The global closure gate is `PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001`.
 
-No global BLIND closure has been executed.
+The controlled TRAIN / VALIDATION / BLIND corpus boundary is globally frozen at 179 records across 65 semantic groups.
 
 No tokenizer is frozen, no Phase 03 architecture is selected, no training mixture is finalized, and no model training is authorized.
 

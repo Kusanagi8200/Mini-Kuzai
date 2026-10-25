@@ -62,7 +62,7 @@ def prompts(row):
 
 def load_master():
     master=load_json(MASTER)
-    allowed_statuses={"REVIEWED_READY_FOR_BLIND_FREEZE","FROZEN_PENDING_GLOBAL_CLOSURE"}
+    allowed_statuses={"REVIEWED_READY_FOR_BLIND_FREEZE","FROZEN_PENDING_GLOBAL_CLOSURE","CLOSED"}
     if (master.get("version")!="V55"
         or master.get("status") not in allowed_statuses
         or master.get("total_behaviors")!=18
@@ -76,6 +76,15 @@ def load_master():
             raise RuntimeError("Frozen BLIND master has unexpected completion STEP_ID")
         if master.get("global_blind_closure_complete") is not False:
             raise RuntimeError("BLIND global closure must remain pending at this checkpoint")
+    if master.get("status")=="CLOSED":
+        if master.get("freeze_complete") is not True:
+            raise RuntimeError("Closed BLIND master missing freeze_complete=true")
+        if master.get("freeze_complete_step_id")!="PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001":
+            raise RuntimeError("Closed BLIND master has unexpected freeze STEP_ID")
+        if master.get("global_blind_closure_step_id")!="PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001":
+            raise RuntimeError("Closed BLIND master has unexpected closure STEP_ID")
+        if master.get("global_blind_closure_complete") is not True:
+            raise RuntimeError("Closed BLIND master missing global closure")
     behaviors=master.get("behaviors")
     if not isinstance(behaviors,list) or len(behaviors)!=18:
         raise RuntimeError("BLIND behavior inventory invalid")
