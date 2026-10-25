@@ -91,6 +91,53 @@ class V56TokenizerScopeTests(unittest.TestCase):
             gogit.SOURCE_PHASE03_TOKENIZER,
         )
 
+    def test_gogit_v56_semantic_summary_is_true(self):
+        metrics = {
+            "SEMANTIC_VALIDATION_COMPLETE": 1,
+            "TRAINING_AUTHORIZED": 0,
+        }
+
+        self.assertTrue(
+            gogit.semantic_validation_complete_for_audit(
+                "tools/public-audits/"
+                "phase03_v56_tokenizer_scope.py",
+                metrics,
+            )
+        )
+
+    def test_gogit_v56_does_not_require_blind_authoring_metric(self):
+        metrics = {
+            "SEMANTIC_VALIDATION_COMPLETE": 1,
+            "TRAINING_AUTHORIZED": 0,
+        }
+
+        self.assertNotIn(
+            "BLIND_AUTHORING_AUTHORIZED",
+            metrics,
+        )
+
+        self.assertTrue(
+            gogit.semantic_validation_complete_for_audit(
+                "tools/public-audits/"
+                "phase03_v56_tokenizer_scope.py",
+                metrics,
+            )
+        )
+
+    def test_gogit_v56_training_authorization_must_remain_false(self):
+        metrics = {
+            "SEMANTIC_VALIDATION_COMPLETE": 1,
+            "TRAINING_AUTHORIZED": 1,
+        }
+
+        self.assertFalse(
+            gogit.semantic_validation_complete_for_audit(
+                "tools/public-audits/"
+                "phase03_v56_tokenizer_scope.py",
+                metrics,
+            )
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

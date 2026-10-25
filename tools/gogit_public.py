@@ -343,8 +343,15 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     tokenizer_workstream = tracked.startswith(
         "tools/public-audits/phase03_v56_tokenizer_"
     )
+
+    if tokenizer_workstream:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 0
+        )
+
     return (
-        (closure or blind_workstream or tokenizer_workstream)
+        (closure or blind_workstream)
         and metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
         and metrics.get("BLIND_AUTHORING_AUTHORIZED") == 1
         and metrics.get("TRAINING_AUTHORIZED") == 0
