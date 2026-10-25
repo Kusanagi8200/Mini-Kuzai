@@ -1,0 +1,102 @@
+{
+  "formal_probability_sample": false,
+  "population": 1080,
+  "sample_001": 72,
+  "sample_002": 72,
+  "schema_version": "v59-bulk-sample-plan-2",
+  "status": "PUBLISHED_FOR_REVIEW",
+  "strata": [
+    {
+      "cumulative": 23,
+      "population": 180,
+      "priority": "HIGH",
+      "sample_001": 15,
+      "sample_002": 8,
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "cumulative": 4,
+      "population": 39,
+      "priority": "LOW",
+      "sample_001": 3,
+      "sample_002": 1,
+      "source": "explore-instruct-rewrite",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "cumulative": 1,
+      "population": 1,
+      "priority": "LOW",
+      "sample_001": 1,
+      "sample_002": 0,
+      "source": "openhermes-50k",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "cumulative": 27,
+      "population": 205,
+      "priority": "LOW",
+      "sample_001": 11,
+      "sample_002": 16,
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "cumulative": 11,
+      "population": 91,
+      "priority": "LOW",
+      "sample_001": 6,
+      "sample_002": 5,
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "cumulative": 20,
+      "population": 153,
+      "priority": "LOW",
+      "sample_001": 10,
+      "sample_002": 10,
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "cumulative": 3,
+      "population": 6,
+      "priority": "MEDIUM",
+      "sample_001": 3,
+      "sample_002": 0,
+      "source": "explore-instruct-rewrite",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "cumulative": 12,
+      "population": 95,
+      "priority": "MEDIUM",
+      "sample_001": 4,
+      "sample_002": 8,
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "cumulative": 3,
+      "population": 4,
+      "priority": "MEDIUM",
+      "sample_001": 3,
+      "sample_002": 0,
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "cumulative": 40,
+      "population": 306,
+      "priority": "MEDIUM",
+      "sample_001": 16,
+      "sample_002": 24,
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    }
+  ],
+  "target_cumulative": 144,
+  "training_authorized": false
+}
