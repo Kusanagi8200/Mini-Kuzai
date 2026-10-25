@@ -30,6 +30,9 @@ SOURCE_PHASE03_ARCHITECTURE = (
 SOURCE_PHASE03_ARCHITECTURE_FINAL = (
     "Mini-Kuzai V58 experimental baseline architecture"
 )
+SOURCE_PHASE03_V59 = (
+    "Mini-Kuzai V59 public training-mixture and turn-aware segmentation preparation"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -391,6 +394,28 @@ METRIC_KEYS = {
     "V58_ARCH_SELECTED",
     "V58_ARCH_FROZEN",
     "V58_MIX_FINALIZED",
+    "V59_CONTEXT",
+    "V59_TRAIN_CONVERSATIONS",
+    "V59_TRAIN_SEGMENTS",
+    "V59_TRAIN_BLOCKED_CONVERSATIONS",
+    "V59_TRAIN_MAX_PAIR_TOKENS",
+    "V59_V44_CONVERSATIONS",
+    "V59_V44_SEGMENTS",
+    "V59_V44_SEGMENTED_CONVERSATIONS",
+    "V59_V44_BLOCKED_CONVERSATIONS",
+    "V59_V44_BLOCKED_PAIRS",
+    "V59_V44_MAX_PAIR_TOKENS",
+    "V59_V44_SEGMENT_TOKENS",
+    "V59_V44_OVERHEAD_TOKENS",
+    "V59_POOL_CONVERSATIONS",
+    "V59_POOL_SEGMENTS",
+    "V59_POOL_SEGMENTED_CONVERSATIONS",
+    "V59_POOL_BLOCKED_CONVERSATIONS",
+    "V59_POOL_BLOCKED_PAIRS",
+    "V59_POOL_MAX_PAIR_TOKENS",
+    "V59_POOL_SEGMENT_TOKENS",
+    "V59_POOL_OVERHEAD_TOKENS",
+    "V59_MIX_FINALIZED",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -443,6 +468,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_ARCHITECTURE
     if tracked.startswith("tools/public-audits/phase03_v58_"):
         return SOURCE_PHASE03_ARCHITECTURE_FINAL
+    if tracked.startswith("tools/public-audits/phase03_v59_"):
+        return SOURCE_PHASE03_V59
     return SOURCE
 
 
@@ -457,6 +484,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         (
             "tools/public-audits/phase03_v57_",
             "tools/public-audits/phase03_v58_",
+            "tools/public-audits/phase03_v59_",
         )
     )
 
