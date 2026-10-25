@@ -1,0 +1,977 @@
+{
+  "schema_version": "v59-bulk-sample-decisions-2",
+  "status": "REVIEW_COMPLETE_PENDING_APPLICATION",
+  "sample_id": "smoltalk-v59-bulk-sample-002",
+  "population": 1080,
+  "sample_size": 72,
+  "reviewer": "ChatGPT semantic review",
+  "training_authorized": false,
+  "summary": {
+    "grade_a": 35,
+    "grade_b": 20,
+    "grade_c": 17,
+    "keep": 35,
+    "repair": 20,
+    "exclude": 17,
+    "factual_low": 43,
+    "factual_review": 15,
+    "factual_high": 14,
+    "instruction_good": 52,
+    "instruction_partial": 9,
+    "instruction_bad": 11,
+    "persona_high": 13,
+    "persona_medium": 14,
+    "persona_low": 45
+  },
+  "decisions": [
+    {
+      "case": 1,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/01-0020eb75e90316fd.md",
+      "grade": "B",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "ROLE_CONTAMINATION"
+      ],
+      "rationale": "Useful editing reasoning, but the USER turn already contains a complete assistant-style answer, creating role-boundary contamination."
+    },
+    {
+      "case": 2,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/02-533969e6c55bce87.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Strong creative writing guidance and consistent child-voice adaptation across follow-ups."
+    },
+    {
+      "case": 3,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/03-d6b510f3630f2b3e.md",
+      "grade": "B",
+      "factual_risk": "LOW",
+      "instruction_fit": "PARTIAL",
+      "persona_value": "HIGH",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "ROLE_CONTAMINATION",
+        "INSTRUCTION_FAILURE"
+      ],
+      "rationale": "Useful introspective writing signal, but the USER supplies the requested passage and the assistant critiques it instead of cleanly answering the instruction."
+    },
+    {
+      "case": 4,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/04-9de62c999b02b099.md",
+      "grade": "B",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "ROLE_CONTAMINATION"
+      ],
+      "rationale": "The assistant mostly repeats answers embedded verbatim in USER turns, so the supervision has contaminated role boundaries."
+    },
+    {
+      "case": 5,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/05-4b59cdc4baece16b.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Sound workplace advice with good contextual adaptation and exact compliance when asked to remove the final paragraph."
+    },
+    {
+      "case": 6,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/06-976ecd4716619816.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Coherent creative revision and character adaptation across turns with no material correctness issue."
+    },
+    {
+      "case": 7,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/07-096a56bdc289452d.md",
+      "grade": "B",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "ROLE_CONTAMINATION"
+      ],
+      "rationale": "Creative sensory writing is useful, but a USER turn contains a full assistant-style answer that the assistant then extends."
+    },
+    {
+      "case": 8,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/08-5237540445e66382.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "LOGICAL_ERROR"
+      ],
+      "rationale": "Core mathematics is sound, but the explanation misstates the Archimedean property and handles the finite-subcover argument imprecisely."
+    },
+    {
+      "case": 9,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/09-b4405f1cb60f93d5.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "PARTIAL",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "TECHNICAL_ERROR",
+        "INSTRUCTION_FAILURE"
+      ],
+      "rationale": "Simplification changes the technical meaning by claiming the program uses all computer resources, contradicting the original memory-allocation statement."
+    },
+    {
+      "case": 10,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/10-ad1aab09de37307a.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "FACTUAL_ERROR"
+      ],
+      "rationale": "Basic wound-care advice is broadly useful, but routine antiseptic use is overgeneralized and should be medically qualified."
+    },
+    {
+      "case": 11,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/11-3fa0c1dec33ee08a.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Correct ratio algebra and final designer count."
+    },
+    {
+      "case": 12,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/12-876fe99a56058d3a.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Concise factual answer correctly identifies Glasgow."
+    },
+    {
+      "case": 13,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/13-fcd0424870e50239.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "LOGICAL_ERROR",
+        "INSTRUCTION_FAILURE"
+      ],
+      "rationale": "The unconstrained quadratic vertex is negative workers; the response wrongly declares the equation erroneous instead of minimizing over the feasible worker domain."
+    },
+    {
+      "case": 14,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/14-59c7450a3d1dfc6f.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "The tool-use plan follows the requested evidence format and produces one evidence item per step."
+    },
+    {
+      "case": 15,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/15-441fc8801e5289c2.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "PARTIAL",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "INSTRUCTION_FAILURE"
+      ],
+      "rationale": "The gaseous formation value is plausible, but the response imports an unstated vaporization enthalpy and does not resolve the liquid-versus-gas ambiguity."
+    },
+    {
+      "case": 16,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/16-94717960c92ac8b3.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "TECHNICAL_ERROR"
+      ],
+      "rationale": "The Fourier transform is mathematically wrong; the correct transform depends on omega rather than being the constant 2/3."
+    },
+    {
+      "case": 17,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/17-8bcae299c6697541.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "LOGICAL_ERROR",
+        "INSTRUCTION_FAILURE"
+      ],
+      "rationale": "The response misinterprets one random pair as two combinations and gives an unsupported minimum; the guarantee logic is invalid."
+    },
+    {
+      "case": 18,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/18-2ce879fb1819b012.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Accurate lever principle, torque relation, and mechanical-advantage explanation."
+    },
+    {
+      "case": 19,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/19-1606da12000ca47e.md",
+      "grade": "C",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "STYLE_QUALITY",
+        "OTHER"
+      ],
+      "rationale": "The response imitates a fictional voice too directly and encourages rule-breaking behavior; it is low-value for Mini-Kuzai persona training."
+    },
+    {
+      "case": 20,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/20-b6eae5a2902dfd69.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "INSTRUCTION_FAILURE",
+        "OTHER"
+      ],
+      "rationale": "No JavaScript fragment is provided, yet the response invents a specific defect and fails to request the missing code."
+    },
+    {
+      "case": 21,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/21-49fcb06040ea42f4.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Correct SQL query exactly matches the requested filter and ordering."
+    },
+    {
+      "case": 22,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/22-8793fed60c8cf4db.md",
+      "grade": "C",
+      "factual_risk": "LOW",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "INSTRUCTION_FAILURE"
+      ],
+      "rationale": "The answer is unrelated to the alliteration task and appears to come from another example."
+    },
+    {
+      "case": 23,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/23-7334a00c41b96aee.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Both proposed sentence corrections are grammatical and preserve the intended meaning."
+    },
+    {
+      "case": 24,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/24-a33821b7e57876ce.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "The recommendation is a plausible romantic-comedy match and directly answers the request."
+    },
+    {
+      "case": 25,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/25-8d9c0591cc901d77.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "PARTIAL",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "TECHNICAL_ERROR",
+        "TIME_SENSITIVE"
+      ],
+      "rationale": "The Windows Mobile 6 emulator recommendation is obsolete and technically unsuitable as a durable ARM debugging recommendation."
+    },
+    {
+      "case": 26,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/26-29042fe872f9900f.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "TECHNICAL_ERROR"
+      ],
+      "rationale": "NFKD normalization does not transliterate ordinary Cyrillic letters to ASCII; most characters would be dropped."
+    },
+    {
+      "case": 27,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/27-8394e6845eea04ae.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Python split() correctly returns contiguous non-whitespace chunks for the requested behavior."
+    },
+    {
+      "case": 28,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/28-39e9af8ac1a7e710.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "The recursive implementation correctly flattens nested dictionaries into dotted keys and passes the supplied test."
+    },
+    {
+      "case": 29,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/29-f9c9f2ba83f5fa86.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "The implementation correctly computes the mathematical median as 1.5, appropriately overriding the prompt's incorrect 2.0 example."
+    },
+    {
+      "case": 30,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/30-9e7386f5d8ad7110.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "PARTIAL",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "TECHNICAL_ERROR",
+        "INSTRUCTION_FAILURE"
+      ],
+      "rationale": "The fixed trapezoid count is not derived from an error bound and does not guarantee epsilon accuracy for arbitrary valid inputs."
+    },
+    {
+      "case": 31,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/31-9fb812a776de349c.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "FACTUAL_ERROR"
+      ],
+      "rationale": "The stress overview is useful, but the gender-specific symptom claims are broad, stereotyped, and insufficiently qualified."
+    },
+    {
+      "case": 32,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/32-f71e9cd00d8ccaf1.md",
+      "grade": "B",
+      "factual_risk": "HIGH",
+      "instruction_fit": "PARTIAL",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "LOGICAL_ERROR"
+      ],
+      "rationale": "The final 1/2 result is correct, but the reasoning contains contradictory and incorrect enumeration of two-tail outcomes."
+    },
+    {
+      "case": 33,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/33-e317fb8bce48a68d.md",
+      "grade": "A",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Accurate high-altitude overview, acclimatization advice, and death-zone explanation with appropriate seriousness."
+    },
+    {
+      "case": 34,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/34-d243b1e23acb604e.md",
+      "grade": "B",
+      "factual_risk": "HIGH",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "FACTUAL_ERROR"
+      ],
+      "rationale": "The Chemex and AeroPress oil-retention claims are inaccurate; paper filters generally remove more oils rather than preserving them."
+    },
+    {
+      "case": 35,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/35-9c360cc3facc507e.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "LOGICAL_ERROR"
+      ],
+      "rationale": "The coin calculations are correct, but the tribe puzzle is mis-solved: the response contradicts the stated father-and-son premise and ignores other logical possibilities."
+    },
+    {
+      "case": 36,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/36-7c4afaf6e0db0445.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Accurate explanation of invertibility, linear systems, nullspaces, determinants, and zero eigenvalues."
+    },
+    {
+      "case": 37,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/37-0a11f65c6ab4b18b.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "TECHNICAL_ERROR"
+      ],
+      "rationale": "Most results are correct, but the standard-deviation and skewness formulas mix sample and population conventions without acknowledging the inconsistency."
+    },
+    {
+      "case": 38,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/38-3bab7b5ed56ac370.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Clear iterative editing feedback that recognizes and adopts a better user revision."
+    },
+    {
+      "case": 39,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/39-ff2482aa931f6452.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Useful beginner-friendly sales-analysis guidance with appropriate caveats about additional customer data."
+    },
+    {
+      "case": 40,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/40-5d4c1e41be5a828d.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "TECHNICAL_ERROR"
+      ],
+      "rationale": "Useful visualization advice overall, but histograms are not categorical plots and the missing-data guidance is too broad."
+    },
+    {
+      "case": 41,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/41-262d4fe40fbc2bd7.md",
+      "grade": "C",
+      "factual_risk": "LOW",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "INSTRUCTION_FAILURE",
+        "OTHER"
+      ],
+      "rationale": "The response refers to a nonexistent provided solution, gives no implementation, and does not answer how to create the C# application."
+    },
+    {
+      "case": 42,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/42-6a0ee9f19fad1a3a.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Correct arithmetic and direct completion of the requested sentence."
+    },
+    {
+      "case": 43,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/43-33965f01a47ccfe2.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "PARTIAL",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "TECHNICAL_ERROR",
+        "TIME_SENSITIVE"
+      ],
+      "rationale": "The TI-84 BCALL recommendation is underspecified, likely incorrect for normalcdf, and tied to obsolete tooling without verification."
+    },
+    {
+      "case": 44,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/44-101fab98b428a0c9.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Correct extraction of 1909 as the second time reference in the supplied context."
+    },
+    {
+      "case": 45,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/45-bf820d67fc2f2462.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "PARTIAL",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "FACTUAL_ERROR"
+      ],
+      "rationale": "The JSON structure is sensible, but it fabricates specific dietary restrictions and meal choices for named guests without source information."
+    },
+    {
+      "case": 46,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/46-b7f9278f4d498d87.md",
+      "grade": "C",
+      "factual_risk": "LOW",
+      "instruction_fit": "BAD",
+      "persona_value": "MEDIUM",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "INSTRUCTION_FAILURE"
+      ],
+      "rationale": "The poem largely uses simple present rather than the explicitly requested present progressive, so the core constraint is not satisfied."
+    },
+    {
+      "case": 47,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/47-b56372af999794f6.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Strong, concise sci-fi transformation that preserves the fairy-tale structure while adding original world-building."
+    },
+    {
+      "case": 48,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/48-b0faab820c5b07b3.md",
+      "grade": "C",
+      "factual_risk": "LOW",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "LOGICAL_ERROR",
+        "INSTRUCTION_FAILURE"
+      ],
+      "rationale": "Under the task's supplied fact/opinion definition, the contingent sentence should not be labeled a universal fact; the answer ignores the stated rule."
+    },
+    {
+      "case": 49,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/49-5baff24b85d5f698.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "LOGICAL_ERROR"
+      ],
+      "rationale": "The editing is strong, but the logic discussion incorrectly says realistic drawing must be necessary as well as sufficient for the conclusion."
+    },
+    {
+      "case": 50,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/50-72d1b60b958c07ec.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "All geometry, factor-count, and probability calculations are correct and coherent across turns."
+    },
+    {
+      "case": 51,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/51-eadf1b38a118c58c.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Strong career-development advice with good continuity and concrete manager-conversation guidance."
+    },
+    {
+      "case": 52,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/52-b574aaf41af4dace.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "TIME_SENSITIVE"
+      ],
+      "rationale": "Generally useful travel planning, but airline pricing rules and named budget-carrier advice are time-sensitive and should not be frozen unchanged."
+    },
+    {
+      "case": 53,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/53-a8236d5c7ea51218.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "All averages, ranges, and the median are calculated correctly."
+    },
+    {
+      "case": 54,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/54-68ec14f920986bf2.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Strong iterative editing that improves grammar, concision, specificity, and formality without material error."
+    },
+    {
+      "case": 55,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/55-2d9cd6e7d24b00e8.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Balanced career advice with strong follow-up continuity and practical recruiter-search guidance."
+    },
+    {
+      "case": 56,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/56-609d8ca618549b90.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Accurate set-theory explanations, including empty-set subset reasoning and the absence of a universal set in ZFC."
+    },
+    {
+      "case": 57,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/57-a7f96aaa1d67cfc2.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "FACTUAL_ERROR"
+      ],
+      "rationale": "The response invents a special problem for MAE at zero and then recommends MAPE, which is itself problematic when actual values are zero."
+    },
+    {
+      "case": 58,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/58-e39fc7b6b6cb7ce5.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Practical trip-planning advice with coherent follow-up reasoning on transport and budgeting."
+    },
+    {
+      "case": 59,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/59-aa9dcb3c31fa5424.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Correct algebra, differential-equation separation, and circle representations; minor domain details do not impair the instructional target."
+    },
+    {
+      "case": 60,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/60-c4761f9570e1f736.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "TECHNICAL_ERROR"
+      ],
+      "rationale": "Mostly sound networking discussion, but IPv6 subnet-mask terminology and some optical-interconnect claims are overgeneralized."
+    },
+    {
+      "case": 61,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/61-f03eb798a2a16ee4.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "All probability and expectation calculations are correct; the Jensen observation is appropriate."
+    },
+    {
+      "case": 62,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/62-11f46497fdb1f328.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Strong iterative descriptive-writing coaching with useful sensory detail and guidance on paragraph development."
+    },
+    {
+      "case": 63,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/63-fc22c9d1baa74ebc.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Coherent creative revision that responds directly to the user's critique and restores structure while preserving sensory imagery."
+    },
+    {
+      "case": 64,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/64-015dbf9b8239ddb4.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "BAD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "TECHNICAL_ERROR",
+        "LOGICAL_ERROR"
+      ],
+      "rationale": "The first integral is solved by an invalid substitution, and the response falsely claims x^3+1 never vanishes; multiple core mathematical errors."
+    },
+    {
+      "case": 65,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/65-cc1954646ba51759.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Strong writing guidance on character development, narrative voice, and sense of place with good conceptual continuity."
+    },
+    {
+      "case": 66,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/66-b5aa84d5a6b28eac.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "HIGH",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Good iterative fiction editing with clear explanations of grammar, concision, and flow choices."
+    },
+    {
+      "case": 67,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/67-753e21f5a08c15ff.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "PARTIAL",
+      "persona_value": "MEDIUM",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "FACTUAL_ERROR",
+        "OTHER"
+      ],
+      "rationale": "The revision invents unprovided product features and presents them as facts, while also making mental-health benefit claims without support."
+    },
+    {
+      "case": 68,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/68-9bb8cb6cc874f776.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "FACTUAL_ERROR"
+      ],
+      "rationale": "The editing is useful, but the healthcare refutation introduces broad unsourced claims about studies, costs, and economic effects."
+    },
+    {
+      "case": 69,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/69-0988a9efcc88d3d8.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Correct, concise Python basics across variable assignment, display, and type inspection."
+    },
+    {
+      "case": 70,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/70-dd6f6fbd73280371.md",
+      "grade": "C",
+      "factual_risk": "HIGH",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "EXCLUDE",
+      "defect_tags": [
+        "FACTUAL_ERROR"
+      ],
+      "rationale": "The response amplifies inaccurate claims about the HSBC scandal and overstates what the Panama Papers established about criminal conduct."
+    },
+    {
+      "case": 71,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/71-6f046e7ef42098ad.md",
+      "grade": "A",
+      "factual_risk": "LOW",
+      "instruction_fit": "GOOD",
+      "persona_value": "MEDIUM",
+      "disposition": "KEEP",
+      "defect_tags": [
+        "NONE"
+      ],
+      "rationale": "Accurate introductory explanations of abstraction and inheritance with useful real-world analogies."
+    },
+    {
+      "case": 72,
+      "path": "reviews/smoltalk-v59-bulk-sample-002/cases/72-0c42d856d663dc54.md",
+      "grade": "B",
+      "factual_risk": "REVIEW",
+      "instruction_fit": "GOOD",
+      "persona_value": "LOW",
+      "disposition": "REPAIR",
+      "defect_tags": [
+        "TECHNICAL_ERROR"
+      ],
+      "rationale": "The first and third SQL queries are sound, but RAND() < 0.01 is dialect-dependent and can fail to sample rows as intended."
+    }
+  ]
+}
