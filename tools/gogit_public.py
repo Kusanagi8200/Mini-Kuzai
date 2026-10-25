@@ -27,6 +27,9 @@ SOURCE_PHASE03_TOKENIZER = (
 SOURCE_PHASE03_ARCHITECTURE = (
     "Mini-Kuzai V57 architecture preparation - frozen tokenizer plus public training candidates"
 )
+SOURCE_PHASE03_ARCHITECTURE_FINAL = (
+    "Mini-Kuzai V58 frozen Phase 03 architecture"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -365,6 +368,29 @@ METRIC_KEYS = {
     "V57_ARCH_LARGE_PARAMS",
     "V57_ARCH_SELECTED",
     "V57_MIX_FINALIZED",
+    "V58_CONTEXT",
+    "V58_PARAMS",
+    "V58_DMODEL",
+    "V58_HEADS",
+    "V58_LAYERS",
+    "V58_FF",
+    "V58_HEAD_DIM",
+    "V58_TRAIN_COVERAGE_BP",
+    "V58_V44_UNSEG_COVERAGE_BP",
+    "V58_V44_SEGMENTED_CONVERSATIONS",
+    "V58_V44_CHUNKS",
+    "V58_POOL_SEGMENTED_CONVERSATIONS",
+    "V58_POOL_CHUNKS",
+    "V58_V44_TOKENS_PER_PARAM_X1000",
+    "V58_POOL_TOKENS_PER_PARAM_X1000",
+    "V58_ATTN_4096_VS_2048_X100",
+    "V58_GPU_SMOKE",
+    "V58_GPU_BF16",
+    "V58_GPU_PEAK_ALLOC_MIB",
+    "V58_GPU_PEAK_RESERVED_MIB",
+    "V58_ARCH_SELECTED",
+    "V58_ARCH_FROZEN",
+    "V58_MIX_FINALIZED",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -415,6 +441,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_TOKENIZER
     if tracked.startswith("tools/public-audits/phase03_v57_"):
         return SOURCE_PHASE03_ARCHITECTURE
+    if tracked.startswith("tools/public-audits/phase03_v58_"):
+        return SOURCE_PHASE03_ARCHITECTURE_FINAL
     return SOURCE
 
 
@@ -425,7 +453,14 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v56_tokenizer_"
     )
 
-    if tokenizer_workstream:
+    architecture_workstream = tracked.startswith(
+        (
+            "tools/public-audits/phase03_v57_",
+            "tools/public-audits/phase03_v58_",
+        )
+    )
+
+    if tokenizer_workstream or architecture_workstream:
         return (
             metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
             and metrics.get("TRAINING_AUTHORIZED") == 0
