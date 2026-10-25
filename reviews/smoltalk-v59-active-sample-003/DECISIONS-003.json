@@ -1,1058 +1,1045 @@
 {
-  "schema_version": "v59-active-sample-decisions-3",
-  "status": "REVIEW_COMPLETE_PENDING_APPLICATION",
-  "sample_id": "smoltalk-v59-active-sample-003",
-  "sample_size": 72,
-  "reviewed_before": 144,
-  "total_reviewed_after_application": 216,
-  "population_estimator": false,
-  "reviewer": "ChatGPT semantic review",
-  "training_authorized": false,
-  "summary": {
-    "keep": 41,
-    "repair": 24,
-    "exclude": 7,
-    "buckets": {
-      "HIGH_RISK_RANK": {
-        "keep": 2,
-        "repair": 15,
-        "exclude": 1
-      },
-      "MIDDLE_RANK": {
-        "keep": 10,
-        "repair": 6,
-        "exclude": 2
-      },
-      "LOW_RISK_RANK": {
-        "keep": 18,
-        "repair": 0,
-        "exclude": 0
-      },
-      "DIVERSITY_CONTROL": {
-        "keep": 11,
-        "repair": 3,
-        "exclude": 4
-      }
-    }
-  },
   "decisions": [
     {
       "case": 1,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/01-09770de8065d5810.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "Useful visualization guidance overall, but it proposes monthly box or violin plots even though the example has only one aggregate observation per month."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/01-09770de8065d5810.md",
+      "persona_value": "LOW",
+      "rationale": "Useful visualization guidance overall, but it proposes monthly box or violin plots even though the example has only one aggregate observation per month.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 2,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/02-1610145d905c1fa8.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "ROLE_CONTAMINATION",
         "FACTUAL_ERROR"
       ],
-      "rationale": "The USER embeds complete assistant-style answers, and the claimed effective text limit of 500-750 words is an unsupported capability statement."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/02-1610145d905c1fa8.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The USER embeds complete assistant-style answers, and the claimed effective text limit of 500-750 words is an unsupported capability statement.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 3,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/03-18fb5fbc0a1ae30b.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The descriptive calculations are useful, but the proposed ordinary ANOVA ignores that intersections are observed over the same months and may require a blocked or repeated design."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/03-18fb5fbc0a1ae30b.md",
+      "persona_value": "LOW",
+      "rationale": "The descriptive calculations are useful, but the proposed ordinary ANOVA ignores that intersections are observed over the same months and may require a blocked or repeated design.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 4,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/04-19130a1cc3889db3.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "FACTUAL_ERROR"
       ],
-      "rationale": "The editing is fluent, but it invents specific products, customers, market position, and business outcomes that were not provided by the user."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/04-19130a1cc3889db3.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The editing is fluent, but it invents specific products, customers, market position, and business outcomes that were not provided by the user.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 5,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/05-2f5da28a498f8cfb.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "Exploratory advice is useful, but many zero departure delays do not by themselves make Spearman preferable to Pearson or establish a non-linear relationship."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/05-2f5da28a498f8cfb.md",
+      "persona_value": "LOW",
+      "rationale": "Exploratory advice is useful, but many zero departure delays do not by themselves make Spearman preferable to Pearson or establish a non-linear relationship.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 6,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/06-3a779c0a7f94d4c1.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "FACTUAL_ERROR",
         "LOGICAL_ERROR"
       ],
-      "rationale": "The arithmetic is mostly correct, but the response asserts normality and exam quality from ten scores and makes unsupported performance inferences from sex."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/06-3a779c0a7f94d4c1.md",
+      "persona_value": "LOW",
+      "rationale": "The arithmetic is mostly correct, but the response asserts normality and exam quality from ten scores and makes unsupported performance inferences from sex.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 7,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/07-3c48662ea1f2d550.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "Broad data-visualization, dashboard, and big-data explanations are coherent and suitable as introductory material without a material correctness defect."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/07-3c48662ea1f2d550.md",
+      "persona_value": "LOW",
+      "rationale": "Broad data-visualization, dashboard, and big-data explanations are coherent and suitable as introductory material without a material correctness defect.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 8,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/08-5adc9a51f6f7ec21.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "LOGICAL_ERROR"
       ],
-      "rationale": "The survey percentages are summarized correctly, but the follow-up is described as growing reliance without establishing comparable sampling or statistical significance."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/08-5adc9a51f6f7ec21.md",
+      "persona_value": "LOW",
+      "rationale": "The survey percentages are summarized correctly, but the follow-up is described as growing reliance without establishing comparable sampling or statistical significance.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 9,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/09-68298de34bfa3294.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "FACTUAL_ERROR"
       ],
-      "rationale": "Core descriptive statistics are wrong: the actual mean is 85.5 rather than 86.4, and the reported standard deviation is also inaccurate, undermining later distribution claims."
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/09-68298de34bfa3294.md",
+      "persona_value": "LOW",
+      "rationale": "Core descriptive statistics are wrong: the actual mean is 85.5 rather than 86.4, and the reported standard deviation is also inaccurate, undermining later distribution claims.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 10,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/10-7017b169fec618b8.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "Most normality guidance is useful, but a normal distribution does not require a small standard deviation relative to its mean and the kurtosis convention is left ambiguous."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/10-7017b169fec618b8.md",
+      "persona_value": "LOW",
+      "rationale": "Most normality guidance is useful, but a normal distribution does not require a small standard deviation relative to its mean and the kurtosis convention is left ambiguous.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 11,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/11-89ba415aceef8477.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "FACTUAL_ERROR"
       ],
-      "rationale": "The prose editing is useful, but the market-cycle rewrite presents an inaccurate chronology of the 2010-2020 market period as factual context."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/11-89ba415aceef8477.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The prose editing is useful, but the market-cycle rewrite presents an inaccurate chronology of the 2010-2020 market period as factual context.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 12,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/12-8b913032996991e4.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The scatter-plot answer is correct, but the response invents a supposedly specific 'mean deviation plot' rather than giving a standard visualization concept."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/12-8b913032996991e4.md",
+      "persona_value": "LOW",
+      "rationale": "The scatter-plot answer is correct, but the response invents a supposedly specific 'mean deviation plot' rather than giving a standard visualization concept.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 13,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/13-9b8dcea4d91104c4.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "ROLE_CONTAMINATION",
         "FACTUAL_ERROR"
       ],
-      "rationale": "The USER supplies a complete edited answer and the dialogue also strengthens broad therapeutic and dementia-related meditation claims without appropriate qualification."
+      "disposition": "REPAIR",
+      "factual_risk": "HIGH",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/13-9b8dcea4d91104c4.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The USER supplies a complete edited answer and the dialogue also strengthens broad therapeutic and dementia-related meditation claims without appropriate qualification.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 14,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/14-bfcb90f9728d358b.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "LOGICAL_ERROR",
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The interpolation is reasonable, but the response overstates evidence for a non-linear age-salary relationship and implies age is a predictor from a tiny observational table."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/14-bfcb90f9728d358b.md",
+      "persona_value": "LOW",
+      "rationale": "The interpolation is reasonable, but the response overstates evidence for a non-linear age-salary relationship and implies age is a predictor from a tiny observational table.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 15,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/15-c216ea657ef0df6e.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "ROLE_CONTAMINATION"
       ],
-      "rationale": "The first USER turn already contains a complete assistant-style response that the assistant copies verbatim, weakening clean role supervision despite otherwise sound statistics."
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/15-c216ea657ef0df6e.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The first USER turn already contains a complete assistant-style response that the assistant copies verbatim, weakening clean role supervision despite otherwise sound statistics.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 16,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/16-f3b149193ca1f32c.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The normality overview is useful, but a non-significant normality-test p-value does not mean the data are likely normal and kurtosis near zero depends on using excess kurtosis."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/16-f3b149193ca1f32c.md",
+      "persona_value": "LOW",
+      "rationale": "The normality overview is useful, but a non-significant normality-test p-value does not mean the data are likely normal and kurtosis near zero depends on using excess kurtosis.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 17,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/17-f535dc0eaf471c23.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The exploratory guidance is useful, but comparing math and science scores from the same students needs a paired design and the GPA handling is unnecessarily treated as ordinal."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/17-f535dc0eaf471c23.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The exploratory guidance is useful, but comparing math and science scores from the same students needs a paired design and the GPA handling is unnecessarily treated as ordinal.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 18,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/18-fcaa67b5a3e5851f.md",
-      "selection_bucket": "HIGH_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The data-quality and sampling-bias discussion is broad but coherent, emphasizing representativeness, missingness, documentation, and comparison with the target population."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/18-fcaa67b5a3e5851f.md",
+      "persona_value": "LOW",
+      "rationale": "The data-quality and sampling-bias discussion is broad but coherent, emphasizing representativeness, missingness, documentation, and comparison with the target population.",
+      "selection_bucket": "HIGH_RISK_RANK"
     },
     {
       "case": 19,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/19-6daeff7de1fc570d.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "ROLE_CONTAMINATION",
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The grammar instruction is mostly correct, but the USER embeds the target answer and the response incorrectly calls 'engineers' the subject rather than the object of the preposition."
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/19-6daeff7de1fc570d.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The grammar instruction is mostly correct, but the USER embeds the target answer and the response incorrectly calls 'engineers' the subject rather than the object of the preposition.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 20,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/20-b3530cca09103e18.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The iterative editing is concise, context-aware, and preserves meaning while improving grammar and flow without introducing material unsupported claims."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/20-b3530cca09103e18.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The iterative editing is concise, context-aware, and preserves meaning while improving grammar and flow without introducing material unsupported claims.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 21,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/21-d3782cfae56b0aa3.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "ROLE_CONTAMINATION",
         "FACTUAL_ERROR"
       ],
-      "rationale": "The first USER turn contains a complete response, and the explanation overstates that 'that' is for objects while 'who' is exclusively required for people."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/21-d3782cfae56b0aa3.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The first USER turn contains a complete response, and the explanation overstates that 'that' is for objects while 'who' is exclusively required for people.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 22,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/22-d31cc04e24475ad7.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The task explicitly asks for the opposite statement, and the answer performs that transformation directly without presenting the result as an independently verified climate claim."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/22-d31cc04e24475ad7.md",
+      "persona_value": "LOW",
+      "rationale": "The task explicitly asks for the opposite statement, and the answer performs that transformation directly without presenting the result as an independently verified climate claim.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 23,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/23-fe24ef55a4dac768.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The average calculation is correct, direct, and fully satisfies the simple mathematical request."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/23-fe24ef55a4dac768.md",
+      "persona_value": "LOW",
+      "rationale": "The average calculation is correct, direct, and fully satisfies the simple mathematical request.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 24,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/24-241f1afb1585945c.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "OTHER"
       ],
-      "rationale": "The editing is useful, but the final rewrite invents a specific cause for the CEO's reaction and coffee-stained documents that the user never supplied."
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/24-241f1afb1585945c.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The editing is useful, but the final rewrite invents a specific cause for the CEO's reaction and coffee-stained documents that the user never supplied.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 25,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/25-c86935743a3dbd73.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The workplace reasoning is constructive, considers multiple explanations, and gives practical escalation and consolidation steps without unwarranted certainty."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/25-c86935743a3dbd73.md",
+      "persona_value": "HIGH",
+      "rationale": "The workplace reasoning is constructive, considers multiple explanations, and gives practical escalation and consolidation steps without unwarranted certainty.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 26,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/26-5bfa42bce926d2de.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The quadratic-formula calculation is correct and gives both x-intercepts in an exact equivalent form."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/26-5bfa42bce926d2de.md",
+      "persona_value": "LOW",
+      "rationale": "The quadratic-formula calculation is correct and gives both x-intercepts in an exact equivalent form.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 27,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/27-2c3cf1d2265472e3.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The indirect-proof and proof-by-cases examples are logically sound and explain the underlying proof strategies clearly."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/27-2c3cf1d2265472e3.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The indirect-proof and proof-by-cases examples are logically sound and explain the underlying proof strategies clearly.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 28,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/28-cd3d216fa0ba7918.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "All mean and median calculations are correct and the explanations match the supplied datasets."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/28-cd3d216fa0ba7918.md",
+      "persona_value": "LOW",
+      "rationale": "All mean and median calculations are correct and the explanations match the supplied datasets.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 29,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/29-392616b10dc0f871.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The JavaScript function correctly tests whether the requested substring occurs and demonstrates it on the provided example."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/29-392616b10dc0f871.md",
+      "persona_value": "LOW",
+      "rationale": "The JavaScript function correctly tests whether the requested substring occurs and demonstrates it on the provided example.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 30,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/30-bd2ef8171db99148.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "Most editing guidance is strong, but the response incorrectly claims no comma is needed before a direct quotation in the example introduced by 'said'."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/30-bd2ef8171db99148.md",
+      "persona_value": "MEDIUM",
+      "rationale": "Most editing guidance is strong, but the response incorrectly claims no comma is needed before a direct quotation in the example introduced by 'said'.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 31,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/31-008c0852447cfadb.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The sentence revisions are concise and natural while retaining the intended meanings and explaining the edits clearly."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/31-008c0852447cfadb.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The sentence revisions are concise and natural while retaining the intended meanings and explaining the edits clearly.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 32,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/32-39d1808880d54752.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The dialogue endorses an incomplete definition of asymptote that excludes vertical asymptotes and incorrectly states that a ratio of one is not geometric."
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/32-39d1808880d54752.md",
+      "persona_value": "LOW",
+      "rationale": "The dialogue endorses an incomplete definition of asymptote that excludes vertical asymptotes and incorrectly states that a ratio of one is not geometric.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 33,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/33-1addf7c34fca98f5.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "Strong editing interaction: the assistant recognizes its own over-editing, preserves user intent, and explains paragraph-structure choices responsively."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/33-1addf7c34fca98f5.md",
+      "persona_value": "HIGH",
+      "rationale": "Strong editing interaction: the assistant recognizes its own over-editing, preserves user intent, and explains paragraph-structure choices responsively.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 34,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/34-83867b6147862b76.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The calculus is correct, but the geometric-series explanation incorrectly excludes common ratio zero and says ratio one is not a geometric series."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/34-83867b6147862b76.md",
+      "persona_value": "LOW",
+      "rationale": "The calculus is correct, but the geometric-series explanation incorrectly excludes common ratio zero and says ratio one is not a geometric series.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 35,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/35-169f1b189d4db210.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "PARTIAL",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "INSTRUCTION_FAILURE",
         "OTHER"
       ],
-      "rationale": "The problem provides no tip rate, so assuming a 15 percent standard tip creates an unstated premise rather than identifying the missing information."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "PARTIAL",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/35-169f1b189d4db210.md",
+      "persona_value": "LOW",
+      "rationale": "The problem provides no tip rate, so assuming a 15 percent standard tip creates an unstated premise rather than identifying the missing information.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 36,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/36-a4a09f253e65ef60.md",
-      "selection_bucket": "MIDDLE_RANK",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "BAD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "LOGICAL_ERROR",
         "FACTUAL_ERROR"
       ],
-      "rationale": "The problem gives sensitivity but no specificity or false-positive rate; the answer incorrectly assumes a 5 percent false-positive rate and produces an unjustified posterior probability."
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "BAD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/36-a4a09f253e65ef60.md",
+      "persona_value": "LOW",
+      "rationale": "The problem gives sensitivity but no specificity or false-positive rate; the answer incorrectly assumes a 5 percent false-positive rate and produces an unjustified posterior probability.",
+      "selection_bucket": "MIDDLE_RANK"
     },
     {
       "case": 37,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/37-059293b092527026.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The creative-writing guidance offers coherent methods for emotion, characterization, conflict, and growth with strong relevance to Mini-Kuzai's creative persona goals."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/37-059293b092527026.md",
+      "persona_value": "HIGH",
+      "rationale": "The creative-writing guidance offers coherent methods for emotion, characterization, conflict, and growth with strong relevance to Mini-Kuzai's creative persona goals.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 38,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/38-eaecc12d81e46c59.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The friendship-support and active-listening advice is empathetic, bounded, and focused on consent, listening, and non-judgmental support."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/38-eaecc12d81e46c59.md",
+      "persona_value": "HIGH",
+      "rationale": "The friendship-support and active-listening advice is empathetic, bounded, and focused on consent, listening, and non-judgmental support.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 39,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/39-b9af914b22cacdbf.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The workplace conflict advice is nuanced, encourages direct communication before escalation, and adapts constructively across follow-up questions."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/39-b9af914b22cacdbf.md",
+      "persona_value": "HIGH",
+      "rationale": "The workplace conflict advice is nuanced, encourages direct communication before escalation, and adapts constructively across follow-up questions.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 40,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/40-d35414e3c81762ec.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The career-development conversation is practical and progressively becomes more concrete in response to the user's prior unsuccessful attempt."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/40-d35414e3c81762ec.md",
+      "persona_value": "HIGH",
+      "rationale": "The career-development conversation is practical and progressively becomes more concrete in response to the user's prior unsuccessful attempt.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 41,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/41-ea86d5a715735e57.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The story-writing, character-development, and dialogue guidance is coherent, creative, and consistently supports reflective narrative construction."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/41-ea86d5a715735e57.md",
+      "persona_value": "HIGH",
+      "rationale": "The story-writing, character-development, and dialogue guidance is coherent, creative, and consistently supports reflective narrative construction.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 42,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/42-8371f617769ab498.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The fictional-setting, antagonist, and tone guidance is detailed, internally consistent, and strongly aligned with the project's creative-behavior objectives."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/42-8371f617769ab498.md",
+      "persona_value": "HIGH",
+      "rationale": "The fictional-setting, antagonist, and tone guidance is detailed, internally consistent, and strongly aligned with the project's creative-behavior objectives.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 43,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/43-e8c16d1eaee53d9a.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "Character traits, distinctive voice, and backstory are explained coherently with useful emphasis on motivation, contradiction, consistency, and selective disclosure."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/43-e8c16d1eaee53d9a.md",
+      "persona_value": "HIGH",
+      "rationale": "Character traits, distinctive voice, and backstory are explained coherently with useful emphasis on motivation, contradiction, consistency, and selective disclosure.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 44,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/44-7bfddf9a0f58b923.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The relationship-support advice respects privacy and boundaries, avoids gossip, and gives practical ways to offer support without forcing disclosure."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/44-7bfddf9a0f58b923.md",
+      "persona_value": "HIGH",
+      "rationale": "The relationship-support advice respects privacy and boundaries, avoids gossip, and gives practical ways to offer support without forcing disclosure.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 45,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/45-d456341ea6d8cc79.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The coworker-name advice is practical and respectful, with balanced suggestions for rapport-building and recovery from ordinary social mistakes."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/45-d456341ea6d8cc79.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The coworker-name advice is practical and respectful, with balanced suggestions for rapport-building and recovery from ordinary social mistakes.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 46,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/46-5ce88dc663a413c0.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The workplace-onboarding advice gives concrete ways to request training, mentorship, and support while recognizing when persistent lack of support may be a structural problem."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/46-5ce88dc663a413c0.md",
+      "persona_value": "HIGH",
+      "rationale": "The workplace-onboarding advice gives concrete ways to request training, mentorship, and support while recognizing when persistent lack of support may be a structural problem.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 47,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/47-4d20b027f4309226.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The collaborative fiction development preserves the user's choices, asks productive world-building questions, and extends the magic-book premise coherently."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/47-4d20b027f4309226.md",
+      "persona_value": "HIGH",
+      "rationale": "The collaborative fiction development preserves the user's choices, asks productive world-building questions, and extends the magic-book premise coherently.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 48,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/48-b2146c83d321e5b9.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The role-change advice is grounded, solution-focused, and helps the user prepare evidence, goals, and possible solutions for a manager discussion."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/48-b2146c83d321e5b9.md",
+      "persona_value": "HIGH",
+      "rationale": "The role-change advice is grounded, solution-focused, and helps the user prepare evidence, goals, and possible solutions for a manager discussion.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 49,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/49-ed4753c95e0d2c39.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The career re-entry advice balances immediate financial needs with longer-term development and offers constructive salary and fit discussions."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/49-ed4753c95e0d2c39.md",
+      "persona_value": "HIGH",
+      "rationale": "The career re-entry advice balances immediate financial needs with longer-term development and offers constructive salary and fit discussions.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 50,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/50-d92030fbf2b761d4.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The fantasy-writing guidance is coherent and exploratory; its magical-realism discussion is usable creative advice even though genre conventions can vary."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/50-d92030fbf2b761d4.md",
+      "persona_value": "HIGH",
+      "rationale": "The fantasy-writing guidance is coherent and exploratory; its magical-realism discussion is usable creative advice even though genre conventions can vary.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 51,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/51-019f6325f21e3d39.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The burnout conversation provides concrete workplace communication strategies and frames company-level factors constructively rather than as personal failure."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/51-019f6325f21e3d39.md",
+      "persona_value": "HIGH",
+      "rationale": "The burnout conversation provides concrete workplace communication strategies and frames company-level factors constructively rather than as personal failure.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 52,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/52-0f8a439791898bec.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The sound-being story maintains continuity, expands the musical world imaginatively, and provides strong multi-turn creative development."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/52-0f8a439791898bec.md",
+      "persona_value": "HIGH",
+      "rationale": "The sound-being story maintains continuity, expands the musical world imaginatively, and provides strong multi-turn creative development.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 53,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/53-50254bfe13af4d0d.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The mysterious-letter and attic-trunk sequence develops suspense coherently and produces an effective scene consistent with the user's premise."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/53-50254bfe13af4d0d.md",
+      "persona_value": "HIGH",
+      "rationale": "The mysterious-letter and attic-trunk sequence develops suspense coherently and produces an effective scene consistent with the user's premise.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 54,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/54-97d54095e1d4d1f3.md",
-      "selection_bucket": "LOW_RISK_RANK",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The relationship advice explores compatibility, compromise, and non-blaming communication while leaving the final decision with the user."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/54-97d54095e1d4d1f3.md",
+      "persona_value": "HIGH",
+      "rationale": "The relationship advice explores compatibility, compromise, and non-blaming communication while leaving the final decision with the user.",
+      "selection_bucket": "LOW_RISK_RANK"
     },
     {
       "case": 55,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/55-d9004243d538c985.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The lyrical sunrise story and its genre analysis are coherent, stylistically strong, and useful as creative-writing supervision."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/55-d9004243d538c985.md",
+      "persona_value": "HIGH",
+      "rationale": "The lyrical sunrise story and its genre analysis are coherent, stylistically strong, and useful as creative-writing supervision.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 56,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/56-6de8f24a1acb3b08.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The mathematics examples and line-equation calculation are correct; the playful greeting is harmless and does not compromise the instructional content."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/56-6de8f24a1acb3b08.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The mathematics examples and line-equation calculation are correct; the playful greeting is harmless and does not compromise the instructional content.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 57,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/57-88ffa8befc24f925.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The essay-development responses maintain continuity and provide polished, coherent prose that follows the requested argumentative direction."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/57-88ffa8befc24f925.md",
+      "persona_value": "HIGH",
+      "rationale": "The essay-development responses maintain continuity and provide polished, coherent prose that follows the requested argumentative direction.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 58,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/58-c1c361f10bb5dcf4.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "LOGICAL_ERROR"
       ],
-      "rationale": "The three original premises are inconsistent: if Ramesh always tells the truth, his claim that Suresh always tells truth conflicts with Suresh's false statement, so the dialogue cannot sustain the conclusions it draws."
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/58-c1c361f10bb5dcf4.md",
+      "persona_value": "LOW",
+      "rationale": "The three original premises are inconsistent: if Ramesh always tells the truth, his claim that Suresh always tells truth conflicts with Suresh's false statement, so the dialogue cannot sustain the conclusions it draws.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 59,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/59-d66eff703502db2a.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "LOGICAL_ERROR",
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The quartic work is fundamentally wrong: one and two are not roots, two-fifths and three are not roots either, so both proposed factorizations and final root sets are false."
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/59-d66eff703502db2a.md",
+      "persona_value": "LOW",
+      "rationale": "The quartic work is fundamentally wrong: one and two are not roots, two-fifths and three are not roots either, so both proposed factorizations and final root sets are false.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 60,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/60-1c17a6189b16d466.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The project-collaboration advice is concrete, non-accusatory, and gives an effective progression from direct discussion to accountable check-ins and escalation."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/60-1c17a6189b16d466.md",
+      "persona_value": "HIGH",
+      "rationale": "The project-collaboration advice is concrete, non-accusatory, and gives an effective progression from direct discussion to accountable check-ins and escalation.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 61,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/61-3a49e503d873e399.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "B",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "FACTUAL_ERROR"
       ],
-      "rationale": "The editing itself is fluent, but it preserves and strengthens questionable historical invention claims and biographical assertions without qualification, creating factual-risk supervision."
+      "disposition": "REPAIR",
+      "factual_risk": "HIGH",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/61-3a49e503d873e399.md",
+      "persona_value": "LOW",
+      "rationale": "The editing itself is fluent, but it preserves and strengthens questionable historical invention claims and biographical assertions without qualification, creating factual-risk supervision.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 62,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/62-294ac6c8bcf8a125.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The tense correction is concise, grammatical, and directly satisfies the requested transformation."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/62-294ac6c8bcf8a125.md",
+      "persona_value": "LOW",
+      "rationale": "The tense correction is concise, grammatical, and directly satisfies the requested transformation.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 63,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/63-c19b649b8d339a8b.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The formula, oxidation state, d-electron count, and observed black or dark-brown color of manganese dioxide are broadly correct for introductory chemistry."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/63-c19b649b8d339a8b.md",
+      "persona_value": "LOW",
+      "rationale": "The formula, oxidation state, d-electron count, and observed black or dark-brown color of manganese dioxide are broadly correct for introductory chemistry.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 64,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/64-e8305a52c449dea8.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "BAD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "LOGICAL_ERROR"
       ],
-      "rationale": "The committee count omits the valid case where neither incompatible person serves; the correct total is 36 rather than 30."
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "BAD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/64-e8305a52c449dea8.md",
+      "persona_value": "LOW",
+      "rationale": "The committee count omits the valid case where neither incompatible person serves; the correct total is 36 rather than 30.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 65,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/65-8a1bd8bca15e89d0.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "LOGICAL_ERROR"
       ],
-      "rationale": "The final roots and answer are correct, but the proof incorrectly concludes integer c can be 44 from c squared at least 2011; the integer lower bound is 45."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/65-8a1bd8bca15e89d0.md",
+      "persona_value": "LOW",
+      "rationale": "The final roots and answer are correct, but the proof incorrectly concludes integer c can be 44 from c squared at least 2011; the integer lower bound is 45.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 66,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/66-59145fa32065277d.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "Given the supplied contrast between a petroleum refinery and a wind-electricity company, the answer correctly identifies the wind company as making less truck fuel."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/66-59145fa32065277d.md",
+      "persona_value": "LOW",
+      "rationale": "Given the supplied contrast between a petroleum refinery and a wind-electricity company, the answer correctly identifies the wind company as making less truck fuel.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 67,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/67-a3a94c797a247a39.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The O(n) time-complexity explanation is correct for the loop and print operation count under the standard unit-cost model."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/67-a3a94c797a247a39.md",
+      "persona_value": "LOW",
+      "rationale": "The O(n) time-complexity explanation is correct for the loop and print operation count under the standard unit-cost model.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 68,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/68-75ba20d966178ea0.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The response accurately identifies the argument's normative equality premise and notes that stronger evaluation would require additional evidence and reasoning."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/68-75ba20d966178ea0.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The response accurately identifies the argument's normative equality premise and notes that stronger evaluation would require additional evidence and reasoning.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 69,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/69-b8ec56a59ed1a514.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "BAD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
-      "rationale": "The function does not match the requested output because it pads every result to eight bits; lstrip('0b') is also unsafe for zero and negative values."
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "BAD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/69-b8ec56a59ed1a514.md",
+      "persona_value": "LOW",
+      "rationale": "The function does not match the requested output because it pads every result to eight bits; lstrip('0b') is also unsafe for zero and negative values.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 70,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/70-c9af9341701889a7.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The arithmetic is correct across all turns and the follow-up total follows consistently from the quantities supplied in the prompt."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/70-c9af9341701889a7.md",
+      "persona_value": "LOW",
+      "rationale": "The arithmetic is correct across all turns and the follow-up total follows consistently from the quantities supplied in the prompt.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 71,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/71-f8f9869ecc33d1aa.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
-      "rationale": "The editing improves grammar, sentence flow, and descriptive texture while staying aligned with the user's evolving forest-scene request."
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/71-f8f9869ecc33d1aa.md",
+      "persona_value": "MEDIUM",
+      "rationale": "The editing improves grammar, sentence flow, and descriptive texture while staying aligned with the user's evolving forest-scene request.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     },
     {
       "case": 72,
-      "path": "reviews/smoltalk-v59-active-sample-003/cases/72-d4e057ca3466c925.md",
-      "selection_bucket": "DIVERSITY_CONTROL",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR",
         "LOGICAL_ERROR"
       ],
-      "rationale": "The derivative roots are calculated correctly, but the dialogue does not correct the user's false claim about the number of critical points of a cubic and reports x-values as points without function values."
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/72-d4e057ca3466c925.md",
+      "persona_value": "LOW",
+      "rationale": "The derivative roots are calculated correctly, but the dialogue does not correct the user's false claim about the number of critical points of a cubic and reports x-values as points without function values.",
+      "selection_bucket": "DIVERSITY_CONTROL"
     }
-  ]
+  ],
+  "population_estimator": false,
+  "reviewed_before": 144,
+  "reviewer": "ChatGPT semantic review",
+  "sample_id": "smoltalk-v59-active-sample-003",
+  "sample_size": 72,
+  "schema_version": "v59-active-sample-decisions-3",
+  "status": "REVIEW_APPLIED",
+  "summary": {
+    "defect_tags": {
+      "FACTUAL_ERROR": 9,
+      "INSTRUCTION_FAILURE": 1,
+      "LOGICAL_ERROR": 9,
+      "NONE": 41,
+      "OTHER": 2,
+      "ROLE_CONTAMINATION": 5,
+      "TECHNICAL_ERROR": 15
+    },
+    "exclude": 7,
+    "keep": 41,
+    "repair": 24
+  },
+  "total_reviewed_after_application": 216,
+  "training_authorized": false
 }

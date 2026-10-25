@@ -1,6 +1,6 @@
 # Mini-Kuzai V59 - active-learning sample 003
 
-Status: **PUBLISHED FOR REVIEW - 72 cases.**
+Status: **REVIEW COMPLETE - 72/72 cases.** See [RESULTS-003.md](RESULTS-003.md).
 
 This is an active-learning challenge set, not a population-prevalence sample.
 The model score is used only to construct ranking buckets and must not bias semantic review.
