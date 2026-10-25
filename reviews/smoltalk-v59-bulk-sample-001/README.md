@@ -1,6 +1,6 @@
 # Mini-Kuzai V59 - bulk quality sample 001
 
-Status: 72-case deterministic public SmolTalk review sample.
+Status: **REVIEW COMPLETE - 72/72 cases.** See [RESULTS-001.md](RESULTS-001.md).
 
 Population: 1,080 currently unreviewed members of the V59 final candidate mix.
 Sampling: priority x source x turn bucket, target 3 per stratum, with category round-robin and deterministic top-up.
