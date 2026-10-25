@@ -253,3 +253,68 @@ Current state after Sample 002:
 - rule application: **NOT AUTHORIZED**;
 - V59 final mix: **NOT FINALIZED**;
 - model training: **NOT AUTHORIZED / NOT STARTED**.
+
+
+## V59 supervised text triage job
+
+The simple filter-rule mining stage found only one high-precision rule and
+insufficient recall for broad filtering. The next stage therefore uses a
+supervised text classifier trained only on the 144 reviewed public examples.
+
+Run:
+
+```bash
+python3 tools/run_v59_supervised_triage_job.py
+```
+
+The classifier is deliberately lightweight and local:
+
+- multinomial Naive Bayes;
+- USER and ASSISTANT word unigrams and bigrams are kept separate;
+- V44/V50 metadata is included;
+- five-fold stratified cross-validation is performed on the 144 reviewed
+  KEEP / REPAIR / EXCLUDE labels;
+- no external LLM, API, or private data is used.
+
+Two binary targets are evaluated:
+
+1. REPAIR or EXCLUDE versus KEEP;
+2. EXCLUDE versus KEEP or REPAIR.
+
+Conservative fixed thresholds are used:
+
+- REVIEW target probability >= 0.75;
+- EXCLUDE target probability >= 0.90.
+
+The REVIEW gate requires:
+
+- precision >= 75%;
+- recall >= 30%;
+- at least 10 out-of-fold flagged examples.
+
+The EXCLUDE research gate requires:
+
+- precision >= 85%;
+- recall >= 15%;
+- at least 5 out-of-fold flagged examples.
+
+Even if the EXCLUDE research gate passes, automatic exclusion remains
+explicitly unauthorized.
+
+After cross-validation, the model is retrained on all 144 reviewed examples
+and projected only onto the 936 still-unreviewed public conversations.
+
+Projection is ranking/triage only. No conversation is deleted, repaired,
+promoted, or reweighted.
+
+GOGIT step:
+
+`PHASE03-SMOLTALK-V59-SUPERVISED-TRIAGE-001`
+
+Current boundary:
+
+- rule mining 001: **CLOSED / LOW RECALL**;
+- supervised triage: **SCRIPTED / READY**;
+- automatic exclusion: **NOT AUTHORIZED**;
+- V59 final mix: **NOT FINALIZED**;
+- model training: **NOT AUTHORIZED / NOT STARTED**.
