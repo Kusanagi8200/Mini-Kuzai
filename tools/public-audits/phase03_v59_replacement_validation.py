@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
-"""Public numeric audit for validated V59 replacement candidates."""
+"""Public numeric audit for V59 replacement candidates."""
 
-import json
+from __future__ import annotations
+
+import importlib.util
+import sys
 from pathlib import Path
 
 
 REPO = Path(__file__).resolve().parents[2]
 
-REPORT = (
+VALIDATOR = (
     REPO
-    / "data/phase-03/reports"
-    / "v59-replacement-validation.json"
+    / "tools"
+    / "phase03_v59_replacement_validation.py"
 )
 
 MARKER = (
@@ -18,12 +21,35 @@ MARKER = (
 )
 
 
-def main():
-    value = json.loads(
-        REPORT.read_text(
-            encoding="utf-8"
-        )
+def load_module(name, path):
+    spec = importlib.util.spec_from_file_location(
+        name,
+        path,
     )
+
+    if spec is None or spec.loader is None:
+        raise RuntimeError(
+            f"Unable to load {path}"
+        )
+
+    module = importlib.util.module_from_spec(
+        spec
+    )
+
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+
+    return module
+
+
+VALIDATION = load_module(
+    "phase03_v59_replacement_validation_public",
+    VALIDATOR,
+)
+
+
+def main():
+    value = VALIDATION.validate()
 
     if (
         value.get("status")
