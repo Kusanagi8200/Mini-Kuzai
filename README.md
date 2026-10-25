@@ -221,7 +221,7 @@ OASST1 was fully downloaded, reconstructed, quality-audited, behaviorally compar
 
 The Mini-Kuzai-specific corpus will remain responsible for identity, curiosity, disagreement, initiative, creativity, opinion behavior, relationship continuity, and non-assistant character.
 
-### External SmolTalk curation - status 2026-10-17 (V53 corpus consolidation active)
+### External SmolTalk curation - historical V44-V53 review work
 
 The public SmolTalk v0.4 reservoir contains 8,000 candidate records, but is not an approved training dataset. V44 produced a provisional stratified selection of 1,139 conversations (679 multi-turn, 460 single-turn). A keyword-based creative category reached 69 of its 130 target records. V46 found broader creative signals and produced a 68-record **local review queue**; neither these signals nor the queue are validated training examples.
 
@@ -239,9 +239,43 @@ V50 has completed a **local-only heuristic screening of all 1,139 provisional V4
 
 **V52 - 32-case semantic review annotated:** The [source-verified V52 inventory](reports/assistant-results/history/PHASE03-SMOLTALK-V52-INVENTORY-001.json) identified 1,071 candidates still available in the provisional V44 selection before the V52 batch (after excluding 44 V48 in-V44 examples and 24 V51 examples). A further 32 distinct public-external cases were published (8 HIGH, 12 MEDIUM and 12 LOW; 20 multi-turn) and all 32 were subsequently annotated on GitHub: **8 A, 12 B, 12 C, 0 HOLD**. See the [V52 qualitative summary](reviews/smoltalk-v52/RESULTS-001.md), [case index](reviews/smoltalk-v52/README.md) and [V52 workflow](tools/V52-GITHUB-REVIEW.md). The [historical V52 GOGIT progress snapshot](reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json) recorded 8/32 before the remaining annotations. The [final V52 GOGIT audit](reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) was published and verified on 2026-10-17 at commit [`8a28e956`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/8a28e95637377f29d7204f51d49a174f2518929f): **32/32 reviewed, 8 A, 12 B, 12 C, 0 HOLD, 0 PENDING, 0 TRAIN approved**. Historical reports must not be rewritten.
 
-The V52 pause checkpoint is now historical. V53 resumed public-only corpus consolidation while preserving all earlier review reports. Across V48/V49, V51 and V52, 124 distinct public SmolTalk examples remain the reviewed source population; V53 adds independent repair, derivative, eligibility and admission gates rather than redefining those historical grades. No tokenizer vocabulary has been frozen and no Phase 03 model training has started or been authorized.
+The V52 pause checkpoint is now historical. V53 resumed public-only corpus consolidation while preserving all earlier review reports. Across V48/V49, V51 and V52, 124 distinct public SmolTalk examples remain the reviewed source population; V53 adds independent repair, derivative, eligibility and admission gates rather than redefining those historical grades. The tokenizer is frozen at V56 and the V58 experimental architecture baseline is frozen. The final training mixture is not finalized and Phase 03 model training has not started or been authorized.
 
 **V53 - public corpus consolidation and controlled TRAIN expansion:** The [V53 workstream](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) has progressed from cross-cycle accounting through repair planning, derivative review, eligibility, admission and behavior-by-behavior TRAIN completion. The last published GoGit state contains **107 unique canonical TRAIN records across all 29 TRAIN semantic groups**. B14 EMOTIONAL EXPRESSION has now been authored and reviewed at the three-record MEDIUM target; one target wording was corrected during semantic review. The audited TRAIN corpus contains **107 unique records across all 29 TRAIN groups**, confirmed by the published B14C GOGIT audit. Audited provenance is **105 `phase03-designed` records plus 2 admitted public SmolTalk derivatives**. V54 subsequently completed and globally closed the **36-record / 18-group VALIDATION corpus**. BLIND TEST authoring is now authorized, no BLIND records existed at V54 closure, and model training remains unauthorized.
+
+### Phase 03 current state - 2026-10-25
+
+The controlled conversational corpus is closed at **179 conversations across 65 semantic groups**:
+
+- TRAIN: 107 records / 29 groups;
+- VALIDATION: 36 records / 18 groups, frozen;
+- BLIND TEST: 36 records / 18 groups, frozen;
+- cross-split ID collisions: 0;
+- cross-split semantic-group overlap: 0;
+- exact cross-split prompt collisions: 0.
+
+**V56 tokenizer:** frozen `byte_bpe_whitespace` tokenizer with vocabulary 1024, 765 merge rules, byte fallback and no UNK token. VALIDATION, BLIND TEST and private material were excluded from tokenizer learning.
+
+**V57 serialization:** conversation serialization v1 is frozen using ordinary textual `USER:` and `MINI-KUZAI:` role labels, with BOS at conversation start and EOS at conversation end.
+
+**V58 architecture baseline:** the first reproducible experimental Phase 03 baseline is frozen at **1,184,512 parameters**, context 2048, `d_model=128`, 4 attention heads, 4 Transformer layers and FFN dimension 512.
+
+The V58 CUDA smoke test passed on the NVIDIA GeForce RTX 5060 Laptop GPU with BF16 support. Peak smoke-test allocation was 122 MiB and peak reserved memory was 140 MiB.
+
+Context 2048 covers 100 percent of the canonical controlled TRAIN conversations. It directly covers 61.90 percent of the provisional V44 SmolTalk conversations. The remaining long public conversations require a real segmentation policy before they can be used for training.
+
+V58 is an **experimental architecture baseline**, not an irreversible final model-size decision.
+
+The next workstream, V59, must resolve the final public training mixture, the actual turn-aware 2048-token segmentation implementation, preservation of role and turn structure, final post-segmentation token accounting, and the explicit pre-training authorization gate.
+
+**Training remains NOT AUTHORIZED and NOT STARTED.**
+
+See:
+
+- [V56 tokenizer design](phases/MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md)
+- [V57 architecture preparation](phases/MINI-KUZAI-PHASE-03-V57-ARCHITECTURE-PREPARATION.md)
+- [V58 architecture baseline](phases/MINI-KUZAI-PHASE-03-V58-ARCHITECTURE-BASELINE.md)
+- [V58 public audit](reports/assistant-results/history/PHASE03-SMOLTALK-V58-ARCHITECTURE-BASELINE-001.json)
 
 ### Private local corpus pipeline
 
@@ -255,7 +289,7 @@ The local pipeline covers conversation reconstruction, topic segmentation, faile
 
 Multi-turn examples preserve the order and provenance of observed user feedback. Rewritten assistant targets are explicitly distinguished from original responses; partial success is never promoted to unobserved verification. Editorial acceptance into a local candidate pool is not official TRAIN integration or training approval.
 
-Before choosing a final mixture, the project measures dialogue length, multi-turn coverage, and behavioral balance across the private source, the controlled identity corpus, and the external English reservoir. Exact model token counts and mixture weights remain pending tokenizer selection.
+Before choosing a final mixture, the project measures dialogue length, multi-turn coverage, and behavioral balance across the private source, the controlled identity corpus, and the external English reservoir. Exact token counts are now measurable with the frozen V56 tokenizer. Final mixture weights remain pending the V59 training-mixture decision.
 
 The private conversation source is intended to complement the controlled Mini-Kuzai identity/behavior corpus and the general English reservoir. Private corpus work does not authorize training and does not modify the existing controlled Phase 03 dataset until explicit integration approval.
 
@@ -275,6 +309,7 @@ See:
 - [`phases/MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md`](phases/MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md)
 - [`phases/MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md`](phases/MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md)
 - [`phases/MINI-KUZAI-PHASE-03-V57-ARCHITECTURE-PREPARATION.md`](phases/MINI-KUZAI-PHASE-03-V57-ARCHITECTURE-PREPARATION.md)
+- [`phases/MINI-KUZAI-PHASE-03-V58-ARCHITECTURE-BASELINE.md`](phases/MINI-KUZAI-PHASE-03-V58-ARCHITECTURE-BASELINE.md)
 - [`reviews/phase-03-v55/CODE-DOC-REVIEW-2026-10-17.md`](reviews/phase-03-v55/CODE-DOC-REVIEW-2026-10-17.md)
 - [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md)
 
@@ -294,11 +329,15 @@ See:
 
 ```text
 Ubuntu 24.04.x
+Linux kernel 7.0.0-38-generic
 Python 3.12.3
 PyTorch 2.13.0+cu130
 CUDA 13.0
-NumPy 2.5.2
+NVIDIA driver 580.178.04
 NVIDIA GeForce RTX 5060 Laptop GPU - 8 GB VRAM
+Compute capability 12.0
+BF16 supported
+NumPy 2.5.2
 System RAM - 32 GB
 ```
 
