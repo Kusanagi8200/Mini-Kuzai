@@ -247,35 +247,79 @@ The V52 pause checkpoint is now historical. V53 resumed public-only corpus conso
 
 The controlled conversational corpus is closed at **179 conversations across 65 semantic groups**:
 
-- TRAIN: 107 records / 29 groups;
-- VALIDATION: 36 records / 18 groups, frozen;
-- BLIND TEST: 36 records / 18 groups, frozen;
+- TRAIN: **107 records / 29 groups**;
+- VALIDATION: **36 records / 18 groups, frozen**;
+- BLIND TEST: **36 records / 18 groups, frozen**;
 - cross-split ID collisions: 0;
 - cross-split semantic-group overlap: 0;
 - exact cross-split prompt collisions: 0.
 
-**V56 tokenizer:** frozen `byte_bpe_whitespace` tokenizer with vocabulary 1024, 765 merge rules, byte fallback and no UNK token. VALIDATION, BLIND TEST and private material were excluded from tokenizer learning.
+The reproducible pre-training baseline is also frozen:
 
-**V57 serialization:** conversation serialization v1 is frozen using ordinary textual `USER:` and `MINI-KUZAI:` role labels, with BOS at conversation start and EOS at conversation end.
+- **V56 tokenizer:** `byte_bpe_whitespace`, vocabulary 1024, 765 merges, byte fallback, no UNK;
+- **V57 serialization:** ordinary textual `USER:` / `MINI-KUZAI:` labels, BOS at conversation start and EOS at conversation end;
+- **V58 architecture baseline:** decoder-only Transformer, context 2048, `d_model=128`, 4 heads, 4 layers, FFN 512, **1,184,512 parameters**;
+- **V59 segmentation:** turn-aware 2048-token segmentation is implemented and closed; complete USER / MINI-KUZAI pairs are preserved and no arbitrary intra-pair split is allowed.
 
-**V58 architecture baseline:** the first reproducible experimental Phase 03 baseline is frozen at **1,184,512 parameters**, context 2048, `d_model=128`, 4 attention heads, 4 Transformer layers and FFN dimension 512.
+### V59 public-mixture quality state
 
-The V58 CUDA smoke test passed on the NVIDIA GeForce RTX 5060 Laptop GPU with BF16 support. Peak smoke-test allocation was 122 MiB and peak reserved memory was 140 MiB.
+The V59 public candidate population contains **1,112 conversations** after structural exclusions, controlled-source reuse protection and known-negative filtering. The main quality-estimation population contains **1,080 conversations**.
 
-Context 2048 covers 100 percent of the canonical controlled TRAIN conversations. It directly covers 61.90 percent of the provisional V44 SmolTalk conversations. The remaining long public conversations require a real segmentation policy before they can be used for training.
+Bulk Samples 001 and 002 reviewed **144 unique public conversations**. The stratum-weighted diagnostic estimated:
 
-V58 is an **experimental architecture baseline**, not an irreversible final model-size decision.
+- KEEP: **49.36%**;
+- REPAIR: **27.61%**;
+- EXCLUDE: **23.03%**;
+- unchanged-unsuitable = REPAIR + EXCLUDE: **50.64%**;
+- approximate diagnostic interval for unchanged-unsuitable: **42.79% to 58.49%**.
 
-The next workstream, V59, must resolve the final public training mixture, the actual turn-aware 2048-token segmentation implementation, preservation of role and turn structure, final post-segmentation token accounting, and the explicit pre-training authorization gate.
+The unchanged-bulk admission gate therefore **FAILED**. The V44-derived public bulk must not be promoted unchanged into supervised training.
+
+Simple V59 filter-rule mining found only one narrow high-precision rule and insufficient recall for broad filtering. A first supervised text triage model also failed its authorization gates:
+
+- REPAIR / EXCLUDE precision: **60.3%**;
+- REPAIR / EXCLUDE recall: **52.1%**;
+- EXCLUDE precision: **16.7%**;
+- EXCLUDE recall: **8.8%**.
+
+The failed classifier was then used only as an uncalibrated ranking signal for **Active-Learning Sample 003**, containing 72 new cases.
+
+Sample 003 results:
+
+| Bucket | KEEP | REPAIR | EXCLUDE | Unchanged unsuitable |
+| --- | ---: | ---: | ---: | ---: |
+| HIGH_RISK_RANK | 2 | 15 | 1 | 88.9% |
+| MIDDLE_RANK | 10 | 6 | 2 | 44.4% |
+| LOW_RISK_RANK | 18 | 0 | 0 | 0.0% |
+| DIVERSITY_CONTROL | 11 | 3 | 4 | 38.9% |
+
+The ranking direction is therefore **VALIDATED** for prioritizing review, but the score is not a calibrated probability and does not authorize automatic filtering.
+
+Current V59 quality-control total:
+
+- public conversations semantically reviewed in Samples 001-003: **216**;
+- ranking direction: **VALIDATED**;
+- triage retraining on 216 annotations: **AUTHORIZED / NOT STARTED**;
+- automatic REVIEW: **NOT AUTHORIZED**;
+- automatic EXCLUDE: **NOT AUTHORIZED**;
+- final public training mixture: **NOT FINALIZED**.
+
+The next planned workstream after this pause is:
+
+**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
+
+That retrain must be evaluated on a new independent holdout drawn from the still-unreviewed public candidates. Sample 003 must not be reused as an independent validation set because it was selected using the previous ranking.
+
+The remaining pre-training decisions also include final KEEP / REPAIR / EXCLUDE policy, final public-corpus/token accounting, and sampling/weighting so the controlled persona corpus is not drowned by the much larger public corpus.
 
 **Training remains NOT AUTHORIZED and NOT STARTED.**
 
 See:
 
-- [V56 tokenizer design](phases/MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md)
-- [V57 architecture preparation](phases/MINI-KUZAI-PHASE-03-V57-ARCHITECTURE-PREPARATION.md)
-- [V58 architecture baseline](phases/MINI-KUZAI-PHASE-03-V58-ARCHITECTURE-BASELINE.md)
-- [V58 public audit](reports/assistant-results/history/PHASE03-SMOLTALK-V58-ARCHITECTURE-BASELINE-001.json)
+- [V59 training mix and segmentation](phases/MINI-KUZAI-PHASE-03-V59-TRAINING-MIX-SEGMENTATION.md)
+- [V59 pause checkpoint - 2026-10-25](phases/MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md)
+- [V59 Active-Learning Sample 003 results](reviews/smoltalk-v59-active-sample-003/RESULTS-003.md)
+- [latest V59 Active-Learning Sample 003 audit](reports/assistant-results/history/PHASE03-SMOLTALK-V59-ACTIVE-SAMPLE-003.json)
 
 ### Private local corpus pipeline
 
