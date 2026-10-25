@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "SEMANTIC_VALIDATION_COMPLETE": 1,
+    "TRAINING_AUTHORIZED": 0,
+    "TRAIN_FILES": 19,
+    "TRAIN_GROUPS": 29,
+    "TRAIN_RECORDS": 107,
+    "V56_TOKENIZER_FINALIZED": 0,
+    "V56_TOKENIZER_SCOPE_BLIND_INCLUDED": 0,
+    "V56_TOKENIZER_SCOPE_PRIVATE_INCLUDED": 0,
+    "V56_TOKENIZER_SCOPE_SMOLTALK_MESSAGES": 36002,
+    "V56_TOKENIZER_SCOPE_SMOLTALK_RECORDS": 8000,
+    "V56_TOKENIZER_SCOPE_SMOLTALK_SOURCES": 4,
+    "V56_TOKENIZER_SCOPE_TRAIN_MESSAGES": 248,
+    "V56_TOKENIZER_SCOPE_VALIDATION_INCLUDED": 0
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v56_tokenizer_scope.py",
+  "producer_sha256": "0495178e0ff17e952887996fc200da565bb2480cf787420fe1f20b07fcb99d0a",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": true,
+  "source": "Mini-Kuzai V56 tokenizer scope - canonical TRAIN plus public SmolTalk reservoir",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V56-TOKENIZER-SCOPE-002",
+  "training_authorized": false
+}

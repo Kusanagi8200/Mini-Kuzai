@@ -19,9 +19,9 @@
   "producer": "tools/public-audits/phase03_v56_tokenizer_scope.py",
   "producer_sha256": "0495178e0ff17e952887996fc200da565bb2480cf787420fe1f20b07fcb99d0a",
   "project": "Mini-Kuzai",
-  "semantic_validation_complete": false,
+  "semantic_validation_complete": true,
   "source": "Mini-Kuzai V56 tokenizer scope - canonical TRAIN plus public SmolTalk reservoir",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V56-TOKENIZER-SCOPE-001",
+  "step_id": "PHASE03-SMOLTALK-V56-TOKENIZER-SCOPE-002",
   "training_authorized": false
 }
