@@ -1,0 +1,515 @@
+{
+  "cases": [
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 1,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/01-09770de8065d5810.md",
+      "ranking_score": 1.0,
+      "sha": "09770de8065d581042f0195a4a2492eeeee8a06d425741757abcba09916e1a52"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 2,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/02-1610145d905c1fa8.md",
+      "ranking_score": 1.0,
+      "sha": "1610145d905c1fa8b839c87f0f94450d5993da9c0658a0cbc863535447dc549e"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 3,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/03-18fb5fbc0a1ae30b.md",
+      "ranking_score": 1.0,
+      "sha": "18fb5fbc0a1ae30bd277be59738c7d847976ab3767cffaeddadca9983b13dfcf"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 4,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/04-19130a1cc3889db3.md",
+      "ranking_score": 1.0,
+      "sha": "19130a1cc3889db37307dc0f6d5634e8e72dedb851781f9c71532d8c26c815df"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 5,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/05-2f5da28a498f8cfb.md",
+      "ranking_score": 1.0,
+      "sha": "2f5da28a498f8cfb71ad7f6a87e6172d52d3d97eb8e7655ad3127177a3444212"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 6,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/06-3a779c0a7f94d4c1.md",
+      "ranking_score": 1.0,
+      "sha": "3a779c0a7f94d4c1738cbecf2e7867e2edbecae3d66419925a0d9df35857c10d"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 7,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/07-3c48662ea1f2d550.md",
+      "ranking_score": 1.0,
+      "sha": "3c48662ea1f2d5504154aa160ea650fa83bada22e28bc5b1a241fffc1645daf4"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 8,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/08-5adc9a51f6f7ec21.md",
+      "ranking_score": 1.0,
+      "sha": "5adc9a51f6f7ec2147569b570365a7bf748c6bf457df4534dae058c8f1a053a9"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 9,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/09-68298de34bfa3294.md",
+      "ranking_score": 1.0,
+      "sha": "68298de34bfa329416762f9aaf458b3962ba9229149600e954f8aef62c625fa9"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 10,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/10-7017b169fec618b8.md",
+      "ranking_score": 1.0,
+      "sha": "7017b169fec618b854ab594e07f886fa5eff8093beab8222c24d86ca8da0456a"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 11,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/11-89ba415aceef8477.md",
+      "ranking_score": 1.0,
+      "sha": "89ba415aceef8477d59f60656a135ba431d5fbec46c89e3cdea68fae132a2de7"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 12,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/12-8b913032996991e4.md",
+      "ranking_score": 1.0,
+      "sha": "8b913032996991e44eb8c71c497dcc04fc6819e8256b1b076b754c131be9934e"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 13,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/13-9b8dcea4d91104c4.md",
+      "ranking_score": 1.0,
+      "sha": "9b8dcea4d91104c47f37cf9a154a2a9103466e25edc2d1792f9ae390591b82e7"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 14,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/14-bfcb90f9728d358b.md",
+      "ranking_score": 1.0,
+      "sha": "bfcb90f9728d358bf08770a313290b49bc091396dd6bac982667f48f18e830a2"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 15,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/15-c216ea657ef0df6e.md",
+      "ranking_score": 1.0,
+      "sha": "c216ea657ef0df6ead2da666d30fd5177d8728ccdd1480809d1ec059fdbf1244"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 16,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/16-f3b149193ca1f32c.md",
+      "ranking_score": 1.0,
+      "sha": "f3b149193ca1f32c5fe9a1eeb3962ae4e56f47d9d982498528ace8a9a6920c79"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 17,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/17-f535dc0eaf471c23.md",
+      "ranking_score": 1.0,
+      "sha": "f535dc0eaf471c23fd647e3e9107bac0505c1f9f9600baf2e622ad76b16114c8"
+    },
+    {
+      "bucket": "HIGH_RISK_RANK",
+      "case": 18,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/18-fcaa67b5a3e5851f.md",
+      "ranking_score": 1.0,
+      "sha": "fcaa67b5a3e5851ff6c7d4161deb561e108f74dd2fab2344a1625ff69fcf4b77"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 19,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/19-6daeff7de1fc570d.md",
+      "ranking_score": 0.80980757,
+      "sha": "6daeff7de1fc570d84193e9ec27d79a39441115e561a99bcdcde0f594eaa6431"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 20,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/20-b3530cca09103e18.md",
+      "ranking_score": 0.80959423,
+      "sha": "b3530cca09103e1808080731f6b99870390c0aad314062b45e8303a538d6b79f"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 21,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/21-d3782cfae56b0aa3.md",
+      "ranking_score": 0.80784153,
+      "sha": "d3782cfae56b0aa38919519ee79210abf2c170ef7356d3befd43571d65b306e0"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 22,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/22-d31cc04e24475ad7.md",
+      "ranking_score": 0.80294959,
+      "sha": "d31cc04e24475ad7e75bb70dc2681318f121b99c5f299eb58a5c2d38e821683c"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 23,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/23-fe24ef55a4dac768.md",
+      "ranking_score": 0.79462194,
+      "sha": "fe24ef55a4dac7687eb829986faa03049e80332b962afec5a269d3b56d64881f"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 24,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/24-241f1afb1585945c.md",
+      "ranking_score": 0.79079607,
+      "sha": "241f1afb1585945c452545944a6608512c64ce7a065ea7b7659772de6d742fc5"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 25,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/25-c86935743a3dbd73.md",
+      "ranking_score": 0.78253666,
+      "sha": "c86935743a3dbd73f7e39454f26574d9b0a821559a277276258a70cb56ba63f5"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 26,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/26-5bfa42bce926d2de.md",
+      "ranking_score": 0.77828462,
+      "sha": "5bfa42bce926d2de8b9094e632e327489b095e6ca2df50fbe5699f075f23cb25"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 27,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/27-2c3cf1d2265472e3.md",
+      "ranking_score": 0.7766396,
+      "sha": "2c3cf1d2265472e34cc08c8200dd155590b54c1d5a691a1c410e566c3a3cd5ad"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 28,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/28-cd3d216fa0ba7918.md",
+      "ranking_score": 0.76527381,
+      "sha": "cd3d216fa0ba7918458635e92ad2b347c7d18c186e26cd3f7fd1e08adda786ac"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 29,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/29-392616b10dc0f871.md",
+      "ranking_score": 0.76502236,
+      "sha": "392616b10dc0f871c077b37cf0ae683854558ee3965d564acfbd5e6720dd4f5c"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 30,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/30-bd2ef8171db99148.md",
+      "ranking_score": 0.76262511,
+      "sha": "bd2ef8171db99148aef483b47f647dd39bf9a847ae0fac1936037fb154f61a35"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 31,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/31-008c0852447cfadb.md",
+      "ranking_score": 0.75574345,
+      "sha": "008c0852447cfadb9f0cfc8eb1101b681b373624f7201ad1d2d7164700ccf48a"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 32,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/32-39d1808880d54752.md",
+      "ranking_score": 0.7513161,
+      "sha": "39d1808880d547524373ca76ffd47100d22425fb8bc30605913ee0e0df4c61b4"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 33,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/33-1addf7c34fca98f5.md",
+      "ranking_score": 0.74684576,
+      "sha": "1addf7c34fca98f5ff7c79ec68ebf6ab164bebf0f2c35406791d27ff6b417068"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 34,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/34-83867b6147862b76.md",
+      "ranking_score": 0.7454672,
+      "sha": "83867b6147862b76a397c579886c15d1ecf0b2c8fa549b1c89fa9477c4413116"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 35,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/35-169f1b189d4db210.md",
+      "ranking_score": 0.74506898,
+      "sha": "169f1b189d4db210a158b115ff0ad20814bdeb2b4412013033c80f300d47e9d9"
+    },
+    {
+      "bucket": "MIDDLE_RANK",
+      "case": 36,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/36-a4a09f253e65ef60.md",
+      "ranking_score": 0.7412582,
+      "sha": "a4a09f253e65ef6030050a170ce080afddf6f96571567e9bd262b79977ade7f6"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 37,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/37-059293b092527026.md",
+      "ranking_score": 0.0,
+      "sha": "059293b0925270261412ab0304c73e0e77fc53f0c468e841fc0fb67d1ec8a096"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 38,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/38-eaecc12d81e46c59.md",
+      "ranking_score": 0.0,
+      "sha": "eaecc12d81e46c59805732fb8daf6c43ddd9cc93dc35716aaa10531374673e64"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 39,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/39-b9af914b22cacdbf.md",
+      "ranking_score": 0.0,
+      "sha": "b9af914b22cacdbfdbcb566c4919c0433ea531f41e086a0d19253d517694a8b5"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 40,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/40-d35414e3c81762ec.md",
+      "ranking_score": 0.0,
+      "sha": "d35414e3c81762ecc44a67661e5d3b02387d929af75fd2afc2b6ec2b7e68f960"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 41,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/41-ea86d5a715735e57.md",
+      "ranking_score": 0.0,
+      "sha": "ea86d5a715735e5794ab30a7d05beedb5cd0647703b134abeb3b241294ca7181"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 42,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/42-8371f617769ab498.md",
+      "ranking_score": 0.0,
+      "sha": "8371f617769ab498a7f15b156cdea79caf2fc6100b06f9e15614650ddf901cff"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 43,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/43-e8c16d1eaee53d9a.md",
+      "ranking_score": 0.0,
+      "sha": "e8c16d1eaee53d9aa10df2925229e3b4db187ef11379669ee18c861219b44a1b"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 44,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/44-7bfddf9a0f58b923.md",
+      "ranking_score": 0.0,
+      "sha": "7bfddf9a0f58b9239e97c3fc6762302577653ab6eafb7f89a8df34c098202b1c"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 45,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/45-d456341ea6d8cc79.md",
+      "ranking_score": 0.0,
+      "sha": "d456341ea6d8cc79eac290f8d74c70cb25f7c248105787235185ace7601204ca"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 46,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/46-5ce88dc663a413c0.md",
+      "ranking_score": 0.0,
+      "sha": "5ce88dc663a413c0b630f82a5a5c1d0e2d25c3589ea29af65c6d8f455a02f76e"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 47,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/47-4d20b027f4309226.md",
+      "ranking_score": 0.0,
+      "sha": "4d20b027f4309226bb0324bbe40c04a696aeb8e4b99e7b74eae55b27e9472830"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 48,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/48-b2146c83d321e5b9.md",
+      "ranking_score": 0.0,
+      "sha": "b2146c83d321e5b9dbd118774ea9619f5687966a9de37d9786a74c6631fa6f29"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 49,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/49-ed4753c95e0d2c39.md",
+      "ranking_score": 0.0,
+      "sha": "ed4753c95e0d2c3985de52d63c5d19f3c5f2674d7d492d0cda8d93bc2e582525"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 50,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/50-d92030fbf2b761d4.md",
+      "ranking_score": 0.0,
+      "sha": "d92030fbf2b761d4fd0b536f2f2f79b90ab3bf28427adb816ef72930a9634c8e"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 51,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/51-019f6325f21e3d39.md",
+      "ranking_score": 0.0,
+      "sha": "019f6325f21e3d3964e2dc809ba4abe3417956a7caedcfaea889ddc4b5e0d627"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 52,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/52-0f8a439791898bec.md",
+      "ranking_score": 0.0,
+      "sha": "0f8a439791898bec253eacdb191f6e0c03cba131b076d8bcc07c8c420e7d39cd"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 53,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/53-50254bfe13af4d0d.md",
+      "ranking_score": 0.0,
+      "sha": "50254bfe13af4d0d4c0fb9cdd3133f0fd4599f11900fdd9082e56ad0778a1397"
+    },
+    {
+      "bucket": "LOW_RISK_RANK",
+      "case": 54,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/54-97d54095e1d4d1f3.md",
+      "ranking_score": 0.0,
+      "sha": "97d54095e1d4d1f30edca10e8452672631c552318f285428ce28d20e1bdbb49c"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 55,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/55-d9004243d538c985.md",
+      "ranking_score": 0.0,
+      "sha": "d9004243d538c9859e27f8ffb78518b34e2c65b9ecdd8bb675977de263117f82"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 56,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/56-6de8f24a1acb3b08.md",
+      "ranking_score": 0.00070357,
+      "sha": "6de8f24a1acb3b085b3bbddfc9640b1b1589f8a9211a076e348a2326f3295516"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 57,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/57-88ffa8befc24f925.md",
+      "ranking_score": 1.0,
+      "sha": "88ffa8befc24f925d62fec92142542539340f47189b442a4003952cd1e05002e"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 58,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/58-c1c361f10bb5dcf4.md",
+      "ranking_score": 0.83681647,
+      "sha": "c1c361f10bb5dcf49ec7d87971aa86e65ff8ae6af763889512dfc4ec382520cf"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 59,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/59-d66eff703502db2a.md",
+      "ranking_score": 0.99999999,
+      "sha": "d66eff703502db2ae907ea1cb832638f7928bd5198c97f584dd5874b3c62daa1"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 60,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/60-1c17a6189b16d466.md",
+      "ranking_score": 0.0,
+      "sha": "1c17a6189b16d466279a1fb7879f8da2fe4fca69477a899940db261c14570ada"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 61,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/61-3a49e503d873e399.md",
+      "ranking_score": 0.99680998,
+      "sha": "3a49e503d873e3993548e86f2c7a83fd3ec26c09f05c9f9d9f9a60aa115221b4"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 62,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/62-294ac6c8bcf8a125.md",
+      "ranking_score": 0.04465277,
+      "sha": "294ac6c8bcf8a12514bae01207e927ba1eefce1954fd22c3977c2073d86f11e4"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 63,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/63-c19b649b8d339a8b.md",
+      "ranking_score": 0.99684814,
+      "sha": "c19b649b8d339a8b90ac0a0dcefb53a21f4ec83d97a3234096ada4dd6b34a288"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 64,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/64-e8305a52c449dea8.md",
+      "ranking_score": 0.63010308,
+      "sha": "e8305a52c449dea89bac41783629c247047e36e06ee110e65c8f02ad254c8b8f"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 65,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/65-8a1bd8bca15e89d0.md",
+      "ranking_score": 4.418e-05,
+      "sha": "8a1bd8bca15e89d0cf8a66c5a17726a2019bb7cc4c91f2e54c4d6afda3fc7c5e"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 66,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/66-59145fa32065277d.md",
+      "ranking_score": 0.99999997,
+      "sha": "59145fa32065277d3ac8f837c93ff102a19a9cad929d1676fa535475178d8851"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 67,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/67-a3a94c797a247a39.md",
+      "ranking_score": 0.20696332,
+      "sha": "a3a94c797a247a3942fb4d6024380f7b62e1c930f506ffe48f79b59158431d5d"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 68,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/68-75ba20d966178ea0.md",
+      "ranking_score": 0.9976595,
+      "sha": "75ba20d966178ea083e7336a1470dc689d458493891f5c65b89a59d1b2e3ca4b"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 69,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/69-b8ec56a59ed1a514.md",
+      "ranking_score": 0.06410013,
+      "sha": "b8ec56a59ed1a5143ec3f383fdf1387f81856348a4a7c522ff4cdf84b60f8b81"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 70,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/70-c9af9341701889a7.md",
+      "ranking_score": 0.99999797,
+      "sha": "c9af9341701889a76dfb0b1462211863008192b36bd97f9d51da8d1bd4d000ac"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 71,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/71-f8f9869ecc33d1aa.md",
+      "ranking_score": 1.7e-07,
+      "sha": "f8f9869ecc33d1aaac538aad46023bd9f4a56a431124b3cc7452900d36d6d6aa"
+    },
+    {
+      "bucket": "DIVERSITY_CONTROL",
+      "case": 72,
+      "path": "reviews/smoltalk-v59-active-sample-003/cases/72-d4e057ca3466c925.md",
+      "ranking_score": 0.30040423,
+      "sha": "d4e057ca3466c925133165cb34cfd1fd01cf56be3f52bc7d8ae9b2a7eb6f33a7"
+    }
+  ],
+  "population_estimator": false,
+  "reviewed_before": 144,
+  "sample_size": 72,
+  "schema_version": "v59-active-sample-plan-3",
+  "status": "PUBLISHED_FOR_REVIEW",
+  "training_authorized": false,
+  "unreviewed_before": 936
+}
