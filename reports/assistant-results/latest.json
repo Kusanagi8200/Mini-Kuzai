@@ -35,9 +35,9 @@
   "producer": "tools/public-audits/phase03_v57_architecture_prep.py",
   "producer_sha256": "2354fe9961be60a11ef4e9bc427f293d8834de4292596746f32c0f04de72e2e8",
   "project": "Mini-Kuzai",
-  "semantic_validation_complete": false,
+  "semantic_validation_complete": true,
   "source": "Mini-Kuzai V57 architecture preparation - frozen tokenizer plus public training candidates",
   "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
-  "step_id": "PHASE03-SMOLTALK-V57-ARCHITECTURE-PREP-001",
+  "step_id": "PHASE03-SMOLTALK-V57-ARCHITECTURE-PREP-002",
   "training_authorized": false
 }
