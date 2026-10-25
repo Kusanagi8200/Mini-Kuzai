@@ -16,6 +16,12 @@ V57_PATH = (
     / "phase03_v57_architecture_prep.py"
 )
 
+SEGMENTATION_PATH = (
+    REPO
+    / "mini_kuzai"
+    / "phase03_segmentation.py"
+)
+
 MANIFEST = (
     REPO
     / "data/phase-03/manifests"
@@ -58,6 +64,11 @@ def load_module(name, path):
 V57 = load_module(
     "phase03_v57_for_v59_replacements",
     V57_PATH,
+)
+
+SEG = load_module(
+    "phase03_segmentation_for_v59_replacements",
+    SEGMENTATION_PATH,
 )
 
 
@@ -246,14 +257,43 @@ def validate():
                 "Replacement source already appears in canonical TRAIN"
             )
 
-        token_count = V57.serialized_length(
+        source_token_count = V57.serialized_length(
             pool[sha]["messages"],
             count_text,
         )
 
-        if token_count > CONTEXT:
+        pair_counts = SEG.pair_token_counts(
+            pool[sha]["messages"],
+            serialize_messages=V57.CONV.serialize_messages,
+            validate_messages=V57.CONV.validate_messages,
+            count_text=count_text,
+        )
+
+        max_pair_tokens = max(
+            pair_counts
+        )
+
+        if max_pair_tokens > CONTEXT:
             raise RuntimeError(
-                "Replacement exceeds V58 context"
+                "Replacement contains an oversized pair"
+            )
+
+        segments = SEG.segment_messages(
+            pool[sha]["messages"],
+            serialize_messages=V57.CONV.serialize_messages,
+            validate_messages=V57.CONV.validate_messages,
+            count_text=count_text,
+            context_length=CONTEXT,
+        )
+
+        max_segment_tokens = max(
+            segment.token_count
+            for segment in segments
+        )
+
+        if max_segment_tokens > CONTEXT:
+            raise RuntimeError(
+                "Replacement segmentation exceeds context"
             )
 
         results.append(
@@ -262,8 +302,16 @@ def validate():
                     candidate["review_case"],
                 "source_content_sha256":
                     sha,
-                "token_count":
-                    token_count,
+                "source_token_count":
+                    source_token_count,
+                "pair_count":
+                    len(pair_counts),
+                "max_pair_tokens":
+                    max_pair_tokens,
+                "segment_count":
+                    len(segments),
+                "max_segment_tokens":
+                    max_segment_tokens,
                 "within_context":
                     True,
                 "v44_member":
@@ -292,7 +340,9 @@ def validate():
             2,
         "replacements":
             results,
-        "all_within_context":
+        "all_pairs_within_context":
+            True,
+        "all_segments_within_context":
             True,
         "all_v44_members":
             True,
