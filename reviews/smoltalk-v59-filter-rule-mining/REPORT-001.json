@@ -1,0 +1,51 @@
+{
+  "accepted_exclude_rules": [],
+  "accepted_unsuitable_rules": [
+    {
+      "discovery": {
+        "precision": 0.8,
+        "recall": 0.10526315789473684,
+        "support": 5,
+        "tp": 4
+      },
+      "holdout": {
+        "precision": 0.8571428571428571,
+        "recall": 0.17142857142857143,
+        "support": 7,
+        "tp": 6
+      },
+      "name": "PRIORITY=HIGH AND TIME_SENSITIVE_LANGUAGE",
+      "rule": [
+        "PRIORITY=HIGH",
+        "TIME_SENSITIVE_LANGUAGE"
+      ]
+    }
+  ],
+  "candidate_rules": 111,
+  "discovery": 65,
+  "holdout": 79,
+  "holdout_exclude_union": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "support": 0,
+    "tp": 0
+  },
+  "holdout_unsuitable_union": {
+    "precision": 0.8571428571428571,
+    "recall": 0.17142857142857143,
+    "support": 7,
+    "tp": 6
+  },
+  "mix_finalized": false,
+  "population": 1080,
+  "projected_population": {
+    "any_flagged": 87,
+    "exclude_flagged": 0,
+    "review_flagged": 87
+  },
+  "reviewed": 144,
+  "rule_application_authorized": false,
+  "schema_version": "v59-filter-rule-mining-1",
+  "status": "MINED_VALIDATED_NOT_APPLIED",
+  "training_authorized": false
+}
