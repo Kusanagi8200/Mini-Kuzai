@@ -318,3 +318,75 @@ Current boundary:
 - automatic exclusion: **NOT AUTHORIZED**;
 - V59 final mix: **NOT FINALIZED**;
 - model training: **NOT AUTHORIZED / NOT STARTED**.
+
+
+## V59 active-learning Sample 003
+
+The first supervised text triage failed its authorization gate:
+
+- REPAIR/EXCLUDE precision: 60.3%;
+- REPAIR/EXCLUDE recall: 52.1%;
+- EXCLUDE precision: 16.7%;
+- EXCLUDE recall: 8.8%.
+
+The model is therefore not authorized for automatic REVIEW or EXCLUDE.
+
+Instead, its ranking is used only to construct an active-learning challenge set.
+
+Run:
+
+```bash
+python3 tools/run_v59_active_sample_003_job.py prepare
+```
+
+Sample 003 contains 72 new public conversations with zero overlap with the
+144 already reviewed cases:
+
+- 18 HIGH_RISK_RANK;
+- 18 MIDDLE_RANK;
+- 18 LOW_RISK_RANK;
+- 18 DIVERSITY_CONTROL.
+
+The ranking score is explicitly uncalibrated and is not a probability claim.
+
+Sample 003 is not a population-prevalence estimator. Its purpose is to test
+whether the model ranking has useful directionality:
+
+- HIGH_RISK_RANK should contain more REPAIR/EXCLUDE material than control;
+- LOW_RISK_RANK should contain less REPAIR/EXCLUDE material than control.
+
+After semantic review, publish:
+
+`reviews/smoltalk-v59-active-sample-003/DECISIONS-003.json`
+
+with status:
+
+`REVIEW_COMPLETE_PENDING_APPLICATION`
+
+Then run:
+
+```bash
+python3 tools/run_v59_active_sample_003_job.py finalize
+```
+
+The finalize action:
+
+1. validates and applies all 72 semantic decisions;
+2. writes RESULTS-003.md;
+3. commits and pushes the reviewed packet;
+4. audits quality by selection bucket;
+5. publishes GOGIT step:
+
+`PHASE03-SMOLTALK-V59-ACTIVE-SAMPLE-003`
+
+The active-learning audit does not estimate population quality and does not
+authorize automatic filtering.
+
+Current boundary:
+
+- reviewed public annotations before Sample 003: **144**;
+- active-learning Sample 003: **SCRIPTED / READY**;
+- automatic REVIEW: **NOT AUTHORIZED**;
+- automatic EXCLUDE: **NOT AUTHORIZED**;
+- V59 final mix: **NOT FINALIZED**;
+- model training: **NOT AUTHORIZED / NOT STARTED**.
