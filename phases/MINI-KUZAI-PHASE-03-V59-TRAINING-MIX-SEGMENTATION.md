@@ -208,3 +208,48 @@ Current state:
 - Sample 002 workflow: **SCRIPTED / READY**;
 - V59 final mix: **NOT FINALIZED**;
 - model training: **NOT AUTHORIZED / NOT STARTED**.
+
+
+## V59 filter-rule mining job
+
+The next quality-control stage is automated by:
+
+```bash
+python3 tools/run_v59_filter_rule_mining_job.py
+```
+
+The job:
+
+1. loads the 144 reviewed Sample 001 + Sample 002 cases;
+2. deterministically splits them into discovery and holdout populations;
+3. extracts simple observable metadata and text-structure features;
+4. mines single-feature and two-feature rules on discovery only;
+5. validates retained rules on the untouched holdout;
+6. separately evaluates rules for:
+   - REPAIR or EXCLUDE;
+   - EXCLUDE only;
+7. projects validated rules onto the 1,080-case bulk population by count only;
+8. writes REPORT-001.json and RESULTS-001.md;
+9. commits and pushes the report;
+10. publishes GOGIT step PHASE03-SMOLTALK-V59-FILTER-RULE-MINING-001.
+
+Acceptance gates are deliberately conservative:
+
+- minimum discovery support: 5;
+- minimum holdout support: 3;
+- REPAIR/EXCLUDE precision: >=75% on discovery and holdout;
+- EXCLUDE precision: >=85% on discovery and holdout.
+
+The mining job does not remove, repair, promote, or reweight any conversation.
+Rule application remains explicitly unauthorized until the holdout metrics are
+reviewed.
+
+Current state after Sample 002:
+
+- reviewed public quality sample: **144/144 CLOSED**;
+- unchanged bulk admission: **FAILED**;
+- additional sampling requirement: **SATISFIED**;
+- filter-rule mining: **SCRIPTED / READY**;
+- rule application: **NOT AUTHORIZED**;
+- V59 final mix: **NOT FINALIZED**;
+- model training: **NOT AUTHORIZED / NOT STARTED**.
