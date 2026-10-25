@@ -534,3 +534,43 @@ See:
 
 Private-corpus review remains local-only and paused. Historical V48-V53 review and admission sections above remain preserved as chronology; they must not be read as the current corpus state.
 
+
+## V56 tokenizer finalization
+
+Phase 03 tokenizer design is complete.
+
+The frozen tokenizer is:
+
+family              : byte_bpe_whitespace
+vocabulary          : 1024
+merge rules         : 765
+byte fallback       : enabled
+tokenizer finalized : YES
+vocabulary frozen   : YES
+training authorized : NO
+
+The tokenizer was learned only from the authorized tokenizer-learning boundary:
+the canonical TRAIN messages plus the public SmolTalk v0.4 reservoir.
+
+VALIDATION, BLIND TEST and private conversation material were excluded from
+tokenizer learning.
+
+Final artifact:
+
+data/phase-03/tokenizers/tokenizer-v56-final.json
+
+Freeze manifest:
+
+data/phase-03/manifests/tokenizer-v56-final.json
+
+Benchmark and selection evidence:
+
+data/phase-03/reports/tokenizer-benchmark-v56.json
+data/phase-03/reports/tokenizer-selection-v56.json
+
+Tokenizer finalization removes the previous blocker on token-level corpus and
+training-mixture measurement.
+
+It does not select the Phase 03 architecture and does not authorize training.
+
+The next design workstream is Phase 03 architecture selection.

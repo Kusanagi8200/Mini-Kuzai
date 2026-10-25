@@ -1,0 +1,43 @@
+{
+  "architecture_selected": false,
+  "benchmark_evidence": {
+    "2048_vocab_multiplier_x100": 200,
+    "baseline_tokens": 23084840,
+    "benchmark_step": "PHASE03-SMOLTALK-V56-TOKENIZER-BENCHMARK-001",
+    "extra_2048_p95_reduction_bp": 1218,
+    "extra_2048_token_reduction_bp": 1160,
+    "from_512_p95_reduction_bp": 1504,
+    "from_512_token_reduction_bp": 1496,
+    "roundtrip_failures": 0,
+    "selected_compression_bp": 4883,
+    "selected_max": 3291,
+    "selected_p50": 215,
+    "selected_p95": 887,
+    "selected_p99": 1003,
+    "selected_total_tokens": 11813524
+  },
+  "decision": {
+    "reason": "1024 preserves most of the measured compression benefit without doubling vocabulary parameters to 2048",
+    "whitespace_dominates_unicode": true
+  },
+  "schema_version": "v56-tokenizer-selection-1",
+  "scope": {
+    "blind_included": false,
+    "learning_corpus_sha256": "6e69a9373cd91699499ef173f13e916021e5963d1df13ce9a944fa8788b80ee4",
+    "private_included": false,
+    "validation_included": false
+  },
+  "selection": {
+    "byte_fallback": true,
+    "config": "byte_bpe_whitespace_1024",
+    "family": "byte_bpe_whitespace",
+    "fingerprint": "62216744c1493d3bd5558120570e0178d6adb94c40311e0639dde245cfab4ee9",
+    "merge_count": 765,
+    "pretokenizer": "whitespace",
+    "vocab_size": 1024
+  },
+  "status": "SELECTED_AND_FROZEN",
+  "tokenizer_finalized": true,
+  "training_authorized": false,
+  "vocabulary_frozen": true
+}

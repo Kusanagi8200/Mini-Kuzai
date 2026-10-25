@@ -1,0 +1,31 @@
+{
+  "architecture_selected": false,
+  "base_vocab_size": 259,
+  "benchmark_sha256": "86bd081d250d70a38c98c1bab56ee3ce35f258d4a180b711ba983de938796636",
+  "benchmark_step_id": "PHASE03-SMOLTALK-V56-TOKENIZER-BENCHMARK-001",
+  "blind_included": false,
+  "byte_fallback": true,
+  "family": "byte_bpe_whitespace",
+  "fingerprint": "62216744c1493d3bd5558120570e0178d6adb94c40311e0639dde245cfab4ee9",
+  "freeze_step_id": "PHASE03-SMOLTALK-V56-TOKENIZER-FREEZE-001",
+  "learning_corpus_sha256": "6e69a9373cd91699499ef173f13e916021e5963d1df13ce9a944fa8788b80ee4",
+  "merge_count": 765,
+  "pretokenizer": "whitespace",
+  "private_included": false,
+  "schema_version": "v56-tokenizer-manifest-1",
+  "selection_report_path": "data/phase-03/reports/tokenizer-selection-v56.json",
+  "source_2048_sha256": "7ee3977a1e02d1558354d6047ffc3f04eca8e2b24a46b8515ba5a3833d8e9285",
+  "special_tokens": {
+    "<bos>": 1,
+    "<eos>": 2,
+    "<pad>": 0
+  },
+  "status": "FROZEN",
+  "tokenizer_finalized": true,
+  "tokenizer_path": "data/phase-03/tokenizers/tokenizer-v56-final.json",
+  "tokenizer_sha256": "cd511d08430c40069139546c4539d5edb7f3236656ba80ff430a8f3b13d4a97a",
+  "training_authorized": false,
+  "validation_included": false,
+  "vocab_size": 1024,
+  "vocabulary_frozen": true
+}

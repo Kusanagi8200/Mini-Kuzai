@@ -1,6 +1,6 @@
 # MINI-KUZAI PHASE 03 - V56 TOKENIZER DESIGN
 
-Status: TOKENIZER BENCHMARK AND COST COMPARISON COMPLETE
+Status: TOKENIZER SELECTED AND VOCABULARY FROZEN
 
 ## Purpose
 
@@ -52,15 +52,15 @@ V56.1 tokenizer source-boundary audit              : COMPLETE
 V56.2 tokenizer candidate implementation           : COMPLETE
 V56.3 candidate vocabulary-size benchmark          : COMPLETE
 V56.4 sequence-length / coverage / parameter-cost  : COMPLETE
-V56.5 tokenizer selection                          : NEXT
-V56.6 vocabulary freeze                            : PENDING
+V56.5 tokenizer selection                          : COMPLETE
+V56.6 vocabulary freeze                            : COMPLETE
 
 Vocabulary freeze is not authorized until the comparison stages are complete.
 
 ## Current authorization state
 
-TOKENIZER FINALIZED       : NO
-VOCABULARY FROZEN         : NO
+TOKENIZER FINALIZED       : YES - BYTE-BPE-WHITESPACE / 1024
+VOCABULARY FROZEN         : YES
 ARCHITECTURE SELECTED     : NO
 TRAINING MIX FINALIZED    : NO
 TRAINING AUTHORIZED       : NO
@@ -177,3 +177,62 @@ The benchmark does not select a tokenizer.
 Tokenizer selection remains V56.5.
 
 Vocabulary freeze remains V56.6.
+
+## V56.5 / V56.6 final selection
+
+Final Phase 03 tokenizer:
+
+byte_bpe_whitespace
+
+Vocabulary:
+
+1024 tokens
+
+Merge rules:
+
+765
+
+Byte fallback:
+
+enabled
+
+Frozen tokenizer:
+
+data/phase-03/tokenizers/tokenizer-v56-final.json
+
+Freeze manifest:
+
+data/phase-03/manifests/tokenizer-v56-final.json
+
+Selection report:
+
+data/phase-03/reports/tokenizer-selection-v56.json
+
+Frozen tokenizer fingerprint:
+
+62216744c1493d3bd5558120570e0178d6adb94c40311e0639dde245cfab4ee9
+
+The whitespace BPE family outperformed the Unicode-pretokenized family at
+512, 1024 and 2048 vocabulary sizes.
+
+The 1024-token configuration was selected as the Phase 03 balance point.
+
+Relative to the 512-token whitespace candidate, it reduces token volume by
+approximately 14.96 percent and reduces p95 message length from 1044 to 887.
+
+Moving from 1024 to 2048 would reduce token volume by a further approximately
+11.60 percent and p95 from 887 to 779, but doubles vocabulary-dependent model
+parameters.
+
+For the small-model objective of Mini-Kuzai, the 1024-token configuration is
+therefore retained as the current engineering compromise between sequence
+compression and vocabulary parameter cost.
+
+The tokenizer is now finalized and its vocabulary is frozen.
+
+This freeze does not select a Phase 03 model architecture, finalize the model
+training mixture or authorize model training.
+
+Next workstream:
+
+Phase 03 architecture selection.

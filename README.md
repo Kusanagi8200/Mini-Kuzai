@@ -273,6 +273,7 @@ See:
 - [`phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md`](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md)
 - [`phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md`](phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md)
 - [`phases/MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md`](phases/MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md)
+- [`phases/MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md`](phases/MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md)
 - [`reviews/phase-03-v55/CODE-DOC-REVIEW-2026-10-17.md`](reviews/phase-03-v55/CODE-DOC-REVIEW-2026-10-17.md)
 - [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md)
 
@@ -319,7 +320,7 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V55 GLOBAL BLIND CLOSED
+Phase 03                  : DATA PREPARATION - V56 TOKENIZER FROZEN
 Canonical TRAIN records   : 107 AUDITED
 TRAIN semantic groups     : 29 / 29 AUDITED
 TRAIN provenance          : 105 PHASE03-DESIGNED / 2 SMOLTALK
@@ -340,7 +341,7 @@ SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
 Private source material   : NOT COMMITTED
-Tokenizer                 : FINAL VOCABULARY NOT FROZEN
+Tokenizer                 : BYTE-BPE-WHITESPACE / 1024 FROZEN
 Phase 03 architecture     : NOT SELECTED YET
 Phase 03 training         : NOT STARTED
 Training authorized       : NO
@@ -352,7 +353,7 @@ V54 then authored, independently reviewed, integrity-checked and froze **36 VALI
 
 V55 then authored, reviewed, integrity-checked and froze **36 BLIND TEST records across all 18 reserved blind groups**. B02 and B03 required explicit versioned correction before freeze because screening detected excessive proximity to existing same-behavior material. The final behavior-level state is **36 / 36 BLIND records and 18 / 18 BLIND behaviors frozen**, with zero exact cross-split ID, semantic-group or normalized user-prompt collisions.
 
-The V55 global BLIND closure gate `PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001` has now been executed and published successfully. The controlled TRAIN / VALIDATION / BLIND corpus boundary is closed. Training, tokenizer finalization, model architecture selection and training-mixture finalization remain unauthorized or unfrozen.
+The V55 global BLIND closure gate `PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001` has now been executed and published successfully. The controlled TRAIN / VALIDATION / BLIND corpus boundary is closed. V56 has now selected and frozen the Phase 03 tokenizer as a 1024-token byte-level BPE with whitespace pretokenization. Model architecture selection, training-mixture finalization and model training remain pending or unauthorized.
 
 See the [V55 BLIND freeze checkpoint](phases/MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md), [V54 validation closure checkpoint](phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md), [V53 corpus consolidation status](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md), [V52 annotated results](reviews/smoltalk-v52/RESULTS-001.md), [V51 verified results](reviews/smoltalk-v51/RESULTS-001.md), [V49 completed results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
 
