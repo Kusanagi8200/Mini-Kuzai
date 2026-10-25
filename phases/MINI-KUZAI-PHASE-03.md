@@ -574,3 +574,22 @@ training-mixture measurement.
 It does not select the Phase 03 architecture and does not authorize training.
 
 The next design workstream is Phase 03 architecture selection.
+
+## V57 architecture preparation
+
+The V56 tokenizer freeze now permits exact serialized conversation measurements.
+
+V57 freezes conversation serialization v1 and measures canonical TRAIN,
+the public V44 provisional population and the full public SmolTalk reservoir
+with the final 1024-token tokenizer.
+
+The audit compares 1024, 2048 and 4096 context windows and defines four
+decoder-only Transformer scales from approximately one million parameters
+upward.
+
+V44 and the full SmolTalk reservoir remain candidate or upper-bound public
+populations. They are not automatically approved as the final training mix.
+
+Architecture scale and context are not yet frozen.
+
+Training remains unauthorized.

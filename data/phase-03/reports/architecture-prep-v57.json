@@ -1,0 +1,140 @@
+{
+  "architecture_candidates": [
+    {
+      "adamw_static_bytes_estimate": 23146496,
+      "context_length": 4096,
+      "d_model": 128,
+      "ff_dim": 512,
+      "head_dim": 32,
+      "heads": 4,
+      "layers": 4,
+      "name": "micro",
+      "parameters": 1446656
+    },
+    {
+      "adamw_static_bytes_estimate": 58368000,
+      "context_length": 4096,
+      "d_model": 192,
+      "ff_dim": 768,
+      "head_dim": 32,
+      "heads": 6,
+      "layers": 6,
+      "name": "small",
+      "parameters": 3648000
+    },
+    {
+      "adamw_static_bytes_estimate": 121937920,
+      "context_length": 4096,
+      "d_model": 256,
+      "ff_dim": 1024,
+      "head_dim": 32,
+      "heads": 8,
+      "layers": 8,
+      "name": "medium",
+      "parameters": 7621120
+    },
+    {
+      "adamw_static_bytes_estimate": 223293440,
+      "context_length": 4096,
+      "d_model": 320,
+      "ff_dim": 1280,
+      "head_dim": 32,
+      "heads": 10,
+      "layers": 10,
+      "name": "large",
+      "parameters": 13955840
+    }
+  ],
+  "architecture_family": {
+    "attention_projection_bias": false,
+    "candidate_context": 4096,
+    "causal_attention": true,
+    "ff_ratio": 4,
+    "learned_position_embedding": true,
+    "mlp_activation": "gelu",
+    "mlp_bias": true,
+    "multi_head_attention": true,
+    "pre_norm": true,
+    "tied_token_embedding_lm_head": true,
+    "type": "decoder_only_transformer"
+  },
+  "architecture_selected": false,
+  "context": {
+    "candidates": [
+      1024,
+      2048,
+      4096
+    ],
+    "coverage_rule_bp": 9500,
+    "recommended": 4096,
+    "selected": false
+  },
+  "notes": {
+    "blind_included": false,
+    "private_data_included": false,
+    "public_pool_training_approved": false,
+    "v44_training_approved": false,
+    "validation_included": false
+  },
+  "populations": {
+    "controlled_train": {
+      "conversations": 107,
+      "coverage_bp": {
+        "1024": 9907,
+        "2048": 10000,
+        "4096": 10000
+      },
+      "max": 1036,
+      "p50": 206,
+      "p95": 376,
+      "p99": 1024,
+      "tokens": 24539
+    },
+    "public_pool_upper_bound": {
+      "conversations": 8000,
+      "coverage_bp": {
+        "1024": 3584,
+        "2048": 6425,
+        "4096": 10000
+      },
+      "max": 3566,
+      "p50": 1595,
+      "p95": 2902,
+      "p99": 3193,
+      "tokens": 12159592
+    },
+    "v44_provisional": {
+      "conversations": 1139,
+      "coverage_bp": {
+        "1024": 3837,
+        "2048": 6190,
+        "4096": 10000
+      },
+      "max": 3466,
+      "p50": 1515,
+      "p95": 3013,
+      "p99": 3260,
+      "tokens": 1768692
+    }
+  },
+  "schema_version": "v57-architecture-prep-1",
+  "serializer": {
+    "assistant_header": "MINI-KUZAI:\n",
+    "bos": true,
+    "eos": true,
+    "frozen": true,
+    "sha256": "ec75bff1abec33d3f6b7fde5cada462b66b7c484f006685c31761fb4d1dd7e2f",
+    "turn_separator": "\n\n",
+    "user_header": "USER:\n",
+    "version": 1
+  },
+  "status": "ARCHITECTURE_PREPARATION_COMPLETE",
+  "tokenizer": {
+    "family": "byte_bpe_whitespace",
+    "fingerprint": "62216744c1493d3bd5558120570e0178d6adb94c40311e0639dde245cfab4ee9",
+    "frozen": true,
+    "vocab_size": 1024
+  },
+  "training_authorized": false,
+  "training_mix_finalized": false
+}

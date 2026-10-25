@@ -274,6 +274,7 @@ See:
 - [`phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md`](phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md)
 - [`phases/MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md`](phases/MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md)
 - [`phases/MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md`](phases/MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md)
+- [`phases/MINI-KUZAI-PHASE-03-V57-ARCHITECTURE-PREPARATION.md`](phases/MINI-KUZAI-PHASE-03-V57-ARCHITECTURE-PREPARATION.md)
 - [`reviews/phase-03-v55/CODE-DOC-REVIEW-2026-10-17.md`](reviews/phase-03-v55/CODE-DOC-REVIEW-2026-10-17.md)
 - [`phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md`](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-09-27.md)
 
@@ -320,7 +321,7 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
-Phase 03                  : DATA PREPARATION - V56 TOKENIZER FROZEN
+Phase 03                  : V57 ARCHITECTURE PREPARATION
 Canonical TRAIN records   : 107 AUDITED
 TRAIN semantic groups     : 29 / 29 AUDITED
 TRAIN provenance          : 105 PHASE03-DESIGNED / 2 SMOLTALK

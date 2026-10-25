@@ -24,6 +24,9 @@ SOURCE_PHASE03_BLIND = "Mini-Kuzai Phase 03 designed blind-test corpus"
 SOURCE_PHASE03_TOKENIZER = (
     "Mini-Kuzai V56 tokenizer scope - canonical TRAIN plus public SmolTalk reservoir"
 )
+SOURCE_PHASE03_ARCHITECTURE = (
+    "Mini-Kuzai V57 architecture preparation - frozen tokenizer plus public training candidates"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -336,6 +339,32 @@ METRIC_KEYS = {
     "V56_FINAL_PRIVATE_INCLUDED",
     "V56_VOCABULARY_FROZEN",
     "V56_ARCHITECTURE_SELECTED",
+    "V57_SERIALIZER_FROZEN",
+    "V57_TRAIN_CONVERSATIONS",
+    "V57_TRAIN_TOKENS",
+    "V57_TRAIN_P95",
+    "V57_TRAIN_P99",
+    "V57_V44_CONVERSATIONS",
+    "V57_V44_TOKENS",
+    "V57_V44_P95",
+    "V57_V44_P99",
+    "V57_POOL_CONVERSATIONS",
+    "V57_POOL_TOKENS",
+    "V57_POOL_P95",
+    "V57_POOL_P99",
+    "V57_TRAIN_CTX1024_BP",
+    "V57_TRAIN_CTX2048_BP",
+    "V57_V44_CTX1024_BP",
+    "V57_V44_CTX2048_BP",
+    "V57_V44_CTX4096_BP",
+    "V57_CONTEXT_RECOMMENDED",
+    "V57_ARCH_CANDIDATES",
+    "V57_ARCH_MICRO_PARAMS",
+    "V57_ARCH_SMALL_PARAMS",
+    "V57_ARCH_MEDIUM_PARAMS",
+    "V57_ARCH_LARGE_PARAMS",
+    "V57_ARCH_SELECTED",
+    "V57_MIX_FINALIZED",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -384,6 +413,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_BLIND
     if tracked.startswith("tools/public-audits/phase03_v56_tokenizer_"):
         return SOURCE_PHASE03_TOKENIZER
+    if tracked.startswith("tools/public-audits/phase03_v57_"):
+        return SOURCE_PHASE03_ARCHITECTURE
     return SOURCE
 
 
