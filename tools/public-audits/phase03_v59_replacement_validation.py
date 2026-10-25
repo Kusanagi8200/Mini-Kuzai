@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Public numeric audit for V59 replacement candidates."""
+"""Public numeric audit for V59 replacement candidates.
+
+V59_REPLACEMENT_MAX_TOKENS and MIN_TOKENS refer to each candidate's
+largest produced turn-aware segment, not to the unsplit source conversation.
+"""
 
 from __future__ import annotations
 
@@ -88,6 +92,11 @@ def main():
             "Expected exactly two replacements"
         )
 
+    segment_maxima = [
+        row["max_segment_tokens"]
+        for row in replacements
+    ]
+
     metrics = {
         "V59_REPLACEMENT_CANDIDATES":
             2,
@@ -107,30 +116,13 @@ def main():
             value[
                 "canonical_train_source_reuse"
             ],
-        "V59_REPLACEMENT_TOTAL_SEGMENTS":
-            sum(
-                row["segment_count"]
-                for row in replacements
-            ),
-        "V59_REPLACEMENT_MAX_PAIR_TOKENS":
+        "V59_REPLACEMENT_MAX_TOKENS":
             max(
-                row["max_pair_tokens"]
-                for row in replacements
+                segment_maxima
             ),
-        "V59_REPLACEMENT_MAX_SEGMENT_TOKENS":
-            max(
-                row["max_segment_tokens"]
-                for row in replacements
-            ),
-        "V59_REPLACEMENT_MAX_SOURCE_TOKENS":
-            max(
-                row["source_token_count"]
-                for row in replacements
-            ),
-        "V59_REPLACEMENT_MIN_SOURCE_TOKENS":
+        "V59_REPLACEMENT_MIN_TOKENS":
             min(
-                row["source_token_count"]
-                for row in replacements
+                segment_maxima
             ),
         "V59_MIX_FINALIZED":
             0,
