@@ -2,7 +2,7 @@
 """Two-command driver for the V59 Sample 002 job."""
 
 from __future__ import annotations
-import argparse, json, subprocess, sys
+import argparse, json, shutil, subprocess, sys
 from pathlib import Path
 
 REPO=Path(__file__).resolve().parents[1]
@@ -24,8 +24,26 @@ def run(*args):
 
 def prepare():
     if README.is_file():
-        print("V59_SAMPLE_002_STATUS: ALREADY_PREPARED")
-        return
+        rel=str(README.relative_to(REPO))
+        tracked=subprocess.run(
+            ["git","-C",str(REPO),"cat-file","-e",f"HEAD:{rel}"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        ).returncode==0
+
+        if tracked:
+            print("V59_SAMPLE_002_STATUS: ALREADY_PREPARED")
+            return
+
+        root_rel=str(ROOT.relative_to(REPO))
+        subprocess.run(
+            ["git","-C",str(REPO),"reset","--quiet","--",root_rel],
+            check=False,
+        )
+        shutil.rmtree(ROOT,ignore_errors=True)
+        print("V59_SAMPLE_002_RECOVERY: STALE_LOCAL_PACKET_CLEANED")
+
     run(PUBLISH)
 
 def finalize():
