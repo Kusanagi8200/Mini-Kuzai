@@ -26,7 +26,9 @@ BASE=load_module("v59_bulk_sample_001_for_002",BASE_PATH)
 
 def git(*args):
     p=subprocess.run(["git","-C",str(REPO),*args],text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,check=False)
-    if p.returncode: raise RuntimeError("Git command failed: "+p.stderr.strip())
+    if p.returncode:
+        detail="\n".join(part for part in (p.stdout.strip(),p.stderr.strip()) if part)
+        raise RuntimeError("Git command failed: "+(detail or f"exit {p.returncode}"))
     return p.stdout.strip()
 
 def field(text,name):
@@ -90,7 +92,12 @@ def diverse_pick(rows,limit,previous):
     return selected
 
 def escape_content(value):
-    return html.escape(value,quote=True).replace("\r","&#13;")
+    safe=html.escape(value,quote=True).replace("\r","&#13;")
+    return "\n".join(
+        line.rstrip(" \t")
+        + line[len(line.rstrip(" \t")):].replace(" ","&#32;").replace("\t","&#9;")
+        for line in safe.split("\n")
+    )
 
 def case_page(index,row,N_h,n1_h,n2_h):
     parts=[
@@ -168,10 +175,20 @@ def main():
         shutil.copytree(draft,DEST)
 
     staged={str(path.relative_to(REPO)) for path in DEST.rglob("*") if path.is_file()}
-    git("add","--",*sorted(staged))
-    if set(git("diff","--cached","--name-only").splitlines())!=staged: raise RuntimeError("Unexpected staged files")
-    git("diff","--cached","--check")
-    git("commit","-m","V59: publish proportional bulk quality sample 002")
+    committed=False
+    try:
+        git("add","--",*sorted(staged))
+        if set(git("diff","--cached","--name-only").splitlines())!=staged:
+            raise RuntimeError("Unexpected staged files")
+        git("diff","--cached","--check")
+        git("commit","-m","V59: publish proportional bulk quality sample 002")
+        committed=True
+    except Exception:
+        if not committed:
+            git("reset","--quiet","--",*sorted(staged))
+            shutil.rmtree(DEST,ignore_errors=True)
+        raise
+
     git("push","origin","main"); git("fetch","--quiet","origin","main")
     if git("rev-parse","HEAD")!=git("rev-parse","origin/main"): raise RuntimeError("Push verification failed")
     print(MARKER); print("V59_SAMPLE_002_POPULATION: 1080"); print("V59_SAMPLE_002_NEW_CASES: 72")
