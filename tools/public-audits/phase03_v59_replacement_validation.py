@@ -56,7 +56,9 @@ def main():
         != "REPLACEMENTS_VALIDATED"
         or value.get("replacement_count")
         != 2
-        or value.get("all_within_context")
+        or value.get("all_pairs_within_context")
+        is not True
+        or value.get("all_segments_within_context")
         is not True
         or value.get("all_v44_members")
         is not True
@@ -105,14 +107,29 @@ def main():
             value[
                 "canonical_train_source_reuse"
             ],
-        "V59_REPLACEMENT_MAX_TOKENS":
-            max(
-                row["token_count"]
+        "V59_REPLACEMENT_TOTAL_SEGMENTS":
+            sum(
+                row["segment_count"]
                 for row in replacements
             ),
-        "V59_REPLACEMENT_MIN_TOKENS":
+        "V59_REPLACEMENT_MAX_PAIR_TOKENS":
+            max(
+                row["max_pair_tokens"]
+                for row in replacements
+            ),
+        "V59_REPLACEMENT_MAX_SEGMENT_TOKENS":
+            max(
+                row["max_segment_tokens"]
+                for row in replacements
+            ),
+        "V59_REPLACEMENT_MAX_SOURCE_TOKENS":
+            max(
+                row["source_token_count"]
+                for row in replacements
+            ),
+        "V59_REPLACEMENT_MIN_SOURCE_TOKENS":
             min(
-                row["token_count"]
+                row["source_token_count"]
                 for row in replacements
             ),
         "V59_MIX_FINALIZED":
