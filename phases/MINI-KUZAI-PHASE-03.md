@@ -461,7 +461,7 @@ Current V53 evidence:
 ## Current status
 
 ```text
-PHASE 03                  : DATA PREPARATION - V55 GLOBAL BLIND CLOSED
+PHASE 03                  : V58 ARCHITECTURE BASELINE CLOSED
 Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -491,9 +491,30 @@ Cross-split group overlap : 0
 Exact cross-split prompts : 0
 Total controlled corpus   : 179 RECORDS / 65 GROUPS
 
-Authoring policy          : V0.6
-Semantic split guard      : ACTIVE
-Loop-first workflow       : ACTIVE
+Tokenizer                 : V56 FROZEN
+Tokenizer family          : BYTE_BPE_WHITESPACE
+Tokenizer vocabulary      : 1024
+Tokenizer merges          : 765
+Byte fallback             : ENABLED
+
+Conversation serializer   : V57 FROZEN
+Architecture baseline     : V58 MICRO - EXPERIMENTAL FROZEN
+Architecture parameters   : 1,184,512
+Context length            : 2048
+Model dimension           : 128
+Attention heads           : 4
+Transformer layers        : 4
+FFN dimension             : 512
+
+GPU smoke                 : PASSED
+GPU                       : RTX 5060 LAPTOP 8 GB
+BF16                      : SUPPORTED
+V58 peak allocated        : 122 MiB
+V58 peak reserved         : 140 MiB
+
+TRAIN context coverage    : 100.00 PERCENT
+V44 direct 2048 coverage  : 61.90 PERCENT
+V44 segmentation needed   : 434 / 1139 CONVERSATIONS
 
 SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
 OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
@@ -501,95 +522,158 @@ Private corpus pipeline   : LOCAL-ONLY - PAUSED
 Private source material   : NOT COMMITTED
 Derived private metrics   : NOT COMMITTED
 
-Tokenizer                 : FINAL VOCABULARY NOT FROZEN
-New model architecture    : NOT SELECTED YET
 Training mixture          : NOT FINALIZED
+Segmentation policy       : NOT FINALIZED
 Training                  : NOT STARTED
 Training authorized       : NO
 ```
 
 ## Current checkpoint
 
-V53 completed the canonical TRAIN corpus at 107 records across all 29 TRAIN semantic groups.
+V53 closed the canonical TRAIN corpus at 107 records across all 29 TRAIN semantic groups.
 
-V54 completed and globally closed VALIDATION at 36 records across all 18 reserved validation groups. The closure gate is `PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001`.
+V54 closed VALIDATION at 36 records across all 18 reserved validation groups.
 
-V55 then authored, reviewed, integrity-checked and froze 36 BLIND TEST records across all 18 reserved blind groups. B02 and B03 required explicit versioned correction and rereview before freeze because initial blind scenarios were too close to existing same-behavior material. The final behavior-level freeze step is `PHASE03-SMOLTALK-V55-B18-BLIND-FREEZE-001`.
+V55 authored, reviewed and froze 36 BLIND TEST records across all 18 reserved blind groups. The complete controlled TRAIN / VALIDATION / BLIND boundary is frozen at 179 records across 65 semantic groups.
 
-The BLIND master manifest is now `CLOSED`.
+V56 finalized the Phase 03 tokenizer.
 
-The global closure gate is `PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001`.
+V57 froze conversation serialization v1 and measured the real token distributions of canonical TRAIN, the provisional V44 public population and the full SmolTalk reservoir.
 
-The controlled TRAIN / VALIDATION / BLIND corpus boundary is globally frozen at 179 records across 65 semantic groups.
+V58 implemented and validated the first reproducible Phase 03 architecture baseline.
 
-No tokenizer is frozen, no Phase 03 architecture is selected, no training mixture is finalized, and no model training is authorized.
+The V58 baseline is a decoder-only autoregressive Transformer with 1,184,512 parameters, context 2048, model dimension 128, four attention heads, four Transformer layers and FFN dimension 512.
 
-See:
+The V58 GPU smoke test passed on the NVIDIA GeForce RTX 5060 Laptop GPU with BF16 support.
 
-- [V55 BLIND freeze checkpoint](MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md)
-- [V55 code and documentation review](../reviews/phase-03-v55/CODE-DOC-REVIEW-2026-10-17.md)
-- [V54 VALIDATION closure checkpoint](MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md)
-- [V53 TRAIN corpus consolidation](MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md)
-- [project workflow policy](../PROJECT-WORKFLOW-POLICY.md)
+The V58 architecture is deliberately classified as an **experimental baseline**. It is frozen for reproducible experiments but is not an irreversible final architecture decision.
 
-Private-corpus review remains local-only and paused. Historical V48-V53 review and admission sections above remain preserved as chronology; they must not be read as the current corpus state.
+The remaining pre-training blockers are:
 
+1. finalize the real public training mixture;
+2. implement and validate the actual 2048-token segmentation policy;
+3. preserve role labels and conversational turn structure across segments;
+4. calculate final post-segmentation training token counts;
+5. perform the explicit training authorization gate.
+
+Training remains unauthorized and has not started.
 
 ## V56 tokenizer finalization
 
-Phase 03 tokenizer design is complete.
+The Phase 03 tokenizer is frozen.
 
-The frozen tokenizer is:
-
+```text
 family              : byte_bpe_whitespace
 vocabulary          : 1024
+base vocabulary     : 259
 merge rules         : 765
 byte fallback       : enabled
+UNK token           : none
 tokenizer finalized : YES
 vocabulary frozen   : YES
 training authorized : NO
+```
 
-The tokenizer was learned only from the authorized tokenizer-learning boundary:
-the canonical TRAIN messages plus the public SmolTalk v0.4 reservoir.
+The tokenizer was learned only from canonical TRAIN messages plus the public SmolTalk v0.4 reservoir.
 
-VALIDATION, BLIND TEST and private conversation material were excluded from
-tokenizer learning.
+VALIDATION, BLIND TEST and private conversation material were excluded from tokenizer learning.
 
-Final artifact:
+Final artifact: `data/phase-03/tokenizers/tokenizer-v56-final.json`.
 
-data/phase-03/tokenizers/tokenizer-v56-final.json
+Freeze manifest: `data/phase-03/manifests/tokenizer-v56-final.json`.
 
-Freeze manifest:
-
-data/phase-03/manifests/tokenizer-v56-final.json
-
-Benchmark and selection evidence:
-
-data/phase-03/reports/tokenizer-benchmark-v56.json
-data/phase-03/reports/tokenizer-selection-v56.json
-
-Tokenizer finalization removes the previous blocker on token-level corpus and
-training-mixture measurement.
-
-It does not select the Phase 03 architecture and does not authorize training.
-
-The next design workstream is Phase 03 architecture selection.
+See [V56 tokenizer design](MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md).
 
 ## V57 architecture preparation
 
-The V56 tokenizer freeze now permits exact serialized conversation measurements.
+V57 freezes conversation serialization v1 using ordinary textual role labels `USER:` and `MINI-KUZAI:`.
 
-V57 freezes conversation serialization v1 and measures canonical TRAIN,
-the public V44 provisional population and the full public SmolTalk reservoir
-with the final 1024-token tokenizer.
+BOS is applied at complete conversation start and EOS at conversation end.
 
-The audit compares 1024, 2048 and 4096 context windows and defines four
-decoder-only Transformer scales from approximately one million parameters
-upward.
+Measured populations:
 
-V44 and the full SmolTalk reservoir remain candidate or upper-bound public
-populations. They are not automatically approved as the final training mix.
+```text
+Canonical TRAIN     : 107 conversations / 24,539 tokens
+TRAIN p95           : 376
+TRAIN p99           : 1024
+TRAIN <= 2048       : 100.00 percent
 
-Architecture scale and context are not yet frozen.
+V44 provisional     : 1,139 conversations / 1,768,692 tokens
+V44 p95             : 3013
+V44 p99             : 3260
+V44 <= 2048         : 61.90 percent
 
-Training remains unauthorized.
+Full public pool    : 8,000 conversations / 12,159,592 tokens
+Pool p95            : 2902
+Pool p99            : 3193
+```
+
+The automatic V57 coverage rule pointed to context 4096 because it sought at least 95 percent direct coverage of both canonical TRAIN and V44.
+
+That recommendation was not treated as an automatic architecture freeze. Attention-matrix cost at context 4096 is approximately four times the cost at context 2048.
+
+See [V57 architecture preparation](MINI-KUZAI-PHASE-03-V57-ARCHITECTURE-PREPARATION.md).
+
+## V58 experimental architecture baseline
+
+V58 selects and freezes the first reproducible experimental architecture baseline:
+
+```text
+architecture        : decoder-only Transformer
+vocabulary          : 1024
+context             : 2048
+d_model             : 128
+heads               : 4
+head dimension      : 32
+layers              : 4
+FFN dimension       : 512
+activation          : GELU
+normalization       : pre-LayerNorm
+position embedding  : learned
+embedding / LM head : tied
+dropout             : 0
+parameters          : 1,184,512
+```
+
+The baseline passed the CUDA smoke test on the local RTX 5060 Laptop GPU.
+
+```text
+GPU smoke           : PASS
+BF16                : PASS
+peak allocated      : 122 MiB
+peak reserved       : 140 MiB
+```
+
+Context 2048 fully covers canonical TRAIN.
+
+For the provisional V44 public population, 434 of 1,139 conversations exceed one 2048-token window. The current V58 chunk counts are feasibility measurements only. They do not constitute the final segmentation implementation.
+
+The final segmentation policy must preserve conversational semantics and role structure. Arbitrary token-window splitting must not be treated as an already validated training policy.
+
+The final training mixture remains unresolved.
+
+See:
+
+- [V58 architecture baseline](MINI-KUZAI-PHASE-03-V58-ARCHITECTURE-BASELINE.md)
+- [V58 public audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V58-ARCHITECTURE-BASELINE-001.json)
+
+## Next workstream - V59
+
+V59 is the next pre-training decision stage.
+
+Its purpose is to transform the available public candidate reservoir into an explicit, reproducible training-data plan without touching VALIDATION or BLIND TEST.
+
+Required outputs:
+
+1. final public training-mixture decision;
+2. explicit inclusion and exclusion rules;
+3. real turn-aware segmentation implementation for context 2048;
+4. deterministic segmented-corpus manifest;
+5. final unique-token and segment accounting;
+6. data-to-parameter ratio review against the V58 baseline;
+7. explicit recommendation on whether V58 remains appropriate;
+8. separate model-training authorization decision.
+
+V59 must not infer training authorization from architecture readiness.
+
+**Model training remains NOT AUTHORIZED and NOT STARTED.**
