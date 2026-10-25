@@ -28,7 +28,7 @@ SOURCE_PHASE03_ARCHITECTURE = (
     "Mini-Kuzai V57 architecture preparation - frozen tokenizer plus public training candidates"
 )
 SOURCE_PHASE03_ARCHITECTURE_FINAL = (
-    "Mini-Kuzai V58 frozen Phase 03 architecture"
+    "Mini-Kuzai V58 experimental baseline architecture"
 )
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {

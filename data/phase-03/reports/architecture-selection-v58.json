@@ -1,0 +1,79 @@
+{
+  "architecture_frozen": true,
+  "architecture_selected": true,
+  "context_evidence": {
+    "attention_4096_vs_2048_x100": 400,
+    "train_coverage_bp": 10000,
+    "v44_unsegmented_coverage_bp": 6190
+  },
+  "data_envelope": {
+    "controlled_train_tokens": 24539,
+    "pool_tokens": 12159592,
+    "pool_tokens_per_param_x1000": 10265,
+    "v44_tokens": 1768692,
+    "v44_tokens_per_param_x1000": 1493
+  },
+  "gpu_smoke": {
+    "bf16": true,
+    "loss_finite": true,
+    "passed": true,
+    "peak_allocated_mib": 122,
+    "peak_reserved_mib": 140
+  },
+  "schema_version": "v58-architecture-selection-1",
+  "segmentation": {
+    "controlled_train": {
+      "chunks": 107,
+      "conversations": 107,
+      "max_chunks": 1,
+      "segmented_conversations": 0,
+      "tokens": 24539,
+      "truncated_tokens": 0
+    },
+    "policy": "contiguous non-overlapping token windows",
+    "public_pool_upper_bound": {
+      "chunks": 10860,
+      "conversations": 8000,
+      "max_chunks": 2,
+      "segmented_conversations": 2860,
+      "tokens": 12159592,
+      "truncated_tokens": 0
+    },
+    "v44_provisional": {
+      "chunks": 1573,
+      "conversations": 1139,
+      "max_chunks": 2,
+      "segmented_conversations": 434,
+      "tokens": 1768692,
+      "truncated_tokens": 0
+    }
+  },
+  "selection": {
+    "activation": "gelu",
+    "attention_projection_bias": false,
+    "context_length": 2048,
+    "d_model": 128,
+    "dropout": 0.0,
+    "ff_dim": 512,
+    "head_dim": 32,
+    "learned_position_embedding": true,
+    "mlp_bias": true,
+    "model_type": "decoder_only_transformer",
+    "name": "micro",
+    "num_heads": 4,
+    "num_layers": 4,
+    "parameters": 1184512,
+    "pre_norm": true,
+    "reason": "2048 preserves all controlled TRAIN conversations; longer public candidate conversations can be segmented without truncation. MICRO is the most conservative candidate relative to the available public token envelope.",
+    "right_padding_only": true,
+    "schema_version": "phase03-architecture-v58-1",
+    "status": "FROZEN",
+    "tied_token_embedding_lm_head": true,
+    "vocab_size": 1024
+  },
+  "serializer_frozen": true,
+  "status": "ARCHITECTURE_SELECTED_AND_FROZEN",
+  "tokenizer_fingerprint": "62216744c1493d3bd5558120570e0178d6adb94c40311e0639dde245cfab4ee9",
+  "training_authorized": false,
+  "training_mix_finalized": false
+}

@@ -1,0 +1,22 @@
+{
+  "activation": "gelu",
+  "attention_projection_bias": false,
+  "context_length": 2048,
+  "d_model": 128,
+  "dropout": 0.0,
+  "ff_dim": 512,
+  "head_dim": 32,
+  "learned_position_embedding": true,
+  "mlp_bias": true,
+  "model_type": "decoder_only_transformer",
+  "name": "micro",
+  "num_heads": 4,
+  "num_layers": 4,
+  "parameters": 1184512,
+  "pre_norm": true,
+  "right_padding_only": true,
+  "schema_version": "phase03-architecture-v58-1",
+  "status": "FROZEN",
+  "tied_token_embedding_lm_head": true,
+  "vocab_size": 1024
+}

@@ -1,0 +1,18 @@
+{
+  "architecture": "micro",
+  "architecture_frozen": true,
+  "architecture_selected": true,
+  "architecture_step_id": "PHASE03-SMOLTALK-V58-ARCHITECTURE-FREEZE-001",
+  "config_path": "data/phase-03/config/architecture-v58-final.json",
+  "config_sha256": "31c5326222b60316f2dba3285b4626fc81a74cae86ee2c5ba55bad0c81c74e6c",
+  "context_length": 2048,
+  "model_source_path": "mini_kuzai/phase03_model.py",
+  "model_source_sha256": "bba1fd916d4e0bcf8ef2902d8e6768db51774fc07472535e1db359f048259bb9",
+  "parameters": 1184512,
+  "report_path": "data/phase-03/reports/architecture-selection-v58.json",
+  "schema_version": "v58-architecture-manifest-1",
+  "status": "FROZEN",
+  "tokenizer_fingerprint": "62216744c1493d3bd5558120570e0178d6adb94c40311e0639dde245cfab4ee9",
+  "training_authorized": false,
+  "training_mix_finalized": false
+}
