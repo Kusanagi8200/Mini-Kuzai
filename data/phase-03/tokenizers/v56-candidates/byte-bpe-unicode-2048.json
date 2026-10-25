@@ -1,0 +1,8961 @@
+{
+  "base_vocab_size": 259,
+  "byte_fallback": true,
+  "byte_offset": 3,
+  "family": "byte_bpe_unicode",
+  "format_version": 1,
+  "merges": [
+    {
+      "left_id": 119,
+      "new_id": 259,
+      "right_id": 107
+    },
+    {
+      "left_id": 108,
+      "new_id": 260,
+      "right_id": 113
+    },
+    {
+      "left_id": 259,
+      "new_id": 261,
+      "right_id": 104
+    },
+    {
+      "left_id": 100,
+      "new_id": 262,
+      "right_id": 113
+    },
+    {
+      "left_id": 117,
+      "new_id": 263,
+      "right_id": 104
+    },
+    {
+      "left_id": 114,
+      "new_id": 264,
+      "right_id": 113
+    },
+    {
+      "left_id": 100,
+      "new_id": 265,
+      "right_id": 119
+    },
+    {
+      "left_id": 104,
+      "new_id": 266,
+      "right_id": 117
+    },
+    {
+      "left_id": 104,
+      "new_id": 267,
+      "right_id": 113
+    },
+    {
+      "left_id": 100,
+      "new_id": 268,
+      "right_id": 111
+    },
+    {
+      "left_id": 108,
+      "new_id": 269,
+      "right_id": 118
+    },
+    {
+      "left_id": 114,
+      "new_id": 270,
+      "right_id": 117
+    },
+    {
+      "left_id": 104,
+      "new_id": 271,
+      "right_id": 118
+    },
+    {
+      "left_id": 260,
+      "new_id": 272,
+      "right_id": 106
+    },
+    {
+      "left_id": 119,
+      "new_id": 273,
+      "right_id": 108
+    },
+    {
+      "left_id": 114,
+      "new_id": 274,
+      "right_id": 105
+    },
+    {
+      "left_id": 119,
+      "new_id": 275,
+      "right_id": 114
+    },
+    {
+      "left_id": 262,
+      "new_id": 276,
+      "right_id": 103
+    },
+    {
+      "left_id": 114,
+      "new_id": 277,
+      "right_id": 120
+    },
+    {
+      "left_id": 100,
+      "new_id": 278,
+      "right_id": 117
+    },
+    {
+      "left_id": 100,
+      "new_id": 279,
+      "right_id": 118
+    },
+    {
+      "left_id": 104,
+      "new_id": 280,
+      "right_id": 103
+    },
+    {
+      "left_id": 108,
+      "new_id": 281,
+      "right_id": 119
+    },
+    {
+      "left_id": 111,
+      "new_id": 282,
+      "right_id": 104
+    },
+    {
+      "left_id": 118,
+      "new_id": 283,
+      "right_id": 119
+    },
+    {
+      "left_id": 108,
+      "new_id": 284,
+      "right_id": 102
+    },
+    {
+      "left_id": 117,
+      "new_id": 285,
+      "right_id": 114
+    },
+    {
+      "left_id": 13,
+      "new_id": 286,
+      "right_id": 13
+    },
+    {
+      "left_id": 35,
+      "new_id": 287,
+      "right_id": 35
+    },
+    {
+      "left_id": 108,
+      "new_id": 288,
+      "right_id": 264
+    },
+    {
+      "left_id": 100,
+      "new_id": 289,
+      "right_id": 102
+    },
+    {
+      "left_id": 107,
+      "new_id": 290,
+      "right_id": 104
+    },
+    {
+      "left_id": 121,
+      "new_id": 291,
+      "right_id": 104
+    },
+    {
+      "left_id": 267,
+      "new_id": 292,
+      "right_id": 119
+    },
+    {
+      "left_id": 118,
+      "new_id": 293,
+      "right_id": 104
+    },
+    {
+      "left_id": 101,
+      "new_id": 294,
+      "right_id": 104
+    },
+    {
+      "left_id": 111,
+      "new_id": 295,
+      "right_id": 124
+    },
+    {
+      "left_id": 112,
+      "new_id": 296,
+      "right_id": 104
+    },
+    {
+      "left_id": 102,
+      "new_id": 297,
+      "right_id": 114
+    },
+    {
+      "left_id": 103,
+      "new_id": 298,
+      "right_id": 104
+    },
+    {
+      "left_id": 273,
+      "new_id": 299,
+      "right_id": 264
+    },
+    {
+      "left_id": 265,
+      "new_id": 300,
+      "right_id": 288
+    },
+    {
+      "left_id": 105,
+      "new_id": 301,
+      "right_id": 270
+    },
+    {
+      "left_id": 122,
+      "new_id": 302,
+      "right_id": 104
+    },
+    {
+      "left_id": 102,
+      "new_id": 303,
+      "right_id": 264
+    },
+    {
+      "left_id": 112,
+      "new_id": 304,
+      "right_id": 115
+    },
+    {
+      "left_id": 259,
+      "new_id": 305,
+      "right_id": 265
+    },
+    {
+      "left_id": 118,
+      "new_id": 306,
+      "right_id": 120
+    },
+    {
+      "left_id": 102,
+      "new_id": 307,
+      "right_id": 104
+    },
+    {
+      "left_id": 118,
+      "new_id": 308,
+      "right_id": 108
+    },
+    {
+      "left_id": 111,
+      "new_id": 309,
+      "right_id": 114
+    },
+    {
+      "left_id": 102,
+      "new_id": 310,
+      "right_id": 107
+    },
+    {
+      "left_id": 100,
+      "new_id": 311,
+      "right_id": 263
+    },
+    {
+      "left_id": 115,
+      "new_id": 312,
+      "right_id": 285
+    },
+    {
+      "left_id": 104,
+      "new_id": 313,
+      "right_id": 123
+    },
+    {
+      "left_id": 106,
+      "new_id": 314,
+      "right_id": 104
+    },
+    {
+      "left_id": 124,
+      "new_id": 315,
+      "right_id": 277
+    },
+    {
+      "left_id": 120,
+      "new_id": 316,
+      "right_id": 113
+    },
+    {
+      "left_id": 122,
+      "new_id": 317,
+      "right_id": 108
+    },
+    {
+      "left_id": 111,
+      "new_id": 318,
+      "right_id": 108
+    },
+    {
+      "left_id": 103,
+      "new_id": 319,
+      "right_id": 108
+    },
+    {
+      "left_id": 119,
+      "new_id": 320,
+      "right_id": 266
+    },
+    {
+      "left_id": 121,
+      "new_id": 321,
+      "right_id": 266
+    },
+    {
+      "left_id": 102,
+      "new_id": 322,
+      "right_id": 262
+    },
+    {
+      "left_id": 119,
+      "new_id": 323,
+      "right_id": 117
+    },
+    {
+      "left_id": 112,
+      "new_id": 324,
+      "right_id": 114
+    },
+    {
+      "left_id": 122,
+      "new_id": 325,
+      "right_id": 107
+    },
+    {
+      "left_id": 87,
+      "new_id": 326,
+      "right_id": 290
+    },
+    {
+      "left_id": 100,
+      "new_id": 327,
+      "right_id": 101
+    },
+    {
+      "left_id": 115,
+      "new_id": 328,
+      "right_id": 114
+    },
+    {
+      "left_id": 120,
+      "new_id": 329,
+      "right_id": 111
+    },
+    {
+      "left_id": 116,
+      "new_id": 330,
+      "right_id": 120
+    },
+    {
+      "left_id": 112,
+      "new_id": 331,
+      "right_id": 100
+    },
+    {
+      "left_id": 265,
+      "new_id": 332,
+      "right_id": 104
+    },
+    {
+      "left_id": 102,
+      "new_id": 333,
+      "right_id": 119
+    },
+    {
+      "left_id": 118,
+      "new_id": 334,
+      "right_id": 114
+    },
+    {
+      "left_id": 120,
+      "new_id": 335,
+      "right_id": 118
+    },
+    {
+      "left_id": 113,
+      "new_id": 336,
+      "right_id": 114
+    },
+    {
+      "left_id": 100,
+      "new_id": 337,
+      "right_id": 103
+    },
+    {
+      "left_id": 108,
+      "new_id": 338,
+      "right_id": 117
+    },
+    {
+      "left_id": 263,
+      "new_id": 339,
+      "right_id": 118
+    },
+    {
+      "left_id": 106,
+      "new_id": 340,
+      "right_id": 107
+    },
+    {
+      "left_id": 120,
+      "new_id": 341,
+      "right_id": 112
+    },
+    {
+      "left_id": 111,
+      "new_id": 342,
+      "right_id": 103
+    },
+    {
+      "left_id": 287,
+      "new_id": 343,
+      "right_id": 287
+    },
+    {
+      "left_id": 317,
+      "new_id": 344,
+      "right_id": 259
+    },
+    {
+      "left_id": 111,
+      "new_id": 345,
+      "right_id": 111
+    },
+    {
+      "left_id": 105,
+      "new_id": 346,
+      "right_id": 104
+    },
+    {
+      "left_id": 113,
+      "new_id": 347,
+      "right_id": 104
+    },
+    {
+      "left_id": 119,
+      "new_id": 348,
+      "right_id": 104
+    },
+    {
+      "left_id": 115,
+      "new_id": 349,
+      "right_id": 104
+    },
+    {
+      "left_id": 119,
+      "new_id": 350,
+      "right_id": 118
+    },
+    {
+      "left_id": 120,
+      "new_id": 351,
+      "right_id": 117
+    },
+    {
+      "left_id": 115,
+      "new_id": 352,
+      "right_id": 266
+    },
+    {
+      "left_id": 110,
+      "new_id": 353,
+      "right_id": 104
+    },
+    {
+      "left_id": 121,
+      "new_id": 354,
+      "right_id": 108
+    },
+    {
+      "left_id": 103,
+      "new_id": 355,
+      "right_id": 266
+    },
+    {
+      "left_id": 281,
+      "new_id": 356,
+      "right_id": 124
+    },
+    {
+      "left_id": 112,
+      "new_id": 357,
+      "right_id": 292
+    },
+    {
+      "left_id": 100,
+      "new_id": 358,
+      "right_id": 115
+    },
+    {
+      "left_id": 117,
+      "new_id": 359,
+      "right_id": 108
+    },
+    {
+      "left_id": 100,
+      "new_id": 360,
+      "right_id": 124
+    },
+    {
+      "left_id": 87,
+      "new_id": 361,
+      "right_id": 107
+    },
+    {
+      "left_id": 271,
+      "new_id": 362,
+      "right_id": 118
+    },
+    {
+      "left_id": 261,
+      "new_id": 363,
+      "right_id": 117
+    },
+    {
+      "left_id": 101,
+      "new_id": 364,
+      "right_id": 124
+    },
+    {
+      "left_id": 118,
+      "new_id": 365,
+      "right_id": 107
+    },
+    {
+      "left_id": 108,
+      "new_id": 366,
+      "right_id": 105
+    },
+    {
+      "left_id": 121,
+      "new_id": 367,
+      "right_id": 268
+    },
+    {
+      "left_id": 102,
+      "new_id": 368,
+      "right_id": 299
+    },
+    {
+      "left_id": 114,
+      "new_id": 369,
+      "right_id": 122
+    },
+    {
+      "left_id": 259,
+      "new_id": 370,
+      "right_id": 269
+    },
+    {
+      "left_id": 268,
+      "new_id": 371,
+      "right_id": 111
+    },
+    {
+      "left_id": 101,
+      "new_id": 372,
+      "right_id": 266
+    },
+    {
+      "left_id": 108,
+      "new_id": 373,
+      "right_id": 111
+    },
+    {
+      "left_id": 277,
+      "new_id": 374,
+      "right_id": 119
+    },
+    {
+      "left_id": 120,
+      "new_id": 375,
+      "right_id": 119
+    },
+    {
+      "left_id": 119,
+      "new_id": 376,
+      "right_id": 100
+    },
+    {
+      "left_id": 277,
+      "new_id": 377,
+      "right_id": 342
+    },
+    {
+      "left_id": 115,
+      "new_id": 378,
+      "right_id": 111
+    },
+    {
+      "left_id": 361,
+      "new_id": 379,
+      "right_id": 269
+    },
+    {
+      "left_id": 51,
+      "new_id": 380,
+      "right_id": 51
+    },
+    {
+      "left_id": 260,
+      "new_id": 381,
+      "right_id": 103
+    },
+    {
+      "left_id": 113,
+      "new_id": 382,
+      "right_id": 341
+    },
+    {
+      "left_id": 289,
+      "new_id": 383,
+      "right_id": 107
+    },
+    {
+      "left_id": 301,
+      "new_id": 384,
+      "right_id": 112
+    },
+    {
+      "left_id": 100,
+      "new_id": 385,
+      "right_id": 112
+    },
+    {
+      "left_id": 315,
+      "new_id": 386,
+      "right_id": 117
+    },
+    {
+      "left_id": 284,
+      "new_id": 387,
+      "right_id": 107
+    },
+    {
+      "left_id": 382,
+      "new_id": 388,
+      "right_id": 372
+    },
+    {
+      "left_id": 105,
+      "new_id": 389,
+      "right_id": 114
+    },
+    {
+      "left_id": 107,
+      "new_id": 390,
+      "right_id": 100
+    },
+    {
+      "left_id": 367,
+      "new_id": 391,
+      "right_id": 120
+    },
+    {
+      "left_id": 324,
+      "new_id": 392,
+      "right_id": 263
+    },
+    {
+      "left_id": 297,
+      "new_id": 393,
+      "right_id": 304
+    },
+    {
+      "left_id": 102,
+      "new_id": 394,
+      "right_id": 111
+    },
+    {
+      "left_id": 267,
+      "new_id": 395,
+      "right_id": 307
+    },
+    {
+      "left_id": 277,
+      "new_id": 396,
+      "right_id": 113
+    },
+    {
+      "left_id": 283,
+      "new_id": 397,
+      "right_id": 117
+    },
+    {
+      "left_id": 285,
+      "new_id": 398,
+      "right_id": 112
+    },
+    {
+      "left_id": 106,
+      "new_id": 399,
+      "right_id": 117
+    },
+    {
+      "left_id": 260,
+      "new_id": 400,
+      "right_id": 104
+    },
+    {
+      "left_id": 325,
+      "new_id": 401,
+      "right_id": 387
+    },
+    {
+      "left_id": 336,
+      "new_id": 402,
+      "right_id": 119
+    },
+    {
+      "left_id": 103,
+      "new_id": 403,
+      "right_id": 120
+    },
+    {
+      "left_id": 108,
+      "new_id": 404,
+      "right_id": 340
+    },
+    {
+      "left_id": 289,
+      "new_id": 405,
+      "right_id": 119
+    },
+    {
+      "left_id": 103,
+      "new_id": 406,
+      "right_id": 114
+    },
+    {
+      "left_id": 105,
+      "new_id": 407,
+      "right_id": 398
+    },
+    {
+      "left_id": 102,
+      "new_id": 408,
+      "right_id": 108
+    },
+    {
+      "left_id": 122,
+      "new_id": 409,
+      "right_id": 270
+    },
+    {
+      "left_id": 105,
+      "new_id": 410,
+      "right_id": 316
+    },
+    {
+      "left_id": 263,
+      "new_id": 411,
+      "right_id": 113
+    },
+    {
+      "left_id": 268,
+      "new_id": 412,
+      "right_id": 295
+    },
+    {
+      "left_id": 309,
+      "new_id": 413,
+      "right_id": 122
+    },
+    {
+      "left_id": 119,
+      "new_id": 414,
+      "right_id": 267
+    },
+    {
+      "left_id": 108,
+      "new_id": 415,
+      "right_id": 103
+    },
+    {
+      "left_id": 102,
+      "new_id": 416,
+      "right_id": 263
+    },
+    {
+      "left_id": 265,
+      "new_id": 417,
+      "right_id": 108
+    },
+    {
+      "left_id": 264,
+      "new_id": 418,
+      "right_id": 104
+    },
+    {
+      "left_id": 273,
+      "new_id": 419,
+      "right_id": 291
+    },
+    {
+      "left_id": 103,
+      "new_id": 420,
+      "right_id": 269
+    },
+    {
+      "left_id": 105,
+      "new_id": 421,
+      "right_id": 346
+    },
+    {
+      "left_id": 279,
+      "new_id": 422,
+      "right_id": 104
+    },
+    {
+      "left_id": 262,
+      "new_id": 423,
+      "right_id": 119
+    },
+    {
+      "left_id": 100,
+      "new_id": 424,
+      "right_id": 314
+    },
+    {
+      "left_id": 297,
+      "new_id": 425,
+      "right_id": 112
+    },
+    {
+      "left_id": 108,
+      "new_id": 426,
+      "right_id": 304
+    },
+    {
+      "left_id": 273,
+      "new_id": 427,
+      "right_id": 102
+    },
+    {
+      "left_id": 271,
+      "new_id": 428,
+      "right_id": 119
+    },
+    {
+      "left_id": 103,
+      "new_id": 429,
+      "right_id": 265
+    },
+    {
+      "left_id": 410,
+      "new_id": 430,
+      "right_id": 368
+    },
+    {
+      "left_id": 281,
+      "new_id": 431,
+      "right_id": 118
+    },
+    {
+      "left_id": 114,
+      "new_id": 432,
+      "right_id": 115
+    },
+    {
+      "left_id": 390,
+      "new_id": 433,
+      "right_id": 291
+    },
+    {
+      "left_id": 121,
+      "new_id": 434,
+      "right_id": 267
+    },
+    {
+      "left_id": 115,
+      "new_id": 435,
+      "right_id": 278
+    },
+    {
+      "left_id": 262,
+      "new_id": 436,
+      "right_id": 124
+    },
+    {
+      "left_id": 90,
+      "new_id": 437,
+      "right_id": 107
+    },
+    {
+      "left_id": 76,
+      "new_id": 438,
+      "right_id": 113
+    },
+    {
+      "left_id": 115,
+      "new_id": 439,
+      "right_id": 339
+    },
+    {
+      "left_id": 266,
+      "new_id": 440,
+      "right_id": 118
+    },
+    {
+      "left_id": 277,
+      "new_id": 441,
+      "right_id": 117
+    },
+    {
+      "left_id": 278,
+      "new_id": 442,
+      "right_id": 108
+    },
+    {
+      "left_id": 110,
+      "new_id": 443,
+      "right_id": 272
+    },
+    {
+      "left_id": 262,
+      "new_id": 444,
+      "right_id": 106
+    },
+    {
+      "left_id": 104,
+      "new_id": 445,
+      "right_id": 330
+    },
+    {
+      "left_id": 268,
+      "new_id": 446,
+      "right_id": 334
+    },
+    {
+      "left_id": 101,
+      "new_id": 447,
+      "right_id": 114
+    },
+    {
+      "left_id": 117,
+      "new_id": 448,
+      "right_id": 100
+    },
+    {
+      "left_id": 262,
+      "new_id": 449,
+      "right_id": 307
+    },
+    {
+      "left_id": 263,
+      "new_id": 450,
+      "right_id": 111
+    },
+    {
+      "left_id": 119,
+      "new_id": 451,
+      "right_id": 272
+    },
+    {
+      "left_id": 120,
+      "new_id": 452,
+      "right_id": 293
+    },
+    {
+      "left_id": 294,
+      "new_id": 453,
+      "right_id": 119
+    },
+    {
+      "left_id": 103,
+      "new_id": 454,
+      "right_id": 118
+    },
+    {
+      "left_id": 323,
+      "new_id": 455,
+      "right_id": 108
+    },
+    {
+      "left_id": 320,
+      "new_id": 456,
+      "right_id": 112
+    },
+    {
+      "left_id": 327,
+      "new_id": 457,
+      "right_id": 282
+    },
+    {
+      "left_id": 122,
+      "new_id": 458,
+      "right_id": 114
+    },
+    {
+      "left_id": 115,
+      "new_id": 459,
+      "right_id": 263
+    },
+    {
+      "left_id": 114,
+      "new_id": 460,
+      "right_id": 363
+    },
+    {
+      "left_id": 261,
+      "new_id": 461,
+      "right_id": 338
+    },
+    {
+      "left_id": 300,
+      "new_id": 462,
+      "right_id": 118
+    },
+    {
+      "left_id": 87,
+      "new_id": 463,
+      "right_id": 114
+    },
+    {
+      "left_id": 103,
+      "new_id": 464,
+      "right_id": 272
+    },
+    {
+      "left_id": 103,
+      "new_id": 465,
+      "right_id": 271
+    },
+    {
+      "left_id": 108,
+      "new_id": 466,
+      "right_id": 112
+    },
+    {
+      "left_id": 429,
+      "new_id": 467,
+      "right_id": 100
+    },
+    {
+      "left_id": 106,
+      "new_id": 468,
+      "right_id": 113
+    },
+    {
+      "left_id": 120,
+      "new_id": 469,
+      "right_id": 263
+    },
+    {
+      "left_id": 101,
+      "new_id": 470,
+      "right_id": 282
+    },
+    {
+      "left_id": 119,
+      "new_id": 471,
+      "right_id": 124
+    },
+    {
+      "left_id": 122,
+      "new_id": 472,
+      "right_id": 290
+    },
+    {
+      "left_id": 417,
+      "new_id": 473,
+      "right_id": 291
+    },
+    {
+      "left_id": 118,
+      "new_id": 474,
+      "right_id": 266
+    },
+    {
+      "left_id": 101,
+      "new_id": 475,
+      "right_id": 375
+    },
+    {
+      "left_id": 106,
+      "new_id": 476,
+      "right_id": 108
+    },
+    {
+      "left_id": 281,
+      "new_id": 477,
+      "right_id": 104
+    },
+    {
+      "left_id": 107,
+      "new_id": 478,
+      "right_id": 279
+    },
+    {
+      "left_id": 114,
+      "new_id": 479,
+      "right_id": 111
+    },
+    {
+      "left_id": 299,
+      "new_id": 480,
+      "right_id": 118
+    },
+    {
+      "left_id": 119,
+      "new_id": 481,
+      "right_id": 458
+    },
+    {
+      "left_id": 270,
+      "new_id": 482,
+      "right_id": 119
+    },
+    {
+      "left_id": 296,
+      "new_id": 483,
+      "right_id": 262
+    },
+    {
+      "left_id": 105,
+      "new_id": 484,
+      "right_id": 381
+    },
+    {
+      "left_id": 118,
+      "new_id": 485,
+      "right_id": 288
+    },
+    {
+      "left_id": 308,
+      "new_id": 486,
+      "right_id": 355
+    },
+    {
+      "left_id": 269,
+      "new_id": 487,
+      "right_id": 119
+    },
+    {
+      "left_id": 260,
+      "new_id": 488,
+      "right_id": 348
+    },
+    {
+      "left_id": 292,
+      "new_id": 489,
+      "right_id": 118
+    },
+    {
+      "left_id": 102,
+      "new_id": 490,
+      "right_id": 268
+    },
+    {
+      "left_id": 13,
+      "new_id": 491,
+      "right_id": 343
+    },
+    {
+      "left_id": 302,
+      "new_id": 492,
+      "right_id": 267
+    },
+    {
+      "left_id": 453,
+      "new_id": 493,
+      "right_id": 492
+    },
+    {
+      "left_id": 114,
+      "new_id": 494,
+      "right_id": 101
+    },
+    {
+      "left_id": 100,
+      "new_id": 495,
+      "right_id": 106
+    },
+    {
+      "left_id": 105,
+      "new_id": 496,
+      "right_id": 108
+    },
+    {
+      "left_id": 373,
+      "new_id": 497,
+      "right_id": 356
+    },
+    {
+      "left_id": 267,
+      "new_id": 498,
+      "right_id": 273
+    },
+    {
+      "left_id": 44,
+      "new_id": 499,
+      "right_id": 47
+    },
+    {
+      "left_id": 118,
+      "new_id": 500,
+      "right_id": 349
+    },
+    {
+      "left_id": 270,
+      "new_id": 501,
+      "right_id": 108
+    },
+    {
+      "left_id": 118,
+      "new_id": 502,
+      "right_id": 100
+    },
+    {
+      "left_id": 306,
+      "new_id": 503,
+      "right_id": 310
+    },
+    {
+      "left_id": 120,
+      "new_id": 504,
+      "right_id": 115
+    },
+    {
+      "left_id": 102,
+      "new_id": 505,
+      "right_id": 270
+    },
+    {
+      "left_id": 122,
+      "new_id": 506,
+      "right_id": 377
+    },
+    {
+      "left_id": 437,
+      "new_id": 507,
+      "right_id": 265
+    },
+    {
+      "left_id": 114,
+      "new_id": 508,
+      "right_id": 103
+    },
+    {
+      "left_id": 278,
+      "new_id": 509,
+      "right_id": 124
+    },
+    {
+      "left_id": 391,
+      "new_id": 510,
+      "right_id": 104
+    },
+    {
+      "left_id": 112,
+      "new_id": 511,
+      "right_id": 265
+    },
+    {
+      "left_id": 44,
+      "new_id": 512,
+      "right_id": 49
+    },
+    {
+      "left_id": 105,
+      "new_id": 513,
+      "right_id": 260
+    },
+    {
+      "left_id": 317,
+      "new_id": 514,
+      "right_id": 345
+    },
+    {
+      "left_id": 283,
+      "new_id": 515,
+      "right_id": 104
+    },
+    {
+      "left_id": 102,
+      "new_id": 516,
+      "right_id": 329
+    },
+    {
+      "left_id": 366,
+      "new_id": 517,
+      "right_id": 284
+    },
+    {
+      "left_id": 278,
+      "new_id": 518,
+      "right_id": 103
+    },
+    {
+      "left_id": 121,
+      "new_id": 519,
+      "right_id": 271
+    },
+    {
+      "left_id": 260,
+      "new_id": 520,
+      "right_id": 119
+    },
+    {
+      "left_id": 104,
+      "new_id": 521,
+      "right_id": 383
+    },
+    {
+      "left_id": 283,
+      "new_id": 522,
+      "right_id": 276
+    },
+    {
+      "left_id": 102,
+      "new_id": 523,
+      "right_id": 271
+    },
+    {
+      "left_id": 265,
+      "new_id": 524,
+      "right_id": 280
+    },
+    {
+      "left_id": 472,
+      "new_id": 525,
+      "right_id": 263
+    },
+    {
+      "left_id": 102,
+      "new_id": 526,
+      "right_id": 351
+    },
+    {
+      "left_id": 347,
+      "new_id": 527,
+      "right_id": 280
+    },
+    {
+      "left_id": 338,
+      "new_id": 528,
+      "right_id": 283
+    },
+    {
+      "left_id": 306,
+      "new_id": 529,
+      "right_id": 112
+    },
+    {
+      "left_id": 284,
+      "new_id": 530,
+      "right_id": 268
+    },
+    {
+      "left_id": 108,
+      "new_id": 531,
+      "right_id": 115
+    },
+    {
+      "left_id": 314,
+      "new_id": 532,
+      "right_id": 119
+    },
+    {
+      "left_id": 319,
+      "new_id": 533,
+      "right_id": 421
+    },
+    {
+      "left_id": 533,
+      "new_id": 534,
+      "right_id": 411
+    },
+    {
+      "left_id": 404,
+      "new_id": 535,
+      "right_id": 119
+    },
+    {
+      "left_id": 277,
+      "new_id": 536,
+      "right_id": 118
+    },
+    {
+      "left_id": 118,
+      "new_id": 537,
+      "right_id": 115
+    },
+    {
+      "left_id": 273,
+      "new_id": 538,
+      "right_id": 271
+    },
+    {
+      "left_id": 304,
+      "new_id": 539,
+      "right_id": 282
+    },
+    {
+      "left_id": 263,
+      "new_id": 540,
+      "right_id": 103
+    },
+    {
+      "left_id": 114,
+      "new_id": 541,
+      "right_id": 321
+    },
+    {
+      "left_id": 102,
+      "new_id": 542,
+      "right_id": 362
+    },
+    {
+      "left_id": 124,
+      "new_id": 543,
+      "right_id": 104
+    },
+    {
+      "left_id": 101,
+      "new_id": 544,
+      "right_id": 120
+    },
+    {
+      "left_id": 267,
+      "new_id": 545,
+      "right_id": 103
+    },
+    {
+      "left_id": 122,
+      "new_id": 546,
+      "right_id": 360
+    },
+    {
+      "left_id": 396,
+      "new_id": 547,
+      "right_id": 103
+    },
+    {
+      "left_id": 265,
+      "new_id": 548,
+      "right_id": 272
+    },
+    {
+      "left_id": 327,
+      "new_id": 549,
+      "right_id": 374
+    },
+    {
+      "left_id": 318,
+      "new_id": 550,
+      "right_id": 353
+    },
+    {
+      "left_id": 99,
+      "new_id": 551,
+      "right_id": 99
+    },
+    {
+      "left_id": 108,
+      "new_id": 552,
+      "right_id": 125
+    },
+    {
+      "left_id": 35,
+      "new_id": 553,
+      "right_id": 286
+    },
+    {
+      "left_id": 102,
+      "new_id": 554,
+      "right_id": 100
+    },
+    {
+      "left_id": 119,
+      "new_id": 555,
+      "right_id": 351
+    },
+    {
+      "left_id": 114,
+      "new_id": 556,
+      "right_id": 112
+    },
+    {
+      "left_id": 111,
+      "new_id": 557,
+      "right_id": 120
+    },
+    {
+      "left_id": 327,
+      "new_id": 558,
+      "right_id": 497
+    },
+    {
+      "left_id": 273,
+      "new_id": 559,
+      "right_id": 296
+    },
+    {
+      "left_id": 115,
+      "new_id": 560,
+      "right_id": 107
+    },
+    {
+      "left_id": 336,
+      "new_id": 561,
+      "right_id": 122
+    },
+    {
+      "left_id": 334,
+      "new_id": 562,
+      "right_id": 296
+    },
+    {
+      "left_id": 290,
+      "new_id": 563,
+      "right_id": 111
+    },
+    {
+      "left_id": 340,
+      "new_id": 564,
+      "right_id": 119
+    },
+    {
+      "left_id": 260,
+      "new_id": 565,
+      "right_id": 320
+    },
+    {
+      "left_id": 261,
+      "new_id": 566,
+      "right_id": 124
+    },
+    {
+      "left_id": 119,
+      "new_id": 567,
+      "right_id": 268
+    },
+    {
+      "left_id": 121,
+      "new_id": 568,
+      "right_id": 269
+    },
+    {
+      "left_id": 52,
+      "new_id": 569,
+      "right_id": 51
+    },
+    {
+      "left_id": 261,
+      "new_id": 570,
+      "right_id": 263
+    },
+    {
+      "left_id": 105,
+      "new_id": 571,
+      "right_id": 284
+    },
+    {
+      "left_id": 293,
+      "new_id": 572,
+      "right_id": 119
+    },
+    {
+      "left_id": 259,
+      "new_id": 573,
+      "right_id": 262
+    },
+    {
+      "left_id": 394,
+      "new_id": 574,
+      "right_id": 120
+    },
+    {
+      "left_id": 262,
+      "new_id": 575,
+      "right_id": 314
+    },
+    {
+      "left_id": 121,
+      "new_id": 576,
+      "right_id": 442
+    },
+    {
+      "left_id": 313,
+      "new_id": 577,
+      "right_id": 119
+    },
+    {
+      "left_id": 331,
+      "new_id": 578,
+      "right_id": 260
+    },
+    {
+      "left_id": 112,
+      "new_id": 579,
+      "right_id": 264
+    },
+    {
+      "left_id": 100,
+      "new_id": 580,
+      "right_id": 260
+    },
+    {
+      "left_id": 289,
+      "new_id": 581,
+      "right_id": 110
+    },
+    {
+      "left_id": 106,
+      "new_id": 582,
+      "right_id": 114
+    },
+    {
+      "left_id": 265,
+      "new_id": 583,
+      "right_id": 271
+    },
+    {
+      "left_id": 105,
+      "new_id": 584,
+      "right_id": 405
+    },
+    {
+      "left_id": 270,
+      "new_id": 585,
+      "right_id": 118
+    },
+    {
+      "left_id": 120,
+      "new_id": 586,
+      "right_id": 283
+    },
+    {
+      "left_id": 376,
+      "new_id": 587,
+      "right_id": 260
+    },
+    {
+      "left_id": 260,
+      "new_id": 588,
+      "right_id": 275
+    },
+    {
+      "left_id": 312,
+      "new_id": 589,
+      "right_id": 354
+    },
+    {
+      "left_id": 121,
+      "new_id": 590,
+      "right_id": 272
+    },
+    {
+      "left_id": 278,
+      "new_id": 591,
+      "right_id": 106
+    },
+    {
+      "left_id": 335,
+      "new_id": 592,
+      "right_id": 272
+    },
+    {
+      "left_id": 450,
+      "new_id": 593,
+      "right_id": 300
+    },
+    {
+      "left_id": 358,
+      "new_id": 594,
+      "right_id": 312
+    },
+    {
+      "left_id": 347,
+      "new_id": 595,
+      "right_id": 122
+    },
+    {
+      "left_id": 563,
+      "new_id": 596,
+      "right_id": 115
+    },
+    {
+      "left_id": 115,
+      "new_id": 597,
+      "right_id": 117
+    },
+    {
+      "left_id": 303,
+      "new_id": 598,
+      "right_id": 486
+    },
+    {
+      "left_id": 289,
+      "new_id": 599,
+      "right_id": 104
+    },
+    {
+      "left_id": 279,
+      "new_id": 600,
+      "right_id": 119
+    },
+    {
+      "left_id": 267,
+      "new_id": 601,
+      "right_id": 106
+    },
+    {
+      "left_id": 105,
+      "new_id": 602,
+      "right_id": 528
+    },
+    {
+      "left_id": 555,
+      "new_id": 603,
+      "right_id": 113
+    },
+    {
+      "left_id": 260,
+      "new_id": 604,
+      "right_id": 307
+    },
+    {
+      "left_id": 264,
+      "new_id": 605,
+      "right_id": 106
+    },
+    {
+      "left_id": 306,
+      "new_id": 606,
+      "right_id": 111
+    },
+    {
+      "left_id": 409,
+      "new_id": 607,
+      "right_id": 110
+    },
+    {
+      "left_id": 316,
+      "new_id": 608,
+      "right_id": 355
+    },
+    {
+      "left_id": 104,
+      "new_id": 609,
+      "right_id": 111
+    },
+    {
+      "left_id": 319,
+      "new_id": 610,
+      "right_id": 299
+    },
+    {
+      "left_id": 104,
+      "new_id": 611,
+      "right_id": 119
+    },
+    {
+      "left_id": 107,
+      "new_id": 612,
+      "right_id": 404
+    },
+    {
+      "left_id": 389,
+      "new_id": 613,
+      "right_id": 263
+    },
+    {
+      "left_id": 261,
+      "new_id": 614,
+      "right_id": 293
+    },
+    {
+      "left_id": 118,
+      "new_id": 615,
+      "right_id": 292
+    },
+    {
+      "left_id": 269,
+      "new_id": 616,
+      "right_id": 104
+    },
+    {
+      "left_id": 303,
+      "new_id": 617,
+      "right_id": 119
+    },
+    {
+      "left_id": 76,
+      "new_id": 618,
+      "right_id": 119
+    },
+    {
+      "left_id": 365,
+      "new_id": 619,
+      "right_id": 531
+    },
+    {
+      "left_id": 106,
+      "new_id": 620,
+      "right_id": 267
+    },
+    {
+      "left_id": 279,
+      "new_id": 621,
+      "right_id": 118
+    },
+    {
+      "left_id": 325,
+      "new_id": 622,
+      "right_id": 267
+    },
+    {
+      "left_id": 263,
+      "new_id": 623,
+      "right_id": 606
+    },
+    {
+      "left_id": 104,
+      "new_id": 624,
+      "right_id": 105
+    },
+    {
+      "left_id": 111,
+      "new_id": 625,
+      "right_id": 271
+    },
+    {
+      "left_id": 118,
+      "new_id": 626,
+      "right_id": 124
+    },
+    {
+      "left_id": 108,
+      "new_id": 627,
+      "right_id": 271
+    },
+    {
+      "left_id": 53,
+      "new_id": 628,
+      "right_id": 51
+    },
+    {
+      "left_id": 102,
+      "new_id": 629,
+      "right_id": 335
+    },
+    {
+      "left_id": 114,
+      "new_id": 630,
+      "right_id": 302
+    },
+    {
+      "left_id": 312,
+      "new_id": 631,
+      "right_id": 403
+    },
+    {
+      "left_id": 328,
+      "new_id": 632,
+      "right_id": 118
+    },
+    {
+      "left_id": 268,
+      "new_id": 633,
+      "right_id": 118
+    },
+    {
+      "left_id": 630,
+      "new_id": 634,
+      "right_id": 321
+    },
+    {
+      "left_id": 122,
+      "new_id": 635,
+      "right_id": 279
+    },
+    {
+      "left_id": 331,
+      "new_id": 636,
+      "right_id": 124
+    },
+    {
+      "left_id": 76,
+      "new_id": 637,
+      "right_id": 105
+    },
+    {
+      "left_id": 278,
+      "new_id": 638,
+      "right_id": 119
+    },
+    {
+      "left_id": 109,
+      "new_id": 639,
+      "right_id": 104
+    },
+    {
+      "left_id": 102,
+      "new_id": 640,
+      "right_id": 282
+    },
+    {
+      "left_id": 103,
+      "new_id": 641,
+      "right_id": 360
+    },
+    {
+      "left_id": 284,
+      "new_id": 642,
+      "right_id": 104
+    },
+    {
+      "left_id": 306,
+      "new_id": 643,
+      "right_id": 101
+    },
+    {
+      "left_id": 261,
+      "new_id": 644,
+      "right_id": 113
+    },
+    {
+      "left_id": 102,
+      "new_id": 645,
+      "right_id": 419
+    },
+    {
+      "left_id": 391,
+      "new_id": 646,
+      "right_id": 271
+    },
+    {
+      "left_id": 277,
+      "new_id": 647,
+      "right_id": 340
+    },
+    {
+      "left_id": 105,
+      "new_id": 648,
+      "right_id": 329
+    },
+    {
+      "left_id": 229,
+      "new_id": 649,
+      "right_id": 139
+    },
+    {
+      "left_id": 490,
+      "new_id": 650,
+      "right_id": 516
+    },
+    {
+      "left_id": 115,
+      "new_id": 651,
+      "right_id": 264
+    },
+    {
+      "left_id": 319,
+      "new_id": 652,
+      "right_id": 354
+    },
+    {
+      "left_id": 111,
+      "new_id": 653,
+      "right_id": 400
+    },
+    {
+      "left_id": 308,
+      "new_id": 654,
+      "right_id": 468
+    },
+    {
+      "left_id": 75,
+      "new_id": 655,
+      "right_id": 634
+    },
+    {
+      "left_id": 329,
+      "new_id": 656,
+      "right_id": 273
+    },
+    {
+      "left_id": 309,
+      "new_id": 657,
+      "right_id": 106
+    },
+    {
+      "left_id": 283,
+      "new_id": 658,
+      "right_id": 120
+    },
+    {
+      "left_id": 331,
+      "new_id": 659,
+      "right_id": 353
+    },
+    {
+      "left_id": 112,
+      "new_id": 660,
+      "right_id": 262
+    },
+    {
+      "left_id": 285,
+      "new_id": 661,
+      "right_id": 122
+    },
+    {
+      "left_id": 115,
+      "new_id": 662,
+      "right_id": 359
+    },
+    {
+      "left_id": 107,
+      "new_id": 663,
+      "right_id": 114
+    },
+    {
+      "left_id": 261,
+      "new_id": 664,
+      "right_id": 112
+    },
+    {
+      "left_id": 357,
+      "new_id": 665,
+      "right_id": 118
+    },
+    {
+      "left_id": 263,
+      "new_id": 666,
+      "right_id": 104
+    },
+    {
+      "left_id": 111,
+      "new_id": 667,
+      "right_id": 413
+    },
+    {
+      "left_id": 103,
+      "new_id": 668,
+      "right_id": 280
+    },
+    {
+      "left_id": 106,
+      "new_id": 669,
+      "right_id": 260
+    },
+    {
+      "left_id": 102,
+      "new_id": 670,
+      "right_id": 377
+    },
+    {
+      "left_id": 107,
+      "new_id": 671,
+      "right_id": 266
+    },
+    {
+      "left_id": 273,
+      "new_id": 672,
+      "right_id": 268
+    },
+    {
+      "left_id": 110,
+      "new_id": 673,
+      "right_id": 561
+    },
+    {
+      "left_id": 73,
+      "new_id": 674,
+      "right_id": 270
+    },
+    {
+      "left_id": 120,
+      "new_id": 675,
+      "right_id": 104
+    },
+    {
+      "left_id": 118,
+      "new_id": 676,
+      "right_id": 297
+    },
+    {
+      "left_id": 112,
+      "new_id": 677,
+      "right_id": 280
+    },
+    {
+      "left_id": 445,
+      "new_id": 678,
+      "right_id": 300
+    },
+    {
+      "left_id": 263,
+      "new_id": 679,
+      "right_id": 603
+    },
+    {
+      "left_id": 108,
+      "new_id": 680,
+      "right_id": 282
+    },
+    {
+      "left_id": 406,
+      "new_id": 681,
+      "right_id": 271
+    },
+    {
+      "left_id": 325,
+      "new_id": 682,
+      "right_id": 265
+    },
+    {
+      "left_id": 270,
+      "new_id": 683,
+      "right_id": 124
+    },
+    {
+      "left_id": 389,
+      "new_id": 684,
+      "right_id": 667
+    },
+    {
+      "left_id": 112,
+      "new_id": 685,
+      "right_id": 118
+    },
+    {
+      "left_id": 275,
+      "new_id": 686,
+      "right_id": 567
+    },
+    {
+      "left_id": 107,
+      "new_id": 687,
+      "right_id": 369
+    },
+    {
+      "left_id": 352,
+      "new_id": 688,
+      "right_id": 108
+    },
+    {
+      "left_id": 312,
+      "new_id": 689,
+      "right_id": 101
+    },
+    {
+      "left_id": 124,
+      "new_id": 690,
+      "right_id": 118
+    },
+    {
+      "left_id": 476,
+      "new_id": 691,
+      "right_id": 434
+    },
+    {
+      "left_id": 262,
+      "new_id": 692,
+      "right_id": 118
+    },
+    {
+      "left_id": 122,
+      "new_id": 693,
+      "right_id": 117
+    },
+    {
+      "left_id": 49,
+      "new_id": 694,
+      "right_id": 49
+    },
+    {
+      "left_id": 447,
+      "new_id": 695,
+      "right_id": 259
+    },
+    {
+      "left_id": 365,
+      "new_id": 696,
+      "right_id": 377
+    },
+    {
+      "left_id": 328,
+      "new_id": 697,
+      "right_id": 308
+    },
+    {
+      "left_id": 106,
+      "new_id": 698,
+      "right_id": 106
+    },
+    {
+      "left_id": 615,
+      "new_id": 699,
+      "right_id": 395
+    },
+    {
+      "left_id": 104,
+      "new_id": 700,
+      "right_id": 282
+    },
+    {
+      "left_id": 112,
+      "new_id": 701,
+      "right_id": 656
+    },
+    {
+      "left_id": 325,
+      "new_id": 702,
+      "right_id": 114
+    },
+    {
+      "left_id": 260,
+      "new_id": 703,
+      "right_id": 416
+    },
+    {
+      "left_id": 112,
+      "new_id": 704,
+      "right_id": 260
+    },
+    {
+      "left_id": 104,
+      "new_id": 705,
+      "right_id": 304
+    },
+    {
+      "left_id": 369,
+      "new_id": 706,
+      "right_id": 113
+    },
+    {
+      "left_id": 388,
+      "new_id": 707,
+      "right_id": 118
+    },
+    {
+      "left_id": 118,
+      "new_id": 708,
+      "right_id": 272
+    },
+    {
+      "left_id": 102,
+      "new_id": 709,
+      "right_id": 359
+    },
+    {
+      "left_id": 260,
+      "new_id": 710,
+      "right_id": 574
+    },
+    {
+      "left_id": 263,
+      "new_id": 711,
+      "right_id": 333
+    },
+    {
+      "left_id": 278,
+      "new_id": 712,
+      "right_id": 118
+    },
+    {
+      "left_id": 380,
+      "new_id": 713,
+      "right_id": 51
+    },
+    {
+      "left_id": 593,
+      "new_id": 714,
+      "right_id": 619
+    },
+    {
+      "left_id": 110,
+      "new_id": 715,
+      "right_id": 118
+    },
+    {
+      "left_id": 102,
+      "new_id": 716,
+      "right_id": 396
+    },
+    {
+      "left_id": 658,
+      "new_id": 717,
+      "right_id": 103
+    },
+    {
+      "left_id": 500,
+      "new_id": 718,
+      "right_id": 102
+    },
+    {
+      "left_id": 326,
+      "new_id": 719,
+      "right_id": 263
+    },
+    {
+      "left_id": 320,
+      "new_id": 720,
+      "right_id": 113
+    },
+    {
+      "left_id": 112,
+      "new_id": 721,
+      "right_id": 108
+    },
+    {
+      "left_id": 90,
+      "new_id": 722,
+      "right_id": 104
+    },
+    {
+      "left_id": 343,
+      "new_id": 723,
+      "right_id": 343
+    },
+    {
+      "left_id": 313,
+      "new_id": 724,
+      "right_id": 439
+    },
+    {
+      "left_id": 349,
+      "new_id": 725,
+      "right_id": 333
+    },
+    {
+      "left_id": 102,
+      "new_id": 726,
+      "right_id": 292
+    },
+    {
+      "left_id": 118,
+      "new_id": 727,
+      "right_id": 264
+    },
+    {
+      "left_id": 310,
+      "new_id": 728,
+      "right_id": 114
+    },
+    {
+      "left_id": 105,
+      "new_id": 729,
+      "right_id": 124
+    },
+    {
+      "left_id": 121,
+      "new_id": 730,
+      "right_id": 479
+    },
+    {
+      "left_id": 293,
+      "new_id": 731,
+      "right_id": 111
+    },
+    {
+      "left_id": 313,
+      "new_id": 732,
+      "right_id": 100
+    },
+    {
+      "left_id": 335,
+      "new_id": 733,
+      "right_id": 280
+    },
+    {
+      "left_id": 277,
+      "new_id": 734,
+      "right_id": 115
+    },
+    {
+      "left_id": 639,
+      "new_id": 735,
+      "right_id": 333
+    },
+    {
+      "left_id": 112,
+      "new_id": 736,
+      "right_id": 124
+    },
+    {
+      "left_id": 408,
+      "new_id": 737,
+      "right_id": 268
+    },
+    {
+      "left_id": 689,
+      "new_id": 738,
+      "right_id": 558
+    },
+    {
+      "left_id": 321,
+      "new_id": 739,
+      "right_id": 424
+    },
+    {
+      "left_id": 393,
+      "new_id": 740,
+      "right_id": 282
+    },
+    {
+      "left_id": 279,
+      "new_id": 741,
+      "right_id": 280
+    },
+    {
+      "left_id": 273,
+      "new_id": 742,
+      "right_id": 112
+    },
+    {
+      "left_id": 293,
+      "new_id": 743,
+      "right_id": 104
+    },
+    {
+      "left_id": 75,
+      "new_id": 744,
+      "right_id": 104
+    },
+    {
+      "left_id": 104,
+      "new_id": 745,
+      "right_id": 421
+    },
+    {
+      "left_id": 296,
+      "new_id": 746,
+      "right_id": 323
+    },
+    {
+      "left_id": 339,
+      "new_id": 747,
+      "right_id": 651
+    },
+    {
+      "left_id": 328,
+      "new_id": 748,
+      "right_id": 520
+    },
+    {
+      "left_id": 265,
+      "new_id": 749,
+      "right_id": 266
+    },
+    {
+      "left_id": 571,
+      "new_id": 750,
+      "right_id": 108
+    },
+    {
+      "left_id": 124,
+      "new_id": 751,
+      "right_id": 259
+    },
+    {
+      "left_id": 329,
+      "new_id": 752,
+      "right_id": 278
+    },
+    {
+      "left_id": 260,
+      "new_id": 753,
+      "right_id": 384
+    },
+    {
+      "left_id": 594,
+      "new_id": 754,
+      "right_id": 383
+    },
+    {
+      "left_id": 632,
+      "new_id": 755,
+      "right_id": 308
+    },
+    {
+      "left_id": 102,
+      "new_id": 756,
+      "right_id": 422
+    },
+    {
+      "left_id": 263,
+      "new_id": 757,
+      "right_id": 337
+    },
+    {
+      "left_id": 263,
+      "new_id": 758,
+      "right_id": 106
+    },
+    {
+      "left_id": 86,
+      "new_id": 759,
+      "right_id": 114
+    },
+    {
+      "left_id": 397,
+      "new_id": 760,
+      "right_id": 120
+    },
+    {
+      "left_id": 105,
+      "new_id": 761,
+      "right_id": 266
+    },
+    {
+      "left_id": 118,
+      "new_id": 762,
+      "right_id": 330
+    },
+    {
+      "left_id": 125,
+      "new_id": 763,
+      "right_id": 104
+    },
+    {
+      "left_id": 262,
+      "new_id": 764,
+      "right_id": 268
+    },
+    {
+      "left_id": 121,
+      "new_id": 765,
+      "right_id": 280
+    },
+    {
+      "left_id": 75,
+      "new_id": 766,
+      "right_id": 369
+    },
+    {
+      "left_id": 118,
+      "new_id": 767,
+      "right_id": 267
+    },
+    {
+      "left_id": 488,
+      "new_id": 768,
+      "right_id": 106
+    },
+    {
+      "left_id": 308,
+      "new_id": 769,
+      "right_id": 298
+    },
+    {
+      "left_id": 732,
+      "new_id": 770,
+      "right_id": 539
+    },
+    {
+      "left_id": 106,
+      "new_id": 771,
+      "right_id": 263
+    },
+    {
+      "left_id": 52,
+      "new_id": 772,
+      "right_id": 53
+    },
+    {
+      "left_id": 358,
+      "new_id": 773,
+      "right_id": 115
+    },
+    {
+      "left_id": 115,
+      "new_id": 774,
+      "right_id": 115
+    },
+    {
+      "left_id": 114,
+      "new_id": 775,
+      "right_id": 119
+    },
+    {
+      "left_id": 118,
+      "new_id": 776,
+      "right_id": 268
+    },
+    {
+      "left_id": 100,
+      "new_id": 777,
+      "right_id": 739
+    },
+    {
+      "left_id": 399,
+      "new_id": 778,
+      "right_id": 734
+    },
+    {
+      "left_id": 111,
+      "new_id": 779,
+      "right_id": 487
+    },
+    {
+      "left_id": 118,
+      "new_id": 780,
+      "right_id": 273
+    },
+    {
+      "left_id": 108,
+      "new_id": 781,
+      "right_id": 104
+    },
+    {
+      "left_id": 306,
+      "new_id": 782,
+      "right_id": 117
+    },
+    {
+      "left_id": 297,
+      "new_id": 783,
+      "right_id": 111
+    },
+    {
+      "left_id": 378,
+      "new_id": 784,
+      "right_id": 262
+    },
+    {
+      "left_id": 269,
+      "new_id": 785,
+      "right_id": 107
+    },
+    {
+      "left_id": 117,
+      "new_id": 786,
+      "right_id": 647
+    },
+    {
+      "left_id": 294,
+      "new_id": 787,
+      "right_id": 272
+    },
+    {
+      "left_id": 310,
+      "new_id": 788,
+      "right_id": 278
+    },
+    {
+      "left_id": 86,
+      "new_id": 789,
+      "right_id": 604
+    },
+    {
+      "left_id": 263,
+      "new_id": 790,
+      "right_id": 268
+    },
+    {
+      "left_id": 762,
+      "new_id": 791,
+      "right_id": 311
+    },
+    {
+      "left_id": 44,
+      "new_id": 792,
+      "right_id": 97
+    },
+    {
+      "left_id": 432,
+      "new_id": 793,
+      "right_id": 282
+    },
+    {
+      "left_id": 318,
+      "new_id": 794,
+      "right_id": 112
+    },
+    {
+      "left_id": 115,
+      "new_id": 795,
+      "right_id": 100
+    },
+    {
+      "left_id": 455,
+      "new_id": 796,
+      "right_id": 544
+    },
+    {
+      "left_id": 502,
+      "new_id": 797,
+      "right_id": 296
+    },
+    {
+      "left_id": 122,
+      "new_id": 798,
+      "right_id": 266
+    },
+    {
+      "left_id": 291,
+      "new_id": 799,
+      "right_id": 111
+    },
+    {
+      "left_id": 384,
+      "new_id": 800,
+      "right_id": 329
+    },
+    {
+      "left_id": 49,
+      "new_id": 801,
+      "right_id": 37
+    },
+    {
+      "left_id": 718,
+      "new_id": 802,
+      "right_id": 517
+    },
+    {
+      "left_id": 263,
+      "new_id": 803,
+      "right_id": 439
+    },
+    {
+      "left_id": 102,
+      "new_id": 804,
+      "right_id": 124
+    },
+    {
+      "left_id": 620,
+      "new_id": 805,
+      "right_id": 266
+    },
+    {
+      "left_id": 117,
+      "new_id": 806,
+      "right_id": 575
+    },
+    {
+      "left_id": 474,
+      "new_id": 807,
+      "right_id": 627
+    },
+    {
+      "left_id": 349,
+      "new_id": 808,
+      "right_id": 793
+    },
+    {
+      "left_id": 591,
+      "new_id": 809,
+      "right_id": 341
+    },
+    {
+      "left_id": 332,
+      "new_id": 810,
+      "right_id": 295
+    },
+    {
+      "left_id": 48,
+      "new_id": 811,
+      "right_id": 48
+    },
+    {
+      "left_id": 334,
+      "new_id": 812,
+      "right_id": 557
+    },
+    {
+      "left_id": 731,
+      "new_id": 813,
+      "right_id": 105
+    },
+    {
+      "left_id": 352,
+      "new_id": 814,
+      "right_id": 727
+    },
+    {
+      "left_id": 265,
+      "new_id": 815,
+      "right_id": 269
+    },
+    {
+      "left_id": 100,
+      "new_id": 816,
+      "right_id": 296
+    },
+    {
+      "left_id": 501,
+      "new_id": 817,
+      "right_id": 669
+    },
+    {
+      "left_id": 118,
+      "new_id": 818,
+      "right_id": 112
+    },
+    {
+      "left_id": 608,
+      "new_id": 819,
+      "right_id": 522
+    },
+    {
+      "left_id": 551,
+      "new_id": 820,
+      "right_id": 99
+    },
+    {
+      "left_id": 279,
+      "new_id": 821,
+      "right_id": 271
+    },
+    {
+      "left_id": 654,
+      "new_id": 822,
+      "right_id": 517
+    },
+    {
+      "left_id": 101,
+      "new_id": 823,
+      "right_id": 260
+    },
+    {
+      "left_id": 112,
+      "new_id": 824,
+      "right_id": 535
+    },
+    {
+      "left_id": 111,
+      "new_id": 825,
+      "right_id": 284
+    },
+    {
+      "left_id": 70,
+      "new_id": 826,
+      "right_id": 264
+    },
+    {
+      "left_id": 425,
+      "new_id": 827,
+      "right_id": 112
+    },
+    {
+      "left_id": 397,
+      "new_id": 828,
+      "right_id": 272
+    },
+    {
+      "left_id": 306,
+      "new_id": 829,
+      "right_id": 263
+    },
+    {
+      "left_id": 307,
+      "new_id": 830,
+      "right_id": 115
+    },
+    {
+      "left_id": 104,
+      "new_id": 831,
+      "right_id": 115
+    },
+    {
+      "left_id": 316,
+      "new_id": 832,
+      "right_id": 108
+    },
+    {
+      "left_id": 554,
+      "new_id": 833,
+      "right_id": 452
+    },
+    {
+      "left_id": 100,
+      "new_id": 834,
+      "right_id": 121
+    },
+    {
+      "left_id": 264,
+      "new_id": 835,
+      "right_id": 295
+    },
+    {
+      "left_id": 111,
+      "new_id": 836,
+      "right_id": 362
+    },
+    {
+      "left_id": 353,
+      "new_id": 837,
+      "right_id": 124
+    },
+    {
+      "left_id": 283,
+      "new_id": 838,
+      "right_id": 332
+    },
+    {
+      "left_id": 117,
+      "new_id": 839,
+      "right_id": 120
+    },
+    {
+      "left_id": 321,
+      "new_id": 840,
+      "right_id": 124
+    },
+    {
+      "left_id": 697,
+      "new_id": 841,
+      "right_id": 419
+    },
+    {
+      "left_id": 102,
+      "new_id": 842,
+      "right_id": 110
+    },
+    {
+      "left_id": 800,
+      "new_id": 843,
+      "right_id": 100
+    },
+    {
+      "left_id": 69,
+      "new_id": 844,
+      "right_id": 124
+    },
+    {
+      "left_id": 293,
+      "new_id": 845,
+      "right_id": 330
+    },
+    {
+      "left_id": 328,
+      "new_id": 846,
+      "right_id": 414
+    },
+    {
+      "left_id": 751,
+      "new_id": 847,
+      "right_id": 264
+    },
+    {
+      "left_id": 259,
+      "new_id": 848,
+      "right_id": 786
+    },
+    {
+      "left_id": 358,
+      "new_id": 849,
+      "right_id": 107
+    },
+    {
+      "left_id": 101,
+      "new_id": 850,
+      "right_id": 108
+    },
+    {
+      "left_id": 115,
+      "new_id": 851,
+      "right_id": 375
+    },
+    {
+      "left_id": 282,
+      "new_id": 852,
+      "right_id": 337
+    },
+    {
+      "left_id": 103,
+      "new_id": 853,
+      "right_id": 267
+    },
+    {
+      "left_id": 456,
+      "new_id": 854,
+      "right_id": 118
+    },
+    {
+      "left_id": 631,
+      "new_id": 855,
+      "right_id": 333
+    },
+    {
+      "left_id": 719,
+      "new_id": 856,
+      "right_id": 613
+    },
+    {
+      "left_id": 112,
+      "new_id": 857,
+      "right_id": 278
+    },
+    {
+      "left_id": 112,
+      "new_id": 858,
+      "right_id": 269
+    },
+    {
+      "left_id": 263,
+      "new_id": 859,
+      "right_id": 330
+    },
+    {
+      "left_id": 323,
+      "new_id": 860,
+      "right_id": 100
+    },
+    {
+      "left_id": 108,
+      "new_id": 861,
+      "right_id": 298
+    },
+    {
+      "left_id": 677,
+      "new_id": 862,
+      "right_id": 108
+    },
+    {
+      "left_id": 102,
+      "new_id": 863,
+      "right_id": 266
+    },
+    {
+      "left_id": 308,
+      "new_id": 864,
+      "right_id": 304
+    },
+    {
+      "left_id": 263,
+      "new_id": 865,
+      "right_id": 283
+    },
+    {
+      "left_id": 325,
+      "new_id": 866,
+      "right_id": 680
+    },
+    {
+      "left_id": 701,
+      "new_id": 867,
+      "right_id": 115
+    },
+    {
+      "left_id": 298,
+      "new_id": 868,
+      "right_id": 456
+    },
+    {
+      "left_id": 755,
+      "new_id": 869,
+      "right_id": 470
+    },
+    {
+      "left_id": 289,
+      "new_id": 870,
+      "right_id": 320
+    },
+    {
+      "left_id": 420,
+      "new_id": 871,
+      "right_id": 119
+    },
+    {
+      "left_id": 104,
+      "new_id": 872,
+      "right_id": 434
+    },
+    {
+      "left_id": 303,
+      "new_id": 873,
+      "right_id": 321
+    },
+    {
+      "left_id": 744,
+      "new_id": 874,
+      "right_id": 263
+    },
+    {
+      "left_id": 106,
+      "new_id": 875,
+      "right_id": 661
+    },
+    {
+      "left_id": 260,
+      "new_id": 876,
+      "right_id": 350
+    },
+    {
+      "left_id": 331,
+      "new_id": 877,
+      "right_id": 443
+    },
+    {
+      "left_id": 444,
+      "new_id": 878,
+      "right_id": 282
+    },
+    {
+      "left_id": 310,
+      "new_id": 879,
+      "right_id": 444
+    },
+    {
+      "left_id": 110,
+      "new_id": 880,
+      "right_id": 271
+    },
+    {
+      "left_id": 263,
+      "new_id": 881,
+      "right_id": 578
+    },
+    {
+      "left_id": 399,
+      "new_id": 882,
+      "right_id": 849
+    },
+    {
+      "left_id": 313,
+      "new_id": 883,
+      "right_id": 688
+    },
+    {
+      "left_id": 56,
+      "new_id": 884,
+      "right_id": 51
+    },
+    {
+      "left_id": 312,
+      "new_id": 885,
+      "right_id": 542
+    },
+    {
+      "left_id": 306,
+      "new_id": 886,
+      "right_id": 698
+    },
+    {
+      "left_id": 123,
+      "new_id": 887,
+      "right_id": 466
+    },
+    {
+      "left_id": 107,
+      "new_id": 888,
+      "right_id": 441
+    },
+    {
+      "left_id": 52,
+      "new_id": 889,
+      "right_id": 380
+    },
+    {
+      "left_id": 43,
+      "new_id": 890,
+      "right_id": 48
+    },
+    {
+      "left_id": 626,
+      "new_id": 891,
+      "right_id": 515
+    },
+    {
+      "left_id": 107,
+      "new_id": 892,
+      "right_id": 269
+    },
+    {
+      "left_id": 312,
+      "new_id": 893,
+      "right_id": 470
+    },
+    {
+      "left_id": 324,
+      "new_id": 894,
+      "right_id": 283
+    },
+    {
+      "left_id": 81,
+      "new_id": 895,
+      "right_id": 369
+    },
+    {
+      "left_id": 100,
+      "new_id": 896,
+      "right_id": 120
+    },
+    {
+      "left_id": 623,
+      "new_id": 897,
+      "right_id": 119
+    },
+    {
+      "left_id": 376,
+      "new_id": 898,
+      "right_id": 353
+    },
+    {
+      "left_id": 753,
+      "new_id": 899,
+      "right_id": 300
+    },
+    {
+      "left_id": 522,
+      "new_id": 900,
+      "right_id": 518
+    },
+    {
+      "left_id": 268,
+      "new_id": 901,
+      "right_id": 413
+    },
+    {
+      "left_id": 589,
+      "new_id": 902,
+      "right_id": 298
+    },
+    {
+      "left_id": 103,
+      "new_id": 903,
+      "right_id": 284
+    },
+    {
+      "left_id": 282,
+      "new_id": 904,
+      "right_id": 119
+    },
+    {
+      "left_id": 818,
+      "new_id": 905,
+      "right_id": 371
+    },
+    {
+      "left_id": 624,
+      "new_id": 906,
+      "right_id": 750
+    },
+    {
+      "left_id": 328,
+      "new_id": 907,
+      "right_id": 876
+    },
+    {
+      "left_id": 274,
+      "new_id": 908,
+      "right_id": 414
+    },
+    {
+      "left_id": 102,
+      "new_id": 909,
+      "right_id": 280
+    },
+    {
+      "left_id": 534,
+      "new_id": 910,
+      "right_id": 119
+    },
+    {
+      "left_id": 68,
+      "new_id": 911,
+      "right_id": 118
+    },
+    {
+      "left_id": 355,
+      "new_id": 912,
+      "right_id": 108
+    },
+    {
+      "left_id": 346,
+      "new_id": 913,
+      "right_id": 609
+    },
+    {
+      "left_id": 297,
+      "new_id": 914,
+      "right_id": 296
+    },
+    {
+      "left_id": 788,
+      "new_id": 915,
+      "right_id": 870
+    },
+    {
+      "left_id": 108,
+      "new_id": 916,
+      "right_id": 345
+    },
+    {
+      "left_id": 111,
+      "new_id": 917,
+      "right_id": 605
+    },
+    {
+      "left_id": 393,
+      "new_id": 918,
+      "right_id": 436
+    },
+    {
+      "left_id": 334,
+      "new_id": 919,
+      "right_id": 111
+    },
+    {
+      "left_id": 822,
+      "new_id": 920,
+      "right_id": 423
+    },
+    {
+      "left_id": 809,
+      "new_id": 921,
+      "right_id": 292
+    },
+    {
+      "left_id": 260,
+      "new_id": 922,
+      "right_id": 298
+    },
+    {
+      "left_id": 101,
+      "new_id": 923,
+      "right_id": 581
+    },
+    {
+      "left_id": 416,
+      "new_id": 924,
+      "right_id": 332
+    },
+    {
+      "left_id": 302,
+      "new_id": 925,
+      "right_id": 345
+    },
+    {
+      "left_id": 120,
+      "new_id": 926,
+      "right_id": 268
+    },
+    {
+      "left_id": 817,
+      "new_id": 927,
+      "right_id": 268
+    },
+    {
+      "left_id": 114,
+      "new_id": 928,
+      "right_id": 293
+    },
+    {
+      "left_id": 303,
+      "new_id": 929,
+      "right_id": 347
+    },
+    {
+      "left_id": 102,
+      "new_id": 930,
+      "right_id": 616
+    },
+    {
+      "left_id": 44,
+      "new_id": 931,
+      "right_id": 44
+    },
+    {
+      "left_id": 313,
+      "new_id": 932,
+      "right_id": 115
+    },
+    {
+      "left_id": 427,
+      "new_id": 933,
+      "right_id": 268
+    },
+    {
+      "left_id": 337,
+      "new_id": 934,
+      "right_id": 103
+    },
+    {
+      "left_id": 318,
+      "new_id": 935,
+      "right_id": 564
+    },
+    {
+      "left_id": 693,
+      "new_id": 936,
+      "right_id": 281
+    },
+    {
+      "left_id": 112,
+      "new_id": 937,
+      "right_id": 436
+    },
+    {
+      "left_id": 112,
+      "new_id": 938,
+      "right_id": 268
+    },
+    {
+      "left_id": 311,
+      "new_id": 939,
+      "right_id": 100
+    },
+    {
+      "left_id": 498,
+      "new_id": 940,
+      "right_id": 268
+    },
+    {
+      "left_id": 104,
+      "new_id": 941,
+      "right_id": 121
+    },
+    {
+      "left_id": 289,
+      "new_id": 942,
+      "right_id": 299
+    },
+    {
+      "left_id": 293,
+      "new_id": 943,
+      "right_id": 303
+    },
+    {
+      "left_id": 746,
+      "new_id": 944,
+      "right_id": 284
+    },
+    {
+      "left_id": 330,
+      "new_id": 945,
+      "right_id": 271
+    },
+    {
+      "left_id": 705,
+      "new_id": 946,
+      "right_id": 309
+    },
+    {
+      "left_id": 229,
+      "new_id": 947,
+      "right_id": 140
+    },
+    {
+      "left_id": 120,
+      "new_id": 948,
+      "right_id": 339
+    },
+    {
+      "left_id": 113,
+      "new_id": 949,
+      "right_id": 272
+    },
+    {
+      "left_id": 560,
+      "new_id": 950,
+      "right_id": 117
+    },
+    {
+      "left_id": 107,
+      "new_id": 951,
+      "right_id": 276
+    },
+    {
+      "left_id": 100,
+      "new_id": 952,
+      "right_id": 110
+    },
+    {
+      "left_id": 684,
+      "new_id": 953,
+      "right_id": 272
+    },
+    {
+      "left_id": 102,
+      "new_id": 954,
+      "right_id": 338
+    },
+    {
+      "left_id": 381,
+      "new_id": 955,
+      "right_id": 284
+    },
+    {
+      "left_id": 108,
+      "new_id": 956,
+      "right_id": 468
+    },
+    {
+      "left_id": 68,
+      "new_id": 957,
+      "right_id": 103
+    },
+    {
+      "left_id": 426,
+      "new_id": 958,
+      "right_id": 285
+    },
+    {
+      "left_id": 650,
+      "new_id": 959,
+      "right_id": 332
+    },
+    {
+      "left_id": 546,
+      "new_id": 960,
+      "right_id": 118
+    },
+    {
+      "left_id": 445,
+      "new_id": 961,
+      "right_id": 268
+    },
+    {
+      "left_id": 339,
+      "new_id": 962,
+      "right_id": 118
+    },
+    {
+      "left_id": 415,
+      "new_id": 963,
+      "right_id": 498
+    },
+    {
+      "left_id": 740,
+      "new_id": 964,
+      "right_id": 123
+    },
+    {
+      "left_id": 114,
+      "new_id": 965,
+      "right_id": 110
+    },
+    {
+      "left_id": 297,
+      "new_id": 966,
+      "right_id": 283
+    },
+    {
+      "left_id": 491,
+      "new_id": 967,
+      "right_id": 343
+    },
+    {
+      "left_id": 102,
+      "new_id": 968,
+      "right_id": 309
+    },
+    {
+      "left_id": 100,
+      "new_id": 969,
+      "right_id": 105
+    },
+    {
+      "left_id": 109,
+      "new_id": 970,
+      "right_id": 586
+    },
+    {
+      "left_id": 111,
+      "new_id": 971,
+      "right_id": 100
+    },
+    {
+      "left_id": 103,
+      "new_id": 972,
+      "right_id": 100
+    },
+    {
+      "left_id": 295,
+      "new_id": 973,
+      "right_id": 272
+    },
+    {
+      "left_id": 291,
+      "new_id": 974,
+      "right_id": 309
+    },
+    {
+      "left_id": 308,
+      "new_id": 975,
+      "right_id": 291
+    },
+    {
+      "left_id": 378,
+      "new_id": 976,
+      "right_id": 360
+    },
+    {
+      "left_id": 275,
+      "new_id": 977,
+      "right_id": 112
+    },
+    {
+      "left_id": 101,
+      "new_id": 978,
+      "right_id": 117
+    },
+    {
+      "left_id": 53,
+      "new_id": 979,
+      "right_id": 56
+    },
+    {
+      "left_id": 425,
+      "new_id": 980,
+      "right_id": 271
+    },
+    {
+      "left_id": 118,
+      "new_id": 981,
+      "right_id": 118
+    },
+    {
+      "left_id": 314,
+      "new_id": 982,
+      "right_id": 114
+    },
+    {
+      "left_id": 102,
+      "new_id": 983,
+      "right_id": 269
+    },
+    {
+      "left_id": 259,
+      "new_id": 984,
+      "right_id": 272
+    },
+    {
+      "left_id": 420,
+      "new_id": 985,
+      "right_id": 796
+    },
+    {
+      "left_id": 312,
+      "new_id": 986,
+      "right_id": 352
+    },
+    {
+      "left_id": 846,
+      "new_id": 987,
+      "right_id": 672
+    },
+    {
+      "left_id": 52,
+      "new_id": 988,
+      "right_id": 59
+    },
+    {
+      "left_id": 92,
+      "new_id": 989,
+      "right_id": 277
+    },
+    {
+      "left_id": 294,
+      "new_id": 990,
+      "right_id": 833
+    },
+    {
+      "left_id": 310,
+      "new_id": 991,
+      "right_id": 575
+    },
+    {
+      "left_id": 267,
+      "new_id": 992,
+      "right_id": 523
+    },
+    {
+      "left_id": 115,
+      "new_id": 993,
+      "right_id": 284
+    },
+    {
+      "left_id": 365,
+      "new_id": 994,
+      "right_id": 369
+    },
+    {
+      "left_id": 105,
+      "new_id": 995,
+      "right_id": 117
+    },
+    {
+      "left_id": 760,
+      "new_id": 996,
+      "right_id": 333
+    },
+    {
+      "left_id": 53,
+      "new_id": 997,
+      "right_id": 123
+    },
+    {
+      "left_id": 306,
+      "new_id": 998,
+      "right_id": 774
+    },
+    {
+      "left_id": 122,
+      "new_id": 999,
+      "right_id": 423
+    },
+    {
+      "left_id": 114,
+      "new_id": 1000,
+      "right_id": 263
+    },
+    {
+      "left_id": 278,
+      "new_id": 1001,
+      "right_id": 310
+    },
+    {
+      "left_id": 437,
+      "new_id": 1002,
+      "right_id": 267
+    },
+    {
+      "left_id": 298,
+      "new_id": 1003,
+      "right_id": 354
+    },
+    {
+      "left_id": 283,
+      "new_id": 1004,
+      "right_id": 638
+    },
+    {
+      "left_id": 943,
+      "new_id": 1005,
+      "right_id": 103
+    },
+    {
+      "left_id": 52,
+      "new_id": 1006,
+      "right_id": 56
+    },
+    {
+      "left_id": 102,
+      "new_id": 1007,
+      "right_id": 311
+    },
+    {
+      "left_id": 534,
+      "new_id": 1008,
+      "right_id": 307
+    },
+    {
+      "left_id": 483,
+      "new_id": 1009,
+      "right_id": 118
+    },
+    {
+      "left_id": 313,
+      "new_id": 1010,
+      "right_id": 725
+    },
+    {
+      "left_id": 426,
+      "new_id": 1011,
+      "right_id": 482
+    },
+    {
+      "left_id": 298,
+      "new_id": 1012,
+      "right_id": 513
+    },
+    {
+      "left_id": 278,
+      "new_id": 1013,
+      "right_id": 117
+    },
+    {
+      "left_id": 114,
+      "new_id": 1014,
+      "right_id": 102
+    },
+    {
+      "left_id": 113,
+      "new_id": 1015,
+      "right_id": 362
+    },
+    {
+      "left_id": 268,
+      "new_id": 1016,
+      "right_id": 356
+    },
+    {
+      "left_id": 119,
+      "new_id": 1017,
+      "right_id": 428
+    },
+    {
+      "left_id": 302,
+      "new_id": 1018,
+      "right_id": 263
+    },
+    {
+      "left_id": 106,
+      "new_id": 1019,
+      "right_id": 124
+    },
+    {
+      "left_id": 425,
+      "new_id": 1020,
+      "right_id": 579
+    },
+    {
+      "left_id": 296,
+      "new_id": 1021,
+      "right_id": 112
+    },
+    {
+      "left_id": 323,
+      "new_id": 1022,
+      "right_id": 124
+    },
+    {
+      "left_id": 912,
+      "new_id": 1023,
+      "right_id": 121
+    },
+    {
+      "left_id": 488,
+      "new_id": 1024,
+      "right_id": 399
+    },
+    {
+      "left_id": 888,
+      "new_id": 1025,
+      "right_id": 118
+    },
+    {
+      "left_id": 294,
+      "new_id": 1026,
+      "right_id": 267
+    },
+    {
+      "left_id": 115,
+      "new_id": 1027,
+      "right_id": 118
+    },
+    {
+      "left_id": 318,
+      "new_id": 1028,
+      "right_id": 271
+    },
+    {
+      "left_id": 118,
+      "new_id": 1029,
+      "right_id": 604
+    },
+    {
+      "left_id": 112,
+      "new_id": 1030,
+      "right_id": 586
+    },
+    {
+      "left_id": 893,
+      "new_id": 1031,
+      "right_id": 112
+    },
+    {
+      "left_id": 261,
+      "new_id": 1032,
+      "right_id": 511
+    },
+    {
+      "left_id": 803,
+      "new_id": 1033,
+      "right_id": 292
+    },
+    {
+      "left_id": 649,
+      "new_id": 1034,
+      "right_id": 157
+    },
+    {
+      "left_id": 113,
+      "new_id": 1035,
+      "right_id": 264
+    },
+    {
+      "left_id": 298,
+      "new_id": 1036,
+      "right_id": 105
+    },
+    {
+      "left_id": 724,
+      "new_id": 1037,
+      "right_id": 485
+    },
+    {
+      "left_id": 826,
+      "new_id": 1038,
+      "right_id": 486
+    },
+    {
+      "left_id": 106,
+      "new_id": 1039,
+      "right_id": 120
+    },
+    {
+      "left_id": 265,
+      "new_id": 1040,
+      "right_id": 469
+    },
+    {
+      "left_id": 303,
+      "new_id": 1041,
+      "right_id": 105
+    },
+    {
+      "left_id": 118,
+      "new_id": 1042,
+      "right_id": 280
+    },
+    {
+      "left_id": 260,
+      "new_id": 1043,
+      "right_id": 730
+    },
+    {
+      "left_id": 601,
+      "new_id": 1044,
+      "right_id": 259
+    },
+    {
+      "left_id": 983,
+      "new_id": 1045,
+      "right_id": 288
+    },
+    {
+      "left_id": 974,
+      "new_id": 1046,
+      "right_id": 115
+    },
+    {
+      "left_id": 210,
+      "new_id": 1047,
+      "right_id": 131
+    },
+    {
+      "left_id": 584,
+      "new_id": 1048,
+      "right_id": 585
+    },
+    {
+      "left_id": 296,
+      "new_id": 1049,
+      "right_id": 259
+    },
+    {
+      "left_id": 85,
+      "new_id": 1050,
+      "right_id": 104
+    },
+    {
+      "left_id": 102,
+      "new_id": 1051,
+      "right_id": 290
+    },
+    {
+      "left_id": 105,
+      "new_id": 1052,
+      "right_id": 359
+    },
+    {
+      "left_id": 118,
+      "new_id": 1053,
+      "right_id": 290
+    },
+    {
+      "left_id": 985,
+      "new_id": 1054,
+      "right_id": 299
+    },
+    {
+      "left_id": 957,
+      "new_id": 1055,
+      "right_id": 610
+    },
+    {
+      "left_id": 362,
+      "new_id": 1056,
+      "right_id": 940
+    },
+    {
+      "left_id": 260,
+      "new_id": 1057,
+      "right_id": 110
+    },
+    {
+      "left_id": 111,
+      "new_id": 1058,
+      "right_id": 280
+    },
+    {
+      "left_id": 378,
+      "new_id": 1059,
+      "right_id": 284
+    },
+    {
+      "left_id": 271,
+      "new_id": 1060,
+      "right_id": 104
+    },
+    {
+      "left_id": 694,
+      "new_id": 1061,
+      "right_id": 49
+    },
+    {
+      "left_id": 745,
+      "new_id": 1062,
+      "right_id": 645
+    },
+    {
+      "left_id": 640,
+      "new_id": 1063,
+      "right_id": 278
+    },
+    {
+      "left_id": 282,
+      "new_id": 1064,
+      "right_id": 333
+    },
+    {
+      "left_id": 111,
+      "new_id": 1065,
+      "right_id": 1044
+    },
+    {
+      "left_id": 270,
+      "new_id": 1066,
+      "right_id": 355
+    },
+    {
+      "left_id": 1055,
+      "new_id": 1067,
+      "right_id": 412
+    },
+    {
+      "left_id": 120,
+      "new_id": 1068,
+      "right_id": 101
+    },
+    {
+      "left_id": 348,
+      "new_id": 1069,
+      "right_id": 304
+    },
+    {
+      "left_id": 284,
+      "new_id": 1070,
+      "right_id": 118
+    },
+    {
+      "left_id": 108,
+      "new_id": 1071,
+      "right_id": 342
+    },
+    {
+      "left_id": 115,
+      "new_id": 1072,
+      "right_id": 265
+    },
+    {
+      "left_id": 767,
+      "new_id": 1073,
+      "right_id": 293
+    },
+    {
+      "left_id": 425,
+      "new_id": 1074,
+      "right_id": 823
+    },
+    {
+      "left_id": 845,
+      "new_id": 1075,
+      "right_id": 395
+    },
+    {
+      "left_id": 324,
+      "new_id": 1076,
+      "right_id": 298
+    },
+    {
+      "left_id": 102,
+      "new_id": 1077,
+      "right_id": 278
+    },
+    {
+      "left_id": 676,
+      "new_id": 1078,
+      "right_id": 339
+    },
+    {
+      "left_id": 44,
+      "new_id": 1079,
+      "right_id": 61
+    },
+    {
+      "left_id": 103,
+      "new_id": 1080,
+      "right_id": 706
+    },
+    {
+      "left_id": 319,
+      "new_id": 1081,
+      "right_id": 711
+    },
+    {
+      "left_id": 109,
+      "new_id": 1082,
+      "right_id": 494
+    },
+    {
+      "left_id": 119,
+      "new_id": 1083,
+      "right_id": 280
+    },
+    {
+      "left_id": 265,
+      "new_id": 1084,
+      "right_id": 270
+    },
+    {
+      "left_id": 335,
+      "new_id": 1085,
+      "right_id": 288
+    },
+    {
+      "left_id": 710,
+      "new_id": 1086,
+      "right_id": 464
+    },
+    {
+      "left_id": 331,
+      "new_id": 1087,
+      "right_id": 1032
+    },
+    {
+      "left_id": 101,
+      "new_id": 1088,
+      "right_id": 263
+    },
+    {
+      "left_id": 263,
+      "new_id": 1089,
+      "right_id": 105
+    },
+    {
+      "left_id": 300,
+      "new_id": 1090,
+      "right_id": 268
+    },
+    {
+      "left_id": 111,
+      "new_id": 1091,
+      "right_id": 785
+    },
+    {
+      "left_id": 946,
+      "new_id": 1092,
+      "right_id": 543
+    },
+    {
+      "left_id": 357,
+      "new_id": 1093,
+      "right_id": 268
+    },
+    {
+      "left_id": 465,
+      "new_id": 1094,
+      "right_id": 709
+    },
+    {
+      "left_id": 426,
+      "new_id": 1095,
+      "right_id": 405
+    },
+    {
+      "left_id": 52,
+      "new_id": 1096,
+      "right_id": 57
+    },
+    {
+      "left_id": 552,
+      "new_id": 1097,
+      "right_id": 104
+    },
+    {
+      "left_id": 282,
+      "new_id": 1098,
+      "right_id": 799
+    },
+    {
+      "left_id": 112,
+      "new_id": 1099,
+      "right_id": 267
+    },
+    {
+      "left_id": 318,
+      "new_id": 1100,
+      "right_id": 346
+    },
+    {
+      "left_id": 359,
+      "new_id": 1101,
+      "right_id": 564
+    },
+    {
+      "left_id": 676,
+      "new_id": 1102,
+      "right_id": 263
+    },
+    {
+      "left_id": 328,
+      "new_id": 1103,
+      "right_id": 115
+    },
+    {
+      "left_id": 352,
+      "new_id": 1104,
+      "right_id": 384
+    },
+    {
+      "left_id": 344,
+      "new_id": 1105,
+      "right_id": 260
+    },
+    {
+      "left_id": 115,
+      "new_id": 1106,
+      "right_id": 482
+    },
+    {
+      "left_id": 348,
+      "new_id": 1107,
+      "right_id": 310
+    },
+    {
+      "left_id": 103,
+      "new_id": 1108,
+      "right_id": 448
+    },
+    {
+      "left_id": 52,
+      "new_id": 1109,
+      "right_id": 52
+    },
+    {
+      "left_id": 298,
+      "new_id": 1110,
+      "right_id": 1046
+    },
+    {
+      "left_id": 330,
+      "new_id": 1111,
+      "right_id": 104
+    },
+    {
+      "left_id": 328,
+      "new_id": 1112,
+      "right_id": 798
+    },
+    {
+      "left_id": 100,
+      "new_id": 1113,
+      "right_id": 338
+    },
+    {
+      "left_id": 617,
+      "new_id": 1114,
+      "right_id": 260
+    },
+    {
+      "left_id": 328,
+      "new_id": 1115,
+      "right_id": 295
+    },
+    {
+      "left_id": 1023,
+      "new_id": 1116,
+      "right_id": 473
+    },
+    {
+      "left_id": 52,
+      "new_id": 1117,
+      "right_id": 60
+    },
+    {
+      "left_id": 79,
+      "new_id": 1118,
+      "right_id": 611
+    },
+    {
+      "left_id": 717,
+      "new_id": 1119,
+      "right_id": 489
+    },
+    {
+      "left_id": 103,
+      "new_id": 1120,
+      "right_id": 124
+    },
+    {
+      "left_id": 652,
+      "new_id": 1121,
+      "right_id": 403
+    },
+    {
+      "left_id": 597,
+      "new_id": 1122,
+      "right_id": 274
+    },
+    {
+      "left_id": 768,
+      "new_id": 1123,
+      "right_id": 266
+    },
+    {
+      "left_id": 100,
+      "new_id": 1124,
+      "right_id": 373
+    },
+    {
+      "left_id": 690,
+      "new_id": 1125,
+      "right_id": 269
+    },
+    {
+      "left_id": 399,
+      "new_id": 1126,
+      "right_id": 385
+    },
+    {
+      "left_id": 344,
+      "new_id": 1127,
+      "right_id": 374
+    },
+    {
+      "left_id": 260,
+      "new_id": 1128,
+      "right_id": 513
+    },
+    {
+      "left_id": 1072,
+      "new_id": 1129,
+      "right_id": 720
+    },
+    {
+      "left_id": 104,
+      "new_id": 1130,
+      "right_id": 122
+    },
+    {
+      "left_id": 868,
+      "new_id": 1131,
+      "right_id": 400
+    },
+    {
+      "left_id": 263,
+      "new_id": 1132,
+      "right_id": 403
+    },
+    {
+      "left_id": 629,
+      "new_id": 1133,
+      "right_id": 977
+    },
+    {
+      "left_id": 279,
+      "new_id": 1134,
+      "right_id": 264
+    },
+    {
+      "left_id": 54,
+      "new_id": 1135,
+      "right_id": 51
+    },
+    {
+      "left_id": 260,
+      "new_id": 1136,
+      "right_id": 1121
+    },
+    {
+      "left_id": 118,
+      "new_id": 1137,
+      "right_id": 102
+    },
+    {
+      "left_id": 389,
+      "new_id": 1138,
+      "right_id": 629
+    },
+    {
+      "left_id": 267,
+      "new_id": 1139,
+      "right_id": 266
+    },
+    {
+      "left_id": 117,
+      "new_id": 1140,
+      "right_id": 332
+    },
+    {
+      "left_id": 101,
+      "new_id": 1141,
+      "right_id": 741
+    },
+    {
+      "left_id": 271,
+      "new_id": 1142,
+      "right_id": 350
+    },
+    {
+      "left_id": 780,
+      "new_id": 1143,
+      "right_id": 345
+    },
+    {
+      "left_id": 281,
+      "new_id": 1144,
+      "right_id": 120
+    },
+    {
+      "left_id": 838,
+      "new_id": 1145,
+      "right_id": 357
+    },
+    {
+      "left_id": 776,
+      "new_id": 1146,
+      "right_id": 271
+    },
+    {
+      "left_id": 906,
+      "new_id": 1147,
+      "right_id": 292
+    },
+    {
+      "left_id": 891,
+      "new_id": 1148,
+      "right_id": 112
+    },
+    {
+      "left_id": 488,
+      "new_id": 1149,
+      "right_id": 865
+    },
+    {
+      "left_id": 958,
+      "new_id": 1150,
+      "right_id": 291
+    },
+    {
+      "left_id": 435,
+      "new_id": 1151,
+      "right_id": 119
+    },
+    {
+      "left_id": 875,
+      "new_id": 1152,
+      "right_id": 259
+    },
+    {
+      "left_id": 764,
+      "new_id": 1153,
+      "right_id": 1125
+    },
+    {
+      "left_id": 347,
+      "new_id": 1154,
+      "right_id": 106
+    },
+    {
+      "left_id": 114,
+      "new_id": 1155,
+      "right_id": 118
+    },
+    {
+      "left_id": 323,
+      "new_id": 1156,
+      "right_id": 692
+    },
+    {
+      "left_id": 104,
+      "new_id": 1157,
+      "right_id": 278
+    },
+    {
+      "left_id": 819,
+      "new_id": 1158,
+      "right_id": 272
+    },
+    {
+      "left_id": 594,
+      "new_id": 1159,
+      "right_id": 887
+    },
+    {
+      "left_id": 118,
+      "new_id": 1160,
+      "right_id": 110
+    },
+    {
+      "left_id": 313,
+      "new_id": 1161,
+      "right_id": 385
+    },
+    {
+      "left_id": 105,
+      "new_id": 1162,
+      "right_id": 119
+    },
+    {
+      "left_id": 259,
+      "new_id": 1163,
+      "right_id": 666
+    },
+    {
+      "left_id": 118,
+      "new_id": 1164,
+      "right_id": 275
+    },
+    {
+      "left_id": 119,
+      "new_id": 1165,
+      "right_id": 577
+    },
+    {
+      "left_id": 320,
+      "new_id": 1166,
+      "right_id": 118
+    },
+    {
+      "left_id": 347,
+      "new_id": 1167,
+      "right_id": 542
+    },
+    {
+      "left_id": 47,
+      "new_id": 1168,
+      "right_id": 37
+    },
+    {
+      "left_id": 298,
+      "new_id": 1169,
+      "right_id": 1045
+    },
+    {
+      "left_id": 409,
+      "new_id": 1170,
+      "right_id": 454
+    },
+    {
+      "left_id": 830,
+      "new_id": 1171,
+      "right_id": 119
+    },
+    {
+      "left_id": 303,
+      "new_id": 1172,
+      "right_id": 118
+    },
+    {
+      "left_id": 543,
+      "new_id": 1173,
+      "right_id": 278
+    },
+    {
+      "left_id": 340,
+      "new_id": 1174,
+      "right_id": 350
+    },
+    {
+      "left_id": 115,
+      "new_id": 1175,
+      "right_id": 270
+    },
+    {
+      "left_id": 122,
+      "new_id": 1176,
+      "right_id": 278
+    },
+    {
+      "left_id": 100,
+      "new_id": 1177,
+      "right_id": 123
+    },
+    {
+      "left_id": 394,
+      "new_id": 1178,
+      "right_id": 1085
+    },
+    {
+      "left_id": 113,
+      "new_id": 1179,
+      "right_id": 266
+    },
+    {
+      "left_id": 107,
+      "new_id": 1180,
+      "right_id": 337
+    },
+    {
+      "left_id": 125,
+      "new_id": 1181,
+      "right_id": 266
+    },
+    {
+      "left_id": 327,
+      "new_id": 1182,
+      "right_id": 625
+    },
+    {
+      "left_id": 273,
+      "new_id": 1183,
+      "right_id": 121
+    },
+    {
+      "left_id": 429,
+      "new_id": 1184,
+      "right_id": 422
+    },
+    {
+      "left_id": 351,
+      "new_id": 1185,
+      "right_id": 363
+    },
+    {
+      "left_id": 44,
+      "new_id": 1186,
+      "right_id": 43
+    },
+    {
+      "left_id": 269,
+      "new_id": 1187,
+      "right_id": 350
+    },
+    {
+      "left_id": 862,
+      "new_id": 1188,
+      "right_id": 262
+    },
+    {
+      "left_id": 1003,
+      "new_id": 1189,
+      "right_id": 300
+    },
+    {
+      "left_id": 293,
+      "new_id": 1190,
+      "right_id": 1001
+    },
+    {
+      "left_id": 376,
+      "new_id": 1191,
+      "right_id": 373
+    },
+    {
+      "left_id": 274,
+      "new_id": 1192,
+      "right_id": 105
+    },
+    {
+      "left_id": 859,
+      "new_id": 1193,
+      "right_id": 108
+    },
+    {
+      "left_id": 432,
+      "new_id": 1194,
+      "right_id": 267
+    },
+    {
+      "left_id": 269,
+      "new_id": 1195,
+      "right_id": 306
+    },
+    {
+      "left_id": 101,
+      "new_id": 1196,
+      "right_id": 335
+    },
+    {
+      "left_id": 673,
+      "new_id": 1197,
+      "right_id": 113
+    },
+    {
+      "left_id": 122,
+      "new_id": 1198,
+      "right_id": 749
+    },
+    {
+      "left_id": 610,
+      "new_id": 1199,
+      "right_id": 268
+    },
+    {
+      "left_id": 471,
+      "new_id": 1200,
+      "right_id": 349
+    },
+    {
+      "left_id": 348,
+      "new_id": 1201,
+      "right_id": 385
+    },
+    {
+      "left_id": 351,
+      "new_id": 1202,
+      "right_id": 272
+    },
+    {
+      "left_id": 879,
+      "new_id": 1203,
+      "right_id": 271
+    },
+    {
+      "left_id": 115,
+      "new_id": 1204,
+      "right_id": 351
+    },
+    {
+      "left_id": 119,
+      "new_id": 1205,
+      "right_id": 120
+    },
+    {
+      "left_id": 298,
+      "new_id": 1206,
+      "right_id": 115
+    },
+    {
+      "left_id": 105,
+      "new_id": 1207,
+      "right_id": 371
+    },
+    {
+      "left_id": 505,
+      "new_id": 1208,
+      "right_id": 711
+    },
+    {
+      "left_id": 268,
+      "new_id": 1209,
+      "right_id": 259
+    },
+    {
+      "left_id": 662,
+      "new_id": 1210,
+      "right_id": 296
+    },
+    {
+      "left_id": 112,
+      "new_id": 1211,
+      "right_id": 373
+    },
+    {
+      "left_id": 272,
+      "new_id": 1212,
+      "right_id": 118
+    },
+    {
+      "left_id": 494,
+      "new_id": 1213,
+      "right_id": 735
+    },
+    {
+      "left_id": 473,
+      "new_id": 1214,
+      "right_id": 295
+    },
+    {
+      "left_id": 703,
+      "new_id": 1215,
+      "right_id": 422
+    },
+    {
+      "left_id": 716,
+      "new_id": 1216,
+      "right_id": 119
+    },
+    {
+      "left_id": 108,
+      "new_id": 1217,
+      "right_id": 295
+    },
+    {
+      "left_id": 323,
+      "new_id": 1218,
+      "right_id": 405
+    },
+    {
+      "left_id": 296,
+      "new_id": 1219,
+      "right_id": 279
+    },
+    {
+      "left_id": 117,
+      "new_id": 1220,
+      "right_id": 269
+    },
+    {
+      "left_id": 329,
+      "new_id": 1221,
+      "right_id": 300
+    },
+    {
+      "left_id": 278,
+      "new_id": 1222,
+      "right_id": 547
+    },
+    {
+      "left_id": 97,
+      "new_id": 1223,
+      "right_id": 43
+    },
+    {
+      "left_id": 319,
+      "new_id": 1224,
+      "right_id": 568
+    },
+    {
+      "left_id": 361,
+      "new_id": 1225,
+      "right_id": 1060
+    },
+    {
+      "left_id": 113,
+      "new_id": 1226,
+      "right_id": 270
+    },
+    {
+      "left_id": 260,
+      "new_id": 1227,
+      "right_id": 362
+    },
+    {
+      "left_id": 260,
+      "new_id": 1228,
+      "right_id": 108
+    },
+    {
+      "left_id": 526,
+      "new_id": 1229,
+      "right_id": 411
+    },
+    {
+      "left_id": 104,
+      "new_id": 1230,
+      "right_id": 840
+    },
+    {
+      "left_id": 358,
+      "new_id": 1231,
+      "right_id": 349
+    },
+    {
+      "left_id": 768,
+      "new_id": 1232,
+      "right_id": 440
+    },
+    {
+      "left_id": 969,
+      "new_id": 1233,
+      "right_id": 320
+    },
+    {
+      "left_id": 260,
+      "new_id": 1234,
+      "right_id": 851
+    },
+    {
+      "left_id": 543,
+      "new_id": 1235,
+      "right_id": 712
+    },
+    {
+      "left_id": 742,
+      "new_id": 1236,
+      "right_id": 271
+    },
+    {
+      "left_id": 297,
+      "new_id": 1237,
+      "right_id": 118
+    },
+    {
+      "left_id": 260,
+      "new_id": 1238,
+      "right_id": 271
+    },
+    {
+      "left_id": 105,
+      "new_id": 1239,
+      "right_id": 599
+    },
+    {
+      "left_id": 323,
+      "new_id": 1240,
+      "right_id": 675
+    },
+    {
+      "left_id": 105,
+      "new_id": 1241,
+      "right_id": 557
+    },
+    {
+      "left_id": 103,
+      "new_id": 1242,
+      "right_id": 359
+    },
+    {
+      "left_id": 279,
+      "new_id": 1243,
+      "right_id": 272
+    },
+    {
+      "left_id": 284,
+      "new_id": 1244,
+      "right_id": 271
+    },
+    {
+      "left_id": 57,
+      "new_id": 1245,
+      "right_id": 51
+    },
+    {
+      "left_id": 111,
+      "new_id": 1246,
+      "right_id": 278
+    },
+    {
+      "left_id": 309,
+      "new_id": 1247,
+      "right_id": 102
+    },
+    {
+      "left_id": 1108,
+      "new_id": 1248,
+      "right_id": 122
+    },
+    {
+      "left_id": 812,
+      "new_id": 1249,
+      "right_id": 299
+    },
+    {
+      "left_id": 537,
+      "new_id": 1250,
+      "right_id": 599
+    },
+    {
+      "left_id": 106,
+      "new_id": 1251,
+      "right_id": 262
+    },
+    {
+      "left_id": 111,
+      "new_id": 1252,
+      "right_id": 272
+    },
+    {
+      "left_id": 435,
+      "new_id": 1253,
+      "right_id": 100
+    },
+    {
+      "left_id": 303,
+      "new_id": 1254,
+      "right_id": 1178
+    },
+    {
+      "left_id": 541,
+      "new_id": 1255,
+      "right_id": 371
+    },
+    {
+      "left_id": 1139,
+      "new_id": 1256,
+      "right_id": 1019
+    },
+    {
+      "left_id": 378,
+      "new_id": 1257,
+      "right_id": 599
+    },
+    {
+      "left_id": 101,
+      "new_id": 1258,
+      "right_id": 268
+    },
+    {
+      "left_id": 118,
+      "new_id": 1259,
+      "right_id": 260
+    },
+    {
+      "left_id": 1184,
+      "new_id": 1260,
+      "right_id": 119
+    },
+    {
+      "left_id": 982,
+      "new_id": 1261,
+      "right_id": 944
+    },
+    {
+      "left_id": 394,
+      "new_id": 1262,
+      "right_id": 621
+    },
+    {
+      "left_id": 318,
+      "new_id": 1263,
+      "right_id": 538
+    },
+    {
+      "left_id": 308,
+      "new_id": 1264,
+      "right_id": 465
+    },
+    {
+      "left_id": 453,
+      "new_id": 1265,
+      "right_id": 320
+    },
+    {
+      "left_id": 303,
+      "new_id": 1266,
+      "right_id": 587
+    },
+    {
+      "left_id": 310,
+      "new_id": 1267,
+      "right_id": 371
+    },
+    {
+      "left_id": 794,
+      "new_id": 1268,
+      "right_id": 281
+    },
+    {
+      "left_id": 68,
+      "new_id": 1269,
+      "right_id": 111
+    },
+    {
+      "left_id": 805,
+      "new_id": 1270,
+      "right_id": 268
+    },
+    {
+      "left_id": 864,
+      "new_id": 1271,
+      "right_id": 318
+    },
+    {
+      "left_id": 883,
+      "new_id": 1272,
+      "right_id": 395
+    },
+    {
+      "left_id": 118,
+      "new_id": 1273,
+      "right_id": 815
+    },
+    {
+      "left_id": 397,
+      "new_id": 1274,
+      "right_id": 332
+    },
+    {
+      "left_id": 303,
+      "new_id": 1275,
+      "right_id": 930
+    },
+    {
+      "left_id": 107,
+      "new_id": 1276,
+      "right_id": 124
+    },
+    {
+      "left_id": 502,
+      "new_id": 1277,
+      "right_id": 539
+    },
+    {
+      "left_id": 336,
+      "new_id": 1278,
+      "right_id": 721
+    },
+    {
+      "left_id": 83,
+      "new_id": 1279,
+      "right_id": 847
+    },
+    {
+      "left_id": 113,
+      "new_id": 1280,
+      "right_id": 816
+    },
+    {
+      "left_id": 764,
+      "new_id": 1281,
+      "right_id": 124
+    },
+    {
+      "left_id": 102,
+      "new_id": 1282,
+      "right_id": 117
+    },
+    {
+      "left_id": 321,
+      "new_id": 1283,
+      "right_id": 293
+    },
+    {
+      "left_id": 263,
+      "new_id": 1284,
+      "right_id": 568
+    },
+    {
+      "left_id": 1115,
+      "new_id": 1285,
+      "right_id": 1278
+    },
+    {
+      "left_id": 118,
+      "new_id": 1286,
+      "right_id": 360
+    },
+    {
+      "left_id": 403,
+      "new_id": 1287,
+      "right_id": 104
+    },
+    {
+      "left_id": 114,
+      "new_id": 1288,
+      "right_id": 350
+    },
+    {
+      "left_id": 112,
+      "new_id": 1289,
+      "right_id": 266
+    },
+    {
+      "left_id": 448,
+      "new_id": 1290,
+      "right_id": 363
+    },
+    {
+      "left_id": 100,
+      "new_id": 1291,
+      "right_id": 466
+    },
+    {
+      "left_id": 105,
+      "new_id": 1292,
+      "right_id": 547
+    },
+    {
+      "left_id": 963,
+      "new_id": 1293,
+      "right_id": 729
+    },
+    {
+      "left_id": 435,
+      "new_id": 1294,
+      "right_id": 427
+    },
+    {
+      "left_id": 115,
+      "new_id": 1295,
+      "right_id": 621
+    },
+    {
+      "left_id": 279,
+      "new_id": 1296,
+      "right_id": 110
+    },
+    {
+      "left_id": 121,
+      "new_id": 1297,
+      "right_id": 338
+    },
+    {
+      "left_id": 612,
+      "new_id": 1298,
+      "right_id": 266
+    },
+    {
+      "left_id": 42,
+      "new_id": 1299,
+      "right_id": 43
+    },
+    {
+      "left_id": 35,
+      "new_id": 1300,
+      "right_id": 13
+    },
+    {
+      "left_id": 53,
+      "new_id": 1301,
+      "right_id": 55
+    },
+    {
+      "left_id": 929,
+      "new_id": 1302,
+      "right_id": 368
+    },
+    {
+      "left_id": 324,
+      "new_id": 1303,
+      "right_id": 103
+    },
+    {
+      "left_id": 114,
+      "new_id": 1304,
+      "right_id": 352
+    },
+    {
+      "left_id": 121,
+      "new_id": 1305,
+      "right_id": 114
+    },
+    {
+      "left_id": 515,
+      "new_id": 1306,
+      "right_id": 337
+    },
+    {
+      "left_id": 54,
+      "new_id": 1307,
+      "right_id": 123
+    },
+    {
+      "left_id": 550,
+      "new_id": 1308,
+      "right_id": 295
+    },
+    {
+      "left_id": 623,
+      "new_id": 1309,
+      "right_id": 350
+    },
+    {
+      "left_id": 303,
+      "new_id": 1310,
+      "right_id": 283
+    },
+    {
+      "left_id": 52,
+      "new_id": 1311,
+      "right_id": 55
+    },
+    {
+      "left_id": 101,
+      "new_id": 1312,
+      "right_id": 267
+    },
+    {
+      "left_id": 700,
+      "new_id": 1313,
+      "right_id": 665
+    },
+    {
+      "left_id": 376,
+      "new_id": 1314,
+      "right_id": 880
+    },
+    {
+      "left_id": 263,
+      "new_id": 1315,
+      "right_id": 1134
+    },
+    {
+      "left_id": 342,
+      "new_id": 1316,
+      "right_id": 118
+    },
+    {
+      "left_id": 283,
+      "new_id": 1317,
+      "right_id": 815
+    },
+    {
+      "left_id": 102,
+      "new_id": 1318,
+      "right_id": 358
+    },
+    {
+      "left_id": 285,
+      "new_id": 1319,
+      "right_id": 282
+    },
+    {
+      "left_id": 996,
+      "new_id": 1320,
+      "right_id": 469
+    },
+    {
+      "left_id": 330,
+      "new_id": 1321,
+      "right_id": 1016
+    },
+    {
+      "left_id": 290,
+      "new_id": 1322,
+      "right_id": 263
+    },
+    {
+      "left_id": 584,
+      "new_id": 1323,
+      "right_id": 270
+    },
+    {
+      "left_id": 267,
+      "new_id": 1324,
+      "right_id": 118
+    },
+    {
+      "left_id": 1154,
+      "new_id": 1325,
+      "right_id": 473
+    },
+    {
+      "left_id": 455,
+      "new_id": 1326,
+      "right_id": 878
+    },
+    {
+      "left_id": 494,
+      "new_id": 1327,
+      "right_id": 474
+    },
+    {
+      "left_id": 354,
+      "new_id": 1328,
+      "right_id": 1130
+    },
+    {
+      "left_id": 101,
+      "new_id": 1329,
+      "right_id": 371
+    },
+    {
+      "left_id": 303,
+      "new_id": 1330,
+      "right_id": 291
+    },
+    {
+      "left_id": 331,
+      "new_id": 1331,
+      "right_id": 298
+    },
+    {
+      "left_id": 68,
+      "new_id": 1332,
+      "right_id": 113
+    },
+    {
+      "left_id": 472,
+      "new_id": 1333,
+      "right_id": 363
+    },
+    {
+      "left_id": 266,
+      "new_id": 1334,
+      "right_id": 117
+    },
+    {
+      "left_id": 653,
+      "new_id": 1335,
+      "right_id": 278
+    },
+    {
+      "left_id": 1021,
+      "new_id": 1336,
+      "right_id": 372
+    },
+    {
+      "left_id": 1052,
+      "new_id": 1337,
+      "right_id": 545
+    },
+    {
+      "left_id": 367,
+      "new_id": 1338,
+      "right_id": 415
+    },
+    {
+      "left_id": 505,
+      "new_id": 1339,
+      "right_id": 747
+    },
+    {
+      "left_id": 1014,
+      "new_id": 1340,
+      "right_id": 526
+    },
+    {
+      "left_id": 483,
+      "new_id": 1341,
+      "right_id": 272
+    },
+    {
+      "left_id": 579,
+      "new_id": 1342,
+      "right_id": 259
+    },
+    {
+      "left_id": 871,
+      "new_id": 1343,
+      "right_id": 260
+    },
+    {
+      "left_id": 1159,
+      "new_id": 1344,
+      "right_id": 810
+    },
+    {
+      "left_id": 290,
+      "new_id": 1345,
+      "right_id": 337
+    },
+    {
+      "left_id": 385,
+      "new_id": 1346,
+      "right_id": 396
+    },
+    {
+      "left_id": 115,
+      "new_id": 1347,
+      "right_id": 847
+    },
+    {
+      "left_id": 101,
+      "new_id": 1348,
+      "right_id": 281
+    },
+    {
+      "left_id": 641,
+      "new_id": 1349,
+      "right_id": 118
+    },
+    {
+      "left_id": 745,
+      "new_id": 1350,
+      "right_id": 333
+    },
+    {
+      "left_id": 867,
+      "new_id": 1351,
+      "right_id": 282
+    },
+    {
+      "left_id": 319,
+      "new_id": 1352,
+      "right_id": 106
+    },
+    {
+      "left_id": 1181,
+      "new_id": 1353,
+      "right_id": 114
+    },
+    {
+      "left_id": 107,
+      "new_id": 1354,
+      "right_id": 341
+    },
+    {
+      "left_id": 863,
+      "new_id": 1355,
+      "right_id": 587
+    },
+    {
+      "left_id": 285,
+      "new_id": 1356,
+      "right_id": 1288
+    },
+    {
+      "left_id": 323,
+      "new_id": 1357,
+      "right_id": 262
+    },
+    {
+      "left_id": 1114,
+      "new_id": 1358,
+      "right_id": 120
+    },
+    {
+      "left_id": 413,
+      "new_id": 1359,
+      "right_id": 266
+    },
+    {
+      "left_id": 260,
+      "new_id": 1360,
+      "right_id": 283
+    },
+    {
+      "left_id": 409,
+      "new_id": 1361,
+      "right_id": 342
+    },
+    {
+      "left_id": 311,
+      "new_id": 1362,
+      "right_id": 279
+    },
+    {
+      "left_id": 105,
+      "new_id": 1363,
+      "right_id": 289
+    },
+    {
+      "left_id": 102,
+      "new_id": 1364,
+      "right_id": 371
+    },
+    {
+      "left_id": 52,
+      "new_id": 1365,
+      "right_id": 58
+    },
+    {
+      "left_id": 117,
+      "new_id": 1366,
+      "right_id": 417
+    },
+    {
+      "left_id": 426,
+      "new_id": 1367,
+      "right_id": 282
+    },
+    {
+      "left_id": 351,
+      "new_id": 1368,
+      "right_id": 268
+    },
+    {
+      "left_id": 331,
+      "new_id": 1369,
+      "right_id": 106
+    },
+    {
+      "left_id": 308,
+      "new_id": 1370,
+      "right_id": 763
+    },
+    {
+      "left_id": 102,
+      "new_id": 1371,
+      "right_id": 272
+    },
+    {
+      "left_id": 954,
+      "new_id": 1372,
+      "right_id": 640
+    },
+    {
+      "left_id": 104,
+      "new_id": 1373,
+      "right_id": 391
+    },
+    {
+      "left_id": 1294,
+      "new_id": 1374,
+      "right_id": 752
+    },
+    {
+      "left_id": 717,
+      "new_id": 1375,
+      "right_id": 124
+    },
+    {
+      "left_id": 476,
+      "new_id": 1376,
+      "right_id": 519
+    },
+    {
+      "left_id": 119,
+      "new_id": 1377,
+      "right_id": 263
+    },
+    {
+      "left_id": 657,
+      "new_id": 1378,
+      "right_id": 530
+    },
+    {
+      "left_id": 313,
+      "new_id": 1379,
+      "right_id": 378
+    },
+    {
+      "left_id": 326,
+      "new_id": 1380,
+      "right_id": 124
+    },
+    {
+      "left_id": 998,
+      "new_id": 1381,
+      "right_id": 482
+    },
+    {
+      "left_id": 259,
+      "new_id": 1382,
+      "right_id": 928
+    },
+    {
+      "left_id": 444,
+      "new_id": 1383,
+      "right_id": 120
+    },
+    {
+      "left_id": 394,
+      "new_id": 1384,
+      "right_id": 278
+    },
+    {
+      "left_id": 120,
+      "new_id": 1385,
+      "right_id": 412
+    },
+    {
+      "left_id": 337,
+      "new_id": 1386,
+      "right_id": 121
+    },
+    {
+      "left_id": 269,
+      "new_id": 1387,
+      "right_id": 427
+    },
+    {
+      "left_id": 1285,
+      "new_id": 1388,
+      "right_id": 268
+    },
+    {
+      "left_id": 52,
+      "new_id": 1389,
+      "right_id": 54
+    },
+    {
+      "left_id": 950,
+      "new_id": 1390,
+      "right_id": 422
+    },
+    {
+      "left_id": 285,
+      "new_id": 1391,
+      "right_id": 981
+    },
+    {
+      "left_id": 617,
+      "new_id": 1392,
+      "right_id": 577
+    },
+    {
+      "left_id": 285,
+      "new_id": 1393,
+      "right_id": 775
+    },
+    {
+      "left_id": 565,
+      "new_id": 1394,
+      "right_id": 367
+    },
+    {
+      "left_id": 109,
+      "new_id": 1395,
+      "right_id": 114
+    },
+    {
+      "left_id": 72,
+      "new_id": 1396,
+      "right_id": 123
+    },
+    {
+      "left_id": 104,
+      "new_id": 1397,
+      "right_id": 108
+    },
+    {
+      "left_id": 354,
+      "new_id": 1398,
+      "right_id": 103
+    },
+    {
+      "left_id": 111,
+      "new_id": 1399,
+      "right_id": 1383
+    },
+    {
+      "left_id": 111,
+      "new_id": 1400,
+      "right_id": 591
+    },
+    {
+      "left_id": 1253,
+      "new_id": 1401,
+      "right_id": 882
+    },
+    {
+      "left_id": 710,
+      "new_id": 1402,
+      "right_id": 298
+    },
+    {
+      "left_id": 1000,
+      "new_id": 1403,
+      "right_id": 112
+    },
+    {
+      "left_id": 314,
+      "new_id": 1404,
+      "right_id": 363
+    },
+    {
+      "left_id": 294,
+      "new_id": 1405,
+      "right_id": 613
+    },
+    {
+      "left_id": 827,
+      "new_id": 1406,
+      "right_id": 316
+    },
+    {
+      "left_id": 122,
+      "new_id": 1407,
+      "right_id": 518
+    },
+    {
+      "left_id": 1310,
+      "new_id": 1408,
+      "right_id": 423
+    },
+    {
+      "left_id": 903,
+      "new_id": 1409,
+      "right_id": 299
+    },
+    {
+      "left_id": 82,
+      "new_id": 1410,
+      "right_id": 347
+    },
+    {
+      "left_id": 290,
+      "new_id": 1411,
+      "right_id": 1209
+    },
+    {
+      "left_id": 1196,
+      "new_id": 1412,
+      "right_id": 1227
+    },
+    {
+      "left_id": 408,
+      "new_id": 1413,
+      "right_id": 115
+    },
+    {
+      "left_id": 293,
+      "new_id": 1414,
+      "right_id": 321
+    },
+    {
+      "left_id": 589,
+      "new_id": 1415,
+      "right_id": 465
+    },
+    {
+      "left_id": 919,
+      "new_id": 1416,
+      "right_id": 291
+    },
+    {
+      "left_id": 576,
+      "new_id": 1417,
+      "right_id": 536
+    },
+    {
+      "left_id": 1366,
+      "new_id": 1418,
+      "right_id": 114
+    },
+    {
+      "left_id": 936,
+      "new_id": 1419,
+      "right_id": 272
+    },
+    {
+      "left_id": 693,
+      "new_id": 1420,
+      "right_id": 477
+    },
+    {
+      "left_id": 283,
+      "new_id": 1421,
+      "right_id": 683
+    },
+    {
+      "left_id": 114,
+      "new_id": 1422,
+      "right_id": 454
+    },
+    {
+      "left_id": 345,
+      "new_id": 1423,
+      "right_id": 272
+    },
+    {
+      "left_id": 496,
+      "new_id": 1424,
+      "right_id": 104
+    },
+    {
+      "left_id": 832,
+      "new_id": 1425,
+      "right_id": 1111
+    },
+    {
+      "left_id": 275,
+      "new_id": 1426,
+      "right_id": 1404
+    },
+    {
+      "left_id": 267,
+      "new_id": 1427,
+      "right_id": 829
+    },
+    {
+      "left_id": 37,
+      "new_id": 1428,
+      "right_id": 47
+    },
+    {
+      "left_id": 44,
+      "new_id": 1429,
+      "right_id": 50
+    },
+    {
+      "left_id": 1049,
+      "new_id": 1430,
+      "right_id": 508
+    },
+    {
+      "left_id": 118,
+      "new_id": 1431,
+      "right_id": 1144
+    },
+    {
+      "left_id": 262,
+      "new_id": 1432,
+      "right_id": 350
+    },
+    {
+      "left_id": 1103,
+      "new_id": 1433,
+      "right_id": 1221
+    },
+    {
+      "left_id": 105,
+      "new_id": 1434,
+      "right_id": 413
+    },
+    {
+      "left_id": 397,
+      "new_id": 1435,
+      "right_id": 605
+    },
+    {
+      "left_id": 74,
+      "new_id": 1436,
+      "right_id": 108
+    },
+    {
+      "left_id": 505,
+      "new_id": 1437,
+      "right_id": 593
+    },
+    {
+      "left_id": 59,
+      "new_id": 1438,
+      "right_id": 51
+    },
+    {
+      "left_id": 263,
+      "new_id": 1439,
+      "right_id": 1190
+    },
+    {
+      "left_id": 294,
+      "new_id": 1440,
+      "right_id": 390
+    },
+    {
+      "left_id": 282,
+      "new_id": 1441,
+      "right_id": 1162
+    },
+    {
+      "left_id": 1399,
+      "new_id": 1442,
+      "right_id": 424
+    },
+    {
+      "left_id": 324,
+      "new_id": 1443,
+      "right_id": 291
+    },
+    {
+      "left_id": 103,
+      "new_id": 1444,
+      "right_id": 264
+    },
+    {
+      "left_id": 1297,
+      "new_id": 1445,
+      "right_id": 264
+    },
+    {
+      "left_id": 495,
+      "new_id": 1446,
+      "right_id": 272
+    },
+    {
+      "left_id": 576,
+      "new_id": 1447,
+      "right_id": 1182
+    },
+    {
+      "left_id": 103,
+      "new_id": 1448,
+      "right_id": 260
+    },
+    {
+      "left_id": 861,
+      "new_id": 1449,
+      "right_id": 100
+    },
+    {
+      "left_id": 1367,
+      "new_id": 1450,
+      "right_id": 357
+    },
+    {
+      "left_id": 117,
+      "new_id": 1451,
+      "right_id": 276
+    },
+    {
+      "left_id": 1160,
+      "new_id": 1452,
+      "right_id": 916
+    },
+    {
+      "left_id": 270,
+      "new_id": 1453,
+      "right_id": 1251
+    },
+    {
+      "left_id": 886,
+      "new_id": 1454,
+      "right_id": 1142
+    },
+    {
+      "left_id": 299,
+      "new_id": 1455,
+      "right_id": 268
+    },
+    {
+      "left_id": 323,
+      "new_id": 1456,
+      "right_id": 120
+    },
+    {
+      "left_id": 335,
+      "new_id": 1457,
+      "right_id": 271
+    },
+    {
+      "left_id": 1246,
+      "new_id": 1458,
+      "right_id": 314
+    },
+    {
+      "left_id": 265,
+      "new_id": 1459,
+      "right_id": 284
+    },
+    {
+      "left_id": 282,
+      "new_id": 1460,
+      "right_id": 278
+    },
+    {
+      "left_id": 282,
+      "new_id": 1461,
+      "right_id": 123
+    },
+    {
+      "left_id": 58,
+      "new_id": 1462,
+      "right_id": 56
+    },
+    {
+      "left_id": 544,
+      "new_id": 1463,
+      "right_id": 1071
+    },
+    {
+      "left_id": 409,
+      "new_id": 1464,
+      "right_id": 259
+    },
+    {
+      "left_id": 101,
+      "new_id": 1465,
+      "right_id": 448
+    },
+    {
+      "left_id": 432,
+      "new_id": 1466,
+      "right_id": 1106
+    },
+    {
+      "left_id": 103,
+      "new_id": 1467,
+      "right_id": 123
+    },
+    {
+      "left_id": 346,
+      "new_id": 1468,
+      "right_id": 411
+    },
+    {
+      "left_id": 105,
+      "new_id": 1469,
+      "right_id": 385
+    },
+    {
+      "left_id": 378,
+      "new_id": 1470,
+      "right_id": 271
+    },
+    {
+      "left_id": 1010,
+      "new_id": 1471,
+      "right_id": 280
+    },
+    {
+      "left_id": 1440,
+      "new_id": 1472,
+      "right_id": 354
+    },
+    {
+      "left_id": 267,
+      "new_id": 1473,
+      "right_id": 1445
+    },
+    {
+      "left_id": 448,
+      "new_id": 1474,
+      "right_id": 319
+    },
+    {
+      "left_id": 941,
+      "new_id": 1475,
+      "right_id": 292
+    },
+    {
+      "left_id": 311,
+      "new_id": 1476,
+      "right_id": 103
+    },
+    {
+      "left_id": 111,
+      "new_id": 1477,
+      "right_id": 276
+    },
+    {
+      "left_id": 1346,
+      "new_id": 1478,
+      "right_id": 119
+    },
+    {
+      "left_id": 104,
+      "new_id": 1479,
+      "right_id": 279
+    },
+    {
+      "left_id": 113,
+      "new_id": 1480,
+      "right_id": 108
+    },
+    {
+      "left_id": 811,
+      "new_id": 1481,
+      "right_id": 811
+    },
+    {
+      "left_id": 263,
+      "new_id": 1482,
+      "right_id": 383
+    },
+    {
+      "left_id": 100,
+      "new_id": 1483,
+      "right_id": 421
+    },
+    {
+      "left_id": 113,
+      "new_id": 1484,
+      "right_id": 265
+    },
+    {
+      "left_id": 1229,
+      "new_id": 1485,
+      "right_id": 119
+    },
+    {
+      "left_id": 578,
+      "new_id": 1486,
+      "right_id": 587
+    },
+    {
+      "left_id": 306,
+      "new_id": 1487,
+      "right_id": 102
+    },
+    {
+      "left_id": 795,
+      "new_id": 1488,
+      "right_id": 259
+    },
+    {
+      "left_id": 316,
+      "new_id": 1489,
+      "right_id": 431
+    },
+    {
+      "left_id": 376,
+      "new_id": 1490,
+      "right_id": 443
+    },
+    {
+      "left_id": 119,
+      "new_id": 1491,
+      "right_id": 469
+    },
+    {
+      "left_id": 113,
+      "new_id": 1492,
+      "right_id": 385
+    },
+    {
+      "left_id": 1267,
+      "new_id": 1493,
+      "right_id": 601
+    },
+    {
+      "left_id": 552,
+      "new_id": 1494,
+      "right_id": 280
+    },
+    {
+      "left_id": 1076,
+      "new_id": 1495,
+      "right_id": 111
+    },
+    {
+      "left_id": 291,
+      "new_id": 1496,
+      "right_id": 333
+    },
+    {
+      "left_id": 102,
+      "new_id": 1497,
+      "right_id": 839
+    },
+    {
+      "left_id": 576,
+      "new_id": 1498,
+      "right_id": 457
+    },
+    {
+      "left_id": 1069,
+      "new_id": 1499,
+      "right_id": 266
+    },
+    {
+      "left_id": 274,
+      "new_id": 1500,
+      "right_id": 761
+    },
+    {
+      "left_id": 1483,
+      "new_id": 1501,
+      "right_id": 333
+    },
+    {
+      "left_id": 82,
+      "new_id": 1502,
+      "right_id": 113
+    },
+    {
+      "left_id": 1137,
+      "new_id": 1503,
+      "right_id": 267
+    },
+    {
+      "left_id": 289,
+      "new_id": 1504,
+      "right_id": 124
+    },
+    {
+      "left_id": 113,
+      "new_id": 1505,
+      "right_id": 118
+    },
+    {
+      "left_id": 102,
+      "new_id": 1506,
+      "right_id": 120
+    },
+    {
+      "left_id": 1011,
+      "new_id": 1507,
+      "right_id": 423
+    },
+    {
+      "left_id": 260,
+      "new_id": 1508,
+      "right_id": 308
+    },
+    {
+      "left_id": 1024,
+      "new_id": 1509,
+      "right_id": 268
+    },
+    {
+      "left_id": 55,
+      "new_id": 1510,
+      "right_id": 51
+    },
+    {
+      "left_id": 491,
+      "new_id": 1511,
+      "right_id": 723
+    },
+    {
+      "left_id": 260,
+      "new_id": 1512,
+      "right_id": 118
+    },
+    {
+      "left_id": 1451,
+      "new_id": 1513,
+      "right_id": 556
+    },
+    {
+      "left_id": 282,
+      "new_id": 1514,
+      "right_id": 100
+    },
+    {
+      "left_id": 352,
+      "new_id": 1515,
+      "right_id": 726
+    },
+    {
+      "left_id": 293,
+      "new_id": 1516,
+      "right_id": 350
+    },
+    {
+      "left_id": 582,
+      "new_id": 1517,
+      "right_id": 508
+    },
+    {
+      "left_id": 321,
+      "new_id": 1518,
+      "right_id": 485
+    },
+    {
+      "left_id": 115,
+      "new_id": 1519,
+      "right_id": 545
+    },
+    {
+      "left_id": 1284,
+      "new_id": 1520,
+      "right_id": 280
+    },
+    {
+      "left_id": 471,
+      "new_id": 1521,
+      "right_id": 115
+    },
+    {
+      "left_id": 795,
+      "new_id": 1522,
+      "right_id": 338
+    },
+    {
+      "left_id": 120,
+      "new_id": 1523,
+      "right_id": 310
+    },
+    {
+      "left_id": 1343,
+      "new_id": 1524,
+      "right_id": 333
+    },
+    {
+      "left_id": 347,
+      "new_id": 1525,
+      "right_id": 119
+    },
+    {
+      "left_id": 1436,
+      "new_id": 1526,
+      "right_id": 434
+    },
+    {
+      "left_id": 1092,
+      "new_id": 1527,
+      "right_id": 271
+    },
+    {
+      "left_id": 346,
+      "new_id": 1528,
+      "right_id": 122
+    },
+    {
+      "left_id": 1128,
+      "new_id": 1529,
+      "right_id": 477
+    },
+    {
+      "left_id": 60,
+      "new_id": 1530,
+      "right_id": 51
+    },
+    {
+      "left_id": 986,
+      "new_id": 1531,
+      "right_id": 538
+    },
+    {
+      "left_id": 289,
+      "new_id": 1532,
+      "right_id": 480
+    },
+    {
+      "left_id": 1167,
+      "new_id": 1533,
+      "right_id": 509
+    },
+    {
+      "left_id": 652,
+      "new_id": 1534,
+      "right_id": 298
+    },
+    {
+      "left_id": 353,
+      "new_id": 1535,
+      "right_id": 119
+    },
+    {
+      "left_id": 345,
+      "new_id": 1536,
+      "right_id": 118
+    },
+    {
+      "left_id": 886,
+      "new_id": 1537,
+      "right_id": 428
+    },
+    {
+      "left_id": 119,
+      "new_id": 1538,
+      "right_id": 457
+    },
+    {
+      "left_id": 104,
+      "new_id": 1539,
+      "right_id": 324
+    },
+    {
+      "left_id": 1414,
+      "new_id": 1540,
+      "right_id": 268
+    },
+    {
+      "left_id": 700,
+      "new_id": 1541,
+      "right_id": 357
+    },
+    {
+      "left_id": 330,
+      "new_id": 1542,
+      "right_id": 337
+    },
+    {
+      "left_id": 327,
+      "new_id": 1543,
+      "right_id": 1091
+    },
+    {
+      "left_id": 102,
+      "new_id": 1544,
+      "right_id": 356
+    },
+    {
+      "left_id": 282,
+      "new_id": 1545,
+      "right_id": 600
+    },
+    {
+      "left_id": 354,
+      "new_id": 1546,
+      "right_id": 536
+    },
+    {
+      "left_id": 279,
+      "new_id": 1547,
+      "right_id": 306
+    },
+    {
+      "left_id": 101,
+      "new_id": 1548,
+      "right_id": 118
+    },
+    {
+      "left_id": 103,
+      "new_id": 1549,
+      "right_id": 1202
+    },
+    {
+      "left_id": 430,
+      "new_id": 1550,
+      "right_id": 118
+    },
+    {
+      "left_id": 362,
+      "new_id": 1551,
+      "right_id": 288
+    },
+    {
+      "left_id": 284,
+      "new_id": 1552,
+      "right_id": 412
+    },
+    {
+      "left_id": 374,
+      "new_id": 1553,
+      "right_id": 980
+    },
+    {
+      "left_id": 260,
+      "new_id": 1554,
+      "right_id": 121
+    },
+    {
+      "left_id": 334,
+      "new_id": 1555,
+      "right_id": 408
+    },
+    {
+      "left_id": 302,
+      "new_id": 1556,
+      "right_id": 104
+    },
+    {
+      "left_id": 383,
+      "new_id": 1557,
+      "right_id": 781
+    },
+    {
+      "left_id": 267,
+      "new_id": 1558,
+      "right_id": 464
+    },
+    {
+      "left_id": 552,
+      "new_id": 1559,
+      "right_id": 300
+    },
+    {
+      "left_id": 106,
+      "new_id": 1560,
+      "right_id": 271
+    },
+    {
+      "left_id": 114,
+      "new_id": 1561,
+      "right_id": 415
+    },
+    {
+      "left_id": 273,
+      "new_id": 1562,
+      "right_id": 307
+    },
+    {
+      "left_id": 839,
+      "new_id": 1563,
+      "right_id": 282
+    },
+    {
+      "left_id": 1472,
+      "new_id": 1564,
+      "right_id": 270
+    },
+    {
+      "left_id": 281,
+      "new_id": 1565,
+      "right_id": 266
+    },
+    {
+      "left_id": 626,
+      "new_id": 1566,
+      "right_id": 112
+    },
+    {
+      "left_id": 409,
+      "new_id": 1567,
+      "right_id": 443
+    },
+    {
+      "left_id": 1484,
+      "new_id": 1568,
+      "right_id": 1368
+    },
+    {
+      "left_id": 115,
+      "new_id": 1569,
+      "right_id": 108
+    },
+    {
+      "left_id": 803,
+      "new_id": 1570,
+      "right_id": 489
+    },
+    {
+      "left_id": 455,
+      "new_id": 1571,
+      "right_id": 475
+    },
+    {
+      "left_id": 105,
+      "new_id": 1572,
+      "right_id": 1185
+    },
+    {
+      "left_id": 450,
+      "new_id": 1573,
+      "right_id": 524
+    },
+    {
+      "left_id": 881,
+      "new_id": 1574,
+      "right_id": 355
+    },
+    {
+      "left_id": 812,
+      "new_id": 1575,
+      "right_id": 480
+    },
+    {
+      "left_id": 1384,
+      "new_id": 1576,
+      "right_id": 356
+    },
+    {
+      "left_id": 993,
+      "new_id": 1577,
+      "right_id": 412
+    },
+    {
+      "left_id": 359,
+      "new_id": 1578,
+      "right_id": 123
+    },
+    {
+      "left_id": 285,
+      "new_id": 1579,
+      "right_id": 403
+    },
+    {
+      "left_id": 114,
+      "new_id": 1580,
+      "right_id": 443
+    },
+    {
+      "left_id": 771,
+      "new_id": 1581,
+      "right_id": 265
+    },
+    {
+      "left_id": 814,
+      "new_id": 1582,
+      "right_id": 268
+    },
+    {
+      "left_id": 279,
+      "new_id": 1583,
+      "right_id": 474
+    },
+    {
+      "left_id": 1497,
+      "new_id": 1584,
+      "right_id": 737
+    },
+    {
+      "left_id": 267,
+      "new_id": 1585,
+      "right_id": 454
+    },
+    {
+      "left_id": 108,
+      "new_id": 1586,
+      "right_id": 268
+    },
+    {
+      "left_id": 303,
+      "new_id": 1587,
+      "right_id": 323
+    },
+    {
+      "left_id": 283,
+      "new_id": 1588,
+      "right_id": 278
+    },
+    {
+      "left_id": 297,
+      "new_id": 1589,
+      "right_id": 1147
+    },
+    {
+      "left_id": 113,
+      "new_id": 1590,
+      "right_id": 120
+    },
+    {
+      "left_id": 42,
+      "new_id": 1591,
+      "right_id": 47
+    },
+    {
+      "left_id": 901,
+      "new_id": 1592,
+      "right_id": 118
+    },
+    {
+      "left_id": 771,
+      "new_id": 1593,
+      "right_id": 749
+    },
+    {
+      "left_id": 1012,
+      "new_id": 1594,
+      "right_id": 280
+    },
+    {
+      "left_id": 259,
+      "new_id": 1595,
+      "right_id": 1057
+    },
+    {
+      "left_id": 428,
+      "new_id": 1596,
+      "right_id": 1543
+    },
+    {
+      "left_id": 704,
+      "new_id": 1597,
+      "right_id": 466
+    },
+    {
+      "left_id": 297,
+      "new_id": 1598,
+      "right_id": 298
+    },
+    {
+      "left_id": 471,
+      "new_id": 1599,
+      "right_id": 1577
+    },
+    {
+      "left_id": 102,
+      "new_id": 1600,
+      "right_id": 265
+    },
+    {
+      "left_id": 108,
+      "new_id": 1601,
+      "right_id": 470
+    },
+    {
+      "left_id": 328,
+      "new_id": 1602,
+      "right_id": 293
+    },
+    {
+      "left_id": 945,
+      "new_id": 1603,
+      "right_id": 299
+    },
+    {
+      "left_id": 757,
+      "new_id": 1604,
+      "right_id": 124
+    },
+    {
+      "left_id": 1487,
+      "new_id": 1605,
+      "right_id": 542
+    },
+    {
+      "left_id": 321,
+      "new_id": 1606,
+      "right_id": 118
+    },
+    {
+      "left_id": 511,
+      "new_id": 1607,
+      "right_id": 1578
+    },
+    {
+      "left_id": 778,
+      "new_id": 1608,
+      "right_id": 118
+    },
+    {
+      "left_id": 662,
+      "new_id": 1609,
+      "right_id": 501
+    },
+    {
+      "left_id": 101,
+      "new_id": 1610,
+      "right_id": 497
+    },
+    {
+      "left_id": 708,
+      "new_id": 1611,
+      "right_id": 282
+    },
+    {
+      "left_id": 319,
+      "new_id": 1612,
+      "right_id": 105
+    },
+    {
+      "left_id": 560,
+      "new_id": 1613,
+      "right_id": 690
+    },
+    {
+      "left_id": 1542,
+      "new_id": 1614,
+      "right_id": 117
+    },
+    {
+      "left_id": 262,
+      "new_id": 1615,
+      "right_id": 523
+    },
+    {
+      "left_id": 267,
+      "new_id": 1616,
+      "right_id": 804
+    },
+    {
+      "left_id": 1228,
+      "new_id": 1617,
+      "right_id": 672
+    },
+    {
+      "left_id": 277,
+      "new_id": 1618,
+      "right_id": 293
+    },
+    {
+      "left_id": 679,
+      "new_id": 1619,
+      "right_id": 118
+    },
+    {
+      "left_id": 871,
+      "new_id": 1620,
+      "right_id": 449
+    },
+    {
+      "left_id": 114,
+      "new_id": 1621,
+      "right_id": 342
+    },
+    {
+      "left_id": 439,
+      "new_id": 1622,
+      "right_id": 292
+    },
+    {
+      "left_id": 102,
+      "new_id": 1623,
+      "right_id": 794
+    },
+    {
+      "left_id": 922,
+      "new_id": 1624,
+      "right_id": 280
+    },
+    {
+      "left_id": 754,
+      "new_id": 1625,
+      "right_id": 271
+    },
+    {
+      "left_id": 86,
+      "new_id": 1626,
+      "right_id": 119
+    },
+    {
+      "left_id": 1219,
+      "new_id": 1627,
+      "right_id": 469
+    },
+    {
+      "left_id": 329,
+      "new_id": 1628,
+      "right_id": 119
+    },
+    {
+      "left_id": 262,
+      "new_id": 1629,
+      "right_id": 273
+    },
+    {
+      "left_id": 929,
+      "new_id": 1630,
+      "right_id": 333
+    },
+    {
+      "left_id": 112,
+      "new_id": 1631,
+      "right_id": 381
+    },
+    {
+      "left_id": 1088,
+      "new_id": 1632,
+      "right_id": 952
+    },
+    {
+      "left_id": 968,
+      "new_id": 1633,
+      "right_id": 293
+    },
+    {
+      "left_id": 70,
+      "new_id": 1634,
+      "right_id": 114
+    },
+    {
+      "left_id": 1312,
+      "new_id": 1635,
+      "right_id": 624
+    },
+    {
+      "left_id": 657,
+      "new_id": 1636,
+      "right_id": 124
+    },
+    {
+      "left_id": 70,
+      "new_id": 1637,
+      "right_id": 262
+    },
+    {
+      "left_id": 1409,
+      "new_id": 1638,
+      "right_id": 509
+    },
+    {
+      "left_id": 378,
+      "new_id": 1639,
+      "right_id": 289
+    },
+    {
+      "left_id": 972,
+      "new_id": 1640,
+      "right_id": 1093
+    },
+    {
+      "left_id": 319,
+      "new_id": 1641,
+      "right_id": 480
+    },
+    {
+      "left_id": 281,
+      "new_id": 1642,
+      "right_id": 310
+    },
+    {
+      "left_id": 297,
+      "new_id": 1643,
+      "right_id": 468
+    },
+    {
+      "left_id": 105,
+      "new_id": 1644,
+      "right_id": 111
+    },
+    {
+      "left_id": 113,
+      "new_id": 1645,
+      "right_id": 577
+    },
+    {
+      "left_id": 309,
+      "new_id": 1646,
+      "right_id": 119
+    },
+    {
+      "left_id": 1226,
+      "new_id": 1647,
+      "right_id": 938
+    },
+    {
+      "left_id": 88,
+      "new_id": 1648,
+      "right_id": 708
+    },
+    {
+      "left_id": 1397,
+      "new_id": 1649,
+      "right_id": 363
+    },
+    {
+      "left_id": 112,
+      "new_id": 1650,
+      "right_id": 415
+    },
+    {
+      "left_id": 932,
+      "new_id": 1651,
+      "right_id": 309
+    },
+    {
+      "left_id": 496,
+      "new_id": 1652,
+      "right_id": 280
+    },
+    {
+      "left_id": 1452,
+      "new_id": 1653,
+      "right_id": 118
+    },
+    {
+      "left_id": 268,
+      "new_id": 1654,
+      "right_id": 293
+    },
+    {
+      "left_id": 102,
+      "new_id": 1655,
+      "right_id": 341
+    },
+    {
+      "left_id": 260,
+      "new_id": 1656,
+      "right_id": 1241
+    },
+    {
+      "left_id": 663,
+      "new_id": 1657,
+      "right_id": 342
+    },
+    {
+      "left_id": 312,
+      "new_id": 1658,
+      "right_id": 735
+    },
+    {
+      "left_id": 118,
+      "new_id": 1659,
+      "right_id": 122
+    },
+    {
+      "left_id": 101,
+      "new_id": 1660,
+      "right_id": 422
+    },
+    {
+      "left_id": 281,
+      "new_id": 1661,
+      "right_id": 813
+    },
+    {
+      "left_id": 73,
+      "new_id": 1662,
+      "right_id": 260
+    },
+    {
+      "left_id": 265,
+      "new_id": 1663,
+      "right_id": 414
+    },
+    {
+      "left_id": 101,
+      "new_id": 1664,
+      "right_id": 547
+    },
+    {
+      "left_id": 100,
+      "new_id": 1665,
+      "right_id": 363
+    },
+    {
+      "left_id": 459,
+      "new_id": 1666,
+      "right_id": 1546
+    },
+    {
+      "left_id": 289,
+      "new_id": 1667,
+      "right_id": 526
+    },
+    {
+      "left_id": 303,
+      "new_id": 1668,
+      "right_id": 1171
+    },
+    {
+      "left_id": 465,
+      "new_id": 1669,
+      "right_id": 956
+    },
+    {
+      "left_id": 119,
+      "new_id": 1670,
+      "right_id": 122
+    },
+    {
+      "left_id": 102,
+      "new_id": 1671,
+      "right_id": 821
+    },
+    {
+      "left_id": 598,
+      "new_id": 1672,
+      "right_id": 272
+    },
+    {
+      "left_id": 68,
+      "new_id": 1673,
+      "right_id": 336
+    },
+    {
+      "left_id": 873,
+      "new_id": 1674,
+      "right_id": 118
+    },
+    {
+      "left_id": 118,
+      "new_id": 1675,
+      "right_id": 116
+    },
+    {
+      "left_id": 1673,
+      "new_id": 1676,
+      "right_id": 363
+    },
+    {
+      "left_id": 420,
+      "new_id": 1677,
+      "right_id": 629
+    },
+    {
+      "left_id": 119,
+      "new_id": 1678,
+      "right_id": 282
+    },
+    {
+      "left_id": 268,
+      "new_id": 1679,
+      "right_id": 720
+    },
+    {
+      "left_id": 268,
+      "new_id": 1680,
+      "right_id": 960
+    },
+    {
+      "left_id": 394,
+      "new_id": 1681,
+      "right_id": 1291
+    },
+    {
+      "left_id": 81,
+      "new_id": 1682,
+      "right_id": 114
+    },
+    {
+      "left_id": 303,
+      "new_id": 1683,
+      "right_id": 863
+    },
+    {
+      "left_id": 728,
+      "new_id": 1684,
+      "right_id": 928
+    },
+    {
+      "left_id": 652,
+      "new_id": 1685,
+      "right_id": 668
+    },
+    {
+      "left_id": 117,
+      "new_id": 1686,
+      "right_id": 119
+    },
+    {
+      "left_id": 283,
+      "new_id": 1687,
+      "right_id": 583
+    },
+    {
+      "left_id": 278,
+      "new_id": 1688,
+      "right_id": 272
+    },
+    {
+      "left_id": 270,
+      "new_id": 1689,
+      "right_id": 1448
+    },
+    {
+      "left_id": 660,
+      "new_id": 1690,
+      "right_id": 424
+    },
+    {
+      "left_id": 115,
+      "new_id": 1691,
+      "right_id": 360
+    },
+    {
+      "left_id": 1043,
+      "new_id": 1692,
+      "right_id": 519
+    },
+    {
+      "left_id": 308,
+      "new_id": 1693,
+      "right_id": 539
+    },
+    {
+      "left_id": 262,
+      "new_id": 1694,
+      "right_id": 460
+    },
+    {
+      "left_id": 746,
+      "new_id": 1695,
+      "right_id": 124
+    },
+    {
+      "left_id": 111,
+      "new_id": 1696,
+      "right_id": 600
+    },
+    {
+      "left_id": 264,
+      "new_id": 1697,
+      "right_id": 118
+    },
+    {
+      "left_id": 1007,
+      "new_id": 1698,
+      "right_id": 266
+    },
+    {
+      "left_id": 102,
+      "new_id": 1699,
+      "right_id": 441
+    },
+    {
+      "left_id": 527,
+      "new_id": 1700,
+      "right_id": 118
+    },
+    {
+      "left_id": 309,
+      "new_id": 1701,
+      "right_id": 490
+    },
+    {
+      "left_id": 77,
+      "new_id": 1702,
+      "right_id": 114
+    },
+    {
+      "left_id": 76,
+      "new_id": 1703,
+      "right_id": 118
+    },
+    {
+      "left_id": 101,
+      "new_id": 1704,
+      "right_id": 309
+    },
+    {
+      "left_id": 615,
+      "new_id": 1705,
+      "right_id": 992
+    },
+    {
+      "left_id": 1104,
+      "new_id": 1706,
+      "right_id": 449
+    },
+    {
+      "left_id": 1431,
+      "new_id": 1707,
+      "right_id": 300
+    },
+    {
+      "left_id": 582,
+      "new_id": 1708,
+      "right_id": 633
+    },
+    {
+      "left_id": 409,
+      "new_id": 1709,
+      "right_id": 103
+    },
+    {
+      "left_id": 90,
+      "new_id": 1710,
+      "right_id": 117
+    },
+    {
+      "left_id": 101,
+      "new_id": 1711,
+      "right_id": 428
+    },
+    {
+      "left_id": 1136,
+      "new_id": 1712,
+      "right_id": 268
+    },
+    {
+      "left_id": 450,
+      "new_id": 1713,
+      "right_id": 1214
+    },
+    {
+      "left_id": 783,
+      "new_id": 1714,
+      "right_id": 282
+    },
+    {
+      "left_id": 73,
+      "new_id": 1715,
+      "right_id": 528
+    },
+    {
+      "left_id": 104,
+      "new_id": 1716,
+      "right_id": 1398
+    },
+    {
+      "left_id": 106,
+      "new_id": 1717,
+      "right_id": 580
+    },
+    {
+      "left_id": 1614,
+      "new_id": 1718,
+      "right_id": 1459
+    },
+    {
+      "left_id": 337,
+      "new_id": 1719,
+      "right_id": 1199
+    },
+    {
+      "left_id": 941,
+      "new_id": 1720,
+      "right_id": 489
+    },
+    {
+      "left_id": 714,
+      "new_id": 1721,
+      "right_id": 118
+    },
+    {
+      "left_id": 101,
+      "new_id": 1722,
+      "right_id": 264
+    },
+    {
+      "left_id": 107,
+      "new_id": 1723,
+      "right_id": 278
+    },
+    {
+      "left_id": 1133,
+      "new_id": 1724,
+      "right_id": 440
+    },
+    {
+      "left_id": 263,
+      "new_id": 1725,
+      "right_id": 282
+    },
+    {
+      "left_id": 118,
+      "new_id": 1726,
+      "right_id": 269
+    },
+    {
+      "left_id": 410,
+      "new_id": 1727,
+      "right_id": 1640
+    },
+    {
+      "left_id": 113,
+      "new_id": 1728,
+      "right_id": 100
+    },
+    {
+      "left_id": 334,
+      "new_id": 1729,
+      "right_id": 737
+    },
+    {
+      "left_id": 303,
+      "new_id": 1730,
+      "right_id": 1641
+    },
+    {
+      "left_id": 495,
+      "new_id": 1731,
+      "right_id": 271
+    },
+    {
+      "left_id": 688,
+      "new_id": 1732,
+      "right_id": 508
+    },
+    {
+      "left_id": 358,
+      "new_id": 1733,
+      "right_id": 1059
+    },
+    {
+      "left_id": 496,
+      "new_id": 1734,
+      "right_id": 271
+    },
+    {
+      "left_id": 270,
+      "new_id": 1735,
+      "right_id": 272
+    },
+    {
+      "left_id": 662,
+      "new_id": 1736,
+      "right_id": 112
+    },
+    {
+      "left_id": 442,
+      "new_id": 1737,
+      "right_id": 259
+    },
+    {
+      "left_id": 681,
+      "new_id": 1738,
+      "right_id": 113
+    },
+    {
+      "left_id": 565,
+      "new_id": 1739,
+      "right_id": 459
+    },
+    {
+      "left_id": 112,
+      "new_id": 1740,
+      "right_id": 272
+    },
+    {
+      "left_id": 1062,
+      "new_id": 1741,
+      "right_id": 295
+    },
+    {
+      "left_id": 1710,
+      "new_id": 1742,
+      "right_id": 477
+    },
+    {
+      "left_id": 353,
+      "new_id": 1743,
+      "right_id": 831
+    },
+    {
+      "left_id": 649,
+      "new_id": 1744,
+      "right_id": 174
+    },
+    {
+      "left_id": 284,
+      "new_id": 1745,
+      "right_id": 110
+    },
+    {
+      "left_id": 382,
+      "new_id": 1746,
+      "right_id": 266
+    },
+    {
+      "left_id": 864,
+      "new_id": 1747,
+      "right_id": 295
+    },
+    {
+      "left_id": 1129,
+      "new_id": 1748,
+      "right_id": 118
+    },
+    {
+      "left_id": 53,
+      "new_id": 1749,
+      "right_id": 53
+    },
+    {
+      "left_id": 107,
+      "new_id": 1750,
+      "right_id": 466
+    },
+    {
+      "left_id": 107,
+      "new_id": 1751,
+      "right_id": 113
+    },
+    {
+      "left_id": 623,
+      "new_id": 1752,
+      "right_id": 451
+    },
+    {
+      "left_id": 265,
+      "new_id": 1753,
+      "right_id": 948
+    },
+    {
+      "left_id": 303,
+      "new_id": 1754,
+      "right_id": 610
+    },
+    {
+      "left_id": 1675,
+      "new_id": 1755,
+      "right_id": 1686
+    },
+    {
+      "left_id": 119,
+      "new_id": 1756,
+      "right_id": 411
+    },
+    {
+      "left_id": 1122,
+      "new_id": 1757,
+      "right_id": 1551
+    },
+    {
+      "left_id": 275,
+      "new_id": 1758,
+      "right_id": 115
+    },
+    {
+      "left_id": 99,
+      "new_id": 1759,
+      "right_id": 49
+    },
+    {
+      "left_id": 726,
+      "new_id": 1760,
+      "right_id": 117
+    },
+    {
+      "left_id": 331,
+      "new_id": 1761,
+      "right_id": 880
+    },
+    {
+      "left_id": 111,
+      "new_id": 1762,
+      "right_id": 581
+    },
+    {
+      "left_id": 107,
+      "new_id": 1763,
+      "right_id": 1618
+    },
+    {
+      "left_id": 280,
+      "new_id": 1764,
+      "right_id": 281
+    },
+    {
+      "left_id": 346,
+      "new_id": 1765,
+      "right_id": 611
+    },
+    {
+      "left_id": 45,
+      "new_id": 1766,
+      "right_id": 45
+    },
+    {
+      "left_id": 617,
+      "new_id": 1767,
+      "right_id": 285
+    },
+    {
+      "left_id": 501,
+      "new_id": 1768,
+      "right_id": 271
+    },
+    {
+      "left_id": 294,
+      "new_id": 1769,
+      "right_id": 669
+    },
+    {
+      "left_id": 298,
+      "new_id": 1770,
+      "right_id": 416
+    },
+    {
+      "left_id": 105,
+      "new_id": 1771,
+      "right_id": 441
+    },
+    {
+      "left_id": 309,
+      "new_id": 1772,
+      "right_id": 965
+    },
+    {
+      "left_id": 122,
+      "new_id": 1773,
+      "right_id": 100
+    },
+    {
+      "left_id": 118,
+      "new_id": 1774,
+      "right_id": 408
+    },
+    {
+      "left_id": 1330,
+      "new_id": 1775,
+      "right_id": 124
+    },
+    {
+      "left_id": 562,
+      "new_id": 1776,
+      "right_id": 984
+    },
+    {
+      "left_id": 447,
+      "new_id": 1777,
+      "right_id": 123
+    },
+    {
+      "left_id": 280,
+      "new_id": 1778,
+      "right_id": 120
+    },
+    {
+      "left_id": 832,
+      "new_id": 1779,
+      "right_id": 538
+    },
+    {
+      "left_id": 697,
+      "new_id": 1780,
+      "right_id": 299
+    },
+    {
+      "left_id": 568,
+      "new_id": 1781,
+      "right_id": 926
+    },
+    {
+      "left_id": 435,
+      "new_id": 1782,
+      "right_id": 273
+    },
+    {
+      "left_id": 936,
+      "new_id": 1783,
+      "right_id": 414
+    },
+    {
+      "left_id": 346,
+      "new_id": 1784,
+      "right_id": 333
+    },
+    {
+      "left_id": 71,
+      "new_id": 1785,
+      "right_id": 104
+    },
+    {
+      "left_id": 834,
+      "new_id": 1786,
+      "right_id": 1561
+    },
+    {
+      "left_id": 390,
+      "new_id": 1787,
+      "right_id": 590
+    },
+    {
+      "left_id": 308,
+      "new_id": 1788,
+      "right_id": 1211
+    },
+    {
+      "left_id": 1662,
+      "new_id": 1789,
+      "right_id": 412
+    },
+    {
+      "left_id": 934,
+      "new_id": 1790,
+      "right_id": 962
+    },
+    {
+      "left_id": 612,
+      "new_id": 1791,
+      "right_id": 318
+    },
+    {
+      "left_id": 515,
+      "new_id": 1792,
+      "right_id": 1027
+    },
+    {
+      "left_id": 1702,
+      "new_id": 1793,
+      "right_id": 1751
+    },
+    {
+      "left_id": 901,
+      "new_id": 1794,
+      "right_id": 272
+    },
+    {
+      "left_id": 577,
+      "new_id": 1795,
+      "right_id": 263
+    },
+    {
+      "left_id": 663,
+      "new_id": 1796,
+      "right_id": 296
+    },
+    {
+      "left_id": 684,
+      "new_id": 1797,
+      "right_id": 118
+    },
+    {
+      "left_id": 331,
+      "new_id": 1798,
+      "right_id": 887
+    },
+    {
+      "left_id": 64,
+      "new_id": 1799,
+      "right_id": 64
+    },
+    {
+      "left_id": 263,
+      "new_id": 1800,
+      "right_id": 368
+    },
+    {
+      "left_id": 650,
+      "new_id": 1801,
+      "right_id": 524
+    },
+    {
+      "left_id": 53,
+      "new_id": 1802,
+      "right_id": 380
+    },
+    {
+      "left_id": 108,
+      "new_id": 1803,
+      "right_id": 299
+    },
+    {
+      "left_id": 1716,
+      "new_id": 1804,
+      "right_id": 395
+    },
+    {
+      "left_id": 474,
+      "new_id": 1805,
+      "right_id": 121
+    },
+    {
+      "left_id": 125,
+      "new_id": 1806,
+      "right_id": 272
+    },
+    {
+      "left_id": 289,
+      "new_id": 1807,
+      "right_id": 419
+    },
+    {
+      "left_id": 758,
+      "new_id": 1808,
+      "right_id": 288
+    },
+    {
+      "left_id": 311,
+      "new_id": 1809,
+      "right_id": 113
+    },
+    {
+      "left_id": 868,
+      "new_id": 1810,
+      "right_id": 260
+    },
+    {
+      "left_id": 782,
+      "new_id": 1811,
+      "right_id": 1239
+    },
+    {
+      "left_id": 260,
+      "new_id": 1812,
+      "right_id": 414
+    },
+    {
+      "left_id": 922,
+      "new_id": 1813,
+      "right_id": 1519
+    },
+    {
+      "left_id": 508,
+      "new_id": 1814,
+      "right_id": 103
+    },
+    {
+      "left_id": 327,
+      "new_id": 1815,
+      "right_id": 108
+    },
+    {
+      "left_id": 269,
+      "new_id": 1816,
+      "right_id": 112
+    },
+    {
+      "left_id": 298,
+      "new_id": 1817,
+      "right_id": 408
+    },
+    {
+      "left_id": 494,
+      "new_id": 1818,
+      "right_id": 587
+    },
+    {
+      "left_id": 332,
+      "new_id": 1819,
+      "right_id": 106
+    },
+    {
+      "left_id": 114,
+      "new_id": 1820,
+      "right_id": 291
+    },
+    {
+      "left_id": 513,
+      "new_id": 1821,
+      "right_id": 262
+    },
+    {
+      "left_id": 289,
+      "new_id": 1822,
+      "right_id": 1391
+    },
+    {
+      "left_id": 113,
+      "new_id": 1823,
+      "right_id": 535
+    },
+    {
+      "left_id": 118,
+      "new_id": 1824,
+      "right_id": 490
+    },
+    {
+      "left_id": 198,
+      "new_id": 1825,
+      "right_id": 154
+    },
+    {
+      "left_id": 111,
+      "new_id": 1826,
+      "right_id": 1238
+    },
+    {
+      "left_id": 119,
+      "new_id": 1827,
+      "right_id": 279
+    },
+    {
+      "left_id": 60,
+      "new_id": 1828,
+      "right_id": 56
+    },
+    {
+      "left_id": 442,
+      "new_id": 1829,
+      "right_id": 295
+    },
+    {
+      "left_id": 1354,
+      "new_id": 1830,
+      "right_id": 262
+    },
+    {
+      "left_id": 1041,
+      "new_id": 1831,
+      "right_id": 415
+    },
+    {
+      "left_id": 1172,
+      "new_id": 1832,
+      "right_id": 487
+    },
+    {
+      "left_id": 313,
+      "new_id": 1833,
+      "right_id": 405
+    },
+    {
+      "left_id": 1195,
+      "new_id": 1834,
+      "right_id": 271
+    },
+    {
+      "left_id": 338,
+      "new_id": 1835,
+      "right_id": 103
+    },
+    {
+      "left_id": 323,
+      "new_id": 1836,
+      "right_id": 580
+    },
+    {
+      "left_id": 103,
+      "new_id": 1837,
+      "right_id": 332
+    },
+    {
+      "left_id": 339,
+      "new_id": 1838,
+      "right_id": 485
+    },
+    {
+      "left_id": 730,
+      "new_id": 1839,
+      "right_id": 120
+    },
+    {
+      "left_id": 54,
+      "new_id": 1840,
+      "right_id": 57
+    },
+    {
+      "left_id": 105,
+      "new_id": 1841,
+      "right_id": 859
+    },
+    {
+      "left_id": 262,
+      "new_id": 1842,
+      "right_id": 909
+    },
+    {
+      "left_id": 100,
+      "new_id": 1843,
+      "right_id": 259
+    },
+    {
+      "left_id": 476,
+      "new_id": 1844,
+      "right_id": 291
+    },
+    {
+      "left_id": 118,
+      "new_id": 1845,
+      "right_id": 309
+    },
+    {
+      "left_id": 309,
+      "new_id": 1846,
+      "right_id": 1580
+    },
+    {
+      "left_id": 119,
+      "new_id": 1847,
+      "right_id": 418
+    },
+    {
+      "left_id": 112,
+      "new_id": 1848,
+      "right_id": 335
+    },
+    {
+      "left_id": 1424,
+      "new_id": 1849,
+      "right_id": 342
+    },
+    {
+      "left_id": 79,
+      "new_id": 1850,
+      "right_id": 600
+    },
+    {
+      "left_id": 945,
+      "new_id": 1851,
+      "right_id": 480
+    },
+    {
+      "left_id": 1317,
+      "new_id": 1852,
+      "right_id": 427
+    },
+    {
+      "left_id": 1051,
+      "new_id": 1853,
+      "right_id": 842
+    },
+    {
+      "left_id": 92,
+      "new_id": 1854,
+      "right_id": 441
+    },
+    {
+      "left_id": 268,
+      "new_id": 1855,
+      "right_id": 1604
+    },
+    {
+      "left_id": 102,
+      "new_id": 1856,
+      "right_id": 1819
+    },
+    {
+      "left_id": 852,
+      "new_id": 1857,
+      "right_id": 272
+    },
+    {
+      "left_id": 1406,
+      "new_id": 1858,
+      "right_id": 284
+    },
+    {
+      "left_id": 955,
+      "new_id": 1859,
+      "right_id": 583
+    },
+    {
+      "left_id": 1087,
+      "new_id": 1860,
+      "right_id": 530
+    },
+    {
+      "left_id": 112,
+      "new_id": 1861,
+      "right_id": 362
+    },
+    {
+      "left_id": 1556,
+      "new_id": 1862,
+      "right_id": 110
+    },
+    {
+      "left_id": 290,
+      "new_id": 1863,
+      "right_id": 535
+    },
+    {
+      "left_id": 263,
+      "new_id": 1864,
+      "right_id": 349
+    },
+    {
+      "left_id": 447,
+      "new_id": 1865,
+      "right_id": 1120
+    },
+    {
+      "left_id": 307,
+      "new_id": 1866,
+      "right_id": 108
+    },
+    {
+      "left_id": 297,
+      "new_id": 1867,
+      "right_id": 321
+    },
+    {
+      "left_id": 118,
+      "new_id": 1868,
+      "right_id": 271
+    },
+    {
+      "left_id": 515,
+      "new_id": 1869,
+      "right_id": 115
+    },
+    {
+      "left_id": 294,
+      "new_id": 1870,
+      "right_id": 980
+    },
+    {
+      "left_id": 381,
+      "new_id": 1871,
+      "right_id": 120
+    },
+    {
+      "left_id": 60,
+      "new_id": 1872,
+      "right_id": 60
+    },
+    {
+      "left_id": 597,
+      "new_id": 1873,
+      "right_id": 289
+    },
+    {
+      "left_id": 117,
+      "new_id": 1874,
+      "right_id": 272
+    },
+    {
+      "left_id": 365,
+      "new_id": 1875,
+      "right_id": 100
+    },
+    {
+      "left_id": 442,
+      "new_id": 1876,
+      "right_id": 271
+    },
+    {
+      "left_id": 53,
+      "new_id": 1877,
+      "right_id": 54
+    },
+    {
+      "left_id": 496,
+      "new_id": 1878,
+      "right_id": 282
+    },
+    {
+      "left_id": 108,
+      "new_id": 1879,
+      "right_id": 259
+    },
+    {
+      "left_id": 1788,
+      "new_id": 1880,
+      "right_id": 278
+    },
+    {
+      "left_id": 891,
+      "new_id": 1881,
+      "right_id": 685
+    },
+    {
+      "left_id": 261,
+      "new_id": 1882,
+      "right_id": 683
+    },
+    {
+      "left_id": 1087,
+      "new_id": 1883,
+      "right_id": 1070
+    },
+    {
+      "left_id": 986,
+      "new_id": 1884,
+      "right_id": 471
+    },
+    {
+      "left_id": 102,
+      "new_id": 1885,
+      "right_id": 323
+    },
+    {
+      "left_id": 552,
+      "new_id": 1886,
+      "right_id": 272
+    },
+    {
+      "left_id": 322,
+      "new_id": 1887,
+      "right_id": 402
+    },
+    {
+      "left_id": 1107,
+      "new_id": 1888,
+      "right_id": 1480
+    },
+    {
+      "left_id": 112,
+      "new_id": 1889,
+      "right_id": 1523
+    },
+    {
+      "left_id": 1081,
+      "new_id": 1890,
+      "right_id": 295
+    },
+    {
+      "left_id": 122,
+      "new_id": 1891,
+      "right_id": 113
+    },
+    {
+      "left_id": 117,
+      "new_id": 1892,
+      "right_id": 316
+    },
+    {
+      "left_id": 327,
+      "new_id": 1893,
+      "right_id": 1820
+    },
+    {
+      "left_id": 441,
+      "new_id": 1894,
+      "right_id": 523
+    },
+    {
+      "left_id": 314,
+      "new_id": 1895,
+      "right_id": 1465
+    },
+    {
+      "left_id": 1360,
+      "new_id": 1896,
+      "right_id": 449
+    },
+    {
+      "left_id": 1400,
+      "new_id": 1897,
+      "right_id": 266
+    },
+    {
+      "left_id": 263,
+      "new_id": 1898,
+      "right_id": 324
+    },
+    {
+      "left_id": 1183,
+      "new_id": 1899,
+      "right_id": 356
+    },
+    {
+      "left_id": 860,
+      "new_id": 1900,
+      "right_id": 799
+    },
+    {
+      "left_id": 69,
+      "new_id": 1901,
+      "right_id": 104
+    },
+    {
+      "left_id": 758,
+      "new_id": 1902,
+      "right_id": 752
+    },
+    {
+      "left_id": 285,
+      "new_id": 1903,
+      "right_id": 556
+    },
+    {
+      "left_id": 303,
+      "new_id": 1904,
+      "right_id": 574
+    },
+    {
+      "left_id": 589,
+      "new_id": 1905,
+      "right_id": 668
+    },
+    {
+      "left_id": 98,
+      "new_id": 1906,
+      "right_id": 113
+    },
+    {
+      "left_id": 1635,
+      "new_id": 1907,
+      "right_id": 431
+    },
+    {
+      "left_id": 426,
+      "new_id": 1908,
+      "right_id": 1028
+    },
+    {
+      "left_id": 302,
+      "new_id": 1909,
+      "right_id": 535
+    },
+    {
+      "left_id": 285,
+      "new_id": 1910,
+      "right_id": 337
+    },
+    {
+      "left_id": 495,
+      "new_id": 1911,
+      "right_id": 580
+    },
+    {
+      "left_id": 277,
+      "new_id": 1912,
+      "right_id": 564
+    },
+    {
+      "left_id": 114,
+      "new_id": 1913,
+      "right_id": 123
+    },
+    {
+      "left_id": 445,
+      "new_id": 1914,
+      "right_id": 462
+    },
+    {
+      "left_id": 318,
+      "new_id": 1915,
+      "right_id": 104
+    },
+    {
+      "left_id": 319,
+      "new_id": 1916,
+      "right_id": 1800
+    },
+    {
+      "left_id": 1352,
+      "new_id": 1917,
+      "right_id": 281
+    },
+    {
+      "left_id": 1821,
+      "new_id": 1918,
+      "right_id": 737
+    },
+    {
+      "left_id": 511,
+      "new_id": 1919,
+      "right_id": 310
+    },
+    {
+      "left_id": 261,
+      "new_id": 1920,
+      "right_id": 1403
+    },
+    {
+      "left_id": 437,
+      "new_id": 1921,
+      "right_id": 680
+    },
+    {
+      "left_id": 1795,
+      "new_id": 1922,
+      "right_id": 296
+    },
+    {
+      "left_id": 106,
+      "new_id": 1923,
+      "right_id": 332
+    },
+    {
+      "left_id": 108,
+      "new_id": 1924,
+      "right_id": 331
+    },
+    {
+      "left_id": 692,
+      "new_id": 1925,
+      "right_id": 798
+    },
+    {
+      "left_id": 113,
+      "new_id": 1926,
+      "right_id": 106
+    },
+    {
+      "left_id": 460,
+      "new_id": 1927,
+      "right_id": 118
+    },
+    {
+      "left_id": 1850,
+      "new_id": 1928,
+      "right_id": 295
+    },
+    {
+      "left_id": 361,
+      "new_id": 1929,
+      "right_id": 267
+    },
+    {
+      "left_id": 275,
+      "new_id": 1930,
+      "right_id": 114
+    },
+    {
+      "left_id": 268,
+      "new_id": 1931,
+      "right_id": 956
+    },
+    {
+      "left_id": 459,
+      "new_id": 1932,
+      "right_id": 903
+    },
+    {
+      "left_id": 596,
+      "new_id": 1933,
+      "right_id": 118
+    },
+    {
+      "left_id": 1136,
+      "new_id": 1934,
+      "right_id": 633
+    },
+    {
+      "left_id": 1334,
+      "new_id": 1935,
+      "right_id": 270
+    },
+    {
+      "left_id": 1832,
+      "new_id": 1936,
+      "right_id": 292
+    },
+    {
+      "left_id": 117,
+      "new_id": 1937,
+      "right_id": 124
+    },
+    {
+      "left_id": 1499,
+      "new_id": 1938,
+      "right_id": 1040
+    },
+    {
+      "left_id": 1258,
+      "new_id": 1939,
+      "right_id": 449
+    },
+    {
+      "left_id": 99,
+      "new_id": 1940,
+      "right_id": 47
+    },
+    {
+      "left_id": 103,
+      "new_id": 1941,
+      "right_id": 282
+    },
+    {
+      "left_id": 111,
+      "new_id": 1942,
+      "right_id": 118
+    },
+    {
+      "left_id": 432,
+      "new_id": 1943,
+      "right_id": 480
+    },
+    {
+      "left_id": 82,
+      "new_id": 1944,
+      "right_id": 321
+    },
+    {
+      "left_id": 1659,
+      "new_id": 1945,
+      "right_id": 1642
+    },
+    {
+      "left_id": 1521,
+      "new_id": 1946,
+      "right_id": 271
+    },
+    {
+      "left_id": 107,
+      "new_id": 1947,
+      "right_id": 773
+    },
+    {
+      "left_id": 296,
+      "new_id": 1948,
+      "right_id": 104
+    },
+    {
+      "left_id": 1651,
+      "new_id": 1949,
+      "right_id": 263
+    },
+    {
+      "left_id": 1515,
+      "new_id": 1950,
+      "right_id": 424
+    },
+    {
+      "left_id": 1339,
+      "new_id": 1951,
+      "right_id": 464
+    },
+    {
+      "left_id": 107,
+      "new_id": 1952,
+      "right_id": 108
+    },
+    {
+      "left_id": 1092,
+      "new_id": 1953,
+      "right_id": 104
+    },
+    {
+      "left_id": 297,
+      "new_id": 1954,
+      "right_id": 1689
+    },
+    {
+      "left_id": 1474,
+      "new_id": 1955,
+      "right_id": 335
+    },
+    {
+      "left_id": 101,
+      "new_id": 1956,
+      "right_id": 329
+    },
+    {
+      "left_id": 374,
+      "new_id": 1957,
+      "right_id": 318
+    },
+    {
+      "left_id": 117,
+      "new_id": 1958,
+      "right_id": 1090
+    },
+    {
+      "left_id": 1503,
+      "new_id": 1959,
+      "right_id": 442
+    },
+    {
+      "left_id": 101,
+      "new_id": 1960,
+      "right_id": 280
+    },
+    {
+      "left_id": 105,
+      "new_id": 1961,
+      "right_id": 373
+    },
+    {
+      "left_id": 1176,
+      "new_id": 1962,
+      "right_id": 454
+    },
+    {
+      "left_id": 386,
+      "new_id": 1963,
+      "right_id": 813
+    },
+    {
+      "left_id": 601,
+      "new_id": 1964,
+      "right_id": 1446
+    },
+    {
+      "left_id": 724,
+      "new_id": 1965,
+      "right_id": 118
+    },
+    {
+      "left_id": 867,
+      "new_id": 1966,
+      "right_id": 295
+    },
+    {
+      "left_id": 1466,
+      "new_id": 1967,
+      "right_id": 1779
+    },
+    {
+      "left_id": 298,
+      "new_id": 1968,
+      "right_id": 1191
+    },
+    {
+      "left_id": 1815,
+      "new_id": 1969,
+      "right_id": 1263
+    },
+    {
+      "left_id": 1110,
+      "new_id": 1970,
+      "right_id": 357
+    },
+    {
+      "left_id": 496,
+      "new_id": 1971,
+      "right_id": 123
+    },
+    {
+      "left_id": 1058,
+      "new_id": 1972,
+      "right_id": 314
+    },
+    {
+      "left_id": 273,
+      "new_id": 1973,
+      "right_id": 412
+    },
+    {
+      "left_id": 700,
+      "new_id": 1974,
+      "right_id": 1885
+    },
+    {
+      "left_id": 966,
+      "new_id": 1975,
+      "right_id": 118
+    },
+    {
+      "left_id": 49,
+      "new_id": 1976,
+      "right_id": 47
+    },
+    {
+      "left_id": 308,
+      "new_id": 1977,
+      "right_id": 299
+    },
+    {
+      "left_id": 120,
+      "new_id": 1978,
+      "right_id": 348
+    },
+    {
+      "left_id": 108,
+      "new_id": 1979,
+      "right_id": 419
+    },
+    {
+      "left_id": 283,
+      "new_id": 1980,
+      "right_id": 360
+    },
+    {
+      "left_id": 111,
+      "new_id": 1981,
+      "right_id": 360
+    },
+    {
+      "left_id": 1193,
+      "new_id": 1982,
+      "right_id": 263
+    },
+    {
+      "left_id": 861,
+      "new_id": 1983,
+      "right_id": 279
+    },
+    {
+      "left_id": 260,
+      "new_id": 1984,
+      "right_id": 1306
+    },
+    {
+      "left_id": 101,
+      "new_id": 1985,
+      "right_id": 278
+    },
+    {
+      "left_id": 105,
+      "new_id": 1986,
+      "right_id": 278
+    },
+    {
+      "left_id": 1508,
+      "new_id": 1987,
+      "right_id": 1174
+    },
+    {
+      "left_id": 643,
+      "new_id": 1988,
+      "right_id": 1218
+    },
+    {
+      "left_id": 709,
+      "new_id": 1989,
+      "right_id": 933
+    },
+    {
+      "left_id": 402,
+      "new_id": 1990,
+      "right_id": 272
+    },
+    {
+      "left_id": 375,
+      "new_id": 1991,
+      "right_id": 272
+    },
+    {
+      "left_id": 107,
+      "new_id": 1992,
+      "right_id": 487
+    },
+    {
+      "left_id": 278,
+      "new_id": 1993,
+      "right_id": 806
+    },
+    {
+      "left_id": 498,
+      "new_id": 1994,
+      "right_id": 263
+    },
+    {
+      "left_id": 90,
+      "new_id": 1995,
+      "right_id": 1879
+    },
+    {
+      "left_id": 68,
+      "new_id": 1996,
+      "right_id": 1461
+    },
+    {
+      "left_id": 1195,
+      "new_id": 1997,
+      "right_id": 104
+    },
+    {
+      "left_id": 287,
+      "new_id": 1998,
+      "right_id": 35
+    },
+    {
+      "left_id": 100,
+      "new_id": 1999,
+      "right_id": 122
+    },
+    {
+      "left_id": 747,
+      "new_id": 2000,
+      "right_id": 308
+    },
+    {
+      "left_id": 780,
+      "new_id": 2001,
+      "right_id": 1205
+    },
+    {
+      "left_id": 268,
+      "new_id": 2002,
+      "right_id": 1895
+    },
+    {
+      "left_id": 106,
+      "new_id": 2003,
+      "right_id": 264
+    },
+    {
+      "left_id": 971,
+      "new_id": 2004,
+      "right_id": 122
+    },
+    {
+      "left_id": 485,
+      "new_id": 2005,
+      "right_id": 118
+    },
+    {
+      "left_id": 59,
+      "new_id": 2006,
+      "right_id": 56
+    },
+    {
+      "left_id": 740,
+      "new_id": 2007,
+      "right_id": 348
+    },
+    {
+      "left_id": 197,
+      "new_id": 2008,
+      "right_id": 180
+    },
+    {
+      "left_id": 279,
+      "new_id": 2009,
+      "right_id": 1555
+    },
+    {
+      "left_id": 263,
+      "new_id": 2010,
+      "right_id": 1643
+    },
+    {
+      "left_id": 1098,
+      "new_id": 2011,
+      "right_id": 118
+    },
+    {
+      "left_id": 1813,
+      "new_id": 2012,
+      "right_id": 292
+    },
+    {
+      "left_id": 759,
+      "new_id": 2013,
+      "right_id": 296
+    },
+    {
+      "left_id": 293,
+      "new_id": 2014,
+      "right_id": 435
+    },
+    {
+      "left_id": 1845,
+      "new_id": 2015,
+      "right_id": 349
+    },
+    {
+      "left_id": 1177,
+      "new_id": 2016,
+      "right_id": 269
+    },
+    {
+      "left_id": 703,
+      "new_id": 2017,
+      "right_id": 1243
+    },
+    {
+      "left_id": 776,
+      "new_id": 2018,
+      "right_id": 509
+    },
+    {
+      "left_id": 312,
+      "new_id": 2019,
+      "right_id": 1175
+    },
+    {
+      "left_id": 589,
+      "new_id": 2020,
+      "right_id": 464
+    },
+    {
+      "left_id": 1133,
+      "new_id": 2021,
+      "right_id": 266
+    },
+    {
+      "left_id": 445,
+      "new_id": 2022,
+      "right_id": 108
+    },
+    {
+      "left_id": 294,
+      "new_id": 2023,
+      "right_id": 914
+    },
+    {
+      "left_id": 459,
+      "new_id": 2024,
+      "right_id": 337
+    },
+    {
+      "left_id": 316,
+      "new_id": 2025,
+      "right_id": 281
+    },
+    {
+      "left_id": 1305,
+      "new_id": 2026,
+      "right_id": 642
+    },
+    {
+      "left_id": 279,
+      "new_id": 2027,
+      "right_id": 725
+    },
+    {
+      "left_id": 405,
+      "new_id": 2028,
+      "right_id": 1385
+    },
+    {
+      "left_id": 1473,
+      "new_id": 2029,
+      "right_id": 357
+    },
+    {
+      "left_id": 73,
+      "new_id": 2030,
+      "right_id": 381
+    },
+    {
+      "left_id": 1231,
+      "new_id": 2031,
+      "right_id": 712
+    },
+    {
+      "left_id": 1674,
+      "new_id": 2032,
+      "right_id": 300
+    },
+    {
+      "left_id": 631,
+      "new_id": 2033,
+      "right_id": 368
+    },
+    {
+      "left_id": 259,
+      "new_id": 2034,
+      "right_id": 1835
+    },
+    {
+      "left_id": 1496,
+      "new_id": 2035,
+      "right_id": 270
+    },
+    {
+      "left_id": 43,
+      "new_id": 2036,
+      "right_id": 44
+    },
+    {
+      "left_id": 100,
+      "new_id": 2037,
+      "right_id": 353
+    },
+    {
+      "left_id": 537,
+      "new_id": 2038,
+      "right_id": 1322
+    },
+    {
+      "left_id": 444,
+      "new_id": 2039,
+      "right_id": 625
+    },
+    {
+      "left_id": 119,
+      "new_id": 2040,
+      "right_id": 278
+    },
+    {
+      "left_id": 1374,
+      "new_id": 2041,
+      "right_id": 295
+    },
+    {
+      "left_id": 53,
+      "new_id": 2042,
+      "right_id": 52
+    },
+    {
+      "left_id": 905,
+      "new_id": 2043,
+      "right_id": 266
+    },
+    {
+      "left_id": 263,
+      "new_id": 2044,
+      "right_id": 434
+    },
+    {
+      "left_id": 118,
+      "new_id": 2045,
+      "right_id": 353
+    },
+    {
+      "left_id": 703,
+      "new_id": 2046,
+      "right_id": 821
+    },
+    {
+      "left_id": 281,
+      "new_id": 2047,
+      "right_id": 280
+    }
+  ],
+  "pretokenizer": "unicode",
+  "special_tokens": {
+    "<bos>": 1,
+    "<eos>": 2,
+    "<pad>": 0
+  },
+  "vocab_size": 2048
+}

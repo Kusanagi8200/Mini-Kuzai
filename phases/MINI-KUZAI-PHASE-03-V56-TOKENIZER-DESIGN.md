@@ -1,6 +1,6 @@
 # MINI-KUZAI PHASE 03 - V56 TOKENIZER DESIGN
 
-Status: TOKENIZER CANDIDATES IMPLEMENTED
+Status: TOKENIZER BENCHMARK AND COST COMPARISON COMPLETE
 
 ## Purpose
 
@@ -48,12 +48,12 @@ Phase 01 vocabulary mechanically.
 
 ## V56 sequence
 
-V56.1 tokenizer source-boundary audit
--> V56.2 tokenizer candidate implementation
--> V56.3 candidate vocabulary-size benchmark
--> V56.4 sequence-length / coverage / parameter-cost comparison
--> V56.5 tokenizer selection
--> V56.6 vocabulary freeze
+V56.1 tokenizer source-boundary audit              : COMPLETE
+V56.2 tokenizer candidate implementation           : COMPLETE
+V56.3 candidate vocabulary-size benchmark          : COMPLETE
+V56.4 sequence-length / coverage / parameter-cost  : COMPLETE
+V56.5 tokenizer selection                          : NEXT
+V56.6 vocabulary freeze                            : PENDING
 
 Vocabulary freeze is not authorized until the comparison stages are complete.
 
@@ -133,3 +133,47 @@ The comparison must measure at least:
 
 VALIDATION, BLIND TEST and private conversation material remain excluded from
 tokenizer learning.
+
+## V56.3 / V56.4 benchmark
+
+The tokenizer benchmark is stored in:
+
+data/phase-03/reports/tokenizer-benchmark-v56.json
+
+The authorized learning corpus contains:
+
+- 107 canonical TRAIN conversations;
+- 248 canonical TRAIN messages;
+- 8000 public SmolTalk conversations;
+- 36002 public SmolTalk messages;
+- 36250 total tokenizer-learning messages.
+
+No VALIDATION, BLIND TEST or private conversation material is used.
+
+Compared configurations:
+
+- byte baseline: vocabulary 259;
+- byte BPE whitespace: 512 / 1024 / 2048;
+- byte BPE Unicode: 512 / 1024 / 2048.
+
+For each BPE family the 2048-token merge table is learned once.
+
+The smaller vocabulary candidates are exact deterministic prefixes of that
+merge table.
+
+The benchmark measures:
+
+- total tokens;
+- compression relative to the UTF-8 byte baseline;
+- average tokens per message;
+- p50 / p95 / p99 message lengths;
+- maximum message length;
+- lossless round-trip integrity;
+- vocabulary parameter cost per hidden dimension;
+- Pareto efficiency for vocabulary size versus token count.
+
+The benchmark does not select a tokenizer.
+
+Tokenizer selection remains V56.5.
+
+Vocabulary freeze remains V56.6.
