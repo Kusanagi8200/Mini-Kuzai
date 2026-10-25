@@ -1,6 +1,6 @@
 # Mini-Kuzai V59 - bulk quality sample 002
 
-Status: **PUBLISHED FOR REVIEW - 72 new cases.**
+Status: **REVIEW COMPLETE - 72/72 cases.** See [RESULTS-002.md](RESULTS-002.md).
 
 Sample 002 adds 72 new public cases with no overlap with Sample 001.
 The cumulative 144-case design is rebalanced toward the real sizes of the 10 observed priority × source × turn strata.
