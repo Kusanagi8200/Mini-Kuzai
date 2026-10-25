@@ -1,104 +1,160 @@
 # MINI-KUZAI PHASE 03 - V59 TRAINING MIX AND SEGMENTATION
 
-Status: SEGMENTATION CLOSED - PUBLIC MIX QUALITY GATE OPEN - SAMPLE 002 JOB AUTOMATED
+Status: **PAUSED CLEAN - SEGMENTATION CLOSED - PUBLIC MIX NOT FINALIZED**
 
 V59 is the final data-preparation workstream before any model-training
 authorization decision.
 
 Training remains **NOT AUTHORIZED / NOT STARTED**.
 
-## Frozen V59 segmentation policy
+## Scope
 
-The frozen V58 context is 2048 tokens.
+V59 must produce an explicit, reproducible public training-data plan while
+preserving:
 
-V59 segmentation:
+- the frozen TRAIN / VALIDATION / BLIND boundary;
+- source provenance;
+- duplicate and semantic-split protection;
+- frozen V56 tokenizer behavior;
+- frozen V57 serialization;
+- V58 experimental architecture reproducibility;
+- the persona-first quality policy;
+- the rule that known incorrect positive targets cannot be trained unchanged.
 
-- preserves the frozen V57 textual serialization;
-- preserves complete USER / MINI-KUZAI pairs;
-- cuts only between complete user/assistant pairs;
-- greedily packs complete pairs up to 2048 tokens;
-- preserves source text and order exactly;
-- never truncates source text;
-- never silently splits inside a message or pair;
-- blocks an individual pair that cannot fit within 2048 tokens.
+## Frozen controlled baseline
 
-The segmentation implementation and audit are closed.
+The controlled corpus remains unchanged:
 
-Controlled TRAIN remains 107 conversations with no blocked pair.
+- TRAIN: **107 records / 29 groups**;
+- VALIDATION: **36 records / 18 groups - FROZEN**;
+- BLIND TEST: **36 records / 18 groups - FROZEN**;
+- total: **179 conversations / 65 semantic groups**.
 
-## Public mix state
+TRAIN provenance:
 
-Starting public V44 population: 1,139 conversations.
+- 105 `phase03-designed`;
+- 2 admitted public SmolTalk derivatives.
 
-Known structural exclusions:
+Tokenizer:
 
-- 3 conversations blocked by an individual pair over 2048 tokens;
-- 2 public sources already represented by controlled TRAIN derivatives.
+- V56 `byte_bpe_whitespace`;
+- vocabulary 1024;
+- 765 merges;
+- byte fallback;
+- no UNK.
 
-Known-negative V51/V52 filtering removes a further 22 unique public sources.
+Conversation serialization:
 
-The resulting V59 public candidate population is:
+- V57 frozen;
+- ordinary textual `USER:` and `MINI-KUZAI:` labels;
+- BOS at conversation start;
+- EOS at conversation end.
 
-- 1,112 candidate conversations;
-- 1,554 turn-aware segments;
-- 1,730,414 public tokens;
-- 1.460 public tokens per model parameter;
-- 1,754,953 tokens including controlled TRAIN;
-- 1.481 combined tokens per model parameter.
+Architecture baseline:
 
-Of these 1,112 candidates, 32 had already passed structured V51/V52 review.
-The remaining bulk population for quality estimation is 1,080 conversations.
+- V58 decoder-only autoregressive Transformer;
+- context 2048;
+- `d_model=128`;
+- 4 heads;
+- 4 layers;
+- FFN 512;
+- **1,184,512 parameters**.
 
-## Bulk quality Sample 001
+V58 remains an experimental baseline rather than an irreversible final
+architecture decision.
 
-Sample 001 reviewed 72 deterministic, stratified public cases.
+## V59 segmentation - CLOSED
 
-Observed review outcomes:
+The V59 segmentation policy is implemented, tested and frozen.
 
+Policy:
+
+- preserve complete USER / MINI-KUZAI pairs;
+- cut only between complete pairs;
+- greedy packing up to 2048 tokens;
+- preserve source text and order;
+- no truncation;
+- no silent intra-message split;
+- no silent intra-pair split;
+- block an individual pair that cannot fit within 2048 tokens.
+
+Controlled TRAIN:
+
+- 107 conversations;
+- 107 segments;
+- 0 blocked pairs.
+
+Public oversized-pair review:
+
+- 10 blocked public cases reviewed;
+- 8 EXCLUDE;
+- 2 REPLACE;
+- both replacement behaviors already existed in suitable public candidates;
+- no duplicate replacement was added;
+- no arbitrary special split policy was introduced.
+
+Segmentation is no longer a pre-training blocker.
+
+## V59 public candidate population
+
+Starting V44 population:
+
+- **1,139 conversations**.
+
+V59 removes:
+
+- 3 sources containing incompatible >2048-token complete pairs;
+- 2 public source SHAs already represented by controlled TRAIN derivatives;
+- 22 unique structured known-negative V51/V52 sources.
+
+Resulting V59 public candidate population:
+
+- **1,112 conversations**;
+- **1,554 turn-aware segments**;
+- **1,730,414 public tokens**;
+- public tokens / model parameter: **1.460**;
+- controlled TRAIN + public tokens: **1,754,953**;
+- combined tokens / model parameter: **1.481**.
+
+Within these 1,112 candidates:
+
+- 32 had already passed structured V51/V52 review;
+- 1,080 formed the V59 bulk quality-estimation population.
+
+## Bulk quality Sample 001 - CLOSED
+
+Sample 001:
+
+- reviewed: 72;
 - KEEP: 36;
 - REPAIR: 19;
 - EXCLUDE: 17;
 - factual risk HIGH: 18;
 - instruction fit BAD: 9.
 
-The weighted diagnostic over the 1,080-case bulk estimated:
+Initial weighted diagnostic:
 
 - KEEP: 52.00%;
 - REPAIR: 26.95%;
 - EXCLUDE: 21.05%;
-- REPAIR + EXCLUDE: 48.00%.
+- unchanged-unsuitable: 48.00%.
 
-Approximate 95% interval for unchanged-unsuitable material:
-35.63% to 60.38%.
+This sample established that V50 HIGH / MEDIUM / LOW priority is not a quality
+grade.
 
-This estimate is diagnostic, not a formal probability-sampling confidence
-statement, because Sample 001 used deterministic category-balanced selection.
+## Bulk quality Sample 002 - CLOSED
 
-Conclusion:
+Sample 002 added 72 new public cases with zero Sample 001 overlap and rebalanced
+the cumulative sample toward the real sizes of the 10 observed
+priority x source x turn strata.
 
-**bulk unchanged admission failed.**
+Sample 002:
 
-The full V44-derived bulk must not be promoted unchanged into supervised
-training.
+- KEEP: 35;
+- REPAIR: 20;
+- EXCLUDE: 17.
 
-## Sample 002 objective
-
-Sample 002 adds 72 new cases with no overlap with Sample 001.
-
-The cumulative target is 144 reviewed cases.
-
-Unlike Sample 001, Sample 002 allocation is calculated from the real sizes of
-the 10 observed strata:
-
-- V50 priority;
-- public source subset;
-- SINGLE vs MULTITURN.
-
-The cumulative 144-case design is rebalanced toward the real population
-distribution while preserving deterministic category diversity inside each
-stratum.
-
-Sample 002 also introduces structured defect tags:
+Structured defect tags were added:
 
 - NONE;
 - ROLE_CONTAMINATION;
@@ -110,283 +166,255 @@ Sample 002 also introduces structured defect tags:
 - STYLE_QUALITY;
 - OTHER.
 
-These tags are intended to support the next filter-rule mining stage.
+## Cumulative bulk-quality gate - FAILED
 
-## Automated next-job workflow
+Samples 001 + 002:
 
-The Sample 002 job is intentionally reduced to two FHC2 commands.
+- **144 unique reviewed cases**;
+- raw KEEP: 71;
+- raw REPAIR: 39;
+- raw EXCLUDE: 34.
 
-### 1. PREPARE
+Weighted diagnostic over the 1,080-case bulk:
 
-After synchronizing the repository:
+- KEEP: **49.36%**;
+- REPAIR: **27.61%**;
+- EXCLUDE: **23.03%**;
+- unchanged-unsuitable: **50.64%**;
+- approximate diagnostic interval for unchanged-unsuitable:
+  **42.79% to 58.49%**;
+- weighted factual-risk HIGH: **21.59%**;
+- weighted instruction-fit BAD: **12.89%**;
+- effective weighted sample size: approximately 139.2 / 144.
 
-```bash
-python3 tools/run_v59_bulk_sample_002_job.py prepare
-```
+Conclusion:
 
-The prepare action:
+**UNCHANGED BULK ADMISSION FAILED.**
 
-1. reconstructs the frozen 1,080-case eligible population;
-2. verifies Sample 001 is complete;
-3. computes cumulative proportional stratum targets;
-4. selects 72 new deterministic cases with zero Sample 001 overlap;
-5. writes the Sample 002 review packet and sampling plan;
-6. commits and pushes the packet to GitHub.
+The broad V44-derived public bulk cannot be promoted unchanged as positive
+supervised training data.
 
-The semantic review is then performed directly from GitHub.
+The cumulative audit remains a diagnostic rather than a formal probability
+sample because the sampling designs are deterministic.
 
-The reviewer publishes:
+## Filter-rule mining 001 - CLOSED / LOW RECALL
 
-`reviews/smoltalk-v59-bulk-sample-002/DECISIONS-002.json`
+Simple metadata and text-structure predicates were mined using a deterministic
+discovery / holdout split over the 144 reviewed examples.
 
-with status:
+111 candidate rules were tested.
 
-`REVIEW_COMPLETE_PENDING_APPLICATION`
+Only one rule passed the high-precision REPAIR/EXCLUDE gate:
 
-### 2. FINALIZE
+`PRIORITY=HIGH AND TIME_SENSITIVE_LANGUAGE`
 
-After DECISIONS-002.json has been published and the repository is synchronized:
+Holdout:
 
-```bash
-python3 tools/run_v59_bulk_sample_002_job.py finalize
-```
+- precision: **85.7%**;
+- recall: **17.1%**;
+- flagged: 7.
 
-The finalize action:
+Projection:
 
-1. validates all 72 structured decisions;
-2. applies them to the review pages;
-3. creates RESULTS-002.md;
-4. commits and pushes the reviewed packet;
-5. runs the cumulative Sample 001 + Sample 002 weighted audit;
-6. publishes the aggregate numeric result through GOGIT using:
+- 87 / 1,080 candidates flagged.
 
-`PHASE03-SMOLTALK-V59-BULK-COMBINED-002`
+No simple rule passed the EXCLUDE gate.
 
-The driver is restart-safe at the stage level:
+Conclusion:
 
-- an already prepared Sample 002 is not recreated;
-- an already applied review is not reapplied;
-- an existing GOGIT history step is not overwritten.
+- narrow high-precision review triage is possible;
+- simple rules do not provide enough recall for broad filtering;
+- automatic exclusion is not supported.
 
-## Cumulative quality gate
+Rule application remains **NOT AUTHORIZED**.
 
-The cumulative audit measures:
+## Supervised text triage 001 - CLOSED / GATE FAILED
 
-- 144 unique reviewed cases;
-- stratum-weighted KEEP / REPAIR / EXCLUDE;
-- approximate uncertainty for KEEP and unchanged-unsuitable material;
-- weighted factual-risk HIGH rate;
-- weighted instruction-fit BAD rate;
-- effective weighted sample size.
+A lightweight local multinomial Naive Bayes model used:
 
-The cumulative audit remains explicitly diagnostic rather than a formal
-probability-sampling estimator.
+- role-separated USER / ASSISTANT word unigrams and bigrams;
+- V44/V50 metadata;
+- five-fold stratified cross-validation;
+- only public reviewed data;
+- no external LLM or private corpus.
 
-It does not finalize the training mix automatically.
+REPAIR / EXCLUDE target:
 
-## Training mixture boundary
+- precision: **60.3%**;
+- recall: **52.1%**;
+- F1: **55.9%**;
+- TP 38;
+- FP 25;
+- FN 35.
 
-The final training mixture continues to follow the persona-first policy:
+Authorization gate: **FAILED**.
 
-- prioritize cognitive and creative conversational value;
-- prioritize multi-turn continuity, correction and contextual adaptation;
-- specialist IT competence is not required;
-- never use a known incorrect answer as a correct supervised target;
-- preserve provenance and duplicate controls;
-- preserve VALIDATION and BLIND TEST isolation;
-- exclude private conversation data.
+EXCLUDE target:
 
-Architecture readiness does not imply training authorization.
+- precision: **16.7%**;
+- recall: **8.8%**;
+- F1: **11.5%**;
+- TP 3;
+- FP 15;
+- FN 31.
 
-Current state:
+Authorization gate: **FAILED**.
 
-- V59 segmentation: **CLOSED**;
-- oversized-pair decisions: **CLOSED**;
-- replacement gate: **CLOSED**;
-- known-negative filtering: **CLOSED**;
-- Sample 001 review: **CLOSED**;
-- Sample 002 workflow: **SCRIPTED / READY**;
-- V59 final mix: **NOT FINALIZED**;
-- model training: **NOT AUTHORIZED / NOT STARTED**.
+The model produced extreme scores despite poor cross-validation performance, so
+its numeric output is explicitly treated as **uncalibrated ranking only**.
 
+Automatic REVIEW: **NOT AUTHORIZED**.
 
-## V59 filter-rule mining job
+Automatic EXCLUDE: **NOT AUTHORIZED**.
 
-The next quality-control stage is automated by:
+## Active-Learning Sample 003 - CLOSED
 
-```bash
-python3 tools/run_v59_filter_rule_mining_job.py
-```
+The failed supervised triage was used only to construct a 72-case active
+challenge set from previously unreviewed public candidates.
 
-The job:
-
-1. loads the 144 reviewed Sample 001 + Sample 002 cases;
-2. deterministically splits them into discovery and holdout populations;
-3. extracts simple observable metadata and text-structure features;
-4. mines single-feature and two-feature rules on discovery only;
-5. validates retained rules on the untouched holdout;
-6. separately evaluates rules for:
-   - REPAIR or EXCLUDE;
-   - EXCLUDE only;
-7. projects validated rules onto the 1,080-case bulk population by count only;
-8. writes REPORT-001.json and RESULTS-001.md;
-9. commits and pushes the report;
-10. publishes GOGIT step PHASE03-SMOLTALK-V59-FILTER-RULE-MINING-001.
-
-Acceptance gates are deliberately conservative:
-
-- minimum discovery support: 5;
-- minimum holdout support: 3;
-- REPAIR/EXCLUDE precision: >=75% on discovery and holdout;
-- EXCLUDE precision: >=85% on discovery and holdout.
-
-The mining job does not remove, repair, promote, or reweight any conversation.
-Rule application remains explicitly unauthorized until the holdout metrics are
-reviewed.
-
-Current state after Sample 002:
-
-- reviewed public quality sample: **144/144 CLOSED**;
-- unchanged bulk admission: **FAILED**;
-- additional sampling requirement: **SATISFIED**;
-- filter-rule mining: **SCRIPTED / READY**;
-- rule application: **NOT AUTHORIZED**;
-- V59 final mix: **NOT FINALIZED**;
-- model training: **NOT AUTHORIZED / NOT STARTED**.
-
-
-## V59 supervised text triage job
-
-The simple filter-rule mining stage found only one high-precision rule and
-insufficient recall for broad filtering. The next stage therefore uses a
-supervised text classifier trained only on the 144 reviewed public examples.
-
-Run:
-
-```bash
-python3 tools/run_v59_supervised_triage_job.py
-```
-
-The classifier is deliberately lightweight and local:
-
-- multinomial Naive Bayes;
-- USER and ASSISTANT word unigrams and bigrams are kept separate;
-- V44/V50 metadata is included;
-- five-fold stratified cross-validation is performed on the 144 reviewed
-  KEEP / REPAIR / EXCLUDE labels;
-- no external LLM, API, or private data is used.
-
-Two binary targets are evaluated:
-
-1. REPAIR or EXCLUDE versus KEEP;
-2. EXCLUDE versus KEEP or REPAIR.
-
-Conservative fixed thresholds are used:
-
-- REVIEW target probability >= 0.75;
-- EXCLUDE target probability >= 0.90.
-
-The REVIEW gate requires:
-
-- precision >= 75%;
-- recall >= 30%;
-- at least 10 out-of-fold flagged examples.
-
-The EXCLUDE research gate requires:
-
-- precision >= 85%;
-- recall >= 15%;
-- at least 5 out-of-fold flagged examples.
-
-Even if the EXCLUDE research gate passes, automatic exclusion remains
-explicitly unauthorized.
-
-After cross-validation, the model is retrained on all 144 reviewed examples
-and projected only onto the 936 still-unreviewed public conversations.
-
-Projection is ranking/triage only. No conversation is deleted, repaired,
-promoted, or reweighted.
-
-GOGIT step:
-
-`PHASE03-SMOLTALK-V59-SUPERVISED-TRIAGE-001`
-
-Current boundary:
-
-- rule mining 001: **CLOSED / LOW RECALL**;
-- supervised triage: **SCRIPTED / READY**;
-- automatic exclusion: **NOT AUTHORIZED**;
-- V59 final mix: **NOT FINALIZED**;
-- model training: **NOT AUTHORIZED / NOT STARTED**.
-
-
-## V59 active-learning Sample 003
-
-The first supervised text triage failed its authorization gate:
-
-- REPAIR/EXCLUDE precision: 60.3%;
-- REPAIR/EXCLUDE recall: 52.1%;
-- EXCLUDE precision: 16.7%;
-- EXCLUDE recall: 8.8%.
-
-The model is therefore not authorized for automatic REVIEW or EXCLUDE.
-
-Instead, its ranking is used only to construct an active-learning challenge set.
-
-Run:
-
-```bash
-python3 tools/run_v59_active_sample_003_job.py prepare
-```
-
-Sample 003 contains 72 new public conversations with zero overlap with the
-144 already reviewed cases:
+Sample design:
 
 - 18 HIGH_RISK_RANK;
 - 18 MIDDLE_RANK;
 - 18 LOW_RISK_RANK;
 - 18 DIVERSITY_CONTROL.
 
-The ranking score is explicitly uncalibrated and is not a probability claim.
+Sample 003 is **not** a population-prevalence estimator.
 
-Sample 003 is not a population-prevalence estimator. Its purpose is to test
-whether the model ranking has useful directionality:
+Review result:
 
-- HIGH_RISK_RANK should contain more REPAIR/EXCLUDE material than control;
-- LOW_RISK_RANK should contain less REPAIR/EXCLUDE material than control.
+| Bucket | KEEP | REPAIR | EXCLUDE | Unchanged unsuitable |
+| --- | ---: | ---: | ---: | ---: |
+| HIGH_RISK_RANK | 2 | 15 | 1 | 88.9% |
+| MIDDLE_RANK | 10 | 6 | 2 | 44.4% |
+| LOW_RISK_RANK | 18 | 0 | 0 | 0.0% |
+| DIVERSITY_CONTROL | 11 | 3 | 4 | 38.9% |
 
-After semantic review, publish:
+Overall:
 
-`reviews/smoltalk-v59-active-sample-003/DECISIONS-003.json`
+- KEEP: 41;
+- REPAIR: 24;
+- EXCLUDE: 7.
 
-with status:
+Total V59 public semantic reviews after Sample 003:
 
-`REVIEW_COMPLETE_PENDING_APPLICATION`
+- **216 conversations**.
 
-Then run:
+Audit result:
 
-```bash
-python3 tools/run_v59_active_sample_003_job.py finalize
+- ranking direction: **VALIDATED**;
+- triage retrain: **AUTHORIZED**;
+- automatic filtering: **NOT AUTHORIZED**.
+
+Interpretation:
+
+The first classifier is not reliable enough for automatic classification, but
+its ordering signal is useful for prioritizing human review. A high score must
+not be interpreted as a probability of being bad.
+
+## Persona-first mixture policy
+
+The final public mixture must support the Mini-Kuzai persona rather than maximize
+generic technical breadth.
+
+Priority behaviors:
+
+- identity and character continuity;
+- curiosity;
+- uncertainty;
+- critical thinking;
+- reasoned disagreement;
+- opinion formation and revision;
+- creativity and storytelling;
+- initiative;
+- multi-turn contextual adaptation;
+- correction after user feedback.
+
+Specialist IT or technical competence is secondary.
+
+However:
+
+**known incorrect supervised targets must be repaired or excluded.**
+
+A technically imperfect example may still contain valuable behavioral structure,
+but that does not justify teaching a false answer as correct.
+
+## Data-balance problem still unresolved
+
+Controlled TRAIN contains only **24,539 serialized tokens**.
+
+The broad V59 public candidate population contains approximately **1.73 million
+tokens** before final quality filtering.
+
+A simple concatenation would therefore drown the controlled Mini-Kuzai persona
+signal.
+
+Before model training, V59 must explicitly define sampling, weighting or epoch
+policy that preserves controlled persona influence.
+
+Repeated epochs increase exposure; they do not increase unique-data volume.
+
+## Pause checkpoint - 2026-10-25
+
+Current state:
+
+```text
+V59 segmentation             : CLOSED
+Oversized-pair review        : CLOSED
+Replacement validation       : CLOSED
+Known-negative filtering     : CLOSED
+
+Bulk Sample 001              : CLOSED
+Bulk Sample 002              : CLOSED
+Cumulative bulk gate         : FAILED
+Filter-rule mining 001       : CLOSED / LOW RECALL
+Supervised triage 001        : CLOSED / GATE FAILED
+Active-Learning Sample 003   : CLOSED
+
+Public semantic reviews      : 216
+Ranking direction            : VALIDATED
+Triage retrain               : AUTHORIZED / NOT STARTED
+
+Automatic REVIEW             : NOT AUTHORIZED
+Automatic EXCLUDE            : NOT AUTHORIZED
+
+V59 final public mix         : NOT FINALIZED
+Model training               : NOT STARTED
+Model training authorized    : NO
 ```
 
-The finalize action:
+## Resume point
 
-1. validates and applies all 72 semantic decisions;
-2. writes RESULTS-003.md;
-3. commits and pushes the reviewed packet;
-4. audits quality by selection bucket;
-5. publishes GOGIT step:
+Next authorized workstream:
 
-`PHASE03-SMOLTALK-V59-ACTIVE-SAMPLE-003`
+**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
 
-The active-learning audit does not estimate population quality and does not
-authorize automatic filtering.
+Requirements:
 
-Current boundary:
+1. train the next triage ranking using all **216 reviewed annotations**;
+2. select a new independent holdout from previously unreviewed candidates;
+3. do not reuse Sample 003 as the independent validation set because Sample 003
+   was selected from the previous model ranking;
+4. evaluate ranking usefulness separately from probability calibration;
+5. keep automatic filtering unauthorized unless a later explicit gate passes.
 
-- reviewed public annotations before Sample 003: **144**;
-- active-learning Sample 003: **SCRIPTED / READY**;
-- automatic REVIEW: **NOT AUTHORIZED**;
-- automatic EXCLUDE: **NOT AUTHORIZED**;
-- V59 final mix: **NOT FINALIZED**;
-- model training: **NOT AUTHORIZED / NOT STARTED**.
+After independent validation, V59 still must:
+
+1. decide the final KEEP / REPAIR / EXCLUDE review policy;
+2. finalize the public corpus;
+3. compute final post-filter segment and token counts;
+4. define controlled-persona versus public-data sampling / weighting;
+5. reassess the V58 data-to-parameter ratio;
+6. make a separate explicit model-training authorization decision.
+
+Training remains **NOT AUTHORIZED / NOT STARTED**.
+
+## References
+
+- [V59 pause checkpoint - 2026-10-25](MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md)
+- [Sample 001 results](../reviews/smoltalk-v59-bulk-sample-001/RESULTS-001.md)
+- [Sample 002 results](../reviews/smoltalk-v59-bulk-sample-002/RESULTS-002.md)
+- [Filter-rule mining results](../reviews/smoltalk-v59-filter-rule-mining/RESULTS-001.md)
+- [Supervised triage results](../reviews/smoltalk-v59-supervised-triage/RESULTS-001.md)
+- [Active-Learning Sample 003 results](../reviews/smoltalk-v59-active-sample-003/RESULTS-003.md)
+- [Active-Learning Sample 003 GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V59-ACTIVE-SAMPLE-003.json)
