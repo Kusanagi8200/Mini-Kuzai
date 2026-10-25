@@ -1,0 +1,35 @@
+{
+  "schema_version": "v59-replacement-candidates-1",
+  "status": "PENDING_LOCAL_TOKEN_AUDIT",
+  "context_length": 2048,
+  "selection_policy": "already-reviewed public A-grade low-factual-risk multi-turn candidates; no source reused by canonical TRAIN",
+  "replacements": [
+    {
+      "replacement_for_blocked_case": "02-1285d4294085f7ec",
+      "signal": "creative_adaptation_and_character_reasoning",
+      "review_case": "V51-007",
+      "review_path": "reviews/smoltalk-v51/cases/007-920cde53de1a1873.md",
+      "source_content_sha256": "920cde53de1a1873064ab2d16c18bc8789ff1bee4e9f741bc1eaf512b15da899",
+      "required_grade": "A",
+      "required_factual_risk": "LOW",
+      "required_instruction_fit": "GOOD",
+      "required_v44_member": true
+    },
+    {
+      "replacement_for_blocked_case": "09-9092a0950087fe6d",
+      "signal": "creative_world_and_character_continuity",
+      "review_case": "V51-017",
+      "review_path": "reviews/smoltalk-v51/cases/017-fd184c30876d2798.md",
+      "source_content_sha256": "fd184c30876d2798f101a2e14f1db7b516bc2a86b4333a447d6d92ed32a6f0c2",
+      "required_grade": "A",
+      "required_factual_risk": "LOW",
+      "required_instruction_fit": "GOOD",
+      "required_v44_member": true
+    }
+  ],
+  "validation_included": false,
+  "blind_included": false,
+  "private_data_included": false,
+  "training_mix_finalized": false,
+  "training_authorized": false
+}
