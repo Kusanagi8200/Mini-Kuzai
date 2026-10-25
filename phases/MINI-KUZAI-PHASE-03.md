@@ -461,7 +461,7 @@ Current V53 evidence:
 ## Current status
 
 ```text
-PHASE 03                  : V58 ARCHITECTURE BASELINE CLOSED
+PHASE 03                  : V59 PUBLIC MIX QUALITY CONTROL - PAUSED CLEAN
 Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
@@ -478,18 +478,13 @@ TRAIN provenance          : 105 PHASE03-DESIGNED / 2 SMOLTALK
 
 VALIDATION records        : 36 / 36 FROZEN
 VALIDATION groups         : 18 / 18 FROZEN
-Validation closure        : COMPLETE
-SEMANTIC VALIDATION       : COMPLETE
-
 BLIND TEST records        : 36 / 36 FROZEN
 BLIND TEST groups         : 18 / 18 FROZEN
-BLIND behavior freezes    : 18 / 18 VERIFIED
-Global BLIND closure      : COMPLETE
+Total controlled corpus   : 179 RECORDS / 65 GROUPS
 
 Cross-split exact IDs     : 0
 Cross-split group overlap : 0
 Exact cross-split prompts : 0
-Total controlled corpus   : 179 RECORDS / 65 GROUPS
 
 Tokenizer                 : V56 FROZEN
 Tokenizer family          : BYTE_BPE_WHITESPACE
@@ -509,54 +504,107 @@ FFN dimension             : 512
 GPU smoke                 : PASSED
 GPU                       : RTX 5060 LAPTOP 8 GB
 BF16                      : SUPPORTED
-V58 peak allocated        : 122 MiB
-V58 peak reserved         : 140 MiB
 
-TRAIN context coverage    : 100.00 PERCENT
-V44 direct 2048 coverage  : 61.90 PERCENT
-V44 segmentation needed   : 434 / 1139 CONVERSATIONS
+V59 segmentation          : CLOSED
+Pair-preserving policy    : FROZEN
+Arbitrary intra-pair cut  : FORBIDDEN
 
-SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
-OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
+V59 public candidates     : 1112
+V59 bulk quality pop.     : 1080
+Public cases reviewed     : 216
+
+Bulk unchanged admission  : FAILED
+Weighted unsuitable 001+2 : 50.64 PERCENT
+Simple rule mining        : CLOSED - LOW RECALL
+Supervised triage 001     : CLOSED - GATE FAILED
+Active Sample 003         : CLOSED
+Ranking direction         : VALIDATED
+Triage retrain            : AUTHORIZED / NOT STARTED
+Automatic REVIEW          : NOT AUTHORIZED
+Automatic EXCLUDE         : NOT AUTHORIZED
+
 Private corpus pipeline   : LOCAL-ONLY - PAUSED
 Private source material   : NOT COMMITTED
 Derived private metrics   : NOT COMMITTED
 
 Training mixture          : NOT FINALIZED
-Segmentation policy       : NOT FINALIZED
 Training                  : NOT STARTED
 Training authorized       : NO
 ```
 
 ## Current checkpoint
 
-V53 closed the canonical TRAIN corpus at 107 records across all 29 TRAIN semantic groups.
+V53 closed canonical TRAIN at 107 records across all 29 TRAIN semantic groups.
 
-V54 closed VALIDATION at 36 records across all 18 reserved validation groups.
+V54 and V55 closed and froze the 36-record VALIDATION and 36-record BLIND TEST
+sets. The controlled boundary remains **179 records across 65 semantic groups**.
 
-V55 authored, reviewed and froze 36 BLIND TEST records across all 18 reserved blind groups. The complete controlled TRAIN / VALIDATION / BLIND boundary is frozen at 179 records across 65 semantic groups.
+V56 froze the tokenizer, V57 froze conversation serialization, and V58 froze
+the first reproducible experimental architecture baseline.
 
-V56 finalized the Phase 03 tokenizer.
+V59 then implemented and validated the real pair-preserving 2048-token
+segmentation policy. Segmentation is no longer a pre-training blocker.
 
-V57 froze conversation serialization v1 and measured the real token distributions of canonical TRAIN, the provisional V44 public population and the full SmolTalk reservoir.
+The unresolved V59 problem is now public-data quality and mixture selection.
 
-V58 implemented and validated the first reproducible Phase 03 architecture baseline.
+After structural exclusion, controlled-source reuse protection and known-negative
+filtering, V59 contains **1,112 public candidate conversations**. The principal
+bulk quality population contains **1,080 conversations**.
 
-The V58 baseline is a decoder-only autoregressive Transformer with 1,184,512 parameters, context 2048, model dimension 128, four attention heads, four Transformer layers and FFN dimension 512.
+Samples 001 and 002 semantically reviewed 144 cases. Their cumulative
+stratum-weighted diagnostic estimated **50.64% unchanged-unsuitable material**
+(REPAIR + EXCLUDE), with an approximate diagnostic interval of 42.79% to
+58.49%. The unchanged-bulk admission gate therefore failed.
 
-The V58 GPU smoke test passed on the NVIDIA GeForce RTX 5060 Laptop GPU with BF16 support.
+Simple rule mining produced one narrow high-precision rule but insufficient
+recall for broad filtering.
 
-The V58 architecture is deliberately classified as an **experimental baseline**. It is frozen for reproducible experiments but is not an irreversible final architecture decision.
+A first supervised text-triage model also failed its authorization gates:
 
-The remaining pre-training blockers are:
+- REPAIR / EXCLUDE precision: 60.3%;
+- REPAIR / EXCLUDE recall: 52.1%;
+- EXCLUDE precision: 16.7%;
+- EXCLUDE recall: 8.8%.
 
-1. finalize the real public training mixture;
-2. implement and validate the actual 2048-token segmentation policy;
-3. preserve role labels and conversational turn structure across segments;
-4. calculate final post-segmentation training token counts;
-5. perform the explicit training authorization gate.
+That failed classifier was then used only as an uncalibrated ranking mechanism
+for Active-Learning Sample 003.
+
+Sample 003 added 72 new semantic reviews and produced a clear ranking gradient:
+
+- HIGH_RISK_RANK unchanged-unsuitable: 88.9%;
+- MIDDLE_RANK unchanged-unsuitable: 44.4%;
+- LOW_RISK_RANK unchanged-unsuitable: 0.0%;
+- DIVERSITY_CONTROL unchanged-unsuitable: 38.9%.
+
+The V59 review corpus therefore now contains **216 public annotations**.
+
+The ranking direction is validated for prioritizing human review. It is not a
+calibrated probability model and does not authorize automatic KEEP, REVIEW or
+EXCLUDE decisions.
+
+The next authorized technical operation after this pause is:
+
+**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
+
+The retrained triage must use the 216 reviewed annotations and must be evaluated
+on a new holdout drawn from previously unreviewed public candidates. Sample 003
+must not be reused as an independent validation set because it was selected
+using the previous model ranking.
+
+Remaining pre-training blockers:
+
+1. retrain and independently validate the V59 triage ranking;
+2. determine the final human-review / KEEP / REPAIR / EXCLUDE policy;
+3. finalize the public training mixture;
+4. create final post-filter segment and token accounting;
+5. define public-versus-controlled sampling or weighting so the controlled
+   persona corpus is not drowned by public data;
+6. reassess the final data-to-parameter ratio against V58;
+7. perform a separate explicit model-training authorization gate.
 
 Training remains unauthorized and has not started.
+
+See [V59 pause checkpoint - 2026-10-25](MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md).
 
 ## V56 tokenizer finalization
 
@@ -657,23 +705,38 @@ See:
 - [V58 architecture baseline](MINI-KUZAI-PHASE-03-V58-ARCHITECTURE-BASELINE.md)
 - [V58 public audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V58-ARCHITECTURE-BASELINE-001.json)
 
-## Next workstream - V59
+## V59 current workstream and resume point
 
-V59 is the next pre-training decision stage.
+V59 is active but paused after completion of Active-Learning Sample 003.
 
-Its purpose is to transform the available public candidate reservoir into an explicit, reproducible training-data plan without touching VALIDATION or BLIND TEST.
+Completed within V59:
 
-Required outputs:
+1. turn-aware 2048-token segmentation implementation and audit;
+2. oversized-pair review and replacement validation;
+3. known-negative public-candidate filtering;
+4. bulk quality Samples 001 and 002;
+5. cumulative weighted bulk-quality gate;
+6. simple filter-rule mining;
+7. supervised text-triage experiment 001;
+8. Active-Learning Sample 003;
+9. validation that the triage ranking has useful directionality.
 
-1. final public training-mixture decision;
-2. explicit inclusion and exclusion rules;
-3. real turn-aware segmentation implementation for context 2048;
-4. deterministic segmented-corpus manifest;
-5. final unique-token and segment accounting;
-6. data-to-parameter ratio review against the V58 baseline;
-7. explicit recommendation on whether V58 remains appropriate;
-8. separate model-training authorization decision.
+Not completed:
 
-V59 must not infer training authorization from architecture readiness.
+1. retrain triage on all 216 annotations;
+2. independent holdout 004;
+3. final public mixture decision;
+4. final public token / segment manifest after quality filtering;
+5. controlled-persona versus public-data sampling/weighting policy;
+6. final V58 data-to-parameter review;
+7. explicit training authorization.
+
+Resume operation:
+
+**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
+
+V59 must not infer training authorization from tokenizer, segmentation,
+architecture, or ranking readiness.
 
 **Model training remains NOT AUTHORIZED and NOT STARTED.**
+
