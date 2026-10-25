@@ -146,7 +146,7 @@ def source_reused_in_train(sha):
     return False
 
 
-def main():
+def validate():
     manifest = load_json(
         MANIFEST
     )
@@ -312,6 +312,12 @@ def main():
             False,
     }
 
+    return report
+
+
+def main():
+    report = validate()
+
     write_json(
         REPORT,
         report,
@@ -321,7 +327,7 @@ def main():
         "V59 REPLACEMENT VALIDATION COMPLETE"
     )
 
-    for value in results:
+    for value in report["replacements"]:
         print(
             value["review_case"],
             value["token_count"],
