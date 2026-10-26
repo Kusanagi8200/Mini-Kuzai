@@ -2,7 +2,7 @@
 
 #### **`BUILD A LANGUAGE MODEL FROM SCRATCH, TRAIN IT LOCALLY AND INSPECT WHAT HAPPENS INSIDE A TRANSFORMER.`**
 
-[![GITHUB](https://img.shields.io/badge/GITHUB-555555?style=flat-square&logo=github&logoColor=white)](https://github.com/Kusanagi8200/Mini-Kuzai) ![MINI-KUZAI](https://img.shields.io/badge/MINI--KUZAI-FFFFFF?style=flat-square) ![PYTHON](https://img.shields.io/badge/PYTHON-2EA043?style=flat-square) ![PYTORCH](https://img.shields.io/badge/PYTORCH-2EA043?style=flat-square) ![CUDA](https://img.shields.io/badge/CUDA-2EA043?style=flat-square) ![TRANSFORMER](https://img.shields.io/badge/TRANSFORMER-2EA043?style=flat-square) ![FROM SCRATCH](https://img.shields.io/badge/FROM%20SCRATCH-555555?style=flat-square) ![PHASE 03](https://img.shields.io/badge/PHASE%2003-D73A49?style=flat-square)
+[![GITHUB](https://img.shields.io/badge/GITHUB-555555?style=flat-square&logo=github&logoColor=white)](https://github.com/Kusanagi8200/Mini-Kuzai)![MINI-KUZAI](https://img.shields.io/badge/MINI--KUZAI-FFFFFF?style=flat-square)![PYTHON](https://img.shields.io/badge/PYTHON-2EA043?style=flat-square)![PYTORCH](https://img.shields.io/badge/PYTORCH-2EA043?style=flat-square)![CUDA](https://img.shields.io/badge/CUDA-2EA043?style=flat-square)![TRANSFORMER](https://img.shields.io/badge/TRANSFORMER-2EA043?style=flat-square)![FROM SCRATCH](https://img.shields.io/badge/FROM%20SCRATCH-555555?style=flat-square)![PHASE 03](https://img.shields.io/badge/PHASE%2003-D73A49?style=flat-square)
 
 ------------------------------------------------------------------------
 
