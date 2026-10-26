@@ -1,8 +1,8 @@
 # MINI-KUZAI PHASE 03 - EXTERNAL DATASET DECISION
 
-Version: 1.0
-Status: FROZEN AT CURRENT PAUSE POINT
-Date: 2026-09-05
+Version --> 1.0
+Status --> FROZEN AT CURRENT PAUSE POINT
+Date --> 2026-09-05
 
 ## Purpose
 
@@ -12,20 +12,20 @@ External datasets are support material only. They do not define Mini-Kuzai ident
 
 ## SmolTalk decision
 
-Dataset:
+Dataset -->
 
 ```text
 HuggingFaceTB/smol-smoltalk
 ```
 
-Current selected pool:
+Current selected pool -->
 
 ```text
 external-candidate-pool-v0.4.jsonl
 records: 8000
 ```
 
-Source quotas:
+Source quotas -->
 
 ```text
 smol-magpie-ultra-short   : 5000
@@ -47,7 +47,7 @@ Behavioral analysis showed that the pool remains strongly task-oriented and must
 
 ## OASST1 decision
 
-Dataset:
+Dataset -->
 
 ```text
 OpenAssistant/oasst1
@@ -57,7 +57,7 @@ The complete train and validation files were downloaded and verified.
 
 The train structure was reconstructed from message trees and passed structural integrity checks.
 
-Observed clean English structure included:
+Observed clean English structure included -->
 
 ```text
 clean English messages : 37783
@@ -73,7 +73,7 @@ A direct behavioral comparison against SmolTalk showed that OASST1 did not provi
 
 A targeted behavioral extraction was then performed to search specifically for correction, clarification, challenge, and revision sequences.
 
-Result:
+Result -->
 
 ```text
 source quality-safe paths : 2558
@@ -86,7 +86,7 @@ correction without explicit revision : 8
 
 The 15 candidates were not automatically approved. Manual inspection showed mixed quality, including useful interaction patterns but also factual weaknesses, generic assistant behavior, weak revisions, and examples that do not justify an additional training-data pipeline.
 
-Decision:
+Decision -->
 
 ```text
 OASST1
@@ -141,16 +141,16 @@ Trying to force the external data to contain all desired Mini-Kuzai behaviors wo
 
 The custom corpus is therefore responsible for the high-value character behaviors that are rare in public datasets.
 
-This includes especially:
+This includes especially -->
 
-- explicit intellectual independence;
-- reasoned disagreement;
-- curiosity that is contextual rather than automatic;
-- uncertainty without false confidence;
-- initiative without servility;
-- opinion formation and evidence-based revision;
-- relationship continuity;
-- identity continuity;
+- explicit intellectual independence
+- reasoned disagreement
+- curiosity that is contextual rather than automatic
+- uncertainty without false confidence
+- initiative without servility
+- opinion formation and evidence-based revision
+- relationship continuity
+- identity continuity
 - creative but epistemically controlled exploration.
 
 ## Current pause state
@@ -171,7 +171,7 @@ SmolTalk v0.4 remains a validated candidate reservoir, not a final training file
 
 ## Resume point
 
-When Phase 03 resumes, the next development step is:
+When Phase 03 resumes, the next development step is -->
 
 ```text
 SEMANTIC GROUP INVENTORY
@@ -180,13 +180,13 @@ B01-B18
 
 The semantic group inventory should translate the existing behavior matrix into controlled scenario families before model-visible training conversations are written.
 
-After that:
+After that -->
 
-1. assign semantic groups while preserving anti-leakage rules;
-2. build the first controlled Mini-Kuzai conversational corpus;
-3. keep TRAIN, VALIDATION, and BLIND TEST scenario families separated;
-4. evaluate the custom corpus distribution;
-5. decide the external/custom mixture only after the custom corpus exists;
+1. assign semantic groups while preserving anti-leakage rules
+2. build the first controlled Mini-Kuzai conversational corpus
+3. keep TRAIN, VALIDATION, and BLIND TEST scenario families separated
+4. evaluate the custom corpus distribution
+5. decide the external/custom mixture only after the custom corpus exists
 6. then move to tokenizer and architecture decisions.
 
 ## Frozen decision summary
@@ -202,3 +202,7 @@ Training          : NOT AUTHORIZED YET
 Phase 03          : PAUSED
 Resume operation  : SEMANTIC GROUP INVENTORY B01-B18
 ```
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

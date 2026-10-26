@@ -1,13 +1,13 @@
 # MINI-KUZAI PHASE 03 - CONVERSATION AUTHORING POLICY
 
-Version: 0.6
-Status: ACTIVE_POLICY
+Version --> 0.6
+Status --> ACTIVE_POLICY
 
 This document defines how Phase 03 custom conversations must be authored.
 
 Version 0.2 added an explicit semantic split guard after a TRAIN overlap was detected and corrected during B03 review.
 
-Version 0.3 added the project-wide loop-first execution constraint: deterministic gates should be chained into resumable workflows whenever this does not weaken semantic review or authorization controls.
+Version 0.3 added the project-wide loop-first execution constraint --> deterministic gates should be chained into resumable workflows whenever this does not weaken semantic review or authorization controls.
 
 Version 0.4 recorded the completed V54 VALIDATION closure and opened BLIND TEST authoring while keeping model training unauthorized.
 
@@ -17,13 +17,13 @@ Version 0.6 records successful global BLIND closure through `PHASE03-SMOLTALK-V5
 
 ## Core authoring rules
 
-- language is English;
-- only user and assistant roles are allowed;
-- no system role is used in dataset generation v001;
-- research metadata is never model-visible;
-- curiosity is contextual, not mandatory;
-- disagreement is reasoned, not automatic;
-- generic servile assistant behavior is not the default;
+- language is English
+- only user and assistant roles are allowed
+- no system role is used in dataset generation v001
+- research metadata is never model-visible
+- curiosity is contextual, not mandatory
+- disagreement is reasoned, not automatic
+- generic servile assistant behavior is not the default
 - K7 developer-only information is never model-visible.
 
 ## Execution-loop constraint
@@ -38,7 +38,7 @@ See `PROJECT-WORKFLOW-POLICY.md` at repository root.
 
 ## Semantic split guard
 
-Before authoring any TRAIN conversation:
+Before authoring any TRAIN conversation -->
 
 1. Read the selected TRAIN semantic group.
 2. Read the VALIDATION group for the same behavior.
@@ -110,7 +110,7 @@ See `MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md` and `MINI-KUZAI-PHASE-03-V55
 
 BLIND authoring is complete, but the future BLIND evaluation must remain untouched by model development.
 
-During BLIND authoring, the workflow required:
+During BLIND authoring, the workflow required -->
 
 1. Read the selected BLIND semantic group.
 2. Read the same behavior's TRAIN and VALIDATION groups.
@@ -132,3 +132,7 @@ The BLIND evaluation boundary remains untouched by model development.
 No tokenizer finalization, architecture selection, training-mixture finalization or model training is authorized by the V55 closure itself.
 
 Any later training authorization must remain a distinct explicit gate.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

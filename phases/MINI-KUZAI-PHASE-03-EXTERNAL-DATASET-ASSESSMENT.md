@@ -1,7 +1,7 @@
 # MINI-KUZAI PHASE 03 - EXTERNAL DATASET ASSESSMENT
 
-Version: 0.2
-Status: VALIDATED FOR FILTERED USE
+Version --> 0.2
+Status --> VALIDATED FOR FILTERED USE
 
 ## 1. PURPOSE
 
@@ -13,7 +13,7 @@ Its role is to provide reusable general conversational and technical language pa
 
 ## 2. DATA ACQUIRED AND VERIFIED
 
-Local files:
+Local files -->
 
 ```text
 data/external/smol-smoltalk/raw/test-00000-of-00001.parquet
@@ -25,7 +25,7 @@ data/external/smol-smoltalk/raw/train-00003-of-00004.parquet
 
 The four train shards were verified by SHA256 and parsed successfully as Apache Parquet.
 
-Observed train size:
+Observed train size -->
 
 ```text
 train rows              : 460341
@@ -37,7 +37,7 @@ The original raw files are treated as immutable external source material.
 
 ## 3. TEST SAMPLE STRUCTURE
 
-Observed test structure:
+Observed test structure -->
 
 ```text
 rows                    : 24229
@@ -51,7 +51,7 @@ The test file was used only for preliminary source inspection. It is not Mini-Ku
 
 ## 4. FULL TRAIN PROFILE
 
-The complete train split contains:
+The complete train split contains -->
 
 ```text
 TOTAL_ROWS  : 460341
@@ -62,7 +62,7 @@ system      : 70484 messages
 
 A deterministic first-pass filter was evaluated without modifying the raw files.
 
-First-pass surviving pools:
+First-pass surviving pools -->
 
 ```text
 GENERAL_CANDIDATES_TOTAL   : 158228
@@ -75,7 +75,7 @@ This confirms that Phase 03 does not need to train on the full external dataset.
 
 ### smol-magpie-ultra-short
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 270838
@@ -90,28 +90,28 @@ general candidates          : 85395
 general candidate percent   : 31.53
 ```
 
-Assessment: PRIMARY RESERVOIR - FILTER REQUIRED
+Assessment --> PRIMARY RESERVOIR - FILTER REQUIRED
 
-Reasons:
+Reasons -->
 
-- by far the largest source;
-- useful multi-turn coverage;
-- broad semantic diversity;
-- enough clean material remains after filtering;
-- generic assistant phrasing is present;
-- responses are often longer than the desired Mini-Kuzai default;
+- by far the largest source
+- useful multi-turn coverage
+- broad semantic diversity
+- enough clean material remains after filtering
+- generic assistant phrasing is present
+- responses are often longer than the desired Mini-Kuzai default
 - code, list-heavy output, and role-play material must be separated or removed.
 
-Recommended use:
+Recommended use -->
 
-- primary general conversational reservoir;
-- deterministic length and style filters;
-- source quota to prevent dominance;
+- primary general conversational reservoir
+- deterministic length and style filters
+- source quota to prevent dominance
 - manual sample inspection after selection.
 
 ### self-oss-instruct
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 48071
@@ -121,24 +121,24 @@ code percent                : 100.0
 technical candidates        : 47748
 ```
 
-Assessment: TECHNICAL SUBCORPUS ONLY
+Assessment --> TECHNICAL SUBCORPUS ONLY
 
-Reasons:
+Reasons -->
 
-- almost every record contains code;
-- very low generic assistant contamination;
-- useful for technical and programming language;
+- almost every record contains code
+- very low generic assistant contamination
+- useful for technical and programming language
 - unsuitable as a general personality source.
 
-Recommended use:
+Recommended use -->
 
-- small technical quota only;
-- keep separate from the general dialogue reservoir;
+- small technical quota only
+- keep separate from the general dialogue reservoir
 - do not allow coding style to dominate Phase 03.
 
 ### openhermes-50k
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 47492
@@ -153,18 +153,18 @@ general candidates          : 27685
 general candidate percent   : 58.29
 ```
 
-Assessment: SECONDARY RESERVOIR - FILTER REQUIRED
+Assessment --> SECONDARY RESERVOIR - FILTER REQUIRED
 
-Recommended use:
+Recommended use -->
 
-- filtered secondary source;
-- reject generic service language;
-- reject or isolate code-heavy examples;
+- filtered secondary source
+- reject generic service language
+- reject or isolate code-heavy examples
 - inspect system-prompt influence before final conversion.
 
 ### smol-contraints
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 34433
@@ -174,15 +174,15 @@ general candidates          : 920
 general candidate percent   : 2.67
 ```
 
-Assessment: REJECT FOR FIRST GENERAL MIX
+Assessment --> REJECT FOR FIRST GENERAL MIX
 
-Reason:
+Reason -->
 
 The source produces strong formatting and list pressure and contributes very little clean material under the current filter.
 
 ### smollm-rewrite-30k
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 26657
@@ -192,18 +192,18 @@ general candidates          : 22790
 general candidate percent   : 85.49
 ```
 
-Assessment: SPECIAL TASK DATA - NOT GENERAL PERSONALITY DATA
+Assessment --> SPECIAL TASK DATA - NOT GENERAL PERSONALITY DATA
 
 The high candidate count does not mean it should dominate the pool. Its rewrite task structure can produce misleading question statistics and task-specific behavior.
 
-Recommended use:
+Recommended use -->
 
-- exclude from the first external general pool;
+- exclude from the first external general pool
 - preserve for later rewriting experiments.
 
 ### smol-summarize-20k
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 19272
@@ -214,18 +214,18 @@ general candidates          : 18122
 general candidate percent   : 94.03
 ```
 
-Assessment: HIGH QUALITY SPECIAL TASK SOURCE
+Assessment --> HIGH QUALITY SPECIAL TASK SOURCE
 
 The source is clean and concise, but it primarily teaches summarization rather than general dialogue.
 
-Recommended use:
+Recommended use -->
 
-- exclude from the first general personality pool;
+- exclude from the first general personality pool
 - optionally introduce later with a small summarization quota.
 
 ### smol-summarize-5k
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 4749
@@ -234,11 +234,11 @@ list percent                : 65.53
 general candidates          : 338
 ```
 
-Assessment: REJECT FOR FIRST MIX
+Assessment --> REJECT FOR FIRST MIX
 
 ### longalign
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 3560
@@ -247,11 +247,11 @@ list percent                : 33.99
 general candidates          : 0
 ```
 
-Assessment: REJECT FOR FIRST GENERAL MIX
+Assessment --> REJECT FOR FIRST GENERAL MIX
 
 ### explore-instruct-rewrite
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 3017
@@ -264,23 +264,23 @@ general candidates          : 2978
 general candidate percent   : 98.71
 ```
 
-Assessment: HIGH VALUE SMALL SOURCE
+Assessment --> HIGH VALUE SMALL SOURCE
 
-Reasons:
+Reasons -->
 
-- very concise output;
-- extremely low generic assistant contamination;
-- almost no list or code pressure;
+- very concise output
+- extremely low generic assistant contamination
+- almost no list or code pressure
 - useful counterweight to the long-response bias of the main reservoir.
 
-Recommended use:
+Recommended use -->
 
-- retain a controlled quota;
+- retain a controlled quota
 - inspect semantic diversity before final selection.
 
 ### everyday-conversations
 
-Full train observations:
+Full train observations -->
 
 ```text
 conversations               : 2252
@@ -291,7 +291,7 @@ generic phrase percent      : 27.55
 general candidates          : 0
 ```
 
-Assessment: REJECT AS RAW CORE PERSONALITY SOURCE
+Assessment --> REJECT AS RAW CORE PERSONALITY SOURCE
 
 The source contains short multi-turn dialogue but strongly reinforces conventional service-assistant behavior.
 
@@ -301,14 +301,14 @@ Individual scenarios may later be rewritten into Mini-Kuzai style if needed.
 
 The metric `assistant response contains a question mark` is not sufficient to measure curiosity.
 
-A question mark may occur because:
+A question mark may occur because -->
 
-- the assistant is rewriting an email that already contains a question;
-- the assistant quotes a question;
-- a role-play character asks a scripted question;
+- the assistant is rewriting an email that already contains a question
+- the assistant quotes a question
+- a role-play character asks a scripted question
 - the response uses a generic service question such as `How can I help?`.
 
-Future classification must distinguish:
+Future classification must distinguish -->
 
 ```text
 GENERIC SERVICE QUESTION
@@ -327,7 +327,7 @@ The full profile shows that there is no need to retain all 158228 clean general 
 
 The first external pool should be deliberately small and balanced.
 
-Target v0.1:
+Target v0.1 -->
 
 ```text
 smol-magpie-ultra-short      : 5000
@@ -340,7 +340,7 @@ TOTAL TARGET                 : 8500
 
 These are candidate-pool quotas, not final training weights.
 
-Excluded from candidate pool v0.1:
+Excluded from candidate pool v0.1 -->
 
 ```text
 smol-contraints
@@ -355,24 +355,24 @@ The excluded sources remain available locally for future controlled experiments.
 
 ## 8. REQUIRED FILTERS
 
-A candidate external conversation should be rejected or downgraded when it contains one or more of the following unless the example has a specific experimental purpose:
+A candidate external conversation should be rejected or downgraded when it contains one or more of the following unless the example has a specific experimental purpose -->
 
-- generic service greetings;
-- `How can I help you today?` style language;
-- `Feel free to ask` closing phrases;
-- excessive `Certainly`, `Of course`, `Absolutely`, or similar assistant markers;
-- excessive politeness;
-- excessive list-first structure;
-- marketing or customer-service tone;
-- fixed third-party role-play identity;
-- very long responses unsuitable for the target context window;
-- low-information filler;
-- duplicated or near-duplicated scenarios;
+- generic service greetings
+- `How can I help you today?` style language
+- `Feel free to ask` closing phrases
+- excessive `Certainly`, `Of course`, `Absolutely`, or similar assistant markers
+- excessive politeness
+- excessive list-first structure
+- marketing or customer-service tone
+- fixed third-party role-play identity
+- very long responses unsuitable for the target context window
+- low-information filler
+- duplicated or near-duplicated scenarios
 - system prompts unrelated to the future Mini-Kuzai runtime format.
 
 ## 9. LENGTH POLICY
 
-For the first external subset, prioritize assistant messages approximately in these bands:
+For the first external subset, prioritize assistant messages approximately in these bands -->
 
 ```text
 100-1200 chars   preferred general range
@@ -385,22 +385,22 @@ The first pool should intentionally include both concise and moderately detailed
 
 ## 10. EXTERNAL DATA IS NOT IDENTITY DATA
 
-The external subset must not define:
+The external subset must not define -->
 
-- Mini-Kuzai's name;
-- THE KUZ NETWORK origin;
-- Kusanagi8200 relationship;
-- personal values;
-- personality invariants;
-- worldview;
-- future identity;
+- Mini-Kuzai's name
+- THE KUZ NETWORK origin
+- Kusanagi8200 relationship
+- personal values
+- personality invariants
+- worldview
+- future identity
 - KUZAI-LLM roadmap.
 
 Those elements remain under the dedicated Mini-Kuzai corpus and behavior design.
 
 ## 11. DECISION
 
-Decision: USE `smol-smoltalk` AS A FILTERED EXTERNAL RESERVOIR.
+Decision --> USE `smol-smoltalk` AS A FILTERED EXTERNAL RESERVOIR.
 
 The full train split is validated for local filtering.
 
@@ -412,11 +412,15 @@ The pool remains pre-training material until it passes manual inspection, duplic
 
 ## 12. NEXT OPERATION
 
-1. create external candidate pool v0.1 with deterministic quotas;
-2. preserve source row identifiers and provenance;
-3. compute hashes for selected conversational content;
-4. inspect pool distribution and random deterministic samples;
-5. detect exact duplicates and near-duplicates;
-6. approve or revise the external pool;
-7. map retained records to the Phase 03 dataset schema;
+1. create external candidate pool v0.1 with deterministic quotas
+2. preserve source row identifiers and provenance
+3. compute hashes for selected conversational content
+4. inspect pool distribution and random deterministic samples
+5. detect exact duplicates and near-duplicates
+6. approve or revise the external pool
+7. map retained records to the Phase 03 dataset schema
 8. only then combine external data with Mini-Kuzai-specific conversations.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

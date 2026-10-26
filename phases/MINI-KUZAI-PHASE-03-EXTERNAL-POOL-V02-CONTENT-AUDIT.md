@@ -1,7 +1,7 @@
 # MINI-KUZAI PHASE 03 - EXTERNAL POOL V0.2 CONTENT AUDIT
 
-Version: 0.1
-Status: REQUIRES DIVERSITY REFINEMENT
+Version --> 0.1
+Status --> REQUIRES DIVERSITY REFINEMENT
 
 ## 1. PURPOSE
 
@@ -15,7 +15,7 @@ The pool remains pre-training material.
 records : 8000
 ```
 
-Source quotas:
+Source quotas -->
 
 ```text
 smol-magpie-ultra-short  : 5000
@@ -66,7 +66,7 @@ This confirms that the primary reservoir still has a strong long-response bias.
 
 Exact full-conversation duplicates were not found.
 
-However, normalized first-user-prompt analysis found:
+However, normalized first-user-prompt analysis found -->
 
 ```text
 duplicate prompt groups         : 39
@@ -78,19 +78,19 @@ The duplicate prompt metric intentionally normalizes numbers and punctuation, so
 
 This is useful for Phase 03 because the objective is conversational diversity, not repeated benchmark coverage.
 
-Large repeated families include:
+Large repeated families include -->
 
-- snail in a well problems;
-- bat and ball problems;
-- remainder and modular arithmetic prompts;
-- repeated probability templates;
+- snail in a well problems
+- bat and ball problems
+- remainder and modular arithmetic prompts
+- repeated probability templates
 - repeated algebraic templates.
 
-Decision: external pool v0.2 is not yet approved for training.
+Decision --> external pool v0.2 is not yet approved for training.
 
 ## 5. STYLE CONCENTRATION
 
-The most frequent normalized assistant openings include:
+The most frequent normalized assistant openings include -->
 
 ```text
 to solve this problem let
@@ -109,7 +109,7 @@ If retained without control, they may encourage verbal mode collapse and overly 
 
 ## 6. ARTIFICIAL QUESTION METRIC
 
-Artificial question rates are low in the general pool:
+Artificial question rates are low in the general pool -->
 
 ```text
 explore-instruct-rewrite : 0.20 percent
@@ -124,7 +124,7 @@ However, question-mark frequency must still not be interpreted as Mini-Kuzai cur
 
 ## 7. SUSPICIOUS OPENINGS
 
-Observed suspicious opening rates:
+Observed suspicious opening rates -->
 
 ```text
 explore-instruct-rewrite : 0.00 percent
@@ -141,43 +141,43 @@ This is not treated as the same risk as generic service-assistant language, but 
 
 The deterministic samples show useful material but also confirm several risks.
 
-Useful material includes:
+Useful material includes -->
 
-- concise rewriting examples;
-- general factual explanation;
-- programming tasks;
-- multi-turn reasoning;
+- concise rewriting examples
+- general factual explanation
+- programming tasks
+- multi-turn reasoning
 - cases where an assistant revises an assumption after user challenge.
 
-Observed risks include:
+Observed risks include -->
 
-- heavy math benchmark concentration;
-- repeated puzzle families;
-- repetitive explanation openings;
-- some awkward or low-quality rewritten sentences;
-- very long explanatory style in the primary multi-turn source;
+- heavy math benchmark concentration
+- repeated puzzle families
+- repetitive explanation openings
+- some awkward or low-quality rewritten sentences
+- very long explanatory style in the primary multi-turn source
 - coding answers with highly repetitive implementation framing.
 
 ## 9. DECISION FOR V0.3
 
 The next pool version must preserve the current identity and style safety filters while adding diversity controls.
 
-Required changes:
+Required changes -->
 
-1. allow at most one selected record per normalized first-user-prompt family;
-2. cap highly repetitive assistant opening families;
-3. preserve source quotas by refilling from the full raw reservoir;
-4. preserve deterministic selection;
-5. preserve exact source provenance;
-6. preserve zero residual persona prompts;
-7. preserve zero residual generic-service patterns;
-8. preserve zero forbidden Unicode dash characters;
-9. keep code isolated to the technical quota;
+1. allow at most one selected record per normalized first-user-prompt family
+2. cap highly repetitive assistant opening families
+3. preserve source quotas by refilling from the full raw reservoir
+4. preserve deterministic selection
+5. preserve exact source provenance
+6. preserve zero residual persona prompts
+7. preserve zero residual generic-service patterns
+8. preserve zero forbidden Unicode dash characters
+9. keep code isolated to the technical quota
 10. retain v0.2 unchanged for experiment history.
 
 ## 10. TARGET V0.3
 
-Target remains:
+Target remains -->
 
 ```text
 smol-magpie-ultra-short  : 5000
@@ -191,11 +191,15 @@ The objective is not to shrink the pool automatically. The objective is to refil
 
 ## 11. NEXT OPERATION
 
-Build `external-candidate-pool-v0.3.jsonl` directly from the immutable Parquet source files with:
+Build `external-candidate-pool-v0.3.jsonl` directly from the immutable Parquet source files with -->
 
-- the v0.2 safety filters;
-- normalized prompt-family uniqueness;
-- opening-family caps;
-- deterministic ranking;
-- full audit counters;
+- the v0.2 safety filters
+- normalized prompt-family uniqueness
+- opening-family caps
+- deterministic ranking
+- full audit counters
 - no modification of v0.1 or v0.2.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

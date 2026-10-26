@@ -29,3 +29,7 @@ model = MiniKuzaiPadding(
     pad_token_id=0,
 )
 ```
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

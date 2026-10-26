@@ -1,13 +1,13 @@
 # MINI-KUZAI PHASE 03 - EXTERNAL POOL V0.3 AUDIT
 
-Version: 0.1
-Status: REJECTED FOR TRAINING
+Version --> 0.1
+Status --> REJECTED FOR TRAINING
 
 ## 1. SUMMARY
 
 External candidate pool v0.3 contains 8000 records and passes exact structural checks, but it is not approved for training.
 
-Observed source quotas:
+Observed source quotas -->
 
 ```text
 smol-magpie-ultra-short     : 5000
@@ -17,7 +17,7 @@ self-oss-instruct           : 1000
 TOTAL                       : 8000
 ```
 
-Exact audit results:
+Exact audit results -->
 
 ```text
 unique prompt families      : 8000
@@ -33,7 +33,7 @@ These checks are necessary but not sufficient.
 
 ## 2. PERSONA FILTER GAP
 
-The top user-opening audit exposed prompts such as:
+The top user-opening audit exposed prompts such as -->
 
 ```text
 I'd like you to assume the role ...
@@ -45,7 +45,7 @@ These are third-party persona prompts and must not enter the Mini-Kuzai external
 
 The v0.3 persona patterns did not include `assume the role` and related formulations, therefore the reported `PERSONA_RESIDUAL = 0` is a false sense of completeness rather than proof that the pool is persona-free.
 
-Pool v0.4 must add explicit detection for:
+Pool v0.4 must add explicit detection for -->
 
 ```text
 assume the role
@@ -68,7 +68,7 @@ stay in character
 
 Exact normalized first-prompt deduplication removed literal families, but semantically equivalent variants remain.
 
-Examples include multiple variants of:
+Examples include multiple variants of -->
 
 ```text
 snail climbing a well
@@ -85,7 +85,7 @@ Pool v0.4 must introduce an additional concept-level fingerprint or near-duplica
 
 ## 4. OPENING PHRASE BIAS
 
-The v0.3 pool still contains frequent assistant openings such as:
+The v0.3 pool still contains frequent assistant openings such as -->
 
 ```text
 to solve this problem we
@@ -103,7 +103,7 @@ Pool v0.4 must apply global caps in addition to source-level caps.
 
 ## 5. LENGTH PROFILE
 
-Observed overall assistant length:
+Observed overall assistant length -->
 
 ```text
 median : 1078 chars
@@ -116,20 +116,20 @@ This does not require immediate rejection because the Mini-Kuzai-specific corpus
 
 ## 6. DECISION
 
-Decision: DO NOT TRAIN ON V0.3.
+Decision --> DO NOT TRAIN ON V0.3.
 
 The pool is retained as an experimental artifact only.
 
-Required v0.4 changes:
+Required v0.4 changes -->
 
-1. expand persona detection to `assume the role` and related forms;
-2. add concept-level near-duplicate control;
-3. apply global assistant-opening caps;
-4. apply global user-opening caps where appropriate;
-5. retain exact provenance and deterministic selection;
-6. preserve zero exact duplicates;
-7. preserve zero generic-assistant markers;
-8. preserve zero benchmark markers;
+1. expand persona detection to `assume the role` and related forms
+2. add concept-level near-duplicate control
+3. apply global assistant-opening caps
+4. apply global user-opening caps where appropriate
+5. retain exact provenance and deterministic selection
+6. preserve zero exact duplicates
+7. preserve zero generic-assistant markers
+8. preserve zero benchmark markers
 9. preserve ASCII hyphen-minus only.
 
 ## 7. NEXT OPERATION
@@ -137,3 +137,7 @@ Required v0.4 changes:
 Build external candidate pool v0.4 from the immutable raw Parquet files, not by editing v0.3 in place.
 
 V0.1, v0.2, and v0.3 remain preserved for comparison and audit history.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

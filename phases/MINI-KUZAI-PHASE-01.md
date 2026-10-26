@@ -69,7 +69,7 @@ Validation loss       : 0.665633
 
 ## Preserved source snapshot
 
-The recovered Phase 01 local directory contained:
+The recovered Phase 01 local directory contained -->
 
 ```text
 67 numbered experiment scripts
@@ -94,3 +94,7 @@ Phase 01 demonstrates the full path from raw text to a trained autoregressive Tr
 **MINI-KUZAI PHASE 01 is frozen at experiment 67.**
 
 The next planned experiment, gamma context dependence, belongs to the continuation after this frozen Phase 01 snapshot.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

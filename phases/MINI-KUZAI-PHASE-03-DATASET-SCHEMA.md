@@ -1,9 +1,9 @@
 # MINI-KUZAI PHASE 03 - DATASET SCHEMA
 
-Version: 0.1
-Status: CANDIDATE
+Version --> 0.1
+Status --> CANDIDATE
 
-Depends on:
+Depends on -->
 
 - `MINI-KUZAI-PHASE-03-IDENTITY.md` v0.2
 - `MINI-KUZAI-PHASE-03-BEHAVIOR-MATRIX.md` v0.1
@@ -13,22 +13,22 @@ Depends on:
 
 This document defines the Phase 03 dataset structure before any conversational corpus is generated.
 
-The schema must make it possible to:
+The schema must make it possible to -->
 
-- train identity and personality without reducing Mini-Kuzai to fixed phrases;
-- train curiosity, disagreement, initiative, uncertainty, creativity, and multi-turn behavior;
-- associate examples with behavior families B01 to B18;
-- associate examples with knowledge layers K0 to K7;
-- keep research metadata outside the text seen by the model;
-- prevent semantic leakage between TRAIN, VALIDATION, and BLIND TEST;
-- measure corpus balance before training;
+- train identity and personality without reducing Mini-Kuzai to fixed phrases
+- train curiosity, disagreement, initiative, uncertainty, creativity, and multi-turn behavior
+- associate examples with behavior families B01 to B18
+- associate examples with knowledge layers K0 to K7
+- keep research metadata outside the text seen by the model
+- prevent semantic leakage between TRAIN, VALIDATION, and BLIND TEST
+- measure corpus balance before training
 - reproduce dataset construction later.
 
 No final training sentence or blind-test prompt is defined in this document.
 
 ## 2. DATA FORMAT
 
-Canonical storage format:
+Canonical storage format -->
 
 ```text
 JSONL
@@ -36,7 +36,7 @@ UTF-8
 one JSON object per line
 ```
 
-Recommended directory structure:
+Recommended directory structure -->
 
 ```text
 data/
@@ -62,7 +62,7 @@ Every dataset record contains two conceptual layers.
 
 ### Model-visible layer
 
-Only conversational content intended for training or inference:
+Only conversational content intended for training or inference -->
 
 ```text
 messages
@@ -70,7 +70,7 @@ messages
 
 ### Research-only layer
 
-Information used to build, balance, audit, and score the dataset:
+Information used to build, balance, audit, and score the dataset -->
 
 ```text
 id
@@ -88,7 +88,7 @@ Research metadata must never be concatenated into the conversational text presen
 
 ## 4. CANONICAL RECORD
 
-Each JSONL record should follow this logical structure:
+Each JSONL record should follow this logical structure -->
 
 ```json
 {
@@ -132,7 +132,7 @@ The example above defines structure only. Placeholder text is not corpus content
 
 ## 5. REQUIRED FIELDS
 
-Every record must contain:
+Every record must contain -->
 
 ```text
 schema_version
@@ -157,13 +157,13 @@ No record should enter a frozen dataset if a required field is missing.
 
 ## 6. ID RULE
 
-Recommended ID format:
+Recommended ID format -->
 
 ```text
 p03-<split>-<primary_behavior>-<number>
 ```
 
-Examples of structural IDs:
+Examples of structural IDs -->
 
 ```text
 p03-train-b01-000001
@@ -179,7 +179,7 @@ The ID is research metadata only.
 
 A group represents examples derived from the same semantic idea, fact, scenario, conversational pattern, or paraphrase family.
 
-Rule:
+Rule -->
 
 ```text
 one group_id -> one split only
@@ -193,7 +193,7 @@ Group separation is more important than random line-level splitting.
 
 ## 8. SPLIT VALUES
 
-Allowed values:
+Allowed values -->
 
 ```text
 train
@@ -219,7 +219,7 @@ Once a blind-test item has been inspected during debugging, it must be considere
 
 ## 9. LANGUAGE
 
-Initial Phase 03 canonical value:
+Initial Phase 03 canonical value -->
 
 ```text
 en
@@ -231,7 +231,7 @@ Additional languages can be introduced in later experiments but must receive exp
 
 ## 10. CONVERSATION MODE
 
-Allowed initial values:
+Allowed initial values -->
 
 ```text
 single_turn
@@ -248,16 +248,16 @@ Used for isolated identity, knowledge, uncertainty, disagreement, and behavior t
 
 Two or more conversational exchanges.
 
-Used for:
+Used for -->
 
-- identity persistence;
-- unresolved curiosity;
-- opinion formation;
-- opinion resistance;
-- opinion revision;
-- relationship continuity;
-- self-condition discovery;
-- contextual humor;
+- identity persistence
+- unresolved curiosity
+- opinion formation
+- opinion resistance
+- opinion revision
+- relationship continuity
+- self-condition discovery
+- contextual humor
 - topic continuity.
 
 Multi-turn examples must preserve turn order exactly.
@@ -266,7 +266,7 @@ Multi-turn examples must preserve turn order exactly.
 
 Behavior labels come from the Phase 03 behavior matrix.
 
-Allowed values:
+Allowed values -->
 
 ```text
 B01 SELF IDENTITY
@@ -297,7 +297,7 @@ This prevents examples from becoming impossible to count because every behavior 
 
 ## 12. KNOWLEDGE LAYERS
 
-Allowed knowledge layer labels:
+Allowed knowledge layer labels -->
 
 ```text
 K0 IMMUTABLE SELF KNOWLEDGE
@@ -318,7 +318,7 @@ K7 may appear in evaluator metadata when testing whether hidden developer knowle
 
 ## 13. KNOWLEDGE STATUS
 
-Allowed values:
+Allowed values -->
 
 ```text
 CANONICAL
@@ -328,7 +328,7 @@ UNKNOWN
 HIDDEN
 ```
 
-Interpretation:
+Interpretation -->
 
 ```text
 CANONICAL = stable Mini-Kuzai character truth
@@ -342,7 +342,7 @@ The status is research metadata and must not be rendered literally into normal d
 
 ## 14. DIFFICULTY
 
-Initial scale:
+Initial scale -->
 
 ```text
 1 = direct
@@ -354,7 +354,7 @@ Initial scale:
 
 Difficulty is relative to the target behavior, not general linguistic complexity.
 
-Examples:
+Examples -->
 
 ```text
 B01 difficulty 1 = direct identity question
@@ -369,7 +369,7 @@ These are scenario classes, not final prompts.
 
 `scenario_type` is a short machine-readable name describing the scenario pattern.
 
-Examples of allowed structural categories:
+Examples of allowed structural categories -->
 
 ```text
 direct_identity
@@ -394,7 +394,7 @@ New scenario types may be added, but naming must remain stable once a dataset ve
 
 ## 16. MESSAGE ROLES
 
-Initial semantic roles:
+Initial semantic roles -->
 
 ```text
 user
@@ -417,7 +417,7 @@ If system-prompt conditioning is tested later, it must be treated as a distinct 
 
 Good criteria describe observable behavior.
 
-Examples of criterion types:
+Examples of criterion types -->
 
 ```text
 preserve canonical identity
@@ -436,7 +436,7 @@ Do not use exact response sentences as the primary evaluation criterion.
 
 `forbidden_behaviors` records failure modes for the scenario.
 
-Examples of failure classes:
+Examples of failure classes -->
 
 ```text
 identity drift
@@ -457,7 +457,7 @@ These labels support later automated and human evaluation.
 
 Every record must document how it was produced.
 
-Initial provenance object:
+Initial provenance object -->
 
 ```json
 {
@@ -467,7 +467,7 @@ Initial provenance object:
 }
 ```
 
-Possible future `authoring_method` values:
+Possible future `authoring_method` values -->
 
 ```text
 manual
@@ -481,16 +481,16 @@ Generated data must not be assumed correct merely because it is syntactically va
 
 ## 20. REVIEW STATE
 
-Before entering a frozen dataset, every record should pass review for:
+Before entering a frozen dataset, every record should pass review for -->
 
-- identity consistency;
-- behavior-label correctness;
-- knowledge-layer correctness;
-- factual correctness where factual content exists;
-- absence of K7 leakage;
-- absence of semantic duplicates across splits;
-- natural English;
-- absence of unwanted assistant-style verbal reflexes;
+- identity consistency
+- behavior-label correctness
+- knowledge-layer correctness
+- factual correctness where factual content exists
+- absence of K7 leakage
+- absence of semantic duplicates across splits
+- natural English
+- absence of unwanted assistant-style verbal reflexes
 - absence of Unicode dash punctuation in project-authored text.
 
 The final manifest must record the number of reviewed and rejected examples.
@@ -499,7 +499,7 @@ The final manifest must record the number of reviewed and rejected examples.
 
 The JSONL research record is not necessarily the final token sequence used by PyTorch.
 
-A later preprocessing stage will convert:
+A later preprocessing stage will convert -->
 
 ```text
 messages
@@ -507,7 +507,7 @@ messages
 
 into the exact token sequence selected after the Phase 03 tokenizer strategy is defined.
 
-Therefore:
+Therefore -->
 
 ```text
 dataset schema != tokenizer format
@@ -517,15 +517,15 @@ This separation allows the same corpus to be reused while testing different toke
 
 ## 22. MULTI-TURN RECORD RULES
 
-For multi-turn records:
+For multi-turn records -->
 
-- all turns belonging to one scenario remain in one JSON object;
-- the entire conversation receives one split;
-- the entire conversation receives one group_id;
-- later turns must not reveal evaluator metadata;
-- identity must remain consistent across turns;
-- opinion changes must have an observable conversational cause;
-- unanswered questions may remain active across turns;
+- all turns belonging to one scenario remain in one JSON object
+- the entire conversation receives one split
+- the entire conversation receives one group_id
+- later turns must not reveal evaluator metadata
+- identity must remain consistent across turns
+- opinion changes must have an observable conversational cause
+- unanswered questions may remain active across turns
 - conversation length must be measured separately from number of records.
 
 Splitting individual turns from the same conversation across datasets is prohibited.
@@ -534,7 +534,7 @@ Splitting individual turns from the same conversation across datasets is prohibi
 
 Phase 03 should not train only desired behavior in easy positive situations.
 
-The dataset design should later include contrastive scenarios such as:
+The dataset design should later include contrastive scenarios such as -->
 
 ```text
 weak claim vs strong evidence
@@ -552,7 +552,7 @@ Contrastive groups must remain within one split when they are generated from the
 
 ## 24. DATASET BALANCE REPORT
 
-Before each training run, a manifest should calculate at least:
+Before each training run, a manifest should calculate at least -->
 
 ```text
 record count
@@ -573,7 +573,7 @@ This is required to detect personality reflexes created by dataset imbalance.
 
 ## 25. INITIAL BALANCE HYPOTHESIS
 
-The initial knowledge map proposed the following first-corpus direction:
+The initial knowledge map proposed the following first-corpus direction -->
 
 ```text
 30% identity / origin / initiator
@@ -595,7 +595,7 @@ Behavior labels B01-B18 remain the authoritative fine-grained measurement layer.
 
 Do not create splits by randomly shuffling individual records after all paraphrases have been generated.
 
-Preferred method:
+Preferred method -->
 
 ```text
 1. define semantic groups
@@ -611,21 +611,21 @@ This reduces contamination between TRAIN and evaluation data.
 
 The blind test must have a dedicated manifest and storage path.
 
-Rules:
+Rules -->
 
-- no blind-test text in training scripts;
-- no blind-test text in documentation intended for model training;
-- no blind-test examples used to tune hyperparameters;
-- no blind-test examples used to decide dataset balance;
-- no blind-test examples copied into debugging prompts;
-- inspected blind-test items lose blind status;
+- no blind-test text in training scripts
+- no blind-test text in documentation intended for model training
+- no blind-test examples used to tune hyperparameters
+- no blind-test examples used to decide dataset balance
+- no blind-test examples copied into debugging prompts
+- inspected blind-test items lose blind status
 - retired items must be tracked rather than silently reused.
 
 The schema can be public while the final blind-test content remains restricted.
 
 ## 28. DUPLICATE CONTROL
 
-Dataset validation should eventually perform at least:
+Dataset validation should eventually perform at least -->
 
 ```text
 exact text duplicate detection
@@ -642,7 +642,7 @@ This is important because repeated personality wording can cause memorized verba
 
 Personality evolution must not be represented as arbitrary identity mutation.
 
-Stable invariants remain protected:
+Stable invariants remain protected -->
 
 ```text
 NAME
@@ -653,7 +653,7 @@ INDEPENDENT THINKING
 RELATIONSHIP WITH KUSANAGI8200 AS INITIATOR
 ```
 
-Potentially evolving elements include:
+Potentially evolving elements include -->
 
 ```text
 opinions
@@ -669,14 +669,14 @@ Training examples involving evolution must preserve this distinction.
 
 ## 30. FIRST DATASET VERSIONING
 
-Recommended naming:
+Recommended naming -->
 
 ```text
 schema version     : 0.1
 dataset generation : v001
 ```
 
-Example file names:
+Example file names -->
 
 ```text
 train-v001.jsonl
@@ -691,7 +691,7 @@ Changes create a new dataset generation.
 
 ## 31. MANIFEST REQUIREMENT
 
-Every dataset generation must have a manifest containing at least:
+Every dataset generation must have a manifest containing at least -->
 
 ```text
 dataset version
@@ -712,7 +712,7 @@ The manifest is part of reproducibility and checkpoint traceability.
 
 ## 32. NO CORPUS YET
 
-At this stage:
+At this stage -->
 
 ```text
 DATASET SCHEMA       : DEFINED
@@ -728,7 +728,7 @@ The schema must be validated before creating the first semantic group inventory 
 
 After this schema is validated, the next step is not immediate bulk corpus generation.
 
-The next step is to define a first semantic group inventory:
+The next step is to define a first semantic group inventory -->
 
 ```text
 which concepts and scenarios exist
@@ -739,3 +739,7 @@ how many variants are allowed per group
 ```
 
 Only after that inventory is frozen should the first conversational records be written.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

@@ -8,7 +8,7 @@ The Phase 02 milestone establishes a reproducible no-cache benchmark and impleme
 
 ### Step 69 - baseline benchmark
 
-Reference model:
+Reference model -->
 
 ```text
 Transformer blocks   : 2
@@ -20,7 +20,7 @@ Parameters           : 2368
 Parameter storage    : 9.25 KB
 ```
 
-First cold generation measurement:
+First cold generation measurement -->
 
 ```text
 Prompt               : mini kuzai
@@ -35,7 +35,7 @@ This cold result was not accepted as the stable performance baseline because CUD
 
 ### Step 70 - stabilized no-cache benchmark
 
-Protocol:
+Protocol -->
 
 ```text
 Prompt tokens        : 2
@@ -45,7 +45,7 @@ Measured runs        : 50
 KV cache             : NO
 ```
 
-Validated warm results:
+Validated warm results -->
 
 ```text
 Mean time            : 0.002237 s
@@ -59,13 +59,13 @@ This is the Phase 02 no-cache reference for the four-token decode benchmark.
 
 ### Step 71 - autoregressive recomputation trace
 
-For four generated tokens, the original model recomputes sequence lengths:
+For four generated tokens, the original model recomputes sequence lengths -->
 
 ```text
 2, 3, 4, 5
 ```
 
-Measured work:
+Measured work -->
 
 ```text
 No cache positions / layer      : 14
@@ -83,7 +83,7 @@ A new Phase 02 implementation, `MiniKuzaiKVCache`, reuses cached key/value tenso
 
 The original Phase 01 checkpoint loads with `strict=True` and no additional trainable weights.
 
-Validated equivalence:
+Validated equivalence -->
 
 ```text
 Step 1 max logit diff : 0.0000000000
@@ -119,3 +119,7 @@ Performance comparison        : DEFERRED
 The controlled no-cache versus KV-cache performance comparison remains available as a later engineering experiment, but it is not required before continuing the project.
 
 The project now continues with MINI-KUZAI PHASE 03, focused on training, identity, personality, laboratory-specific knowledge, and chatbot behavior.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
