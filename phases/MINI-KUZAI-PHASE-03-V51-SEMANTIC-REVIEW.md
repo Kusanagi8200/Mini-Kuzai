@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V51 semantic review
 
-Status: **first controlled semantic-review batch preparation**. The 1,139
+Status --> **first controlled semantic-review batch preparation**. The 1,139
 public-external SmolTalk V44 candidates were already prioritized by V50,
 with 200 HIGH, 431 MEDIUM, and 508 LOW heuristic hints. These are
 **review ordering signals**, not proof of cognitive ability.
@@ -8,7 +8,7 @@ with 200 HIGH, 431 MEDIUM, and 508 LOW heuristic hints. These are
 ## Why the first batch is balanced
 
 V51 will not accept the V50 sorting as a final decision. A controlled
-batch of 24 *new* external-public source conversations will include:
+batch of 24 *new* external-public source conversations will include -->
 
 | V50 hint | Cases |
 | --- | ---: |
@@ -33,16 +33,16 @@ HIGH pool and sample other strata.
 ## Independent review rubric
 
 Read the entire, unchanged external-public dialogue. Decide **one
-overall behavior-use grade** using the rubric from V50:
+overall behavior-use grade** using the rubric from V50 -->
 
-- **A**: cognitively or creatively valuable and sufficiently coherent
+- **A** --> cognitively or creatively valuable and sufficiently coherent
   as a candidate for further data gates;
-- **B**: valuable fragments, character exploration, natural correction
+- **B** --> valuable fragments, character exploration, natural correction
   or contextual interactions, but not suitable as a complete positive
   conversation without explicit segmentation or repair;
-- **C**: low relevance to the persona or significant unreliable
+- **C** --> low relevance to the persona or significant unreliable
   behavior not appropriate as a positive target;
-- **HOLD**: genuinely unresolved issue requiring additional assessment.
+- **HOLD** --> genuinely unresolved issue requiring additional assessment.
 
 Independently score **cognition, creativity, conversation continuity,
 correction after feedback and communication** from 0 (not evidenced) to
@@ -87,9 +87,13 @@ this review.
    cases. Retain explicit versioning and independent anti-leakage
    gates.
 
-References:
+References -->
 - [V50 cognition/creativity framework](MINI-KUZAI-PHASE-03-V50-COGNITIVE-CREATIVE-PRIORITY.md)
 - [V50 pilot](../reviews/smoltalk-v50/PILOT-001.md)
 - [Previous V49 review](../reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md)
 
-Training authorized: **NO**.
+Training authorized --> **NO**.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

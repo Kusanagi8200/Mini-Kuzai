@@ -1,7 +1,7 @@
 # MINI-KUZAI PHASE 03 - SEMANTIC GROUP INVENTORY
 
-Version: 0.3
-Status: VALIDATED_SPLITS_ASSIGNED
+Version --> 0.3
+Status --> VALIDATED_SPLITS_ASSIGNED
 
 The semantic inventory now has frozen group-level split assignments.
 
@@ -147,3 +147,7 @@ TRAINING              : NOT STARTED
 ## Next operation
 
 Define the authoring policy for controlled Mini-Kuzai conversations before creating the first model-visible records.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

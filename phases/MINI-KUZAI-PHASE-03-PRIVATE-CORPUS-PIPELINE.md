@@ -1,6 +1,6 @@
 # MINI-KUZAI PHASE 03 - PRIVATE CORPUS PIPELINE
 
-Status: ACTIVE DESIGN - LOCAL DATA ONLY
+Status --> ACTIVE DESIGN - LOCAL DATA ONLY
 
 ## Purpose
 
@@ -12,22 +12,22 @@ The public repository documents only the generic processing methodology. Source 
 
 A personal ChatGPT export can be used locally as a source for building a conversation-specific dataset for Mini-Kuzai.
 
-Its purpose is not to copy the export directly into training. Its value is to provide real conversational structures that are difficult to reproduce with synthetic prompts alone, including:
+Its purpose is not to copy the export directly into training. Its value is to provide real conversational structures that are difficult to reproduce with synthetic prompts alone, including -->
 
-- multi-turn troubleshooting;
-- failed hypotheses followed by correction;
-- user feedback after commands or configuration changes;
-- explanation and clarification;
-- comparison and reasoning;
-- planning and decision support;
-- conversational continuity;
-- technical dialogue;
-- general non-technical dialogue;
+- multi-turn troubleshooting
+- failed hypotheses followed by correction
+- user feedback after commands or configuration changes
+- explanation and clarification
+- comparison and reasoning
+- planning and decision support
+- conversational continuity
+- technical dialogue
+- general non-technical dialogue
 - writing, reformulation, and language examples.
 
 The export is treated as a private raw reservoir. It must be reconstructed, segmented, reviewed, fact-checked, deduplicated, adapted to the Phase 03 language policy, and mapped to learning objectives before any training integration.
 
-The objective is therefore:
+The objective is therefore -->
 
 ```text
 CHATGPT EXPORT
@@ -42,42 +42,42 @@ CURATION + FACT CHECK + SEMANTIC MAPPING
 MINI-KUZAI-SPECIFIC CONVERSATION DATA
 ```
 
-The resulting dataset is intended to complement, not replace:
+The resulting dataset is intended to complement, not replace -->
 
-- the controlled Mini-Kuzai identity and behavior corpus;
-- the general external English reservoir;
+- the controlled Mini-Kuzai identity and behavior corpus
+- the general external English reservoir
 - the manually protected VALIDATION and BLIND TEST design.
 
 No source conversation or source-derived information from the ChatGPT export is published in the public repository.
 
 ## Public / local boundary
 
-Public repository:
+Public repository -->
 
-- corpus-processing methodology;
-- generic schemas;
-- generic curation rules;
-- project-level training decisions;
-- reusable code that contains no private source material;
+- corpus-processing methodology
+- generic schemas
+- generic curation rules
+- project-level training decisions
+- reusable code that contains no private source material
 - reproducibility rules that do not reveal private corpus content or derived source statistics.
 
-Local workspace only:
+Local workspace only -->
 
-- raw private conversations;
-- extracted USER / ASSISTANT text;
-- conversation titles;
-- source metadata;
-- logs, commands, addresses, credentials, identifiers, and environment-specific values from source conversations;
-- derived episode files;
-- source-specific classifications and statistics;
-- candidate queues;
-- factual-review notes;
-- rejected examples;
+- raw private conversations
+- extracted USER / ASSISTANT text
+- conversation titles
+- source metadata
+- logs, commands, addresses, credentials, identifiers, and environment-specific values from source conversations
+- derived episode files
+- source-specific classifications and statistics
+- candidate queues
+- factual-review notes
+- rejected examples
 - curated training candidates before explicit dataset integration.
 
 ## Processing pipeline
 
-The private-corpus workflow is:
+The private-corpus workflow is -->
 
 ```text
 PRIVATE LOCAL SOURCE
@@ -126,13 +126,13 @@ Assistant responses rewritten for teaching quality are counterfactual targets. T
 
 ## Multi-turn evidence and outcome boundaries
 
-Technical episodes should distinguish:
+Technical episodes should distinguish -->
 
-- an initial observation from a hypothesis;
-- a proposed procedure from an executed action;
-- a failed attempt from a corrective revision;
-- a user-reported success from independently verified success;
-- an application-level success from downstream effects not tested;
+- an initial observation from a hypothesis
+- a proposed procedure from an executed action
+- a failed attempt from a corrective revision
+- a user-reported success from independently verified success
+- an application-level success from downstream effects not tested
 - successful operation in one session from persistence after a restart.
 
 Never infer an unobserved final test, root cause, delivery, reboot result, or downstream effect. Partial outcomes and unresolved causes must remain explicit in both research metadata and model-visible wording where relevant.
@@ -141,9 +141,9 @@ Review each reconstructed assistant turn against the next observed user response
 
 ## Editorial segmentation and candidate gates
 
-Long troubleshooting paths may be divided into coherent shorter episodes. The source message order, parent relationship, context dependencies, and lineage locks must survive segmentation. A final episode is not automatically self-contained: missing setup context requires either a faithful reconstruction or a HOLD decision.
+Long troubleshooting paths may be divided into coherent shorter episodes. The source message order, parent relationship, context dependencies, and lineage locks must survive segmentation. A final episode is not automatically self-contained --> missing setup context requires either a faithful reconstruction or a HOLD decision.
 
-A useful local approval sequence is:
+A useful local approval sequence is -->
 
 ```text
 SOURCE-FAITHFUL EPISODE
@@ -178,7 +178,7 @@ Inspected source episodes, their paraphrases, shortened variants, and rewritten 
 
 Counts of records alone do not determine training influence. Audit source composition with reproducible local measures for user versus assistant text, single-turn versus multi-turn conversations, dialogue turns, behavior and topic labels, and concentration of long code or logs.
 
-Record actual text lengths in characters and UTF-8 bytes. Where the Phase 03 tokenizer is not selected, estimates based on characters or words are only proxies: they are not measured tokenizer tokens and must not be presented as exact token totals.
+Record actual text lengths in characters and UTF-8 bytes. Where the Phase 03 tokenizer is not selected, estimates based on characters or words are only proxies --> they are not measured tokenizer tokens and must not be presented as exact token totals.
 
 Compare the locally curated material with the controlled identity/behavior corpus and the external English reservoir. Select mixture weights only after a tokenizer choice, token-level length measurement, behavioral balance review, and a separate explicit approval.
 
@@ -200,7 +200,7 @@ Episode boundaries are research metadata and remain local until a final approved
 
 Technical troubleshooting conversations may contain incorrect hypotheses or commands that are later rejected by real feedback.
 
-The pipeline must distinguish:
+The pipeline must distinguish -->
 
 ```text
 failed proposal
@@ -226,19 +226,19 @@ Volatile facts must either be removed, normalized, or explicitly labeled accordi
 
 Approved candidates are mapped to Phase 03 learning objectives rather than to their original source application.
 
-Possible learning dimensions include:
+Possible learning dimensions include -->
 
-- technical diagnosis;
-- explanation;
-- reasoning and comparison;
-- planning and decision support;
-- clarification;
-- uncertainty handling;
-- correction and revision;
-- multi-turn consistency;
-- concise factual response;
-- step-by-step procedure;
-- summarization;
+- technical diagnosis
+- explanation
+- reasoning and comparison
+- planning and decision support
+- clarification
+- uncertainty handling
+- correction and revision
+- multi-turn consistency
+- concise factual response
+- step-by-step procedure
+- summarization
 - conversational continuity.
 
 Mapping does not imply TRAIN assignment.
@@ -257,10 +257,10 @@ Private sources may contain languages different from the initial English-first P
 
 Language handling is a separate design decision.
 
-Possible strategies include:
+Possible strategies include -->
 
-- controlled English adaptation;
-- preserving selected multilingual material;
+- controlled English adaptation
+- preserving selected multilingual material
 - running a dedicated multilingual experiment.
 
 Translation must preserve meaning and technical correctness rather than mechanically translate syntax or commands.
@@ -278,3 +278,7 @@ Only generic project-development information about the private-corpus pipeline m
 The existence of a private candidate corpus does not authorize model training.
 
 Private-source material can enter a Phase 03 dataset only after explicit review, semantic mapping, split validation, and approval.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

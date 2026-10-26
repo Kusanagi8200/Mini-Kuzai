@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V50 cognitive and creative data priority
 
-Status: **V50 screening methodology approved as project direction**. The
+Status --> **V50 screening methodology approved as project direction**. The
 1,139-record V44 selection is still provisional. This document does not
 authorize training, freeze a tokenizer, allocate dataset splits, or declare
 any candidate validated.
@@ -8,7 +8,7 @@ any candidate validated.
 ## Target behavior
 
 Mini-Kuzai is developed as a small conversational character, not as a
-specialized IT support model. Its most important research objectives are:
+specialized IT support model. Its most important research objectives are -->
 
 1. Understanding intentions, context, implicit references, and conversational
    changes across turns.
@@ -37,11 +37,11 @@ answer is stylistically awkward. A single exact coding answer may be valid
 but have low value for the current personality objective.
 
 An imperfect answer does not automatically disqualify a conversation.
-Conversational imperfections can be useful when they demonstrate:
-- Natural hesitation, informal language and ambiguity;
-- User objections, clarification requests and changing priorities;
-- Assistant course correction that actually acknowledges new information;
-- Continuity across changing contexts or connected narrative scenes;
+Conversational imperfections can be useful when they demonstrate -->
+- Natural hesitation, informal language and ambiguity
+- User objections, clarification requests and changing priorities
+- Assistant course correction that actually acknowledges new information
+- Continuity across changing contexts or connected narrative scenes
 - Differing perspectives, uncertainty or creative alternatives.
 
 Conversely, a confidently incorrect factual or mathematical answer,
@@ -57,7 +57,7 @@ complex personality.
 
 ## V50 rubric for each conversation
 
-Human review should consider these **independent, non-exclusive** axes:
+Human review should consider these **independent, non-exclusive** axes -->
 
 | Axis | Score | Assessment |
 | --- | --- | --- |
@@ -76,12 +76,12 @@ of actual meanings. Do not infer these scores solely from keywords.
 
 ### Candidate routing
 
-- **A: reliable and relevant** - useful, substantively correct dialogue;
+- **A --> reliable and relevant** - useful, substantively correct dialogue
   still needs duplicate, provenance and split checks.
-- **B: behaviorally rich but imperfect** - contains valuable creative or
+- **B --> behaviorally rich but imperfect** - contains valuable creative or
   cognitive interactions while requiring scoped edits or segmentation.
   Must not be promoted blindly to supervised TRAIN.
-- **C: unsuitable as a positive target** - uncorrected serious errors,
+- **C --> unsuitable as a positive target** - uncorrected serious errors,
   fabricated evidence, failure on essential instructions or misleading
   information. May inform error-analysis without teaching its answer.
 - **UNREVIEWED** - automated detection has identified a candidate but
@@ -99,10 +99,10 @@ permanent exclusion rules for cognitive or creative research. The 68
 examples were a targeted diagnostic sample, not representative evidence
 of quality rates across V44 or the full source reservoir.
 
-Especially inspect cases previously rejected because:
-- Individual turns were creative but were combined without continuity;
-- A useful conversational repair or change of mind was overlooked;
-- Technical performance was irrelevant to personality training;
+Especially inspect cases previously rejected because -->
+- Individual turns were creative but were combined without continuity
+- A useful conversational repair or change of mind was overlooked
+- Technical performance was irrelevant to personality training
 - Prose was imperfect yet contributed imagination or perspective.
 
 Do not reinterpret an inaccurate numerical or technical explanation
@@ -114,7 +114,7 @@ V50 annotations live independently from the original V48/V49 files.
 1. Validate the public external SmolTalk v0.4 8,000-record reservoir
    and the unchanged, 1,139-record V44 provisional selection.
 2. Produce a **local-only, reversible prioritization queue** across all
-   1,139 V44 examples using broad heuristic *review signals*:
+   1,139 V44 examples using broad heuristic *review signals* -->
    creative scenarios, cognition or hypothesis questions, follow-up
    references, response changes after feedback, and technical-domain tags.
 3. Heuristic priority is **not** a truth, safety or semantic-quality
@@ -143,3 +143,7 @@ The script `tools/public-audits/smoltalk_v50_cognitive_screen.py`
 implements only the **first-pass heuristic queue and numeric aggregate
 counts**. It does not assert that any example has been semantically
 approved.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
