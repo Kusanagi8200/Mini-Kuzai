@@ -10,10 +10,10 @@ any human or assistant semantic review of those 1,139 cases.
 ## V51 first batch
 
 The one-time publisher `tools/publish_smoltalk_v51_github_reviews.py`
-will create 24 new, independently editable public case files:
+will create 24 new, independently editable public case files -->
 
-- 12 from HIGH;
-- 6 from MEDIUM;
+- 12 from HIGH
+- 6 from MEDIUM
 - 6 from LOW.
 
 It attempts source and V44 category coverage within each band, excludes
@@ -29,20 +29,20 @@ records, 1,139 unchanged V44/V50 candidates, and the V50 priority
 counts (200/431/508). It neither reads private ChatGPT exports nor
 publishes any private-derived information.
 
-The export is one-time only: it refuses an existing destination, an
+The export is one-time only --> it refuses an existing destination, an
 unclean branch, or an unsynchronized main. The new public conversations
 will appear under `reviews/smoltalk-v51/cases/` on GitHub.
 
 ## Human-style review fields
 
-Each V51 page starts with nine editable fields. The reviewer supplies:
+Each V51 page starts with nine editable fields. The reviewer supplies -->
 
-- `V51 grade`: A, B, C or HOLD (PENDING before review).
-- `V51 rationale`: specific English explanation, 12-2000 characters.
+- `V51 grade` --> A, B, C or HOLD (PENDING before review).
+- `V51 rationale` --> specific English explanation, 12-2000 characters.
 - `V51 cognition`, `creativity`, `continuity`, `correction`,
-  `communication`: score 0, 1, 2 or 3.
-- `V51 factual risk`: LOW, REVIEW or HIGH.
-- `V51 instruction fit`: GOOD, PARTIAL or BAD.
+  `communication` --> score 0, 1, 2 or 3.
+- `V51 factual risk` --> LOW, REVIEW or HIGH.
+- `V51 instruction fit` --> GOOD, PARTIAL or BAD.
 
 Only these nine fields may change. The original dialogue, SHA-256,
 source, V44 heuristic and V50 priority must remain untouched. A
@@ -62,7 +62,7 @@ Execute from `/root/GitHub-Mini-Kuzai/Mini-Kuzai`, with Python at
 
 First ensure the Git checkout is clean, create a timestamped backup
 branch, and fast-forward to current remote main. Run syntax checks and
-the offline V51 unit tests before invoking the publisher:
+the offline V51 unit tests before invoking the publisher -->
 
 ```bash
 /root/Mini-Kuzai/.venv/bin/python -m py_compile tools/publish_smoltalk_v51_github_reviews.py tools/public-audits/smoltalk_v51_github_progress.py tests/phase-03/test_smoltalk_v51_publisher.py tests/phase-03/test_smoltalk_v51_progress.py
@@ -81,7 +81,7 @@ The audit `tools/public-audits/smoltalk_v51_github_progress.py`
 recreates the exact 24 public cases, verifies that only nine review
 fields differ, validates the scoring rules, and emits numeric counts
 only. From a clean synchronized main, publish the final numeric
-counters with an unused `--step` identifier:
+counters with an unused `--step` identifier -->
 
 ```bash
 /root/Mini-Kuzai/.venv/bin/python tools/gogit_public.py --step PHASE03-SMOLTALK-V51-PILOT-REVIEW-001 --audit tools/public-audits/smoltalk_v51_github_progress.py
@@ -92,3 +92,7 @@ reports require unique STEP_IDs and successful local validation.
 
 TRAIN, VALIDATION and BLIND splits remain unchanged. Final tokenizer
 selection and Phase 03 model training remain unauthorized.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

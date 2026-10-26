@@ -1,10 +1,10 @@
 # Mini-Kuzai Phase 03 - V53 first corpus admission decision GOGIT
 
-Status: **one derivative is approved for future TRAIN-corpus serialization; the admission-decision GOGIT audit has not yet been executed.**
+Status --> **one derivative is approved for future TRAIN-corpus serialization; the admission-decision GOGIT audit has not yet been executed.**
 
 ## Decision
 
-The only eligibility-ready derivative is:
+The only eligibility-ready derivative is -->
 
 ```text
 derivative        : V53-DERIV-002-V51-013
@@ -22,7 +22,7 @@ The reserved record id is currently unused.
 
 Corpus admission and model training authorization are different decisions.
 
-Current state:
+Current state -->
 
 ```text
 corpus admission approved        : 1
@@ -37,13 +37,13 @@ No `data/phase-03/train/*.jsonl` file is changed by this admission decision.
 
 ## Audit checks
 
-The audit must verify:
+The audit must verify -->
 
-1. the completed V53 eligibility report still has exactly one admission-ready derivative;
-2. the current eligibility audit still reproduces its 2-case result;
-3. `sg-b08-01` still exists in semantic inventory v0.3 as TRAIN / B08 / `weak_technical_claim`;
-4. the six canonical reviewed TRAIN files still contain 37 unique records;
-5. `p03-train-b08-000001` is not yet present;
+1. the completed V53 eligibility report still has exactly one admission-ready derivative
+2. the current eligibility audit still reproduces its 2-case result
+3. `sg-b08-01` still exists in semantic inventory v0.3 as TRAIN / B08 / `weak_technical_claim`
+4. the six canonical reviewed TRAIN files still contain 37 unique records
+5. `p03-train-b08-000001` is not yet present
 6. the decision still marks serialization incomplete and model training unauthorized.
 
 ## Expected metrics
@@ -61,7 +61,7 @@ MODEL TRAINING AUTHORIZED        : 0
 
 ## One-time execution
 
-From the current repository shell with the project virtual environment active:
+From the current repository shell with the project virtual environment active -->
 
 ```bash
 git pull --ff-only origin main && python -m py_compile tools/public-audits/smoltalk_v53_admission_decision.py tests/phase-03/test_smoltalk_v53_admission_decision.py tools/gogit_public.py && python -m unittest discover -s tests/phase-03 -p 'test_smoltalk_v53_admission_decision.py' -v && python tools/gogit_public.py --step PHASE03-SMOLTALK-V53-ADMISSION-DECISION-001 --audit tools/public-audits/smoltalk_v53_admission_decision.py
@@ -80,3 +80,7 @@ semantic review of that serialized record.
 Do not interpret serialization as permission to train the model.
 
 Phase 03 model training remains **NOT AUTHORIZED**.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

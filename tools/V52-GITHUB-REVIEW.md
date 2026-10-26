@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V52 public semantic-review batch
 
-Status as of 2026-10-17: **32 public V52 review cases annotated and final source-integrity/numeric GOGIT audit completed (8 A, 12 B, 12 C, 0 HOLD, 0 PENDING).** See [V52 results](../reviews/smoltalk-v52/RESULTS-001.md) and the [final audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json).
+Status as of 2026-10-17 --> **32 public V52 review cases annotated and final source-integrity/numeric GOGIT audit completed (8 A, 12 B, 12 C, 0 HOLD, 0 PENDING).** See [V52 results](../reviews/smoltalk-v52/RESULTS-001.md) and the [final audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json).
 The [V52 inventory](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-INVENTORY-001.json)
 was published and verified on GitHub under commit `3c1ca914`.
 
@@ -47,7 +47,7 @@ private ChatGPT exports. Public reviewed source conversations and
 source attribution may be placed on GitHub; all other datasets remain
 local. Prior published files remain unchanged.
 
-The 32 case pages were originally published with nine `PENDING` review fields: grade, rationale, cognition, creativity, continuity, correction, communication, factual risk, and instruction fit. They have since all been annotated on GitHub. Review the *whole*
+The 32 case pages were originally published with nine `PENDING` review fields --> grade, rationale, cognition, creativity, continuity, correction, communication, factual risk, and instruction fit. They have since all been annotated on GitHub. Review the *whole*
 original dialogue before assigning A/B/C/HOLD. A factual defect is
 not automatically disqualifying for behavioral analysis, but an
 uncorrected false assertion is not an approved positive target.
@@ -55,7 +55,7 @@ No independent human assessment is implied.
 
 ## Execution history and completed GOGIT gate
 
-**Completed on fhc2:**
+**Completed on fhc2 --> **
 
 1. The source-verifying exporter published 32 new public V52 cases under GitHub commit [`bef66d09`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/bef66d092f702073072e07084848ef5d3d52fff0).
 2. The initial numeric-only GOGIT audit [`PHASE03-SMOLTALK-V52-REVIEW-INIT-001`](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-INIT-001.json) confirmed 32 public cases, initially 32 PENDING.
@@ -64,7 +64,7 @@ No independent human assessment is implied.
 
 5. On 2026-10-17, GOGIT published the [final V52 numeric/source-integrity report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) under [commit `8a28e956`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/8a28e95637377f29d7204f51d49a174f2518929f). The audited totals are **32/32 reviewed, 8 A, 12 B, 12 C, 0 HOLD, 0 PENDING, 0 TRAIN approved**. The earlier 8/32 report remains a valid historical snapshot.
 
-The exact one-time command already executed on fhc2 is preserved below for historical reproducibility. **Do not re-run the published STEP_ID:**
+The exact one-time command already executed on fhc2 is preserved below for historical reproducibility. **Do not re-run the published STEP_ID --> **
 
 ```bash
 cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/gogit_public.py --step PHASE03-SMOLTALK-V52-REVIEW-FINAL-001 --audit tools/public-audits/smoltalk_v52_github_progress.py
@@ -80,3 +80,7 @@ The 32 public V52 cases have been annotated and the final source-integrity/numer
 
 Do not change official TRAIN/VALIDATION/BLIND, the final tokenizer, or
 model architecture. Phase 03 training remains unauthorized.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
