@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V53 derivative-003 B12 admission GOGIT
 
-Status: **V53-DERIV-003-V51-002 is approved for future B12 TRAIN serialization, but the admission decision has not yet been published by GOGIT and no B12 JSONL record has been created.**
+Status --> **V53-DERIV-003-V51-002 is approved for future B12 TRAIN serialization, but the admission decision has not yet been published by GOGIT and no B12 JSONL record has been created.**
 
 ## Admission target
 
@@ -48,7 +48,7 @@ MODEL TRAINING AUTHORIZED      : 0
 
 ## One-time execution
 
-From the current repository shell with the project virtual environment active:
+From the current repository shell with the project virtual environment active -->
 
 ```bash
 git pull --ff-only origin main && python -m py_compile tools/public-audits/smoltalk_v53_deriv003_admission_decision.py tests/phase-03/test_smoltalk_v53_deriv003_admission_decision.py tools/gogit_public.py && python -m unittest discover -s tests/phase-03 -p 'test_smoltalk_v53_deriv003_admission_decision.py' -v && python tools/gogit_public.py --step PHASE03-SMOLTALK-V53-DERIV003-ADMISSION-001 --audit tools/public-audits/smoltalk_v53_deriv003_admission_decision.py
@@ -66,3 +66,7 @@ The next step is canonical serialization of
 semantic and anti-leakage review.
 
 Phase 03 model training remains **NOT AUTHORIZED**.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

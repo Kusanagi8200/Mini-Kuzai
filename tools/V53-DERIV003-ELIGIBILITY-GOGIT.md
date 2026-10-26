@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V53 derivative-003 B12 eligibility GOGIT
 
-Status: **V53-DERIV-003-V51-002 passes the prepared provenance, duplicate and semantic-split controls and is ready for a one-time eligibility audit.**
+Status --> **V53-DERIV-003-V51-002 passes the prepared provenance, duplicate and semantic-split controls and is ready for a one-time eligibility audit.**
 
 ## Candidate
 
@@ -21,7 +21,7 @@ source SHA-256    : 383f5926f407ae183de348a6aae660e952a4e03887ba2ed275d259969e23
 
 ## Duplicate control
 
-Method:
+Method -->
 
 ```text
 normalization     : lowercase alphanumeric tokens
@@ -30,7 +30,7 @@ similarity        : Jaccard
 near-dup threshold: 0.20
 ```
 
-Prepared result against the current canonical TRAIN population:
+Prepared result against the current canonical TRAIN population -->
 
 ```text
 canonical TRAIN records compared: 45
@@ -41,24 +41,24 @@ near-duplicate hits              : 0
 
 ## Semantic split control
 
-TRAIN target:
+TRAIN target -->
 
 ```text
 sg-b12-01 alternative_generation
 ```
 
-Reserved evaluation scopes:
+Reserved evaluation scopes -->
 
 ```text
 VALIDATION : sg-b12-03 creative_hypothesis_epistemic_control
 BLIND TEST : sg-b12-04 creative_under_constraints
 ```
 
-Manual decision:
+Manual decision -->
 
-- no VALIDATION collision;
-- no BLIND collision;
-- the fictional post-pandemic possibilities remain clearly story-generation choices rather than empirical hypotheses;
+- no VALIDATION collision
+- no BLIND collision
+- the fictional post-pandemic possibilities remain clearly story-generation choices rather than empirical hypotheses
 - the dialogue does not instantiate an explicit constraint-solving evaluation challenge.
 
 ## Expected metrics
@@ -80,7 +80,7 @@ SPLIT ASSIGNED                  : 0
 
 ## One-time execution
 
-From the current repository shell with the project virtual environment active:
+From the current repository shell with the project virtual environment active -->
 
 ```bash
 git pull --ff-only origin main && python -m py_compile tools/public-audits/smoltalk_v53_deriv003_eligibility.py tests/phase-03/test_smoltalk_v53_deriv003_eligibility.py tools/gogit_public.py && python -m unittest discover -s tests/phase-03 -p 'test_smoltalk_v53_deriv003_eligibility.py' -v && python tools/gogit_public.py --step PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001 --audit tools/public-audits/smoltalk_v53_deriv003_eligibility.py
@@ -96,11 +96,15 @@ No terminal output needs to be copied into ChatGPT. After completion, request
 
 The derivative becomes eligible for an explicit admission decision only.
 
-A successful audit does **not**:
+A successful audit does **not** -->
 
-- admit the derivative to TRAIN;
-- assign a dataset split;
-- serialize a canonical B12 record;
+- admit the derivative to TRAIN
+- assign a dataset split
+- serialize a canonical B12 record
 - authorize model training.
 
 Phase 03 model training remains **NOT AUTHORIZED**.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
