@@ -2,6 +2,8 @@
 
 #### **`BUILD A LANGUAGE MODEL FROM SCRATCH, TRAIN IT LOCALLY AND INSPECT WHAT HAPPENS INSIDE A TRANSFORMER.`**
 
+![MINI-KUZAI PROJECT STACK](assets/badges/project-stack-banner.svg)
+
 ------------------------------------------------------------------------
 
 <picture>
