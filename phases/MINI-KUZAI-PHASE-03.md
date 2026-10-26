@@ -17,7 +17,7 @@ The model should progressively demonstrate a stable core identity together with 
 Efficiency remains useful to understand, but it is no longer the primary development criterion. The available hardware is treated as the practical ceiling for Phase 03 experiments.
 
  
-### V50 priority update: cognition and creativity
+### V50 priority update --> cognition and creativity
 
 The primary learning target is a recognizable conversational persona that
 can follow intentions, infer context, explore alternative ideas, create
@@ -39,7 +39,7 @@ decisions remain available and no TRAIN approval follows from a
 priority hint.
 
 
-Reference hardware:
+Reference hardware -->
 
 ```text
 Ubuntu 24.04.x
@@ -56,7 +56,7 @@ Phase 03 follows the project-wide [loop-first workflow policy](../PROJECT-WORKFL
 
 When several deterministic gates are already defined, they should be grouped into a resumable runner rather than exposed as repeated manual stop/start steps. The runner must inspect current state, verify and skip gates already published successfully, execute only missing gates, verify every transition, and stop on semantic, provenance, split-leakage, destructive, private-data, or authorization failures.
 
-For validation and BLIND authoring work, the preferred deterministic pattern is:
+For validation and BLIND authoring work, the preferred deterministic pattern is -->
 
 ```text
 author/review evidence
@@ -71,37 +71,37 @@ A semantic `REVISE`, `REJECT` or `HOLD` decision must never be bypassed by autom
 
 ## Phase 03 targets
 
-The model should progressively demonstrate:
+The model should progressively demonstrate -->
 
-- a recognizable Mini-Kuzai identity;
-- stable knowledge of her origin in THE KUZ NETWORK laboratory;
-- a stable initiator relationship with Kusanagi8200 while leaving the deeper relationship open;
-- curiosity as a central but contextual behavior;
-- the ability to ask useful questions when information is missing;
-- the ability to admit uncertainty naturally;
-- the ability to form tentative hypotheses;
-- intellectual independence and reasoned disagreement;
-- technical and philosophical opinion formation;
-- opinion revision when evidence becomes genuinely convincing;
-- spontaneous but relevant initiative;
-- creative exploration;
-- contextual humor, sarcasm, and teasing;
-- emotional language as part of the character;
-- progressive discovery of the wider world;
-- specific knowledge about THE KUZ NETWORK laboratory;
-- specific technical vocabulary related to the local AI stack;
-- simple question and answer behavior;
-- basic multi-turn conversational behavior;
-- measurable retention of training knowledge;
-- measurable generalization beyond exact training sentences;
-- clean train, validation, and test separation;
-- reproducible local training;
-- controlled checkpoint evolution;
+- a recognizable Mini-Kuzai identity
+- stable knowledge of her origin in THE KUZ NETWORK laboratory
+- a stable initiator relationship with Kusanagi8200 while leaving the deeper relationship open
+- curiosity as a central but contextual behavior
+- the ability to ask useful questions when information is missing
+- the ability to admit uncertainty naturally
+- the ability to form tentative hypotheses
+- intellectual independence and reasoned disagreement
+- technical and philosophical opinion formation
+- opinion revision when evidence becomes genuinely convincing
+- spontaneous but relevant initiative
+- creative exploration
+- contextual humor, sarcasm, and teasing
+- emotional language as part of the character
+- progressive discovery of the wider world
+- specific knowledge about THE KUZ NETWORK laboratory
+- specific technical vocabulary related to the local AI stack
+- simple question and answer behavior
+- basic multi-turn conversational behavior
+- measurable retention of training knowledge
+- measurable generalization beyond exact training sentences
+- clean train, validation, and test separation
+- reproducible local training
+- controlled checkpoint evolution
 - an evaluation method for identity, personality, behavior, and domain knowledge.
 
 ## Project distinction
 
-The Phase 03 documentation uses the following distinction:
+The Phase 03 documentation uses the following distinction -->
 
 ```text
 KUZAI       : local AI application and multi-model environment
@@ -117,22 +117,22 @@ This distinction prevents developer roadmap information from leaking into the in
 
 Mini-Kuzai is a development laboratory for learning how to build, personalize, evaluate, and progressively evolve a language model from the ground up.
 
-Phase 03 is intended to produce practical experience with:
+Phase 03 is intended to produce practical experience with -->
 
-- corpus construction;
-- tokenizer design;
-- conversational data representation;
-- personality and identity encoding;
-- curiosity and initiative encoding;
-- domain-specific knowledge injection;
-- training-data quality;
-- behavioral data balance;
-- overfitting control;
-- validation methodology;
-- checkpoint management;
-- chatbot inference;
-- controlled evaluation;
-- persistent-memory requirements;
+- corpus construction
+- tokenizer design
+- conversational data representation
+- personality and identity encoding
+- curiosity and initiative encoding
+- domain-specific knowledge injection
+- training-data quality
+- behavioral data balance
+- overfitting control
+- validation methodology
+- checkpoint management
+- chatbot inference
+- controlled evaluation
+- persistent-memory requirements
 - scaling decisions based on available hardware.
 
 The future KUZAI-LLM can later reuse these methods with a larger tokenizer, a larger corpus, more parameters, a longer context window, persistent memory or retrieval mechanisms, and more compute.
@@ -141,7 +141,7 @@ The future KUZAI-LLM can later reuse these methods with a larger tokenizer, a la
 
 Phase 03 starts from the knowledge acquired during Phase 01 and Phase 02.
 
-Frozen Phase 01 reference:
+Frozen Phase 01 reference -->
 
 ```text
 Transformer blocks   : 2
@@ -159,7 +159,7 @@ Phase 02 inference work, including the validated KV-cache implementation, is pre
 
 ## Phase 03 design references
 
-The current Phase 03 design is documented in:
+The current Phase 03 design is documented in -->
 
 ```text
 phases/MINI-KUZAI-PHASE-03-QUESTIONNAIRE-EN.md
@@ -195,23 +195,23 @@ Phase 03 also uses a personal ChatGPT export locally as a private conversational
 
 The purpose is to derive Mini-Kuzai-specific conversation data from real interaction structures rather than to copy complete exported chats into training.
 
-The local curation process targets reusable patterns such as:
+The local curation process targets reusable patterns such as -->
 
-- multi-turn troubleshooting;
-- correction after failed hypotheses;
-- interpretation of real feedback;
-- explanation and clarification;
-- reasoning and comparison;
-- planning and decision support;
-- technical dialogue;
-- general conversation;
+- multi-turn troubleshooting
+- correction after failed hypotheses
+- interpretation of real feedback
+- explanation and clarification
+- reasoning and comparison
+- planning and decision support
+- technical dialogue
+- general conversation
 - language and reformulation patterns.
 
 This source remains separate from the controlled Mini-Kuzai identity and behavior corpus. It also remains separate from the general external English reservoir.
 
 No exported conversation, excerpt, source-specific statistic, candidate queue, or derived review material is committed to the public repository.
 
-Only the generic processing methodology is documented publicly in:
+Only the generic processing methodology is documented publicly in -->
 
 ```text
 phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md
@@ -231,7 +231,7 @@ External data exploration is complete for the current Phase 03 cycle.
 
 ### SmolTalk
 
-The current validated external candidate reservoir is:
+The current validated external candidate reservoir is -->
 
 ```text
 HuggingFaceTB/smol-smoltalk
@@ -239,7 +239,7 @@ pool: external-candidate-pool-v0.4.jsonl
 records: 8000
 ```
 
-Source quotas:
+Source quotas -->
 
 ```text
 smol-magpie-ultra-short   : 5000
@@ -262,7 +262,7 @@ The targeted final audit reduced 2558 quality-safe paths to only 15 behavior can
 
 Those 15 candidates were mixed in quality and do not justify maintaining OASST1 as a second broad training reservoir for the current Phase 03 cycle.
 
-Current decision:
+Current decision -->
 
 ```text
 OASST1
@@ -277,11 +277,11 @@ OASST1 remains stored locally and may be revisited for future experiments.
 
 V54 completed the controlled VALIDATION phase after V53 froze the canonical TRAIN corpus.
 
-Published closure step:
+Published closure step -->
 
 `PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001`
 
-Current controlled corpus state:
+Current controlled corpus state -->
 
 ```text
 TRAIN records                  : 107
@@ -311,86 +311,86 @@ See [V54 VALIDATION closure](MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md).
 
 V55 authored, reviewed, integrity-checked and froze the 18 reserved BLIND TEST groups, producing 36 records total. This section preserves the constraints used during that workstream.
 
-The BLIND authoring workflow should reuse the loop-first, resumable infrastructure developed during V54 VALIDATION, but with a stricter untouched-test boundary:
+The BLIND authoring workflow should reuse the loop-first, resumable infrastructure developed during V54 VALIDATION, but with a stricter untouched-test boundary -->
 
-- BLIND prompts must not be paraphrases of TRAIN or VALIDATION prompts;
-- BLIND prompts must not be used for tokenizer, training, tuning, model selection, or checkpoint selection;
-- future model outputs on BLIND must remain uninspected until the intended blind evaluation stage;
-- any inspected blind prompt loses untouched status and becomes diagnostic;
-- semantic `REVISE`, `REJECT`, or `HOLD` decisions stop automated progression;
+- BLIND prompts must not be paraphrases of TRAIN or VALIDATION prompts
+- BLIND prompts must not be used for tokenizer, training, tuning, model selection, or checkpoint selection
+- future model outputs on BLIND must remain uninspected until the intended blind evaluation stage
+- any inspected blind prompt loses untouched status and becomes diagnostic
+- semantic `REVISE`, `REJECT`, or `HOLD` decisions stop automated progression
 - training remains unauthorized until BLIND authoring and global closure complete and later pre-training gates explicitly pass.
 
 ## Proposed development sequence
 
-The Phase 03 sequence is:
+The Phase 03 sequence is -->
 
-1. define the Mini-Kuzai personality questionnaire;
-2. define the Mini-Kuzai identity specification;
-3. convert identity into a behavioral training and evaluation matrix;
-4. define the laboratory-specific knowledge map and intentional unknowns;
-5. define the dataset schema and split methodology;
-6. assess, filter, and compare external conversational sources;
-7. define the first semantic group inventory from behavior families B01-B18;
-8. write the first controlled Mini-Kuzai conversational dataset;
-9. establish a new tokenizer and vocabulary strategy suitable for dialogue;
-10. freeze train, validation, and untouched blind-test groups before training;
-11. select a model size that is realistic for the RTX 5060 8 GB GPU;
-12. train the first Phase 03 model from scratch;
-13. test identity retention and factual recall;
-14. test paraphrases and unseen formulations;
-15. test curiosity, disagreement, initiative, and uncertainty behavior;
-16. identify memorization versus generalization;
-17. expand the corpus while preserving clean evaluation sets;
-18. add more varied conversational behavior;
-19. evaluate personality consistency;
-20. evaluate multi-turn behavior;
-21. evaluate in-context opinion and relationship evolution;
-22. study requirements for persistent cross-session evolution;
-23. iterate architecture and dataset size based on measured results;
-24. freeze stable checkpoints at meaningful milestones;
+1. define the Mini-Kuzai personality questionnaire
+2. define the Mini-Kuzai identity specification
+3. convert identity into a behavioral training and evaluation matrix
+4. define the laboratory-specific knowledge map and intentional unknowns
+5. define the dataset schema and split methodology
+6. assess, filter, and compare external conversational sources
+7. define the first semantic group inventory from behavior families B01-B18
+8. write the first controlled Mini-Kuzai conversational dataset
+9. establish a new tokenizer and vocabulary strategy suitable for dialogue
+10. freeze train, validation, and untouched blind-test groups before training
+11. select a model size that is realistic for the RTX 5060 8 GB GPU
+12. train the first Phase 03 model from scratch
+13. test identity retention and factual recall
+14. test paraphrases and unseen formulations
+15. test curiosity, disagreement, initiative, and uncertainty behavior
+16. identify memorization versus generalization
+17. expand the corpus while preserving clean evaluation sets
+18. add more varied conversational behavior
+19. evaluate personality consistency
+20. evaluate multi-turn behavior
+21. evaluate in-context opinion and relationship evolution
+22. study requirements for persistent cross-session evolution
+23. iterate architecture and dataset size based on measured results
+24. freeze stable checkpoints at meaningful milestones
 25. document methods that are transferable to the future KUZAI-LLM.
 
 ## Methodological constraints
 
-Phase 03 must preserve several lessons learned during Phase 01:
+Phase 03 must preserve several lessons learned during Phase 01 -->
 
-- no validation examples duplicated from training;
-- no test prompts used for model selection;
-- once a test prompt has been inspected, it becomes diagnostic and is no longer considered blind;
-- model comparisons must use pre-defined evaluation criteria;
-- broad claims must not be made from tiny datasets;
-- personality memorization and genuine compositional behavior must be distinguished;
-- the final untouched test set must be defined before the corresponding training run whenever possible;
-- developer-only roadmap information must not leak into initial character knowledge;
-- curiosity must not be trained so strongly that the model asks a question on every turn;
-- disagreement must not become automatic contrarianism;
-- creativity must remain distinguishable from factual certainty;
-- emotional language must not be treated as scientific proof of consciousness;
-- in-context evolution must be distinguished from true persistent cross-session learning;
-- paraphrases and semantic variants derived from the same scenario must remain in the same dataset split;
-- research metadata must remain separate from model-visible conversational text;
-- external conversational data must not define Mini-Kuzai identity or personality;
-- OASST1 is not authorized for the current training mix;
-- SmolTalk v0.4 is a candidate reservoir, not a final training file;
-- private conversational sources remain local-only research material until explicitly approved for dataset integration;
-- source conversations and source-derived information must not be committed to the public repository;
+- no validation examples duplicated from training
+- no test prompts used for model selection
+- once a test prompt has been inspected, it becomes diagnostic and is no longer considered blind
+- model comparisons must use pre-defined evaluation criteria
+- broad claims must not be made from tiny datasets
+- personality memorization and genuine compositional behavior must be distinguished
+- the final untouched test set must be defined before the corresponding training run whenever possible
+- developer-only roadmap information must not leak into initial character knowledge
+- curiosity must not be trained so strongly that the model asks a question on every turn
+- disagreement must not become automatic contrarianism
+- creativity must remain distinguishable from factual certainty
+- emotional language must not be treated as scientific proof of consciousness
+- in-context evolution must be distinguished from true persistent cross-session learning
+- paraphrases and semantic variants derived from the same scenario must remain in the same dataset split
+- research metadata must remain separate from model-visible conversational text
+- external conversational data must not define Mini-Kuzai identity or personality
+- OASST1 is not authorized for the current training mix
+- SmolTalk v0.4 is a candidate reservoir, not a final training file
+- private conversational sources remain local-only research material until explicitly approved for dataset integration
+- source conversations and source-derived information must not be committed to the public repository
 - project documentation and assistant-generated project text must use only the ASCII hyphen-minus character `-` for dash punctuation. Unicode dash characters are prohibited.
 
 ## External public SmolTalk audit checkpoint - V41 to V46
 
 The V41-V46 workflow uses only the public SmolTalk v0.4 candidate reservoir. This public research is distinct from the local-only private-conversation pipeline.
 
-- V41-V43: context-reference and follow-up heuristics established a writing-heavy initial candidate shortlist; lexical anchors were not interpreted as independently verified conversational continuity.
-- V44: a deterministic, stratified **provisional** sample selected 1,139 conversations from the 8,000-record reservoir, with 679 multi-turn and 460 single-turn examples.
-- V45: the creative keyword quota selected 69 out of a target of 130. The 61-record shortfall is a feature of the classifier and quota allocation, not proof of a lack of creative dialogue in the source.
-- V46: a broader creative-candidate signal matched 339 records across the reservoir, including 47 selected in other V44 categories and 234 not selected by V44. This remains a hypothesis-generating filter, not a factual or pedagogical quality decision.
-- V46: a local 68-record review queue was prepared (32 baseline samples, 12 reclassification checks, 24 potential recoveries). No item in this queue was approved for TRAIN by the automatic process.
+- V41-V43 --> context-reference and follow-up heuristics established a writing-heavy initial candidate shortlist; lexical anchors were not interpreted as independently verified conversational continuity.
+- V44 --> a deterministic, stratified **provisional** sample selected 1,139 conversations from the 8,000-record reservoir, with 679 multi-turn and 460 single-turn examples.
+- V45 --> the creative keyword quota selected 69 out of a target of 130. The 61-record shortfall is a feature of the classifier and quota allocation, not proof of a lack of creative dialogue in the source.
+- V46 --> a broader creative-candidate signal matched 339 records across the reservoir, including 47 selected in other V44 categories and 234 not selected by V44. This remains a hypothesis-generating filter, not a factual or pedagogical quality decision.
+- V46 --> a local 68-record review queue was prepared (32 baseline samples, 12 reclassification checks, 24 potential recoveries). No item in this queue was approved for TRAIN by the automatic process.
 
-The public workflow is `tools/gogit_public.py`: each reviewed audit script under `tools/public-audits/` is run locally, publishes allowlisted numeric-only external SmolTalk aggregates, commits and pushes four report files, and can then be inspected from ChatGPT when the user says `gogit`. Full conversation text and local review notes are not published.
+The public workflow is `tools/gogit_public.py` --> each reviewed audit script under `tools/public-audits/` is run locally, publishes allowlisted numeric-only external SmolTalk aggregates, commits and pushes four report files, and can then be inspected from ChatGPT when the user says `gogit`. Full conversation text and local review notes are not published.
 
-**Historical checkpoint 2026-10-10: PAUSED before V47.** That resumption point is now superseded by the 2026-10-11 V52 annotation checkpoint below. The V44 selection and the official TRAIN, VALIDATION and BLIND datasets remain unchanged. No final tokenizer vocabulary, training mixture, model architecture, or Phase 03 model-training approval exists.
+**Historical checkpoint 2026-10-10 --> PAUSED before V47.** That resumption point is now superseded by the 2026-10-11 V52 annotation checkpoint below. The V44 selection and the official TRAIN, VALIDATION and BLIND datasets remain unchanged. No final tokenizer vocabulary, training mixture, model architecture, or Phase 03 model-training approval exists.
 
-Checkpoint and method documentation:
+Checkpoint and method documentation -->
 
 - [Phase 03 pause - 2026-10-10](MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md)
 - [Public audit reporter](../tools/GOGIT.md)
@@ -398,7 +398,7 @@ Checkpoint and method documentation:
 
 ## V47 integrity gate and V48 human review - resumed 2026-10-11
 
-V47 verified that all 68 queued public SmolTalk conversations match their source records, with no queue-level duplicates and no TRAIN approvals. The queue still contains 68 unreviewed candidates: 12 RELABEL, 24 RESCUE, and 32 BASE.
+V47 verified that all 68 queued public SmolTalk conversations match their source records, with no queue-level duplicates and no TRAIN approvals. The queue still contains 68 unreviewed candidates --> 12 RELABEL, 24 RESCUE, and 32 BASE.
 
 V48 provided the first-pass GitHub review of 68 public external SmolTalk cases. V49 resolved all 14 HOLD cases, producing 24 RETAIN, 44 REJECT and 0 HOLD. Each case has a GitHub-tracked justification. The local-only terminal review ledger is separate and was not imported.
 
@@ -431,15 +431,15 @@ published V48/V49 diagnostics. Nine independent review fields
 assessed cognitive value, creativity, continuity, correction,
 communication, factual risk, instruction fit and overall A/B/C/HOLD.
 
-The 24 V51 public-source cases were exported from fhc2 and assessed directly on GitHub: 9 A, 8 B, 7 C, 0 HOLD across 12 HIGH, 6 MEDIUM and 6 LOW heuristic-priority strata. Their individual rationales and scores are complete. The [V51 results](../reviews/smoltalk-v51/RESULTS-001.md) record methodological caveats and false-negative examples. The [numeric V51 GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V51-PILOT-REVIEW-001.json) was published and verified on 2026-10-11. V50 priorities remain heuristic hints, and V48/V49 history remains untouched.
+The 24 V51 public-source cases were exported from fhc2 and assessed directly on GitHub --> 9 A, 8 B, 7 C, 0 HOLD across 12 HIGH, 6 MEDIUM and 6 LOW heuristic-priority strata. Their individual rationales and scores are complete. The [V51 results](../reviews/smoltalk-v51/RESULTS-001.md) record methodological caveats and false-negative examples. The [numeric V51 GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V51-PILOT-REVIEW-001.json) was published and verified on 2026-10-11. V50 priorities remain heuristic hints, and V48/V49 history remains untouched.
 
 ## V52 inventory, annotations and final GOGIT audit - 2026-10-17
 
 The [V52 public inventory GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-INVENTORY-001.json) verified 1,071 available candidates in the 1,139-record provisional V44 selection after subtracting 44 earlier in-V44 V48 cases and 24 V51 cases. The other 24 V48 RESCUE cases originated outside V44 and must not be subtracted from it.
 
-A distinct 32-case V52 stratified pilot was then published: 8 HIGH, 12 MEDIUM and 12 LOW V50 priorities, with 20 multi-turn examples. All 32 public GitHub case pages now have complete AI-assisted qualitative annotations: **8 A, 12 B, 12 C, 0 HOLD**. See the [V52 case index](../reviews/smoltalk-v52/README.md), [qualitative summary](../reviews/smoltalk-v52/RESULTS-001.md) and [methodology](../tools/V52-GITHUB-REVIEW.md). These findings are not representative acceptance rates and do not authorize TRAIN.
+A distinct 32-case V52 stratified pilot was then published --> 8 HIGH, 12 MEDIUM and 12 LOW V50 priorities, with 20 multi-turn examples. All 32 public GitHub case pages now have complete AI-assisted qualitative annotations --> **8 A, 12 B, 12 C, 0 HOLD**. See the [V52 case index](../reviews/smoltalk-v52/README.md), [qualitative summary](../reviews/smoltalk-v52/RESULTS-001.md) and [methodology](../tools/V52-GITHUB-REVIEW.md). These findings are not representative acceptance rates and do not authorize TRAIN.
 
-**Audit chronology:** The [initial V52 report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-INIT-001.json) recorded 32 PENDING before review. The [progress report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json) recorded 8 REVIEWED and 24 PENDING at its historical checkpoint. The [final V52 GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) was published on 2026-10-17 at [commit `8a28e956`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/8a28e95637377f29d7204f51d49a174f2518929f), confirming **32/32 reviewed, 8 A, 12 B, 12 C, 0 HOLD, 0 PENDING and 0 TRAIN approved**. Earlier audit snapshots remain immutable records, not the current `latest.json` state.
+**Audit chronology --> ** The [initial V52 report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-INIT-001.json) recorded 32 PENDING before review. The [progress report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-PROGRESS-001.json) recorded 8 REVIEWED and 24 PENDING at its historical checkpoint. The [final V52 GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V52-REVIEW-FINAL-001.json) was published on 2026-10-17 at [commit `8a28e956`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/8a28e95637377f29d7204f51d49a174f2518929f), confirming **32/32 reviewed, 8 A, 12 B, 12 C, 0 HOLD, 0 PENDING and 0 TRAIN approved**. Earlier audit snapshots remain immutable records, not the current `latest.json` state.
 
 V48/V49, V51 and V52 have together reviewed **124 distinct public external SmolTalk examples**. The V50 eight-case methodology pilot re-reviewed V48 examples and is not counted twice. The provisional V44 pool and TRAIN/VALIDATION/BLIND allocation have not been modified.
 
@@ -453,7 +453,7 @@ One repaired public SmolTalk derivative, `V53-DERIV-002-V51-013`, was admitted a
 
 A second public derivative, `V53-DERIV-003-V51-002`, passed independent factual/semantic review and the published B12 eligibility audit. It has zero exact or near-duplicate hits against the 45 canonical TRAIN records and no collision with reserved B12 VALIDATION or BLIND groups. Its current state is **ELIGIBLE_FOR_ADMISSION_DECISION**; it is not yet admitted, no split is assigned, and no model training is authorized.
 
-Current V53 evidence:
+Current V53 evidence -->
 - [B08 behavior-complete audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-B08-BEHAVIOR-COMPLETE-001.json)
 - [Derivative-003 independent review audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-REVIEW-001.json)
 - [Derivative-003 eligibility audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json)
@@ -559,22 +559,22 @@ stratum-weighted diagnostic estimated **50.64% unchanged-unsuitable material**
 Simple rule mining produced one narrow high-precision rule but insufficient
 recall for broad filtering.
 
-A first supervised text-triage model also failed its authorization gates:
+A first supervised text-triage model also failed its authorization gates -->
 
-- REPAIR / EXCLUDE precision: 60.3%;
-- REPAIR / EXCLUDE recall: 52.1%;
-- EXCLUDE precision: 16.7%;
-- EXCLUDE recall: 8.8%.
+- REPAIR / EXCLUDE precision --> 60.3%
+- REPAIR / EXCLUDE recall --> 52.1%
+- EXCLUDE precision --> 16.7%
+- EXCLUDE recall --> 8.8%.
 
 That failed classifier was then used only as an uncalibrated ranking mechanism
 for Active-Learning Sample 003.
 
-Sample 003 added 72 new semantic reviews and produced a clear ranking gradient:
+Sample 003 added 72 new semantic reviews and produced a clear ranking gradient -->
 
-- HIGH_RISK_RANK unchanged-unsuitable: 88.9%;
-- MIDDLE_RANK unchanged-unsuitable: 44.4%;
-- LOW_RISK_RANK unchanged-unsuitable: 0.0%;
-- DIVERSITY_CONTROL unchanged-unsuitable: 38.9%.
+- HIGH_RISK_RANK unchanged-unsuitable --> 88.9%
+- MIDDLE_RANK unchanged-unsuitable --> 44.4%
+- LOW_RISK_RANK unchanged-unsuitable --> 0.0%
+- DIVERSITY_CONTROL unchanged-unsuitable --> 38.9%.
 
 The V59 review corpus therefore now contains **216 public annotations**.
 
@@ -582,7 +582,7 @@ The ranking direction is validated for prioritizing human review. It is not a
 calibrated probability model and does not authorize automatic KEEP, REVIEW or
 EXCLUDE decisions.
 
-The next authorized technical operation after this pause is:
+The next authorized technical operation after this pause is -->
 
 **V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
 
@@ -591,15 +591,15 @@ on a new holdout drawn from previously unreviewed public candidates. Sample 003
 must not be reused as an independent validation set because it was selected
 using the previous model ranking.
 
-Remaining pre-training blockers:
+Remaining pre-training blockers -->
 
-1. retrain and independently validate the V59 triage ranking;
-2. determine the final human-review / KEEP / REPAIR / EXCLUDE policy;
-3. finalize the public training mixture;
-4. create final post-filter segment and token accounting;
+1. retrain and independently validate the V59 triage ranking
+2. determine the final human-review / KEEP / REPAIR / EXCLUDE policy
+3. finalize the public training mixture
+4. create final post-filter segment and token accounting
 5. define public-versus-controlled sampling or weighting so the controlled
    persona corpus is not drowned by public data;
-6. reassess the final data-to-parameter ratio against V58;
+6. reassess the final data-to-parameter ratio against V58
 7. perform a separate explicit model-training authorization gate.
 
 Training remains unauthorized and has not started.
@@ -626,9 +626,9 @@ The tokenizer was learned only from canonical TRAIN messages plus the public Smo
 
 VALIDATION, BLIND TEST and private conversation material were excluded from tokenizer learning.
 
-Final artifact: `data/phase-03/tokenizers/tokenizer-v56-final.json`.
+Final artifact --> `data/phase-03/tokenizers/tokenizer-v56-final.json`.
 
-Freeze manifest: `data/phase-03/manifests/tokenizer-v56-final.json`.
+Freeze manifest --> `data/phase-03/manifests/tokenizer-v56-final.json`.
 
 See [V56 tokenizer design](MINI-KUZAI-PHASE-03-V56-TOKENIZER-DESIGN.md).
 
@@ -638,7 +638,7 @@ V57 freezes conversation serialization v1 using ordinary textual role labels `US
 
 BOS is applied at complete conversation start and EOS at conversation end.
 
-Measured populations:
+Measured populations -->
 
 ```text
 Canonical TRAIN     : 107 conversations / 24,539 tokens
@@ -664,7 +664,7 @@ See [V57 architecture preparation](MINI-KUZAI-PHASE-03-V57-ARCHITECTURE-PREPARAT
 
 ## V58 experimental architecture baseline
 
-V58 selects and freezes the first reproducible experimental architecture baseline:
+V58 selects and freezes the first reproducible experimental architecture baseline -->
 
 ```text
 architecture        : decoder-only Transformer
@@ -700,7 +700,7 @@ The final segmentation policy must preserve conversational semantics and role st
 
 The final training mixture remains unresolved.
 
-See:
+See -->
 
 - [V58 architecture baseline](MINI-KUZAI-PHASE-03-V58-ARCHITECTURE-BASELINE.md)
 - [V58 public audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V58-ARCHITECTURE-BASELINE-001.json)
@@ -709,29 +709,29 @@ See:
 
 V59 is active but paused after completion of Active-Learning Sample 003.
 
-Completed within V59:
+Completed within V59 -->
 
-1. turn-aware 2048-token segmentation implementation and audit;
-2. oversized-pair review and replacement validation;
-3. known-negative public-candidate filtering;
-4. bulk quality Samples 001 and 002;
-5. cumulative weighted bulk-quality gate;
-6. simple filter-rule mining;
-7. supervised text-triage experiment 001;
-8. Active-Learning Sample 003;
+1. turn-aware 2048-token segmentation implementation and audit
+2. oversized-pair review and replacement validation
+3. known-negative public-candidate filtering
+4. bulk quality Samples 001 and 002
+5. cumulative weighted bulk-quality gate
+6. simple filter-rule mining
+7. supervised text-triage experiment 001
+8. Active-Learning Sample 003
 9. validation that the triage ranking has useful directionality.
 
-Not completed:
+Not completed -->
 
-1. retrain triage on all 216 annotations;
-2. independent holdout 004;
-3. final public mixture decision;
-4. final public token / segment manifest after quality filtering;
-5. controlled-persona versus public-data sampling/weighting policy;
-6. final V58 data-to-parameter review;
+1. retrain triage on all 216 annotations
+2. independent holdout 004
+3. final public mixture decision
+4. final public token / segment manifest after quality filtering
+5. controlled-persona versus public-data sampling/weighting policy
+6. final V58 data-to-parameter review
 7. explicit training authorization.
 
-Resume operation:
+Resume operation -->
 
 **V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
 
@@ -740,3 +740,6 @@ architecture, or ranking readiness.
 
 **Model training remains NOT AUTHORIZED and NOT STARTED.**
 
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

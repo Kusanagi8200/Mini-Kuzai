@@ -16,14 +16,18 @@ Use this inventory to verify locally retained checkpoint files.
 | `mini-kuzai-batched.pt` | 24 KiB | `a781692528ec15d6536b6add6d1d241e813b91c493bbcc12086edb7b28adca42` |
 | `mini-kuzai-final.pt` | 24 KiB | `ceee8ed3358af068224f056067d4bcae53f561765ae13340ee9084323c1d9a28` |
 
-Verify a file with:
+Verify a file with -->
 
 ```bash
 sha256sum mini-kuzai-final.pt
 ```
 
-Expected Phase 01 final checkpoint hash:
+Expected Phase 01 final checkpoint hash -->
 
 ```text
 ceee8ed3358af068224f056067d4bcae53f561765ae13340ee9084323c1d9a28
 ```
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

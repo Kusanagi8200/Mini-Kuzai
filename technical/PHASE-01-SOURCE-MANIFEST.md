@@ -74,7 +74,7 @@ Source snapshot imported from the local Mini-Kuzai laboratory.
 67_beta_additive_identity.py
 ```
 
-Total numbered experiment scripts: **67**.
+Total numbered experiment scripts --> **67**.
 
 ## Historical model modules
 
@@ -96,3 +96,7 @@ README_ORIGINAL.txt
 The complete historical snapshot is stored under `tests/phase-01/lab/`. Clean reusable model implementations are stored under `mini_kuzai/`.
 
 Checkpoint binaries are documented separately in `technical/checkpoints/README.md` and excluded from Git.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

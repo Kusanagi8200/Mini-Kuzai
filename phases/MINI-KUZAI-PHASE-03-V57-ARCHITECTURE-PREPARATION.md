@@ -1,6 +1,6 @@
 # MINI-KUZAI PHASE 03 - V57 ARCHITECTURE PREPARATION
 
-Status: TOKEN BUDGET AND ARCHITECTURE CANDIDATE AUDIT
+Status --> TOKEN BUDGET AND ARCHITECTURE CANDIDATE AUDIT
 
 V57 begins after the V56 tokenizer freeze.
 
@@ -11,13 +11,13 @@ before selecting the Phase 03 model scale.
 
 The canonical conversational representation is now frozen.
 
-User turns begin with:
+User turns begin with -->
 
-USER:
+USER -->
 
-Mini-Kuzai turns begin with:
+Mini-Kuzai turns begin with -->
 
-MINI-KUZAI:
+MINI-KUZAI -->
 
 Turns are separated by one blank line.
 
@@ -31,16 +31,16 @@ This preserves the frozen V56 vocabulary.
 
 The V57 audit measures three distinct public populations.
 
-Canonical TRAIN:
+Canonical TRAIN -->
 
 107 conversations already admitted to the controlled TRAIN split.
 
-V44 provisional SmolTalk:
+V44 provisional SmolTalk -->
 
 1139 public conversations retained only as a provisional candidate population.
 They are not automatically approved for model training.
 
-Full SmolTalk v0.4 reservoir:
+Full SmolTalk v0.4 reservoir -->
 
 8000 public conversations used only as an upper-bound data reference.
 
@@ -48,7 +48,7 @@ VALIDATION, BLIND TEST and private conversation data remain excluded.
 
 ## Context candidates
 
-V57 measures serialized conversation coverage at:
+V57 measures serialized conversation coverage at -->
 
 1024
 2048
@@ -63,7 +63,7 @@ A recommendation is not yet a freeze.
 
 Decoder-only autoregressive Transformer.
 
-Planned common properties:
+Planned common properties -->
 
 pre-norm
 causal multi-head self-attention
@@ -74,12 +74,12 @@ tied token embedding and LM head
 bias-free attention projections
 biased MLP linear layers
 
-Four initial scales are measured:
+Four initial scales are measured -->
 
-micro  : d_model 128 / 4 heads / 4 layers
-small  : d_model 192 / 6 heads / 6 layers
-medium : d_model 256 / 8 heads / 8 layers
-large  : d_model 320 / 10 heads / 10 layers
+micro --> d_model 128 / 4 heads / 4 layers
+small --> d_model 192 / 6 heads / 6 layers
+medium --> d_model 256 / 8 heads / 8 layers
+large --> d_model 320 / 10 heads / 10 layers
 
 Parameter counts are calculated against the recommended context length.
 
@@ -87,7 +87,7 @@ Parameter counts are calculated against the recommended context length.
 
 V57 does not yet freeze model scale.
 
-The final architecture must be selected with knowledge of:
+The final architecture must be selected with knowledge of -->
 
 serialized training token volume
 context coverage
@@ -96,3 +96,7 @@ parameter-to-data ratio
 RTX 5060 8 GB execution constraints
 
 Training remains unauthorized.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

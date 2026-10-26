@@ -32,7 +32,7 @@ Each attention layer projects the residual stream into Q, K, and V, splits the e
 
 ## MLP
 
-Each Transformer block contains a two-layer feed-forward network:
+Each Transformer block contains a two-layer feed-forward network -->
 
 ```text
 embedding_dim → hidden_dim → embedding_dim
@@ -47,3 +47,7 @@ Attention and MLP outputs are added to the current representation rather than re
 ## Final LayerNorm
 
 Phase 01 also studies the learned `gamma` and `beta` parameters of the final LayerNorm. In the frozen model, `beta` creates a prompt-independent additive offset after projection through the LM head, while `gamma` acts on the standardized context-dependent representation.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

@@ -17,7 +17,7 @@ python <script>.py
 
 ## Deterministic CUDA experiments
 
-Several Phase 01 experiments used deterministic execution:
+Several Phase 01 experiments used deterministic execution -->
 
 ```python
 import os
@@ -48,3 +48,7 @@ nvidia-smi
 ## Important project rule
 
 Phase 01 experiments were executed incrementally. A model or test was validated before moving to the next mechanism. Checkpoints and generated artifacts are excluded from Git by default.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

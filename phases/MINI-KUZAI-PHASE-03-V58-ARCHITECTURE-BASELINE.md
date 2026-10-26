@@ -1,6 +1,6 @@
 # MINI-KUZAI PHASE 03 - V58 ARCHITECTURE BASELINE
 
-Status: EXPERIMENTAL BASELINE FROZEN
+Status --> EXPERIMENTAL BASELINE FROZEN
 
 V58 establishes a reproducible experimental architecture baseline for the
 first Phase 03 model experiments.
@@ -12,22 +12,22 @@ architecture decision.
 
 Decoder-only autoregressive Transformer.
 
-- vocabulary: 1024
-- context length: 2048
-- d_model: 128
-- attention heads: 4
-- head dimension: 32
-- transformer layers: 4
-- MLP dimension: 512
-- activation: GELU
-- normalization: pre-LayerNorm
+- vocabulary --> 1024
+- context length --> 2048
+- d_model --> 128
+- attention heads --> 4
+- head dimension --> 32
+- transformer layers --> 4
+- MLP dimension --> 512
+- activation --> GELU
+- normalization --> pre-LayerNorm
 - learned positional embeddings
 - tied token embedding and LM head
 - bias-free attention projections
 - biased MLP linear layers
-- dropout: 0
+- dropout --> 0
 - right padding
-- parameters: 1,184,512
+- parameters --> 1,184,512
 
 ## Why context 2048
 
@@ -70,13 +70,13 @@ BF16 capability.
 
 ## Decision boundary
 
-V58 freezes:
+V58 freezes -->
 
 - the experimental micro architecture baseline
 - context length 2048 for that baseline
 - the implementation used for reproducible model experiments
 
-V58 does not freeze:
+V58 does not freeze -->
 
 - the final training mixture
 - the final public-data selection
@@ -84,3 +84,7 @@ V58 does not freeze:
 - an irreversible final model scale
 
 Model training remains NOT AUTHORIZED and NOT STARTED.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
