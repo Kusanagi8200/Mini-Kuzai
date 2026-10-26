@@ -2,19 +2,19 @@
 
 Mini-Kuzai Phase 01 uses next-token prediction with teacher forcing.
 
-For a sentence such as:
+For a sentence such as -->
 
 ```text
 mini kuzai runs on linux <eos>
 ```
 
-the model receives:
+the model receives -->
 
 ```text
 mini kuzai runs on linux
 ```
 
-and learns to predict:
+and learns to predict -->
 
 ```text
 kuzai runs on linux <eos>
@@ -51,3 +51,7 @@ Vocabulary          : 26
 ```
 
 The learning rate was selected using the validation set only. Independent diagnostic and blind-test cases were kept separate from optimizer updates and early stopping whenever possible.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

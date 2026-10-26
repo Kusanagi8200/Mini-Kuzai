@@ -2,7 +2,7 @@
 
 This directory groups the executable experiments used during MINI-KUZAI PHASE 01.
 
-The original learning sequence was intentionally incremental: each script isolates one mechanism or diagnostic before that mechanism is integrated into the full model.
+The original learning sequence was intentionally incremental --> each script isolates one mechanism or diagnostic before that mechanism is integrated into the full model.
 
 ## Categories
 
@@ -19,3 +19,7 @@ The original learning sequence was intentionally incremental: each script isolat
 The local lab produced scripts from `01_tokenizer.py` through the later interpretability experiments. The repository structure separates those scripts by purpose rather than keeping every file in one flat directory.
 
 The exact frozen model checkpoint is not committed. Reproducible source, configuration, and test code are the primary repository artifacts.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
