@@ -1,0 +1,21 @@
+{
+  "blind_test_accessed": false,
+  "intermediate_boundaries": 159,
+  "intermediate_weight": 17.358490566037737,
+  "margin": 0.25,
+  "preview_max_deviation_bp": 4,
+  "preview_segments": 2263,
+  "preview_tokens": 1181302,
+  "py_compile_passed": true,
+  "runtime_verify_passed": true,
+  "schema_version": "v62-persistent-trainer-freeze-report-1",
+  "status": "FROZEN_RUNTIME_VERIFIED",
+  "terminal_boundaries": 345,
+  "terminal_weight": 8.0,
+  "trainer_freeze_fingerprint": "5ecba62748feba3aaf24c30abd741b3909d455a78c01f8684285e16d7334988c",
+  "training_authorized": true,
+  "training_segments": 345,
+  "training_started": false,
+  "training_unique_tokens": 295416,
+  "unit_tests_passed": true
+}
