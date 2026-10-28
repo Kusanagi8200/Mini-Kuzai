@@ -109,7 +109,6 @@ def segment_messages(
     segments: list[ConversationSegment] = []
     current: list[dict] = []
     pair_start = 0
-    current_token_count = 0
     pair_count = len(messages) // 2
 
     for pair_index in range(pair_count):
@@ -137,21 +136,23 @@ def segment_messages(
             *pair,
         ]
 
-        candidate_tokens = (
-            _token_count(
-                candidate,
-                serialize_messages=serialize_messages,
-                count_text=count_text,
-                special_token_count=special_token_count,
-            )
-            if current else pair_tokens
+        candidate_tokens = _token_count(
+            candidate,
+            serialize_messages=serialize_messages,
+            count_text=count_text,
+            special_token_count=special_token_count,
         )
 
         if (
             current
             and candidate_tokens > context_length
         ):
-            current_tokens = current_token_count
+            current_tokens = _token_count(
+                current,
+                serialize_messages=serialize_messages,
+                count_text=count_text,
+                special_token_count=special_token_count,
+            )
 
             segments.append(
                 ConversationSegment(
@@ -164,14 +165,17 @@ def segment_messages(
             )
 
             current = list(pair)
-            current_token_count = pair_tokens
             pair_start = pair_index
         else:
             current = candidate
-            current_token_count = candidate_tokens
 
     if current:
-        current_tokens = current_token_count
+        current_tokens = _token_count(
+            current,
+            serialize_messages=serialize_messages,
+            count_text=count_text,
+            special_token_count=special_token_count,
+        )
 
         segments.append(
             ConversationSegment(
