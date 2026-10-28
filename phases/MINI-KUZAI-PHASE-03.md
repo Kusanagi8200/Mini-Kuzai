@@ -616,37 +616,38 @@ The persona-first exposure policy is now finalized -->
 - persona-oriented exposure --> **76.58%**
 - physical data duplication --> **NO**.
 
+The bounded training-protocol preflight is now closed -->
+
+- hardware preflight --> **PASS**
+- authorization candidate --> **YES**
+- peak reserved VRAM --> **632 MiB / 8.20%**
+- pilot max steps --> **145**
+- pilot max exposure tokens --> **1181664**
+- training started --> **NO**.
+
 The next authorized technical operation is -->
 
-**V59 TRAINING HYPERPARAMETERS / STEP BUDGET / AUTHORIZATION PREFLIGHT - SCRIPTED / READY**
+**V59 FINAL MIX FREEZE + TRAINING AUTHORIZATION GATE - SCRIPTED / READY**
 
-Bounded pilot protocol -->
+The terminal gate freezes the exact 272-conversation training identity -->
 
-- frozen V58 MICRO architecture
-- BF16
-- AdamW
-- base LR 3e-4
-- cosine decay to 3e-5 after 10% warmup
-- beta1 0.9 / beta2 0.95
-- weight decay 0.10
-- gradient clip 1.0
-- microbatch preflight 8 sequences at full 2048 context
-- dynamic accumulation to 8192 non-pad tokens per optimizer step
-- four reference exposure cycles
-- max exposure budget **1181664 tokens**
-- max optimizer-step budget **145**
-- frozen VALIDATION available during pilot
-- BLIND TEST reserved and inaccessible during pilot.
+- controlled TRAIN --> 107 conversations
+- clean public DIRECT_KEEP --> 165 conversations
+- unique training segments --> 345
+- unique clean tokens --> 295416.
 
-The preflight is synthetic and disposable. It does not write a model checkpoint
-and does not authorize persistent training.
+It fingerprints tokenizer, serializer, segmentation, architecture, exposure
+sampler, training protocol, VALIDATION, BLIND and semantic split boundaries.
+
+A successful gate authorizes only the bounded V59 pilot. BLIND TEST remains
+reserved and inaccessible during training.
 
 Remaining pre-training blockers -->
 
-1. execute the bounded training-protocol hardware preflight
-2. review the preflight and protocol GOGIT result
-3. publish a separate explicit model-training authorization decision
-4. implement or freeze the persistent trainer only after authorization.
+1. execute the final mix freeze and authorization gate
+2. verify the terminal GOGIT state
+3. implement and freeze the persistent trainer only if TRAINING_AUTHORIZED = 1
+4. run the bounded pilot only through the frozen authorization scope.
 
 Training remains unauthorized and has not started.
 
