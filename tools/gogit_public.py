@@ -728,6 +728,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     tokenizer_workstream = tracked.startswith(
         "tools/public-audits/phase03_v56_tokenizer_"
     )
+    final_v59_authorization = (
+        tracked
+        == "tools/public-audits/phase03_v59_final_mix_freeze_authorization.py"
+    )
 
     architecture_workstream = tracked.startswith(
         (
@@ -736,6 +740,13 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             "tools/public-audits/phase03_v59_",
         )
     )
+
+    if final_v59_authorization:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("V59_MIX_FINALIZED") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+        )
 
     if tokenizer_workstream or architecture_workstream:
         return (
@@ -805,6 +816,7 @@ def main():
                 f"Audit exited with status {execution.returncode}; nothing published"
             )
         metrics = numeric_metrics(execution.stdout)
+        training_authorized = metrics.get("TRAINING_AUTHORIZED") == 1
         report = {
             "step_id": args.step,
             "project": "Mini-Kuzai",
@@ -814,10 +826,14 @@ def main():
             "producer_sha256": hashlib.sha256(
                 audit_path.read_bytes()
             ).hexdigest(),
-            "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+            "status": (
+                "TRAINING_AUTHORIZATION_GATE"
+                if training_authorized
+                else "PUBLIC_AGGREGATE_REVIEW_ONLY"
+            ),
             "metrics": metrics,
             "semantic_validation_complete": semantic_validation_complete_for_audit(tracked, metrics),
-            "training_authorized": False,
+            "training_authorized": training_authorized,
             "private_conversation_data_included": False,
         }
         text_json = json.dumps(
@@ -826,11 +842,17 @@ def main():
         text_txt = (
             f"STEP_ID: {args.step}\n{MARKER}\n"
             + "".join(f"{k}: {v}\n" for k, v in metrics.items())
-            + "STATUS: PUBLIC_AGGREGATE_REVIEW_ONLY\n"
+            + "STATUS: {}\n".format(
+                "TRAINING_AUTHORIZATION_GATE"
+                if training_authorized
+                else "PUBLIC_AGGREGATE_REVIEW_ONLY"
+            )
             + "SEMANTIC_VALIDATION_COMPLETE: {}\n".format(
                 "TRUE" if semantic_validation_complete_for_audit(tracked, metrics) else "FALSE"
             )
-            + "TRAINING_AUTHORIZED: FALSE\n"
+            + "TRAINING_AUTHORIZED: {}\n".format(
+                "TRUE" if training_authorized else "FALSE"
+            )
         )
 
         old_files = {
