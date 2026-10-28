@@ -449,7 +449,7 @@ human-review policy.
 Policy states -->
 
 1. `DIRECT_KEEP` --> only human-reviewed clean examples
-2. `REPAIR_QUEUE` --> useful material that must not be admitted unchanged
+2. `REPAIR_QUEUE` --> reviewed material not clean enough for direct admission; this includes explicit REPAIR cases and any historical KEEP that does not satisfy the strict clean gate
 3. `EXCLUDE_REVIEWED` --> reviewed unsuitable material removed from the future mix
 4. `DEFER_UNREVIEWED` --> never-reviewed candidates remain outside the V59
    training mix.
@@ -458,6 +458,8 @@ Quality rule -->
 
 - Sample 001-004 direct admission requires disposition KEEP with grade A,
   factual risk LOW and instruction fit GOOD
+- a historical KEEP that does not satisfy A / LOW / GOOD keeps its original
+  semantic label but is conservatively redirected to `REPAIR_QUEUE`
 - retained structured V51/V52 direct admission requires grade A, factual risk
   LOW and instruction fit GOOD
 - persona priority never overrides a known factual, logical, technical or
