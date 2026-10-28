@@ -39,6 +39,9 @@ SOURCE_PHASE03_V60 = (
 SOURCE_PHASE03_V61 = (
     "Mini-Kuzai V61 boundary-aware EOS objective preparation"
 )
+SOURCE_PHASE03_V62 = (
+    "Mini-Kuzai V62 pairwise boundary-margin objective preparation"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1089,6 +1092,61 @@ METRIC_KEYS = {
     "V61_EOS1_PROBE_BEST_RANK_MEAN_X100",
     "V61_EOS1_PROBE_BEST_RANK_MEDIAN_X100",
     "V61_EOS1_PROBE_TOP1",
+    "V62_MARGIN_PREFLIGHT_PASS",
+    "V62_MARGIN_SELECTED_X1000",
+    "V62_MARGIN_TERMINAL_WEIGHT_X100",
+    "V62_MARGIN_INTERMEDIATE_WEIGHT_X100",
+    "V62_MARGIN_AUX_RATIO_BP",
+    "V62_MARGIN_TERM_ACTIVE",
+    "V62_MARGIN_INTERMEDIATE_ACTIVE",
+    "V62_MARGIN_BALANCE_FACTOR_X1000",
+    "V62_MARGIN_RESERVED_MIB",
+    "V62_MARGIN_BLIND_ACCESS",
+    "V62_OBJECTIVE_FREEZE_PASS",
+    "V62_OBJECTIVE_MARGIN_X1000",
+    "V62_OBJECTIVE_TERMINAL_WEIGHT_X100",
+    "V62_OBJECTIVE_INTERMEDIATE_WEIGHT_X100",
+    "V62_OBJECTIVE_BLIND_ACCESS",
+    "V62_PROTOCOL_DEFINED",
+    "V62_PROTOCOL_PREFLIGHT_PASS",
+    "V62_PROTOCOL_INITIAL_CYCLES",
+    "V62_PROTOCOL_MAX_TOKENS",
+    "V62_PROTOCOL_MAX_STEPS",
+    "V62_PROTOCOL_SCHEDULER_STEPS",
+    "V62_PROTOCOL_REVIEW_CYCLE",
+    "V62_PROTOCOL_MARGIN_X1000",
+    "V62_PROTOCOL_TERMINAL_WEIGHT_X100",
+    "V62_PROTOCOL_INTERMEDIATE_WEIGHT_X100",
+    "V62_PROTOCOL_BLIND_ACCESS",
+    "V62_AUTH_PASS",
+    "V62_AUTH_MAX_TOKENS",
+    "V62_AUTH_MAX_STEPS",
+    "V62_AUTH_REVIEW_CYCLE",
+    "V62_AUTH_TRAIN_SEGMENTS",
+    "V62_AUTH_TRAIN_UNIQUE_TOKENS",
+    "V62_AUTH_MARGIN_X1000",
+    "V62_AUTH_TERMINAL_WEIGHT_X100",
+    "V62_AUTH_INTERMEDIATE_WEIGHT_X100",
+    "V62_AUTH_BLIND_ACCESS",
+    "V62_AUTH_EXTENSION_REQUIRES_FREEZE",
+    "V62_TRAINER_FREEZE_PASS",
+    "V62_TRAINER_PYCOMPILE_PASS",
+    "V62_TRAINER_TESTS_PASS",
+    "V62_TRAINER_RUNTIME_VERIFY_PASS",
+    "V62_TRAINER_TRAIN_SEGMENTS",
+    "V62_TRAINER_TRAIN_UNIQUE_TOKENS",
+    "V62_TRAINER_TERMINAL_BOUNDARIES",
+    "V62_TRAINER_INTERMEDIATE_BOUNDARIES",
+    "V62_TRAINER_PREVIEW_TOKENS",
+    "V62_TRAINER_PREVIEW_SEGMENTS",
+    "V62_TRAINER_PREVIEW_MAX_DEV_BP",
+    "V62_TRAINER_MARGIN_X1000",
+    "V62_TRAINER_TERMINAL_WEIGHT_X100",
+    "V62_TRAINER_INTERMEDIATE_WEIGHT_X100",
+    "V62_TRAINER_MAX_STEPS",
+    "V62_TRAINER_MAX_TOKENS",
+    "V62_TRAINER_REVIEW_CYCLE",
+    "V62_TRAINER_BLIND_ACCESS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1147,6 +1205,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V60
     if tracked.startswith("tools/public-audits/phase03_v61_"):
         return SOURCE_PHASE03_V61
+    if tracked.startswith("tools/public-audits/phase03_v62_"):
+        return SOURCE_PHASE03_V62
     return SOURCE
 
 
@@ -1190,6 +1250,11 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v61_train_run_001_eos_calibration.py",
     }
 
+    post_authorization_v62 = tracked in {
+        "tools/public-audits/phase03_v62_training_authorization.py",
+        "tools/public-audits/phase03_v62_persistent_trainer_freeze.py",
+    }
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -1197,6 +1262,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             "tools/public-audits/phase03_v59_",
             "tools/public-audits/phase03_v60_",
             "tools/public-audits/phase03_v61_",
+            "tools/public-audits/phase03_v62_",
         )
     )
 
@@ -1233,6 +1299,13 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
             and metrics.get("TRAINING_AUTHORIZED") == 1
             and metrics.get("TRAINING_STARTED") == 1
+        )
+
+    if post_authorization_v62:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+            and metrics.get("TRAINING_STARTED") == 0
         )
 
     if tokenizer_workstream or architecture_workstream:
