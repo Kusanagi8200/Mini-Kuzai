@@ -362,12 +362,18 @@ def main() -> None:
             # True terminal EOS position.
             terminal_logits = raw[-1]
             terminal_prob = float(eos_probs[-1].item())
+            terminal_log_prob = float(
+                torch.log_softmax(
+                    terminal_logits,
+                    dim=-1,
+                )[T.EOS_ID].item()
+            )
             terminal_rank = token_rank(
                 terminal_logits,
                 T.EOS_ID,
             )
             terminal_probs.append(terminal_prob)
-            terminal_nlls.append(-math.log(terminal_prob))
+            terminal_nlls.append(-terminal_log_prob)
             terminal_ranks.append(terminal_rank)
             terminal_top1 += int(terminal_rank == 1)
 
