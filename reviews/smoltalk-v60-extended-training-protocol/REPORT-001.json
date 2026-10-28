@@ -1,0 +1,161 @@
+{
+  "blind_test_accessed": false,
+  "hardware_preflight": {
+    "bf16": true,
+    "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gradient_norm_finite": true,
+    "loss_finite": true,
+    "memory_gate_bp": 6000,
+    "passed": true,
+    "peak_allocated_mib": 564,
+    "peak_reserved_bp": 820,
+    "peak_reserved_mib": 632,
+    "preclip_gradient_norm": 0.31042400002479553,
+    "total_memory_mib": 7705
+  },
+  "protocol": {
+    "architecture": "V58_SHAPE_V60_INITIALIZATION_FROZEN",
+    "batching": {
+      "gradient_accumulation": "DYNAMIC_UNTIL_TOKEN_TARGET",
+      "loss_ignore_pad": true,
+      "microbatch_sequences": 8,
+      "next_token_shift": true,
+      "optimizer_step_target_nonpad_tokens": 8192,
+      "pad_token_id": 0,
+      "right_padding": true
+    },
+    "checkpointing": {
+      "every_exposure_tokens": 147708,
+      "include_optimizer": true,
+      "include_rng_state": true,
+      "include_sampler_state": true,
+      "include_scheduler": true,
+      "save_best_validation": true,
+      "save_last": true,
+      "save_milestones": true
+    },
+    "comparison": {
+      "primary_model_change": "CORRECTED_PARAMETER_INITIALIZATION",
+      "same_stream_weights": true,
+      "same_tokenizer": true,
+      "same_training_corpus": true,
+      "v59_baseline_preserved": true
+    },
+    "context_length": 2048,
+    "dtype": "BF16",
+    "evaluation": {
+      "blind_test_during_training": false,
+      "blind_test_reserved_until_training_finalized": true,
+      "continuation_signals": {
+        "generation_distinct_outputs": true,
+        "generation_eos": true,
+        "generation_repeat_trigram_rate": true,
+        "generation_utf8_validity": true,
+        "validation_loss": true
+      },
+      "generation_probe": "FIXED_VALIDATION_PROMPTS",
+      "generation_probe_max_new_tokens": 96,
+      "milestone_review_cycles": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "plateau_review": {
+        "action": "REVIEW_GENERATION_BEFORE_STOP_OR_EXTENSION",
+        "minimum_cycle": 4,
+        "minimum_validation_improvement_bp": 50,
+        "window_evaluations": 4
+      },
+      "stop": {
+        "consecutive_degraded_evals": 3,
+        "minimum_completed_evals": 6,
+        "nonfinite_gradient_norm": true,
+        "nonfinite_loss": true,
+        "relative_validation_loss_degradation_bp": 500
+      },
+      "teacher_forced_validation_loss": true,
+      "validation_every_exposure_tokens": 147708,
+      "validation_split": "FROZEN_VALIDATION_36"
+    },
+    "exposure": {
+      "extension_block_cycles": 8,
+      "extension_requires_new_protocol_freeze": true,
+      "initial_window_cycles": 16,
+      "initial_window_max_exposure_tokens": 4726656,
+      "initial_window_max_optimizer_steps": 577,
+      "milestones": [
+        {
+          "action": "RECORDED_MILESTONE",
+          "cycle": 1,
+          "exposure_tokens": 295416
+        },
+        {
+          "action": "RECORDED_MILESTONE",
+          "cycle": 4,
+          "exposure_tokens": 1181664
+        },
+        {
+          "action": "MANDATORY_CONTINUATION_REVIEW",
+          "cycle": 8,
+          "exposure_tokens": 2363328
+        },
+        {
+          "action": "MANDATORY_CONTINUATION_REVIEW",
+          "cycle": 16,
+          "exposure_tokens": 4726656
+        }
+      ],
+      "quota_overshoot_rule": "LAST_SEGMENT_MAY_OVERSHOOT_STREAM_QUOTA",
+      "reference_cycle_tokens": 295416,
+      "stream_quota_mode": "TOKEN_QUOTA_WITH_REPLACEMENT",
+      "stream_share_tolerance_bp": 100,
+      "target_share_bp": {
+        "CONTROLLED_TRAIN": 3000,
+        "GENERAL_SUPPORT": 1500,
+        "LEGACY_STRUCTURED_KEEP": 842,
+        "PERSONA_CORE": 4658
+      },
+      "unique_clean_tokens": 295416
+    },
+    "gradient_clip_norm": 1.0,
+    "hardware_preflight": {
+      "full_context_microbatch_sequences": 8,
+      "memory_gate_bp": 6000,
+      "require_bf16": true,
+      "require_cuda": true
+    },
+    "initialization_freeze_fingerprint": "2e64f9e4749710e03f32db220cfe1ab5b0a304ef250ebe9408ad0224799e4cb6",
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "eps": 1e-08,
+      "learning_rate": 0.0003,
+      "name": "AdamW",
+      "weight_decay": 0.1
+    },
+    "parameters": 1184512,
+    "scheduler": {
+      "extension_policy": "NEW_PROTOCOL_FREEZE_REQUIRED_BEYOND_INITIAL_WINDOW",
+      "max_steps": 577,
+      "min_learning_rate": 3e-05,
+      "name": "linear_warmup_cosine_decay",
+      "warmup_steps": 20
+    },
+    "schema_version": "v60-extended-training-protocol-1",
+    "seed": 42,
+    "status": "PROTOCOL_DEFINED_PREFLIGHT_REQUIRED",
+    "torch_compile": false,
+    "training_authorized": false,
+    "training_started": false,
+    "v59_corpus_baseline_fingerprint": "40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503",
+    "vocab_size": 1024
+  },
+  "protocol_freeze_candidate": true,
+  "schema_version": "v60-extended-training-protocol-report-1",
+  "status": "PREFLIGHT_PASSED_FREEZE_REQUIRED",
+  "training_authorized": false,
+  "training_started": false
+}

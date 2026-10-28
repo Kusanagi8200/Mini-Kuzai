@@ -1,0 +1,11 @@
+{
+  "architecture_shape_unchanged": true,
+  "blind_test_accessed": false,
+  "gate_passed": true,
+  "initialization_freeze_fingerprint": "2e64f9e4749710e03f32db220cfe1ab5b0a304ef250ebe9408ad0224799e4cb6",
+  "schema_version": "v60-initialization-freeze-report-1",
+  "status": "V60_INITIALIZATION_FROZEN",
+  "training_authorized": false,
+  "training_started": false,
+  "v59_corpus_baseline_fingerprint": "40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503"
+}
