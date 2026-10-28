@@ -1414,11 +1414,39 @@ def _greedy_probe(
     model.train()
 
     new_ids = generated[len(ids):]
+    generated_utf8_valid = True
+    try:
+        generated_text = tokenizer.decode(new_ids)
+    except UnicodeDecodeError:
+        # A byte-level model can emit incomplete or invalid UTF-8 while it is
+        # still untrained. This is diagnostic output only and must not abort
+        # the bounded pilot. Source and target decoding remains strict.
+        token_bytes = getattr(tokenizer, "_token_bytes", None)
+        if not isinstance(token_bytes, dict):
+            raise
+        payload = bytearray()
+        for token_id in new_ids:
+            token_id = int(token_id)
+            if token_id in {PAD_ID, BOS_ID, EOS_ID}:
+                continue
+            value = token_bytes.get(token_id)
+            if value is None:
+                raise ValueError(
+                    f"Unknown generated token id: {token_id}"
+                )
+            payload.extend(value)
+        generated_text = bytes(payload).decode(
+            "utf-8",
+            errors="replace",
+        )
+        generated_utf8_valid = False
+
     return {
         "source_id": segment.source_id,
         "prompt": prompt_text,
-        "generated_text": tokenizer.decode(new_ids),
+        "generated_text": generated_text,
         "generated_tokens": len(new_ids),
+        "generated_utf8_valid": generated_utf8_valid,
         "ended_with_eos": bool(new_ids and new_ids[-1] == EOS_ID),
     }
 
