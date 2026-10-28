@@ -595,28 +595,45 @@ The independent Holdout 004 cycle is now closed -->
 This invalidates classifier-driven selection as a reliable V59 corpus-selection
 mechanism.
 
+The conservative V59 final-mix policy is now closed -->
+
+- DIRECT_KEEP --> **165 conversations / 270877 tokens**
+- REPAIR_QUEUE --> **108 conversations / 198226 tokens**
+- EXCLUDE_REVIEWED --> **47 conversations / 56726 tokens**
+- DEFER_UNREVIEWED --> **792 conversations / 1204585 tokens**
+- controlled TRAIN --> **24539 tokens**
+- combined clean ready-now envelope --> **295416 tokens**.
+
+No automatic filtering is used. No REPAIR or never-reviewed conversation is
+admitted unchanged.
+
 The next authorized technical operation is -->
 
-**V59 FINAL MIX POLICY / PERSONA-FIRST PRUNING - SCRIPTED / READY**
+**V59 PERSONA-FIRST MIX WEIGHTING / EXPOSURE POLICY - SCRIPTED / READY**
 
-The policy is conservative -->
+The policy uses four clean streams -->
 
-1. direct admission only for human-reviewed clean examples
-2. REPAIR examples remain outside training until corrected
-3. reviewed EXCLUDE examples are removed from the future mix
-4. never-reviewed examples remain deferred
-5. persona HIGH/MEDIUM is prioritized only after quality validation.
+1. CONTROLLED_TRAIN
+2. PERSONA_CORE
+3. GENERAL_SUPPORT
+4. LEGACY_STRUCTURED_KEEP.
+
+Exposure constraints -->
+
+- CONTROLLED_TRAIN >= 30%
+- CONTROLLED_TRAIN + PERSONA_CORE >= 75%
+- GENERAL_SUPPORT <= 15%
+- LEGACY_STRUCTURED_KEEP <= 10%.
+
+The policy uses weighted sampling with replacement at the stream level. It does
+not physically duplicate corpus records.
 
 Remaining pre-training blockers -->
 
-1. retrain and independently validate the V59 triage ranking
-2. determine the final human-review / KEEP / REPAIR / EXCLUDE policy
-3. finalize the public training mixture
-4. create final post-filter segment and token accounting
-5. define public-versus-controlled sampling or weighting so the controlled
-   persona corpus is not drowned by public data;
-6. reassess the final data-to-parameter ratio against V58
-7. perform a separate explicit model-training authorization gate.
+1. execute and freeze the persona-first exposure policy
+2. define optimizer, learning rate, batch size and training-step budget
+3. reassess the effective exposure-to-parameter ratio against V58
+4. perform a separate explicit model-training authorization gate.
 
 Training remains unauthorized and has not started.
 
