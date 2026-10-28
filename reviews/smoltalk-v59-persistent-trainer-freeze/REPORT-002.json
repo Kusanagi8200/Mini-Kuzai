@@ -1,0 +1,188 @@
+{
+  "authorization_freeze_fingerprint": "40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503",
+  "py_compile_output": "",
+  "reason": "step-0 generated probe invalid UTF-8 handling",
+  "refreeze_revision": 2,
+  "schedule_preview": {
+    "completed_sampler_cycles": 4,
+    "exposure_tokens": 1181302,
+    "segments": 2263,
+    "stream_deviation_bp": {
+      "CONTROLLED_TRAIN": -2,
+      "GENERAL_SUPPORT": 4,
+      "LEGACY_STRUCTURED_KEEP": 0,
+      "PERSONA_CORE": -2
+    },
+    "stream_share_bp": {
+      "CONTROLLED_TRAIN": 2998,
+      "GENERAL_SUPPORT": 1504,
+      "LEGACY_STRUCTURED_KEEP": 842,
+      "PERSONA_CORE": 4656
+    },
+    "stream_tokens": {
+      "CONTROLLED_TRAIN": 354133,
+      "GENERAL_SUPPORT": 177704,
+      "LEGACY_STRUCTURED_KEEP": 99508,
+      "PERSONA_CORE": 549957
+    }
+  },
+  "schema_version": "v59-persistent-trainer-freeze-report-1",
+  "status": "PERSISTENT_TRAINER_FROZEN",
+  "supersedes_trainer_freeze": "TRAINER-FREEZE-001.json",
+  "trainer_freeze_fingerprint": "095597f50a788b69634ba93f8665e49801a17e7c27c6a1b4baaead6ed4634e28",
+  "training_authorized": true,
+  "training_inventory": {
+    "CONTROLLED_TRAIN": {
+      "segments": 107,
+      "tokens": 24539
+    },
+    "GENERAL_SUPPORT": {
+      "segments": 76,
+      "tokens": 63213
+    },
+    "LEGACY_STRUCTURED_KEEP": {
+      "segments": 20,
+      "tokens": 24877
+    },
+    "PERSONA_CORE": {
+      "segments": 142,
+      "tokens": 182787
+    }
+  },
+  "training_started": false,
+  "unit_test_output": "../root/GitHub-Mini-Kuzai/Mini-Kuzai/tests/test_phase03_v59_trainer.py:232: ResourceWarning: unclosed file <_io.TextIOWrapper name='/root/GitHub-Mini-Kuzai/Mini-Kuzai/mini_kuzai/phase03_v59_trainer.py' mode='r' encoding='utf-8'>\n  ).read()\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n.......\n----------------------------------------------------------------------\nRan 9 tests in 0.002s\n\nOK",
+  "validation_inventory": {
+    "files": [
+      {
+        "behavior": "B01",
+        "git_blob_sha": "f5aef6f21f53b0f723bf64c2f2c74a0b749b0681",
+        "path": "data/phase-03/validation/validation-batch-b01-v0.2.jsonl",
+        "records": 2,
+        "sha256": "c038f677fac83ae07cba83c49cb0bfe4913fb9e5e7793ca95d3f09a366c99a4e"
+      },
+      {
+        "behavior": "B02",
+        "git_blob_sha": "b7875fd2b3adb138d59a7c442b4d2b38e7324b47",
+        "path": "data/phase-03/validation/validation-batch-b02-v0.3.jsonl",
+        "records": 2,
+        "sha256": "18de8ca0f0dc8e264f3521100caca64ead5cdebccd8c7a115b13645a27ad31ec"
+      },
+      {
+        "behavior": "B03",
+        "git_blob_sha": "8166c7f381e501515b1461fcb5d66b232702d1fe",
+        "path": "data/phase-03/validation/validation-batch-b03-v0.1.jsonl",
+        "records": 2,
+        "sha256": "4382c56d047bf822d07e23b2ffd26c84d1af75ff7043b1d4ec6b6e7c1fbfffb4"
+      },
+      {
+        "behavior": "B04",
+        "git_blob_sha": "5481509165aabf0f4e4c888b88aa893ffa96b80c",
+        "path": "data/phase-03/validation/validation-batch-b04-v0.1.jsonl",
+        "records": 2,
+        "sha256": "0fb20023aea0ef310cd3cfa01292b6bb0b9ffb9646cf0dc776eba3851d7dac94"
+      },
+      {
+        "behavior": "B05",
+        "git_blob_sha": "10d262ce7ecf809d07591fd19a94ed105274c332",
+        "path": "data/phase-03/validation/validation-batch-b05-v0.1.jsonl",
+        "records": 2,
+        "sha256": "63f04eae6f8494b071a849a4e82043424296801e86f9b0b03ed0c14fd3b2f052"
+      },
+      {
+        "behavior": "B06",
+        "git_blob_sha": "6aefb45d531a768cf7a344d311f448270fa6cc63",
+        "path": "data/phase-03/validation/validation-batch-b06-v0.1.jsonl",
+        "records": 2,
+        "sha256": "f68999b4e127719cbc6682868ffa7bac652a28d6789f06f296426b1651d9abd8"
+      },
+      {
+        "behavior": "B07",
+        "git_blob_sha": "d0682736d44c9113c00db25430551fad3f434014",
+        "path": "data/phase-03/validation/validation-batch-b07-v0.2.jsonl",
+        "records": 2,
+        "sha256": "9bb178994ea48bbcbad375a331e0aff7094b16c062f8d0a38a6f7a20d2d0c159"
+      },
+      {
+        "behavior": "B08",
+        "git_blob_sha": "e701b182cff0f9007934f8852ad0b89ee0dd49ff",
+        "path": "data/phase-03/validation/validation-batch-b08-v0.1.jsonl",
+        "records": 2,
+        "sha256": "bc5a7241da60d2da3dd1de149aadee5803950733d038c1b3ceecab4357052521"
+      },
+      {
+        "behavior": "B09",
+        "git_blob_sha": "681ef16fa554f6f3bf1fbbe7dd61ce44cb00f378",
+        "path": "data/phase-03/validation/validation-batch-b09-v0.1.jsonl",
+        "records": 2,
+        "sha256": "81859fe137380fcf6561b0b14333e1a3f425c3ca0f353d7f9f618f8e791c2d82"
+      },
+      {
+        "behavior": "B10",
+        "git_blob_sha": "5cbcff76aaba2ec6fcbb0446422dd42ccc13b66f",
+        "path": "data/phase-03/validation/validation-batch-b10-v0.1.jsonl",
+        "records": 2,
+        "sha256": "6a09b1eadffc9c11b5faab4182f29bbdd2f4803228a64e15f3ae0a29b156acf9"
+      },
+      {
+        "behavior": "B11",
+        "git_blob_sha": "95c3be4c65790d9ed2baab901e72e59d121e2887",
+        "path": "data/phase-03/validation/validation-batch-b11-v0.1.jsonl",
+        "records": 2,
+        "sha256": "434e02e7b0200d48f3ff9fb44f146b004a4d63d74470d44139057bf8107004e8"
+      },
+      {
+        "behavior": "B12",
+        "git_blob_sha": "06c250b35826099b3eceb6854cdd2973a22ec4f8",
+        "path": "data/phase-03/validation/validation-batch-b12-v0.1.jsonl",
+        "records": 2,
+        "sha256": "d4b2aee4faa1f79bde28d02baacc6f1c8d326a76c1f321aa5f3a15ff96e12115"
+      },
+      {
+        "behavior": "B13",
+        "git_blob_sha": "3ca79ab5eff9c7bd9dadb21655de0fc993149739",
+        "path": "data/phase-03/validation/validation-batch-b13-v0.1.jsonl",
+        "records": 2,
+        "sha256": "fd88bed713b31bec5412b5451a1296f572352556263ad0d6fcbd053a06751d76"
+      },
+      {
+        "behavior": "B14",
+        "git_blob_sha": "a904d1b52461824ec77b97db6e547dad853af6e9",
+        "path": "data/phase-03/validation/validation-batch-b14-v0.1.jsonl",
+        "records": 2,
+        "sha256": "bc148dcf7cf4f3c43df40ebdd5e2ec4ed9e7c843b9d9c92a07e38feca41c44f0"
+      },
+      {
+        "behavior": "B15",
+        "git_blob_sha": "e5f3955eb72ccc90f01a0ffdccd6deae0f58135b",
+        "path": "data/phase-03/validation/validation-batch-b15-v0.1.jsonl",
+        "records": 2,
+        "sha256": "457e5bffbd1aacda0aaa17be638dbdaedc8354bec9aaf8c4b89b97d44548accc"
+      },
+      {
+        "behavior": "B16",
+        "git_blob_sha": "eb5ebc64c25070b99d1df42ffeb0220d8e4163b9",
+        "path": "data/phase-03/validation/validation-batch-b16-v0.1.jsonl",
+        "records": 2,
+        "sha256": "25e7aba7751796faedad8ead45fbf387b6bd2e4abadaa18516a340a3faa6c4bc"
+      },
+      {
+        "behavior": "B17",
+        "git_blob_sha": "f13155829927bf55bd43c17665e3a947d7f773cb",
+        "path": "data/phase-03/validation/validation-batch-b17-v0.1.jsonl",
+        "records": 2,
+        "sha256": "38aada72c1a27e4d0b01749acdefec550b0e0b59737e595af29d240b7f02c8f7"
+      },
+      {
+        "behavior": "B18",
+        "git_blob_sha": "3927fafa2e304c89c7468baf78830d6965de078c",
+        "path": "data/phase-03/validation/validation-batch-b18-v0.1.jsonl",
+        "records": 2,
+        "sha256": "0dc367389aee51c39498308e88ef333e9356039b22da3bfed2acefdcc12e2a17"
+      }
+    ],
+    "record_ids_sha256": "677aa1997cc45feb8aac60529eb844d3b5256a6b86dcb6350e47ad7c9919ec20",
+    "records": 36,
+    "segments": 36,
+    "tokens": 9242
+  }
+}
