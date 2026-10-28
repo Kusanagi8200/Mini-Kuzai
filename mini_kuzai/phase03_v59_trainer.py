@@ -865,6 +865,14 @@ class StreamQuotaSampler:
 
         self._mix_rng = random.Random(self.seed + 7919)
         self.completed_cycles = 0
+        self._segment_by_key = {
+            stream: {
+                (segment.source_id, segment.segment_index): segment
+                for segment in streams[stream]
+            }
+            for stream in STREAMS
+        }
+        self._pending: list[FrozenSegment] = []
 
     def _next_from_stream(self, stream: str) -> FrozenSegment:
         order = self._orders[stream]
@@ -914,6 +922,17 @@ class StreamQuotaSampler:
         self.completed_cycles += 1
         return selected
 
+    def next_segment(
+        self,
+        reference_cycles: int,
+    ) -> FrozenSegment | None:
+        if not self._pending:
+            if self.completed_cycles >= reference_cycles:
+                return None
+            self._pending = self.next_cycle()
+
+        return self._pending.pop(0)
+
     def state_dict(self) -> dict:
         return {
             "seed": self.seed,
@@ -930,6 +949,14 @@ class StreamQuotaSampler:
             },
             "mix_rng_state": self._mix_rng.getstate(),
             "completed_cycles": self.completed_cycles,
+            "pending": [
+                {
+                    "stream": segment.stream,
+                    "source_id": segment.source_id,
+                    "segment_index": segment.segment_index,
+                }
+                for segment in self._pending
+            ],
         }
 
     def load_state_dict(self, state: dict) -> None:
@@ -959,6 +986,21 @@ class StreamQuotaSampler:
 
         self._mix_rng.setstate(state["mix_rng_state"])
         self.completed_cycles = int(state["completed_cycles"])
+
+        pending = []
+        for item in state.get("pending", []):
+            stream = item["stream"]
+            key = (
+                item["source_id"],
+                int(item["segment_index"]),
+            )
+            segment = self._segment_by_key.get(stream, {}).get(key)
+            if segment is None:
+                raise RuntimeError(
+                    "Sampler resume pending-segment mismatch"
+                )
+            pending.append(segment)
+        self._pending = pending
 
 
 @dataclasses.dataclass
@@ -1079,9 +1121,11 @@ def _iter_cycles(
     sampler: StreamQuotaSampler,
     reference_cycles: int,
 ) -> Iterator[FrozenSegment]:
-    while sampler.completed_cycles < reference_cycles:
-        for segment in sampler.next_cycle():
-            yield segment
+    while True:
+        segment = sampler.next_segment(reference_cycles)
+        if segment is None:
+            break
+        yield segment
 
 
 def build_schedule_preview(
