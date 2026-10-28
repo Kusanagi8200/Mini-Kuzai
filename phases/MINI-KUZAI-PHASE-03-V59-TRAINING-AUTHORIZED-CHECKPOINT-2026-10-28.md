@@ -1,9 +1,10 @@
 # MINI-KUZAI PHASE 03 - V59 TRAINING AUTHORIZED CHECKPOINT - 2026-10-28
 
-Status --> **V59 DATA PREPARATION CLOSED / BOUNDED PILOT TRAINING AUTHORIZED / TRAINING NOT STARTED**
+Status --> **V59 DATA PREPARATION CLOSED / PERSISTENT TRAINER FROZEN / RUNTIME VERIFIED / TRAINING NOT STARTED**
 
-This checkpoint records the terminal Phase 03 V59 state after the final mix
-freeze and bounded-pilot authorization gate.
+This checkpoint records the current Phase 03 V59 state after final mix freeze,
+bounded-pilot authorization, persistent-trainer freeze and final runtime
+verification.
 
 ## Terminal GOGIT state
 
@@ -173,28 +174,108 @@ Local RTX 5060 Laptop GPU preflight -->
 - reserved share --> 8.20%
 - memory gate --> 60.00%.
 
+## Persistent trainer freeze
+
+The bounded-pilot trainer is implemented and frozen.
+
+Trainer freeze fingerprint -->
+
+`d71fb0fe6e71cbfd46ae06a88ef994b91091c698b8f401237387b5fc7ebe3a84`
+
+Freeze verification -->
+
+- Python compilation --> **PASS**
+- unit tests --> **PASS**
+- full runtime verification --> **PASS**
+- reconstructed TRAIN segments --> **345**
+- reconstructed TRAIN unique tokens --> **295416**
+- reconstructed VALIDATION records --> **36**
+- reconstructed VALIDATION segments --> **36**
+- reconstructed VALIDATION tokens --> **9242**
+- BLIND TEST access --> **0**
+- TRAINING_STARTED --> **0**
+
+Schedule preview -->
+
+- sampler cycles --> **4**
+- segments --> **2263**
+- exposure tokens --> **1181302**
+- maximum authorized exposure tokens --> **1181664**
+- maximum stream-share deviation --> **4 basis points**
+
+Checkpoint persistence includes optimizer, scheduler, RNG and sampler state.
+
+Terminal trainer GOGIT step -->
+
+`PHASE03-SMOLTALK-V59-PERSISTENT-TRAINER-FREEZE-001`
+
+## VALIDATION compatibility closure
+
+Persistent-trainer implementation exposed historical schema variation in the V54
+VALIDATION freeze declarations.
+
+The final compatibility gate requires -->
+
+- **18 / 18** VALIDATION declarations
+- **18 / 18** historical GOGIT freeze proofs
+- **18 / 18** target Git blob matches
+- modern and historical review-field variants to resolve to explicit successful
+  review state
+- zero cross-split ID collisions
+- zero cross-split group collisions
+- zero exact user-prompt collisions
+
+No VALIDATION corpus record was rewritten.
+
+GOGIT step -->
+
+`PHASE03-SMOLTALK-V59-VALIDATION-COMPATIBILITY-001`
+
+## Frozen-dependency experiment note
+
+A post-authorization segmentation caching optimization was measured on synthetic
+data and reduced the local benchmark cost. It also changed the frozen
+segmentation-source fingerprint.
+
+The optimization was therefore reverted.
+
+The persistent trainer was frozen only after restoration of the originally
+authorized segmentation dependency.
+
+## Final runtime verification
+
+The frozen CLI `tools/train_v59_bounded_pilot.py --verify-only` passed with -->
+
+- authorization freeze fingerprint --> `40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503`
+- trainer freeze fingerprint --> `d71fb0fe6e71cbfd46ae06a88ef994b91091c698b8f401237387b5fc7ebe3a84`
+- GPU --> **NVIDIA GeForce RTX 5060 Laptop GPU**
+- TRAINING_STARTED --> **0**
+
+The canonical run directory
+`/root/Mini-Kuzai/runs/v59-bounded-pilot-001` was confirmed absent immediately
+before the first real run.
+
 ## Current project boundary
 
-V59 data preparation is complete.
-
-There are no remaining corpus-selection, mix-weighting, tokenizer,
-segmentation, architecture-preflight or training-authorization blockers for the
-bounded pilot defined above.
-
-The next workstream is implementation and freeze of the persistent trainer that
-must consume the authorized manifest without altering it.
+All corpus-selection, mix-weighting, tokenizer, segmentation,
+architecture-preflight, authorization, trainer-freeze and runtime-verification
+gates are closed for the bounded pilot.
 
 Training has **not** started.
 
-The next execution must verify the freeze fingerprint before the first optimizer
-step and must refuse to run if any frozen dependency has changed.
+The next operation is the first real V59 bounded-pilot training run. It must use
+the frozen trainer without `--resume` and must remain inside the frozen limits.
 
 ## Primary evidence
 
 - `reviews/smoltalk-v59-final-mix-freeze-authorization/FINAL-MIX-FREEZE-001.json`
 - `reviews/smoltalk-v59-final-mix-freeze-authorization/TRAINING-AUTHORIZATION-001.json`
 - `reviews/smoltalk-v59-final-mix-freeze-authorization/REPORT-001.json`
+- `reviews/smoltalk-v59-persistent-trainer-freeze/TRAINER-FREEZE-001.json`
+- `reviews/smoltalk-v59-persistent-trainer-freeze/RESULTS-001.md`
 - `reports/assistant-results/history/PHASE03-SMOLTALK-V59-FINAL-MIX-FREEZE-AUTHORIZATION-001.json`
+- `reports/assistant-results/history/PHASE03-SMOLTALK-V59-VALIDATION-COMPATIBILITY-001.json`
+- `reports/assistant-results/history/PHASE03-SMOLTALK-V59-PERSISTENT-TRAINER-FREEZE-001.json`
 
 ---
 
