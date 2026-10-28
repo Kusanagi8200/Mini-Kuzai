@@ -756,6 +756,30 @@ METRIC_KEYS = {
     "V59_POST_BEST_CHECKPOINT",
     "V59_POST_LAST_CHECKPOINT",
     "V59_POST_BLIND_ACCESS",
+    "V59_GEN_DIAG_PASS",
+    "V59_GEN_BLIND_ACCESS",
+    "V59_GEN_PROBES",
+    "V59_GEN_EVAL_POINTS",
+    "V59_GEN_INITIAL_PROBES",
+    "V59_GEN_FINAL_PROBES",
+    "V59_GEN_INITIAL_UTF8_INVALID",
+    "V59_GEN_FINAL_UTF8_INVALID",
+    "V59_GEN_INITIAL_VALID_BP",
+    "V59_GEN_FINAL_VALID_BP",
+    "V59_GEN_INITIAL_REPLACEMENT_CHARS",
+    "V59_GEN_FINAL_REPLACEMENT_CHARS",
+    "V59_GEN_INITIAL_PRINTABLE_BP",
+    "V59_GEN_FINAL_PRINTABLE_BP",
+    "V59_GEN_INITIAL_ALPHA_BP",
+    "V59_GEN_FINAL_ALPHA_BP",
+    "V59_GEN_INITIAL_MEAN_TOKENS_X100",
+    "V59_GEN_FINAL_MEAN_TOKENS_X100",
+    "V59_GEN_FINAL_DISTINCT_OUTPUTS",
+    "V59_GEN_FINAL_EOS",
+    "V59_GEN_FINAL_EMPTY",
+    "V59_GEN_FINAL_MAX_CHAR_RUN",
+    "V59_GEN_FINAL_REPEAT_TRIGRAM_BP",
+    "V59_GEN_FINAL_STEP",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -826,6 +850,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v59_validation_compatibility.py",
         "tools/public-audits/phase03_v59_bounded_pilot_run.py",
         "tools/public-audits/phase03_v59_post_train_validation.py",
+        "tools/public-audits/phase03_v59_post_train_generation_diagnostic.py",
     }
 
     architecture_workstream = tracked.startswith(
