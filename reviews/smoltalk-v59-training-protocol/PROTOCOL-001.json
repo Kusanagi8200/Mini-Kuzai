@@ -1,0 +1,88 @@
+{
+  "architecture": "V58_MICRO_FROZEN",
+  "authorization_candidate": true,
+  "batching": {
+    "gradient_accumulation": "DYNAMIC_UNTIL_TOKEN_TARGET",
+    "loss_ignore_pad": true,
+    "microbatch_sequences": 8,
+    "next_token_shift": true,
+    "optimizer_step_target_nonpad_tokens": 8192,
+    "pad_token_id": 0,
+    "right_padding": true
+  },
+  "blind_test_reserved": true,
+  "checkpointing": {
+    "every_exposure_tokens": 147708,
+    "include_optimizer": true,
+    "include_rng_state": true,
+    "include_sampler_state": true,
+    "include_scheduler": true,
+    "save_best_validation": true,
+    "save_last": true
+  },
+  "context_length": 2048,
+  "dtype": "BF16",
+  "evaluation": {
+    "blind_test_during_training": false,
+    "early_stop": {
+      "consecutive_degraded_evals": 2,
+      "minimum_completed_evals": 3,
+      "nonfinite_gradient_norm": true,
+      "nonfinite_loss": true,
+      "relative_validation_loss_degradation_bp": 500
+    },
+    "generation_probe": "FIXED_VALIDATION_PROMPTS",
+    "teacher_forced_validation_loss": true,
+    "validation_every_exposure_tokens": 147708,
+    "validation_split": "FROZEN_VALIDATION_36"
+  },
+  "exposure": {
+    "effective_exposure_tokens_per_parameter": 0.997595634320294,
+    "max_exposure_tokens": 1181664,
+    "max_optimizer_steps": 145,
+    "quota_overshoot_rule": "LAST_SEGMENT_MAY_OVERSHOOT_STREAM_QUOTA",
+    "reference_cycle_tokens": 295416,
+    "reference_cycles": 4,
+    "stream_quota_mode": "TOKEN_QUOTA_WITH_REPLACEMENT",
+    "stream_share_tolerance_bp": 100,
+    "target_share_bp": {
+      "CONTROLLED_TRAIN": 3000,
+      "GENERAL_SUPPORT": 1500,
+      "LEGACY_STRUCTURED_KEEP": 842,
+      "PERSONA_CORE": 4658
+    },
+    "unique_clean_tokens": 295416,
+    "unique_tokens_per_parameter": 0.2493989085800735
+  },
+  "gradient_clip_norm": 1.0,
+  "hardware_preflight": {
+    "full_context_microbatch_sequences": 8,
+    "memory_gate_bp": 6000,
+    "require_bf16": true,
+    "require_cuda": true
+  },
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "learning_rate": 0.0003,
+    "name": "AdamW",
+    "weight_decay": 0.1
+  },
+  "parameters": 1184512,
+  "pilot_only": true,
+  "scheduler": {
+    "max_steps": 145,
+    "min_learning_rate": 3e-05,
+    "name": "linear_warmup_cosine_decay",
+    "warmup_steps": 15
+  },
+  "schema_version": "v59-training-protocol-pilot-1",
+  "seed": 42,
+  "status": "PROTOCOL_DEFINED_PREFLIGHT_REQUIRED",
+  "torch_compile": false,
+  "training_authorized": false,
+  "training_started": false
+}
