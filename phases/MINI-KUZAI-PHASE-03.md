@@ -582,15 +582,30 @@ The ranking direction is validated for prioritizing human review. It is not a
 calibrated probability model and does not authorize automatic KEEP, REVIEW or
 EXCLUDE decisions.
 
-The next authorized technical operation is now scripted -->
+The independent Holdout 004 cycle is now closed -->
 
-**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004 - READY FOR PREPARE**
+- training annotations before holdout --> **216**
+- independent holdout --> **72**
+- total public semantic reviews --> **288**
+- semantic result --> 43 KEEP / 23 REPAIR / 6 EXCLUDE
+- REPAIR / EXCLUDE AUC --> **0.595**
+- ranking gate --> **FAILED**
+- remaining never-reviewed candidates --> **792**.
 
-The job trains the ranking model on the 216 reviewed annotations and publishes a
-72-case holdout selected independently from the 864 never-reviewed candidates.
-Selection uses deterministic priority x source x turn strata and does not use
-the retrained score. Scores remain blinded during semantic review. Sample 003
-is training signal only and is not reused as independent validation.
+This invalidates classifier-driven selection as a reliable V59 corpus-selection
+mechanism.
+
+The next authorized technical operation is -->
+
+**V59 FINAL MIX POLICY / PERSONA-FIRST PRUNING - SCRIPTED / READY**
+
+The policy is conservative -->
+
+1. direct admission only for human-reviewed clean examples
+2. REPAIR examples remain outside training until corrected
+3. reviewed EXCLUDE examples are removed from the future mix
+4. never-reviewed examples remain deferred
+5. persona HIGH/MEDIUM is prioritized only after quality validation.
 
 Remaining pre-training blockers -->
 
