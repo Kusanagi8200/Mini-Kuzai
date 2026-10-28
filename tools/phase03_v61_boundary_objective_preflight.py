@@ -755,7 +755,7 @@ def write(objective, report):
         "",
         "---",
         "",
-        "##### **THE KUZ NETWORK - KUSANAGI8200 - @2026**",
+        "##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**",
         "",
     ]
     (OUT / "RESULTS-001.md").write_text(
