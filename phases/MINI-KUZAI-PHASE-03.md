@@ -582,14 +582,15 @@ The ranking direction is validated for prioritizing human review. It is not a
 calibrated probability model and does not authorize automatic KEEP, REVIEW or
 EXCLUDE decisions.
 
-The next authorized technical operation after this pause is -->
+The next authorized technical operation is now scripted -->
 
-**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
+**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004 - READY FOR PREPARE**
 
-The retrained triage must use the 216 reviewed annotations and must be evaluated
-on a new holdout drawn from previously unreviewed public candidates. Sample 003
-must not be reused as an independent validation set because it was selected
-using the previous model ranking.
+The job trains the ranking model on the 216 reviewed annotations and publishes a
+72-case holdout selected independently from the 864 never-reviewed candidates.
+Selection uses deterministic priority x source x turn strata and does not use
+the retrained score. Scores remain blinded during semantic review. Sample 003
+is training signal only and is not reused as independent validation.
 
 Remaining pre-training blockers -->
 
