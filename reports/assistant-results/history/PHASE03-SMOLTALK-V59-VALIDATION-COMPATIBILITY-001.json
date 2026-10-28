@@ -1,0 +1,24 @@
+{
+  "metrics": {
+    "SEMANTIC_VALIDATION_COMPLETE": 1,
+    "TRAINING_AUTHORIZED": 1,
+    "TRAINING_STARTED": 0,
+    "V59_MIX_FINALIZED": 1,
+    "V59_VALIDATION_BLOB_MATCHES": 18,
+    "V59_VALIDATION_DECLARATIONS": 18,
+    "V59_VALIDATION_HISTORY_PROOFS": 18,
+    "V59_VALIDATION_INTEGRITY_FIELDS": 1,
+    "V59_VALIDATION_LEGACY_REVIEW_FIELDS": 16,
+    "V59_VALIDATION_MODERN_REVIEW_FIELDS": 2
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v59_validation_compatibility.py",
+  "producer_sha256": "2e015ba1c3d209834d2adc21afadc005c146148c09be1d78b94dbe4fbd2f8c4d",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": true,
+  "source": "Mini-Kuzai V59 public training-mixture and turn-aware segmentation preparation",
+  "status": "TRAINING_AUTHORIZATION_GATE",
+  "step_id": "PHASE03-SMOLTALK-V59-VALIDATION-COMPATIBILITY-001",
+  "training_authorized": true
+}
