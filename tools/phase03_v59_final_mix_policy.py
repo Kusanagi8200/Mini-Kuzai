@@ -133,7 +133,8 @@ def classify():
           "category":dict(Counter(v["category"] for v in vals)),
           "persona_tier":dict(Counter(v["persona_tier"] for v in vals))}
     direct=[metadata[s] for s in groups["DIRECT_KEEP"]]
-    controlled_tokens=sum(MIX.V57.serialized_length(row["messages"],MIX.V57.make_fast_counter(MIX.V57.load_tokenizer())) for row in MIX.V57.load_train())
+    tokenizer=MIX.V57.load_tokenizer(); count_text=MIX.V57.make_fast_counter(tokenizer)
+    controlled_tokens=sum(MIX.V57.serialized_length(row["messages"],count_text) for row in MIX.V57.load_train())
     if controlled_tokens!=24539: raise RuntimeError("controlled token count changed")
     ready_public=sum(v["tokens"] for v in direct)
     report={
