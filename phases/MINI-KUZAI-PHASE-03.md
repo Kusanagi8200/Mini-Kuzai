@@ -656,31 +656,66 @@ Explicitly excluded from the pilot -->
 - EXCLUDE_REVIEWED --> **47 conversations**
 - DEFER_UNREVIEWED --> **792 conversations**.
 
-The next technical operation is -->
+The persistent V59 bounded-pilot trainer is now **IMPLEMENTED / FROZEN / RUNTIME VERIFIED**.
 
-**IMPLEMENT AND FREEZE THE PERSISTENT V59 PILOT TRAINER**
+Trainer freeze -->
 
-The trainer must -->
+- trainer freeze fingerprint --> `d71fb0fe6e71cbfd46ae06a88ef994b91091c698b8f401237387b5fc7ebe3a84`
+- Python compilation --> **PASS**
+- unit tests --> **PASS**
+- runtime verification --> **PASS**
+- TRAIN segments reconstructed --> **345**
+- TRAIN unique tokens reconstructed --> **295416**
+- VALIDATION records --> **36**
+- VALIDATION segments --> **36**
+- VALIDATION tokens --> **9242**
+- schedule preview exposure --> **1181302 / 1181664 tokens**
+- schedule preview segments --> **2263**
+- maximum stream-share deviation --> **4 basis points**
+- BLIND TEST access --> **0**
+- checkpoint optimizer state --> **YES**
+- checkpoint scheduler state --> **YES**
+- checkpoint RNG state --> **YES**
+- checkpoint sampler state --> **YES**
 
-1. verify the terminal freeze fingerprint before the first optimizer step
-2. refuse any corpus, tokenizer, serializer, segmentation, architecture,
-   exposure-policy or protocol mismatch
-3. enforce the hard limit of **145 optimizer steps**
-4. enforce the hard limit of **1181664 exposed tokens**
-5. use frozen VALIDATION only for in-run evaluation
-6. keep BLIND TEST inaccessible during training
-7. preserve optimizer, scheduler, RNG and sampler state in checkpoints
-8. stop on the already frozen numerical and validation-loss criteria.
+Historical V54 VALIDATION declaration differences were closed through an
+explicit compatibility gate -->
+
+- declarations verified --> **18 / 18**
+- historical GOGIT freeze proofs --> **18 / 18**
+- target Git blob identities --> **18 / 18**
+- no VALIDATION corpus file rewritten
+
+The experimental segmentation token-count optimization was not retained. It
+changed the frozen segmentation dependency fingerprint, so the original
+authorized segmentation source was restored before trainer freeze.
+
+Final runtime-only verification passed on
+**NVIDIA GeForce RTX 5060 Laptop GPU** with both authorization and trainer
+fingerprints matching. The canonical first-run directory was confirmed absent,
+so no previous run state can be resumed accidentally.
 
 There are no remaining data-selection, mix-weighting, tokenizer, segmentation,
-architecture-preflight or authorization blockers for this bounded pilot.
+architecture-preflight, authorization, trainer-freeze or runtime-verification
+blockers for this bounded pilot.
 
 Training is authorized but **has not started**.
+
+The next technical operation is -->
+
+**START THE FIRST REAL V59 BOUNDED PILOT TRAINING RUN**
+
+The first launch must use the frozen trainer without `--resume`, remain below
+**145 optimizer steps** and **1181664 exposure tokens**, use only frozen
+VALIDATION for in-run evaluation and keep BLIND TEST inaccessible.
 
 See -->
 
 - [V59 training-authorized checkpoint - 2026-10-28](MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
-- [V59 training mix and segmentation](MINI-KUZAI-PHASE-03-V59-TRAINING-MIX-SEGMENTATION.md).
+- [V59 training mix and segmentation](MINI-KUZAI-PHASE-03-V59-TRAINING-MIX-SEGMENTATION.md)
+- [V59 persistent trainer freeze results](../reviews/smoltalk-v59-persistent-trainer-freeze/RESULTS-001.md)
+- [V59 persistent trainer GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V59-PERSISTENT-TRAINER-FREEZE-001.json)
+- [V59 validation compatibility GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V59-VALIDATION-COMPATIBILITY-001.json)
 
 ## V56 tokenizer finalization
 
