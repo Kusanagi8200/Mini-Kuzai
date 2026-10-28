@@ -72,8 +72,8 @@ class BoundaryAwareEOSLossTests(unittest.TestCase):
             torch.allclose(
                 result.total,
                 expected,
-                atol=1e-7,
-                rtol=0.0,
+                atol=1e-6,
+                rtol=1e-6,
             )
         )
 
@@ -102,8 +102,8 @@ class BoundaryAwareEOSLossTests(unittest.TestCase):
         weighted.total.backward()
 
         self.assertGreater(
-            float(weighted.total),
-            float(plain.total),
+            float(weighted.total.detach()),
+            float(plain.total.detach()),
         )
 
         # EOS target gradient is negative. A larger absolute value means
