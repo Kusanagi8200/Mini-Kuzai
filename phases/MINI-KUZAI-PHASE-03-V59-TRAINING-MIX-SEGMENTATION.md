@@ -482,54 +482,129 @@ GOGIT step -->
 
 ## V59 persona-first mix weighting / exposure policy
 
-Status --> **SCRIPTED / READY**
+Status --> **CLOSED / EXPOSURE POLICY FINALIZED**
 
-The remaining problem is exposure balance.
+Unique clean streams -->
 
-A plain concatenation would expose only **24539 controlled tokens** against
-**270877 clean public tokens**, which would dilute the designed Mini-Kuzai
-persona anchor.
+| Stream | Conversations | Segments | Unique tokens | Raw share | Target share |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| CONTROLLED_TRAIN | 107 | 107 | 24539 | 8.31% | **30.00%** |
+| PERSONA_CORE | 86 | 142 | 182787 | 61.87% | **46.58%** |
+| GENERAL_SUPPORT | 68 | 76 | 63213 | 21.40% | **15.00%** |
+| LEGACY_STRUCTURED_KEEP | 11 | 20 | 24877 | 8.42% | **8.42%** |
 
-The exposure policy therefore uses weighted stream sampling instead of physical
-duplication.
+Persona-oriented exposure -->
 
-Streams -->
+**CONTROLLED_TRAIN + PERSONA_CORE = 76.58%**
 
-1. `CONTROLLED_TRAIN` --> frozen 107-record designed TRAIN anchor
-2. `PERSONA_CORE` --> clean reviewed public HIGH/MEDIUM persona material
-3. `GENERAL_SUPPORT` --> clean reviewed public LOW persona material
-4. `LEGACY_STRUCTURED_KEEP` --> clean retained V51/V52 structured material.
+Reference exposure cycle -->
 
-Policy constraints -->
+**295416 tokens**
 
-- CONTROLLED_TRAIN exposure --> at least **30%**
-- CONTROLLED_TRAIN + PERSONA_CORE --> at least **75%**
-- GENERAL_SUPPORT --> at most **15%**
-- LEGACY_STRUCTURED_KEEP --> at most **10%**
-- REPAIR_QUEUE --> excluded
-- EXCLUDE_REVIEWED --> excluded
-- DEFER_UNREVIEWED --> excluded.
+Equivalent exposure passes per reference cycle -->
 
-Target shares are derived from the real token distribution while respecting
-those constraints. The job reports exact raw shares, target shares, equivalent
-exposure passes and a reference exposure cycle.
+- CONTROLLED_TRAIN --> **3.612x**
+- PERSONA_CORE --> **0.753x**
+- GENERAL_SUPPORT --> **0.701x**
+- LEGACY_STRUCTURED_KEEP --> **1.000x**.
 
-No record is physically duplicated. Sampling is with replacement at the
-stream level and shuffled within each stream.
+Sampler -->
 
-Run -->
+- sampling unit --> SEGMENT_STREAM
+- target basis --> TOKEN_EXPOSURE_SHARE
+- with replacement --> YES
+- shuffle within stream --> YES
+- physical duplication --> NO.
 
-```bash
-python3 tools/run_v59_persona_exposure_policy_job.py
-```
+Guardrails -->
+
+- REPAIR_QUEUE admitted --> NO
+- EXCLUDE_REVIEWED admitted --> NO
+- DEFER_UNREVIEWED admitted --> NO
+- model training authorized --> NO.
 
 GOGIT step -->
 
 `PHASE03-SMOLTALK-V59-PERSONA-EXPOSURE-POLICY-001`
 
-This step defines data exposure only. Optimizer, learning rate, batch size,
-training steps and final model-training authorization remain separate
-decisions.
+## V59 training hyperparameters / step budget / authorization preflight
+
+Status --> **SCRIPTED / READY**
+
+This stage defines a bounded first pilot protocol and runs a hardware preflight.
+It does not start persistent model training.
+
+Pilot protocol -->
+
+- model --> frozen V58 MICRO
+- parameters --> **1184512**
+- dtype --> **BF16**
+- optimizer --> **AdamW**
+- learning rate --> **3e-4**
+- minimum learning rate --> **3e-5**
+- betas --> **0.9 / 0.95**
+- eps --> **1e-8**
+- weight decay --> **0.10**
+- gradient clip --> **1.0**
+- seed --> **42**
+- torch.compile --> disabled.
+
+Batching -->
+
+- full-context preflight microbatch --> **8 sequences**
+- optimizer-step target --> **8192 non-pad tokens**
+- gradient accumulation --> dynamic until token target
+- right padding
+- PAD excluded from loss
+- next-token shifted causal loss.
+
+Pilot budget -->
+
+- reference exposure cycles --> **4**
+- maximum exposure tokens --> **1181664**
+- maximum optimizer steps --> **145**
+- warmup --> first **10%** of optimizer steps
+- scheduler --> linear warmup + cosine decay
+- effective pilot exposure --> approximately **1.0 token per V58 parameter**.
+
+Evaluation -->
+
+- frozen VALIDATION 36 --> used during the pilot
+- frozen BLIND TEST --> reserved and not accessed during training
+- validation and checkpoint --> every half reference exposure cycle
+- save best validation checkpoint and last checkpoint
+- checkpoint includes optimizer, scheduler, RNG and sampler state
+- stop immediately on non-finite loss or gradient norm
+- after at least three evaluations, stop after two consecutive validation-loss
+  degradations of at least 5%.
+
+Hardware preflight -->
+
+- requires CUDA
+- requires BF16
+- instantiates a disposable V58 model
+- performs one synthetic full-context forward/backward/optimizer step with
+  microbatch 8
+- requires peak reserved memory <= **60%** of GPU memory
+- does not use TRAIN / VALIDATION / BLIND content
+- does not save a model checkpoint.
+
+Run -->
+
+```bash
+python3 tools/run_v59_training_protocol_preflight_job.py
+```
+
+GOGIT step -->
+
+`PHASE03-SMOLTALK-V59-TRAINING-PROTOCOL-PREFLIGHT-001`
+
+Possible successful outcome -->
+
+`V59_TRAIN_AUTHORIZATION_CANDIDATE = 1`
+
+This is not training authorization. A separate explicit authorization manifest
+is required before any persistent model-training process may run.
 
 ## References
 
