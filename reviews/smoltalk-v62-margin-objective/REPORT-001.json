@@ -1,0 +1,202 @@
+{
+  "blind_test_accessed": false,
+  "hardware_preflight": {
+    "gradient_norm_finite": true,
+    "loss_finite": true,
+    "memory_gate_bp": 6000,
+    "passed": true,
+    "peak_reserved_bp": 885,
+    "peak_reserved_mib": 682,
+    "preclip_gradient_norm": 0.31888872385025024,
+    "total_memory_mib": 7705
+  },
+  "objective": {
+    "architecture": "V60_UNCHANGED",
+    "base_objective": "NEXT_TOKEN_CROSS_ENTROPY_UNCHANGED",
+    "blind_test_accessed": false,
+    "corpus": "V59_V60_FROZEN_CORPUS_UNCHANGED",
+    "evidence": {
+      "intermediate_positions": 13,
+      "source": "V61_CYCLE2_CHECKPOINT_DIAGNOSTIC_ONLY",
+      "terminal_positions": 36,
+      "validation_base_ce": 4.7137691573218214,
+      "validation_tokens": 9206
+    },
+    "fingerprints": {
+      "segmentation_sha256": "e8bf14c7bc90561c4d9e976f971ef603d75ec6158bd304a24b8ea35b0c86ecc8",
+      "serializer_sha256": "ec75bff1abec33d3f6b7fde5cada462b66b7c484f006685c31761fb4d1dd7e2f",
+      "tokenizer_sha256": "cd511d08430c40069139546c4539d5edb7f3236656ba80ff430a8f3b13d4a97a",
+      "v60_initialization_freeze_sha256": "687fbfb450a89887b223d313b48c5751632babcef6f57e6b44d8f33532e9abd6",
+      "v60_model_source_sha256": "0fff9e4aebe992bf4e85ed722d5ddb5cd8dc141742be559b5f23369c21ee0dbf",
+      "v61_eos_report_sha256": "478784aac535459f19dd6af1584848e0354ef62f84c61e6a120b35034a6fc797",
+      "v61_run_report_sha256": "b004695b7566261e3cb1651060fe73b9eb9e9048fc1274fb7cedddf904bc5edd",
+      "v62_margin_loss_source_sha256": "119b56d1e3ab43d68d9d9a6ab703b0e08abc0215c36adcf3c3eda2eaff4822ce",
+      "v62_margin_loss_test_sha256": "ccf452310fb8e0ab66e4bcc2617cff99947d2dd176c082671cfa40e5d9b44568"
+    },
+    "initialization": "V60_INITIALIZATION_UNCHANGED",
+    "margin_objective": {
+      "intermediate_relation": "TRUE_GT_EOS_PLUS_MARGIN",
+      "intermediate_weight": 17.358490566037737,
+      "margin": 0.25,
+      "normalization": "GLOBAL_NONPAD_TOKEN_COUNT",
+      "terminal_relation": "EOS_GT_BEST_NON_EOS_PLUS_MARGIN",
+      "terminal_weight": 8.0,
+      "training_boundary_balance_factor": 2.169811320754717
+    },
+    "schema_version": "v62-margin-objective-1",
+    "selection": {
+      "base_weights": [
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "candidates": [
+        {
+          "auxiliary_ratio_bp": 16,
+          "base_weight": 1.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 2.169811320754717,
+          "margin": 0.25,
+          "passes": true,
+          "terminal_active": 16,
+          "terminal_weight": 1.0
+        },
+        {
+          "auxiliary_ratio_bp": 33,
+          "base_weight": 2.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 4.339622641509434,
+          "margin": 0.25,
+          "passes": true,
+          "terminal_active": 16,
+          "terminal_weight": 2.0
+        },
+        {
+          "auxiliary_ratio_bp": 66,
+          "base_weight": 4.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 8.679245283018869,
+          "margin": 0.25,
+          "passes": true,
+          "terminal_active": 16,
+          "terminal_weight": 4.0
+        },
+        {
+          "auxiliary_ratio_bp": 132,
+          "base_weight": 8.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 17.358490566037737,
+          "margin": 0.25,
+          "passes": true,
+          "terminal_active": 16,
+          "terminal_weight": 8.0
+        },
+        {
+          "auxiliary_ratio_bp": 19,
+          "base_weight": 1.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 2.169811320754717,
+          "margin": 0.5,
+          "passes": true,
+          "terminal_active": 24,
+          "terminal_weight": 1.0
+        },
+        {
+          "auxiliary_ratio_bp": 38,
+          "base_weight": 2.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 4.339622641509434,
+          "margin": 0.5,
+          "passes": true,
+          "terminal_active": 24,
+          "terminal_weight": 2.0
+        },
+        {
+          "auxiliary_ratio_bp": 77,
+          "base_weight": 4.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 8.679245283018869,
+          "margin": 0.5,
+          "passes": true,
+          "terminal_active": 24,
+          "terminal_weight": 4.0
+        },
+        {
+          "auxiliary_ratio_bp": 153,
+          "base_weight": 8.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 17.358490566037737,
+          "margin": 0.5,
+          "passes": true,
+          "terminal_active": 24,
+          "terminal_weight": 8.0
+        },
+        {
+          "auxiliary_ratio_bp": 26,
+          "base_weight": 1.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 2.169811320754717,
+          "margin": 1.0,
+          "passes": true,
+          "terminal_active": 36,
+          "terminal_weight": 1.0
+        },
+        {
+          "auxiliary_ratio_bp": 52,
+          "base_weight": 2.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 4.339622641509434,
+          "margin": 1.0,
+          "passes": true,
+          "terminal_active": 36,
+          "terminal_weight": 2.0
+        },
+        {
+          "auxiliary_ratio_bp": 104,
+          "base_weight": 4.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 8.679245283018869,
+          "margin": 1.0,
+          "passes": true,
+          "terminal_active": 36,
+          "terminal_weight": 4.0
+        },
+        {
+          "auxiliary_ratio_bp": 208,
+          "base_weight": 8.0,
+          "intermediate_active": 13,
+          "intermediate_weight": 17.358490566037737,
+          "margin": 1.0,
+          "passes": true,
+          "terminal_active": 36,
+          "terminal_weight": 8.0
+        }
+      ],
+      "margins": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "maximum_auxiliary_ratio_bp": 500,
+      "selected": {
+        "auxiliary_ratio_bp": 132,
+        "base_weight": 8.0,
+        "intermediate_active": 13,
+        "intermediate_weight": 17.358490566037737,
+        "margin": 0.25,
+        "passes": true,
+        "terminal_active": 16,
+        "terminal_weight": 8.0
+      }
+    },
+    "status": "OBJECTIVE_DEFINED_PREFLIGHT_PASSED",
+    "tokenizer": "V56_UNCHANGED",
+    "training_authorized": false,
+    "training_started": false
+  },
+  "schema_version": "v62-margin-objective-report-1",
+  "status": "PREFLIGHT_PASSED_FREEZE_REQUIRED",
+  "training_authorized": false,
+  "training_started": false
+}
