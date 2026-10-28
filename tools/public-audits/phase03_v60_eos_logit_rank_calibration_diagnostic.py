@@ -319,6 +319,7 @@ def main() -> None:
         raise RuntimeError("VALIDATION inventory changed")
 
     terminal_probs = []
+    terminal_nlls = []
     terminal_ranks = []
     terminal_top1 = 0
 
@@ -366,6 +367,7 @@ def main() -> None:
                 T.EOS_ID,
             )
             terminal_probs.append(terminal_prob)
+            terminal_nlls.append(-math.log(terminal_prob))
             terminal_ranks.append(terminal_rank)
             terminal_top1 += int(terminal_rank == 1)
 
@@ -439,7 +441,9 @@ def main() -> None:
         "V60_EOS_LOGIT_BLIND_ACCESS": 0,
         "V60_EOS_TERM_POSITIONS": len(terminal_probs),
         "V60_EOS_TERM_PROB_PPM": ppm(terminal_mean_prob),
-        "V60_EOS_TERM_NLL_X1E3": nll_x1e3(terminal_mean_prob),
+        "V60_EOS_TERM_NLL_X1E3": round(
+            statistics.mean(terminal_nlls) * 1000
+        ),
         "V60_EOS_TERM_MEAN_RANK_X100": round(
             terminal_mean_rank * 100
         ),
