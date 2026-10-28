@@ -178,10 +178,10 @@ def hardware_preflight(p):
     torch.cuda.reset_peak_memory_stats()
 
     with torch.autocast(device_type="cuda",dtype=torch.bfloat16):
-        logits=model(token_ids[:,:-1])
+        logits=model(token_ids)
         targets=token_ids[:,1:]
         loss=F.cross_entropy(
-            logits.reshape(-1,1024),
+            logits[:,:-1,:].reshape(-1,1024),
             targets.reshape(-1))
 
     finite_loss=bool(torch.isfinite(loss).item())
