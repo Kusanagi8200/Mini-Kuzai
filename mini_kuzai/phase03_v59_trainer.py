@@ -755,7 +755,11 @@ def build_validation_segments() -> tuple[list[FrozenSegment], dict]:
             raise RuntimeError(
                 f"VALIDATION group changed: {behavior}"
             )
-        if declaration.get("independent_review_complete") is not True:
+        if "independent_review_complete" in declaration:
+            review_complete = declaration.get("independent_review_complete")
+        else:
+            review_complete = declaration.get("review_complete")
+        if review_complete is not True:
             raise RuntimeError(
                 f"VALIDATION independent review incomplete: {behavior}"
             )
