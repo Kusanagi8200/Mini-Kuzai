@@ -918,6 +918,22 @@ METRIC_KEYS = {
     "V60_RUN2_STOP_MAX_TOKENS",
     "V60_RUN2_STOP_SAMPLER",
     "V60_RUN2_STOP_MILESTONE",
+    "V60_EOS_DIAG_PASS",
+    "V60_EOS_BLIND_ACCESS",
+    "V60_EOS_TRAIN_SEGMENTS",
+    "V60_EOS_TRAIN_TOKENS",
+    "V60_EOS_PREDICTED_TOKENS",
+    "V60_EOS_TARGETS",
+    "V60_EOS_TARGET_PPM",
+    "V60_EOS_ASSISTANT_TURNS",
+    "V60_EOS_ASSISTANT_TO_EOS",
+    "V60_EOS_ASSISTANT_TO_USER",
+    "V60_EOS_ASSISTANT_TO_EOS_BP",
+    "V60_EOS_ASSISTANT_TO_USER_BP",
+    "V60_EOS_SINGLE_PAIR_SEGMENTS",
+    "V60_EOS_MULTI_PAIR_SEGMENTS",
+    "V60_EOS_MAX_PAIRS_PER_SEGMENT",
+    "V60_EOS_MEAN_PAIRS_X100",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1002,6 +1018,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     active_training_v60 = tracked in {
         "tools/public-audits/phase03_v60_train_run_001.py",
         "tools/public-audits/phase03_v60_train_run_002.py",
+        "tools/public-audits/phase03_v60_eos_assistant_turn_target_diagnostic.py",
     }
 
     architecture_workstream = tracked.startswith(
