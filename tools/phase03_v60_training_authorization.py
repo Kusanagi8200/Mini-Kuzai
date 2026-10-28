@@ -106,6 +106,9 @@ def build() -> tuple[dict, dict, dict]:
         raise RuntimeError("Initialization freeze marks training started")
     if init.get("blind_test_accessed") is not False:
         raise RuntimeError("Initialization freeze indicates BLIND access")
+    current_model_sha256 = sha256_file(MODEL_SOURCE)
+    if current_model_sha256 != init.get("model_source_sha256"):
+        raise RuntimeError("V60 model source changed after initialization freeze")
 
     if protocol.get("status") != "PROTOCOL_DEFINED_PREFLIGHT_REQUIRED":
         raise RuntimeError("Unexpected V60 protocol state")
@@ -161,6 +164,11 @@ def build() -> tuple[dict, dict, dict]:
         raise RuntimeError("Protocol report marks training started")
     if protocol_report.get("blind_test_accessed") is not False:
         raise RuntimeError("Protocol report indicates BLIND access")
+    if protocol_report.get("protocol") != protocol:
+        raise RuntimeError("Protocol report/file content mismatch")
+    hardware = protocol_report.get("hardware_preflight")
+    if not isinstance(hardware, dict) or hardware.get("passed") is not True:
+        raise RuntimeError("V60 hardware preflight is not passing")
 
     inherited = v59_auth.get("fingerprints")
     if not isinstance(inherited, dict):
@@ -196,7 +204,7 @@ def build() -> tuple[dict, dict, dict]:
         "v60_initialization_freeze_sha256": sha256_file(INIT_FREEZE),
         "v60_training_protocol_sha256": sha256_file(PROTOCOL),
         "v60_protocol_report_sha256": sha256_file(PROTOCOL_REPORT),
-        "v60_model_source_sha256": sha256_file(MODEL_SOURCE),
+        "v60_model_source_sha256": current_model_sha256,
         **unchanged,
     }
 
