@@ -1000,6 +1000,46 @@ METRIC_KEYS = {
     "V61_BOUNDARY_RESERVED_BP",
     "V61_BOUNDARY_BLIND_ACCESS",
     "V61_BOUNDARY_TRAINING_STARTED",
+    "V61_OBJECTIVE_FREEZE_PASS",
+    "V61_OBJECTIVE_TERMINAL_WEIGHT",
+    "V61_OBJECTIVE_INTERMEDIATE_WEIGHT",
+    "V61_OBJECTIVE_BLIND_ACCESS",
+    "V61_PROTOCOL_DEFINED",
+    "V61_PROTOCOL_PREFLIGHT_PASS",
+    "V61_PROTOCOL_INITIAL_CYCLES",
+    "V61_PROTOCOL_MAX_TOKENS",
+    "V61_PROTOCOL_MAX_STEPS",
+    "V61_PROTOCOL_SCHEDULER_STEPS",
+    "V61_PROTOCOL_REVIEW_CYCLE",
+    "V61_PROTOCOL_EVAL_EVERY_TOKENS",
+    "V61_PROTOCOL_TERMINAL_WEIGHT",
+    "V61_PROTOCOL_INTERMEDIATE_WEIGHT",
+    "V61_PROTOCOL_BLIND_ACCESS",
+    "V61_AUTH_PASS",
+    "V61_AUTH_MAX_TOKENS",
+    "V61_AUTH_MAX_STEPS",
+    "V61_AUTH_REVIEW_CYCLE",
+    "V61_AUTH_TRAIN_SEGMENTS",
+    "V61_AUTH_TRAIN_UNIQUE_TOKENS",
+    "V61_AUTH_TERMINAL_WEIGHT",
+    "V61_AUTH_INTERMEDIATE_WEIGHT",
+    "V61_AUTH_BLIND_ACCESS",
+    "V61_AUTH_EXTENSION_REQUIRES_FREEZE",
+    "V61_TRAINER_FREEZE_PASS",
+    "V61_TRAINER_PYCOMPILE_PASS",
+    "V61_TRAINER_TESTS_PASS",
+    "V61_TRAINER_RUNTIME_VERIFY_PASS",
+    "V61_TRAINER_TRAIN_SEGMENTS",
+    "V61_TRAINER_TRAIN_UNIQUE_TOKENS",
+    "V61_TRAINER_TERMINAL_BOUNDARIES",
+    "V61_TRAINER_INTERMEDIATE_BOUNDARIES",
+    "V61_TRAINER_PREVIEW_TOKENS",
+    "V61_TRAINER_PREVIEW_SEGMENTS",
+    "V61_TRAINER_PREVIEW_MAX_DEV_BP",
+    "V61_TRAINER_MAX_STEPS",
+    "V61_TRAINER_MAX_TOKENS",
+    "V61_TRAINER_REVIEW_CYCLE",
+    "V61_TRAINER_BLIND_ACCESS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1091,6 +1131,11 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v60_eos_competitor_logit_margin_bias_sweep.py",
     }
 
+    post_authorization_v61 = tracked in {
+        "tools/public-audits/phase03_v61_training_authorization.py",
+        "tools/public-audits/phase03_v61_persistent_trainer_freeze.py",
+    }
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -1120,6 +1165,13 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
             and metrics.get("TRAINING_AUTHORIZED") == 1
             and metrics.get("TRAINING_STARTED") == 1
+        )
+
+    if post_authorization_v61:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+            and metrics.get("TRAINING_STARTED") == 0
         )
 
     if tokenizer_workstream or architecture_workstream:
