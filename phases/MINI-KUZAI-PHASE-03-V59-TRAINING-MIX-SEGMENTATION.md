@@ -385,80 +385,108 @@ Model training authorized    : NO
 
 ## V59 triage retrain + independent holdout 004
 
-Status --> **SCRIPTED / READY FOR PREPARE**
+Status --> **CLOSED / INDEPENDENT RANKING GATE FAILED**
 
-The retrain cycle uses the **216 reviewed annotations** from Samples 001, 002 and
-003 as training labels.
+Retraining used the **216 annotations** from Samples 001, 002 and 003.
 
-The independent holdout is selected from the **864 candidates never reviewed**
-at the start of this cycle.
+Holdout 004 -->
 
-Holdout 004 design -->
+- 72 conversations
+- selected from 864 never-reviewed candidates
+- deterministic priority x source x turn stratification
+- model score not used for selection
+- model scores blinded during semantic review
+- semantic result --> 43 KEEP / 23 REPAIR / 6 EXCLUDE
+- reviewed total after application --> **288**
+- never-reviewed remainder --> **792**.
 
-1. sample size --> **72 conversations**
-2. deterministic stratification --> V50 priority x public source x turn bucket
-3. selection score --> **NOT USED**
-4. model score on review pages --> **BLINDED**
-5. Sample 003 --> training signal only, never reused as independent validation
-6. expected reviewed total after Holdout 004 --> **288**
-7. expected never-reviewed remainder --> **792**
+Independent REPAIR / EXCLUDE ranking -->
 
-Prepare command -->
+- AUC --> **0.595**
+- top 18 unchanged-unsuitable --> **55.6%**
+- bottom 18 unchanged-unsuitable --> **22.2%**
+- top-minus-bottom gradient --> **33.3 percentage points**
+- ranking gate --> **FAILED**.
+
+Diagnostic threshold 0.75 -->
+
+- precision --> **44.7%**
+- recall --> **72.4%**
+- F1 --> **55.3%**.
+
+Independent EXCLUDE ranking -->
+
+- AUC --> **0.664**
+- diagnostic precision at 0.90 --> **12.5%**
+- diagnostic recall at 0.90 --> **33.3%**
+- diagnostic F1 --> **18.2%**.
+
+Conclusion -->
+
+The Naive-Bayes ranking does not generalize strongly enough to drive automatic
+or ranking-priority corpus selection. Sample 003 demonstrated useful enrichment
+inside a model-selected challenge set, but Holdout 004 shows that the effect is
+not strong enough on an independent sample.
+
+Therefore -->
+
+- ranking-priority authorization --> **NO**
+- automatic REVIEW --> **NOT AUTHORIZED**
+- automatic EXCLUDE --> **NOT AUTHORIZED**
+- further Naive-Bayes retraining --> **NOT REQUIRED FOR V59 MIX SELECTION**.
+
+GOGIT step -->
+
+`PHASE03-SMOLTALK-V59-TRIAGE-RETRAIN-HOLDOUT-004`
+
+## V59 final mix policy / persona-first pruning
+
+Status --> **SCRIPTED / READY**
+
+V59 now switches from classifier-driven selection to a conservative
+human-review policy.
+
+Policy states -->
+
+1. `DIRECT_KEEP` --> only human-reviewed clean examples
+2. `REPAIR_QUEUE` --> useful material that must not be admitted unchanged
+3. `EXCLUDE_REVIEWED` --> reviewed unsuitable material removed from the future mix
+4. `DEFER_UNREVIEWED` --> never-reviewed candidates remain outside the V59
+   training mix.
+
+Quality rule -->
+
+- Sample 001-004 direct admission requires disposition KEEP with grade A,
+  factual risk LOW and instruction fit GOOD
+- retained structured V51/V52 direct admission requires grade A, factual risk
+  LOW and instruction fit GOOD
+- persona priority never overrides a known factual, logical, technical or
+  instruction defect.
+
+Persona-first partition -->
+
+- clean HIGH or MEDIUM persona examples --> `PERSONA_CORE`
+- clean LOW persona examples --> `GENERAL_SUPPORT`
+- clean legacy V51/V52 structured examples --> `LEGACY_STRUCTURED_KEEP`.
+
+The job produces exact conversation, segment and token accounting for every
+policy bucket and creates explicit SHA manifests.
+
+Run -->
 
 ```bash
-python3 tools/run_v59_triage_retrain_holdout_004_job.py prepare
+python3 tools/run_v59_final_mix_policy_job.py
 ```
 
-The prepare action -->
+GOGIT step -->
 
-1. reconstructs the 216-label retraining set
-2. verifies the 1,080-case eligible V59 quality population
-3. removes all 216 previously reviewed sources from holdout eligibility
-4. selects 72 deterministic independent holdout cases from the remaining 864
-5. publishes review pages without model scores
-6. publishes the sampling manifest and training-label fingerprint
-7. commits and pushes the holdout packet
+`PHASE03-SMOLTALK-V59-FINAL-MIX-POLICY-001`
 
-After blinded semantic review, the reviewer publishes -->
+The policy job does not repair conversations, does not admit unreviewed data and
+does not authorize training.
 
-`reviews/smoltalk-v59-independent-holdout-004/DECISIONS-004.json`
-
-with status -->
-
-`REVIEW_COMPLETE_PENDING_APPLICATION`
-
-Finalize command -->
-
-```bash
-python3 tools/run_v59_triage_retrain_holdout_004_job.py finalize
-```
-
-The finalize action -->
-
-1. validates and applies all 72 semantic decisions
-2. trains the ranking model only on the 216 pre-holdout annotations
-3. evaluates Holdout 004 without fitting on any Holdout 004 label
-4. publishes AUC and ranking-enrichment diagnostics
-5. commits the independent ranking audit
-6. publishes GOGIT step
-   `PHASE03-SMOLTALK-V59-TRIAGE-RETRAIN-HOLDOUT-004`
-
-Primary ranking gate -->
-
-- REPAIR / EXCLUDE AUC --> at least **0.70**
-- top 18 ranked cases unchanged-unsuitable --> at least **65%**
-- bottom 18 ranked cases unchanged-unsuitable --> at most **35%**
-- top-minus-bottom gradient --> at least **30 percentage points**
-
-Fixed score thresholds 0.75 and 0.90 remain diagnostic only because the
-Naive-Bayes scores are not assumed to be calibrated probabilities.
-
-Even if the ranking gate passes -->
-
-- automatic REVIEW remains **NOT AUTHORIZED**
-- automatic EXCLUDE remains **NOT AUTHORIZED**
-- V59 final public mix remains **NOT FINALIZED**
-- model training remains **NOT AUTHORIZED / NOT STARTED**
+After policy accounting, the next unresolved decision is sampling / weighting
+between controlled persona data and clean reviewed public support data.
 
 ## References
 
