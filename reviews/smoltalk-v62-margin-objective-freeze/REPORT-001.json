@@ -1,0 +1,11 @@
+{
+  "blind_test_accessed": false,
+  "intermediate_weight": 17.358490566037737,
+  "margin": 0.25,
+  "objective_freeze_fingerprint": "68a0f92735e51e88c197f3e41dfd156e815e2174ae182517fdd045034156f9bd",
+  "schema_version": "v62-margin-objective-freeze-report-1",
+  "status": "FROZEN_NOT_AUTHORIZED",
+  "terminal_weight": 8.0,
+  "training_authorized": false,
+  "training_started": false
+}

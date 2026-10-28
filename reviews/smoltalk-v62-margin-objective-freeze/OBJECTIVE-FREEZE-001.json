@@ -1,0 +1,27 @@
+{
+  "architecture": "V60_UNCHANGED",
+  "base_objective": "NEXT_TOKEN_CROSS_ENTROPY_UNCHANGED",
+  "blind_test_accessed": false,
+  "corpus": "V59_V60_FROZEN_CORPUS_UNCHANGED",
+  "dependencies": {
+    "segmentation_sha256": "e8bf14c7bc90561c4d9e976f971ef603d75ec6158bd304a24b8ea35b0c86ecc8",
+    "serializer_sha256": "ec75bff1abec33d3f6b7fde5cada462b66b7c484f006685c31761fb4d1dd7e2f",
+    "tokenizer_sha256": "cd511d08430c40069139546c4539d5edb7f3236656ba80ff430a8f3b13d4a97a",
+    "v60_model_source_sha256": "0fff9e4aebe992bf4e85ed722d5ddb5cd8dc141742be559b5f23369c21ee0dbf",
+    "v62_margin_loss_source_sha256": "119b56d1e3ab43d68d9d9a6ab703b0e08abc0215c36adcf3c3eda2eaff4822ce",
+    "v62_margin_loss_test_sha256": "ccf452310fb8e0ab66e4bcc2617cff99947d2dd176c082671cfa40e5d9b44568"
+  },
+  "initialization": "V60_INITIALIZATION_UNCHANGED",
+  "intermediate_weight": 17.358490566037737,
+  "margin": 0.25,
+  "objective_freeze_fingerprint": "68a0f92735e51e88c197f3e41dfd156e815e2174ae182517fdd045034156f9bd",
+  "objective_sha256": "fefa1d7846aa9fb77ecfe08742f0137a6680a46e6c33bd90e592a9b5c53d0eb5",
+  "preflight_report_sha256": "fb90e85e492fd62e96ed4cc570c94e81ba32159f7ad72d58fce39f118258e934",
+  "schema_version": "v62-margin-objective-freeze-1",
+  "status": "FROZEN",
+  "terminal_weight": 8.0,
+  "tokenizer": "V56_UNCHANGED",
+  "training_authorized": false,
+  "training_boundary_balance_factor": 2.169811320754717,
+  "training_started": false
+}
