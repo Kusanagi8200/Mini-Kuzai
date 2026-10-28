@@ -2,9 +2,16 @@
 
 from __future__ import annotations
 
+import sys
 import unittest
+from pathlib import Path
 
 import torch
+
+
+REPO = Path(__file__).resolve().parents[1]
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
 
 from mini_kuzai import phase03_v59_trainer as T
 
