@@ -371,6 +371,17 @@ def verify_trainer_freeze(
 ) -> dict:
     freeze = read_json(TRAINER_FREEZE_MANIFEST)
 
+    fingerprint = freeze.get("trainer_freeze_fingerprint")
+    if not isinstance(fingerprint, str) or len(fingerprint) != 64:
+        raise RuntimeError("Persistent trainer freeze fingerprint is invalid")
+    core = {
+        key: value
+        for key, value in freeze.items()
+        if key != "trainer_freeze_fingerprint"
+    }
+    if canonical_sha(core) != fingerprint:
+        raise RuntimeError("Persistent trainer freeze content mismatch")
+
     if freeze.get("status") != "FROZEN":
         raise RuntimeError("Persistent trainer is not frozen")
     if freeze.get("training_authorized") is not True:
