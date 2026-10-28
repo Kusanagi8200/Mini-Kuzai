@@ -383,31 +383,82 @@ Model training               : NOT STARTED
 Model training authorized    : NO
 ```
 
-## Resume point
+## V59 triage retrain + independent holdout 004
 
-Next authorized workstream -->
+Status --> **SCRIPTED / READY FOR PREPARE**
 
-**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
+The retrain cycle uses the **216 reviewed annotations** from Samples 001, 002 and
+003 as training labels.
 
-Requirements -->
+The independent holdout is selected from the **864 candidates never reviewed**
+at the start of this cycle.
 
-1. train the next triage ranking using all **216 reviewed annotations**
-2. select a new independent holdout from previously unreviewed candidates
-3. do not reuse Sample 003 as the independent validation set because Sample 003
-   was selected from the previous model ranking;
-4. evaluate ranking usefulness separately from probability calibration
-5. keep automatic filtering unauthorized unless a later explicit gate passes.
+Holdout 004 design -->
 
-After independent validation, V59 still must -->
+1. sample size --> **72 conversations**
+2. deterministic stratification --> V50 priority x public source x turn bucket
+3. selection score --> **NOT USED**
+4. model score on review pages --> **BLINDED**
+5. Sample 003 --> training signal only, never reused as independent validation
+6. expected reviewed total after Holdout 004 --> **288**
+7. expected never-reviewed remainder --> **792**
 
-1. decide the final KEEP / REPAIR / EXCLUDE review policy
-2. finalize the public corpus
-3. compute final post-filter segment and token counts
-4. define controlled-persona versus public-data sampling / weighting
-5. reassess the V58 data-to-parameter ratio
-6. make a separate explicit model-training authorization decision.
+Prepare command -->
 
-Training remains **NOT AUTHORIZED / NOT STARTED**.
+```bash
+python3 tools/run_v59_triage_retrain_holdout_004_job.py prepare
+```
+
+The prepare action -->
+
+1. reconstructs the 216-label retraining set
+2. verifies the 1,080-case eligible V59 quality population
+3. removes all 216 previously reviewed sources from holdout eligibility
+4. selects 72 deterministic independent holdout cases from the remaining 864
+5. publishes review pages without model scores
+6. publishes the sampling manifest and training-label fingerprint
+7. commits and pushes the holdout packet
+
+After blinded semantic review, the reviewer publishes -->
+
+`reviews/smoltalk-v59-independent-holdout-004/DECISIONS-004.json`
+
+with status -->
+
+`REVIEW_COMPLETE_PENDING_APPLICATION`
+
+Finalize command -->
+
+```bash
+python3 tools/run_v59_triage_retrain_holdout_004_job.py finalize
+```
+
+The finalize action -->
+
+1. validates and applies all 72 semantic decisions
+2. trains the ranking model only on the 216 pre-holdout annotations
+3. evaluates Holdout 004 without fitting on any Holdout 004 label
+4. publishes AUC and ranking-enrichment diagnostics
+5. commits the independent ranking audit
+6. publishes GOGIT step
+   `PHASE03-SMOLTALK-V59-TRIAGE-RETRAIN-HOLDOUT-004`
+
+Primary ranking gate -->
+
+- REPAIR / EXCLUDE AUC --> at least **0.70**
+- top 18 ranked cases unchanged-unsuitable --> at least **65%**
+- bottom 18 ranked cases unchanged-unsuitable --> at most **35%**
+- top-minus-bottom gradient --> at least **30 percentage points**
+
+Fixed score thresholds 0.75 and 0.90 remain diagnostic only because the
+Naive-Bayes scores are not assumed to be calibrated probabilities.
+
+Even if the ranking gate passes -->
+
+- automatic REVIEW remains **NOT AUTHORIZED**
+- automatic EXCLUDE remains **NOT AUTHORIZED**
+- V59 final public mix remains **NOT FINALIZED**
+- model training remains **NOT AUTHORIZED / NOT STARTED**
 
 ## References
 
