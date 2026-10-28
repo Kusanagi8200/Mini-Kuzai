@@ -1,0 +1,1493 @@
+{
+  "bucket": "DIRECT_KEEP",
+  "count": 165,
+  "items": [
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "008c0852447cfadb9f0cfc8eb1101b681b373624f7201ad1d2d7164700ccf48a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1699
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "019f6325f21e3d3964e2dc809ba4abe3417956a7caedcfaea889ddc4b5e0d627",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2735
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "03b1bbc673ac59e4d3539090634df089064a1a2f2cd808108c152c680902e497",
+      "source_dataset": "openhermes-50k",
+      "tokens": 829
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "059293b0925270261412ab0304c73e0e77fc53f0c468e841fc0fb67d1ec8a096",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2901
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "067cea2490bbad01f304d467752dc960da9c6925fbb25bae7d4e26c72f3dc7d0",
+      "source_dataset": "openhermes-50k",
+      "tokens": 442
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "0842592e530c488359d069a06eb360f406ef3e20a3d1bb4af88f53a3bc3a4431",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3041
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "0988a9efcc88d3d86d38306f407206396365155199dae4da244d87f6f315d72f",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 342
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "0adeeb9e8eb0e8c1787fce896c6d3e04f127dad960a29e805e2f9985197a272a",
+      "source_dataset": "openhermes-50k",
+      "tokens": 299
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "0e8e08d48c12a1ce99418e7e67ec14f7324056690a703cca48c7dd51ff5fd6a9",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1461
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "0f8a439791898bec253eacdb191f6e0c03cba131b076d8bcc07c8c420e7d39cd",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3058
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "101fab98b428a0c9bc473f90d8a54b4ae83fb0e2e08333662eb61f036bc5e4cb",
+      "source_dataset": "openhermes-50k",
+      "tokens": 567
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "10e74ae77658984681c6a987e2e195e0818d723069233d438bbcb1ac9a6b807c",
+      "source_dataset": "openhermes-50k",
+      "tokens": 513
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "11f46497fdb1f3282c69ac01ffd8e156967a38ab914023461d4cad0a8b3fbb45",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2205
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "12e18b27a87e87deb8c08a5d4d16f0da5f2351b8ec7d4c2e9339edbb220512d8",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2061
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 3,
+      "sha": "1675c49528aa54143580a3d5ec8bf78a210173475d7cc32adcd18ff3824f4068",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3222
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "18c30845dd25504e7cc0803aff3e2758184637136db51ea1eb4beb3bcbeba1e4",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1059
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "18f88b19227f944730fbe20a83665f61fa980ae786349eb2fb601b04b09074e4",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1234
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "1addf7c34fca98f5ff7c79ec68ebf6ab164bebf0f2c35406791d27ff6b417068",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2530
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "1b01510c44f9ef20c508d6c765273057c71b5d8c5b906ec020fb0f52d6b58b57",
+      "source_dataset": "openhermes-50k",
+      "tokens": 771
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "1c17a6189b16d466279a1fb7879f8da2fe4fca69477a899940db261c14570ada",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2949
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "1c1bd8e1f4db51a22d311e95e4bd5a2472f895383d77dc99cc7bbcf3a18b208a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2809
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "1c617cc906455f27b19605e31ccb5cceeeae05bddf4c402694a150ce36fb2982",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2763
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "1ca6f65686863c2fc437a6b12db472fb7d5aa5bd8224bd28f56ed24e60f9c14e",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1943
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "1dc073b1393f8784f2043a66b9cd29f7a233f5ce0b0f416c295c3aaff5b7960d",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2205
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "208e513c165cc7733494246b53ce78e150ad587c73ee3545c1c1f198ca5cde16",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2365
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "23d78b956a24d0a21883175623333846d2fac476525ac81ea1cb45bfd0c48c3f",
+      "source_dataset": "openhermes-50k",
+      "tokens": 385
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "269ea9b9c7c32c883a06a9d2c987af7c98347444a30ac883eea7e87d2127326d",
+      "source_dataset": "openhermes-50k",
+      "tokens": 1245
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "291f185c6bed929e54ceb34b29b148ec95f1a20de9ab1378f4ac9bbb1397adf6",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1561
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "294ac6c8bcf8a12514bae01207e927ba1eefce1954fd22c3977c2073d86f11e4",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 103
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "2ac7e591494d427ab6913dfcc3c0195f526dd37e3f3ae5d84c9d7d3ecb1f9576",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2712
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "2b82a77f4cfc9c70f734a2057e23164a12ea009ffd89ad96c56da727c1dd920f",
+      "source_dataset": "openhermes-50k",
+      "tokens": 582
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "2c3cf1d2265472e34cc08c8200dd155590b54c1d5a691a1c410e566c3a3cd5ad",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2285
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "2ce879fb1819b0122489e269e7a69a47c5b7f2fad44ea4a07c85ec03f4d010ac",
+      "source_dataset": "openhermes-50k",
+      "tokens": 857
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "2ce8f0f2736a0f212f81c316ee6de0042dea1ee84b35e072c64c30669ab50a0b",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2869
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "2d9cd6e7d24b00e85e5ac128a4b83b5fedf7a68e2212a2d99cbda7cbbfed4e33",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2811
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "2edc75f08bc833089187df0191e2e8020e96b0b30133f99dcf3cfa6ffb37b8ea",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2429
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "2f33dcf2d45b706988204c5df4e232ec7a5f560847f1d4cd899004326e0f1c26",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1704
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "30c78210173e3a4f51f5aa81b2a0925b98005da687e069238628f5ef228c8f2b",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2485
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "344c702b424672f0fa3044ec39cb0fa26caa23a4cb041d89905c32ca9429f6af",
+      "source_dataset": "openhermes-50k",
+      "tokens": 340
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "3643ee8acfb7d37ce28a5836c5612da424459509e246f6cf2b7ff821db82062a",
+      "source_dataset": "openhermes-50k",
+      "tokens": 139
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "3722efa5457450710f187cd775b9d3387f1768e1449c44079ba1c02f93c725b7",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2031
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "392616b10dc0f871c077b37cf0ae683854558ee3965d564acfbd5e6720dd4f5c",
+      "source_dataset": "openhermes-50k",
+      "tokens": 159
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "39e9af8ac1a7e7102ff345f2e3b1f1b97d583d8319708da955b43ee9a28450de",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 998
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "39fc19b189d53d6649bc100533c5b625e65f0ad4de95c2ea026a2075dd0fd41e",
+      "source_dataset": "openhermes-50k",
+      "tokens": 167
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "3bab7b5ed56ac3703fb12eab4ddbf7885b084dbb186e5b140a04fd6979ae0d6e",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1073
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "3c48662ea1f2d5504154aa160ea650fa83bada22e28bc5b1a241fffc1645daf4",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2460
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "3d66122665bb2c8e483116b2db9041cb02ae5b6d81b0f105e54ad7654ad7fa25",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3010
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "3fa0c1dec33ee08a082216a41ff973822aa66d0fd6156c31cd9be40b87c1d9e8",
+      "source_dataset": "openhermes-50k",
+      "tokens": 617
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "43bb0aeaa6e0d5c24f0efca9c2edd8b6f0701073cc5a314b92d6461fa249f289",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1591
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "45065b76b74c3af864bc9ef4d8b2927d7b021febedbb7f240c0087678ee053ac",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2040
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "48afcb0284a474f395e6c70eef656b95bb8b2dffa13271c95075fd0eee849e25",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2334
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "49fcb06040ea42f4c532fbdb6a38a469fdaba4ad45be5c28370776494ef08a23",
+      "source_dataset": "openhermes-50k",
+      "tokens": 222
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "4b59cdc4baece16ba5745f1f70d1a93be1891005464c8aa9e5662a12bebb3acb",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2591
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 3,
+      "sha": "4d20b027f4309226bb0324bbe40c04a696aeb8e4b99e7b74eae55b27e9472830",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3363
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "4fcef841ffa8e988d55ebc766c3e7e642a09dfb08f27522fad32e62bfb5a74e6",
+      "source_dataset": "openhermes-50k",
+      "tokens": 1237
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "50254bfe13af4d0d4c0fb9cdd3133f0fd4599f11900fdd9082e56ad0778a1397",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3190
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "509e08916598d5dc2f3ebd68511280c96ccb4396dfed0705cb1928e295fc61f7",
+      "source_dataset": "openhermes-50k",
+      "tokens": 419
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "533969e6c55bce8756d3cab49a55f14b193b5ba0729b9c7e3a658ed7f00f9f82",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1984
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "59145fa32065277d3ac8f837c93ff102a19a9cad929d1676fa535475178d8851",
+      "source_dataset": "openhermes-50k",
+      "tokens": 837
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "59ac7972f935325758e082178a7e50c818833efa5d8081561e967a405c087dc1",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2042
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "59c7450a3d1dfc6faf39387e4365689e422a298ba198d0e644de025ceb6beaf1",
+      "source_dataset": "openhermes-50k",
+      "tokens": 1275
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "5bfa42bce926d2de8b9094e632e327489b095e6ca2df50fbe5699f075f23cb25",
+      "source_dataset": "openhermes-50k",
+      "tokens": 409
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "5cd8cb713bfdb911d3dba378171170c71372259de972a4120b0ab2727b4e1522",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1823
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "5ce88dc663a413c0b630f82a5a5c1d0e2d25c3589ea29af65c6d8f455a02f76e",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2802
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "609d8ca618549b90a90c193acbe6aeebf951cb1174542b69fe52216a26f670ec",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1734
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "64c31a05b05d3c573628d2ee89ff241eea448213cd91ece7d04475d685d2ff04",
+      "source_dataset": "openhermes-50k",
+      "tokens": 798
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "68415783f085d8ee77b24b2692da538df7d5fba3962c9b3fb6e4be05b07b345c",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2849
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "68ec14f920986bf26755e40d83c94219e3251653c8cac675625abaf3ff91be30",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1596
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "6a0ee9f19fad1a3a8d5bc9f93428dcbd47595447cde3bfbafe2981d2a5291704",
+      "source_dataset": "openhermes-50k",
+      "tokens": 324
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "6ac58d7711247f27ec544c38813a78af1841dfa235a95315f8ce1bd8c8e16ed8",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 121
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "6de8f24a1acb3b085b3bbddfc9640b1b1589f8a9211a076e348a2326f3295516",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1568
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "6e362163a235ac383c085d39532c665f893397678d348cea55ca327eb8f7ff45",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1286
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "6f046e7ef42098adb5ec77a1ead967f6b476a2ce4a10a263f34b06bf9c7bd666",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2093
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "HIGH",
+      "segments": 3,
+      "sha": "706369a11a8d8f8ab98fde687c21936a9bfc5a75860e3c2277ffb9d32aadcb5a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3087
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "720a9f10a09f988e7ae71f3c5d05de5ab393a4d94c3d0b6366e2b06221cfc49f",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2679
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "72d1b60b958c07ec466934b92c7bf414ddc12446f9aa049d712269530383d989",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1404
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "7334a00c41b96aeea97a1f343312401aab91ab9db5ee70a0e03d8aeb0e6db3e3",
+      "source_dataset": "openhermes-50k",
+      "tokens": 135
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "75ba20d966178ea083e7336a1470dc689d458493891f5c65b89a59d1b2e3ca4b",
+      "source_dataset": "openhermes-50k",
+      "tokens": 500
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "7794e1ba16f34014d77faf28aacbe54de3449949a86fa16a626beeef017c14a0",
+      "source_dataset": "openhermes-50k",
+      "tokens": 469
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "7a2bb741f7db25bb7d27a6508929e17b40b57511765a11bc9165ab843810b223",
+      "source_dataset": "openhermes-50k",
+      "tokens": 603
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "7a52c9af2c1c6995cabaa6382534d1cf484b1d2dd963e4b836a3fbeb34e14487",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 339
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "7bfddf9a0f58b9239e97c3fc6762302577653ab6eafb7f89a8df34c098202b1c",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2906
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "7c4afaf6e0db04456229916995027c57bfc1dbfd1988f710b89b7b2359165cf7",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2983
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "7dc2e212908d3fce50d420270105ea328ecf9b4350b02acf7129f2045cdd5212",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 574
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "7de73a75bbe3ef1a8529cda4f45ad48c7c69c53bf04a08c0ff91c0a1f0535979",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2308
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 3,
+      "sha": "8371f617769ab498a7f15b156cdea79caf2fc6100b06f9e15614650ddf901cff",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3223
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "8394e6845eea04ae4b739ab20535fe2c803e61d8f9de28024a946f7745dc09da",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 269
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "8417f778082a2cb41e59136ede959bfecd9b106d45f93c23e63532c8894c28bb",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1196
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "8719ad37e0d6bc5794c0abead8a3e792fb8784a90efad605f1a87ef13619fd6d",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1331
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "876fe99a56058d3a862d761b1e5c88bc25754f5068adf09496c63695dae6daae",
+      "source_dataset": "openhermes-50k",
+      "tokens": 127
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "88ffa8befc24f925d62fec92142542539340f47189b442a4003952cd1e05002e",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2939
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "89fdfaccf83b0fca0b2ec8bff846f4c21c45e08b9537d8a85cba89917c98a75f",
+      "source_dataset": "openhermes-50k",
+      "tokens": 163
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "8b988f9d623b127d8bd9806d10082abf20defe1ac61d4b60575d0506e0c3075a",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 273
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "920cde53de1a1873064ab2d16c18bc8789ff1bee4e9f741bc1eaf512b15da899",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3069
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "92777e5c6d746e0af507cec26cf35ce282bbc9f88c5d4c9bab724c5cbf8c3f41",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1324
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "9379b9c075f03121a4f6da279789553cad66e1260eef2107fc7f8bbfe9b0451b",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 224
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "96661a904ddfe41c94719faf4a86dbe698b4fe220d05739f319808a54cdb6270",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 142
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "976ecd4716619816df2282bb30f21082d78d8d49a9bafaefdb2221e2aad3e953",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2371
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "97d54095e1d4d1f30edca10e8452672631c552318f285428ce28d20e1bdbb49c",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2914
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "9a385f86c7815fdce33c3f377d88356bfbf34531896fbdd82e88f887d7f01ebd",
+      "source_dataset": "openhermes-50k",
+      "tokens": 943
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "9d996150e73f73d9cfaa4c302665c2e9d6d8b652303a15bf36c87d0c03729946",
+      "source_dataset": "openhermes-50k",
+      "tokens": 311
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "9e881c798f51858227a223810e29c2c6323f98534f97704543246580154f745a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 990
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "a33821b7e57876ce963408e5b6ae0b3a2c069df2417eaa3f6e32693e732d41f7",
+      "source_dataset": "openhermes-50k",
+      "tokens": 158
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "a3a94c797a247a3942fb4d6024380f7b62e1c930f506ffe48f79b59158431d5d",
+      "source_dataset": "openhermes-50k",
+      "tokens": 256
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "a4903b1d2ea903e39960354698504ef44dac48ca674d6c33063b3901b849c388",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2020
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "a720b23f4cc80592519d45355bc79ba89343fd6e30385febe3369978b2030c27",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 721
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "a8236d5c7ea5121895a28f0a8c16d859a6bbde194424b6d98cde08ad87ac922d",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 946
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "aa9dcb3c31fa5424ffbddcb144d784a442e3914e7ae0120577f9479e6e7b371c",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2531
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "ae63820053462caaa576610752156a1cd74563c8273bc174df49bdea8bf7fbf3",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2705
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "b2146c83d321e5b9dbd118774ea9619f5687966a9de37d9786a74c6631fa6f29",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2586
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "b3530cca09103e1808080731f6b99870390c0aad314062b45e8303a538d6b79f",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1457
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "b3b55d57e581645e0efa2c8664830346f06707c2802aee02158adffeebe53cd0",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2532
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "b53adbb8530f01653415f2173fa65361bb09c96481e77c860ee0c4cdd1e255db",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2720
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "b56372af999794f65f16621f8353adb210a502f00372134db2dbc706a81b1210",
+      "source_dataset": "openhermes-50k",
+      "tokens": 410
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "b5740b97cbd81e18c3166e7438c51e854ac08ad86acca5fbb9f54e5e639dcb56",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1805
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "b5aa84d5a6b28eaceefcec9e87cff1e3514356d6fb5a182aeddf7d6fd797bf8a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2711
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "b72d862623f8b0acfaacdcbc59cf1f41f93023bbf97d57a1e82839b3a194b0fa",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2180
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "b8781a488ee02ebb22b73ba4ba4ad99916d6f988f6285687c2cb279859171753",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1737
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "b9af914b22cacdbfdbcb566c4919c0433ea531f41e086a0d19253d517694a8b5",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2690
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "b9f4fbd405ee1c74eca8386d18dc1440c2e662392438c8d2981cc6ee6f052ac5",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2427
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "ba34ffc5347a697cd3419bf282713e2b179e3214cd9355b5959fd2a60dbdf855",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2066
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "bdd4c4b0478c94e4b030b18e60667a954bf29801786a6a59a01744bed8f1b803",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2754
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "c19b649b8d339a8b90ac0a0dcefb53a21f4ec83d97a3234096ada4dd6b34a288",
+      "source_dataset": "openhermes-50k",
+      "tokens": 617
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "c5be7ebf0b6c1b688c4506afd82f1f04a04c7df8dfd001595f86f8ed52cd8322",
+      "source_dataset": "openhermes-50k",
+      "tokens": 266
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "c7909ca85ffe2857f8dfdbbde2d52bc3f9dc98e38f1bea9213883f36a1b6613d",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2517
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "c86935743a3dbd73f7e39454f26574d9b0a821559a277276258a70cb56ba63f5",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2724
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "c9af9341701889a76dfb0b1462211863008192b36bd97f9d51da8d1bd4d000ac",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 813
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "cbafdc84d4b21d686b2f413028ba9c29943f115e43e5c90d27964a86296c400c",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1645
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "cc1954646ba517592a6932fc1cbd0aaceed4cc8e3c3502ba9b41a22832469eb4",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2832
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "cd3d216fa0ba7918458635e92ad2b347c7d18c186e26cd3f7fd1e08adda786ac",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 589
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "ce2bbc8d2e88506258e2d224436b2ecb6812fd9fbd842988f82dfe7020b7ca3f",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2776
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "d1de943a2b27994c0d56f6fa63f3f140ef199e911215da9d39a55be22dd63f17",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1547
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "d2145a8be72a7b557bbe5410737eadba44fe83e39c7403799f4b613175951b9d",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 565
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "d31cc04e24475ad7e75bb70dc2681318f121b99c5f299eb58a5c2d38e821683c",
+      "source_dataset": "openhermes-50k",
+      "tokens": 123
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "d35414e3c81762ecc44a67661e5d3b02387d929af75fd2afc2b6ec2b7e68f960",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3086
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "d41ce36e52995c3831e25533c5d3efaf3b777d4286f76c63e0dd0cd391d8fd1a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2176
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "d4501075ab19a7276b6f1f1eaecbf7ee58cbc31e11177bfa7f1f16611a5ef0e1",
+      "source_dataset": "openhermes-50k",
+      "tokens": 287
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "d456341ea6d8cc79eac290f8d74c70cb25f7c248105787235185ace7601204ca",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2586
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "d9004243d538c9859e27f8ffb78518b34e2c65b9ecdd8bb675977de263117f82",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1951
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "d92030fbf2b761d4fd0b536f2f2f79b90ab3bf28427adb816ef72930a9634c8e",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2682
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "de5649d27cc32b6768afb6884f208465033d5076318e4b135efe35fb8bfcf3e1",
+      "source_dataset": "openhermes-50k",
+      "tokens": 454
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "e0b971451d417130139b8c0d09e7ed067072af8720b90837c213c20b096a034d",
+      "source_dataset": "openhermes-50k",
+      "tokens": 113
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "e39fc7b6b6cb7ce5c48585dd6aca0f05984528918297dbcbf18f63b513c47858",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2858
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "e657fff5be6285128d8949e569c53723b44eed81f6d2c4a7fb5bd2e4660891c3",
+      "source_dataset": "openhermes-50k",
+      "tokens": 771
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "e6b39039bfac98ef6927b4b9eea143649c636104733aa19a802d054865a45423",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 540
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "e8c16d1eaee53d9aa10df2925229e3b4db187ef11379669ee18c861219b44a1b",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2945
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "ea86d5a715735e5794ab30a7d05beedb5cd0647703b134abeb3b241294ca7181",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2529
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "eadf1b38a118c58c3da910a812b31b374f14997db129e2d3bae9fe432a83a3b6",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2936
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "eaecc12d81e46c59805732fb8daf6c43ddd9cc93dc35716aaa10531374673e64",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2477
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "ed3e952550362312ed6343eff25c007ecf1e759d978df209b438af90a30519ef",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 233
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "ed4753c95e0d2c3985de52d63c5d19f3c5f2674d7d492d0cda8d93bc2e582525",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3215
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "ee194d5e8ca52e478693457af1f7245edabde295c667e2e3c654b828990cb935",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1346
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "ef58ed9c091f8e0e9d53b69002fe07ee88de5d6d56469472e27f972f4525a492",
+      "source_dataset": "openhermes-50k",
+      "tokens": 597
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "f03eb798a2a16ee46a51e042d7b23c82023b28815185702d0e4fed39a6930569",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2527
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "f489c3500a529a9ef0ef9db54cd639e66742689d171816370ac60a8cf4688e33",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3089
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "f8f9869ecc33d1aaac538aad46023bd9f4a56a431124b3cc7452900d36d6d6aa",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1736
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "f9c9f2ba83f5fa86e4b7d67c705353bbf9b44564d8b4242c24882396af16676c",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 1187
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "fa2ef67e8a12b45971eb33360992003fa0c967ab3db688a2c22aec241f6601d3",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1595
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "fbb505d565794b91d5cefcff8fbf3f4fbea08d88e307b7878b54dd76985c14fe",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1768
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "fbd85dc3f457a58472ff34c29f8612d717a2cbbf46de06226d0b1123e3f96817",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 339
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "fc22c9d1baa74ebc8c0721e406197e96c0fb73ac0dc78cd0d51cac110da96cd1",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2823
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "fcaa67b5a3e5851ff6c7d4161deb561e108f74dd2fab2344a1625ff69fcf4b77",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2600
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "LEGACY_STRUCTURED_KEEP",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "fd184c30876d2798f101a2e14f1db7b516bc2a86b4333a447d6d92ed32a6f0c2",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2968
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "GENERAL_SUPPORT",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "fe24ef55a4dac7687eb829986faa03049e80332b962afec5a269d3b56d64881f",
+      "source_dataset": "openhermes-50k",
+      "tokens": 375
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "PERSONA_CORE",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "ff2482aa931f6452f629667154a29dd59677054ee56175c675a360b652feef48",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2313
+    }
+  ],
+  "schema_version": "v59-final-mix-policy-list-1",
+  "training_authorized": false
+}

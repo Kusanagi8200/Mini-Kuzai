@@ -1,0 +1,132 @@
+{
+  "automatic_filtering_used": false,
+  "base_exclusions": {
+    "controlled_source": 2,
+    "known_negative": 22,
+    "oversized": 3
+  },
+  "candidate_population": 1112,
+  "candidate_reviewed_total": 320,
+  "controlled_train_tokens": 24539,
+  "groups": {
+    "DEFER_UNREVIEWED": {
+      "category": {
+        "CREATIVE": 43,
+        "FACTUAL_QA": 122,
+        "FOLLOWUP": 62,
+        "GENERAL_OTHER": 141,
+        "MATHEMATICS": 102,
+        "PRACTICAL_ADVICE": 105,
+        "PROGRAMMING": 106,
+        "WRITING": 111
+      },
+      "conversations": 792,
+      "persona_tier": {
+        "UNREVIEWED": 792
+      },
+      "priority": {
+        "HIGH": 128,
+        "LOW": 367,
+        "MEDIUM": 297
+      },
+      "segments": 1094,
+      "tokens": 1204585
+    },
+    "DIRECT_KEEP": {
+      "category": {
+        "CREATIVE": 21,
+        "FACTUAL_QA": 29,
+        "FOLLOWUP": 11,
+        "GENERAL_OTHER": 22,
+        "MATHEMATICS": 18,
+        "PRACTICAL_ADVICE": 27,
+        "PROGRAMMING": 18,
+        "WRITING": 19
+      },
+      "conversations": 165,
+      "persona_tier": {
+        "GENERAL_SUPPORT": 68,
+        "LEGACY_STRUCTURED_KEEP": 11,
+        "PERSONA_CORE": 86
+      },
+      "priority": {
+        "HIGH": 31,
+        "LOW": 65,
+        "MEDIUM": 69
+      },
+      "segments": 238,
+      "tokens": 270877
+    },
+    "EXCLUDE_REVIEWED": {
+      "category": {
+        "CREATIVE": 1,
+        "FACTUAL_QA": 3,
+        "FOLLOWUP": 1,
+        "GENERAL_OTHER": 12,
+        "MATHEMATICS": 9,
+        "PRACTICAL_ADVICE": 5,
+        "PROGRAMMING": 9,
+        "WRITING": 7
+      },
+      "conversations": 47,
+      "persona_tier": {
+        "EXCLUDE": 47
+      },
+      "priority": {
+        "HIGH": 5,
+        "LOW": 26,
+        "MEDIUM": 16
+      },
+      "segments": 61,
+      "tokens": 56726
+    },
+    "REPAIR_QUEUE": {
+      "category": {
+        "CREATIVE": 3,
+        "FACTUAL_QA": 20,
+        "FOLLOWUP": 16,
+        "GENERAL_OTHER": 19,
+        "MATHEMATICS": 10,
+        "PRACTICAL_ADVICE": 11,
+        "PROGRAMMING": 10,
+        "WRITING": 19
+      },
+      "conversations": 108,
+      "persona_tier": {
+        "LEGACY_STRUCTURED_REPAIR": 21,
+        "REPAIR_GENERAL": 47,
+        "REPAIR_PERSONA": 39,
+        "REVIEW_REQUIRED_KEEP": 1
+      },
+      "priority": {
+        "HIGH": 33,
+        "LOW": 37,
+        "MEDIUM": 38
+      },
+      "segments": 161,
+      "tokens": 198226
+    }
+  },
+  "mix_finalized": false,
+  "policy": {
+    "direct_keep_rule": "Human-reviewed clean only. Sample KEEP requires A/LOW/GOOD. Structured V51/V52 requires A/LOW/GOOD.",
+    "exclude_rule": "Reviewed EXCLUDE is removed from the future training mix.",
+    "persona_rule": "Persona HIGH/MEDIUM is prioritized inside clean reviewed KEEP. Persona priority never overrides a known quality defect.",
+    "repair_rule": "Any reviewed example that is useful but not clean enough for direct admission stays outside training. This includes REPAIR and any historical KEEP that does not satisfy A/LOW/GOOD.",
+    "unreviewed_rule": "Never-reviewed candidates are deferred and not admitted to V59 training."
+  },
+  "raw_v44": 1139,
+  "ready_now_combined_tokens": 295416,
+  "ready_now_combined_tpp": 0.2493989085800735,
+  "ready_now_public_tokens": 270877,
+  "ready_now_public_tpp": 0.22868236033066783,
+  "repair_admitted_unchanged": false,
+  "reviewed_keep_redirected": 1,
+  "sample_reviewed": 288,
+  "schema_version": "v59-final-mix-policy-1",
+  "status": "POLICY_DEFINED_NOT_FINALIZED",
+  "structured_retained": 32,
+  "structured_reviewed_total": 56,
+  "training_authorized": false,
+  "unreviewed_admitted": false
+}

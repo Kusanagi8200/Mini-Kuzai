@@ -1,0 +1,980 @@
+{
+  "bucket": "REPAIR_QUEUE",
+  "count": 108,
+  "items": [
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "0020eb75e90316fdaa85fd125c0f24ca1cc5e1ef0baa030921425859a694971a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2705
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "073618b8bd57ad32e1df1aa9785c3a09203e2d5c8ef6b694280048fcd62bf468",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2152
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 3,
+      "sha": "096a56bdc289452d417fbffe82d10dc31bf04fbbaa2a5664ff86799de4440010",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3392
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "09770de8065d581042f0195a4a2492eeeee8a06d425741757abcba09916e1a52",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2689
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "09ff1301dd61d47257425d8bd31321ea80249f09023fa09b5d7fda9014fdbb8a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2170
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "0a11f65c6ab4b18bfb946d1bcd3e02f79fa36bd9c3f0b3a449cb45f9ffe23797",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2161
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "0af141cd1d4748b9f377fb161663fcc7a6aa35a2791bbdde38af36556127511f",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2153
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "0c42d856d663dc54d4411e1fbc1b09d68e23bf5d896f7aa2b38c1aed74c12b8b",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1398
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "0e335f6d5cc0568f0edc58b1f939b0e77b3070d188fcd153118ef080f826c9ee",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1445
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "15c96854145747e5180e2fab36f4149dc6963594d2be984dd82460486cd82e3b",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 704
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "1610145d905c1fa8b839c87f0f94450d5993da9c0658a0cbc863535447dc549e",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2196
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "169f1b189d4db210a158b115ff0ad20814bdeb2b4412013033c80f300d47e9d9",
+      "source_dataset": "openhermes-50k",
+      "tokens": 130
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "18fb5fbc0a1ae30bd277be59738c7d847976ab3767cffaeddadca9983b13dfcf",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2825
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "19130a1cc3889db37307dc0f6d5634e8e72dedb851781f9c71532d8c26c815df",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2869
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "1c08777b0f730f583b444ae4eef857485e800e92ecd3a4b78c1944f83577e1ba",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 681
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "1d0533de698c3ea6bdef963f7ef832af2dfe6623368ca3b1e6e95d1c22cde379",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1753
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "223929cb4d1e5009a0c31e25f415988deb94017e816a089a3a4bdedfea84a5c6",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2906
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "241f1afb1585945c452545944a6608512c64ce7a065ea7b7659772de6d742fc5",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1243
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "2ab4c403ee2c94b1eb6dc9c91b33f97b4fca1a7d757dd4f772bd53b3d52f47dd",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3310
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "2f5da28a498f8cfb71ad7f6a87e6172d52d3d97eb8e7655ad3127177a3444212",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2749
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "30145323cff1211431073235d4ca75b0f476977826730aaad4d4b790eb8cec23",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1630
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "33c1ff13ad454d5c652b0b6f5a3f531433b9f834c24cce61671a31d6c4ef9a70",
+      "source_dataset": "openhermes-50k",
+      "tokens": 627
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "33fd4da9a15c8daf650f8a60092ca6212ad0c67e308bdd4238e1778044a4c2ea",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 544
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "3883a4a3d7cbd9f3499179c203108bfc6d67a820bb757459b02ac990c810102f",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1758
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "3a49e503d873e3993548e86f2c7a83fd3ec26c09f05c9f9d9f9a60aa115221b4",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1956
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "3a779c0a7f94d4c1738cbecf2e7867e2edbecae3d66419925a0d9df35857c10d",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1956
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "3cc457d42d93049743bb5a629b5b2e463989010b7ee76fe5cee407670cb21225",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1902
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "4292724fdbfe00f4217f82412e3a47e6a6894e10a0c9477ed0a3a07814d57784",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1425
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "441fc8801e5289c2b50712322c4d865857f5f77e2053601051e62338533e2c4d",
+      "source_dataset": "openhermes-50k",
+      "tokens": 764
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "488291460714439a00e42467496bd54e39d4d468fcf4282331c139a8653f44e7",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 636
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "4b6dbe5223bafc70e6e93645ffe32680a502b15a3950862e69a022a1eb3cc5d5",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1820
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "4bd411ceb95b9b3c9cafe265405a9522445712ae330fa4af1fc74d76a088cd04",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3031
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "4cef46aa6f040835ec7e7dffc6c7940c54cd30455bdd8e28fcdaa1d7d2952e73",
+      "source_dataset": "openhermes-50k",
+      "tokens": 324
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "5237540445e6638213fd0c18ca35036c49535cd614f14828b1366ebadffdb6a6",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2223
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "526480094a0dbee92ace2c559429a324d1a881deda5df56c0a8bd2129f33ef05",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1444
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "55dc6783a2ebb6fcc1b23f8265ffe1a26546a40cac441f74a7aa7ab9316a69ea",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2197
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "57ebb082a847fc8451c09198a7f9ca4b2a966fbeac97cbddd0d6b8c29fb0237d",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 130
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "5a10e715f2eff5883656525eda9d979991916c081ae85602949090d79d43ec5f",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3407
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "5adc9a51f6f7ec2147569b570365a7bf748c6bf457df4534dae058c8f1a053a9",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2111
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "5baff24b85d5f69824c079cf9473a11f61219e44fbae885f4fdb9bd5a08e1cc2",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2580
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "5d4c1e41be5a828d7b1e369eb43e1078ff3917251e17886fcdc46a4d0f21695a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2471
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "6053fdebd4dd0f617020671ba725ecb2732b790589122f01019096d93e6fd569",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2407
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "6346d260aed52756cee6cc3dbcf3ef72a5cbbba6445559e40ba7576dc3d26012",
+      "source_dataset": "openhermes-50k",
+      "tokens": 459
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 3,
+      "sha": "688b9094130c5df25612772ff107e3d3b1ef13e6fe5f6341dfcd5f3d5adf143b",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3142
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "6daeff7de1fc570d84193e9ec27d79a39441115e561a99bcdcde0f594eaa6431",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1448
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "6f4c06341572cd28762452b0fde8362f1b30d1d21f469142912f0323b7626404",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1838
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "7009c9ee196942b366b51cfad4f63e4e7c92ff2e9d0a547b82c380d76be4fb34",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1870
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "7017b169fec618b854ab594e07f886fa5eff8093beab8222c24d86ca8da0456a",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2072
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "71d262175638b21ffcfb1e1c27fc07289206a00df715021eadd62417745a21e9",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2866
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "750e29137d25e0b38a88410b807a0a02af0fa6611f7b0678be35ff6f40c3123d",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 757
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "753e21f5a08c15ff68318adec6efdecb6af6780cc723770f681aa61213a40ee4",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2685
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "79efbbcd0bab95ce61abaa3af4bbac3e3776e5e0a2818dff555caae269aa4395",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1889
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "80fd16a511f47eb658d471c51e425c3049b52435fd0e0b467c129c13c1577bd7",
+      "source_dataset": "openhermes-50k",
+      "tokens": 231
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "83867b6147862b76a397c579886c15d1ecf0b2c8fa549b1c89fa9477c4413116",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2341
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "87fbc2bdf673b7ce633512732d6a86ce5d637ca4c883bfe9020adfb1bf68c7dc",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 656
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "89ba415aceef8477d59f60656a135ba431d5fbec46c89e3cdea68fae132a2de7",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2010
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "8a1bd8bca15e89d0cf8a66c5a17726a2019bb7cc4c91f2e54c4d6afda3fc7c5e",
+      "source_dataset": "openhermes-50k",
+      "tokens": 963
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "8b913032996991e44eb8c71c497dcc04fc6819e8256b1b076b754c131be9934e",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1118
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "8d1fa4491e9b2ca5a69c03a336cf93c14a8f22144c548fa76f332b7d10b80329",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2818
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "926e7e38b7dc57447fbe49df5ae13ed4f1a04811c841a53dea61b01563039101",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2067
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "94134e7696e3512f7812906325300596851a62715470b894a9cfec978fb90286",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2123
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "94fe58185a40730638622fce37664768d2feaee9b3e29194e2a46ca11e477526",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1094
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "980b8d8668c369c2464fc4664e1328c5860e6b28cf4457ae1e3be9bcc2892a88",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2783
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "9822adc8b1b44ef9ff65dccd0629819097a41c3134952a41f39002e172a83d09",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2181
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "9b8dcea4d91104c47f37cf9a154a2a9103466e25edc2d1792f9ae390591b82e7",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2679
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "9bb8cb6cc874f776af98598a2261baae4bbaf72a225b28c82fd33a9424194e27",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2125
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "9de62c999b02b0994f5850d8e011c19b9a3b13668e0567828b7d63c63ea6308d",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1410
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "9e7386f5d8ad711004f6fd997962753271688b24a99ced2443cdd598a82d0a11",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 616
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "9fb812a776de349c5ae7ab86221c56e80917abf6b4aa25c606652524c1fde09d",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1734
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "a76f8f608525be17674c458779f64240eaed3fd8c3f52bd5b8b12332bd15d9cb",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2914
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "a9105ee31aa53f4093adc1c07957d7129ceb22b3c15e7ff771017d9eacc8d784",
+      "source_dataset": "openhermes-50k",
+      "tokens": 514
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "ad1aab09de37307a41728233eda8a756b6821c4639fe8e078384ae1c19626476",
+      "source_dataset": "openhermes-50k",
+      "tokens": 387
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "aff79b9cd1aab62421da4e74ec304ce42c03f46efb2d12555f51f779eef7824f",
+      "source_dataset": "openhermes-50k",
+      "tokens": 323
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "b0274c3fb1435e90d9ff488c62e5135d37ed7b32d8263f6585e4643acfcf7c01",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 154
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "b55d5f08024037698acf8cefacff34799d923bb2595015db2e3c84bf32330580",
+      "source_dataset": "openhermes-50k",
+      "tokens": 935
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "b574aaf41af4daced3a1fde63f74353c75b4f199153adc49048c5118eb373552",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2612
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "b75a4a4d0cd4adbf7e1dafa87e9cb8cc60afa7dff3b25f89d140b39da9a0cce4",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 280
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "b75c08dd6c5a3f5ad73b4a07004fefcaadabafc080016443a8e4b9a4dad26adb",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2688
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "b9e8489cf724be812d7cb87077cc221784895b00d5bd7f00060d6d13287826e5",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1513
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "babb2898f837c79b97314f17e738b61f30a3d0da6251c76353b42cdd138e16a8",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1588
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "bb863ddbcf95ad80b6f2aabfda6b0022d52158ee5aeb6d2a99d013848f4b99bb",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2107
+    },
+    {
+      "category": "CREATIVE",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "bd2ef8171db99148aef483b47f647dd39bf9a847ae0fac1936037fb154f61a35",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1955
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "bf820d67fc2f24626307ce780ef6d4c27c1420a495eef88451cad0b2973e5915",
+      "source_dataset": "openhermes-50k",
+      "tokens": 1438
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "bfcb90f9728d358bf08770a313290b49bc091396dd6bac982667f48f18e830a2",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1981
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "c216ea657ef0df6ead2da666d30fd5177d8728ccdd1480809d1ec059fdbf1244",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2257
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "c4761f9570e1f73638b1c22908ac68e84f5476849081cb63c880777b4dc52b72",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2319
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "c8b0de3803393e047933533d4f891e91b14f6c27cccdbdd67b28bb2090b25b81",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3009
+    },
+    {
+      "category": "PROGRAMMING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "ca1d307f14797da7966b352f38ee604bc5ed6dac21c84847c5ba57acbe503223",
+      "source_dataset": "self-oss-instruct",
+      "tokens": 1110
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "ca3e77d780443438d12cc387bc0a447135e835df393349f781c04cd3a6630e64",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2438
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "ccd953eba0c5107d5dd738278bd7eed77ef05bc85ed1a377a82d5612c6194b17",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 168
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "d243b1e23acb604ed4de4724632a0956590af5d46b52a4a7f7b4beb4b6e56bb2",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3156
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "d3782cfae56b0aa38919519ee79210abf2c170ef7356d3befd43571d65b306e0",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1261
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "d44626c57cc71711453f1865cc026abbf14d218f1cd69887594a477337ab8fc7",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2676
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "d4e057ca3466c925133165cb34cfd1fd01cf56be3f52bc7d8ae9b2a7eb6f33a7",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1991
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "MEDIUM",
+      "segments": 2,
+      "sha": "d5c1a9761aad5ee2e76e4fd92bccb560e4e0e54adfb93fccf57f6a0d7ca931ad",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2870
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "d6b510f3630f2b3ee2abbc9af8d23522a25dba4e03bb66950888b4c1ceb5e9a9",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 3346
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "dd938872211e25474462b56d0ff0f014bc1b56cbf9a43b5c24fd42c0223e45cf",
+      "source_dataset": "explore-instruct-rewrite",
+      "tokens": 152
+    },
+    {
+      "category": "FACTUAL_QA",
+      "persona_tier": "REVIEW_REQUIRED_KEEP",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "e317fb8bce48a68d6a957a3e7732b0215de2c526e2b7a6706d8612e7af56d590",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2723
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "e320f9800fa404889baf58385ae2aa93f6836a197270abf185e6355d672fab40",
+      "source_dataset": "openhermes-50k",
+      "tokens": 242
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "e930e8b6f16727d85c22c82a0e31d7eefc4c786dfead81ccc98b98701856244b",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2780
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "ed58a04312de23be9b6ae9c56b6849e1ad0af75d74a82d34da827312340e67a4",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2897
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "f07909c17eedc0c96752ec5a44ccb3f36bb5fada5c32ea8770b7ef4c67a2cdfb",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1667
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "LEGACY_STRUCTURED_REPAIR",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "f3688f37aed86ac97ce1c2874ff5640f6ac739053896d5d76fb0f1cbdc3eff35",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2701
+    },
+    {
+      "category": "PRACTICAL_ADVICE",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "MEDIUM",
+      "segments": 1,
+      "sha": "f3b149193ca1f32c5fe9a1eeb3962ae4e56f47d9d982498528ace8a9a6920c79",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1847
+    },
+    {
+      "category": "WRITING",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 2,
+      "sha": "f4def0282417eac850c7f7dc450e35b5f7ad4882139d9b1058019174fcdabcf8",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2589
+    },
+    {
+      "category": "GENERAL_OTHER",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "LOW",
+      "segments": 2,
+      "sha": "f535dc0eaf471c23fd647e3e9107bac0505c1f9f9600baf2e622ad76b16114c8",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 2616
+    },
+    {
+      "category": "MATHEMATICS",
+      "persona_tier": "REPAIR_GENERAL",
+      "priority": "LOW",
+      "segments": 1,
+      "sha": "f71e9cd00d8ccaf1f22cc90846a80e8ae223f40d714090179300565139b02585",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1551
+    },
+    {
+      "category": "FOLLOWUP",
+      "persona_tier": "REPAIR_PERSONA",
+      "priority": "HIGH",
+      "segments": 1,
+      "sha": "ffdac2ae97b1e998ee84e37251dc33a73f71ae1188d92cee3ceb621503cb9299",
+      "source_dataset": "smol-magpie-ultra-short",
+      "tokens": 1522
+    }
+  ],
+  "schema_version": "v59-final-mix-policy-list-1",
+  "training_authorized": false
+}
