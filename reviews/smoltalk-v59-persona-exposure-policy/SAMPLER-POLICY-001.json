@@ -1,0 +1,15 @@
+{
+  "physical_duplication": false,
+  "reference_cycle_tokens": 295416,
+  "sampling_unit": "SEGMENT_STREAM",
+  "schema_version": "v59-persona-exposure-sampler-1",
+  "shuffle_within_stream": true,
+  "target_share_bp": {
+    "CONTROLLED_TRAIN": 3000,
+    "GENERAL_SUPPORT": 1500,
+    "LEGACY_STRUCTURED_KEEP": 842,
+    "PERSONA_CORE": 4658
+  },
+  "training_authorized": false,
+  "with_replacement": true
+}

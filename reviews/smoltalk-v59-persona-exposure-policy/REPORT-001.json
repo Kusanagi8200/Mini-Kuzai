@@ -1,0 +1,77 @@
+{
+  "constraints": {
+    "controlled_min_bp": 3000,
+    "general_support_max_bp": 1500,
+    "legacy_max_bp": 1000,
+    "persona_oriented_min_bp": 7500
+  },
+  "exclude_admitted": false,
+  "mix_weighting_finalized": true,
+  "persona_oriented_share_bp": 7658,
+  "public_share_bp": 7000,
+  "reference_cycle_tokens": 295416,
+  "repair_queue_admitted": false,
+  "sampler_policy": {
+    "epoch_semantics": "REFERENCE_EXPOSURE_CYCLE_NOT_UNIQUE_DATA_EPOCH",
+    "physical_duplication": false,
+    "sampling_unit": "SEGMENT_STREAM",
+    "shuffle_within_stream": true,
+    "target_basis": "TOKEN_EXPOSURE_SHARE",
+    "with_replacement": true
+  },
+  "schema_version": "v59-persona-exposure-policy-1",
+  "source_final_mix_policy": "PHASE03-SMOLTALK-V59-FINAL-MIX-POLICY-001",
+  "status": "EXPOSURE_POLICY_DEFINED_NOT_TRAINING_AUTHORIZED",
+  "streams": {
+    "CONTROLLED_TRAIN": {
+      "conversations": 107,
+      "equivalent_passes_x1000": 3612,
+      "raw_share_bp": 831,
+      "sampling_weight_x1000": 3610,
+      "segments": 107,
+      "target_cycle_tokens": 88624,
+      "target_share_bp": 3000,
+      "tokens": 24539
+    },
+    "GENERAL_SUPPORT": {
+      "conversations": 68,
+      "equivalent_passes_x1000": 701,
+      "raw_share_bp": 2140,
+      "sampling_weight_x1000": 701,
+      "segments": 76,
+      "target_cycle_tokens": 44312,
+      "target_share_bp": 1500,
+      "tokens": 63213
+    },
+    "LEGACY_STRUCTURED_KEEP": {
+      "conversations": 11,
+      "equivalent_passes_x1000": 1000,
+      "raw_share_bp": 842,
+      "sampling_weight_x1000": 1000,
+      "segments": 20,
+      "target_cycle_tokens": 24874,
+      "target_share_bp": 842,
+      "tokens": 24877
+    },
+    "PERSONA_CORE": {
+      "conversations": 86,
+      "equivalent_passes_x1000": 753,
+      "raw_share_bp": 6187,
+      "sampling_weight_x1000": 753,
+      "segments": 142,
+      "target_cycle_tokens": 137606,
+      "target_share_bp": 4658,
+      "tokens": 182787
+    }
+  },
+  "target_share_bp": {
+    "CONTROLLED_TRAIN": 3000,
+    "GENERAL_SUPPORT": 1500,
+    "LEGACY_STRUCTURED_KEEP": 842,
+    "PERSONA_CORE": 4658
+  },
+  "training_authorized": false,
+  "training_started": false,
+  "unique_ready_tokens": 295416,
+  "unreviewed_admitted": false
+}
