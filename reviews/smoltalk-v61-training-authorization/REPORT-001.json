@@ -1,0 +1,16 @@
+{
+  "blind_test_accessed": false,
+  "freeze_fingerprint": "0d5c85933691ba766a32ba586bf45e57fe062156a523e5ee18d79b92a8de51bd",
+  "intermediate_weight": 16,
+  "mandatory_continuation_review_cycle": 2,
+  "max_exposure_tokens": 1181664,
+  "max_optimizer_steps": 145,
+  "objective_freeze_fingerprint": "1b68568984e598bbccc0e9a1f00169d110b73b8a9aa97310fc36d1d18d5a532c",
+  "schema_version": "v61-training-authorization-report-1",
+  "status": "TRAINING_AUTHORIZED_NOT_STARTED",
+  "terminal_weight": 16,
+  "training_authorized": true,
+  "training_segments": 345,
+  "training_started": false,
+  "training_unique_tokens": 295416
+}

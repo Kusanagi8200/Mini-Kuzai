@@ -1,0 +1,39 @@
+{
+  "authorization_scope": "V61_BOUNDARY_INITIAL_WINDOW_ONLY",
+  "blind_test_during_training": false,
+  "dependencies": {
+    "segmentation_source_sha256": "e8bf14c7bc90561c4d9e976f971ef603d75ec6158bd304a24b8ea35b0c86ecc8",
+    "serializer_source_sha256": "ec75bff1abec33d3f6b7fde5cada462b66b7c484f006685c31761fb4d1dd7e2f",
+    "tokenizer_file_sha256": "cd511d08430c40069139546c4539d5edb7f3236656ba80ff430a8f3b13d4a97a",
+    "v59_final_mix_freeze_sha256": "f368c79b5ea26acd1460b0fee3c1758c384fe372ee10b89655434d8cc7a87bb3",
+    "v59_training_authorization_sha256": "727d6d3ca0b87475c8010e54c26e3966edd3e53e2e809e35836f45204c90adba",
+    "v60_initialization_freeze_sha256": "687fbfb450a89887b223d313b48c5751632babcef6f57e6b44d8f33532e9abd6",
+    "v60_model_source_sha256": "0fff9e4aebe992bf4e85ed722d5ddb5cd8dc141742be559b5f23369c21ee0dbf",
+    "v61_boundary_loss_source_sha256": "020915d51de47fb3181b18c2be4012f9407ecedd6117cb2f3bd6513f9041b0e9",
+    "v61_objective_freeze_sha256": "0eb8a4f5adc6cce0ce516a1b5fcea52166c05759c197baf6d0276bc6a69bf8e0",
+    "v61_protocol_report_sha256": "9a1f2c9cb6e5de5ef3da5200025cc72c0426bef12bc72755851c1380f02ae4ae",
+    "v61_training_protocol_sha256": "70890eedec3099c848e58f7119967cb1a2d97a7a57254fef52d03ff66981f4a0",
+    "validation_master_sha256": "48f36fdcb6ae7e106ef23abd8e3c34a93aeba89e8d1b8f9c7e3422807c1623e0"
+  },
+  "extension_requires_new_protocol_freeze": true,
+  "freeze_fingerprint": "0d5c85933691ba766a32ba586bf45e57fe062156a523e5ee18d79b92a8de51bd",
+  "initialization_freeze_fingerprint": "2e64f9e4749710e03f32db220cfe1ab5b0a304ef250ebe9408ad0224799e4cb6",
+  "mandatory_continuation_review_cycle": 2,
+  "max_exposure_tokens": 1181664,
+  "max_optimizer_steps": 145,
+  "objective_freeze_fingerprint": "1b68568984e598bbccc0e9a1f00169d110b73b8a9aa97310fc36d1d18d5a532c",
+  "schema_version": "v61-training-authorization-1",
+  "status": "FROZEN",
+  "target_share_bp": {
+    "CONTROLLED_TRAIN": 3000,
+    "GENERAL_SUPPORT": 1500,
+    "LEGACY_STRUCTURED_KEEP": 842,
+    "PERSONA_CORE": 4658
+  },
+  "total_training_conversations": 272,
+  "total_unique_training_segments": 345,
+  "total_unique_training_tokens": 295416,
+  "training_authorized": true,
+  "training_started": false,
+  "v59_corpus_baseline_fingerprint": "40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503"
+}
