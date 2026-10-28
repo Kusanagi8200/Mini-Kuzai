@@ -1,0 +1,123 @@
+{
+  "blind_test_accessed": false,
+  "hardware_preflight": {
+    "bf16": true,
+    "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gradient_norm_finite": true,
+    "loss_finite": true,
+    "memory_gate_bp": 6000,
+    "passed": true,
+    "peak_allocated_mib": 710,
+    "peak_reserved_bp": 968,
+    "peak_reserved_mib": 746,
+    "preclip_gradient_norm": 0.32258641719818115,
+    "total_memory_mib": 7705
+  },
+  "objective": {
+    "architecture": "V60_UNCHANGED",
+    "base_objective": "NEXT_TOKEN_CROSS_ENTROPY_UNCHANGED",
+    "blind_test_accessed": false,
+    "boundary_objective": {
+      "intermediate_assistant_boundary": {
+        "normalization": "GLOBAL_NONPAD_TOKEN_COUNT",
+        "target": "NON_EOS_TRUE_CONTINUATION",
+        "term": "NEG_LOG_ONE_MINUS_P_EOS",
+        "weight": 16.0
+      },
+      "masks_disjoint": true,
+      "ordinary_positions_unchanged": true,
+      "terminal": {
+        "normalization": "GLOBAL_NONPAD_TOKEN_COUNT",
+        "target": "EOS",
+        "term": "EXTRA_EOS_CROSS_ENTROPY",
+        "weight": 16.0
+      }
+    },
+    "corpus": "V59_V60_FROZEN_CORPUS_UNCHANGED",
+    "evidence": {
+      "v60_final_checkpoint_used_for_preflight_only": true,
+      "validation_base_ce": 3.4293072965904963,
+      "validation_intermediate_positions": 13,
+      "validation_terminal_positions": 36,
+      "validation_valid_tokens": 9206
+    },
+    "fingerprints": {
+      "segmentation_sha256": "e8bf14c7bc90561c4d9e976f971ef603d75ec6158bd304a24b8ea35b0c86ecc8",
+      "serializer_sha256": "ec75bff1abec33d3f6b7fde5cada462b66b7c484f006685c31761fb4d1dd7e2f",
+      "tokenizer_sha256": "cd511d08430c40069139546c4539d5edb7f3236656ba80ff430a8f3b13d4a97a",
+      "v60_eos_bias_report_sha256": "e87e904e3fb57780dda05f000774b6cf62a6d8777d1e6f601bb8021d550c176c",
+      "v60_eos_logit_report_sha256": "e3f61d667073ff5411702ba83db727151e2c5b23bf208d9e7c1ae993ddcb368e",
+      "v60_eos_target_report_sha256": "a7b91b466df4024d8d3a2e5dd94196062c3111cc1c352ea3aca9418648e6793b",
+      "v60_initialization_freeze_sha256": "687fbfb450a89887b223d313b48c5751632babcef6f57e6b44d8f33532e9abd6",
+      "v60_model_source_sha256": "0fff9e4aebe992bf4e85ed722d5ddb5cd8dc141742be559b5f23369c21ee0dbf",
+      "v60_run2_report_sha256": "b2d493769dfd40ffbb8dcdc87116be3c4c3f1de65184526a50e66de83d915c5e",
+      "v61_boundary_loss_source_sha256": "020915d51de47fb3181b18c2be4012f9407ecedd6117cb2f3bd6513f9041b0e9",
+      "v61_boundary_loss_test_sha256": "93c9c70ec846f81107c3686d9bd14e1a9db48a7600d55a1b2969a1c14da77a4b"
+    },
+    "initialization": "V60_INITIALIZATION_UNCHANGED",
+    "schema_version": "v61-boundary-objective-1",
+    "segmentation": "PHASE03_CANONICAL_UNCHANGED",
+    "selection": {
+      "candidate_weights": [
+        4.0,
+        8.0,
+        16.0,
+        32.0
+      ],
+      "candidates": [
+        {
+          "auxiliary_ratio_bp": 116,
+          "boundary_gradient_multiplier": 5,
+          "extra_loss": 0.03968319055660118,
+          "passes_gradient_gate": false,
+          "passes_ratio_gate": true,
+          "total_loss": 3.4689904871470976,
+          "weight": 4.0
+        },
+        {
+          "auxiliary_ratio_bp": 231,
+          "boundary_gradient_multiplier": 9,
+          "extra_loss": 0.07936638111320236,
+          "passes_gradient_gate": true,
+          "passes_ratio_gate": true,
+          "total_loss": 3.5086736777036984,
+          "weight": 8.0
+        },
+        {
+          "auxiliary_ratio_bp": 463,
+          "boundary_gradient_multiplier": 17,
+          "extra_loss": 0.15873276222640473,
+          "passes_gradient_gate": true,
+          "passes_ratio_gate": true,
+          "total_loss": 3.588040058816901,
+          "weight": 16.0
+        },
+        {
+          "auxiliary_ratio_bp": 926,
+          "boundary_gradient_multiplier": 33,
+          "extra_loss": 0.31746552445280946,
+          "passes_gradient_gate": true,
+          "passes_ratio_gate": false,
+          "total_loss": 3.746772821043306,
+          "weight": 32.0
+        }
+      ],
+      "maximum_auxiliary_ratio_bp": 500,
+      "minimum_boundary_gradient_multiplier": 9,
+      "selected_auxiliary_ratio_bp": 463,
+      "selected_boundary_gradient_multiplier": 17,
+      "selected_weight": 16.0
+    },
+    "serializer": "PHASE03_CANONICAL_UNCHANGED",
+    "status": "OBJECTIVE_DEFINED_PREFLIGHT_PASSED",
+    "tokenizer": "V56_UNCHANGED",
+    "training_authorized": false,
+    "training_started": false
+  },
+  "py_compile_output": "",
+  "schema_version": "v61-boundary-objective-report-1",
+  "status": "PREFLIGHT_PASSED_FREEZE_REQUIRED",
+  "training_authorized": false,
+  "training_started": false,
+  "unit_test_output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.037s\n\nOK"
+}
