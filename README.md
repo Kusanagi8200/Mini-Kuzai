@@ -299,18 +299,23 @@ The ranking direction is therefore **VALIDATED** for prioritizing review, but th
 
 Current V59 quality-control total -->
 
-- public conversations semantically reviewed in Samples 001-003 --> **216**
-- ranking direction --> **VALIDATED**
-- triage retraining on 216 annotations --> **SCRIPTED / READY FOR PREPARE**
+- public conversations semantically reviewed --> **288**
+- independent Holdout 004 --> **CLOSED**
+- Holdout 004 REPAIR/EXCLUDE AUC --> **0.595**
+- Holdout 004 ranking gate --> **FAILED**
 - automatic REVIEW --> **NOT AUTHORIZED**
 - automatic EXCLUDE --> **NOT AUTHORIZED**
+- never-reviewed public candidates remaining --> **792**
 - final public training mixture --> **NOT FINALIZED**.
 
-The next workstream is now scripted -->
+Classifier-driven selection is now closed for V59. The next workstream is -->
 
-**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004 - READY FOR PREPARE**
+**V59 FINAL MIX POLICY / PERSONA-FIRST PRUNING - SCRIPTED / READY**
 
-The retrain uses all 216 reviewed annotations. Holdout 004 contains 72 cases selected independently from the 864 never-reviewed candidates by deterministic priority x source x turn stratification. Model scores are not used for holdout selection and remain blinded during semantic review. Sample 003 is not reused as independent validation.
+The policy admits only human-reviewed clean examples directly, keeps REPAIR
+material outside the mix until corrected, removes reviewed EXCLUDE material and
+keeps all 792 never-reviewed conversations deferred. Persona HIGH/MEDIUM is
+prioritized only after quality gates pass.
 
 The remaining pre-training decisions also include final KEEP / REPAIR / EXCLUDE policy, final public-corpus/token accounting, and sampling/weighting so the controlled persona corpus is not drowned by the much larger public corpus.
 
