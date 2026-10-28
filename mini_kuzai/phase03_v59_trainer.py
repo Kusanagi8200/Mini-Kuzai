@@ -50,7 +50,7 @@ TRAINER_FREEZE_ROOT = (
     / "reviews"
     / "smoltalk-v59-persistent-trainer-freeze"
 )
-TRAINER_FREEZE_MANIFEST = TRAINER_FREEZE_ROOT / "TRAINER-FREEZE-001.json"
+TRAINER_FREEZE_MANIFEST = TRAINER_FREEZE_ROOT / "TRAINER-FREEZE-002.json"
 
 TOKENIZER_MODULE = REPO / "mini_kuzai" / "tokenizer_v56.py"
 TOKENIZER_FILE = (
