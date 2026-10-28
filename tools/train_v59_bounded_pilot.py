@@ -5,12 +5,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
-
-from mini_kuzai import phase03_v59_trainer as trainer
 
 
 REPO = Path(__file__).resolve().parents[1]
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
+
+from mini_kuzai import phase03_v59_trainer as trainer
 THIS_FILE = Path(__file__).resolve()
 TRAINER_SOURCE = REPO / "mini_kuzai" / "phase03_v59_trainer.py"
 DEFAULT_RUN_DIR = Path("/root/Mini-Kuzai/runs/v59-bounded-pilot-001")
