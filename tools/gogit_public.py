@@ -1040,6 +1040,55 @@ METRIC_KEYS = {
     "V61_TRAINER_MAX_TOKENS",
     "V61_TRAINER_REVIEW_CYCLE",
     "V61_TRAINER_BLIND_ACCESS",
+    "V61_RUN1_COMPLETED",
+    "V61_RUN1_OPTIMIZER_STEPS",
+    "V61_RUN1_EXPOSURE_TOKENS",
+    "V61_RUN1_EVALUATIONS",
+    "V61_RUN1_INITIAL_VAL_LOSS_X1E6",
+    "V61_RUN1_FINAL_VAL_LOSS_X1E6",
+    "V61_RUN1_BEST_VAL_LOSS_X1E6",
+    "V61_RUN1_FINAL_UTF8_INVALID",
+    "V61_RUN1_FINAL_EOS",
+    "V61_RUN1_FINAL_DISTINCT",
+    "V61_RUN1_FINAL_MEAN_TOKENS_X100",
+    "V61_RUN1_FINAL_REPEAT_TRIGRAM_BP",
+    "V61_RUN1_FINAL_MAX_CHAR_RUN",
+    "V61_RUN1_FINAL_EMPTY",
+    "V61_RUN1_BLIND_ACCESS",
+    "V61_RUN1_STOP_MILESTONE",
+    "V61_RUN1_STOP_PLATEAU",
+    "V61_RUN1_STOP_EARLY_VALIDATION",
+    "V61_RUN1_STOP_MAX_STEPS",
+    "V61_RUN1_STOP_MAX_TOKENS",
+    "V61_RUN1_STOP_SAMPLER",
+    "V61_RUN1_CONTROLLED_SHARE_BP",
+    "V61_RUN1_PERSONA_SHARE_BP",
+    "V61_RUN1_GENERAL_SHARE_BP",
+    "V61_RUN1_LEGACY_SHARE_BP",
+    "V61_EOS1_LOGIT_DIAG_PASS",
+    "V61_EOS1_LOGIT_BLIND_ACCESS",
+    "V61_EOS1_TERM_POSITIONS",
+    "V61_EOS1_TERM_PROB_PPM",
+    "V61_EOS1_TERM_NLL_X1E3",
+    "V61_EOS1_TERM_MEAN_RANK_X100",
+    "V61_EOS1_TERM_MEDIAN_RANK_X100",
+    "V61_EOS1_TERM_TOP1",
+    "V61_EOS1_NONTERM_POSITIONS",
+    "V61_EOS1_NONTERM_PROB_PPM",
+    "V61_EOS1_NONTERM_MAX_PROB_PPM",
+    "V61_EOS1_NONTERM_TOP1",
+    "V61_EOS1_INTERMEDIATE_BOUNDARIES",
+    "V61_EOS1_INTERMEDIATE_PROB_PPM",
+    "V61_EOS1_INTERMEDIATE_MEAN_RANK_X100",
+    "V61_EOS1_INTERMEDIATE_TOP1",
+    "V61_EOS1_INTERMEDIATE_OVER_TRUE",
+    "V61_EOS1_PROBE_COUNT",
+    "V61_EOS1_PROBE_STEPS",
+    "V61_EOS1_PROBE_MAXPROB_MEAN_PPM",
+    "V61_EOS1_PROBE_MAXPROB_MAX_PPM",
+    "V61_EOS1_PROBE_BEST_RANK_MEAN_X100",
+    "V61_EOS1_PROBE_BEST_RANK_MEDIAN_X100",
+    "V61_EOS1_PROBE_TOP1",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1136,6 +1185,11 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v61_persistent_trainer_freeze.py",
     }
 
+    active_training_v61 = tracked in {
+        "tools/public-audits/phase03_v61_train_run_001.py",
+        "tools/public-audits/phase03_v61_train_run_001_eos_calibration.py",
+    }
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -1172,6 +1226,13 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
             and metrics.get("TRAINING_AUTHORIZED") == 1
             and metrics.get("TRAINING_STARTED") == 0
+        )
+
+    if active_training_v61:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+            and metrics.get("TRAINING_STARTED") == 1
         )
 
     if tokenizer_workstream or architecture_workstream:
