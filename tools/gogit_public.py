@@ -682,6 +682,22 @@ METRIC_KEYS = {
     "V59_FINAL_BLIND_DURING_TRAINING",
     "V59_FINAL_AUTH_SCOPE_BOUNDED_PILOT",
     "TRAINING_STARTED",
+    "V59_TRAINER_IMPLEMENTED",
+    "V59_TRAINER_FROZEN",
+    "V59_TRAINER_PYCOMPILE_PASS",
+    "V59_TRAINER_TESTS_PASS",
+    "V59_TRAINER_RUNTIME_VERIFY_PASS",
+    "V59_TRAINER_TRAIN_SEGMENTS",
+    "V59_TRAINER_TRAIN_UNIQUE_TOKENS",
+    "V59_TRAINER_VALIDATION_RECORDS",
+    "V59_TRAINER_VALIDATION_SEGMENTS",
+    "V59_TRAINER_VALIDATION_TOKENS",
+    "V59_TRAINER_PREVIEW_TOKENS",
+    "V59_TRAINER_PREVIEW_SEGMENTS",
+    "V59_TRAINER_PREVIEW_MAX_DEV_BP",
+    "V59_TRAINER_MAX_STEPS",
+    "V59_TRAINER_MAX_EXPOSURE_TOKENS",
+    "V59_TRAINER_BLIND_ACCESS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -745,10 +761,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     tokenizer_workstream = tracked.startswith(
         "tools/public-audits/phase03_v56_tokenizer_"
     )
-    final_v59_authorization = (
-        tracked
-        == "tools/public-audits/phase03_v59_final_mix_freeze_authorization.py"
-    )
+    post_authorization_v59 = tracked in {
+        "tools/public-audits/phase03_v59_final_mix_freeze_authorization.py",
+        "tools/public-audits/phase03_v59_persistent_trainer_freeze.py",
+    }
 
     architecture_workstream = tracked.startswith(
         (
@@ -758,7 +774,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         )
     )
 
-    if final_v59_authorization:
+    if post_authorization_v59:
         return (
             metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
             and metrics.get("V59_MIX_FINALIZED") == 1
