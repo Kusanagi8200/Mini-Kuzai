@@ -36,6 +36,9 @@ SOURCE_PHASE03_V59 = (
 SOURCE_PHASE03_V60 = (
     "Mini-Kuzai V60 corrected initialization and pre-train gate"
 )
+SOURCE_PHASE03_V61 = (
+    "Mini-Kuzai V61 boundary-aware EOS objective preparation"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -982,6 +985,21 @@ METRIC_KEYS = {
     "V60_EOS_BIAS_200_TERM_TOP1",
     "V60_EOS_BIAS_200_INTERMEDIATE_TOP1",
     "V60_EOS_BIAS_200_NONTERM_TOP1",
+    "V61_BOUNDARY_OBJECTIVE_DEFINED",
+    "V61_BOUNDARY_PREFLIGHT_PASS",
+    "V61_BOUNDARY_TESTS_PASS",
+    "V61_BOUNDARY_CANDIDATES",
+    "V61_BOUNDARY_SELECTED_WEIGHT_X100",
+    "V61_BOUNDARY_GRAD_MULTIPLIER_X100",
+    "V61_BOUNDARY_AUX_RATIO_BP",
+    "V61_BOUNDARY_VAL_BASE_CE_X1E6",
+    "V61_BOUNDARY_VAL_TERMINAL",
+    "V61_BOUNDARY_VAL_INTERMEDIATE",
+    "V61_BOUNDARY_VAL_TOKENS",
+    "V61_BOUNDARY_RESERVED_MIB",
+    "V61_BOUNDARY_RESERVED_BP",
+    "V61_BOUNDARY_BLIND_ACCESS",
+    "V61_BOUNDARY_TRAINING_STARTED",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1038,6 +1056,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V59
     if tracked.startswith("tools/public-audits/phase03_v60_"):
         return SOURCE_PHASE03_V60
+    if tracked.startswith("tools/public-audits/phase03_v61_"):
+        return SOURCE_PHASE03_V61
     return SOURCE
 
 
@@ -1077,6 +1097,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             "tools/public-audits/phase03_v58_",
             "tools/public-audits/phase03_v59_",
             "tools/public-audits/phase03_v60_",
+            "tools/public-audits/phase03_v61_",
         )
     )
 
