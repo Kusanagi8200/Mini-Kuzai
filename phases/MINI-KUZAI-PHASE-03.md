@@ -607,33 +607,46 @@ The conservative V59 final-mix policy is now closed -->
 No automatic filtering is used. No REPAIR or never-reviewed conversation is
 admitted unchanged.
 
+The persona-first exposure policy is now finalized -->
+
+- CONTROLLED_TRAIN --> **30.00%**
+- PERSONA_CORE --> **46.58%**
+- GENERAL_SUPPORT --> **15.00%**
+- LEGACY_STRUCTURED_KEEP --> **8.42%**
+- persona-oriented exposure --> **76.58%**
+- physical data duplication --> **NO**.
+
 The next authorized technical operation is -->
 
-**V59 PERSONA-FIRST MIX WEIGHTING / EXPOSURE POLICY - SCRIPTED / READY**
+**V59 TRAINING HYPERPARAMETERS / STEP BUDGET / AUTHORIZATION PREFLIGHT - SCRIPTED / READY**
 
-The policy uses four clean streams -->
+Bounded pilot protocol -->
 
-1. CONTROLLED_TRAIN
-2. PERSONA_CORE
-3. GENERAL_SUPPORT
-4. LEGACY_STRUCTURED_KEEP.
+- frozen V58 MICRO architecture
+- BF16
+- AdamW
+- base LR 3e-4
+- cosine decay to 3e-5 after 10% warmup
+- beta1 0.9 / beta2 0.95
+- weight decay 0.10
+- gradient clip 1.0
+- microbatch preflight 8 sequences at full 2048 context
+- dynamic accumulation to 8192 non-pad tokens per optimizer step
+- four reference exposure cycles
+- max exposure budget **1181664 tokens**
+- max optimizer-step budget **145**
+- frozen VALIDATION available during pilot
+- BLIND TEST reserved and inaccessible during pilot.
 
-Exposure constraints -->
-
-- CONTROLLED_TRAIN >= 30%
-- CONTROLLED_TRAIN + PERSONA_CORE >= 75%
-- GENERAL_SUPPORT <= 15%
-- LEGACY_STRUCTURED_KEEP <= 10%.
-
-The policy uses weighted sampling with replacement at the stream level. It does
-not physically duplicate corpus records.
+The preflight is synthetic and disposable. It does not write a model checkpoint
+and does not authorize persistent training.
 
 Remaining pre-training blockers -->
 
-1. execute and freeze the persona-first exposure policy
-2. define optimizer, learning rate, batch size and training-step budget
-3. reassess the effective exposure-to-parameter ratio against V58
-4. perform a separate explicit model-training authorization gate.
+1. execute the bounded training-protocol hardware preflight
+2. review the preflight and protocol GOGIT result
+3. publish a separate explicit model-training authorization decision
+4. implement or freeze the persistent trainer only after authorization.
 
 Training remains unauthorized and has not started.
 
