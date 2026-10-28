@@ -461,77 +461,58 @@ Current V53 evidence -->
 ## Current status
 
 ```text
-PHASE 03                  : V59 PUBLIC MIX QUALITY CONTROL - PAUSED CLEAN
+PHASE 03                  : V62 PAUSED CLEAN - CONTROL PLANE FROZEN
 Primary axis              : COGNITIVE AND CREATIVE PERSONA
 Phase 01 checkpoint       : FROZEN
 Phase 02 KV cache         : PRESERVED
 
-Identity specification    : V0.2 CANDIDATE
-Behavior matrix           : V0.1 CANDIDATE
-Knowledge map             : V0.1 CANDIDATE
-Dataset schema            : V0.1 CANDIDATE
-Semantic inventory        : V0.3 - 65 GROUPS
-
-Canonical TRAIN records   : 107
-TRAIN semantic groups     : 29 / 29 COMPLETE
-TRAIN provenance          : 105 PHASE03-DESIGNED / 2 SMOLTALK
-
-VALIDATION records        : 36 / 36 FROZEN
-VALIDATION groups         : 18 / 18 FROZEN
-BLIND TEST records        : 36 / 36 FROZEN
-BLIND TEST groups         : 18 / 18 FROZEN
+Controlled TRAIN          : 107 RECORDS / 29 GROUPS
+VALIDATION                : 36 RECORDS / 18 GROUPS FROZEN
+BLIND TEST                : 36 RECORDS / 18 GROUPS FROZEN
 Total controlled corpus   : 179 RECORDS / 65 GROUPS
 
-Cross-split exact IDs     : 0
-Cross-split group overlap : 0
-Exact cross-split prompts : 0
-
 Tokenizer                 : V56 FROZEN
-Tokenizer family          : BYTE_BPE_WHITESPACE
-Tokenizer vocabulary      : 1024
-Tokenizer merges          : 765
-Byte fallback             : ENABLED
-
-Conversation serializer   : V57 FROZEN
-Architecture baseline     : V58 MICRO - EXPERIMENTAL FROZEN
+Serializer                : V57 FROZEN
+Architecture baseline     : V58 FROZEN
 Architecture parameters   : 1,184,512
 Context length            : 2048
-Model dimension           : 128
-Attention heads           : 4
-Transformer layers        : 4
-FFN dimension             : 512
 
-GPU smoke                 : PASSED
+V59 final training mix    : FINALIZED
+Training conversations    : 272
+Training segments         : 345
+Unique training tokens    : 295416
+Persona exposure target   : 76.58 PERCENT
+
+V60 initialization        : CORRECTED / FROZEN
+V60 training              : COMPLETE / PLATEAU
+V60 final val loss        : 3.429395
+V60 free EOS              : 0 / 6
+V60 repeat trigram        : 95.17 PERCENT
+
+V61 cycle-2 review        : COMPLETE
+V61 terminal EOS top-1    : 24 / 36
+V61 intermediate EOS top1 : 8 / 13
+V61 nonterminal false EOS : 105 / 9170
+V61 continuation          : REJECTED
+
+V62 objective             : PAIRWISE BOUNDARY MARGIN
+V62 margin                : 0.25
+V62 terminal weight       : 8.00
+V62 intermediate weight   : 17.358491
+V62 control plane         : FROZEN / VERIFIED
+V62 training authorized   : YES
+V62 training started      : NO
+V62 mandatory review      : CYCLE 2
+V62 max optimizer steps   : 145
+V62 max exposure tokens   : 1181664
+V62 scheduler horizon     : 577
+
 GPU                       : RTX 5060 LAPTOP 8 GB
-BF16                      : SUPPORTED
+CUDA / BF16               : PASS
+BLIND TEST                : CLOSED
 
-V59 segmentation          : CLOSED
-Pair-preserving policy    : FROZEN
-Arbitrary intra-pair cut  : FORBIDDEN
-
-V59 public candidates     : 1112
-V59 bulk quality pop.     : 1080
-Public cases reviewed     : 216
-
-Bulk unchanged admission  : FAILED
-Weighted unsuitable 001+2 : 50.64 PERCENT
-Simple rule mining        : CLOSED - LOW RECALL
-Supervised triage 001     : CLOSED - GATE FAILED
-Active Sample 003         : CLOSED
-Ranking direction         : VALIDATED
-Triage retrain            : AUTHORIZED / NOT STARTED
-Automatic REVIEW          : NOT AUTHORIZED
-Automatic EXCLUDE         : NOT AUTHORIZED
-
-Private corpus pipeline   : LOCAL-ONLY - PAUSED
-Private source material   : NOT COMMITTED
-Derived private metrics   : NOT COMMITTED
-
-Training mixture          : NOT FINALIZED
-Training                  : NOT STARTED
-Training authorized       : NO
+NEXT OPERATION            : V62 TRAIN RUN 001 - CYCLE 2 REVIEW
 ```
-
 ## Current checkpoint
 
 V53 closed canonical TRAIN at 107 records across all 29 TRAIN semantic groups.
@@ -816,52 +797,126 @@ See -->
 - [V58 architecture baseline](MINI-KUZAI-PHASE-03-V58-ARCHITECTURE-BASELINE.md)
 - [V58 public audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V58-ARCHITECTURE-BASELINE-001.json)
 
-## V59 current state and resume point
+## V59-V62 training evolution and current resume point
 
-V59 data preparation is **CLOSED**.
+V59 data and mixture preparation is closed. The final persona-first training identity remains **272 conversations / 345 segments / 295416 unique tokens** and is the fixed data baseline for the subsequent controlled experiments.
 
-Completed within V59 -->
+### V60 - initialization correction and numerical baseline
 
-1. pair-preserving 2048-token segmentation
-2. oversized-pair review and replacement validation
-3. known-negative filtering
-4. bulk quality Samples 001 and 002
-5. weighted bulk-quality gate
-6. filter-rule mining
-7. supervised text-triage experiment
-8. Active-Learning Sample 003
-9. independent Holdout 004
-10. rejection of classifier-driven automatic corpus selection
-11. conservative DIRECT_KEEP / REPAIR / EXCLUDE / DEFER policy
-12. persona-first exposure weighting
-13. bounded training-protocol definition
-14. CUDA / BF16 full-context hardware preflight
-15. immutable final mix freeze
-16. explicit bounded-pilot training authorization.
+V60 corrected the pathological initial logit scale without changing the V58 architecture.
 
-Terminal state -->
+Final V60 state -->
+
+- optimizer steps --> **509**
+- exposure tokens --> **4,435,262**
+- validation loss --> **3.429395**
+- stop --> **PLATEAU**
+- UTF-8 invalid probes --> **0 / 6**
+- distinct probes --> **6 / 6**
+- EOS completions --> **0 / 6**
+- mean probe length --> **96 / 96**
+- repeated-trigram rate --> **95.17%**
+
+Teacher-forced diagnostics showed EOS at mean rank **3.00** on true terminal states, but free generation never made EOS top-1. A constant EOS-logit bias sweep found no safe global calibration that improved true termination without also creating false EOS positions.
+
+### V61 - asymmetric boundary-aware EOS objective
+
+V61 added explicit terminal EOS reinforcement and intermediate EOS suppression with weights **16 / 16**.
+
+The mandatory cycle-2 review stopped at **69 optimizer steps / 597982 exposure tokens**.
+
+Observed V61 effects -->
+
+- validation loss --> **6.959721 to 4.713690**
+- terminal EOS top-1 --> **24 / 36**
+- intermediate EOS top-1 --> **8 / 13**
+- EOS above true continuation at intermediate boundaries --> **13 / 13**
+- ordinary nonterminal false EOS top-1 --> **105 / 9170**
+- free-generation EOS completions --> **0 / 6**
+- repeated-trigram rate --> **96.65%**
+
+Decision --> **DO NOT CONTINUE V61 TO CYCLE 4**.
+
+V61 proved that the terminal signal can be learned, but its auxiliary losses produced an asymmetric pressure that over-generalized EOS.
+
+### V62 - pairwise boundary-margin objective
+
+V62 replaces the V61 auxiliary formulation with symmetric pairwise logit constraints -->
 
 ```text
-SEMANTIC_VALIDATION_COMPLETE = 1
-V59_MIX_FINALIZED            = 1
-TRAINING_AUTHORIZED          = 1
-TRAINING_STARTED             = 0
+true terminal boundary
+logit(EOS) > logit(best_non_EOS) + margin
+
+intermediate assistant boundary
+logit(TRUE_CONTINUATION) > logit(EOS) + margin
 ```
 
-Freeze fingerprint -->
+V62 preflight selected -->
 
-`40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503`
+- margin --> **0.25**
+- terminal weight --> **8.00**
+- intermediate weight --> **17.358491**
+- boundary-balance factor --> **2.169811**
+- auxiliary-loss ratio --> **1.32%**
+- terminal active validation violations --> **16 / 36**
+- intermediate active validation violations --> **13 / 13**
+- reserved VRAM --> **682 MiB**
 
-Resume operation -->
+All five V62 pre-training gates are closed -->
 
-**IMPLEMENT / FREEZE PERSISTENT V59 PILOT TRAINER**
+```text
+MARGIN OBJECTIVE PREFLIGHT   = PASS
+OBJECTIVE FREEZE             = PASS
+TRAINING PROTOCOL            = PASS
+TRAINING AUTHORIZATION       = PASS
+PERSISTENT TRAINER FREEZE    = PASS
 
-The trainer is not allowed to redefine the authorized corpus or training
-protocol. Any frozen dependency change requires a new authorization gate.
+TRAINING_AUTHORIZED          = 1
+TRAINING_STARTED             = 0
+BLIND_ACCESS                 = 0
+```
 
-The BLIND TEST remains reserved for post-training evaluation.
+Frozen V62 control fingerprints -->
 
+- objective freeze --> `68a0f92735e51e88c197f3e41dfd156e815e2174ae182517fdd045034156f9bd`
+- training authorization --> `f85deb2775f5b5db54472938e22d078198a9a041f88837bb641b26c8ad5f4ffd`
+- persistent trainer freeze --> `5ecba62748feba3aaf24c30abd741b3909d455a78c01f8684285e16d7334988c`
 
+Authorized V62 limits -->
+
+- scope --> `V62_MARGIN_INITIAL_WINDOW_ONLY`
+- initial window --> **4 cycles**
+- max exposure --> **1181664 tokens**
+- max optimizer steps --> **145**
+- mandatory review --> **cycle 2**
+- scheduler horizon --> **577 steps, preserved from V60**
+- extension --> **new freeze required**
+- BLIND TEST --> **forbidden during training**
+
+Persistent trainer reconstruction is verified at **345 segments / 295416 unique tokens**, with **345 terminal boundaries / 159 intermediate boundaries**. The schedule preview contains **2263 segment exposures / 1181302 tokens** with only **4 basis points** maximum stream-share deviation.
+
+### Current resume operation
+
+**V62 TRAIN RUN 001 - CYCLE 2 MANDATORY REVIEW**
+
+The next run must start from the fresh V60 initialization. The V61 cycle-2 checkpoint was used only as diagnostic evidence for V62 parameter selection and must not be used as the V62 starting checkpoint.
+
+After cycle 2, compare -->
+
+- standard VALIDATION CE
+- fixed six-probe EOS completion count
+- generated length
+- repeated-trigram rate
+- UTF-8 validity and distinct outputs
+- true-terminal EOS rank / top-1
+- intermediate true-continuation versus EOS rank / top-1
+- ordinary nonterminal false EOS top-1 count
+
+Continuation toward cycle 4 is allowed only if terminal EOS improves while intermediate and ordinary false EOS remain controlled and validation remains healthy.
+
+Pause checkpoint --> [V62 pause checkpoint - 2026-10-28](MINI-KUZAI-PHASE-03-V62-PAUSE-CHECKPOINT-2026-10-28.md)
+
+The BLIND TEST remains closed.
 ---
 
 ##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
