@@ -83,7 +83,7 @@ def main() -> None:
         raise RuntimeError("Trainer freeze fingerprint mismatch")
 
     validation = [row for row in rows if row.get("type") == "validation"]
-    train = [row for row in rows if row.get("type") == "train"]
+    train = [row for row in rows if row.get("type") == "train_step"]
 
     if len(validation) != int(summary.get("evaluations", -1)):
         raise RuntimeError("VALIDATION evaluation count mismatch")
