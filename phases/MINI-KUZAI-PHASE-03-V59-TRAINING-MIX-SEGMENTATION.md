@@ -1,11 +1,12 @@
 # MINI-KUZAI PHASE 03 - V59 TRAINING MIX AND SEGMENTATION
 
-Status --> **PAUSED CLEAN - SEGMENTATION CLOSED - PUBLIC MIX NOT FINALIZED**
+Status --> **CLOSED - FINAL MIX FROZEN - BOUNDED PILOT TRAINING AUTHORIZED - TRAINING NOT STARTED**
 
-V59 is the final data-preparation workstream before any model-training
-authorization decision.
+V59 data preparation is complete. The public mixture, persona-first exposure
+policy, tokenizer, serialization, segmentation, architecture and bounded pilot
+protocol are frozen under one terminal authorization manifest.
 
-Training remains **NOT AUTHORIZED / NOT STARTED**.
+Training is **AUTHORIZED FOR THE V59 BOUNDED PILOT ONLY / NOT STARTED**.
 
 ## Scope
 
@@ -573,52 +574,13 @@ GOGIT step -->
 
 ## V59 final mix freeze + training authorization gate
 
-Status --> **SCRIPTED / READY**
+Status --> **CLOSED / PASSED / BOUNDED PILOT AUTHORIZED**
 
-This is the terminal V59 gate before the first bounded training pilot.
+Terminal GOGIT step -->
 
-The freeze verifies and fingerprints -->
+`PHASE03-SMOLTALK-V59-FINAL-MIX-FREEZE-AUTHORIZATION-001`
 
-- canonical controlled TRAIN --> 107 conversations / 29 semantic groups
-- DIRECT_KEEP public training set --> 165 conversations
-- final unique training set --> **272 conversations**
-- final unique training segments --> **345**
-- final unique training tokens --> **295416**
-- tokenizer V56 manifest and artifact
-- V57 serializer source
-- V59 pair-preserving segmentation source
-- V58 architecture manifest, config and model source
-- final mix policy
-- persona-first sampler policy
-- bounded pilot protocol and hardware preflight
-- frozen VALIDATION master
-- frozen BLIND master
-- semantic split manifest.
-
-Final exposure targets -->
-
-- CONTROLLED_TRAIN --> **30.00%**
-- PERSONA_CORE --> **46.58%**
-- GENERAL_SUPPORT --> **15.00%**
-- LEGACY_STRUCTURED_KEEP --> **8.42%**.
-
-Explicitly outside training -->
-
-- REPAIR_QUEUE --> **108 conversations**
-- EXCLUDE_REVIEWED --> **47 conversations**
-- DEFER_UNREVIEWED --> **792 conversations**.
-
-Authorization scope -->
-
-- V59 bounded pilot only
-- architecture --> V58 MICRO FROZEN
-- max optimizer steps --> **145**
-- max exposure tokens --> **1181664**
-- VALIDATION --> allowed during pilot
-- BLIND TEST --> forbidden during training
-- BLIND TEST --> reserved for post-training evaluation.
-
-Successful terminal state -->
+Terminal state -->
 
 ```text
 SEMANTIC_VALIDATION_COMPLETE = 1
@@ -627,21 +589,83 @@ TRAINING_AUTHORIZED          = 1
 TRAINING_STARTED             = 0
 ```
 
-The authorization does not start training. Persistent trainer execution remains
-a separate operation.
+Authorization scope -->
 
-Run -->
+`V59_BOUNDED_PILOT_ONLY`
 
-```bash
-python3 tools/run_v59_final_mix_freeze_authorization_job.py
-```
+Freeze fingerprint -->
 
-GOGIT step -->
+`40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503`
 
-`PHASE03-SMOLTALK-V59-FINAL-MIX-FREEZE-AUTHORIZATION-001`
+Frozen training identity -->
+
+- controlled TRAIN --> **107 conversations / 29 semantic groups**
+- clean public DIRECT_KEEP --> **165 conversations**
+- total training conversations --> **272**
+- total unique training segments --> **345**
+- total unique clean tokens --> **295416**.
+
+Frozen exposure targets -->
+
+- CONTROLLED_TRAIN --> **30.00%**
+- PERSONA_CORE --> **46.58%**
+- GENERAL_SUPPORT --> **15.00%**
+- LEGACY_STRUCTURED_KEEP --> **8.42%**
+- persona-oriented exposure --> **76.58%**.
+
+Explicitly outside the authorized pilot -->
+
+- REPAIR_QUEUE --> **108 conversations**
+- EXCLUDE_REVIEWED --> **47 conversations**
+- DEFER_UNREVIEWED --> **792 conversations**.
+
+Frozen dependency identity includes SHA-256 fingerprints for -->
+
+- all 19 canonical TRAIN JSONL files
+- DIRECT_KEEP source inventory
+- V56 tokenizer manifest and tokenizer artifact
+- V57 serialization source
+- V59 segmentation source
+- V58 architecture manifest, config and model source
+- final public-mix policy
+- persona-first exposure report and sampler policy
+- bounded training protocol and hardware-preflight report
+- V54 VALIDATION master
+- V55 BLIND master
+- semantic split manifest.
+
+Authorized pilot limits -->
+
+- architecture --> **V58 MICRO FROZEN**
+- dtype --> BF16
+- optimizer --> AdamW
+- base learning rate --> 3e-4
+- minimum learning rate --> 3e-5
+- gradient clip --> 1.0
+- target non-pad tokens / optimizer step --> 8192
+- maximum optimizer steps --> **145**
+- maximum exposure tokens --> **1181664**
+- reference exposure cycles --> **4**
+- VALIDATION --> allowed
+- BLIND TEST during training --> **FORBIDDEN**
+- BLIND TEST --> reserved for post-training evaluation.
+
+The authorization is invalidated by any corpus, tokenizer, serializer,
+segmentation, architecture, exposure-policy or protocol change.
+
+Training has **not** started.
+
+The next V59-adjacent workstream is implementation and freeze of a persistent
+trainer that verifies the terminal freeze fingerprint before the first optimizer
+step and refuses to run outside the authorized scope.
+
+Checkpoint -->
+
+[V59 training-authorized checkpoint - 2026-10-28](MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
 
 ## References
 
+- [V59 training-authorized checkpoint - 2026-10-28](MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
 - [V59 pause checkpoint - 2026-10-25](MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md)
 - [Sample 001 results](../reviews/smoltalk-v59-bulk-sample-001/RESULTS-001.md)
 - [Sample 002 results](../reviews/smoltalk-v59-bulk-sample-002/RESULTS-002.md)
