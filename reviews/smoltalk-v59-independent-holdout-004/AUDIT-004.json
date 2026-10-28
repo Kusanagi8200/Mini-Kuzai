@@ -1,0 +1,48 @@
+{
+  "automatic_exclude_authorized": false,
+  "automatic_review_authorized": false,
+  "exclude": {
+    "auc": 0.6641414141414141,
+    "threshold": 0.9,
+    "threshold_metrics": {
+      "f1": 0.18181818181818182,
+      "flagged": 16,
+      "fn": 4,
+      "fp": 14,
+      "precision": 0.125,
+      "recall": 0.3333333333333333,
+      "tn": 52,
+      "tp": 2
+    }
+  },
+  "holdout_selection_uses_model_score": false,
+  "holdout_size": 72,
+  "mix_finalized": false,
+  "model_family": "multinomial_nb_role_word_unigram_bigram",
+  "ranking_priority_authorized": false,
+  "remaining_unreviewed": 792,
+  "schema_version": "v59-triage-retrain-holdout-4",
+  "scores_blinded_during_review": true,
+  "status": "INDEPENDENT_HOLDOUT_EVALUATED",
+  "training_authorized": false,
+  "training_labels": 216,
+  "unsuitable": {
+    "auc": 0.595028067361668,
+    "bottom_quartile_unsuitable_rate": 0.2222222222222222,
+    "quartile_gradient": 0.33333333333333337,
+    "ranking_gate_pass": false,
+    "remaining_projected_at_threshold": 537,
+    "threshold": 0.75,
+    "threshold_metrics": {
+      "f1": 0.5526315789473684,
+      "flagged": 47,
+      "fn": 8,
+      "fp": 26,
+      "precision": 0.44680851063829785,
+      "recall": 0.7241379310344828,
+      "tn": 17,
+      "tp": 21
+    },
+    "top_quartile_unsuitable_rate": 0.5555555555555556
+  }
+}
