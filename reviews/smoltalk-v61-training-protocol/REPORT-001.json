@@ -1,0 +1,162 @@
+{
+  "blind_test_accessed": false,
+  "hardware_preflight": {
+    "bf16": true,
+    "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gradient_norm_finite": true,
+    "loss_finite": true,
+    "memory_gate_bp": 6000,
+    "passed": true,
+    "peak_allocated_mib": 710,
+    "peak_reserved_bp": 968,
+    "peak_reserved_mib": 746,
+    "preclip_gradient_norm": 0.32258641719818115,
+    "total_memory_mib": 7705
+  },
+  "protocol": {
+    "architecture": "V60_ARCHITECTURE_V61_BOUNDARY_OBJECTIVE",
+    "batching": {
+      "gradient_accumulation": "DYNAMIC_UNTIL_TOKEN_TARGET",
+      "loss_ignore_pad": true,
+      "microbatch_sequences": 8,
+      "next_token_shift": true,
+      "optimizer_step_target_nonpad_tokens": 8192,
+      "pad_token_id": 0,
+      "right_padding": true
+    },
+    "boundary_objective": {
+      "base_cross_entropy_unchanged": true,
+      "intermediate_weight": 16,
+      "ordinary_positions_unchanged": true,
+      "terminal_weight": 16
+    },
+    "checkpointing": {
+      "every_exposure_tokens": 147708,
+      "include_optimizer": true,
+      "include_rng_state": true,
+      "include_sampler_state": true,
+      "include_scheduler": true,
+      "save_best_validation": true,
+      "save_last": true,
+      "save_milestones": true
+    },
+    "comparison": {
+      "only_primary_change": "BOUNDARY_AWARE_EOS_OBJECTIVE",
+      "same_lr_trajectory": true,
+      "same_optimizer": true,
+      "same_stream_weights": true,
+      "same_tokenizer": true,
+      "same_training_corpus": true,
+      "v60_architecture_preserved": true,
+      "v60_initialization_preserved": true
+    },
+    "context_length": 2048,
+    "dtype": "BF16",
+    "evaluation": {
+      "blind_test_during_training": false,
+      "blind_test_reserved_until_training_finalized": true,
+      "continuation_signals": {
+        "generation_distinct_outputs": true,
+        "generation_eos": true,
+        "generation_mean_length": true,
+        "generation_repeat_trigram_rate": true,
+        "generation_utf8_validity": true,
+        "validation_loss": true
+      },
+      "generation_probe": "FIXED_VALIDATION_PROMPTS",
+      "generation_probe_max_new_tokens": 96,
+      "mandatory_continuation_review_cycles": [
+        2
+      ],
+      "milestone_review_cycles": [
+        1,
+        2,
+        4
+      ],
+      "plateau_review": {
+        "action": "REVIEW_EOS_GENERATION_BEFORE_CONTINUATION",
+        "minimum_cycle": 2,
+        "minimum_validation_improvement_bp": 50,
+        "window_evaluations": 4
+      },
+      "stop": {
+        "consecutive_degraded_evals": 3,
+        "minimum_completed_evals": 4,
+        "nonfinite_gradient_norm": true,
+        "nonfinite_loss": true,
+        "relative_validation_loss_degradation_bp": 500
+      },
+      "teacher_forced_validation_loss": true,
+      "validation_every_exposure_tokens": 147708,
+      "validation_loss_metric": "STANDARD_NEXT_TOKEN_CE_FOR_V60_COMPARABILITY",
+      "validation_split": "FROZEN_VALIDATION_36"
+    },
+    "exposure": {
+      "extension_requires_new_protocol_freeze": true,
+      "initial_window_cycles": 4,
+      "initial_window_max_exposure_tokens": 1181664,
+      "initial_window_max_optimizer_steps": 145,
+      "milestones": [
+        {
+          "action": "RECORDED_MILESTONE",
+          "cycle": 1,
+          "exposure_tokens": 295416
+        },
+        {
+          "action": "MANDATORY_CONTINUATION_REVIEW",
+          "cycle": 2,
+          "exposure_tokens": 590832
+        },
+        {
+          "action": "FINAL_WINDOW_REVIEW",
+          "cycle": 4,
+          "exposure_tokens": 1181664
+        }
+      ],
+      "quota_overshoot_rule": "LAST_SEGMENT_MAY_OVERSHOOT_STREAM_QUOTA",
+      "reference_cycle_tokens": 295416,
+      "stream_quota_mode": "TOKEN_QUOTA_WITH_REPLACEMENT",
+      "stream_share_tolerance_bp": 100,
+      "target_share_bp": {
+        "CONTROLLED_TRAIN": 3000,
+        "GENERAL_SUPPORT": 1500,
+        "LEGACY_STRUCTURED_KEEP": 842,
+        "PERSONA_CORE": 4658
+      },
+      "unique_clean_tokens": 295416
+    },
+    "gradient_clip_norm": 1.0,
+    "initialization_freeze_fingerprint": "2e64f9e4749710e03f32db220cfe1ab5b0a304ef250ebe9408ad0224799e4cb6",
+    "objective_freeze_fingerprint": "1b68568984e598bbccc0e9a1f00169d110b73b8a9aa97310fc36d1d18d5a532c",
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "eps": 1e-08,
+      "learning_rate": 0.0003,
+      "name": "AdamW",
+      "weight_decay": 0.1
+    },
+    "parameters": 1184512,
+    "scheduler": {
+      "comparison_policy": "PRESERVE_V60_LR_TRAJECTORY_DURING_SHORT_WINDOW",
+      "max_steps": 577,
+      "min_learning_rate": 3e-05,
+      "name": "linear_warmup_cosine_decay",
+      "warmup_steps": 20
+    },
+    "schema_version": "v61-boundary-training-protocol-1",
+    "seed": 42,
+    "status": "PROTOCOL_DEFINED_PREFLIGHT_PASSED",
+    "training_authorized": false,
+    "training_started": false,
+    "v59_corpus_baseline_fingerprint": "40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503",
+    "vocab_size": 1024
+  },
+  "protocol_freeze_candidate": true,
+  "schema_version": "v61-boundary-training-protocol-report-1",
+  "status": "PROTOCOL_PASSED_FREEZE_REQUIRED",
+  "training_authorized": false,
+  "training_started": false
+}
