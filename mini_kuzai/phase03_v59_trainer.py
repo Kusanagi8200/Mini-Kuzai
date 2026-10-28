@@ -1413,6 +1413,7 @@ def _checkpoint_payload(
     best_validation_loss: float,
     evaluations: list[dict],
     consecutive_degraded: int,
+    stream_exposure_tokens: dict[str, int],
 ) -> dict:
     return {
         "schema_version": "v59-pilot-checkpoint-1",
@@ -1431,6 +1432,7 @@ def _checkpoint_payload(
         "best_validation_loss": best_validation_loss,
         "evaluations": evaluations,
         "consecutive_degraded": consecutive_degraded,
+        "stream_exposure_tokens": dict(stream_exposure_tokens),
         "model": model.state_dict(),
         "optimizer": optimizer.state_dict(),
         "scheduler": schedule.state_dict(),
@@ -1627,6 +1629,10 @@ def train(
         best_validation_loss = float("inf")
         evaluations = []
         consecutive_degraded = 0
+        stream_exposure_tokens = {
+            stream: 0
+            for stream in STREAMS
+        }
 
         last_checkpoint = run_dir / "checkpoint-last.pt"
         best_checkpoint = run_dir / "checkpoint-best.pt"
@@ -1650,6 +1656,20 @@ def train(
             consecutive_degraded = int(
                 state["consecutive_degraded"]
             )
+            restored_stream_tokens = state.get(
+                "stream_exposure_tokens"
+            )
+            if (
+                not isinstance(restored_stream_tokens, dict)
+                or set(restored_stream_tokens) != set(STREAMS)
+            ):
+                raise RuntimeError(
+                    "Checkpoint stream-exposure state is invalid"
+                )
+            stream_exposure_tokens = {
+                stream: int(restored_stream_tokens[stream])
+                for stream in STREAMS
+            }
 
         manifest = {
             "schema_version": "v59-pilot-run-1",
@@ -1690,6 +1710,30 @@ def train(
             }
             evaluations.append(initial_record)
             _append_jsonl(metrics_path, initial_record)
+
+            initial_payload = _checkpoint_payload(
+                model=model,
+                optimizer=optimizer,
+                schedule=schedule,
+                sampler=sampler,
+                protocol=protocol,
+                authorization=authorization,
+                trainer_freeze=trainer_freeze,
+                step=0,
+                exposure_tokens=0,
+                best_validation_loss=best_validation_loss,
+                evaluations=evaluations,
+                consecutive_degraded=0,
+                stream_exposure_tokens=stream_exposure_tokens,
+            )
+            _save_checkpoint(
+                best_checkpoint,
+                initial_payload,
+            )
+            _save_checkpoint(
+                last_checkpoint,
+                initial_payload,
+            )
 
             for probe in _fixed_probe_segments(
                 validation_segments
@@ -1820,6 +1864,10 @@ def train(
 
             optimizer.step()
             exposure_tokens += step_exposure
+            for segment in selected:
+                stream_exposure_tokens[segment.stream] += (
+                    segment.exposure_tokens
+                )
 
             step_record = {
                 "type": "train_step",
@@ -1829,6 +1877,9 @@ def train(
                 "predicted_tokens": total_predicted,
                 "train_loss": step_loss_sum / total_predicted,
                 "learning_rate": learning_rate,
+                "stream_exposure_tokens": dict(
+                    stream_exposure_tokens
+                ),
                 "preclip_gradient_norm": float(
                     torch.as_tensor(
                         gradient_norm
@@ -1877,6 +1928,8 @@ def train(
                         evaluations=evaluations,
                         consecutive_degraded=
                             consecutive_degraded,
+                        stream_exposure_tokens=
+                            stream_exposure_tokens,
                     )
                     _save_checkpoint(
                         best_checkpoint,
@@ -1912,6 +1965,7 @@ def train(
                     best_validation_loss=best_validation_loss,
                     evaluations=evaluations,
                     consecutive_degraded=consecutive_degraded,
+                    stream_exposure_tokens=stream_exposure_tokens,
                 )
                 _save_checkpoint(
                     last_checkpoint,
@@ -1987,6 +2041,7 @@ def train(
             best_validation_loss=best_validation_loss,
             evaluations=evaluations,
             consecutive_degraded=consecutive_degraded,
+            stream_exposure_tokens=stream_exposure_tokens,
         )
         _save_checkpoint(
             last_checkpoint,
@@ -2002,6 +2057,21 @@ def train(
             "exposure_tokens": exposure_tokens,
             "best_validation_loss": best_validation_loss,
             "evaluations": len(evaluations),
+            "stream_exposure_tokens": dict(
+                stream_exposure_tokens
+            ),
+            "stream_share_bp": {
+                stream: (
+                    round(
+                        stream_exposure_tokens[stream]
+                        * 10000
+                        / exposure_tokens
+                    )
+                    if exposure_tokens
+                    else 0
+                )
+                for stream in STREAMS
+            },
             "authorization_freeze_fingerprint":
                 authorization["freeze_fingerprint"],
             "trainer_freeze_fingerprint":
