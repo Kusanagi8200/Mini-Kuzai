@@ -23,13 +23,14 @@ class V61TrainerTests(unittest.TestCase):
             base_lr=3e-4,
             min_lr=3e-5,
             warmup_steps=20,
-            max_steps=145,
+            max_steps=577,
         )
         self.assertAlmostEqual(schedule.lr_for_step(1), 1.5e-5)
         self.assertAlmostEqual(schedule.lr_for_step(20), 3e-4)
-        self.assertAlmostEqual(schedule.lr_for_step(145), 3e-5)
+        self.assertGreater(schedule.lr_for_step(145), 3e-5)
+        self.assertAlmostEqual(schedule.lr_for_step(577), 3e-5)
         with self.assertRaises(ValueError):
-            schedule.lr_for_step(146)
+            schedule.lr_for_step(578)
 
     def test_boundary_masks_terminal_and_intermediate(self):
         segments = [
