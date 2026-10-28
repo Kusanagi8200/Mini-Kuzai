@@ -186,6 +186,42 @@ class ExposureBudgetTests(unittest.TestCase):
         self.assertTrue(hit)
 
 
+class GeneratedProbeDecodeTests(unittest.TestCase):
+
+    class FakeByteTokenizer:
+        def __init__(self):
+            self._token_bytes = {
+                3 + 0x41: b"A",
+                3 + 0x8B: bytes([0x8B]),
+            }
+
+        def decode(self, ids):
+            payload = bytearray()
+            for token_id in ids:
+                if token_id in {T.PAD_ID, T.BOS_ID, T.EOS_ID}:
+                    continue
+                payload.extend(self._token_bytes[int(token_id)])
+            return bytes(payload).decode("utf-8")
+
+    def test_valid_generated_utf8_remains_exact(self):
+        tokenizer = self.FakeByteTokenizer()
+        text, valid = T._decode_generated_probe_text(
+            tokenizer,
+            [3 + 0x41],
+        )
+        self.assertEqual(text, "A")
+        self.assertTrue(valid)
+
+    def test_invalid_generated_utf8_is_replaced_not_fatal(self):
+        tokenizer = self.FakeByteTokenizer()
+        text, valid = T._decode_generated_probe_text(
+            tokenizer,
+            [3 + 0x8B],
+        )
+        self.assertEqual(text, "\ufffd")
+        self.assertFalse(valid)
+
+
 class BlindBoundaryTests(unittest.TestCase):
 
     def test_trainer_has_no_blind_corpus_path(self):
