@@ -388,6 +388,9 @@ See -->
 
 - [V59 training mix and segmentation](phases/MINI-KUZAI-PHASE-03-V59-TRAINING-MIX-SEGMENTATION.md)
 - [V59 training-authorized checkpoint - 2026-10-28](phases/MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
+- [V59 final authorization results](reviews/smoltalk-v59-final-mix-freeze-authorization/RESULTS-001.md)
+- [V59 terminal GOGIT audit](reports/assistant-results/history/PHASE03-SMOLTALK-V59-FINAL-MIX-FREEZE-AUTHORIZATION-001.json)
+- [V59 training-authorized checkpoint - 2026-10-28](phases/MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
 - [V59 pause checkpoint - 2026-10-25](phases/MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md)
 - [V59 Active-Learning Sample 003 results](reviews/smoltalk-v59-active-sample-003/RESULTS-003.md)
 - [latest V59 Active-Learning Sample 003 audit](reports/assistant-results/history/PHASE03-SMOLTALK-V59-ACTIVE-SAMPLE-003.json)
