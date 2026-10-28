@@ -101,7 +101,12 @@ def boundary_aware_eos_loss(
         reduction="none",
     )
     denominator = per_token_ce.new_tensor(float(valid_tokens))
-    base_ce = per_token_ce[flat_valid].sum() / denominator
+    base_ce = F.cross_entropy(
+        flat_logits,
+        flat_targets,
+        ignore_index=pad_id,
+        reduction="mean",
+    )
 
     zero = base_ce.new_zeros(())
 
