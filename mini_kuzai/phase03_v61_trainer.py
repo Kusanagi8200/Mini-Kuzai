@@ -1238,7 +1238,7 @@ def load_protocol() -> dict:
         / "PROTOCOL-001.json"
     )
     protocol = read_json(path)
-    if protocol.get("architecture") != "V61_ARCHITECTURE_V61_BOUNDARY_OBJECTIVE":
+    if protocol.get("architecture") != "V60_ARCHITECTURE_V61_BOUNDARY_OBJECTIVE":
         raise RuntimeError("Unexpected V61 training architecture")
     if protocol.get("dtype") != "BF16":
         raise RuntimeError("Unexpected V61 dtype")
