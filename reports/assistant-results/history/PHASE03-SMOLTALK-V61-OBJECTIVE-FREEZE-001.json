@@ -1,0 +1,21 @@
+{
+  "metrics": {
+    "SEMANTIC_VALIDATION_COMPLETE": 1,
+    "TRAINING_AUTHORIZED": 0,
+    "TRAINING_STARTED": 0,
+    "V61_OBJECTIVE_BLIND_ACCESS": 0,
+    "V61_OBJECTIVE_FREEZE_PASS": 1,
+    "V61_OBJECTIVE_INTERMEDIATE_WEIGHT": 16,
+    "V61_OBJECTIVE_TERMINAL_WEIGHT": 16
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v61_objective_freeze.py",
+  "producer_sha256": "2a50875748fabb19b604c826bd41cdeeee1bcd66c08d42de0e834bdc62bfe75d",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": true,
+  "source": "Mini-Kuzai V61 boundary-aware EOS objective preparation",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V61-OBJECTIVE-FREEZE-001",
+  "training_authorized": false
+}
