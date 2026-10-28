@@ -10,7 +10,7 @@ REPORT = (
     REPO
     / "reviews"
     / "smoltalk-v59-persistent-trainer-freeze"
-    / "REPORT-001.json"
+    / "REPORT-002.json"
 )
 
 spec = importlib.util.spec_from_file_location(
