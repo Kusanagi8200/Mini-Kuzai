@@ -625,33 +625,62 @@ The bounded training-protocol preflight is now closed -->
 - pilot max exposure tokens --> **1181664**
 - training started --> **NO**.
 
-The next authorized technical operation is -->
+The V59 terminal authorization gate is now closed -->
 
-**V59 FINAL MIX FREEZE + TRAINING AUTHORIZATION GATE - SCRIPTED / READY**
+- semantic validation complete --> **YES**
+- V59 final mix finalized --> **YES**
+- bounded pilot training authorized --> **YES**
+- training started --> **NO**
+- authorization scope --> `V59_BOUNDED_PILOT_ONLY`
+- freeze fingerprint --> `40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503`.
 
-The terminal gate freezes the exact 272-conversation training identity -->
+Final frozen training identity -->
 
-- controlled TRAIN --> 107 conversations
-- clean public DIRECT_KEEP --> 165 conversations
-- unique training segments --> 345
-- unique clean tokens --> 295416.
+- controlled TRAIN --> **107 conversations / 29 groups**
+- clean public DIRECT_KEEP --> **165 conversations**
+- total training conversations --> **272**
+- total unique training segments --> **345**
+- total unique training tokens --> **295416**.
 
-It fingerprints tokenizer, serializer, segmentation, architecture, exposure
-sampler, training protocol, VALIDATION, BLIND and semantic split boundaries.
+Authorized exposure -->
 
-A successful gate authorizes only the bounded V59 pilot. BLIND TEST remains
-reserved and inaccessible during training.
+- CONTROLLED_TRAIN --> **30.00%**
+- PERSONA_CORE --> **46.58%**
+- GENERAL_SUPPORT --> **15.00%**
+- LEGACY_STRUCTURED_KEEP --> **8.42%**
+- persona-oriented exposure --> **76.58%**.
 
-Remaining pre-training blockers -->
+Explicitly excluded from the pilot -->
 
-1. execute the final mix freeze and authorization gate
-2. verify the terminal GOGIT state
-3. implement and freeze the persistent trainer only if TRAINING_AUTHORIZED = 1
-4. run the bounded pilot only through the frozen authorization scope.
+- REPAIR_QUEUE --> **108 conversations**
+- EXCLUDE_REVIEWED --> **47 conversations**
+- DEFER_UNREVIEWED --> **792 conversations**.
 
-Training remains unauthorized and has not started.
+The next technical operation is -->
 
-See [V59 pause checkpoint - 2026-10-25](MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md).
+**IMPLEMENT AND FREEZE THE PERSISTENT V59 PILOT TRAINER**
+
+The trainer must -->
+
+1. verify the terminal freeze fingerprint before the first optimizer step
+2. refuse any corpus, tokenizer, serializer, segmentation, architecture,
+   exposure-policy or protocol mismatch
+3. enforce the hard limit of **145 optimizer steps**
+4. enforce the hard limit of **1181664 exposed tokens**
+5. use frozen VALIDATION only for in-run evaluation
+6. keep BLIND TEST inaccessible during training
+7. preserve optimizer, scheduler, RNG and sampler state in checkpoints
+8. stop on the already frozen numerical and validation-loss criteria.
+
+There are no remaining data-selection, mix-weighting, tokenizer, segmentation,
+architecture-preflight or authorization blockers for this bounded pilot.
+
+Training is authorized but **has not started**.
+
+See -->
+
+- [V59 training-authorized checkpoint - 2026-10-28](MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
+- [V59 training mix and segmentation](MINI-KUZAI-PHASE-03-V59-TRAINING-MIX-SEGMENTATION.md).
 
 ## V56 tokenizer finalization
 
@@ -752,40 +781,51 @@ See -->
 - [V58 architecture baseline](MINI-KUZAI-PHASE-03-V58-ARCHITECTURE-BASELINE.md)
 - [V58 public audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V58-ARCHITECTURE-BASELINE-001.json)
 
-## V59 current workstream and resume point
+## V59 current state and resume point
 
-V59 is active but paused after completion of Active-Learning Sample 003.
+V59 data preparation is **CLOSED**.
 
 Completed within V59 -->
 
-1. turn-aware 2048-token segmentation implementation and audit
+1. pair-preserving 2048-token segmentation
 2. oversized-pair review and replacement validation
-3. known-negative public-candidate filtering
+3. known-negative filtering
 4. bulk quality Samples 001 and 002
-5. cumulative weighted bulk-quality gate
-6. simple filter-rule mining
-7. supervised text-triage experiment 001
+5. weighted bulk-quality gate
+6. filter-rule mining
+7. supervised text-triage experiment
 8. Active-Learning Sample 003
-9. validation that the triage ranking has useful directionality.
+9. independent Holdout 004
+10. rejection of classifier-driven automatic corpus selection
+11. conservative DIRECT_KEEP / REPAIR / EXCLUDE / DEFER policy
+12. persona-first exposure weighting
+13. bounded training-protocol definition
+14. CUDA / BF16 full-context hardware preflight
+15. immutable final mix freeze
+16. explicit bounded-pilot training authorization.
 
-Not completed -->
+Terminal state -->
 
-1. retrain triage on all 216 annotations
-2. independent holdout 004
-3. final public mixture decision
-4. final public token / segment manifest after quality filtering
-5. controlled-persona versus public-data sampling/weighting policy
-6. final V58 data-to-parameter review
-7. explicit training authorization.
+```text
+SEMANTIC_VALIDATION_COMPLETE = 1
+V59_MIX_FINALIZED            = 1
+TRAINING_AUTHORIZED          = 1
+TRAINING_STARTED             = 0
+```
+
+Freeze fingerprint -->
+
+`40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503`
 
 Resume operation -->
 
-**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
+**IMPLEMENT / FREEZE PERSISTENT V59 PILOT TRAINER**
 
-V59 must not infer training authorization from tokenizer, segmentation,
-architecture, or ranking readiness.
+The trainer is not allowed to redefine the authorized corpus or training
+protocol. Any frozen dependency change requires a new authorization gate.
 
-**Model training remains NOT AUTHORIZED and NOT STARTED.**
+The BLIND TEST remains reserved for post-training evaluation.
+
 
 ---
 
