@@ -379,21 +379,48 @@ The authorization is limited to the bounded V59 pilot -->
 
 **Training is authorized but has not started.**
 
-The next workstream is implementation and freeze of the persistent pilot trainer.
-It must verify the freeze fingerprint before the first optimizer step and refuse
-to run if any frozen corpus, tokenizer, serializer, segmentation, architecture,
-sampler or protocol dependency has changed.
+The persistent V59 bounded-pilot trainer is now **implemented, frozen and
+runtime verified**.
+
+Persistent-trainer state -->
+
+- trainer freeze fingerprint --> `d71fb0fe6e71cbfd46ae06a88ef994b91091c698b8f401237387b5fc7ebe3a84`
+- trainer compile / tests / runtime verification --> **PASS**
+- TRAIN reconstruction --> **345 segments / 295416 unique tokens**
+- VALIDATION reconstruction --> **36 records / 36 segments / 9242 tokens**
+- schedule preview --> **2263 segments / 1181302 exposure tokens**
+- maximum schedule-share deviation --> **4 basis points**
+- BLIND TEST access --> **0**
+- checkpoint resume state --> optimizer / scheduler / RNG / sampler
+- GPU runtime verification --> **NVIDIA GeForce RTX 5060 Laptop GPU**
+- canonical first-run directory --> **ABSENT before launch**
+- TRAINING_STARTED --> **0**
+
+Historical V54 VALIDATION declaration schema differences were verified through
+**18 / 18 historical GOGIT freeze proofs** and **18 / 18 target Git blob
+matches**. No frozen VALIDATION corpus file was rewritten.
+
+A post-authorization segmentation caching experiment improved a bounded
+synthetic benchmark but changed the frozen segmentation dependency fingerprint.
+It was reverted before trainer freeze. The authorized V59 pilot therefore
+retains the original frozen segmentation implementation.
+
+The next workstream is the **first real V59 bounded-pilot training run** using
+the frozen trainer without `--resume`. The hard limits remain **145 optimizer
+steps** and **1181664 exposure tokens**, with frozen VALIDATION allowed during
+training and BLIND TEST forbidden until post-training evaluation.
 
 See -->
 
 - [V59 training mix and segmentation](phases/MINI-KUZAI-PHASE-03-V59-TRAINING-MIX-SEGMENTATION.md)
 - [V59 training-authorized checkpoint - 2026-10-28](phases/MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
 - [V59 final authorization results](reviews/smoltalk-v59-final-mix-freeze-authorization/RESULTS-001.md)
-- [V59 terminal GOGIT audit](reports/assistant-results/history/PHASE03-SMOLTALK-V59-FINAL-MIX-FREEZE-AUTHORIZATION-001.json)
-- [V59 training-authorized checkpoint - 2026-10-28](phases/MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
+- [V59 terminal authorization GOGIT audit](reports/assistant-results/history/PHASE03-SMOLTALK-V59-FINAL-MIX-FREEZE-AUTHORIZATION-001.json)
+- [V59 persistent trainer freeze results](reviews/smoltalk-v59-persistent-trainer-freeze/RESULTS-001.md)
+- [V59 persistent trainer GOGIT audit](reports/assistant-results/history/PHASE03-SMOLTALK-V59-PERSISTENT-TRAINER-FREEZE-001.json)
+- [V59 validation compatibility GOGIT audit](reports/assistant-results/history/PHASE03-SMOLTALK-V59-VALIDATION-COMPATIBILITY-001.json)
 - [V59 pause checkpoint - 2026-10-25](phases/MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md)
 - [V59 Active-Learning Sample 003 results](reviews/smoltalk-v59-active-sample-003/RESULTS-003.md)
-- [latest V59 Active-Learning Sample 003 audit](reports/assistant-results/history/PHASE03-SMOLTALK-V59-ACTIVE-SAMPLE-003.json)
 
 ### Private local corpus pipeline
 
