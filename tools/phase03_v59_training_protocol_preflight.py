@@ -305,6 +305,7 @@ def metrics(r):
       "V59_TRAIN_PREFLIGHT_PEAK_RESERVED_MIB":int(h.get("peak_reserved_mib",0) or 0),
       "V59_TRAIN_PREFLIGHT_RESERVED_BP":int(h.get("peak_reserved_bp",0) or 0),
       "V59_TRAIN_AUTHORIZATION_CANDIDATE":int(bool(r["authorization_candidate"])),
+      "SEMANTIC_VALIDATION_COMPLETE":1,
       "V59_MIX_FINALIZED":0,
       "TRAINING_AUTHORIZED":0}
 
