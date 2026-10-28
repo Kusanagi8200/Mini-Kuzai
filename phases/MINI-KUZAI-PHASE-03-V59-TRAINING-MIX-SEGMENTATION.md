@@ -441,54 +441,95 @@ GOGIT step -->
 
 ## V59 final mix policy / persona-first pruning
 
-Status --> **SCRIPTED / READY**
+Status --> **CLOSED / POLICY DEFINED / MIX WEIGHTING STILL REQUIRED**
 
-V59 now switches from classifier-driven selection to a conservative
-human-review policy.
+Conservative policy result -->
 
-Policy states -->
+| Bucket | Conversations | Segments | Tokens |
+| --- | ---: | ---: | ---: |
+| DIRECT_KEEP | 165 | 238 | 270877 |
+| REPAIR_QUEUE | 108 | 161 | 198226 |
+| EXCLUDE_REVIEWED | 47 | 61 | 56726 |
+| DEFER_UNREVIEWED | 792 | 1094 | 1204585 |
 
-1. `DIRECT_KEEP` --> only human-reviewed clean examples
-2. `REPAIR_QUEUE` --> reviewed material not clean enough for direct admission; this includes explicit REPAIR cases and any historical KEEP that does not satisfy the strict clean gate
-3. `EXCLUDE_REVIEWED` --> reviewed unsuitable material removed from the future mix
-4. `DEFER_UNREVIEWED` --> never-reviewed candidates remain outside the V59
-   training mix.
+DIRECT_KEEP composition -->
 
-Quality rule -->
+- PERSONA_CORE --> **86 conversations**
+- GENERAL_SUPPORT --> **68 conversations**
+- LEGACY_STRUCTURED_KEEP --> **11 conversations**.
 
-- Sample 001-004 direct admission requires disposition KEEP with grade A,
-  factual risk LOW and instruction fit GOOD
-- a historical KEEP that does not satisfy A / LOW / GOOD keeps its original
-  semantic label but is conservatively redirected to `REPAIR_QUEUE`
-- retained structured V51/V52 direct admission requires grade A, factual risk
-  LOW and instruction fit GOOD
-- persona priority never overrides a known factual, logical, technical or
-  instruction defect.
+One historical KEEP with factual risk REVIEW is conservatively redirected out
+of direct admission.
 
-Persona-first partition -->
+Ready-now clean envelope -->
 
-- clean HIGH or MEDIUM persona examples --> `PERSONA_CORE`
-- clean LOW persona examples --> `GENERAL_SUPPORT`
-- clean legacy V51/V52 structured examples --> `LEGACY_STRUCTURED_KEEP`.
+- controlled TRAIN tokens --> **24539**
+- clean reviewed public tokens --> **270877**
+- combined clean tokens --> **295416**
+- combined clean tokens / V58 parameter --> approximately **0.249**.
 
-The job produces exact conversation, segment and token accounting for every
-policy bucket and creates explicit SHA manifests.
+Guardrails -->
 
-Run -->
-
-```bash
-python3 tools/run_v59_final_mix_policy_job.py
-```
+- automatic filtering used --> **NO**
+- unreviewed public data admitted --> **NO**
+- REPAIR admitted unchanged --> **NO**
+- V59 final mix --> **NOT FINALIZED**
+- model training --> **NOT AUTHORIZED / NOT STARTED**.
 
 GOGIT step -->
 
 `PHASE03-SMOLTALK-V59-FINAL-MIX-POLICY-001`
 
-The policy job does not repair conversations, does not admit unreviewed data and
-does not authorize training.
+## V59 persona-first mix weighting / exposure policy
 
-After policy accounting, the next unresolved decision is sampling / weighting
-between controlled persona data and clean reviewed public support data.
+Status --> **SCRIPTED / READY**
+
+The remaining problem is exposure balance.
+
+A plain concatenation would expose only **24539 controlled tokens** against
+**270877 clean public tokens**, which would dilute the designed Mini-Kuzai
+persona anchor.
+
+The exposure policy therefore uses weighted stream sampling instead of physical
+duplication.
+
+Streams -->
+
+1. `CONTROLLED_TRAIN` --> frozen 107-record designed TRAIN anchor
+2. `PERSONA_CORE` --> clean reviewed public HIGH/MEDIUM persona material
+3. `GENERAL_SUPPORT` --> clean reviewed public LOW persona material
+4. `LEGACY_STRUCTURED_KEEP` --> clean retained V51/V52 structured material.
+
+Policy constraints -->
+
+- CONTROLLED_TRAIN exposure --> at least **30%**
+- CONTROLLED_TRAIN + PERSONA_CORE --> at least **75%**
+- GENERAL_SUPPORT --> at most **15%**
+- LEGACY_STRUCTURED_KEEP --> at most **10%**
+- REPAIR_QUEUE --> excluded
+- EXCLUDE_REVIEWED --> excluded
+- DEFER_UNREVIEWED --> excluded.
+
+Target shares are derived from the real token distribution while respecting
+those constraints. The job reports exact raw shares, target shares, equivalent
+exposure passes and a reference exposure cycle.
+
+No record is physically duplicated. Sampling is with replacement at the
+stream level and shuffled within each stream.
+
+Run -->
+
+```bash
+python3 tools/run_v59_persona_exposure_policy_job.py
+```
+
+GOGIT step -->
+
+`PHASE03-SMOLTALK-V59-PERSONA-EXPOSURE-POLICY-001`
+
+This step defines data exposure only. Optimizer, learning rate, batch size,
+training steps and final model-training authorization remain separate
+decisions.
 
 ## References
 
