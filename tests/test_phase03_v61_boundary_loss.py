@@ -72,8 +72,8 @@ class BoundaryAwareEOSLossTests(unittest.TestCase):
             torch.allclose(
                 result.total,
                 expected,
-                atol=1e-6,
-                rtol=1e-6,
+                atol=1e-7,
+                rtol=0.0,
             )
         )
 
