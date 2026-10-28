@@ -223,7 +223,7 @@ def _path_for_dependency(key: str) -> Path:
             REPO / "reviews"
             / "smoltalk-v59-final-mix-freeze-authorization"
             / "FINAL-MIX-FREEZE-001.json",
-        "v61_initialization_freeze_sha256":
+        "v60_initialization_freeze_sha256":
             REPO / "reviews"
             / "smoltalk-v60-initialization-freeze"
             / "INITIALIZATION-FREEZE-001.json",
@@ -239,7 +239,7 @@ def _path_for_dependency(key: str) -> Path:
             REPO / "reviews"
             / "smoltalk-v61-training-protocol"
             / "REPORT-001.json",
-        "v61_model_source_sha256": MODEL_MODULE,
+        "v60_model_source_sha256": MODEL_MODULE,
         "v61_boundary_loss_source_sha256":
             REPO / "mini_kuzai" / "phase03_v61_boundary_loss.py",
         "tokenizer_file_sha256": TOKENIZER_FILE,
@@ -1290,6 +1290,8 @@ def load_protocol() -> dict:
         != 1181664
     ):
         raise RuntimeError("V61 exposure ceiling changed")
+    if protocol["scheduler"].get("max_steps") != 577:
+        raise RuntimeError("V61 scheduler horizon changed")
     if (
         protocol["exposure"].get("extension_requires_new_protocol_freeze")
         is not True
