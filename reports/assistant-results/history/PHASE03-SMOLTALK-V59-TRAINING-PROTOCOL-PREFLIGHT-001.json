@@ -1,0 +1,29 @@
+{
+  "metrics": {
+    "TRAINING_AUTHORIZED": 0,
+    "V59_MIX_FINALIZED": 0,
+    "V59_TRAIN_AUTHORIZATION_CANDIDATE": 1,
+    "V59_TRAIN_PREFLIGHT_PASS": 1,
+    "V59_TRAIN_PREFLIGHT_PEAK_RESERVED_MIB": 632,
+    "V59_TRAIN_PREFLIGHT_RESERVED_BP": 820,
+    "V59_TRAIN_PROTOCOL_EXPOSURE_TPP_X1000": 998,
+    "V59_TRAIN_PROTOCOL_LR_X1E9": 300000,
+    "V59_TRAIN_PROTOCOL_MAX_STEPS": 145,
+    "V59_TRAIN_PROTOCOL_MAX_TOKENS": 1181664,
+    "V59_TRAIN_PROTOCOL_MICROBATCH": 8,
+    "V59_TRAIN_PROTOCOL_MIN_LR_X1E9": 30000,
+    "V59_TRAIN_PROTOCOL_PILOT_CYCLES": 4,
+    "V59_TRAIN_PROTOCOL_STEP_TOKENS": 8192,
+    "V59_TRAIN_PROTOCOL_WARMUP_STEPS": 15
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v59_training_protocol_preflight.py",
+  "producer_sha256": "eb731bc5eb72f0e0ab1d2d029688855d263fcb0f57ce966a049600912c9b4534",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "Mini-Kuzai V59 public training-mixture and turn-aware segmentation preparation",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V59-TRAINING-PROTOCOL-PREFLIGHT-001",
+  "training_authorized": false
+}
