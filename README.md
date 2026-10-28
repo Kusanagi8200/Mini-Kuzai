@@ -305,17 +305,26 @@ Current V59 quality-control total -->
 - Holdout 004 ranking gate --> **FAILED**
 - automatic REVIEW --> **NOT AUTHORIZED**
 - automatic EXCLUDE --> **NOT AUTHORIZED**
-- never-reviewed public candidates remaining --> **792**
-- final public training mixture --> **NOT FINALIZED**.
+- never-reviewed public candidates remaining --> **792**.
 
-Classifier-driven selection is now closed for V59. The next workstream is -->
+The conservative final-mix policy is now closed -->
 
-**V59 FINAL MIX POLICY / PERSONA-FIRST PRUNING - SCRIPTED / READY**
+- DIRECT_KEEP --> **165 conversations / 270877 tokens**
+- REPAIR_QUEUE --> **108 conversations / 198226 tokens**
+- EXCLUDE_REVIEWED --> **47 conversations / 56726 tokens**
+- DEFER_UNREVIEWED --> **792 conversations / 1204585 tokens**
+- controlled TRAIN --> **24539 tokens**
+- combined clean ready-now envelope --> **295416 tokens**
+- V59 final mix --> **NOT FINALIZED**.
 
-The policy admits only human-reviewed clean examples directly, keeps REPAIR
-material outside the mix until corrected, removes reviewed EXCLUDE material and
-keeps all 792 never-reviewed conversations deferred. Persona HIGH/MEDIUM is
-prioritized only after quality gates pass.
+The next workstream is now scripted -->
+
+**V59 PERSONA-FIRST MIX WEIGHTING / EXPOSURE POLICY - READY**
+
+The exposure policy uses weighted stream sampling rather than physical
+duplication. Its constraints are CONTROLLED_TRAIN >= 30%, CONTROLLED_TRAIN +
+PERSONA_CORE >= 75%, GENERAL_SUPPORT <= 15% and LEGACY_STRUCTURED_KEEP <= 10%.
+REPAIR, EXCLUDE and never-reviewed data remain outside the training mix.
 
 The remaining pre-training decisions also include final KEEP / REPAIR / EXCLUDE policy, final public-corpus/token accounting, and sampling/weighting so the controlled persona corpus is not drowned by the much larger public corpus.
 
