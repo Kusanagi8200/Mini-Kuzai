@@ -1,6 +1,6 @@
 # Mini-Kuzai V59 - independent holdout 004
 
-Status: **PUBLISHED FOR BLINDED SEMANTIC REVIEW - 72 cases.**
+Status: **REVIEW COMPLETE - 72/72 cases.** See [RESULTS-004.md](RESULTS-004.md).
 
 This holdout is selected from 864 never-reviewed V59 candidates.
 Selection is deterministic and stratified by priority x public source x turn bucket.

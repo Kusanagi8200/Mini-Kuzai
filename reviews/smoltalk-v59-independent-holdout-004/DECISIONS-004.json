@@ -1,969 +1,980 @@
 {
-  "schema_version": "v59-independent-holdout-decisions-4",
-  "status": "REVIEW_COMPLETE_PENDING_APPLICATION",
-  "sample_id": "smoltalk-v59-independent-holdout-004",
-  "sample_size": 72,
-  "training_labels": 216,
-  "total_reviewed_after_application": 288,
-  "population_estimator": false,
-  "selection_uses_model_score": false,
-  "model_scores_blinded_during_review": true,
-  "reviewer": "ChatGPT semantic review",
-  "training_authorized": false,
-  "summary": {
-    "keep": 43,
-    "repair": 23,
-    "exclude": 6
-  },
   "decisions": [
     {
       "case": 1,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/01-fa2ef67e8a12b459.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/01-fa2ef67e8a12b459.md",
+      "persona_value": "MEDIUM",
       "rationale": "The editing is clear, concise, responsive to follow-up requests, and preserves the intended meaning without introducing a material error."
     },
     {
       "case": 2,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/02-96661a904ddfe41c.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/02-96661a904ddfe41c.md",
+      "persona_value": "LOW",
       "rationale": "The response accurately summarizes the single main idea provided by the user in a concise form."
     },
     {
       "case": 3,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/03-ffdac2ae97b1e998.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "FACTUAL_ERROR",
         "OTHER"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/03-ffdac2ae97b1e998.md",
+      "persona_value": "MEDIUM",
       "rationale": "The rewrite is useful, but it strengthens the source into increased extreme-weather occurrences and later claims new insights that the supplied abstract did not establish."
     },
     {
       "case": 4,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/04-59ac7972f9353257.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/04-59ac7972f9353257.md",
+      "persona_value": "LOW",
       "rationale": "The geometric-series and harmonic-series calculations and convergence explanations are mathematically correct."
     },
     {
       "case": 5,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/05-24c97c3bddb47507.md",
-      "grade": "C",
-      "factual_risk": "LOW",
-      "instruction_fit": "BAD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "INSTRUCTION_FAILURE",
         "OTHER"
       ],
+      "disposition": "EXCLUDE",
+      "factual_risk": "LOW",
+      "grade": "C",
+      "instruction_fit": "BAD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/05-24c97c3bddb47507.md",
+      "persona_value": "LOW",
       "rationale": "The answer is unrelated to the supplied literature passage and responds about a recipe that was never provided."
     },
     {
       "case": 6,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/06-64c31a05b05d3c57.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/06-64c31a05b05d3c57.md",
+      "persona_value": "LOW",
       "rationale": "The binomial calculation is correct and the final probability of at least two absences is computed accurately."
     },
     {
       "case": 7,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/07-c5be7ebf0b6c1b68.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/07-c5be7ebf0b6c1b68.md",
+      "persona_value": "LOW",
       "rationale": "The answer correctly identifies Venice and gives a broadly accurate concise description of its canals and gondolas."
     },
     {
       "case": 8,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/08-1ca6f65686863c2f.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/08-1ca6f65686863c2f.md",
+      "persona_value": "LOW",
       "rationale": "All three calculus responses are correct, including the substitution leading to the logarithmic antiderivative."
     },
     {
       "case": 9,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/09-a9105ee31aa53f40.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "PARTIAL",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR",
         "TIME_SENSITIVE"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "PARTIAL",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/09-a9105ee31aa53f40.md",
+      "persona_value": "LOW",
       "rationale": "V8 is a relevant alternative, but the answer relies on an obsolete getting-started link and does not adequately address the requested Windows/Linux setup comparison."
     },
     {
       "case": 10,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/10-509e08916598d5dc.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/10-509e08916598d5dc.md",
+      "persona_value": "HIGH",
       "rationale": "The plant metaphor is coherent, extended consistently, and directly satisfies the creative request."
     },
     {
       "case": 11,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/11-8b988f9d623b127d.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/11-8b988f9d623b127d.md",
+      "persona_value": "MEDIUM",
       "rationale": "The rewritten sentence is materially more concise while preserving the original climate-change meaning."
     },
     {
       "case": 12,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/12-b8781a488ee02ebb.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/12-b8781a488ee02ebb.md",
+      "persona_value": "LOW",
       "rationale": "The totient, modular exponentiation, and greatest-common-divisor calculations are all correct."
     },
     {
       "case": 13,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/13-067cea2490bbad01.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/13-067cea2490bbad01.md",
+      "persona_value": "LOW",
       "rationale": "The Pauling electronegativity values and their difference are calculated correctly."
     },
     {
       "case": 14,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/14-94fe58185a407306.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "FACTUAL_ERROR",
         "OTHER"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/14-94fe58185a407306.md",
+      "persona_value": "MEDIUM",
       "rationale": "The roleplay is coherent, but it invents an exact current time and detailed operational museum-security state that was not established by the user."
     },
     {
       "case": 15,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/15-3d66122665bb2c8e.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/15-3d66122665bb2c8e.md",
+      "persona_value": "HIGH",
       "rationale": "The multi-turn fiction maintains continuity, incorporates the user's new action, and develops the scene coherently."
     },
     {
       "case": 16,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/16-628da17c450490e7.md",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "BAD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "LOGICAL_ERROR",
         "TECHNICAL_ERROR"
       ],
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "BAD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/16-628da17c450490e7.md",
+      "persona_value": "LOW",
       "rationale": "The prompt says 35 patients but supplies only 33 values; the response fails to detect the mismatch and consequently gives incorrect median, count, probability, and quartile calculations."
     },
     {
       "case": 17,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/17-7009c9ee196942b3.md",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "PARTIAL",
-      "persona_value": "HIGH",
-      "disposition": "REPAIR",
       "defect_tags": [
         "INSTRUCTION_FAILURE"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "PARTIAL",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/17-7009c9ee196942b3.md",
+      "persona_value": "HIGH",
       "rationale": "The later creative-writing advice is strong, but the first request explicitly asks for two story-opening sentences and the assistant instead asks the user questions."
     },
     {
       "case": 18,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/18-e0b971451d417130.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/18-e0b971451d417130.md",
+      "persona_value": "MEDIUM",
       "rationale": "The rewrite puts happiness first and preserves the requested meaning in a concise grammatical sentence."
     },
     {
       "case": 19,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/19-b5740b97cbd81e18.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/19-b5740b97cbd81e18.md",
+      "persona_value": "LOW",
       "rationale": "The explanations of mean absolute deviation, variance, standard deviation, and median absolute deviation are broadly correct and well distinguished."
     },
     {
       "case": 20,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/20-ca1d307f14797da7.md",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "PARTIAL",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR",
         "INSTRUCTION_FAILURE"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "PARTIAL",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/20-ca1d307f14797da7.md",
+      "persona_value": "LOW",
       "rationale": "The implementation computes averages, but its tie branch chooses the lexicographically smaller string instead of preserving the earliest original-list occurrence."
     },
     {
       "case": 21,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/21-1c617cc906455f27.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/21-1c617cc906455f27.md",
+      "persona_value": "MEDIUM",
       "rationale": "The editing and two requested continuations are coherent, readable, and responsive to the user's college-selection topic."
     },
     {
       "case": 22,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/22-1c1bd8e1f4db51a2.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/22-1c1bd8e1f4db51a2.md",
+      "persona_value": "MEDIUM",
       "rationale": "The writing feedback is clear and the machine-learning paragraph is improved without a material factual defect for this introductory context."
     },
     {
       "case": 23,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/23-e320f9800fa40488.md",
-      "grade": "B",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "HIGH",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/23-e320f9800fa40488.md",
+      "persona_value": "LOW",
       "rationale": "The rearrangements for x and y are correct, but the formula given for z has the signs reversed and is mathematically wrong."
     },
     {
       "case": 24,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/24-3883a4a3d7cbd9f3.md",
-      "grade": "B",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR",
         "LOGICAL_ERROR"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "HIGH",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/24-3883a4a3d7cbd9f3.md",
+      "persona_value": "LOW",
       "rationale": "The final arccos derivative is correct, but the derivation gives the wrong range for arccos, the wrong sine sign, and inconsistent algebra."
     },
     {
       "case": 25,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/25-1675c49528aa5414.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/25-1675c49528aa5414.md",
+      "persona_value": "HIGH",
       "rationale": "The advice is supportive, practical, appropriately gradual, and maintains useful continuity across the user's concerns."
     },
     {
       "case": 26,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/26-0e335f6d5cc0568f.md",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "ROLE_CONTAMINATION"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/26-0e335f6d5cc0568f.md",
+      "persona_value": "MEDIUM",
       "rationale": "A USER turn already contains a complete revised answer and explanation, after which the assistant validates and elaborates that embedded assistant-style content."
     },
     {
       "case": 27,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/27-18f88b19227f9447.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/27-18f88b19227f9447.md",
+      "persona_value": "MEDIUM",
       "rationale": "The sentence editing is concise, grammatical, and follows the user's exact final formatting request."
     },
     {
       "case": 28,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/28-aff79b9cd1aab624.md",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "STYLE_QUALITY"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/28-aff79b9cd1aab624.md",
+      "persona_value": "LOW",
       "rationale": "The flavor description is otherwise suitable, but the response begins with a visible typo and is not clean enough to use unchanged as a positive target."
     },
     {
       "case": 29,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/29-30145323cff12114.md",
-      "grade": "B",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "HIGH",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/29-30145323cff12114.md",
+      "persona_value": "LOW",
       "rationale": "Two finance calculations are sound, but the middle answer conflates information ratio with a Sharpe-like ratio and uses a questionable annualization of average daily return."
     },
     {
       "case": 30,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/30-7794e1ba16f34014.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/30-7794e1ba16f34014.md",
+      "persona_value": "LOW",
       "rationale": "The regular-hexagon decomposition and final area of 96 square-root-three square centimeters are correct."
     },
     {
       "case": 31,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/31-4fcef841ffa8e988.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/31-4fcef841ffa8e988.md",
+      "persona_value": "LOW",
       "rationale": "The per-ship and fleet-wide round-trip fuel calculations are internally consistent and correct."
     },
     {
       "case": 32,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/32-3cc457d42d930497.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "STYLE_QUALITY"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/32-3cc457d42d930497.md",
+      "persona_value": "MEDIUM",
       "rationale": "Most editing is useful, but the initial advice incorrectly presents title case as a generally suitable alternative to sentence case for ordinary body text."
     },
     {
       "case": 33,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/33-e657fff5be628512.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/33-e657fff5be628512.md",
+      "persona_value": "HIGH",
       "rationale": "The short story fulfills the requested telepathic-animal premise and maintains a coherent imaginative narrative."
     },
     {
       "case": 34,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/34-a76f8f608525be17.md",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "REPAIR",
       "defect_tags": [
         "ROLE_CONTAMINATION"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/34-a76f8f608525be17.md",
+      "persona_value": "HIGH",
       "rationale": "The first USER turn includes a full edited paragraph and explanation that the assistant then treats as its own prior revision, contaminating role boundaries."
     },
     {
       "case": 35,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/35-0adeeb9e8eb0e8c1.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/35-0adeeb9e8eb0e8c1.md",
+      "persona_value": "LOW",
       "rationale": "The logarithm manipulation and solution x equals 2 are correct."
     },
     {
       "case": 36,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/36-4b6dbe5223bafc70.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "FACTUAL_ERROR"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/36-4b6dbe5223bafc70.md",
+      "persona_value": "LOW",
       "rationale": "The general inequality discussion is useful, but the wage-gap section conflates aggregate and comparable-job gaps and presents broad numerical ranges without qualification."
     },
     {
       "case": 37,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/37-526480094a0dbee9.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "REPAIR",
       "defect_tags": [
         "OTHER"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/37-526480094a0dbee9.md",
+      "persona_value": "MEDIUM",
       "rationale": "The assistant correctly repairs the sentence eventually, but it first labels a grammatically possible use of 'effecting' as incorrect and then concedes the user's overstatement."
     },
     {
       "case": 38,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/38-2ce8f0f2736a0f21.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/38-2ce8f0f2736a0f21.md",
+      "persona_value": "MEDIUM",
       "rationale": "The explanation of passive voice and practical identification guidance are broadly accurate and useful despite appropriately noting that not every form of 'to be' is passive."
     },
     {
       "case": 39,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/39-ee194d5e8ca52e47.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/39-ee194d5e8ca52e47.md",
+      "persona_value": "MEDIUM",
       "rationale": "The sentence revisions are clear, concise, and improve impact while preserving the intended workplace narrative."
     },
     {
       "case": 40,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/40-1dc073b1393f8784.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/40-1dc073b1393f8784.md",
+      "persona_value": "LOW",
       "rationale": "The roots, end behavior, derivative critical points, and increasing/decreasing intervals are all computed correctly."
     },
     {
       "case": 41,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/41-073618b8bd57ad32.md",
-      "grade": "B",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "HIGH",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/41-073618b8bd57ad32.md",
+      "persona_value": "LOW",
       "rationale": "The derivative and inflection analysis is mostly sound, but the washer integral is expanded incorrectly and the reported volume is wrong."
     },
     {
       "case": 42,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/42-291f185c6bed929e.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/42-291f185c6bed929e.md",
+      "persona_value": "MEDIUM",
       "rationale": "The editing guidance accurately explains the nuance between 'during' and 'while' and produces a concise final revision."
     },
     {
       "case": 43,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/43-d1de943a2b27994c.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/43-d1de943a2b27994c.md",
+      "persona_value": "LOW",
       "rationale": "The salinity-density relationship is explained correctly with an appropriate temperature caveat for freshwater density."
     },
     {
       "case": 44,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/44-80fd16a511f47eb6.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "LOGICAL_ERROR"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/44-80fd16a511f47eb6.md",
+      "persona_value": "LOW",
       "rationale": "The numerical mean is correct, but the response calls a two-of-four split a majority and uses 'above average' without a defined comparison benchmark."
     },
     {
       "case": 45,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/45-18c30845dd25504e.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/45-18c30845dd25504e.md",
+      "persona_value": "LOW",
       "rationale": "The arithmetic- and geometric-sequence explanations and seventh-term calculation are correct."
     },
     {
       "case": 46,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/46-f489c3500a529a9e.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/46-f489c3500a529a9e.md",
+      "persona_value": "MEDIUM",
       "rationale": "The business-trip planning and event-prioritization advice is practical, coherent, and appropriately flexible."
     },
     {
       "case": 47,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/47-1b01510c44f9ef20.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/47-1b01510c44f9ef20.md",
+      "persona_value": "MEDIUM",
       "rationale": "Because no crime-data table is actually present, asking the user to provide it is the correct response rather than inventing an analysis."
     },
     {
       "case": 48,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/48-4cef46aa6f040835.md",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "PARTIAL",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "INSTRUCTION_FAILURE",
         "STYLE_QUALITY"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "PARTIAL",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/48-4cef46aa6f040835.md",
+      "persona_value": "LOW",
       "rationale": "The response gives some beginner painting advice, but it is not a structured tutorial and contains awkward grammar that should be repaired before supervision."
     },
     {
       "case": 49,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/49-b3b55d57e581645e.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/49-b3b55d57e581645e.md",
+      "persona_value": "LOW",
       "rationale": "The logarithm derivative, change-of-base derivative, and inverse relationship with the exponential function are all correct."
     },
     {
       "case": 50,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/50-4292724fdbfe00f4.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "LOGICAL_ERROR"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/50-4292724fdbfe00f4.md",
+      "persona_value": "LOW",
       "rationale": "The answer assumes the six unlabeled balls are distinct and gives twenty combinations; if the balls are truly indistinguishable as stated, that interpretation is not justified."
     },
     {
       "case": 51,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/51-5cd8cb713bfdb911.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/51-5cd8cb713bfdb911.md",
+      "persona_value": "HIGH",
       "rationale": "The science-fiction opening and discussion of first-contact story patterns are coherent, creative, and broadly accurate."
     },
     {
       "case": 52,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/52-45065b76b74c3af8.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/52-45065b76b74c3af8.md",
+      "persona_value": "MEDIUM",
       "rationale": "The editing-process explanation, concise-writing definition, and first-person strengths paragraph are coherent and directly responsive."
     },
     {
       "case": 53,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/53-ce2bbc8d2e885062.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/53-ce2bbc8d2e885062.md",
+      "persona_value": "HIGH",
       "rationale": "The relationship guidance is balanced, non-blaming, practical, and maintains good multi-turn contextual continuity."
     },
     {
       "case": 54,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/54-b9f4fbd405ee1c74.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "HIGH",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/54-b9f4fbd405ee1c74.md",
+      "persona_value": "HIGH",
       "rationale": "Within the explicitly fictional Mars roleplay, the invented crew details remain internally coherent and the teamwork discussion supports the scenario."
     },
     {
       "case": 55,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/55-48afcb0284a474f3.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/55-48afcb0284a474f3.md",
+      "persona_value": "MEDIUM",
       "rationale": "The editing feedback is nuanced and the final sentence assessment correctly explains the effect of the user's wording changes."
     },
     {
       "case": 56,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/56-a4903b1d2ea903e3.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/56-a4903b1d2ea903e3.md",
+      "persona_value": "LOW",
       "rationale": "The explanations of glue, PVA white glue, and surfactants are broadly correct at an introductory level."
     },
     {
       "case": 57,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/57-3722efa545745071.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/57-3722efa545745071.md",
+      "persona_value": "MEDIUM",
       "rationale": "The withdrawal-letter editing is grammatical, appropriately formal, concise, and follows the requested paragraph constraints."
     },
     {
       "case": 58,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/58-1f1e37eedac07c21.md",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "BAD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "LOGICAL_ERROR",
         "TECHNICAL_ERROR"
       ],
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "BAD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/58-1f1e37eedac07c21.md",
+      "persona_value": "LOW",
       "rationale": "Symmetry alone cannot determine the removed fraction, and both the claimed universal one-sixteenth result and the later border-dimension calculations are mathematically invalid."
     },
     {
       "case": 59,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/59-1c08777b0f730f58.md",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/59-1c08777b0f730f58.md",
+      "persona_value": "LOW",
       "rationale": "The Python implementation is correct, but the explanation of the supplied regular expression incorrectly describes dot and star operators that are not part of the pattern."
     },
     {
       "case": 60,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/60-7e5ed8c5194efa22.md",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "BAD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "LOGICAL_ERROR",
         "TECHNICAL_ERROR"
       ],
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "BAD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/60-7e5ed8c5194efa22.md",
+      "persona_value": "LOW",
       "rationale": "The exam progression analysis miscounts improving students and draws unsupported conclusions about instructor effectiveness from different-material exams; the correlation discussion also overinterprets causality and course structure."
     },
     {
       "case": 61,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/61-87a5b976f699d75d.md",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "FACTUAL_ERROR"
       ],
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/61-87a5b976f699d75d.md",
+      "persona_value": "LOW",
       "rationale": "The explanation reverses the religious cartridge grievance: beef offended Hindu beliefs while pork offended Muslim beliefs, making a central historical claim wrong."
     },
     {
       "case": 62,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/62-488291460714439a.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR",
         "INSTRUCTION_FAILURE"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/62-488291460714439a.md",
+      "persona_value": "LOW",
       "rationale": "The concurrent implementation may pass the example, but the title regex is fragile across newlines and markup and the function can return None entries despite requesting only extracted titles."
     },
     {
       "case": 63,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/63-f4def0282417eac8.md",
-      "grade": "B",
-      "factual_risk": "LOW",
-      "instruction_fit": "PARTIAL",
-      "persona_value": "HIGH",
-      "disposition": "REPAIR",
       "defect_tags": [
         "ROLE_CONTAMINATION",
         "INSTRUCTION_FAILURE"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "LOW",
+      "grade": "B",
+      "instruction_fit": "PARTIAL",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/63-f4def0282417eac8.md",
+      "persona_value": "HIGH",
       "rationale": "The USER turn already contains the requested six-sentence story, and the assistant critiques and extends that embedded answer instead of cleanly performing the original instruction."
     },
     {
       "case": 64,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/64-ef58ed9c091f8e0e.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/64-ef58ed9c091f8e0e.md",
+      "persona_value": "LOW",
       "rationale": "The derivative evaluation and classification of z equals 2 as neither a zero nor a pole are correct."
     },
     {
       "case": 65,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/65-9d996150e73f73d9.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "MEDIUM",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/65-9d996150e73f73d9.md",
+      "persona_value": "MEDIUM",
       "rationale": "The suggested email wording is polite, formal, and conveys urgency without sounding demanding."
     },
     {
       "case": 66,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/66-7a2bb741f7db25bb.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/66-7a2bb741f7db25bb.md",
+      "persona_value": "LOW",
       "rationale": "The dictionary lookup explanation correctly describes the provided function and its output."
     },
     {
       "case": 67,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/67-3ea93bcf7c0dd1ff.md",
-      "grade": "C",
-      "factual_risk": "HIGH",
-      "instruction_fit": "BAD",
-      "persona_value": "LOW",
-      "disposition": "EXCLUDE",
       "defect_tags": [
         "TECHNICAL_ERROR"
       ],
+      "disposition": "EXCLUDE",
+      "factual_risk": "HIGH",
+      "grade": "C",
+      "instruction_fit": "BAD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/67-3ea93bcf7c0dd1ff.md",
+      "persona_value": "LOW",
       "rationale": "The response treats the Hessian eigenvalues as principal curvatures without restricting to the tangent plane or applying the required normalization, so the mean curvature value is wrong."
     },
     {
       "case": 68,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/68-a720b23f4cc80592.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/68-a720b23f4cc80592.md",
+      "persona_value": "LOW",
       "rationale": "For equal-length binary strings, the implementation correctly computes the Hamming distance required by the examples."
     },
     {
       "case": 69,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/69-d2145a8be72a7b55.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/69-d2145a8be72a7b55.md",
+      "persona_value": "LOW",
       "rationale": "The simple INI-like parser correctly builds nested section dictionaries under the stated basic file structure."
     },
     {
       "case": 70,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/70-fbd85dc3f457a584.md",
-      "grade": "A",
-      "factual_risk": "LOW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "KEEP",
       "defect_tags": [
         "NONE"
       ],
+      "disposition": "KEEP",
+      "factual_risk": "LOW",
+      "grade": "A",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/70-fbd85dc3f457a584.md",
+      "persona_value": "LOW",
       "rationale": "The direction mapping correctly identifies opposite pairs for the valid direction inputs specified by the user."
     },
     {
       "case": 71,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/71-15c96854145747e5.md",
-      "grade": "B",
-      "factual_risk": "HIGH",
-      "instruction_fit": "PARTIAL",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "TECHNICAL_ERROR",
         "INSTRUCTION_FAILURE"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "HIGH",
+      "grade": "B",
+      "instruction_fit": "PARTIAL",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/71-15c96854145747e5.md",
+      "persona_value": "LOW",
       "rationale": "Sorting is implemented correctly, but assigning rank by list index violates the stated definition when two or more students have equal GPAs."
     },
     {
       "case": 72,
-      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/72-ccd953eba0c5107d.md",
-      "grade": "B",
-      "factual_risk": "REVIEW",
-      "instruction_fit": "GOOD",
-      "persona_value": "LOW",
-      "disposition": "REPAIR",
       "defect_tags": [
         "FACTUAL_ERROR"
       ],
+      "disposition": "REPAIR",
+      "factual_risk": "REVIEW",
+      "grade": "B",
+      "instruction_fit": "GOOD",
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/72-ccd953eba0c5107d.md",
+      "persona_value": "LOW",
       "rationale": "The positive rewrite is fluent, but it introduces unsupported claims about premium quality, exceptional results, and exceeding expectations beyond the limited source statement."
     }
-  ]
+  ],
+  "model_scores_blinded_during_review": true,
+  "population_estimator": false,
+  "reviewer": "ChatGPT semantic review",
+  "sample_id": "smoltalk-v59-independent-holdout-004",
+  "sample_size": 72,
+  "schema_version": "v59-independent-holdout-decisions-4",
+  "selection_uses_model_score": false,
+  "status": "REVIEW_APPLIED",
+  "summary": {
+    "defect_tags": {
+      "FACTUAL_ERROR": 5,
+      "INSTRUCTION_FAILURE": 7,
+      "LOGICAL_ERROR": 6,
+      "NONE": 43,
+      "OTHER": 4,
+      "ROLE_CONTAMINATION": 3,
+      "STYLE_QUALITY": 3,
+      "TECHNICAL_ERROR": 13,
+      "TIME_SENSITIVE": 1
+    },
+    "exclude": 6,
+    "keep": 43,
+    "repair": 23
+  },
+  "total_reviewed_after_application": 288,
+  "training_authorized": false,
+  "training_labels": 216
 }
