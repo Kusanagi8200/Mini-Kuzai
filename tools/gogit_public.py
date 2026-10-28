@@ -698,6 +698,15 @@ METRIC_KEYS = {
     "V59_TRAINER_MAX_STEPS",
     "V59_TRAINER_MAX_EXPOSURE_TOKENS",
     "V59_TRAINER_BLIND_ACCESS",
+    "V59_PERF_TOKENIZER_LOAD_MS",
+    "V59_PERF_ENCODE_128_MS", "V59_PERF_ENCODE_128_TOKENS",
+    "V59_PERF_ENCODE_512_MS", "V59_PERF_ENCODE_512_TOKENS",
+    "V59_PERF_ENCODE_1024_MS", "V59_PERF_ENCODE_1024_TOKENS",
+    "V59_PERF_SEGMENT_1_MS", "V59_PERF_SEGMENT_1_COUNT",
+    "V59_PERF_SEGMENT_2_MS", "V59_PERF_SEGMENT_2_COUNT",
+    "V59_PERF_SEGMENT_4_MS", "V59_PERF_SEGMENT_4_COUNT",
+    "V59_PERF_SYNTHETIC_ONLY", "V59_PERF_CORPUS_ACCESSES",
+    "V59_PERF_OPTIMIZER_STEPS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -764,6 +773,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     post_authorization_v59 = tracked in {
         "tools/public-audits/phase03_v59_final_mix_freeze_authorization.py",
         "tools/public-audits/phase03_v59_persistent_trainer_freeze.py",
+        "tools/public-audits/phase03_v59_tokenizer_performance.py",
     }
 
     architecture_workstream = tracked.startswith(
