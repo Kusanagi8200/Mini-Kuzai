@@ -713,6 +713,24 @@ METRIC_KEYS = {
     "V59_VALIDATION_INTEGRITY_FIELDS",
     "V59_VALIDATION_HISTORY_PROOFS",
     "V59_VALIDATION_BLOB_MATCHES",
+    "V59_RUN_COMPLETED",
+    "V59_RUN_OPTIMIZER_STEPS",
+    "V59_RUN_EXPOSURE_TOKENS",
+    "V59_RUN_EVALUATIONS",
+    "V59_RUN_BEST_VAL_LOSS_X1E6",
+    "V59_RUN_BLIND_ACCESS",
+    "V59_RUN_STOP_MAX_STEPS",
+    "V59_RUN_STOP_MAX_TOKENS",
+    "V59_RUN_STOP_EARLY_VALIDATION",
+    "V59_RUN_STOP_SAMPLER",
+    "V59_RUN_CONTROLLED_TOKENS",
+    "V59_RUN_CONTROLLED_SHARE_BP",
+    "V59_RUN_PERSONA_TOKENS",
+    "V59_RUN_PERSONA_SHARE_BP",
+    "V59_RUN_GENERAL_TOKENS",
+    "V59_RUN_GENERAL_SHARE_BP",
+    "V59_RUN_LEGACY_TOKENS",
+    "V59_RUN_LEGACY_SHARE_BP",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -781,6 +799,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v59_persistent_trainer_freeze.py",
         "tools/public-audits/phase03_v59_tokenizer_performance.py",
         "tools/public-audits/phase03_v59_validation_compatibility.py",
+        "tools/public-audits/phase03_v59_bounded_pilot_run.py",
     }
 
     architecture_workstream = tracked.startswith(
