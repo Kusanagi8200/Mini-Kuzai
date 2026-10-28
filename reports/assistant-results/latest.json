@@ -13,11 +13,11 @@
     "V59_PERF_ENCODE_512_TOKENS": 301,
     "V59_PERF_OPTIMIZER_STEPS": 0,
     "V59_PERF_SEGMENT_1_COUNT": 1,
-    "V59_PERF_SEGMENT_1_MS": 18,
+    "V59_PERF_SEGMENT_1_MS": 9,
     "V59_PERF_SEGMENT_2_COUNT": 1,
-    "V59_PERF_SEGMENT_2_MS": 41,
+    "V59_PERF_SEGMENT_2_MS": 28,
     "V59_PERF_SEGMENT_4_COUNT": 1,
-    "V59_PERF_SEGMENT_4_MS": 101,
+    "V59_PERF_SEGMENT_4_MS": 79,
     "V59_PERF_SYNTHETIC_ONLY": 1,
     "V59_PERF_TOKENIZER_LOAD_MS": 1
   },
@@ -29,6 +29,6 @@
   "semantic_validation_complete": true,
   "source": "Mini-Kuzai V59 public training-mixture and turn-aware segmentation preparation",
   "status": "TRAINING_AUTHORIZATION_GATE",
-  "step_id": "PHASE03-SMOLTALK-V59-TOKENIZER-PERF-001",
+  "step_id": "PHASE03-SMOLTALK-V59-TOKENIZER-PERF-002",
   "training_authorized": true
 }
