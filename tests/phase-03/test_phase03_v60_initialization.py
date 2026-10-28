@@ -1,7 +1,13 @@
 import math
+import sys
 import unittest
+from pathlib import Path
 
 import torch
+
+REPO = Path(__file__).resolve().parents[2]
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
 
 from mini_kuzai import phase03_v60_model as MODULE
 
