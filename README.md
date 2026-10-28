@@ -245,7 +245,7 @@ The V52 pause checkpoint is now historical. V53 resumed public-only corpus conso
 
 **V53 - public corpus consolidation and controlled TRAIN expansion --> ** The [V53 workstream](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) has progressed from cross-cycle accounting through repair planning, derivative review, eligibility, admission and behavior-by-behavior TRAIN completion. The last published GoGit state contains **107 unique canonical TRAIN records across all 29 TRAIN semantic groups**. B14 EMOTIONAL EXPRESSION has now been authored and reviewed at the three-record MEDIUM target; one target wording was corrected during semantic review. The audited TRAIN corpus contains **107 unique records across all 29 TRAIN groups**, confirmed by the published B14C GOGIT audit. Audited provenance is **105 `phase03-designed` records plus 2 admitted public SmolTalk derivatives**. V54 subsequently completed and globally closed the **36-record / 18-group VALIDATION corpus**. BLIND TEST authoring is now authorized, no BLIND records existed at V54 closure, and model training remains unauthorized.
 
-### Phase 03 current state - 2026-10-25
+### Phase 03 current state - 2026-10-28
 
 The controlled conversational corpus is closed at **179 conversations across 65 semantic groups** -->
 
@@ -314,8 +314,8 @@ The conservative final-mix policy is now closed -->
 - EXCLUDE_REVIEWED --> **47 conversations / 56726 tokens**
 - DEFER_UNREVIEWED --> **792 conversations / 1204585 tokens**
 - controlled TRAIN --> **24539 tokens**
-- combined clean ready-now envelope --> **295416 tokens**
-- V59 final mix --> **NOT FINALIZED**.
+- combined clean frozen envelope --> **295416 tokens**
+- V59 final mix --> **FINALIZED**.
 
 The persona-first exposure policy is now finalized -->
 
@@ -327,37 +327,67 @@ The persona-first exposure policy is now finalized -->
 - physical duplication --> **NO**
 - REPAIR / EXCLUDE / UNREVIEWED admission --> **NO**.
 
-The bounded training-protocol preflight is now closed -->
+The bounded training-protocol preflight is closed -->
 
 - CUDA / BF16 --> **PASS**
 - full-context microbatch --> **8 x 2048**
 - peak reserved VRAM --> **632 MiB / 8.20%**
 - preflight memory gate --> **60.00%**
-- authorization candidate --> **YES**
-- persistent training started --> **NO**.
+- authorization candidate --> **YES**.
 
-The terminal V59 workstream is now scripted -->
+The terminal V59 freeze and authorization gate is also closed -->
 
-**V59 FINAL MIX FREEZE + TRAINING AUTHORIZATION GATE - READY**
+```text
+SEMANTIC_VALIDATION_COMPLETE = 1
+V59_MIX_FINALIZED            = 1
+TRAINING_AUTHORIZED          = 1
+TRAINING_STARTED             = 0
+```
 
-The gate fingerprints the controlled TRAIN, 165 clean public DIRECT_KEEP
-conversations, tokenizer, serializer, segmentation, architecture, sampler,
-protocol, VALIDATION master, BLIND master and semantic split manifest.
+Authorization scope -->
 
-If every frozen dependency remains unchanged, the terminal state may become -->
+`V59_BOUNDED_PILOT_ONLY`
 
-`SEMANTIC_VALIDATION_COMPLETE=1 / V59_MIX_FINALIZED=1 / TRAINING_AUTHORIZED=1 / TRAINING_STARTED=0`.
+Freeze fingerprint -->
 
-Authorization is strictly limited to the bounded V59 pilot of 145 optimizer
-steps and 1181664 exposure tokens. BLIND TEST remains forbidden during training.
+`40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503`
 
-The only remaining pre-training decision is the terminal V59 freeze and bounded-pilot authorization gate. All earlier quality, pruning, token-accounting, exposure-weighting and hardware-preflight decisions are closed.
+Final frozen training identity -->
 
-**Training remains NOT AUTHORIZED and NOT STARTED until that terminal gate passes.**
+- controlled TRAIN --> **107 conversations**
+- public DIRECT_KEEP --> **165 conversations**
+- total --> **272 conversations / 345 segments / 295416 unique tokens**
+- REPAIR_QUEUE excluded --> **108**
+- EXCLUDE_REVIEWED excluded --> **47**
+- DEFER_UNREVIEWED excluded --> **792**.
+
+Authorized exposure targets -->
+
+- CONTROLLED_TRAIN --> **30.00%**
+- PERSONA_CORE --> **46.58%**
+- GENERAL_SUPPORT --> **15.00%**
+- LEGACY_STRUCTURED_KEEP --> **8.42%**
+- persona-oriented exposure --> **76.58%**.
+
+The authorization is limited to the bounded V59 pilot -->
+
+- architecture --> V58 MICRO FROZEN
+- maximum optimizer steps --> **145**
+- maximum exposure tokens --> **1181664**
+- frozen VALIDATION --> allowed during the pilot
+- BLIND TEST --> forbidden during training and reserved for post-training evaluation.
+
+**Training is authorized but has not started.**
+
+The next workstream is implementation and freeze of the persistent pilot trainer.
+It must verify the freeze fingerprint before the first optimizer step and refuse
+to run if any frozen corpus, tokenizer, serializer, segmentation, architecture,
+sampler or protocol dependency has changed.
 
 See -->
 
 - [V59 training mix and segmentation](phases/MINI-KUZAI-PHASE-03-V59-TRAINING-MIX-SEGMENTATION.md)
+- [V59 training-authorized checkpoint - 2026-10-28](phases/MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
 - [V59 pause checkpoint - 2026-10-25](phases/MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md)
 - [V59 Active-Learning Sample 003 results](reviews/smoltalk-v59-active-sample-003/RESULTS-003.md)
 - [latest V59 Active-Learning Sample 003 audit](reports/assistant-results/history/PHASE03-SMOLTALK-V59-ACTIVE-SAMPLE-003.json)
@@ -374,9 +404,9 @@ The local pipeline covers conversation reconstruction, topic segmentation, faile
 
 Multi-turn examples preserve the order and provenance of observed user feedback. Rewritten assistant targets are explicitly distinguished from original responses; partial success is never promoted to unobserved verification. Editorial acceptance into a local candidate pool is not official TRAIN integration or training approval.
 
-Before choosing a final mixture, the project measures dialogue length, multi-turn coverage, and behavioral balance across the private source, the controlled identity corpus, and the external English reservoir. Exact token counts are now measurable with the frozen V56 tokenizer. Final mixture weights remain pending the V59 training-mixture decision.
+The authorized V59 bounded pilot does not include the private corpus. Its final frozen mixture contains only the controlled TRAIN and human-reviewed public DIRECT_KEEP material. Any future private-corpus integration would constitute a new corpus version and would require a new anti-leakage, freeze, weighting and training-authorization cycle.
 
-The private conversation source is intended to complement the controlled Mini-Kuzai identity/behavior corpus and the general English reservoir. Private corpus work does not authorize training and does not modify the existing controlled Phase 03 dataset until explicit integration approval.
+The private conversation source remains a possible future research input. It is outside the V59 authorization and must not modify or be injected into the frozen bounded-pilot corpus.
 
 See [`phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md`](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md) for the public methodology.
 See -->
