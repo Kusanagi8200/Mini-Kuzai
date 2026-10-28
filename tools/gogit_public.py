@@ -934,6 +934,30 @@ METRIC_KEYS = {
     "V60_EOS_MULTI_PAIR_SEGMENTS",
     "V60_EOS_MAX_PAIRS_PER_SEGMENT",
     "V60_EOS_MEAN_PAIRS_X100",
+    "V60_EOS_LOGIT_DIAG_PASS",
+    "V60_EOS_LOGIT_BLIND_ACCESS",
+    "V60_EOS_TERM_POSITIONS",
+    "V60_EOS_TERM_PROB_PPM",
+    "V60_EOS_TERM_NLL_X1E3",
+    "V60_EOS_TERM_MEAN_RANK_X100",
+    "V60_EOS_TERM_MEDIAN_RANK_X100",
+    "V60_EOS_TERM_TOP1",
+    "V60_EOS_NONTERM_POSITIONS",
+    "V60_EOS_NONTERM_PROB_PPM",
+    "V60_EOS_NONTERM_MAX_PROB_PPM",
+    "V60_EOS_NONTERM_TOP1",
+    "V60_EOS_INTERMEDIATE_BOUNDARIES",
+    "V60_EOS_INTERMEDIATE_PROB_PPM",
+    "V60_EOS_INTERMEDIATE_MEAN_RANK_X100",
+    "V60_EOS_INTERMEDIATE_TOP1",
+    "V60_EOS_INTERMEDIATE_OVER_TRUE",
+    "V60_EOS_PROBE_COUNT",
+    "V60_EOS_PROBE_STEPS",
+    "V60_EOS_PROBE_MAXPROB_MEAN_PPM",
+    "V60_EOS_PROBE_MAXPROB_MAX_PPM",
+    "V60_EOS_PROBE_BEST_RANK_MEAN_X100",
+    "V60_EOS_PROBE_BEST_RANK_MEDIAN_X100",
+    "V60_EOS_PROBE_TOP1",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1019,6 +1043,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v60_train_run_001.py",
         "tools/public-audits/phase03_v60_train_run_002.py",
         "tools/public-audits/phase03_v60_eos_assistant_turn_target_diagnostic.py",
+        "tools/public-audits/phase03_v60_eos_logit_rank_calibration_diagnostic.py",
     }
 
     architecture_workstream = tracked.startswith(
