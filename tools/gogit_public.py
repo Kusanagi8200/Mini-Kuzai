@@ -33,6 +33,9 @@ SOURCE_PHASE03_ARCHITECTURE_FINAL = (
 SOURCE_PHASE03_V59 = (
     "Mini-Kuzai V59 public training-mixture and turn-aware segmentation preparation"
 )
+SOURCE_PHASE03_V60 = (
+    "Mini-Kuzai V60 corrected initialization and pre-train gate"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -801,6 +804,25 @@ METRIC_KEYS = {
     "V59_LOGIT_TRAINED_ENTROPY_X1E6",
     "V59_LOGIT_BEST_STEP",
     "V59_LOGIT_BEST_EXPOSURE",
+    "V60_INIT_GATE_PASS",
+    "V60_INIT_TESTS_PASS",
+    "V60_INIT_ARCH_MATCH",
+    "V60_INIT_PARAMS",
+    "V60_INIT_TIED",
+    "V60_INIT_PAD_ZERO",
+    "V60_INIT_EMB_STD_X1E6",
+    "V60_INIT_POS_STD_X1E6",
+    "V60_INIT_RESIDUAL_STD_X1E6",
+    "V60_INIT_UNIFORM_CE_X1E6",
+    "V60_INIT_CE_X1E6",
+    "V60_INIT_CE_DELTA_X1E6",
+    "V60_INIT_ENTROPY_X1E6",
+    "V60_INIT_TOP1_BP",
+    "V60_INIT_LOGIT_STD_X1E6",
+    "V60_INIT_LOGIT_MAXABS_X1E3",
+    "V60_INIT_VALIDATION_RECORDS",
+    "V60_INIT_VALIDATION_SEGMENTS",
+    "V60_INIT_BLIND_ACCESS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -855,6 +877,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_ARCHITECTURE_FINAL
     if tracked.startswith("tools/public-audits/phase03_v59_"):
         return SOURCE_PHASE03_V59
+    if tracked.startswith("tools/public-audits/phase03_v60_"):
+        return SOURCE_PHASE03_V60
     return SOURCE
 
 
@@ -880,6 +904,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             "tools/public-audits/phase03_v57_",
             "tools/public-audits/phase03_v58_",
             "tools/public-audits/phase03_v59_",
+            "tools/public-audits/phase03_v60_",
         )
     )
 
