@@ -1,0 +1,21 @@
+{
+  "metrics": {
+    "SEMANTIC_VALIDATION_COMPLETE": 1,
+    "TRAINING_AUTHORIZED": 0,
+    "V60_INIT_FREEZE_BLIND_ACCESS": 0,
+    "V60_INIT_FREEZE_GATE_PASS": 1,
+    "V60_INIT_FREEZE_PARAMS": 1184512,
+    "V60_INIT_FREEZE_PASS": 1,
+    "V60_INIT_FREEZE_TRAINING_STARTED": 0
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v60_initialization_freeze.py",
+  "producer_sha256": "c2f76298903cb16927ae8ed75640cca61a375c481daa3bdcb1d48eb2ba422996",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": true,
+  "source": "Mini-Kuzai V60 corrected initialization and pre-train gate",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V60-INITIALIZATION-FREEZE-001",
+  "training_authorized": false
+}
