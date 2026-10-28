@@ -893,6 +893,31 @@ METRIC_KEYS = {
     "V60_RUN_PERSONA_SHARE_BP",
     "V60_RUN_GENERAL_SHARE_BP",
     "V60_RUN_LEGACY_SHARE_BP",
+    "V60_RUN2_COMPLETED",
+    "V60_RUN2_RESUME",
+    "V60_RUN2_START_STEPS",
+    "V60_RUN2_FINAL_STEPS",
+    "V60_RUN2_DELTA_STEPS",
+    "V60_RUN2_START_TOKENS",
+    "V60_RUN2_FINAL_TOKENS",
+    "V60_RUN2_DELTA_TOKENS",
+    "V60_RUN2_COMPLETED_CYCLES",
+    "V60_RUN2_START_VAL_LOSS_X1E6",
+    "V60_RUN2_FINAL_VAL_LOSS_X1E6",
+    "V60_RUN2_FINAL_UTF8_INVALID",
+    "V60_RUN2_FINAL_EOS",
+    "V60_RUN2_FINAL_DISTINCT",
+    "V60_RUN2_FINAL_MEAN_TOKENS_X100",
+    "V60_RUN2_FINAL_REPEAT_TRIGRAM_BP",
+    "V60_RUN2_FINAL_MAX_CHAR_RUN",
+    "V60_RUN2_FINAL_EMPTY",
+    "V60_RUN2_BLIND_ACCESS",
+    "V60_RUN2_STOP_PLATEAU",
+    "V60_RUN2_STOP_EARLY_VALIDATION",
+    "V60_RUN2_STOP_MAX_STEPS",
+    "V60_RUN2_STOP_MAX_TOKENS",
+    "V60_RUN2_STOP_SAMPLER",
+    "V60_RUN2_STOP_MILESTONE",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -976,6 +1001,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
 
     active_training_v60 = tracked in {
         "tools/public-audits/phase03_v60_train_run_001.py",
+        "tools/public-audits/phase03_v60_train_run_002.py",
     }
 
     architecture_workstream = tracked.startswith(
