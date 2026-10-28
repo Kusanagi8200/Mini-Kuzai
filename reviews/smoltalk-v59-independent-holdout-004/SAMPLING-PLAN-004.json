@@ -1,0 +1,646 @@
+{
+  "cases": [
+    {
+      "case": 1,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/01-fa2ef67e8a12b459.md",
+      "priority": "HIGH",
+      "sha": "fa2ef67e8a12b45971eb33360992003fa0c967ab3db688a2c22aec241f6601d3",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 2,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/02-96661a904ddfe41c.md",
+      "priority": "LOW",
+      "sha": "96661a904ddfe41c94719faf4a86dbe698b4fe220d05739f319808a54cdb6270",
+      "source": "explore-instruct-rewrite",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 3,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/03-ffdac2ae97b1e998.md",
+      "priority": "HIGH",
+      "sha": "ffdac2ae97b1e998ee84e37251dc33a73f71ae1188d92cee3ceb621503cb9299",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 4,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/04-59ac7972f9353257.md",
+      "priority": "MEDIUM",
+      "sha": "59ac7972f935325758e082178a7e50c818833efa5d8081561e967a405c087dc1",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 5,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/05-24c97c3bddb47507.md",
+      "priority": "LOW",
+      "sha": "24c97c3bddb475071cfcdc9562476b9dcdc79168f5e9b903f489273c8380db5d",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 6,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/06-64c31a05b05d3c57.md",
+      "priority": "LOW",
+      "sha": "64c31a05b05d3c573628d2ee89ff241eea448213cd91ece7d04475d685d2ff04",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 7,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/07-c5be7ebf0b6c1b68.md",
+      "priority": "LOW",
+      "sha": "c5be7ebf0b6c1b688c4506afd82f1f04a04c7df8dfd001595f86f8ed52cd8322",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 8,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/08-1ca6f65686863c2f.md",
+      "priority": "LOW",
+      "sha": "1ca6f65686863c2fc437a6b12db472fb7d5aa5bd8224bd28f56ed24e60f9c14e",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 9,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/09-a9105ee31aa53f40.md",
+      "priority": "LOW",
+      "sha": "a9105ee31aa53f4093adc1c07957d7129ceb22b3c15e7ff771017d9eacc8d784",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 10,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/10-509e08916598d5dc.md",
+      "priority": "LOW",
+      "sha": "509e08916598d5dc2f3ebd68511280c96ccb4396dfed0705cb1928e295fc61f7",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 11,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/11-8b988f9d623b127d.md",
+      "priority": "LOW",
+      "sha": "8b988f9d623b127d8bd9806d10082abf20defe1ac61d4b60575d0506e0c3075a",
+      "source": "explore-instruct-rewrite",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 12,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/12-b8781a488ee02ebb.md",
+      "priority": "LOW",
+      "sha": "b8781a488ee02ebb22b73ba4ba4ad99916d6f988f6285687c2cb279859171753",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 13,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/13-067cea2490bbad01.md",
+      "priority": "LOW",
+      "sha": "067cea2490bbad01f304d467752dc960da9c6925fbb25bae7d4e26c72f3dc7d0",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 14,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/14-94fe58185a407306.md",
+      "priority": "LOW",
+      "sha": "94fe58185a40730638622fce37664768d2feaee9b3e29194e2a46ca11e477526",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 15,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/15-3d66122665bb2c8e.md",
+      "priority": "HIGH",
+      "sha": "3d66122665bb2c8e483116b2db9041cb02ae5b6d81b0f105e54ad7654ad7fa25",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 16,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/16-628da17c450490e7.md",
+      "priority": "LOW",
+      "sha": "628da17c450490e7e3a9b1ad9d5327ab9888f6278f92832393f0e3333c7dc46d",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 17,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/17-7009c9ee196942b3.md",
+      "priority": "MEDIUM",
+      "sha": "7009c9ee196942b366b51cfad4f63e4e7c92ff2e9d0a547b82c380d76be4fb34",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 18,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/18-e0b971451d417130.md",
+      "priority": "LOW",
+      "sha": "e0b971451d417130139b8c0d09e7ed067072af8720b90837c213c20b096a034d",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 19,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/19-b5740b97cbd81e18.md",
+      "priority": "MEDIUM",
+      "sha": "b5740b97cbd81e18c3166e7438c51e854ac08ad86acca5fbb9f54e5e639dcb56",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 20,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/20-ca1d307f14797da7.md",
+      "priority": "LOW",
+      "sha": "ca1d307f14797da7966b352f38ee604bc5ed6dac21c84847c5ba57acbe503223",
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 21,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/21-1c617cc906455f27.md",
+      "priority": "MEDIUM",
+      "sha": "1c617cc906455f27b19605e31ccb5cceeeae05bddf4c402694a150ce36fb2982",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 22,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/22-1c1bd8e1f4db51a2.md",
+      "priority": "MEDIUM",
+      "sha": "1c1bd8e1f4db51a22d311e95e4bd5a2472f895383d77dc99cc7bbcf3a18b208a",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 23,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/23-e320f9800fa40488.md",
+      "priority": "LOW",
+      "sha": "e320f9800fa404889baf58385ae2aa93f6836a197270abf185e6355d672fab40",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 24,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/24-3883a4a3d7cbd9f3.md",
+      "priority": "MEDIUM",
+      "sha": "3883a4a3d7cbd9f3499179c203108bfc6d67a820bb757459b02ac990c810102f",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 25,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/25-1675c49528aa5414.md",
+      "priority": "MEDIUM",
+      "sha": "1675c49528aa54143580a3d5ec8bf78a210173475d7cc32adcd18ff3824f4068",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 26,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/26-0e335f6d5cc0568f.md",
+      "priority": "HIGH",
+      "sha": "0e335f6d5cc0568f0edc58b1f939b0e77b3070d188fcd153118ef080f826c9ee",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 27,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/27-18f88b19227f9447.md",
+      "priority": "MEDIUM",
+      "sha": "18f88b19227f944730fbe20a83665f61fa980ae786349eb2fb601b04b09074e4",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 28,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/28-aff79b9cd1aab624.md",
+      "priority": "LOW",
+      "sha": "aff79b9cd1aab62421da4e74ec304ce42c03f46efb2d12555f51f779eef7824f",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 29,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/29-30145323cff12114.md",
+      "priority": "LOW",
+      "sha": "30145323cff1211431073235d4ca75b0f476977826730aaad4d4b790eb8cec23",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 30,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/30-7794e1ba16f34014.md",
+      "priority": "LOW",
+      "sha": "7794e1ba16f34014d77faf28aacbe54de3449949a86fa16a626beeef017c14a0",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 31,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/31-4fcef841ffa8e988.md",
+      "priority": "MEDIUM",
+      "sha": "4fcef841ffa8e988d55ebc766c3e7e642a09dfb08f27522fad32e62bfb5a74e6",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 32,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/32-3cc457d42d930497.md",
+      "priority": "HIGH",
+      "sha": "3cc457d42d93049743bb5a629b5b2e463989010b7ee76fe5cee407670cb21225",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 33,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/33-e657fff5be628512.md",
+      "priority": "MEDIUM",
+      "sha": "e657fff5be6285128d8949e569c53723b44eed81f6d2c4a7fb5bd2e4660891c3",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 34,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/34-a76f8f608525be17.md",
+      "priority": "HIGH",
+      "sha": "a76f8f608525be17674c458779f64240eaed3fd8c3f52bd5b8b12332bd15d9cb",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 35,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/35-0adeeb9e8eb0e8c1.md",
+      "priority": "LOW",
+      "sha": "0adeeb9e8eb0e8c1787fce896c6d3e04f127dad960a29e805e2f9985197a272a",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 36,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/36-4b6dbe5223bafc70.md",
+      "priority": "LOW",
+      "sha": "4b6dbe5223bafc70e6e93645ffe32680a502b15a3950862e69a022a1eb3cc5d5",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 37,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/37-526480094a0dbee9.md",
+      "priority": "MEDIUM",
+      "sha": "526480094a0dbee92ace2c559429a324d1a881deda5df56c0a8bd2129f33ef05",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 38,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/38-2ce8f0f2736a0f21.md",
+      "priority": "MEDIUM",
+      "sha": "2ce8f0f2736a0f212f81c316ee6de0042dea1ee84b35e072c64c30669ab50a0b",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 39,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/39-ee194d5e8ca52e47.md",
+      "priority": "HIGH",
+      "sha": "ee194d5e8ca52e478693457af1f7245edabde295c667e2e3c654b828990cb935",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 40,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/40-1dc073b1393f8784.md",
+      "priority": "LOW",
+      "sha": "1dc073b1393f8784f2043a66b9cd29f7a233f5ce0b0f416c295c3aaff5b7960d",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 41,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/41-073618b8bd57ad32.md",
+      "priority": "MEDIUM",
+      "sha": "073618b8bd57ad32e1df1aa9785c3a09203e2d5c8ef6b694280048fcd62bf468",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 42,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/42-291f185c6bed929e.md",
+      "priority": "HIGH",
+      "sha": "291f185c6bed929e54ceb34b29b148ec95f1a20de9ab1378f4ac9bbb1397adf6",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 43,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/43-d1de943a2b27994c.md",
+      "priority": "LOW",
+      "sha": "d1de943a2b27994c0d56f6fa63f3f140ef199e911215da9d39a55be22dd63f17",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 44,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/44-80fd16a511f47eb6.md",
+      "priority": "LOW",
+      "sha": "80fd16a511f47eb658d471c51e425c3049b52435fd0e0b467c129c13c1577bd7",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 45,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/45-18c30845dd25504e.md",
+      "priority": "MEDIUM",
+      "sha": "18c30845dd25504e7cc0803aff3e2758184637136db51ea1eb4beb3bcbeba1e4",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 46,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/46-f489c3500a529a9e.md",
+      "priority": "MEDIUM",
+      "sha": "f489c3500a529a9ef0ef9db54cd639e66742689d171816370ac60a8cf4688e33",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 47,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/47-1b01510c44f9ef20.md",
+      "priority": "MEDIUM",
+      "sha": "1b01510c44f9ef20c508d6c765273057c71b5d8c5b906ec020fb0f52d6b58b57",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 48,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/48-4cef46aa6f040835.md",
+      "priority": "LOW",
+      "sha": "4cef46aa6f040835ec7e7dffc6c7940c54cd30455bdd8e28fcdaa1d7d2952e73",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 49,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/49-b3b55d57e581645e.md",
+      "priority": "MEDIUM",
+      "sha": "b3b55d57e581645e0efa2c8664830346f06707c2802aee02158adffeebe53cd0",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 50,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/50-4292724fdbfe00f4.md",
+      "priority": "LOW",
+      "sha": "4292724fdbfe00f4217f82412e3a47e6a6894e10a0c9477ed0a3a07814d57784",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 51,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/51-5cd8cb713bfdb911.md",
+      "priority": "MEDIUM",
+      "sha": "5cd8cb713bfdb911d3dba378171170c71372259de972a4120b0ab2727b4e1522",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 52,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/52-45065b76b74c3af8.md",
+      "priority": "MEDIUM",
+      "sha": "45065b76b74c3af864bc9ef4d8b2927d7b021febedbb7f240c0087678ee053ac",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 53,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/53-ce2bbc8d2e885062.md",
+      "priority": "MEDIUM",
+      "sha": "ce2bbc8d2e88506258e2d224436b2ecb6812fd9fbd842988f82dfe7020b7ca3f",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 54,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/54-b9f4fbd405ee1c74.md",
+      "priority": "MEDIUM",
+      "sha": "b9f4fbd405ee1c74eca8386d18dc1440c2e662392438c8d2981cc6ee6f052ac5",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 55,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/55-48afcb0284a474f3.md",
+      "priority": "HIGH",
+      "sha": "48afcb0284a474f395e6c70eef656b95bb8b2dffa13271c95075fd0eee849e25",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 56,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/56-a4903b1d2ea903e3.md",
+      "priority": "LOW",
+      "sha": "a4903b1d2ea903e39960354698504ef44dac48ca674d6c33063b3901b849c388",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 57,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/57-3722efa545745071.md",
+      "priority": "MEDIUM",
+      "sha": "3722efa5457450710f187cd775b9d3387f1768e1449c44079ba1c02f93c725b7",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 58,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/58-1f1e37eedac07c21.md",
+      "priority": "MEDIUM",
+      "sha": "1f1e37eedac07c21f8f0bba92baf7173b8eb2b378fa6f09d4adf6a919f199003",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 59,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/59-1c08777b0f730f58.md",
+      "priority": "LOW",
+      "sha": "1c08777b0f730f583b444ae4eef857485e800e92ecd3a4b78c1944f83577e1ba",
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 60,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/60-7e5ed8c5194efa22.md",
+      "priority": "HIGH",
+      "sha": "7e5ed8c5194efa22b112f9b8b1aceeb11ea41c5e078fc94b674743d972d07619",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 61,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/61-87a5b976f699d75d.md",
+      "priority": "LOW",
+      "sha": "87a5b976f699d75d84555e3fa0e69e8cc8f2df40728209eadea55b5252012312",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 62,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/62-488291460714439a.md",
+      "priority": "LOW",
+      "sha": "488291460714439a00e42467496bd54e39d4d468fcf4282331c139a8653f44e7",
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 63,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/63-f4def0282417eac8.md",
+      "priority": "HIGH",
+      "sha": "f4def0282417eac850c7f7dc450e35b5f7ad4882139d9b1058019174fcdabcf8",
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "case": 64,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/64-ef58ed9c091f8e0e.md",
+      "priority": "MEDIUM",
+      "sha": "ef58ed9c091f8e0e9d53b69002fe07ee88de5d6d56469472e27f972f4525a492",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 65,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/65-9d996150e73f73d9.md",
+      "priority": "MEDIUM",
+      "sha": "9d996150e73f73d9cfaa4c302665c2e9d6d8b652303a15bf36c87d0c03729946",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 66,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/66-7a2bb741f7db25bb.md",
+      "priority": "MEDIUM",
+      "sha": "7a2bb741f7db25bb7d27a6508929e17b40b57511765a11bc9165ab843810b223",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 67,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/67-3ea93bcf7c0dd1ff.md",
+      "priority": "MEDIUM",
+      "sha": "3ea93bcf7c0dd1ff391cf54ad6f6f674bfe24ad12c4c97d4142a08524d22fb97",
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 68,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/68-a720b23f4cc80592.md",
+      "priority": "LOW",
+      "sha": "a720b23f4cc80592519d45355bc79ba89343fd6e30385febe3369978b2030c27",
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 69,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/69-d2145a8be72a7b55.md",
+      "priority": "LOW",
+      "sha": "d2145a8be72a7b557bbe5410737eadba44fe83e39c7403799f4b613175951b9d",
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 70,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/70-fbd85dc3f457a584.md",
+      "priority": "MEDIUM",
+      "sha": "fbd85dc3f457a58472ff34c29f8612d717a2cbbf46de06226d0b1123e3f96817",
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 71,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/71-15c96854145747e5.md",
+      "priority": "LOW",
+      "sha": "15c96854145747e5180e2fab36f4149dc6963594d2be984dd82460486cd82e3b",
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "case": 72,
+      "path": "reviews/smoltalk-v59-independent-holdout-004/cases/72-ccd953eba0c5107d.md",
+      "priority": "MEDIUM",
+      "sha": "ccd953eba0c5107d5dd738278bd7eed77ef05bc85ed1a377a82d5612c6194b17",
+      "source": "explore-instruct-rewrite",
+      "turn_bucket": "SINGLE"
+    }
+  ],
+  "holdout_size": 72,
+  "model_family": "multinomial_nb_role_word_unigram_bigram",
+  "model_scores_blinded": true,
+  "never_reviewed_population": 864,
+  "schema_version": "v59-independent-holdout-plan-4",
+  "selection_uses_model_score": false,
+  "status": "PUBLISHED_FOR_BLINDED_REVIEW",
+  "strata": [
+    {
+      "priority": "HIGH",
+      "sample": 11,
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "priority": "LOW",
+      "sample": 2,
+      "source": "explore-instruct-rewrite",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "priority": "LOW",
+      "sample": 14,
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "priority": "LOW",
+      "sample": 6,
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "priority": "LOW",
+      "sample": 10,
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    },
+    {
+      "priority": "MEDIUM",
+      "sample": 1,
+      "source": "explore-instruct-rewrite",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "priority": "MEDIUM",
+      "sample": 7,
+      "source": "openhermes-50k",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "priority": "MEDIUM",
+      "sample": 1,
+      "source": "self-oss-instruct",
+      "turn_bucket": "SINGLE"
+    },
+    {
+      "priority": "MEDIUM",
+      "sample": 20,
+      "source": "smol-magpie-ultra-short",
+      "turn_bucket": "MULTITURN"
+    }
+  ],
+  "training_authorized": false,
+  "training_fingerprint": "30df0869ab128eed7df5fec4cdf939ba8167caa8f6fd16a879cb6965113229c8",
+  "training_labels": 216
+}
