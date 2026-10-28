@@ -958,6 +958,30 @@ METRIC_KEYS = {
     "V60_EOS_PROBE_BEST_RANK_MEAN_X100",
     "V60_EOS_PROBE_BEST_RANK_MEDIAN_X100",
     "V60_EOS_PROBE_TOP1",
+    "V60_EOS_BIAS_DIAG_PASS",
+    "V60_EOS_BIAS_BLIND_ACCESS",
+    "V60_EOS_BIAS_TERM_POSITIONS",
+    "V60_EOS_BIAS_INTERMEDIATE_POSITIONS",
+    "V60_EOS_BIAS_NONTERM_POSITIONS",
+    "V60_EOS_BIAS_TERM_COMPETITOR_ID",
+    "V60_EOS_BIAS_TERM_COMPETITOR_COUNT",
+    "V60_EOS_BIAS_TERM_MARGIN_MEAN_X1E3",
+    "V60_EOS_BIAS_TERM_MARGIN_MEDIAN_X1E3",
+    "V60_EOS_BIAS_TERM_MARGIN_MAX_X1E3",
+    "V60_EOS_BIAS_INTERMEDIATE_MARGIN_MEAN_X1E3",
+    "V60_EOS_BIAS_NONTERM_MARGIN_MIN_X1E3",
+    "V60_EOS_BIAS_025_TERM_TOP1",
+    "V60_EOS_BIAS_025_INTERMEDIATE_TOP1",
+    "V60_EOS_BIAS_025_NONTERM_TOP1",
+    "V60_EOS_BIAS_050_TERM_TOP1",
+    "V60_EOS_BIAS_050_INTERMEDIATE_TOP1",
+    "V60_EOS_BIAS_050_NONTERM_TOP1",
+    "V60_EOS_BIAS_100_TERM_TOP1",
+    "V60_EOS_BIAS_100_INTERMEDIATE_TOP1",
+    "V60_EOS_BIAS_100_NONTERM_TOP1",
+    "V60_EOS_BIAS_200_TERM_TOP1",
+    "V60_EOS_BIAS_200_INTERMEDIATE_TOP1",
+    "V60_EOS_BIAS_200_NONTERM_TOP1",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1044,6 +1068,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v60_train_run_002.py",
         "tools/public-audits/phase03_v60_eos_assistant_turn_target_diagnostic.py",
         "tools/public-audits/phase03_v60_eos_logit_rank_calibration_diagnostic.py",
+        "tools/public-audits/phase03_v60_eos_competitor_logit_margin_bias_sweep.py",
     }
 
     architecture_workstream = tracked.startswith(
