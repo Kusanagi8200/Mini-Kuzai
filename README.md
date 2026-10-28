@@ -317,14 +317,28 @@ The conservative final-mix policy is now closed -->
 - combined clean ready-now envelope --> **295416 tokens**
 - V59 final mix --> **NOT FINALIZED**.
 
+The persona-first exposure policy is now finalized -->
+
+- CONTROLLED_TRAIN target --> **30.00%**
+- PERSONA_CORE target --> **46.58%**
+- GENERAL_SUPPORT target --> **15.00%**
+- LEGACY_STRUCTURED_KEEP target --> **8.42%**
+- persona-oriented exposure --> **76.58%**
+- physical duplication --> **NO**
+- REPAIR / EXCLUDE / UNREVIEWED admission --> **NO**.
+
 The next workstream is now scripted -->
 
-**V59 PERSONA-FIRST MIX WEIGHTING / EXPOSURE POLICY - READY**
+**V59 TRAINING HYPERPARAMETERS / STEP BUDGET / AUTHORIZATION PREFLIGHT - READY**
 
-The exposure policy uses weighted stream sampling rather than physical
-duplication. Its constraints are CONTROLLED_TRAIN >= 30%, CONTROLLED_TRAIN +
-PERSONA_CORE >= 75%, GENERAL_SUPPORT <= 15% and LEGACY_STRUCTURED_KEEP <= 10%.
-REPAIR, EXCLUDE and never-reviewed data remain outside the training mix.
+The bounded pilot protocol uses V58 MICRO with BF16, AdamW, LR 3e-4, dynamic
+gradient accumulation to 8192 non-pad tokens per optimizer step, four reference
+exposure cycles and a maximum budget of 1181664 exposed tokens. The job performs
+a disposable full-context GPU forward/backward preflight with microbatch 8 and
+does not start persistent training.
+
+A successful preflight may produce an authorization candidate, but training
+remains unauthorized until a separate explicit authorization step is published.
 
 The remaining pre-training decisions also include final KEEP / REPAIR / EXCLUDE policy, final public-corpus/token accounting, and sampling/weighting so the controlled persona corpus is not drowned by the much larger public corpus.
 
