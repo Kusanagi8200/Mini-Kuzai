@@ -174,8 +174,21 @@ def main():
 
     if not RUN_DIR.exists():
         run_python(TRAIN)
+    elif SUMMARY.is_file():
+        print("V61_TRAIN_RUN_001: COMPLETED_RUN_RECOVERY_MODE")
+    elif MANIFEST.is_file() and CHECKPOINT.is_file():
+        lock = RUN_DIR / ".training.lock"
+        if lock.exists():
+            raise RuntimeError(
+                "V61 RUN 001 recovery refused: training lock still present"
+            )
+        print("V61_TRAIN_RUN_001: PARTIAL_RUN_RESUME_MODE")
+        run_python(TRAIN, "--resume")
     else:
-        print("V61_TRAIN_RUN_001: EXISTING_RUN_RECOVERY_MODE")
+        raise RuntimeError(
+            "V61 RUN 001 recovery refused: run directory is partial "
+            "but no resumable checkpoint is available"
+        )
 
     validate_completed_run()
 
