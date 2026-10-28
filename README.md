@@ -351,9 +351,9 @@ If every frozen dependency remains unchanged, the terminal state may become -->
 Authorization is strictly limited to the bounded V59 pilot of 145 optimizer
 steps and 1181664 exposure tokens. BLIND TEST remains forbidden during training.
 
-The remaining pre-training decisions also include final KEEP / REPAIR / EXCLUDE policy, final public-corpus/token accounting, and sampling/weighting so the controlled persona corpus is not drowned by the much larger public corpus.
+The only remaining pre-training decision is the terminal V59 freeze and bounded-pilot authorization gate. All earlier quality, pruning, token-accounting, exposure-weighting and hardware-preflight decisions are closed.
 
-**Training remains NOT AUTHORIZED and NOT STARTED.**
+**Training remains NOT AUTHORIZED and NOT STARTED until that terminal gate passes.**
 
 See -->
 
