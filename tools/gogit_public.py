@@ -845,6 +845,29 @@ METRIC_KEYS = {
     "V60_PROTOCOL_RESERVED_MIB",
     "V60_PROTOCOL_BLIND_ACCESS",
     "V60_PROTOCOL_TRAINING_STARTED",
+    "V60_AUTH_PASS",
+    "V60_AUTH_MAX_TOKENS",
+    "V60_AUTH_MAX_STEPS",
+    "V60_AUTH_TRAIN_SEGMENTS",
+    "V60_AUTH_TRAIN_UNIQUE_TOKENS",
+    "V60_AUTH_BLIND_ACCESS",
+    "V60_AUTH_EXTENSION_REQUIRES_FREEZE",
+    "V60_TRAINER_FREEZE_PASS",
+    "V60_TRAINER_PYCOMPILE_PASS",
+    "V60_TRAINER_TESTS_PASS",
+    "V60_TRAINER_RUNTIME_VERIFY_PASS",
+    "V60_TRAINER_TRAIN_SEGMENTS",
+    "V60_TRAINER_TRAIN_UNIQUE_TOKENS",
+    "V60_TRAINER_VALIDATION_RECORDS",
+    "V60_TRAINER_VALIDATION_SEGMENTS",
+    "V60_TRAINER_PREVIEW_TOKENS",
+    "V60_TRAINER_PREVIEW_SEGMENTS",
+    "V60_TRAINER_PREVIEW_MAX_DEV_BP",
+    "V60_TRAINER_MAX_STEPS",
+    "V60_TRAINER_MAX_TOKENS",
+    "V60_TRAINER_MILESTONE_REVIEW",
+    "V60_TRAINER_PLATEAU_REVIEW",
+    "V60_TRAINER_BLIND_ACCESS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -921,6 +944,11 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v59_logit_initialization_diagnostic.py",
     }
 
+    post_authorization_v60 = tracked in {
+        "tools/public-audits/phase03_v60_training_authorization.py",
+        "tools/public-audits/phase03_v60_persistent_trainer_freeze.py",
+    }
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -935,6 +963,13 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
             and metrics.get("V59_MIX_FINALIZED") == 1
             and metrics.get("TRAINING_AUTHORIZED") == 1
+        )
+
+    if post_authorization_v60:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+            and metrics.get("TRAINING_STARTED") == 0
         )
 
     if tokenizer_workstream or architecture_workstream:
