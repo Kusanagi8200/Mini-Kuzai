@@ -301,16 +301,16 @@ Current V59 quality-control total -->
 
 - public conversations semantically reviewed in Samples 001-003 --> **216**
 - ranking direction --> **VALIDATED**
-- triage retraining on 216 annotations --> **AUTHORIZED / NOT STARTED**
+- triage retraining on 216 annotations --> **SCRIPTED / READY FOR PREPARE**
 - automatic REVIEW --> **NOT AUTHORIZED**
 - automatic EXCLUDE --> **NOT AUTHORIZED**
 - final public training mixture --> **NOT FINALIZED**.
 
-The next planned workstream after this pause is -->
+The next workstream is now scripted -->
 
-**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004**
+**V59 TRIAGE RETRAIN + INDEPENDENT HOLDOUT 004 - READY FOR PREPARE**
 
-That retrain must be evaluated on a new independent holdout drawn from the still-unreviewed public candidates. Sample 003 must not be reused as an independent validation set because it was selected using the previous ranking.
+The retrain uses all 216 reviewed annotations. Holdout 004 contains 72 cases selected independently from the 864 never-reviewed candidates by deterministic priority x source x turn stratification. Model scores are not used for holdout selection and remain blinded during semantic review. Sample 003 is not reused as independent validation.
 
 The remaining pre-training decisions also include final KEEP / REPAIR / EXCLUDE policy, final public-corpus/token accounting, and sampling/weighting so the controlled persona corpus is not drowned by the much larger public corpus.
 
