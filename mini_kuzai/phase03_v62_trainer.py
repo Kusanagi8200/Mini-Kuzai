@@ -229,7 +229,7 @@ def _path_for_dependency(key: str) -> Path:
             / "INITIALIZATION-FREEZE-001.json",
         "v62_objective_freeze_sha256":
             REPO / "reviews"
-            / "smoltalk-v62-boundary-objective-freeze"
+            / "smoltalk-v62-margin-objective-freeze"
             / "OBJECTIVE-FREEZE-001.json",
         "v62_training_protocol_sha256":
             REPO / "reviews"
@@ -282,7 +282,7 @@ def verify_authorization() -> tuple[dict, dict, dict]:
         raise RuntimeError("V62 authorization marks training started")
     if (
         authorization.get("authorization_scope")
-        != "V62_BOUNDARY_INITIAL_WINDOW_ONLY"
+        != "V62_MARGIN_INITIAL_WINDOW_ONLY"
     ):
         raise RuntimeError("Unexpected V62 authorization scope")
 
@@ -314,7 +314,7 @@ def verify_authorization() -> tuple[dict, dict, dict]:
     scope = freeze.get("authorization_scope")
     if not isinstance(scope, dict):
         raise RuntimeError("V62 freeze scope missing")
-    if scope.get("name") != "V62_BOUNDARY_INITIAL_WINDOW_ONLY":
+    if scope.get("name") != "V62_MARGIN_INITIAL_WINDOW_ONLY":
         raise RuntimeError("V62 freeze scope changed")
     if scope.get("initial_window_cycles") != 4:
         raise RuntimeError("V62 cycle window changed")
