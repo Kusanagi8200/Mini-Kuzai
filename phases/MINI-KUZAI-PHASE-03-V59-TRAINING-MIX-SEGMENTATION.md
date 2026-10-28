@@ -529,14 +529,11 @@ GOGIT step -->
 
 ## V59 training hyperparameters / step budget / authorization preflight
 
-Status --> **SCRIPTED / READY**
+Status --> **CLOSED / PREFLIGHT PASSED / AUTHORIZATION CANDIDATE**
 
-This stage defines a bounded first pilot protocol and runs a hardware preflight.
-It does not start persistent model training.
+Frozen pilot protocol -->
 
-Pilot protocol -->
-
-- model --> frozen V58 MICRO
+- model --> V58 MICRO
 - parameters --> **1184512**
 - dtype --> **BF16**
 - optimizer --> **AdamW**
@@ -547,64 +544,101 @@ Pilot protocol -->
 - weight decay --> **0.10**
 - gradient clip --> **1.0**
 - seed --> **42**
-- torch.compile --> disabled.
-
-Batching -->
-
-- full-context preflight microbatch --> **8 sequences**
 - optimizer-step target --> **8192 non-pad tokens**
-- gradient accumulation --> dynamic until token target
-- right padding
-- PAD excluded from loss
-- next-token shifted causal loss.
-
-Pilot budget -->
-
-- reference exposure cycles --> **4**
+- pilot exposure cycles --> **4**
 - maximum exposure tokens --> **1181664**
 - maximum optimizer steps --> **145**
-- warmup --> first **10%** of optimizer steps
-- scheduler --> linear warmup + cosine decay
-- effective pilot exposure --> approximately **1.0 token per V58 parameter**.
+- warmup steps --> **15**
+- scheduler --> linear warmup + cosine decay.
 
-Evaluation -->
+Hardware preflight result -->
 
-- frozen VALIDATION 36 --> used during the pilot
-- frozen BLIND TEST --> reserved and not accessed during training
-- validation and checkpoint --> every half reference exposure cycle
-- save best validation checkpoint and last checkpoint
-- checkpoint includes optimizer, scheduler, RNG and sampler state
-- stop immediately on non-finite loss or gradient norm
-- after at least three evaluations, stop after two consecutive validation-loss
-  degradations of at least 5%.
+- CUDA / BF16 --> PASS
+- GPU --> NVIDIA GeForce RTX 5060 Laptop GPU
+- full-context microbatch --> 8 x 2048
+- finite loss --> YES
+- finite gradient norm --> YES
+- peak allocated --> **564 MiB**
+- peak reserved --> **632 MiB**
+- total GPU memory --> **7705 MiB**
+- reserved share --> **8.20%**
+- memory gate --> **60.00%**
+- authorization candidate --> **YES**.
 
-Hardware preflight -->
-
-- requires CUDA
-- requires BF16
-- instantiates a disposable V58 model
-- performs one synthetic full-context forward/backward/optimizer step with
-  microbatch 8
-- requires peak reserved memory <= **60%** of GPU memory
-- does not use TRAIN / VALIDATION / BLIND content
-- does not save a model checkpoint.
-
-Run -->
-
-```bash
-python3 tools/run_v59_training_protocol_preflight_job.py
-```
+Training remains not started.
 
 GOGIT step -->
 
 `PHASE03-SMOLTALK-V59-TRAINING-PROTOCOL-PREFLIGHT-001`
 
-Possible successful outcome -->
+## V59 final mix freeze + training authorization gate
 
-`V59_TRAIN_AUTHORIZATION_CANDIDATE = 1`
+Status --> **SCRIPTED / READY**
 
-This is not training authorization. A separate explicit authorization manifest
-is required before any persistent model-training process may run.
+This is the terminal V59 gate before the first bounded training pilot.
+
+The freeze verifies and fingerprints -->
+
+- canonical controlled TRAIN --> 107 conversations / 29 semantic groups
+- DIRECT_KEEP public training set --> 165 conversations
+- final unique training set --> **272 conversations**
+- final unique training segments --> **345**
+- final unique training tokens --> **295416**
+- tokenizer V56 manifest and artifact
+- V57 serializer source
+- V59 pair-preserving segmentation source
+- V58 architecture manifest, config and model source
+- final mix policy
+- persona-first sampler policy
+- bounded pilot protocol and hardware preflight
+- frozen VALIDATION master
+- frozen BLIND master
+- semantic split manifest.
+
+Final exposure targets -->
+
+- CONTROLLED_TRAIN --> **30.00%**
+- PERSONA_CORE --> **46.58%**
+- GENERAL_SUPPORT --> **15.00%**
+- LEGACY_STRUCTURED_KEEP --> **8.42%**.
+
+Explicitly outside training -->
+
+- REPAIR_QUEUE --> **108 conversations**
+- EXCLUDE_REVIEWED --> **47 conversations**
+- DEFER_UNREVIEWED --> **792 conversations**.
+
+Authorization scope -->
+
+- V59 bounded pilot only
+- architecture --> V58 MICRO FROZEN
+- max optimizer steps --> **145**
+- max exposure tokens --> **1181664**
+- VALIDATION --> allowed during pilot
+- BLIND TEST --> forbidden during training
+- BLIND TEST --> reserved for post-training evaluation.
+
+Successful terminal state -->
+
+```text
+SEMANTIC_VALIDATION_COMPLETE = 1
+V59_MIX_FINALIZED            = 1
+TRAINING_AUTHORIZED          = 1
+TRAINING_STARTED             = 0
+```
+
+The authorization does not start training. Persistent trainer execution remains
+a separate operation.
+
+Run -->
+
+```bash
+python3 tools/run_v59_final_mix_freeze_authorization_job.py
+```
+
+GOGIT step -->
+
+`PHASE03-SMOLTALK-V59-FINAL-MIX-FREEZE-AUTHORIZATION-001`
 
 ## References
 
