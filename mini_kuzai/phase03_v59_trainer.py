@@ -763,10 +763,50 @@ def build_validation_segments() -> tuple[list[FrozenSegment], dict]:
             raise RuntimeError(
                 f"VALIDATION semantic guard failed: {behavior}"
             )
-        if declaration.get("structural_integrity_audit_passed") is not True:
-            raise RuntimeError(
-                f"VALIDATION integrity audit failed: {behavior}"
+        integrity_flag = declaration.get("structural_integrity_audit_passed")
+        if integrity_flag is not True:
+            if integrity_flag is not None:
+                raise RuntimeError(
+                    f"VALIDATION integrity audit failed: {behavior}"
+                )
+            # V54 B02-B18 predate the declaration-level integrity flag.
+            # Require their independently published, immutable GOGIT freeze
+            # evidence rather than treating a missing flag as success.
+            step_id = declaration.get("target_step_id")
+            expected_step = (
+                f"PHASE03-SMOLTALK-V54-{behavior}-VALIDATION-FREEZE-001"
             )
+            if step_id != expected_step:
+                raise RuntimeError(
+                    f"VALIDATION freeze step mismatch: {behavior}"
+                )
+            history = read_json(
+                REPO / "reports" / "assistant-results" / "history"
+                / f"{step_id}.json"
+            )
+            metrics = history.get("metrics", {})
+            batch_number = int(behavior[1:])
+            if (
+                history.get("step_id") != step_id
+                or metrics.get(
+                    f"{behavior}_VALIDATION_FROZEN",
+                    metrics.get("VALIDATION_BATCH_FROZEN"),
+                ) != 1
+                or metrics.get(
+                    f"{behavior}_INDEPENDENT_SIGNOFF",
+                    metrics.get("VALIDATION_BATCH_SIGNOFF"),
+                ) != 1
+                or metrics.get("CROSS_SPLIT_ID_COLLISIONS") != 0
+                or metrics.get("CROSS_SPLIT_GROUP_COLLISIONS") != 0
+                or metrics.get("EXACT_USER_PROMPT_MATCHES") != 0
+                or metrics.get("VALIDATION_BEHAVIORS_FROZEN")
+                    != batch_number
+                or metrics.get("VALIDATION_FROZEN_RECORDS")
+                    != 2 * batch_number
+            ):
+                raise RuntimeError(
+                    f"VALIDATION historical freeze proof failed: {behavior}"
+                )
 
         target = REPO / declaration["target_batch"]
         if target.parent != VALIDATION_DIR:
