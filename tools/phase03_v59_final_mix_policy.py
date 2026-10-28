@@ -99,9 +99,13 @@ def classify():
         if sha in samples:
             r=samples[sha]; disp=r["disposition"]
             if disp=="KEEP":
-                if r["grade"]!="A" or r["risk"]!="LOW" or r["fit"]!="GOOD": raise RuntimeError("KEEP quality invariant failed")
-                bucket="DIRECT_KEEP"
-                persona_tier="PERSONA_CORE" if r["persona"] in {"HIGH","MEDIUM"} else "GENERAL_SUPPORT"
+                clean=(r["grade"]=="A" and r["risk"]=="LOW" and r["fit"]=="GOOD")
+                if clean:
+                    bucket="DIRECT_KEEP"
+                    persona_tier="PERSONA_CORE" if r["persona"] in {"HIGH","MEDIUM"} else "GENERAL_SUPPORT"
+                else:
+                    bucket="REPAIR_QUEUE"
+                    persona_tier="REVIEW_REQUIRED_KEEP"
             elif disp=="REPAIR":
                 bucket="REPAIR_QUEUE"; persona_tier="REPAIR_PERSONA" if r["persona"] in {"HIGH","MEDIUM"} else "REPAIR_GENERAL"
             elif disp=="EXCLUDE":
@@ -137,6 +141,7 @@ def classify():
     controlled_tokens=sum(MIX.V57.serialized_length(row["messages"],count_text) for row in MIX.V57.load_train())
     if controlled_tokens!=24539: raise RuntimeError("controlled token count changed")
     ready_public=sum(v["tokens"] for v in direct)
+    reviewed_keep_redirected=sum(1 for v in metadata.values() if v.get("disposition")=="KEEP" and v["bucket"]=="REPAIR_QUEUE")
     report={
       "schema_version":"v59-final-mix-policy-1","status":"POLICY_DEFINED_NOT_FINALIZED",
       "raw_v44":1139,"base_exclusions":dict(base_excl),"candidate_population":1112,
@@ -144,7 +149,7 @@ def classify():
       "candidate_reviewed_total":288+retained_structured,
       "policy":{
         "direct_keep_rule":"Human-reviewed clean only. Sample KEEP requires A/LOW/GOOD. Structured V51/V52 requires A/LOW/GOOD.",
-        "repair_rule":"Reviewed useful-but-imperfect material is never admitted unchanged.",
+        "repair_rule":"Any reviewed example that is useful but not clean enough for direct admission stays outside training. This includes REPAIR and any historical KEEP that does not satisfy A/LOW/GOOD.",
         "exclude_rule":"Reviewed EXCLUDE is removed from the future training mix.",
         "unreviewed_rule":"Never-reviewed candidates are deferred and not admitted to V59 training.",
         "persona_rule":"Persona HIGH/MEDIUM is prioritized inside clean reviewed KEEP. Persona priority never overrides a known quality defect."
@@ -155,6 +160,7 @@ def classify():
       "ready_now_combined_tokens":ready_public+controlled_tokens,
       "ready_now_public_tpp":ready_public/MIX.PARAMETERS,
       "ready_now_combined_tpp":(ready_public+controlled_tokens)/MIX.PARAMETERS,
+      "reviewed_keep_redirected":reviewed_keep_redirected,
       "automatic_filtering_used":False,
       "unreviewed_admitted":False,
       "repair_admitted_unchanged":False,
@@ -213,6 +219,7 @@ def metrics(r):
       "V59_POLICY_PERSONA_CORE_KEEP":g["DIRECT_KEEP"]["persona_tier"].get("PERSONA_CORE",0),
       "V59_POLICY_GENERAL_SUPPORT_KEEP":g["DIRECT_KEEP"]["persona_tier"].get("GENERAL_SUPPORT",0),
       "V59_POLICY_LEGACY_STRUCTURED_KEEP":g["DIRECT_KEEP"]["persona_tier"].get("LEGACY_STRUCTURED_KEEP",0),
+      "V59_POLICY_KEEP_REDIRECTED":r.get("reviewed_keep_redirected",0),
       "V59_POLICY_READY_PUBLIC_TOKENS":r["ready_now_public_tokens"],"V59_POLICY_READY_COMBINED_TOKENS":r["ready_now_combined_tokens"],
       "V59_POLICY_AUTOMATIC_FILTERING_USED":0,"V59_POLICY_UNREVIEWED_ADMITTED":0,"V59_POLICY_REPAIR_ADMITTED_UNCHANGED":0,
       "V59_MIX_FINALIZED":0,"SEMANTIC_VALIDATION_COMPLETE":1,"TRAINING_AUTHORIZED":0}
