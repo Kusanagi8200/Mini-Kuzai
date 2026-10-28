@@ -327,18 +327,29 @@ The persona-first exposure policy is now finalized -->
 - physical duplication --> **NO**
 - REPAIR / EXCLUDE / UNREVIEWED admission --> **NO**.
 
-The next workstream is now scripted -->
+The bounded training-protocol preflight is now closed -->
 
-**V59 TRAINING HYPERPARAMETERS / STEP BUDGET / AUTHORIZATION PREFLIGHT - READY**
+- CUDA / BF16 --> **PASS**
+- full-context microbatch --> **8 x 2048**
+- peak reserved VRAM --> **632 MiB / 8.20%**
+- preflight memory gate --> **60.00%**
+- authorization candidate --> **YES**
+- persistent training started --> **NO**.
 
-The bounded pilot protocol uses V58 MICRO with BF16, AdamW, LR 3e-4, dynamic
-gradient accumulation to 8192 non-pad tokens per optimizer step, four reference
-exposure cycles and a maximum budget of 1181664 exposed tokens. The job performs
-a disposable full-context GPU forward/backward preflight with microbatch 8 and
-does not start persistent training.
+The terminal V59 workstream is now scripted -->
 
-A successful preflight may produce an authorization candidate, but training
-remains unauthorized until a separate explicit authorization step is published.
+**V59 FINAL MIX FREEZE + TRAINING AUTHORIZATION GATE - READY**
+
+The gate fingerprints the controlled TRAIN, 165 clean public DIRECT_KEEP
+conversations, tokenizer, serializer, segmentation, architecture, sampler,
+protocol, VALIDATION master, BLIND master and semantic split manifest.
+
+If every frozen dependency remains unchanged, the terminal state may become -->
+
+`SEMANTIC_VALIDATION_COMPLETE=1 / V59_MIX_FINALIZED=1 / TRAINING_AUTHORIZED=1 / TRAINING_STARTED=0`.
+
+Authorization is strictly limited to the bounded V59 pilot of 145 optimizer
+steps and 1181664 exposure tokens. BLIND TEST remains forbidden during training.
 
 The remaining pre-training decisions also include final KEEP / REPAIR / EXCLUDE policy, final public-corpus/token accounting, and sampling/weighting so the controlled persona corpus is not drowned by the much larger public corpus.
 
