@@ -1,0 +1,47 @@
+{
+  "authorization_scope": "V62_MARGIN_INITIAL_WINDOW_ONLY",
+  "blind_test_during_training": false,
+  "dependencies": {
+    "segmentation_source_sha256": "e8bf14c7bc90561c4d9e976f971ef603d75ec6158bd304a24b8ea35b0c86ecc8",
+    "serializer_source_sha256": "ec75bff1abec33d3f6b7fde5cada462b66b7c484f006685c31761fb4d1dd7e2f",
+    "tokenizer_file_sha256": "cd511d08430c40069139546c4539d5edb7f3236656ba80ff430a8f3b13d4a97a",
+    "v59_final_mix_freeze_sha256": "f368c79b5ea26acd1460b0fee3c1758c384fe372ee10b89655434d8cc7a87bb3",
+    "v59_training_authorization_sha256": "727d6d3ca0b87475c8010e54c26e3966edd3e53e2e809e35836f45204c90adba",
+    "v60_initialization_freeze_sha256": "687fbfb450a89887b223d313b48c5751632babcef6f57e6b44d8f33532e9abd6",
+    "v60_model_source_sha256": "0fff9e4aebe992bf4e85ed722d5ddb5cd8dc141742be559b5f23369c21ee0dbf",
+    "v62_margin_loss_source_sha256": "119b56d1e3ab43d68d9d9a6ab703b0e08abc0215c36adcf3c3eda2eaff4822ce",
+    "v62_objective_freeze_sha256": "2dabd25f44651ce87177869959a1063a536757582fc760d55267c6cc2310c89b",
+    "v62_protocol_report_sha256": "1351f9e52dac3dffa2d0328fb1c8049059d6cc17e3ec93a276b4b1b731f5d4f9",
+    "v62_training_protocol_sha256": "77e62ee2f14cc652e1f058dd6d7959fd0391aadf8f800fdc5124c4452dbaff29",
+    "validation_master_sha256": "48f36fdcb6ae7e106ef23abd8e3c34a93aeba89e8d1b8f9c7e3422807c1623e0"
+  },
+  "extension_requires_new_protocol_freeze": true,
+  "freeze_fingerprint": "f85deb2775f5b5db54472938e22d078198a9a041f88837bb641b26c8ad5f4ffd",
+  "initialization_freeze_fingerprint": "2e64f9e4749710e03f32db220cfe1ab5b0a304ef250ebe9408ad0224799e4cb6",
+  "mandatory_continuation_review_cycle": 2,
+  "margin_objective": {
+    "base_cross_entropy_unchanged": true,
+    "intermediate_weight": 17.358490566037737,
+    "margin": 0.25,
+    "ordinary_positions_unchanged": true,
+    "terminal_weight": 8.0,
+    "training_boundary_balance_factor": 2.169811320754717
+  },
+  "max_exposure_tokens": 1181664,
+  "max_optimizer_steps": 145,
+  "objective_freeze_fingerprint": "68a0f92735e51e88c197f3e41dfd156e815e2174ae182517fdd045034156f9bd",
+  "schema_version": "v62-training-authorization-1",
+  "status": "FROZEN",
+  "target_share_bp": {
+    "CONTROLLED_TRAIN": 3000,
+    "GENERAL_SUPPORT": 1500,
+    "LEGACY_STRUCTURED_KEEP": 842,
+    "PERSONA_CORE": 4658
+  },
+  "total_training_conversations": 272,
+  "total_unique_training_segments": 345,
+  "total_unique_training_tokens": 295416,
+  "training_authorized": true,
+  "training_started": false,
+  "v59_corpus_baseline_fingerprint": "40008ff0b106d3c58d2bf8196f539be2bf692d1e8ed3b7cd0e2dd1429b887503"
+}
