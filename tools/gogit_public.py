@@ -707,6 +707,12 @@ METRIC_KEYS = {
     "V59_PERF_SEGMENT_4_MS", "V59_PERF_SEGMENT_4_COUNT",
     "V59_PERF_SYNTHETIC_ONLY", "V59_PERF_CORPUS_ACCESSES",
     "V59_PERF_OPTIMIZER_STEPS",
+    "V59_VALIDATION_DECLARATIONS",
+    "V59_VALIDATION_MODERN_REVIEW_FIELDS",
+    "V59_VALIDATION_LEGACY_REVIEW_FIELDS",
+    "V59_VALIDATION_INTEGRITY_FIELDS",
+    "V59_VALIDATION_HISTORY_PROOFS",
+    "V59_VALIDATION_BLOB_MATCHES",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -774,6 +780,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v59_final_mix_freeze_authorization.py",
         "tools/public-audits/phase03_v59_persistent_trainer_freeze.py",
         "tools/public-audits/phase03_v59_tokenizer_performance.py",
+        "tools/public-audits/phase03_v59_validation_compatibility.py",
     }
 
     architecture_workstream = tracked.startswith(
