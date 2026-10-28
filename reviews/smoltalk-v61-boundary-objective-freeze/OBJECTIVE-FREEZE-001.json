@@ -1,0 +1,27 @@
+{
+  "architecture": "V60_UNCHANGED",
+  "auxiliary_ratio_bp": 463,
+  "base_objective": "NEXT_TOKEN_CROSS_ENTROPY_UNCHANGED",
+  "blind_test_accessed": false,
+  "boundary_gradient_multiplier": 17,
+  "corpus": "V59_V60_FROZEN_CORPUS_UNCHANGED",
+  "dependencies": {
+    "segmentation_sha256": "e8bf14c7bc90561c4d9e976f971ef603d75ec6158bd304a24b8ea35b0c86ecc8",
+    "serializer_sha256": "ec75bff1abec33d3f6b7fde5cada462b66b7c484f006685c31761fb4d1dd7e2f",
+    "tokenizer_sha256": "cd511d08430c40069139546c4539d5edb7f3236656ba80ff430a8f3b13d4a97a",
+    "v60_model_source_sha256": "0fff9e4aebe992bf4e85ed722d5ddb5cd8dc141742be559b5f23369c21ee0dbf",
+    "v61_boundary_loss_source_sha256": "020915d51de47fb3181b18c2be4012f9407ecedd6117cb2f3bd6513f9041b0e9",
+    "v61_boundary_loss_test_sha256": "93c9c70ec846f81107c3686d9bd14e1a9db48a7600d55a1b2969a1c14da77a4b"
+  },
+  "initialization": "V60_INITIALIZATION_UNCHANGED",
+  "intermediate_weight": 16,
+  "objective_freeze_fingerprint": "1b68568984e598bbccc0e9a1f00169d110b73b8a9aa97310fc36d1d18d5a532c",
+  "objective_sha256": "9f19196beb8974b8f530c15ce812ae24bf75d8202e1ed5edef333bd3bead4319",
+  "preflight_report_sha256": "8770d51e8504aa19a260930c8ab634196b3f4cd9ac0a663df59a5044cd1d0fa5",
+  "schema_version": "v61-boundary-objective-freeze-1",
+  "status": "FROZEN",
+  "terminal_weight": 16,
+  "tokenizer": "V56_UNCHANGED",
+  "training_authorized": false,
+  "training_started": false
+}

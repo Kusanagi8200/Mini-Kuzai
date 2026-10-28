@@ -1,0 +1,10 @@
+{
+  "blind_test_accessed": false,
+  "intermediate_weight": 16,
+  "objective_freeze_fingerprint": "1b68568984e598bbccc0e9a1f00169d110b73b8a9aa97310fc36d1d18d5a532c",
+  "schema_version": "v61-boundary-objective-freeze-report-1",
+  "status": "FROZEN_NOT_AUTHORIZED",
+  "terminal_weight": 16,
+  "training_authorized": false,
+  "training_started": false
+}
