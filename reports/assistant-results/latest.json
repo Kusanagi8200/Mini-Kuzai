@@ -24,11 +24,11 @@
   "phase": "03",
   "private_conversation_data_included": false,
   "producer": "tools/public-audits/phase03_v59_persistent_trainer_freeze.py",
-  "producer_sha256": "4ace3e46c01b8852eea548f8e31bb6785a5e94724b5da0710d80beda5ccde329",
+  "producer_sha256": "2ffdd425dd117729c28363a031ca41fa958f752a6c11f44a787fb06669131396",
   "project": "Mini-Kuzai",
   "semantic_validation_complete": true,
   "source": "Mini-Kuzai V59 public training-mixture and turn-aware segmentation preparation",
   "status": "TRAINING_AUTHORIZATION_GATE",
-  "step_id": "PHASE03-SMOLTALK-V59-PERSISTENT-TRAINER-FREEZE-001",
+  "step_id": "PHASE03-SMOLTALK-V59-PERSISTENT-TRAINER-FREEZE-002",
   "training_authorized": true
 }
