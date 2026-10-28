@@ -278,6 +278,7 @@ def hardware_preflight() -> dict:
         )
         if finite_grad:
             grad_norm = float(value.detach().cpu())
+            optimizer.step()
 
     torch.cuda.synchronize()
     reserved = int(torch.cuda.max_memory_reserved())
