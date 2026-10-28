@@ -422,6 +422,79 @@ See -->
 - [V59 pause checkpoint - 2026-10-25](phases/MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md)
 - [V59 Active-Learning Sample 003 results](reviews/smoltalk-v59-active-sample-003/RESULTS-003.md)
 
+### V60-V62 training evolution - current checkpoint
+
+V59 established the frozen persona-first training identity at **272 conversations / 345 segments / 295416 unique tokens**. The subsequent experiments kept architecture, tokenizer, corpus, stream weighting and the V60 corrected initialization controlled so objective changes could be interpreted directly.
+
+**V60 --> corrected initialization and extended training**
+
+- final validation loss --> **3.429395**
+- final exposure --> **4,435,262 tokens / 509 optimizer steps**
+- stop --> **PLATEAU**
+- UTF-8 --> **fixed**
+- distinct probe outputs --> **6 / 6**
+- EOS completions --> **0 / 6**
+- mean generation length --> **96 / 96**
+- repeated-trigram rate --> **95.17%**
+
+V60 learned the data numerically but did not learn reliable free-generation termination. Teacher-forced EOS diagnostics showed a real end-of-response signal, while free autoregressive generation drifted away from terminal states.
+
+**V61 --> boundary-aware EOS objective**
+
+- terminal and intermediate boundary weights --> **16 / 16**
+- mandatory cycle-2 stop --> **597982 exposure tokens / 69 optimizer steps**
+- validation loss --> **6.959721 to 4.713690**
+- terminal EOS top-1 --> **24 / 36**
+- intermediate EOS top-1 --> **8 / 13**
+- intermediate EOS above true continuation --> **13 / 13**
+- ordinary nonterminal false EOS top-1 --> **105 / 9170**
+- free-generation EOS completions --> **0 / 6**
+- repeated-trigram rate --> **96.65%**
+
+V61 proved that terminal EOS can be reinforced, but its asymmetric objective over-generalized EOS. Continuation to cycle 4 was rejected.
+
+**V62 --> pairwise boundary-margin objective**
+
+V62 replaces V61 probability suppression with direct logit relations -->
+
+```text
+terminal     -> EOS > best_non_EOS + margin
+intermediate -> TRUE_CONTINUATION > EOS + margin
+```
+
+The V62 preflight selected -->
+
+- margin --> **0.25**
+- terminal weight --> **8.00**
+- intermediate weight --> **17.358491**
+- TRAIN boundary-balance factor --> **2.169811**
+- auxiliary-loss ratio --> **1.32%**
+- terminal active validation margins --> **16 / 36**
+- intermediate active validation margins --> **13 / 13**
+- CUDA/BF16 preflight --> **PASS**
+
+V62 control plane state -->
+
+```text
+MARGIN OBJECTIVE PREFLIGHT = PASS
+OBJECTIVE FREEZE           = PASS
+TRAINING PROTOCOL          = PASS
+TRAINING AUTHORIZATION     = PASS
+PERSISTENT TRAINER FREEZE  = PASS
+
+TRAINING_AUTHORIZED        = 1
+TRAINING_STARTED           = 0
+BLIND_ACCESS               = 0
+```
+
+Authorized V62 window --> **4 cycles / 1181664 tokens / 145 optimizer steps**, with a mandatory continuation review at **cycle 2** and the V60 scheduler horizon preserved at **577 steps**.
+
+Current resume point --> **V62 TRAIN RUN 001 - CYCLE 2 MANDATORY REVIEW**.
+
+See the [V62 pause checkpoint - 2026-10-28](phases/MINI-KUZAI-PHASE-03-V62-PAUSE-CHECKPOINT-2026-10-28.md).
+
+---
+
 ### Private local corpus pipeline
 
 Phase 03 includes a local-only pipeline for evaluating private conversational corpora as possible future training material.
