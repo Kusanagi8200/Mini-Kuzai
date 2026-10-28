@@ -257,8 +257,13 @@ def build():
             "segments":238,
             "tokens":270877,
             "source_shas_sha256":canonical_sha(sorted(shas)),
-            "streams":streams,
+            "streams":{
+                key:value
+                for key,value in streams.items()
+                if key!="CONTROLLED_TRAIN"
+            },
         },
+        "training_streams":streams,
         "total_training_conversations":272,
         "total_unique_training_segments":345,
         "total_unique_training_tokens":295416,
@@ -370,7 +375,7 @@ def write(report):
       "TRAINING_AUTHORIZED --> **1**",
       "TRAINING_STARTED --> **0**","",
       "This authorization does not start training. A separate trainer execution is required.","",
-      "---","","##### **THE KUZ NETWORK - KUSANAGI8200 - @2026**",""
+      "---","","##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**",""
     ]
     (OUT/"RESULTS-001.md").write_text("\n".join(lines),encoding="utf-8")
 
