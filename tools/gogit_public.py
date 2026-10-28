@@ -780,6 +780,27 @@ METRIC_KEYS = {
     "V59_GEN_FINAL_MAX_CHAR_RUN",
     "V59_GEN_FINAL_REPEAT_TRIGRAM_BP",
     "V59_GEN_FINAL_STEP",
+    "V59_LOGIT_DIAG_PASS",
+    "V59_LOGIT_BLIND_ACCESS",
+    "V59_LOGIT_VOCAB",
+    "V59_LOGIT_UNIFORM_CE_X1E6",
+    "V59_LOGIT_FRESH_CE_X1E6",
+    "V59_LOGIT_TRAINED_CE_X1E6",
+    "V59_LOGIT_FRESH_EMB_STD_X1E6",
+    "V59_LOGIT_TRAINED_EMB_STD_X1E6",
+    "V59_LOGIT_FRESH_POS_STD_X1E6",
+    "V59_LOGIT_TRAINED_POS_STD_X1E6",
+    "V59_LOGIT_FRESH_STD_X1E6",
+    "V59_LOGIT_TRAINED_STD_X1E6",
+    "V59_LOGIT_FRESH_MAXABS_X1E6",
+    "V59_LOGIT_TRAINED_MAXABS_X1E6",
+    "V59_LOGIT_FRESH_MAXPROB_BP",
+    "V59_LOGIT_TRAINED_MAXPROB_BP",
+    "V59_LOGIT_UNIFORM_ENTROPY_X1E6",
+    "V59_LOGIT_FRESH_ENTROPY_X1E6",
+    "V59_LOGIT_TRAINED_ENTROPY_X1E6",
+    "V59_LOGIT_BEST_STEP",
+    "V59_LOGIT_BEST_EXPOSURE",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -851,6 +872,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v59_bounded_pilot_run.py",
         "tools/public-audits/phase03_v59_post_train_validation.py",
         "tools/public-audits/phase03_v59_post_train_generation_diagnostic.py",
+        "tools/public-audits/phase03_v59_logit_initialization_diagnostic.py",
     }
 
     architecture_workstream = tracked.startswith(
