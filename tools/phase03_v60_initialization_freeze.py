@@ -52,6 +52,11 @@ def canonical_sha(value: dict) -> str:
 def build() -> tuple[dict, dict]:
     gate = read_json(GATE_REPORT)
     auth = read_json(V59_AUTH)
+
+    gate_audit_sha256 = sha256_file(GATE_AUDIT)
+    if gate.get("producer_sha256") != gate_audit_sha256:
+        raise RuntimeError("V60 gate audit source changed after publication")
+
     metrics = gate.get("metrics")
     if not isinstance(metrics, dict):
         raise RuntimeError("V60 gate metrics missing")
@@ -96,7 +101,7 @@ def build() -> tuple[dict, dict]:
         },
         "model_source_sha256": sha256_file(MODEL),
         "test_source_sha256": sha256_file(TEST),
-        "gate_audit_sha256": sha256_file(GATE_AUDIT),
+        "gate_audit_sha256": gate_audit_sha256,
         "gate_report_sha256": sha256_file(GATE_REPORT),
         "v59_corpus_baseline_fingerprint": auth["freeze_fingerprint"],
         "tokenizer_file_sha256": auth["fingerprints"]["tokenizer_file_sha256"],
