@@ -731,6 +731,31 @@ METRIC_KEYS = {
     "V59_RUN_GENERAL_SHARE_BP",
     "V59_RUN_LEGACY_TOKENS",
     "V59_RUN_LEGACY_SHARE_BP",
+    "V59_POST_ANALYSIS_PASS",
+    "V59_POST_VAL_EVALS",
+    "V59_POST_VAL_INITIAL_X1E6",
+    "V59_POST_VAL_FINAL_X1E6",
+    "V59_POST_VAL_BEST_X1E6",
+    "V59_POST_VAL_BEST_STEP",
+    "V59_POST_VAL_BEST_EXPOSURE",
+    "V59_POST_VAL_INITIAL_TO_BEST_BP",
+    "V59_POST_VAL_FINAL_TO_BEST_BP",
+    "V59_POST_VAL_IMPROVING_EVALS",
+    "V59_POST_TRAIN_STEPS",
+    "V59_POST_TRAIN_FIRST_LOSS_X1E6",
+    "V59_POST_TRAIN_FINAL_LOSS_X1E6",
+    "V59_POST_TRAIN_MIN_LOSS_X1E6",
+    "V59_POST_TRAIN_REDUCTION_BP",
+    "V59_POST_GRAD_MAX_X1E6",
+    "V59_POST_GRAD_NONFINITE",
+    "V59_POST_PROBES",
+    "V59_POST_PROBES_UTF8_INVALID",
+    "V59_POST_PROBES_EOS",
+    "V59_POST_FINAL_PROBES",
+    "V59_POST_FINAL_UTF8_INVALID",
+    "V59_POST_BEST_CHECKPOINT",
+    "V59_POST_LAST_CHECKPOINT",
+    "V59_POST_BLIND_ACCESS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -800,6 +825,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v59_tokenizer_performance.py",
         "tools/public-audits/phase03_v59_validation_compatibility.py",
         "tools/public-audits/phase03_v59_bounded_pilot_run.py",
+        "tools/public-audits/phase03_v59_post_train_validation.py",
     }
 
     architecture_workstream = tracked.startswith(
