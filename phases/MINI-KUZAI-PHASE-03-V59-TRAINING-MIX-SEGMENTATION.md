@@ -666,6 +666,9 @@ Checkpoint -->
 ## References
 
 - [V59 training-authorized checkpoint - 2026-10-28](MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
+- [V59 final authorization results](../reviews/smoltalk-v59-final-mix-freeze-authorization/RESULTS-001.md)
+- [V59 terminal GOGIT audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V59-FINAL-MIX-FREEZE-AUTHORIZATION-001.json)
+- [V59 training-authorized checkpoint - 2026-10-28](MINI-KUZAI-PHASE-03-V59-TRAINING-AUTHORIZED-CHECKPOINT-2026-10-28.md)
 - [V59 pause checkpoint - 2026-10-25](MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md)
 - [Sample 001 results](../reviews/smoltalk-v59-bulk-sample-001/RESULTS-001.md)
 - [Sample 002 results](../reviews/smoltalk-v59-bulk-sample-002/RESULTS-002.md)
