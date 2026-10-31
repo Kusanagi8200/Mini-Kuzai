@@ -1,0 +1,18 @@
+[Unit]
+Description=Mini-Kuzai AUTOPILOT V1 - deterministic GOGIT research campaign
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/root/GitHub-Mini-Kuzai/Mini-Kuzai
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --campaign phase03-autopilot-v1.json
+TimeoutStartSec=7500
+Restart=no
+UMask=0077
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target
