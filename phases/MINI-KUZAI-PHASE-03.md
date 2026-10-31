@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-10-31
 
-**V65 TOKEN FREQUENCY DIAGNOSTIC 001 --> PUBLISHED AND VERIFIED. V66 TOKEN PREDICTION BIAS --> PREPARED, NOT YET EXECUTED.**
+**V66 TOKEN PREDICTION BIAS PARTS A+B --> BOTH PUBLISHED AND VERIFIED. V67 OUTPUT CONCENTRATION --> PREPARED, NOT YET EXECUTED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -485,18 +485,22 @@ V64 GOGIT                  --> LANGUAGE LEARNING DIAGNOSTIC 002 published
 V65 GOGIT                  --> TOKEN FREQUENCY DIAGNOSTIC 001 published
 V65 BYTE TOP1              --> 52.00% / frequent targets
 V65 MERGED TOP1            --> 3.27% / frequent targets
-V66                        --> CODE PUBLISHED / GPU RUN PENDING
+V66                        --> BOTH GOGIT PARTS PUBLISHED
+V66 predicted byte         --> 6692 / 9170 lexical targets
+V66 predicted merged       --> 2428 / 9170 lexical targets
+V66 predicted special      --> 50 / 9170 lexical targets
+V67                        --> CODE PUBLISHED / GPU RUN PENDING
 New training authorized    --> NO
 New training started       --> NO
 BLIND TEST access          --> 0 during V63/V64
-Next workstream            --> V66 TOKEN PREDICTION BIAS DIAGNOSTIC
+Next workstream            --> V67 OUTPUT TOKEN CONCENTRATION DIAGNOSTIC
 ```
 
 The previous V62 GOGIT training flags describe **historical V62 execution** and must not be reused as a new V65 training authorization. The V64 diagnostic flags are `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`.
 
 The 12 TRAIN segments in V64 form a deliberately small exploratory sample, and V63's lexical checks do not establish semantic correctness. The frozen V62 checkpoint remains the only model used for these inference-only diagnostics.
 
-Primary checkpoint --> [V65 verified frequency results](MINI-KUZAI-PHASE-03-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.md) and [V66 prepared diagnostic](MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md)
+Primary checkpoint --> [V66 completed token-bias analysis](MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md) and [V67 prepared concentration diagnostic](MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md)
 
 ## Historical checkpoint chronology - V53 to V59
 
@@ -907,11 +911,13 @@ The V62 mandatory cycle-2 review **has been executed**, not merely prepared. The
 - Full VALIDATION CE --> **4.733**, terminal EOS top-1 --> **14/36**, both consistent with V64/V63
 - New training --> **not authorized**, BLIND TEST --> **closed**
 
-The new **V66 TOKEN PREDICTION BIAS** workstream is implemented but not yet executed. Its audit will measure top-1 Byte/BPE/SPECIAL confusion, full-vocabulary softmax probability mass per target class and finer frequency intervals.
+The **V66 TOKEN PREDICTION BIAS** experiment has now been published in two GOGIT parts. It confirmed an argmax raw-byte skew (6692/9170 predicted raw-byte IDs), although total merged BPE probability mass remains substantial (64.84% for gold merged-token positions). On 2254/4294 actual merged-token targets the predicted family was raw-byte. The next read-only experiment, V67, will measure exact output-ID concentration and stable expected-token ranks.
 
 V65 result --> [published GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.json).
 
-V66 method --> [frozen pre-execution documentation](MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md).
+V66 evidence --> [report A](../reports/assistant-results/history/PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-A-001.json) and [report B](../reports/assistant-results/history/PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-B-001.json).
+
+V67 next step --> [pre-execution research protocol](MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md).
 
 
 Verified references -->
