@@ -521,19 +521,23 @@ References -->
 
 ---
 
-### V65-V66 verified / V67 prepared - 2026-10-31
+### V65-V67 verified / V68 AUTOPILOT prepared - 2026-10-31
 
 **V65 TOKEN FREQUENCY DIAGNOSTIC 001** completed successfully via GOGIT, commit [`358c6b07`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/358c6b07bbcc616ee592d763874cbf8b7bd71da5). Full TRAIN token frequency --> **294726 nonspecial token occurrences / 891 observed token IDs**. On 9170 nonspecial frozen VALIDATION targets, frequent raw-byte tokens achieved **52.00%** exact top-1 accuracy (4873 occurrences) while frequent merged Byte-BPE tokens achieved **3.27%** (4287 occurrences). This gap is **not** explained solely by rare tokens. V65 reproduced VALIDATION CE **4.733** and terminal EOS top-1 **14/36**.
 
 **V66 TOKEN PREDICTION BIAS 001** was completed as two 30-field GOGIT reports. The model predicted raw-byte tokens at **6692/9170** lexical positions (72.98%) despite only **4876/9170** true raw-byte targets (53.17%). In **2254/4294** true merged-token positions, the top-1 output was a raw-byte ID. Yet the model assigned **64.84%** of its total probability to merged BPE IDs when the true target was a merged token. The argmax is byte-skewed even though the full distribution retains merged-token probability mass. All correct lexical top-1 predictions were confined to gold tokens occurring at least 1000 times in TRAIN.
 
-**V67 OUTPUT CONCENTRATION 001** is now prepared (GPU not yet executed). It will measure actual distinct top-1 IDs, concentration among the 1/5/10/20 most predicted IDs and stable true-token ranks/top-k coverage. These diagnostics are needed before any decision to revise the tokenizer or propose more training.
+**V67 OUTPUT CONCENTRATION 001** has been executed and published at commit [`7e739610b1f7`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7e739610b1f737bf089b5856bff9ebb7fbbc090e). Only **4** distinct IDs were predicted top-1 across **9170** lexical VALIDATION positions, compared with **606** distinct gold IDs. The dominant token occupied **72.58%** of predictions. The median correct-token rank was **1** for raw-byte tokens versus **113** for merged BPE.
+
+**AUTOPILOT V1 MODE 2** is now published. Its initial five-stage campaign verifies V65, V66-A, V66-B and V67, then automatically runs V68 tied-output-head diagnostics when the V67 concentration thresholds are satisfied. GitHub GOGIT publication and deterministic continuation are automated, while training remains explicitly disabled pending a new frozen, bounded trainer and independent operator authorization.
 
 - [Completed V65 GOGIT report](reports/assistant-results/history/PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.json)
 - [V65 documented results](phases/MINI-KUZAI-PHASE-03-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.md)
 - [V66 complete GOGIT Part A](reports/assistant-results/history/PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-A-001.json)
 - [V66 complete GOGIT Part B](reports/assistant-results/history/PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-B-001.json)
-- [V67 prepared protocol](phases/MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md)
+- [V67 successful GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001.json)
+- [AUTOPILOT V1 implementation and safeguards](autopilot/README.md)
+- [V68 output-head diagnostic protocol](phases/MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md)
 
 **No newly authorized training, no changed checkpoint or tokenizer, and no BLIND TEST access.**
 
@@ -622,7 +626,7 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       --> FROZEN
 Phase 02 KV cache         --> PRESERVED
-Phase 03                  --> V66 COMPLETED / V67 PREPARED
+Phase 03                  --> V67 COMPLETE / V68 AUTOPILOT PREPARED
 Controlled TRAIN          --> 107 RECORDS / 29 GROUPS
 VALIDATION                --> 36 RECORDS / 18 GROUPS FROZEN
 BLIND TEST                --> 36 RECORDS / 18 GROUPS FROZEN / CLOSED
@@ -647,16 +651,21 @@ V65 MERGED TOP1           --> 3.27% / FREQUENT TARGETS
 V66 GOGIT                 --> A+B PUBLISHED / 57 FIELDS
 V66 PRED RAW-BYTE          --> 6692 / 9170 = 72.98%
 V66 PRED MERGED            --> 2428 / 9170
-V67                       --> IMPLEMENTED / GPU EXECUTION PENDING
+V67 GOGIT                 --> OUTPUT CONCENTRATION 001 PUBLISHED
+V67 PREDICTED TYPES       --> 4 DISTINCT / 606 GOLD DISTINCT
+V67 TOP TOKEN SHARE       --> 72.58%
+V68                       --> READ-ONLY DIAGNOSTIC PREPARED
+AUTOPILOT                 --> V1 MODE 2 PILOT PUBLISHED
+AUTOPILOT TRAINING        --> DISABLED / NEW AUTHORIZATION REQUIRED
 New training authorized   --> NO
 New training started      --> NO
 BLIND access in V63/V64   --> 0
-Next step                 --> V67 OUTPUT CONCENTRATION GPU AUDIT
+Next step                 --> AUTOPILOT 5-STAGE PILOT / V68 GPU DIAGNOSTIC
 ```
 
 **Status qualification** --> Earlier V62 GOGIT records `TRAINING_AUTHORIZED=1` and `TRAINING_STARTED=1` for its historical authorized and executed run. V64 reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0` and `SEMANTIC_VALIDATION_COMPLETE=0` for the present diagnostic. They must not be confused.
 
-See the [verified V66 token-bias diagnostic](phases/MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md) and [V67 prepared audit](phases/MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md). Historical V53-V62 details remain documented above and in the phase archives.
+See the [verified V67 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001.json) and [AUTOPILOT V1 safeguards](autopilot/README.md). Historical V53-V62 details remain documented above and in the phase archives.
 
 ---
 
