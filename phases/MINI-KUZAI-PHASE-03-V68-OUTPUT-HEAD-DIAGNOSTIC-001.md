@@ -1,8 +1,16 @@
 # Mini-Kuzai Phase 03 - V68 tied output head and logit dominance
 
-Status --> **READ-ONLY GPU AUDIT PREPARED / GOGIT NOT YET PUBLISHED**
+Status --> **FIRST GPU ATTEMPT FAILED / GOGIT NOT PUBLISHED / SANITIZED FAILURE DIAGNOSTIC PREPARED**
 
 Date --> 2026-10-31
+
+## Execution incident - pending numeric root-cause confirmation
+
+The first AUTOPILOT attempt passed 8 CPU tests. The original V68 GPU audit exited with status 1; the GOGIT wrapper refused publication and concealed its Python traceback. The actual exception has not yet been observed in an auditable result.
+
+The original V68 source has **not** been modified by the incident response. A new separate diagnostic, [V68 failure probe 001](MINI-KUZAI-PHASE-03-V68-FAILURE-PROBE-001.md), will rerun that source in read-only mode, convert the fault to 13 allowlisted numeric counters, publish a separate immutable GOGIT report and stop AUTOPILOT.
+
+No V68 head-norm, logit-gap or PAD-row metric can be claimed as measured until the original audit succeeds or the numeric probe identifies a specific error. The historical V62 checkpoint remains frozen.
 
 ## Research question
 
