@@ -63,15 +63,15 @@ The mean-centered projection is **not a deployment patch**. It changes the logit
 Exactly 30 nonnegative integer fields -->
 
 - Three standard flags --> semantic validation 0, training authorized 0, training started 0
-- Twenty-seven \`V72_GEOM_*\` fields --> audit PASS, BLIND access 0, frozen denominators, V71 original controls, uncentered/centered spectral shares, participation ratios, mean-vector measures, centered top-1 distribution, correctness and per-family switch/deficit counts
+- Twenty-seven `V72_GEOM_*` fields --> audit PASS, BLIND access 0, frozen denominators, V71 original controls, uncentered/centered spectral shares, participation ratios, mean-vector measures, centered top-1 distribution, correctness and per-family switch/deficit counts
 
 Units -->
 
-- \`*_BP\` --> basis points (10000 = 100%)
-- \`*_X100\` --> value multiplied by 100
-- \`*_X1000\` --> value multiplied by 1000
-- \`PAIR_COS_SHIFT_X1000\` --> 1000 × (1 + mean pair cosine) to remain nonnegative
-- \`MEAN_PC1_ABS_COS_X1000\` --> 1000 × absolute cosine
+- `*_BP` --> basis points (10000 = 100%)
+- `*_X100` --> value multiplied by 100
+- `*_X1000` --> value multiplied by 1000
+- `PAIR_COS_SHIFT_X1000` --> 1000 × (1 + mean pair cosine) to remain nonnegative
+- `MEAN_PC1_ABS_COS_X1000` --> 1000 × absolute cosine
 
 No raw hidden states, eigenvectors, individual logits, model weights, token IDs, source text, prompts, private messages or per-position observations may be published.
 
@@ -82,9 +82,9 @@ No raw hidden states, eigenvectors, individual logits, model weights, token IDs,
 - [Pinned V72 GOGIT runner](../tools/run_v72_hidden_state_anisotropy_001_job.py)
 - [GOGIT numeric allowlist](../tools/gogit_public.py)
 
-STEP_ID --> \`PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001\`
+STEP_ID --> `PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001`
 
-The runner requires clean/synchronized \`main\`, validated V62 stopped state, exact approved audit Git blob, successful CPU tests, immutable predecessor reports and final GOGIT history verification. GOGIT limits each audit subprocess to 300 seconds; a timeout is a failure, not a result.
+The runner requires clean/synchronized `main`, validated V62 stopped state, exact approved audit Git blob, successful CPU tests, immutable predecessor reports and final GOGIT history verification. GOGIT limits each audit subprocess to 300 seconds; a timeout is a failure, not a result.
 
 AUTOPILOT V3 is unchanged and does not register a V72 run. No autonomous monitoring, training permission or BLIND access is activated.
 
@@ -92,11 +92,11 @@ AUTOPILOT V3 is unchanged and does not register a V72 run. No autonomous monitor
 
 After a successful clean fast-forward synchronization -->
 
-\`\`\`bash
+```bash
 cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/run_v72_hidden_state_anisotropy_001_job.py
-\`\`\`
+```
 
-Once the local command terminates, reply \`GOGIT\` so the immutable numeric report can be retrieved and interpreted. Source publication does **not** prove that CPU tests or GPU evaluation succeeded; no V72 results are currently claimed.
+Once the local command terminates, reply `GOGIT` so the immutable numeric report can be retrieved and interpreted. Source publication does **not** prove that CPU tests or GPU evaluation succeeded; no V72 results are currently claimed.
 
 ## Decision boundary
 
@@ -104,4 +104,4 @@ Interpret the spectral concentration and mean-center differences alongside V70/V
 
 ---
 
-##### **\`THE KUZ NETWORK - KUSANAGI8200 - @2026\`**
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
