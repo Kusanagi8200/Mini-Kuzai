@@ -4,6 +4,35 @@ Date --> 2026-10-31
 
 Status --> **CODE PUBLISHED / LOCAL GPU EXECUTION PENDING / NO NEW TRAINING**
 
+## GOGIT 30-metric ceiling incident and partitioned correction
+
+The original V66 audit passed **8 CPU tests**, computed its results, but GOGIT returned `Too many metrics` before committing. GOGIT's established `numeric_metrics()` parser refuses reports containing more than **30 fields**. The original V66 audit produces **57 fields**, so the attempted `PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-001` publication was **NOT_CONFIRMED** and has no successful report.
+
+Correction --> retain the original full audit unchanged, reuse its numeric computation through a reviewed helper, and publish two separate immutable GOGIT reports without changing the global 30-metric limit.
+
+- V66 Part A --> 30 metrics comprising three safety flags, twelve fixed model/reference fields, six top-1 confusion counts, six softmax mass shares and three B0 frequency-stratum fields
+- V66 Part B --> 30 metrics comprising the same three safety flags and 27 remaining fine-grained frequency-stratum fields
+- Combined unique fields --> **57**, with three safety fields intentionally duplicated
+- Both audit producers --> independent frozen GPU inference for identical deterministic model/checkpoint/VALIDATION, no mutable intermediate cache
+- If Part A was published successfully but Part B failed, the runner validates existing Part A and safely resumes at Part B
+- Each report is individually verified; combined cross-part fields are also checked against V65 reference counts, normalization constraints and safety flags
+
+GOGIT steps -->
+
+- `PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-A-001`
+- `PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-B-001`
+
+New components -->
+
+- Partitioning logic --> `tools/phase03_v66_metric_partition.py`
+- Audit A --> `tools/public-audits/phase03_v66_token_prediction_bias_part_a_001.py`
+- Audit B --> `tools/public-audits/phase03_v66_token_prediction_bias_part_b_001.py`
+- New CPU tests --> `tests/test_phase03_v66_metric_partition_001.py`
+- One-command resume-safe runner --> `tools/run_v66_token_prediction_bias_partitioned_001_job.py`
+- Pre-change immutable backup --> `tools/backups/V66-GOGIT-SPLIT-PRE-FIX-20261031.md`
+
+This fix is **published as code, but the two GPU audits have not yet been executed**. Do not interpret the former eight successful tests as successful GOGIT publication.
+
 ## Purpose and V65 prerequisite
 
 V65 GOGIT has confirmed **52.00%** top-1 precision for frequent raw-byte targets compared with **3.27%** for frequent merged BPE targets. Most VALIDATION lexical targets belong to tokens that occur at least ten times in TRAIN. This makes simple absence or rarity insufficient as the entire explanation.
@@ -80,7 +109,7 @@ The 10 strata must cover all **9170** lexical VALIDATION targets, and their 0, 1
 
 ## GOGIT verification and publication
 
-A total of **57 numeric metrics** is published -->
+The complete audit computes **57 distinct numeric metrics**, which are split into **two separate 30-field GOGIT publications** -->
 
 - 3 standard safety flags
 - 12 fixed V66 study checks and inventory metrics
@@ -108,10 +137,10 @@ Preflight refuses corpus, checkpoint, V65 numeric inventory, VALIDATION CE, EOS 
 Execute on fhc2 from a clean synchronized checkout -->
 
 ```bash
-git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/run_v66_token_prediction_bias_001_job.py
+git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/run_v66_token_prediction_bias_partitioned_001_job.py
 ```
 
-The runner performs frozen-run preflight, CPU unit tests, CUDA/BF16 inference, numeric-only GOGIT publication and remote-history verification. It is idempotent after a valid successful publication.
+The partitioned runner performs frozen-run preflight, original and partition CPU tests, two independent CUDA/BF16 inference passes, two numeric-only GOGIT publications and combined remote-history verification. It resumes at the missing part after validating an existing prior part.
 
 ## Interpretation gate
 
