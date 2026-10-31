@@ -57,6 +57,9 @@ SOURCE_PHASE03_V66 = (
 SOURCE_PHASE03_V67 = (
     "Mini-Kuzai V67 frozen output concentration and stable target-rank diagnostic"
 )
+SOURCE_PHASE03_V68 = (
+    "Mini-Kuzai V68 frozen tied output-head and logit-dominance diagnostic"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1522,6 +1525,33 @@ METRIC_KEYS = {
     "V67_CONC_MERGE_GOLD_TOP50_BP",
     "V67_CONC_BYTE_GOLD_MEDIAN_RANK",
     "V67_CONC_MERGE_GOLD_MEDIAN_RANK",
+    "V68_HEAD_PASS",
+    "V68_HEAD_BLIND_ACCESS",
+    "V68_HEAD_GPU_BF16",
+    "V68_HEAD_TIED_WEIGHTS",
+    "V68_HEAD_HAS_BIAS",
+    "V68_HEAD_VAL_TOKENS",
+    "V68_HEAD_VAL_LEXICAL",
+    "V68_HEAD_CE_X1000",
+    "V68_HEAD_EOS_TOP1",
+    "V68_HEAD_NORM_BYTE_MEAN_X1000",
+    "V68_HEAD_NORM_MERGE_MEAN_X1000",
+    "V68_HEAD_NORM_SPECIAL_MEAN_X1000",
+    "V68_HEAD_NORM_MAX_X1000",
+    "V68_HEAD_NORM_STD_X1000",
+    "V68_HEAD_PRED_DISTINCT",
+    "V68_HEAD_PRED_BYTE_COUNT",
+    "V68_HEAD_PRED_MERGE_COUNT",
+    "V68_HEAD_PRED_SPECIAL_COUNT",
+    "V68_HEAD_TOP1_SHARE_BP",
+    "V68_HEAD_LOGIT_GAP_MEAN_X1000",
+    "V68_HEAD_LOGIT_GAP_P90_X1000",
+    "V68_HEAD_GOLD_DEFICIT_MEAN_X1000",
+    "V68_HEAD_GOLD_BYTE_DEFICIT_X1000",
+    "V68_HEAD_GOLD_MERGE_DEFICIT_X1000",
+    "V68_HEAD_PRED_NORM_MEAN_X1000",
+    "V68_HEAD_GOLD_NORM_MEAN_X1000",
+    "V68_HEAD_GPU_PEAK_MIB",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1592,6 +1622,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V66
     if tracked.startswith("tools/public-audits/phase03_v67_"):
         return SOURCE_PHASE03_V67
+    if tracked.startswith("tools/public-audits/phase03_v68_"):
+        return SOURCE_PHASE03_V68
     return SOURCE
 
 
@@ -1690,6 +1722,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
 
     v67_concentration = tracked == (
         "tools/public-audits/phase03_v67_output_concentration_001.py"
+    )
+
+    v68_head = tracked == (
+        "tools/public-audits/phase03_v68_output_head_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -1820,6 +1856,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v67_concentration:
         # Stable token rank is not human semantic validation.
+        return False
+    if v68_head:
+        # Read-only output-head logits are not a semantic validation gate.
         return False
 
     if tokenizer_workstream or architecture_workstream:
