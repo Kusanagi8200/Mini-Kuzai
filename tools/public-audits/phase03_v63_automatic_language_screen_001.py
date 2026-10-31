@@ -95,8 +95,11 @@ def compute(samples: list[dict], lexicon: set[str]) -> dict:
     fragments = sum(s["fragments"] for s in stats)
     nonblank = sum(s["nonblank"] for s in stats)
     chars = sum(s["characters"] for s in stats)
-    if not words or not nonblank or not chars:
-        raise RuntimeError("Empty or abnormal 24-sample output inventory")
+    # Total absence of recognizable words must remain a publishable
+    # failure signal, rather than aborting the diagnostic.
+    word_denominator = max(1, words)
+    nonblank_denominator = max(1, nonblank)
+    char_denominator = max(1, chars)
     output = {
         "AUTO_PASS": 1,
         "AUTO_BLIND_ACCESS": 0,
@@ -112,13 +115,13 @@ def compute(samples: list[dict], lexicon: set[str]) -> dict:
         "AUTO_WORDS": words,
         "AUTO_MEAN_WORDS_X100": round(words*100/len(samples)),
         "AUTO_VOCAB_WORDS": len(lexicon),
-        "AUTO_REF_WORD_COVER_BP": round(known*10000/words),
-        "AUTO_UNKNOWN_WORD_BP": round((words-known)*10000/words),
-        "AUTO_FRAGMENT_WORD_BP": round(fragments*10000/words),
+        "AUTO_REF_WORD_COVER_BP": round(known*10000/word_denominator),
+        "AUTO_UNKNOWN_WORD_BP": round((words-known)*10000/word_denominator),
+        "AUTO_FRAGMENT_WORD_BP": round(fragments*10000/word_denominator),
         "AUTO_SUSPECT_OUTPUTS": sum(s["suspect"] for s in stats),
         "AUTO_ZERO_WORD_OUTPUTS": sum(s["words"]==0 for s in stats),
-        "AUTO_ALPHABETIC_BP": round(sum(s["alpha"] for s in stats)*10000/nonblank),
-        "AUTO_WHITESPACE_BP": round((chars-nonblank)*10000/chars),
+        "AUTO_ALPHABETIC_BP": round(sum(s["alpha"] for s in stats)*10000/nonblank_denominator),
+        "AUTO_WHITESPACE_BP": round((chars-nonblank)*10000/char_denominator),
         "AUTO_DISTINCT_TOKEN_BP": round(statistics.mean(
             len(set(s["tokens"]))*10000/len(s["tokens"]) for s in samples
         )),
