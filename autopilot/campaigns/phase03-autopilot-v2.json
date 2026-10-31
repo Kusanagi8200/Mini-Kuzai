@@ -1,0 +1,162 @@
+{
+  "schema": "mini-kuzai-autopilot-campaign-v1",
+  "campaign_id": "phase03-norm-v2",
+  "mode": "bounded",
+  "max_wall_seconds": 7200,
+  "steps": [
+    {
+      "id": "verify-v67",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001",
+      "required": true,
+      "runner": null,
+      "when": [],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001",
+          "metric": "V67_CONC_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001",
+          "metric": "V67_CONC_PRED_DISTINCT",
+          "op": "eq",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": "verify-v68",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+      "required": true,
+      "runner": null,
+      "when": [],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+          "metric": "V68_HEAD_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+          "metric": "V68_HEAD_TIED_WEIGHTS",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "audit-v69",
+      "kind": "diagnostic",
+      "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+      "required": true,
+      "runner": "v69-norm",
+      "when": [
+        {
+          "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+          "metric": "V68_HEAD_PRED_DISTINCT",
+          "op": "eq",
+          "value": 4
+        }
+      ],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_BASE_CE_X1000",
+          "op": "eq",
+          "value": 4733
+        }
+      ]
+    },
+    {
+      "id": "classify-gain",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+      "required": false,
+      "runner": null,
+      "when": [
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_FULL_PRED_DISTINCT",
+          "op": "gt",
+          "value": 4
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_FULL_MERGE_TOP5_BP",
+          "op": "gt",
+          "value": 685
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_FULL_CE_X1000",
+          "op": "le",
+          "value": 5000
+        }
+      ],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_PASS",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "classify-ce-regression",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+      "required": false,
+      "runner": null,
+      "when": [
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_FULL_CE_X1000",
+          "op": "gt",
+          "value": 5000
+        }
+      ],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_PASS",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "classify-collapse",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+      "required": false,
+      "runner": null,
+      "when": [
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_FULL_PRED_DISTINCT",
+          "op": "le",
+          "value": 4
+        }
+      ],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_PASS",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}
