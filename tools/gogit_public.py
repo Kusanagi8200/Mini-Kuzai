@@ -66,6 +66,9 @@ SOURCE_PHASE03_V69 = (
 SOURCE_PHASE03_V70 = (
     "Mini-Kuzai V70 FP32 control for frozen output-head norm counterfactual"
 )
+SOURCE_PHASE03_V71 = (
+    "Mini-Kuzai V71 frozen output-head norm versus directional attribution"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1622,6 +1625,33 @@ METRIC_KEYS = {
     "V70_CTRL_FULL_MERGE_TOP1_BP",
     "V70_CTRL_FULL_MERGE_TOP5_BP",
     "V70_CTRL_FULL_EOS_TOP1",
+    "V71_ATTR_PASS",
+    "V71_ATTR_BLIND_ACCESS",
+    "V71_ATTR_VAL_LEXICAL",
+    "V71_ATTR_BYTE_TARGETS",
+    "V71_ATTR_MERGE_TARGETS",
+    "V71_ATTR_ORIG_CE_X1000",
+    "V71_ATTR_FULL_CE_X1000",
+    "V71_ATTR_ORIG_DISTINCT",
+    "V71_ATTR_FULL_DISTINCT",
+    "V71_ATTR_ORIG_TOP1_SHARE_BP",
+    "V71_ATTR_FULL_TOP1_SHARE_BP",
+    "V71_ATTR_SWITCH_TOTAL",
+    "V71_ATTR_SWITCH_BYTE",
+    "V71_ATTR_SWITCH_MERGE",
+    "V71_ATTR_CORRECT_BOTH",
+    "V71_ATTR_CORRECT_ORIG_ONLY",
+    "V71_ATTR_CORRECT_FULL_ONLY",
+    "V71_ATTR_CORRECT_NEITHER",
+    "V71_ATTR_ORIG_MARGIN_MEAN_X1000",
+    "V71_ATTR_FULL_MARGIN_MEAN_X1000",
+    "V71_ATTR_ORIG_GOLD_DEF_BYTE_X1000",
+    "V71_ATTR_ORIG_GOLD_DEF_MERGE_X1000",
+    "V71_ATTR_FULL_GOLD_DEF_BYTE_X1000",
+    "V71_ATTR_FULL_GOLD_DEF_MERGE_X1000",
+    "V71_ATTR_NORM_RATIO_X1000",
+    "V71_ATTR_COS_WIN_SHIFT_X1000",
+    "V71_ATTR_COS_GOLD_SHIFT_X1000",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1698,6 +1728,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V69
     if tracked.startswith("tools/public-audits/phase03_v70_"):
         return SOURCE_PHASE03_V70
+    if tracked == "tools/public-audits/phase03_v71_output_dominance_attribution_001.py":
+        return SOURCE_PHASE03_V71
     return SOURCE
 
 
@@ -1808,6 +1840,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
 
     v70_precision_control = tracked == (
         "tools/public-audits/phase03_v70_precision_control_001.py"
+    )
+    v71_attribution = tracked == (
+        "tools/public-audits/phase03_v71_output_dominance_attribution_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -1947,6 +1982,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v70_precision_control:
         # Output precision controls are not semantic model validation.
+        return False
+    if v71_attribution:
+        # Output-logit attribution is not semantic or training validation.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
