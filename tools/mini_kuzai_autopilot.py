@@ -253,9 +253,20 @@ def read_report(step):
         and len(metrics)<=30 and len(metrics)>=4
         and all(type(x) is int and 0<=x<=100_000_000 for x in metrics.values())
         and all(metrics.get(key)==0 for key in REQUIRED_ZERO)
-        and metrics.get(next((key for key in metrics if key.endswith("_BLIND_ACCESS")),"_missing"))==0
     ):
         raise Halt("GOGIT report failed safety/metadata gate: "+step)
+    blind_keys=[key for key in metrics if key.endswith("_BLIND_ACCESS")]
+    if blind_keys:
+        if any(metrics[key]!=0 for key in blind_keys):
+            raise Halt("BLIND accessed during diagnostic")
+    elif step=="PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-B-001":
+        # B has no BLIND metric by design; it requires paired A's validated
+        # frozen checkpoint, code hash and explicit no-BLIND evidence.
+        paired=read_report("PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-A-001")
+        if paired.get("V66_BIAS_BLIND_ACCESS")!=0:
+            raise Halt("V66-A prerequisite BLIND gate failed")
+    else:
+        raise Halt("Missing explicit no-BLIND GOGIT metric")
     source=safe_relative(producer,REPO)
     recorded_hash=doc.get("producer_sha256")
     if not isinstance(recorded_hash,str) or not SHA256_RE.fullmatch(recorded_hash):
