@@ -1,8 +1,20 @@
 # Mini-Kuzai AUTOPILOT V1 - MODE 2
 
-Status --> **IMPLEMENTATION PUBLISHED / LOCAL CPU + GPU EXECUTION TO BE VERIFIED / TRAINING DISABLED**
+Status --> **FIRST LOCAL V68 ATTEMPT HALTED / NUMERIC FAILURE-PROBE PUBLISHED AS CODE / TRAINING DISABLED**
 
 Date --> 2026-10-31
+
+## First AUTOPILOT execution - V68 failure and correction
+
+The initial local AUTOPILOT campaign reached V68 and completed all **eight** V68 CPU tests. The original V68 GPU audit then exited with status **1**. GOGIT printed `Audit exited with status 1; nothing published`; AUTOPILOT correctly entered `HALTED`.
+
+The original Python exception was not present in the GOGIT response and **has not yet been diagnosed**. Do not conclude that V68 succeeded or assume which invariant failed.
+
+An explicit numeric error-publication pipeline has now been added. On a future V68 runner failure, AUTOPILOT will automatically invoke the pinned `phase03_v68_failure_probe_001.py`, publish **13 numeric counters** to a separate immutable GOGIT history step `PHASE03-SMOLTALK-V68-FAILURE-PROBE-001` and remain **HALTED**. The numeric taxonomy records exception class, predefined cause ID and source line but **no traceback, raw exception message or private content**.
+
+The original V68 audit source and V62 checkpoint are untouched. Error reporting does not change the global 30-metric limit or authorize training. See [V68 error-probe protocol](../phases/MINI-KUZAI-PHASE-03-V68-FAILURE-PROBE-001.md).
+
+The next local command repeats the initial checks, then retries the previously failed V68 audit and, if it fails again, automatically publishes the sanitized error report. Reply `GOGIT` to retrieve and interpret it. Do not run arbitrary correction or extra training before the report is examined.
 
 ## Goal
 
@@ -82,7 +94,7 @@ From the clean repository root, run -->
 git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_mini_kuzai_autopilot.py' -v && /root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_phase03_v68_output_head_001.py' -v && /root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --check-only && /root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py
 ```
 
-The command stops if any test or preflight fails. The first run of V68 is still pending actual local GPU verification. After GOGIT publication, respond `GOGIT` for review of the numerical result.
+The command stops if any test or preflight fails. The first local V68 attempt failed before GOGIT publication. The next run checks the new automatic failure-report path. This is not a confirmed fix of the scientific V68 error. After GOGIT publication, respond `GOGIT` for review of the numerical result.
 
 The optional systemd unit has **not** been deployed or enabled. Install only after the manual execution and journal have been verified. A systemd service does not itself authorize new experiments.
 
