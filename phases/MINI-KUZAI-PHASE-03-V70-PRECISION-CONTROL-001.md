@@ -2,7 +2,7 @@
 
 Date --> 2026-10-31
 
-Status --> **CODE / TESTS / AUTOPILOT V3 PUBLISHED; LOCAL CPU + GPU EXECUTION PENDING**
+Status --> **GPU DIAGNOSTIC AND GOGIT VERIFIED / V62 FROZEN / TRAINING DISABLED**
 
 ## Scientific question
 
@@ -71,13 +71,26 @@ The three classifications can coexist or be skipped. They are observations only,
 - AUTOPILOT V3 tests --> `tests/test_mini_kuzai_autopilot_v3.py`
 - Pre-change backup --> `tools/backups/V70-PRECISION-CONTROL-PRE-20261031.md`
 
-To run the new V3 campaign from a synchronized clean repository -->
+Historical V3 execution command (already completed for the published V70 GOGIT step; do not republish a duplicate STEP_ID) -->
 
 ```bash
 /root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --campaign phase03-autopilot-v3.json
 ```
 
-The V70 GPU audit is not complete merely because source code was published. Wait for the immutable `PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001` GOGIT report before interpreting any counterfactual.
+## Published V70 result
+
+The immutable [V70 GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json) is now published and verified at commit [d239bcf509be](https://github.com/Kusanagi8200/Mini-Kuzai/commit/d239bcf509be2113ea8d8807487a57ec6116b00f). `V70_CTRL_PASS=1`, BLIND access 0, training started 0 and 9170 lexical VALIDATION positions.
+
+| Projection | CE | Distinct argmax IDs | Dominant token share | BPE gold top-5 | Terminal EOS top-1 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Original BF16 | 4.733 | 4 | 72.58% | 6.85% | 14/36 |
+| Original FP32 | 4.732 | 5 | 72.55% | 6.85% | 14/36 |
+| HALF FP32 | 4.892 | 4 | 70.98% | 7.27% | 23/36 |
+| FULL FP32 | 5.048 | 7 | 69.57% | 7.71% | 24/36 |
+
+**Interpretation -->** Switching the unchanged output projection from BF16 to FP32 changes CE by only -0.001. The substantially worse HALF/FULL CE is therefore not explained primarily by BF16/FP32 differences. FULL modestly increases top-1 diversity and merged-BPE top-5, but the original tied head and checkpoint remain unchanged. These are next-token numerical observations, **not** semantic or conversational validation.
+
+The next [V71 output-dominance attribution protocol](MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) is **documentation only**; no V71 GPU run or new training is authorized.
 
 ---
 
