@@ -62,11 +62,17 @@ REPORT_PRODUCERS={
         "tools/public-audits/phase03_v67_output_concentration_001.py",
     "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001":
         "tools/public-audits/phase03_v68_output_head_001.py",
+    "PHASE03-SMOLTALK-V68-FAILURE-PROBE-001":
+        "tools/public-audits/phase03_v68_failure_probe_001.py",
 }
 APPROVED_RUN_BLOB={
     "v67-readonly":"a5efc5cc58ec162d3b11cb9e0e11ddf30281ad57",
     "v68-head":"fae721c57c7184ab9a154d91b46a57942d85dcaf",
 }
+FAILURE_PROBE_STEP="PHASE03-SMOLTALK-V68-FAILURE-PROBE-001"
+FAILURE_PROBE_SOURCE="tools/public-audits/phase03_v68_failure_probe_001.py"
+FAILURE_PROBE_BLOB="f67bacc63079cbf3bf0d5b78ebe30eefd36b7111"
+
 
 # Standard diagnostic GOGIT flags must be zero, independent of stage rules.
 REQUIRED_ZERO=("SEMANTIC_VALIDATION_COMPLETE","TRAINING_AUTHORIZED","TRAINING_STARTED")
@@ -286,6 +292,42 @@ def evaluate_rules(rules):
     return True
 
 
+def publish_v68_failure_probe():
+    """Preserve the failed V68 status and publish only reviewed numeric errors.
+
+    Never publishes a traceback, exception text, local path or user data.
+    Does not change the original experiment or checkpoint.
+    """
+    existing=report_path(FAILURE_PROBE_STEP)
+    if existing.exists():
+        metrics=read_report(FAILURE_PROBE_STEP)
+    else:
+        git_sync()
+        git("ls-files","--error-unmatch","--",FAILURE_PROBE_SOURCE)
+        if git("rev-parse",f"HEAD:{FAILURE_PROBE_SOURCE}")!=FAILURE_PROBE_BLOB:
+            raise Halt("V68 failure probe no longer matches reviewed source")
+        checked=safe_relative(FAILURE_PROBE_SOURCE,REPO)
+        if not checked.is_file() or checked.is_symlink():
+            raise Halt("V68 failure probe file unavailable or unsafe")
+        proc=subprocess.run(
+            [str(PYTHON),"tools/gogit_public.py",
+             "--step",FAILURE_PROBE_STEP,"--audit",FAILURE_PROBE_SOURCE],
+            cwd=REPO,timeout=330,check=False,
+        )
+        if proc.returncode!=0:
+            raise Halt("V68 numeric failure probe could not be published")
+        git_sync()
+        metrics=read_report(FAILURE_PROBE_STEP)
+    if not (
+        metrics.get("V68_FAIL_DIAG_PASS")==1
+        and metrics.get("V68_FAIL_BLIND_ACCESS")==0
+        and metrics.get("V68_FAIL_ORIGINAL_FAILED") in (0,1)
+        and type(metrics.get("V68_FAIL_EXCEPTION_CLASS_ID")) is int
+    ):
+        raise Halt("V68 numeric failure diagnostic invalid")
+    print("AUTOPILOT_V68_FAILURE_PROBE: PUBLISHED",flush=True)
+
+
 def checked_runner(runner_key, step, max_seconds):
     """Only fixed local reviewed commands. Never shell=True or manifest argv."""
     if runner_key not in DIAGNOSTIC_RUNNERS:
@@ -311,6 +353,16 @@ def checked_runner(runner_key, step, max_seconds):
         process.wait()
         raise Halt("Diagnostic runner exceeded bounded wall time") from exc
     if code!=0:
+        if runner_key=="v68-head":
+            try:
+                publish_v68_failure_probe()
+            except (Halt,OSError,subprocess.TimeoutExpired) as exc:
+                raise Halt(
+                    f"V68 runner failed (exit {code}); numeric failure probe also failed: {type(exc).__name__}"
+                ) from exc
+            raise Halt(
+                f"V68 runner failed (exit {code}); numeric failure report published; campaign stopped for review"
+            )
         raise Halt(f"Diagnostic runner failed (exit {code})")
 
 
