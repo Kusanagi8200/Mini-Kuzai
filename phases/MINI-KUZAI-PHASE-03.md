@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-10-31
 
-**V66 TOKEN PREDICTION BIAS PARTS A+B --> BOTH PUBLISHED AND VERIFIED. V67 OUTPUT CONCENTRATION --> PREPARED, NOT YET EXECUTED.**
+**V67 OUTPUT CONCENTRATION --> PUBLISHED AND VERIFIED. V68 OUTPUT HEAD --> PREPARED FOR AUTOPILOT V1 PILOT.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -489,18 +489,22 @@ V66                        --> BOTH GOGIT PARTS PUBLISHED
 V66 predicted byte         --> 6692 / 9170 lexical targets
 V66 predicted merged       --> 2428 / 9170 lexical targets
 V66 predicted special      --> 50 / 9170 lexical targets
-V67                        --> CODE PUBLISHED / GPU RUN PENDING
+V67 GOGIT                  --> OUTPUT CONCENTRATION 001 COMPLETE
+V67 predicted distinct      --> 4 IDS / 606 GOLD DISTINCT
+V67 dominant top1 share     --> 72.58%
+V68                        --> READ-ONLY GPU RUN PENDING
+AUTOPILOT                   --> MODE 2 PILOT PUBLISHED / TRAINING DISABLED
 New training authorized    --> NO
 New training started       --> NO
 BLIND TEST access          --> 0 during V63/V64
-Next workstream            --> V67 OUTPUT TOKEN CONCENTRATION DIAGNOSTIC
+Next workstream            --> AUTOPILOT PILOT V1 / V68 TIED OUTPUT HEAD
 ```
 
 The previous V62 GOGIT training flags describe **historical V62 execution** and must not be reused as a new V65 training authorization. The V64 diagnostic flags are `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`.
 
 The 12 TRAIN segments in V64 form a deliberately small exploratory sample, and V63's lexical checks do not establish semantic correctness. The frozen V62 checkpoint remains the only model used for these inference-only diagnostics.
 
-Primary checkpoint --> [V66 completed token-bias analysis](MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md) and [V67 prepared concentration diagnostic](MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md)
+Primary checkpoint --> [V67 verified concentration GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001.json), [AUTOPILOT V1](../autopilot/README.md) and [V68 prepared protocol](MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md)
 
 ## Historical checkpoint chronology - V53 to V59
 
@@ -911,13 +915,17 @@ The V62 mandatory cycle-2 review **has been executed**, not merely prepared. The
 - Full VALIDATION CE --> **4.733**, terminal EOS top-1 --> **14/36**, both consistent with V64/V63
 - New training --> **not authorized**, BLIND TEST --> **closed**
 
-The **V66 TOKEN PREDICTION BIAS** experiment has now been published in two GOGIT parts. It confirmed an argmax raw-byte skew (6692/9170 predicted raw-byte IDs), although total merged BPE probability mass remains substantial (64.84% for gold merged-token positions). On 2254/4294 actual merged-token targets the predicted family was raw-byte. The next read-only experiment, V67, will measure exact output-ID concentration and stable expected-token ranks.
+The **V66 TOKEN PREDICTION BIAS** experiment has now been published in two GOGIT parts. It confirmed an argmax raw-byte skew (6692/9170 predicted raw-byte IDs), although total merged BPE probability mass remains substantial (64.84% for gold merged-token positions). On 2254/4294 actual merged-token targets the predicted family was raw-byte. V67 confirmed only **4 distinct predicted IDs** compared with **606 distinct gold IDs** and a **72.58%** dominant-token share. The next V68 read-only audit will inspect tied-output-head row norms and logit margins, automatically triggered by the five-stage AUTOPILOT V1 campaign.
 
 V65 result --> [published GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.json).
 
 V66 evidence --> [report A](../reports/assistant-results/history/PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-A-001.json) and [report B](../reports/assistant-results/history/PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-B-001.json).
 
-V67 next step --> [pre-execution research protocol](MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md).
+V67 completed --> [published GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001.json).
+
+V68 next step --> [prepared GOGIT protocol](MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md).
+
+AUTOPILOT V1 --> [deterministic bounded campaign](../autopilot/README.md), read-only until a separate new trainer is approved.
 
 
 Verified references -->
