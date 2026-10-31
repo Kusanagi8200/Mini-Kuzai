@@ -56,6 +56,7 @@ Recent completed stages -->
 | V68 OUTPUT HEAD 001 | Published after PAD zero-assumption correction, selected norm 0.360 vs gold norm 0.293, PAD norm 0.182 |
 | V69 OUTPUT NORM COUNTERFACTUAL 001 | Verified: BASE CE 4.733, HALF 4.892, FULL 5.048; 4/4/7 predicted IDs, BPE top-5 improves modestly |
 | V70 PRECISION CONTROL 001 | **GPU/GOGIT verified**; BF16 original CE 4.733, FP32 original CE 4.732, FULL CE 5.048, no new training or BLIND access |
+| V71 OUTPUT DOMINANCE ATTRIBUTION 001 | Audit, tests, pinned standalone runner and GOGIT numeric allowlist **published**; fhc2 CPU/GPU and GOGIT **pending** |
 
 GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67, V68, V69 and V70 each fit exactly 30 metrics in one report. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
@@ -63,7 +64,7 @@ Read `reports/assistant-results/latest.json` for the latest published numeric re
 
 A previous `TRAINING_AUTHORIZED=1` in V62 historical run reports is **not** an authorization for a new run. The V64 diagnostic reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `SEMANTIC_VALIDATION_COMPLETE=0`. The latter flag expressly states that the numerical learning diagnostic is not human semantic validation.
 
-See [verified V70 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json), [AUTOPILOT V3](../autopilot/README.md) and the [proposed V71 diagnostic protocol](../phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md). V71 has no published GPU result or registered runner yet.
+See [verified V70 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json), [AUTOPILOT V3](../autopilot/README.md) and the [proposed V71 diagnostic protocol](../phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md). V71 has a published [pinned standalone runner](run_v71_output_dominance_attribution_001_job.py) and [protocol](../phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md), but **no local execution or GOGIT report is confirmed**; it is not registered as an AUTOPILOT campaign.
 
 ## Adding a future audit
 
