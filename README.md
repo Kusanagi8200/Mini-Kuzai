@@ -521,7 +521,7 @@ References -->
 
 ---
 
-### V65-V67 verified / V68 AUTOPILOT prepared - 2026-10-31
+### V65-V68 verified / V69 AUTOPILOT V2 prepared - 2026-10-31
 
 **V65 TOKEN FREQUENCY DIAGNOSTIC 001** completed successfully via GOGIT, commit [`358c6b07`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/358c6b07bbcc616ee592d763874cbf8b7bd71da5). Full TRAIN token frequency --> **294726 nonspecial token occurrences / 891 observed token IDs**. On 9170 nonspecial frozen VALIDATION targets, frequent raw-byte tokens achieved **52.00%** exact top-1 accuracy (4873 occurrences) while frequent merged Byte-BPE tokens achieved **3.27%** (4287 occurrences). This gap is **not** explained solely by rare tokens. V65 reproduced VALIDATION CE **4.733** and terminal EOS top-1 **14/36**.
 
@@ -540,6 +540,20 @@ References -->
 - [V68 output-head diagnostic protocol](phases/MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md)
 
 **No newly authorized training, no changed checkpoint or tokenizer, and no BLIND TEST access.**
+
+---
+
+### V68 verified - V69 head-norm counterfactual prepared
+
+On 2026-10-31 the corrected V68 tied-output-head audit completed through GOGIT, commit [`3d872b9102f7`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/3d872b9102f7708e5bff723ffd0f195ba2e0ee72). The frozen V62 checkpoint reproduces four distinct argmax tokens across 9170 lexical positions, with a **72.58%** dominant prediction share. V68 measured the PAD output row norm at **0.182**, selected-row mean norm at **0.360** and gold-row mean norm at **0.293**. The mean winning-logit deficit of BPE gold tokens was **3.466** versus **1.174** for raw-byte gold tokens.
+
+V69 will test whether **output row-norm differences**, without any parameter change, causally affect this top-1 concentration. The [new six-stage AUTOPILOT V2 campaign](autopilot/campaigns/phase03-autopilot-v2.json) will verify V67/V68, run an in-memory HALF/FULL row-norm counterfactual, publish a 30-field numeric GOGIT result and classify predefined outcomes. These classifications cannot authorize new training or BLIND access.
+
+- [V68 completed numeric GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001.json)
+- [V69 frozen research protocol](phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md)
+- [AUTOPILOT V2 operation and limits](autopilot/README.md)
+
+**Current V69 status** --> implementation published; local CPU/GPU results pending. V62 stays frozen.
 
 ---
 
@@ -654,18 +668,21 @@ V66 PRED MERGED            --> 2428 / 9170
 V67 GOGIT                 --> OUTPUT CONCENTRATION 001 PUBLISHED
 V67 PREDICTED TYPES       --> 4 DISTINCT / 606 GOLD DISTINCT
 V67 TOP TOKEN SHARE       --> 72.58%
-V68                       --> READ-ONLY DIAGNOSTIC PREPARED
-AUTOPILOT                 --> V1 MODE 2 PILOT PUBLISHED
+V68 GOGIT                 --> OUTPUT HEAD 001 VERIFIED
+V68 PAD NORM              --> 0.182
+V68 PREDICTED ROW NORM    --> 0.360 / EXPECTED 0.293
+V69                       --> NORM COUNTERFACTUAL CODE READY
+AUTOPILOT                 --> V2 6-STAGE CAMPAIGN PUBLISHED
 AUTOPILOT TRAINING        --> DISABLED / NEW AUTHORIZATION REQUIRED
 New training authorized   --> NO
 New training started      --> NO
 BLIND access in V63/V64   --> 0
-Next step                 --> AUTOPILOT 5-STAGE PILOT / V68 GPU DIAGNOSTIC
+Next step                 --> AUTOPILOT V2 / V69 COUNTERFACTUAL GPU AUDIT
 ```
 
 **Status qualification** --> Earlier V62 GOGIT records `TRAINING_AUTHORIZED=1` and `TRAINING_STARTED=1` for its historical authorized and executed run. V64 reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0` and `SEMANTIC_VALIDATION_COMPLETE=0` for the present diagnostic. They must not be confused.
 
-See the [verified V67 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001.json) and [AUTOPILOT V1 safeguards](autopilot/README.md). Historical V53-V62 details remain documented above and in the phase archives.
+See [verified V68 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001.json), [V69 protocol](phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md) and [AUTOPILOT V2](autopilot/README.md). Historical V53-V62 details remain documented above and in the phase archives.
 
 ---
 
