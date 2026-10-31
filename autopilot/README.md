@@ -1,10 +1,10 @@
 # Mini-Kuzai AUTOPILOT V1 - MODE 2
 
-Status --> **V68 PAD FAILURE DIAGNOSED AND CORRECTED / LOCAL GPU RETEST PENDING / TRAINING DISABLED**
+Status --> **V68 GPU/GOGIT VERIFIED / V69 AUTOPILOT V2 PREPARED / TRAINING DISABLED**
 
 Date --> 2026-10-31
 
-## V68 incident resolved in code - local validation pending
+## V68 incident resolved and GOGIT validated
 
 The first AUTOPILOT execution reached V68, passed eight CPU tests, and then correctly entered `HALTED` when the original V68 GPU diagnostic failed without producing GOGIT output.
 
@@ -12,11 +12,27 @@ The subsequent published [numeric V68 failure report](../reports/assistant-resul
 
 **Confirmed fix** --> with tied input embeddings and output weights, the PAD row participates in softmax output projection even if `padding_idx` suppresses input embedding gradients. V68 now measures the finite PAD row L2 norm as `V68_HEAD_NORM_PAD_X1000` instead of rejecting all nonzero values. The obsolete special-token mean metric was replaced to preserve exactly **30** GOGIT metrics and the 300-second audit timeout.
 
-Ten V68 CPU unit tests are now committed, including acceptance of a nonzero PAD row and rejection of NaN values. They still require local execution on fhc2, as does the corrected GPU audit. **Do not claim GPU success before the next GOGIT report is published.**
+The corrected V68 GPU audit has subsequently **completed and published successfully** as GOGIT step `PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001`, commit [`3d872b9102f7`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/3d872b9102f7708e5bff723ffd0f195ba2e0ee72). It measured a finite PAD norm of **0.182**, tied output weights, no output bias, 4 predicted token IDs, CE 4.733 and 14/36 terminal EOS. The historical failure probe remains preserved independently.
 
 The AUTOPILOT runner's pinned Git blob remains unchanged. The previous `HALTED` campaign is restartable: the same manifest is rechecked, the V65-V67 gates are revalidated, and the corrected V68 audit can be retried. Existing published failure-probe history is preserved.
 
 **Training remains disabled, the V62 checkpoint is unchanged, and BLIND TEST stays closed.**
+
+## AUTOPILOT V2 - first automatic counterfactual and decision branches
+
+V69 is the next approved **read-only** diagnostic, with a distinct campaign ID `phase03-norm-v2`. The new [six-stage campaign](campaigns/phase03-autopilot-v2.json) verifies V67 and V68, runs [V69 norm-equalization counterfactual](../phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md) automatically, publishes numeric GOGIT and records three predetermined result classifications.
+
+V69 compares ORIGINAL logits against HALF and FULL row-norm equalization using **the same frozen hidden states**. Its 30-field output includes diversity, concentration, BPE accuracy and validation CE. It never overwrites parameters or checkpoints.
+
+The runner `tools/run_v69_output_norm_counterfactual_001_job.py` has an explicit reviewed Git blob pin in AUTOPILOT. Existing V1 campaign files and runtime state are not overwritten. Branch classifications are recorded in the local state and **never authorize training**.
+
+To execute the new V2 campaign on fhc2 after pulling a clean main -->
+
+```bash
+/root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --campaign phase03-autopilot-v2.json
+```
+
+Status --> scripts and manifest published to GitHub, local CPU/GPU and V69 GOGIT results not yet verified. The training-runner registry remains empty.
 
 ## Goal
 
