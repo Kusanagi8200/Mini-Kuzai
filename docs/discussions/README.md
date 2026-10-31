@@ -52,7 +52,7 @@ An approved, committed start Markdown file is required before publishing a new r
 
 Prepare `docs/discussions/steps/V74-start.md` on a reviewed commit of main. The filename and version must match the selected Vxx. Example structure, with research-specific text completed and validated before any publication -->
 
-```markdown
+~~~~markdown
 # Mini-Kuzai | V74 - Reviewed research objective
 
 ```text
@@ -77,7 +77,7 @@ Explain the exact authorized experiment and reproducibility safeguards. Keep pri
 ---
 
 ##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
-```
+~~~~
 
 After the reviewed draft is committed, pull main on fhc2 and run the **read-only simulation** -->
 
