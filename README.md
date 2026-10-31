@@ -43,7 +43,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V65-V66** | Token-frequency learning and byte/BPE prediction bias | [V65](phases/MINI-KUZAI-PHASE-03-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.md) · [V66](phases/MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md) |
 | **V67-V68** | Output concentration, tied output head, embedding norms and logit margins | [V67](phases/MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md) · [V68](phases/MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md) |
 | **V69-V70** | In-memory output-norm counterfactual and BF16/FP32 precision control | [V69](phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md) · [V70](phases/MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md) · [V70 GOGIT results](reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json) |
-| **V71 - GPU diagnostic prepared** | Frozen V62 norm-versus-direction attribution, 30 approved numeric metrics; execution pending | [V71 research protocol](phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) · [V71 audit](tools/public-audits/phase03_v71_output_dominance_attribution_001.py) · [V71 tests](tests/test_phase03_v71_output_dominance_attribution_001.py) |
+| **V71 - GOGIT verified** | Frozen V62 norm-versus-direction attribution, 30 numeric metrics; 275 changed argmax positions out of 9170 | [V71 research protocol](phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) · [V71 audit](tools/public-audits/phase03_v71_output_dominance_attribution_001.py) · [V71 tests](tests/test_phase03_v71_output_dominance_attribution_001.py) |
 
 ## Current status - 2026-10-31
 
@@ -59,7 +59,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **VALIDATION cross-entropy** | BF16 original 4.733 / FP32 original 4.732 / HALF 4.892 / FULL 5.048 |
 | **Observed limitation** | Only 4-5 distinct original-projection argmax tokens across 9,170 lexical validation positions |
 | **Safety** | No new training authorized, V62 unchanged, BLIND remains closed |
-| **V71 status** | Read-only audit, unit tests and pinned GOGIT runner published; **local tests / GPU execution / GOGIT report pending** |
+| **V71 status** | Read-only GPU GOGIT completed at [commit dcac14ea](https://github.com/Kusanagi8200/Mini-Kuzai/commit/dcac14ea7286642ec0cd9a670dded7fd981bd99c); **275/9170 argmax changed (3.00%)**, 5 to 7 predicted IDs, CE 4.732 to 5.048 |
 
 **V70 finding -->** BF16/FP32 precision differences do not account for most of V69's cross-entropy degradation under row-norm equalization. The original frozen output projection is retained. Improved numerical loss alone does not establish conversational quality or semantic validity.
 
@@ -80,7 +80,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 
 Update this project index **after verified major milestones**, such as a frozen corpus/architecture revision, published GOGIT diagnostic, approved protocol or controlled training stop. Keep the current state, research-step links and next action accurate; preserve detailed methods and older results in their dedicated documents. **Code publication is not execution**, historical authorization is never renewed implicitly, and there is no background GitHub monitoring or automatic ChatGPT polling.
 
-The [original full README snapshot](README-DETAILED-20261031T192526Z.md) preserves the longer chronology, older experiment notes, architecture tables and historical decisions **without rewriting them**. Some historical status blocks there are superseded by the verified V70 status above.
+The [original full README snapshot](README-DETAILED-20261031T192526Z.md) preserves the longer chronology, older experiment notes, architecture tables and historical decisions **without rewriting them**. Some historical status blocks there are superseded by the verified V71 status above.
 
 All new training requires a separate, reviewed protocol and explicit authorization. Historical V62 approval does not authorize continuation. No BLIND TEST evaluation is triggered by documentation or GOGIT.
 
