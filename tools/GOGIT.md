@@ -34,9 +34,9 @@ Each completed run commits and pushes four **public numerical report** files whe
 
 GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest completed immutable step is -->
 
-`PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001`
+`PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001`
 
-Verified commit --> [`41aed7aef84c`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/41aed7aef84c832e78ae2ac7bfc2f8cd681bd1b7)
+Verified commit --> [`1dcd4e8dc613`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/1dcd4e8dc6138992486f70cdee3620751c4f2940)
 
 Recent completed stages -->
 
@@ -58,15 +58,15 @@ Recent completed stages -->
 | V70 PRECISION CONTROL 001 | **GPU/GOGIT verified**; BF16 original CE 4.733, FP32 original CE 4.732, FULL CE 5.048, no new training or BLIND access |
 | V71 OUTPUT DOMINANCE ATTRIBUTION 001 | **GPU/GOGIT verified**; 275 of 9170 lexical top-1 predictions changed (3.00%), 5 to 7 distinct predicted IDs, CE worsened 4.732 to 5.048 |
 | V72 HIDDEN-STATE ANISOTROPY 001 | **GPU/GOGIT verified**; centered PC1 82.88%, effective rank 1.44 and 2889/9170 predictions changed under mean-centering |
-| V73 PRINCIPAL AXIS ATTRIBUTION 001 | Read-only audit, CPU tests and pinned runner published; **GPU/GOGIT pending** |
+| V73 PRINCIPAL AXIS ATTRIBUTION 001 | **GPU/GOGIT verified**; CENTER 2832 correct / 15 distinct IDs, MINUS_PC1 1124 / 522, MINUS_PC12 818 / 715, PC1_ONLY 2455 / 2 |
 
-GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67 through V72 each published exactly 30 numerical metrics; V73 declares 30 allowlisted fields but has not been executed. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
+GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67 through V73 have each published exactly 30 allowlisted numerical metrics; no training or semantic validation follows from these read-only diagnostics. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
 Read `reports/assistant-results/latest.json` for the latest published numeric report and `reports/assistant-results/history/` for immutable previous steps. Never overwrite an existing STEP_ID.
 
 A previous `TRAINING_AUTHORIZED=1` in V62 historical run reports is **not** an authorization for a new run. The V64 diagnostic reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `SEMANTIC_VALIDATION_COMPLETE=0`. The latter flag expressly states that the numerical learning diagnostic is not human semantic validation.
 
-See [verified V72 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001.json) and the [V73 research protocol](../phases/MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md). The [V73 pinned runner](run_v73_principal_axis_attribution_001_job.py) is a standalone read-only diagnostic, not an AUTOPILOT stage; no V73 result has been published.
+See [verified V73 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.json) and the [V73 research record](../phases/MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md). The [pinned V73 runner](run_v73_principal_axis_attribution_001_job.py) executed independently of AUTOPILOT. Its result does not authorize any training or access to BLIND TEST.
 
 ## Adding a future audit
 
