@@ -1552,6 +1552,16 @@ METRIC_KEYS = {
     "V68_HEAD_PRED_NORM_MEAN_X1000",
     "V68_HEAD_GOLD_NORM_MEAN_X1000",
     "V68_HEAD_GPU_PEAK_MIB",
+    "V68_FAIL_DIAG_PASS",
+    "V68_FAIL_BLIND_ACCESS",
+    "V68_FAIL_ORIGINAL_FAILED",
+    "V68_FAIL_DURATION_SECONDS",
+    "V68_FAIL_EXCEPTION_CLASS_ID",
+    "V68_FAIL_CAUSE_ID",
+    "V68_FAIL_SOURCE_LINE",
+    "V68_FAIL_SOURCE_FUNCTION_ID",
+    "V68_FAIL_LAST_FILE_FAMILY",
+    "V68_FAIL_LAST_LINE",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1859,6 +1869,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v68_head:
         # Read-only output-head logits are not a semantic validation gate.
+        return False
+    if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
+        # A numeric fault report can never be semantic training validation.
         return False
 
     if tokenizer_workstream or architecture_workstream:
