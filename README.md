@@ -245,7 +245,7 @@ The V52 pause checkpoint is now historical. V53 resumed public-only corpus conso
 
 **V53 - public corpus consolidation and controlled TRAIN expansion --> ** The [V53 workstream](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md) has progressed from cross-cycle accounting through repair planning, derivative review, eligibility, admission and behavior-by-behavior TRAIN completion. The last published GoGit state contains **107 unique canonical TRAIN records across all 29 TRAIN semantic groups**. B14 EMOTIONAL EXPRESSION has now been authored and reviewed at the three-record MEDIUM target; one target wording was corrected during semantic review. The audited TRAIN corpus contains **107 unique records across all 29 TRAIN groups**, confirmed by the published B14C GOGIT audit. Audited provenance is **105 `phase03-designed` records plus 2 admitted public SmolTalk derivatives**. V54 subsequently completed and globally closed the **36-record / 18-group VALIDATION corpus**. BLIND TEST authoring is now authorized, no BLIND records existed at V54 closure, and model training remains unauthorized.
 
-### Phase 03 current state - 2026-10-28
+### Phase 03 corpus and architecture baseline - 2026-10-28 (historical)
 
 The controlled conversational corpus is closed at **179 conversations across 65 semantic groups** -->
 
@@ -422,7 +422,7 @@ See -->
 - [V59 pause checkpoint - 2026-10-25](phases/MINI-KUZAI-PHASE-03-V59-PAUSE-CHECKPOINT-2026-10-25.md)
 - [V59 Active-Learning Sample 003 results](reviews/smoltalk-v59-active-sample-003/RESULTS-003.md)
 
-### V60-V62 training evolution - current checkpoint
+### V60-V62 training evolution - historical training checkpoints
 
 V59 established the frozen persona-first training identity at **272 conversations / 345 segments / 295416 unique tokens**. The subsequent experiments kept architecture, tokenizer, corpus, stream weighting and the V60 corrected initialization controlled so objective changes could be interpreted directly.
 
@@ -489,9 +489,35 @@ BLIND_ACCESS               = 0
 
 Authorized V62 window --> **4 cycles / 1181664 tokens / 145 optimizer steps**, with a mandatory continuation review at **cycle 2** and the V60 scheduler horizon preserved at **577 steps**.
 
-Current resume point --> **V62 TRAIN RUN 001 - CYCLE 2 MANDATORY REVIEW**.
+Historical V62 stop --> **cycle-2 mandatory review completed at 69 optimizer steps / 597982 exposure tokens**. No new continuation is authorized by this historical run.
 
 See the [V62 pause checkpoint - 2026-10-28](phases/MINI-KUZAI-PHASE-03-V62-PAUSE-CHECKPOINT-2026-10-28.md).
+
+---
+
+### V63-V64 verified results - 2026-10-31
+
+**Current checkpoint --> V64 LANGUAGE LEARNING DIAGNOSTIC 002 completed. V65 proposed, not executed.**
+
+V62 training stopped at its mandatory cycle-2 gate after **69 optimizer steps / 597982 exposed tokens**. Its frozen checkpoint is retained. V63 and V64 are inference/diagnostic workstreams, **not** new training sessions.
+
+- **V63 decoding** --> greedy termination 0/6 with severe token repetition; top-k 40 / top-p 0.9 / temperature 0.8 achieved **41/48 EOS completions** over eight seeds, compared with **27/48** for temperature-only decoding
+- **V63 language screen** --> 24 private generations, **20/24 EOS**, **0/24 invalid UTF-8**, but **10/24** rule-flagged as linguistically suspicious and **2/24** without regex-recognized words. The interrupted human semantic review was **not completed**
+- **V64 runtime diagnosis** --> original audit 001 exceeded GOGIT's 300-second timeout; bounded trace found **98.270 s** building TRAIN and an unfinished training-boundary-index step
+- **V64 optimized audit 002** --> duplicate corpus construction and unnecessary boundary-index generation removed while keeping frozen integrity checks. GOGIT published successfully at commit [`9d8dcb62`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/9d8dcb62b6e9bc3826f95eb93953c95c28835132)
+- **V64 next-token loss** --> TRAIN exploratory sample **4.664 CE / 33.97% top-1**, full VALIDATION **4.733 CE / 29.20% top-1**. Terminal EOS top-1 **14/36**, reproducing historical V63
+- **V64 tokenizer findings** --> roughly **51-53%** of non-special token occurrences are raw-byte tokens. VALIDATION mean NLL **3.386** on byte targets versus **6.268** on BPE-merged targets. Different token-frequency distributions prevent declaring the tokenizer defective
+
+The 12 TRAIN segments sampled for V64 are **not representative** of all 345 TRAIN segments. The V63 lexical screen is **not** semantic validation. The model has learned numerical next-token structure, but the available generated texts do **not** demonstrate conversational intelligibility.
+
+**Next gate --> V65 TOKEN LEARNING AND TRAINING READINESS (proposed)**. Investigate token frequency, target-specific accuracy and historical learning progression before deciding whether to authorize any additional training, tokenizer revision or model capacity change. The **BLIND TEST remains closed**.
+
+References -->
+
+- [V64 closure and V65 readiness](phases/MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md)
+- [Latest successful V64-002 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V64-LANGUAGE-LEARNING-DIAGNOSTIC-002.json)
+- [V63 decoding robustness](reports/assistant-results/history/PHASE03-SMOLTALK-V63-DECODING-ROBUSTNESS-001.json)
+- [V63 automatic language screening](reports/assistant-results/history/PHASE03-SMOLTALK-V63-AUTOMATIC-LANGUAGE-SCREEN-001.json)
 
 ---
 
@@ -573,47 +599,39 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 
 ---
 
-#### **`CURRENT STATUS`**
+#### **`CURRENT STATUS - 2026-10-31`**
 
 ```text
-Phase 01 checkpoint       : FROZEN
-Phase 02 KV cache         : PRESERVED
-Phase 03                  : V57 ARCHITECTURE PREPARATION
-Canonical TRAIN records   : 107 AUDITED
-TRAIN semantic groups     : 29 / 29 AUDITED
-TRAIN provenance          : 105 PHASE03-DESIGNED / 2 SMOLTALK
-VALIDATION records        : 36 / 36 FROZEN
-VALIDATION groups         : 18 / 18 FROZEN
-Validation closure        : COMPLETE - SEMANTIC_VALIDATION_COMPLETE=1
-BLIND TEST records        : 36 / 36 FROZEN
-BLIND TEST groups         : 18 / 18 FROZEN
-BLIND behavior freezes    : 18 / 18 VERIFIED
-Global BLIND closure      : COMPLETE - PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001
-Total controlled corpus   : 179 RECORDS / 65 GROUPS
-Cross-split exact IDs     : 0
-Cross-split group overlap : 0
-Exact cross-split prompts : 0
-Authoring policy          : V0.6
-Semantic split guard      : ACTIVE
-SmolTalk v0.4             : 8000 SOURCE / 1139 V44 PROVISIONAL
-OASST1                    : ASSESSED - NOT SELECTED FOR CURRENT MIX
-Private corpus pipeline   : LOCAL-ONLY - PAUSED
-Private source material   : NOT COMMITTED
-Tokenizer                 : BYTE-BPE-WHITESPACE / 1024 FROZEN
-Phase 03 architecture     : NOT SELECTED YET
-Phase 03 training         : NOT STARTED
-Training authorized       : NO
+Phase 01 checkpoint       --> FROZEN
+Phase 02 KV cache         --> PRESERVED
+Phase 03                  --> V64 COMPLETED / V65 PROPOSED
+Controlled TRAIN          --> 107 RECORDS / 29 GROUPS
+VALIDATION                --> 36 RECORDS / 18 GROUPS FROZEN
+BLIND TEST                --> 36 RECORDS / 18 GROUPS FROZEN / CLOSED
+Total controlled corpus   --> 179 RECORDS / 65 GROUPS
+V59 TRAINING MIX          --> 272 CONVERSATIONS / 345 SEGMENTS
+V59 UNIQUE TOKENS         --> 295416
+V56 TOKENIZER             --> BYTE-BPE WHITESPACE / 1024 FROZEN
+V58/V60 MODEL             --> 1,184,512 PARAMETERS / FROZEN
+V62 CHECKPOINT            --> CYCLE 2 FROZEN
+V62 OPTIMIZER STEPS       --> 69
+V62 EXPOSURE TOKENS       --> 597982
+V63 TOP-K/TOP-P EOS       --> 41/48 OVER 8 SEEDS
+V63 AUTO LANGUAGE SCREEN  --> 10/24 RULE-FLAGGED / NOT SEMANTIC VALIDATION
+V64 TRAIN SAMPLE CE       --> 4.664 / 12 EXPLORATORY SEGMENTS
+V64 VALIDATION CE         --> 4.733 / 36 FROZEN SEGMENTS
+V64 VALIDATION TOP-1      --> 29.20%
+V64 EOS TERMINAL TOP-1    --> 14/36
+V64 GOGIT                 --> DIAGNOSTIC 002 PUBLISHED
+New training authorized   --> NO
+New training started      --> NO
+BLIND access in V63/V64   --> 0
+Next step                 --> V65 DIAGNOSTIC PROTOCOL PROPOSAL
 ```
 
-V53 froze the canonical TRAIN corpus at **107 records across all 29 TRAIN groups**, with **105 `phase03-designed` records and 2 admitted public SmolTalk derivatives**.
+**Status qualification** --> Earlier V62 GOGIT records `TRAINING_AUTHORIZED=1` and `TRAINING_STARTED=1` for its historical authorized and executed run. V64 reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0` and `SEMANTIC_VALIDATION_COMPLETE=0` for the present diagnostic. They must not be confused.
 
-V54 then authored, independently reviewed, integrity-checked and froze **36 VALIDATION records across all 18 reserved validation groups**. The global closure step `PHASE03-SMOLTALK-V54-VALIDATION-CLOSURE-001` independently confirmed all 18 freeze histories, 18 signoffs, 18 semantic passes, zero exact TRAIN/VALIDATION collisions and zero duplicate normalized validation prompts. The GOGIT state now records `semantic_validation_complete=true` and `BLIND_AUTHORING_AUTHORIZED=1`.
-
-V55 then authored, reviewed, integrity-checked and froze **36 BLIND TEST records across all 18 reserved blind groups**. B02 and B03 required explicit versioned correction before freeze because screening detected excessive proximity to existing same-behavior material. The final behavior-level state is **36 / 36 BLIND records and 18 / 18 BLIND behaviors frozen**, with zero exact cross-split ID, semantic-group or normalized user-prompt collisions.
-
-The V55 global BLIND closure gate `PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001` has now been executed and published successfully. The controlled TRAIN / VALIDATION / BLIND corpus boundary is closed. V56 has now selected and frozen the Phase 03 tokenizer as a 1024-token byte-level BPE with whitespace pretokenization. Model architecture selection, training-mixture finalization and model training remain pending or unauthorized.
-
-See the [V55 BLIND freeze checkpoint](phases/MINI-KUZAI-PHASE-03-V55-BLIND-FREEZE.md), [V54 validation closure checkpoint](phases/MINI-KUZAI-PHASE-03-V54-VALIDATION-CLOSURE.md), [V53 corpus consolidation status](phases/MINI-KUZAI-PHASE-03-V53-CORPUS-CONSOLIDATION.md), [V52 annotated results](reviews/smoltalk-v52/RESULTS-001.md), [V51 verified results](reviews/smoltalk-v51/RESULTS-001.md), [V49 completed results](reviews/smoltalk-v48/V49-HOLD-RESOLUTION.md), the [historical 2026-10-10 pause checkpoint](phases/MINI-KUZAI-PHASE-03-PAUSE-2026-10-10.md) and the [private corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md).
+See the [verified V64 closure and V65 preparation](phases/MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md). Historical V53-V62 details remain documented above and in the phase archives.
 
 ---
 
