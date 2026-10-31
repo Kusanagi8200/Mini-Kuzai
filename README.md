@@ -75,6 +75,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | [Installation](technical/installation/README.md) | Reference environment and setup |
 | [Checkpoint inventory](technical/checkpoints/README.md) | Historical Phase 01 checkpoint metadata |
 | [GOGIT](tools/GOGIT.md) | Verified numeric audit publication, immutable history and manual ChatGPT review |
+| [GitHub Discussions and KUZ-DIN Publisher](docs/discussions/README.md) | Approved V74+ START / GOGIT events, signed GitHub webhook and SQLite PREPARE validation, with live LinkedIn posts disabled |
 | [AUTOPILOT](autopilot/README.md) | Bounded diagnostic campaigns, reproducibility checks and training restrictions |
 | [Latest GOGIT report](reports/assistant-results/latest.json) | Most recently published numerical results |
 | [Workflow policy](PROJECT-WORKFLOW-POLICY.md) | Fail-closed automation and authorization boundaries |
