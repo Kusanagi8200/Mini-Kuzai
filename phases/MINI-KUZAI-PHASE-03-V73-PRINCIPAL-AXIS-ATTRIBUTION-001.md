@@ -2,7 +2,7 @@
 
 Date --> 2026-10-31
 
-Status --> **READ-ONLY AUDIT / CPU TESTS / SOURCE-PINNED GOGIT RUNNER PUBLISHED; LOCAL EXECUTION PENDING**
+Status --> **V73 GPU/GOGIT VERIFIED / V62 FROZEN / NO TRAINING OR BLIND ACCESS**
 
 ## Scientific objective
 
@@ -49,6 +49,29 @@ Exactly **30 nonnegative integer fields**, comprising 3 safety fields and 27 `V7
 
 GOGIT must never publish individual examples, model activations, eigenvectors, raw cosine signed values, text or token IDs.
 
+## Published V73 findings
+
+Verified immutable GOGIT --> [V73 principal-axis numeric report](../reports/assistant-results/history/PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.json)
+
+GOGIT commit --> [1dcd4e8dc613](https://github.com/Kusanagi8200/Mini-Kuzai/commit/1dcd4e8dc6138992486f70cdee3620751c4f2940)
+
+On the 9170 frozen lexical VALIDATION positions, the centered PC1 and PC2 explain **82.88%** and **8.47%** of centered hidden-state variance.
+
+| Projection | Distinct argmax IDs | Dominant top-1 share | Correct top-1 | Mean top1/top2 margin |
+| --- | ---: | ---: | ---: | ---: |
+| CENTER | 15 | 57.88% | 2832 (30.88%) | 0.229 |
+| MINUS_PC1 | 522 | 20.74% | 1124 (12.26%) | 0.059 |
+| MINUS_PC12 | 715 | 11.80% | 818 (8.92%) | 0.047 |
+| PC1_ONLY | 2 | 70.34% | 2455 (26.77%) | Not published |
+
+Changes relative to CENTER --> 6841/9170 (74.60%) argmax predictions switch when PC1 is removed and 8139/9170 (88.76%) when PC1 and PC2 are removed. For MINUS_PC1, switches are split into 3068 true-byte-target positions and 3773 true-merged-BPE-target positions.
+
+The mean absolute cosine between PC1 and the **CENTER-selected** output rows is 0.433; the corresponding mean cosine with true target output rows is 0.274.
+
+**Interpretation -->** Subtracting principal directions decorrelates output prediction counts but removes a large amount of predictive information. PC1_ONLY produces just two top-1 IDs yet 2455 correct positions; this refers to the number of exact top-1 outcomes, not necessarily an overlap of correct positions with CENTER. It is not evidence that 26.77% of arbitrary natural-language questions can be answered with one dimension. The ablations are fitted and scored on the same VALIDATION split and do not prove independent generalization, generation quality or causality.
+
+**Decision -->** Retain the unmodified V62 checkpoint and output projection. Do **not** promote PC1 deletion, PC1-only projections or VALIDATION-fitted mean-centering into a deployment patch. Further work should distinguish representation collapse from class-frequency, teacher-forcing and training-objective effects using a separately reviewed read-only analysis. No new training or BLIND TEST access is authorized.
+
 ## Decision criteria
 
 A reduction in top-token concentration accompanied by loss of exact prediction accuracy is not an improvement by default. Because `mu` and the principal axes are fitted on VALIDATION itself, any apparently beneficial change is **in-sample diagnostic evidence only**. A future learned or trained intervention would require a new independent experiment, immutable protocol and explicit authorization; the BLIND split cannot be opened as a convenient evaluation set.
@@ -72,7 +95,7 @@ Local fhc2 command, on a synchronized and clean `main` -->
 cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/run_v73_principal_axis_attribution_001_job.py
 ```
 
-Following successful completion, respond `GOGIT` for review of the immutable numeric report. **Neither GPU execution nor a V73 result is claimed as completed here.**
+The historical local runner has now published a verified immutable numerical GOGIT result. Do not reissue the same STEP_ID or interpret documentation publication as renewed authorization.
 
 ---
 
