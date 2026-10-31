@@ -1,0 +1,131 @@
+{
+  "schema": "mini-kuzai-autopilot-campaign-v1",
+  "campaign_id": "phase03-readonly-v1",
+  "mode": "bounded",
+  "max_wall_seconds": 7200,
+  "steps": [
+    {
+      "id": "verify-v65",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001",
+      "required": true,
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001",
+          "metric": "V65_FREQ_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001",
+          "metric": "V65_FREQ_VAL_LEXICAL",
+          "op": "eq",
+          "value": 9170
+        }
+      ],
+      "when": [],
+      "runner": null
+    },
+    {
+      "id": "verify-v66-a",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-A-001",
+      "required": true,
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-A-001",
+          "metric": "V66_BIAS_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-A-001",
+          "metric": "V66_BIAS_MERGE_TARGETS",
+          "op": "eq",
+          "value": 4294
+        }
+      ],
+      "when": [],
+      "runner": null
+    },
+    {
+      "id": "verify-v66-b",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-B-001",
+      "required": true,
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-B-001",
+          "metric": "V66_BIAS_M1000P_COUNT",
+          "op": "gt",
+          "value": 0
+        }
+      ],
+      "when": [],
+      "runner": null
+    },
+    {
+      "id": "verify-v67",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001",
+      "required": true,
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001",
+          "metric": "V67_CONC_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001",
+          "metric": "V67_CONC_VAL_LEXICAL",
+          "op": "eq",
+          "value": 9170
+        }
+      ],
+      "when": [],
+      "runner": null
+    },
+    {
+      "id": "audit-v68-if-collapse",
+      "kind": "diagnostic",
+      "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+      "runner": "v68-head",
+      "required": false,
+      "when": [
+        {
+          "step": "PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001",
+          "metric": "V67_CONC_PRED_DISTINCT",
+          "op": "le",
+          "value": 8
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001",
+          "metric": "V67_CONC_TOP1_SHARE_BP",
+          "op": "ge",
+          "value": 7000
+        }
+      ],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+          "metric": "V68_HEAD_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+          "metric": "V68_HEAD_TIED_WEIGHTS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+          "metric": "V68_HEAD_PRED_DISTINCT",
+          "op": "eq",
+          "value": 4
+        }
+      ]
+    }
+  ]
+}
