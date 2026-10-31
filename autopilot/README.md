@@ -1,20 +1,22 @@
 # Mini-Kuzai AUTOPILOT V1 - MODE 2
 
-Status --> **FIRST LOCAL V68 ATTEMPT HALTED / NUMERIC FAILURE-PROBE PUBLISHED AS CODE / TRAINING DISABLED**
+Status --> **V68 PAD FAILURE DIAGNOSED AND CORRECTED / LOCAL GPU RETEST PENDING / TRAINING DISABLED**
 
 Date --> 2026-10-31
 
-## First AUTOPILOT execution - V68 failure and correction
+## V68 incident resolved in code - local validation pending
 
-The initial local AUTOPILOT campaign reached V68 and completed all **eight** V68 CPU tests. The original V68 GPU audit then exited with status **1**. GOGIT printed `Audit exited with status 1; nothing published`; AUTOPILOT correctly entered `HALTED`.
+The first AUTOPILOT execution reached V68, passed eight CPU tests, and then correctly entered `HALTED` when the original V68 GPU diagnostic failed without producing GOGIT output.
 
-The original Python exception was not present in the GOGIT response and **has not yet been diagnosed**. Do not conclude that V68 succeeded or assume which invariant failed.
+The subsequent published [numeric V68 failure report](../reports/assistant-results/history/PHASE03-SMOLTALK-V68-FAILURE-PROBE-001.json) (commit `73402e216896`) confirmed **cause ID 5**, a `RuntimeError` raised by the old `summarize_head()` assertion that the PAD embedding row must remain zero.
 
-An explicit numeric error-publication pipeline has now been added. On a future V68 runner failure, AUTOPILOT will automatically invoke the pinned `phase03_v68_failure_probe_001.py`, publish **13 numeric counters** to a separate immutable GOGIT history step `PHASE03-SMOLTALK-V68-FAILURE-PROBE-001` and remain **HALTED**. The numeric taxonomy records exception class, predefined cause ID and source line but **no traceback, raw exception message or private content**.
+**Confirmed fix** --> with tied input embeddings and output weights, the PAD row participates in softmax output projection even if `padding_idx` suppresses input embedding gradients. V68 now measures the finite PAD row L2 norm as `V68_HEAD_NORM_PAD_X1000` instead of rejecting all nonzero values. The obsolete special-token mean metric was replaced to preserve exactly **30** GOGIT metrics and the 300-second audit timeout.
 
-The original V68 audit source and V62 checkpoint are untouched. Error reporting does not change the global 30-metric limit or authorize training. See [V68 error-probe protocol](../phases/MINI-KUZAI-PHASE-03-V68-FAILURE-PROBE-001.md).
+Ten V68 CPU unit tests are now committed, including acceptance of a nonzero PAD row and rejection of NaN values. They still require local execution on fhc2, as does the corrected GPU audit. **Do not claim GPU success before the next GOGIT report is published.**
 
-The next local command repeats the initial checks, then retries the previously failed V68 audit and, if it fails again, automatically publishes the sanitized error report. Reply `GOGIT` to retrieve and interpret it. Do not run arbitrary correction or extra training before the report is examined.
+The AUTOPILOT runner's pinned Git blob remains unchanged. The previous `HALTED` campaign is restartable: the same manifest is rechecked, the V65-V67 gates are revalidated, and the corrected V68 audit can be retried. Existing published failure-probe history is preserved.
+
+**Training remains disabled, the V62 checkpoint is unchanged, and BLIND TEST stays closed.**
 
 ## Goal
 
@@ -45,7 +47,7 @@ GitHub is **not an executable shell queue**. No downloaded manifest may introduc
 | 4 | Verify V67 GOGIT concentration | Require PASS and frozen VALIDATION inventory |
 | 5 | Run V68 output-head diagnostic | **Only if** V67 predicts at most 8 distinct tokens and one token represents at least 70% of lexical argmax predictions |
 
-Stage 5 is a real new CUDA/BF16 diagnostic and uses the reviewed `tools/run_v68_output_head_001_job.py`, which performs eight CPU tests, the GPU audit, GOGIT commit/push and remote report validation. A previously published valid report is reused. No training is invoked.
+Stage 5 is a real new CUDA/BF16 diagnostic and uses the reviewed `tools/run_v68_output_head_001_job.py`, which performs ten CPU tests, the GPU audit, GOGIT commit/push and remote report validation. A previously published valid report is reused. No training is invoked.
 
 If the V67 branch condition does not hold, V68 is skipped and the campaign records the deterministic alternative. On any integrity error, drift, timeout or invalid GOGIT data, it stops.
 
@@ -94,7 +96,7 @@ From the clean repository root, run -->
 git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_mini_kuzai_autopilot.py' -v && /root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_phase03_v68_output_head_001.py' -v && /root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --check-only && /root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py
 ```
 
-The command stops if any test or preflight fails. The first local V68 attempt failed before GOGIT publication. The next run checks the new automatic failure-report path. This is not a confirmed fix of the scientific V68 error. After GOGIT publication, respond `GOGIT` for review of the numerical result.
+The command stops if any test or preflight fails. The first local V68 attempt failed on a nonzero PAD tied-output row. The corrected source removes that invalid zero assertion, preserves the no-BLIND and no-training gates, and must be verified by the next successful GOGIT run. After GOGIT publication, respond `GOGIT` for review of the numerical result.
 
 The optional systemd unit has **not** been deployed or enabled. Install only after the manual execution and journal have been verified. A systemd service does not itself authorize new experiments.
 
