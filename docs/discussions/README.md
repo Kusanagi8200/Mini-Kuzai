@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions publication workflow
 
-Status --> **THREE HISTORICAL POSTS STAGED / NOT YET PUBLISHED**
+Status --> **THREE HISTORICAL POSTS PUBLISHED AND VERIFIED / FUTURE VXX WORKFLOW NOT YET IMPLEMENTED**
 
 Publication target --> [Kusanagi8200/KuzAI Discussions](https://github.com/Kusanagi8200/KuzAI/discussions)
 
@@ -10,13 +10,13 @@ Source repository --> `Kusanagi8200/Mini-Kuzai`
 
 ## Historical introduction series
 
-| Order | GitHub discussion title | Reviewed Markdown source |
-| --- | --- | --- |
-| 01 | Mini-Kuzai - Why Build a Language Model From Scratch? | [Origins](history/01-origins.md) |
-| 02 | Mini-Kuzai - From a Transformer to a Developing AI Personality | [Learning design](history/02-learning-design.md) |
-| 03 | Mini-Kuzai - What the First Training Experiments Revealed | [Training results through V73](history/03-first-training-results.md) |
+| Order | GitHub discussion title | Source | Published discussion |
+| --- | --- | --- | --- |
+| 01 | Mini-Kuzai - Why Build a Language Model From Scratch? | [Origins](history/01-origins.md) | [Discussion #2](https://github.com/Kusanagi8200/KuzAI/discussions/2) |
+| 02 | Mini-Kuzai - From a Transformer to a Developing AI Personality | [Learning design](history/02-learning-design.md) | [Discussion #3](https://github.com/Kusanagi8200/KuzAI/discussions/3) |
+| 03 | Mini-Kuzai - What the First Training Experiments Revealed | [Training results through V73](history/03-first-training-results.md) | [Discussion #4](https://github.com/Kusanagi8200/KuzAI/discussions/4) |
 
-The actual GitHub discussion titles use `Mini-Kuzai | 01`, `| 02` and `| 03` for predictable deduplication. Each body starts with the exact ASCII terminal-style header approved for the project. All contents are public and refer only to documented project milestones.
+The actual GitHub discussion titles use `Mini-Kuzai | 01`, `| 02` and `| 03` for predictable deduplication. Each body starts with the exact ASCII terminal-style header approved for the project. All contents are public and refer only to documented project milestones. Historical publication completed with the local `--publish` run reporting `CREATED=3` and `PUBLICATION=VERIFIED`; the three public URL identifiers are recorded above. The run's result was provided by the operator.
 
 ## Local execution on fhc2
 
@@ -44,7 +44,7 @@ This script **does not create issues or pull requests** and does not modify Mini
 
 ## Future Vxx discussions
 
-After historical publication, the intended workflow is one discussion per Vxx: initial post at the start of a step, then a comment after its GOGIT numerical report is independently verified. Future step-opening/comment-closing commands need separate implementation and verification; the historical publisher does not claim to support them yet.
+With historical publication completed, the intended workflow is one discussion per Vxx: initial post at the start of a step, then a comment after its GOGIT numerical report is independently verified. Future step-opening/comment-closing commands need separate implementation and verification; the historical publisher does not claim to support them yet.
 
 The fixed ASCII heading uses `PROJECT`, `PHASE`, `STEP`, and `STATUS`, with status changed for started, blocked, or GOGIT-verified experiments. A numeric GOGIT PASS must never be presented as semantic or conversational validation without independent evidence.
 
