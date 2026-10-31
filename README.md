@@ -18,7 +18,7 @@ Each stage is documented through source code, reproducible protocols, frozen che
 
 ## Navigate the project
 
-**[Phases](#development-phases)** · **[Research steps V48-V70](#phase-03-research-steps)** · **[Current status](#current-status--2026-10-31)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
+**[Phases](#development-phases)** · **[Research steps V48-V70](#phase-03-research-steps)** · **[Current status](#current-status---2026-10-31)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
 
 ## Development phases
 
