@@ -1546,9 +1546,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v63_automatic_language_screen_001.py"
     )
 
-    v64_language_diagnostic = tracked == (
-        "tools/public-audits/phase03_v64_language_learning_diagnostic_001.py"
-    )
+    v64_language_diagnostic = tracked in {
+        "tools/public-audits/phase03_v64_language_learning_diagnostic_001.py",
+        "tools/public-audits/phase03_v64_language_learning_diagnostic_002.py",
+    }
 
     v64_runtime_trace = tracked == (
         "tools/public-audits/phase03_v64_runtime_trace_001.py"
