@@ -458,62 +458,46 @@ Current V53 evidence -->
 - [Derivative-003 independent review audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-REVIEW-001.json)
 - [Derivative-003 eligibility audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json)
 
-## Current status
+## Current status - 2026-10-31
+
+**V64 LANGUAGE LEARNING DIAGNOSTIC 002 --> PUBLISHED AND VERIFIED. V65 --> PROPOSED, NOT EXECUTED.**
 
 ```text
-PHASE 03                  : V62 PAUSED CLEAN - CONTROL PLANE FROZEN
-Primary axis              : COGNITIVE AND CREATIVE PERSONA
-Phase 01 checkpoint       : FROZEN
-Phase 02 KV cache         : PRESERVED
-
-Controlled TRAIN          : 107 RECORDS / 29 GROUPS
-VALIDATION                : 36 RECORDS / 18 GROUPS FROZEN
-BLIND TEST                : 36 RECORDS / 18 GROUPS FROZEN
-Total controlled corpus   : 179 RECORDS / 65 GROUPS
-
-Tokenizer                 : V56 FROZEN
-Serializer                : V57 FROZEN
-Architecture baseline     : V58 FROZEN
-Architecture parameters   : 1,184,512
-Context length            : 2048
-
-V59 final training mix    : FINALIZED
-Training conversations    : 272
-Training segments         : 345
-Unique training tokens    : 295416
-Persona exposure target   : 76.58 PERCENT
-
-V60 initialization        : CORRECTED / FROZEN
-V60 training              : COMPLETE / PLATEAU
-V60 final val loss        : 3.429395
-V60 free EOS              : 0 / 6
-V60 repeat trigram        : 95.17 PERCENT
-
-V61 cycle-2 review        : COMPLETE
-V61 terminal EOS top-1    : 24 / 36
-V61 intermediate EOS top1 : 8 / 13
-V61 nonterminal false EOS : 105 / 9170
-V61 continuation          : REJECTED
-
-V62 objective             : PAIRWISE BOUNDARY MARGIN
-V62 margin                : 0.25
-V62 terminal weight       : 8.00
-V62 intermediate weight   : 17.358491
-V62 control plane         : FROZEN / VERIFIED
-V62 training authorized   : YES
-V62 training started      : NO
-V62 mandatory review      : CYCLE 2
-V62 max optimizer steps   : 145
-V62 max exposure tokens   : 1181664
-V62 scheduler horizon     : 577
-
-GPU                       : RTX 5060 LAPTOP 8 GB
-CUDA / BF16               : PASS
-BLIND TEST                : CLOSED
-
-NEXT OPERATION            : V62 TRAIN RUN 001 - CYCLE 2 REVIEW
+Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
+Controlled TRAIN           --> 107 records / 29 groups
+VALIDATION                 --> 36 records / 18 groups, frozen
+BLIND TEST                 --> 36 records / 18 groups, frozen and closed
+Total controlled corpus    --> 179 records / 65 groups
+V59 training mix           --> 272 conversations / 345 segments / 295416 unique tokens
+Tokenizer                  --> V56 BYTE-BPE WHITESPACE / 1024
+Architecture               --> V58 / V60, 1,184,512 parameters
+V62 checkpoint             --> cycle 2, stopped and frozen
+V62 optimizer steps        --> 69
+V62 exposed tokens         --> 597982
+V62 VALIDATION CE          --> 4.732514
+V63 top-k/top-p EOS        --> 41 / 48 over eight seeds
+V63 automatic screen       --> 10 / 24 suspected surface-form failures
+V63 human rating review    --> suspended and incomplete
+V64 TRAIN sample           --> 12 segments / CE 4.664 / top-1 33.97%
+V64 VALIDATION             --> 36 segments / CE 4.733 / top-1 29.20%
+V64 EOS terminal top-1     --> 14 / 36
+V64 GOGIT                  --> LANGUAGE LEARNING DIAGNOSTIC 002 published
+New training authorized    --> NO
+New training started       --> NO
+BLIND TEST access          --> 0 during V63/V64
+Next workstream            --> V65 TOKEN LEARNING AND TRAINING READINESS
 ```
-## Current checkpoint
+
+The previous V62 GOGIT training flags describe **historical V62 execution** and must not be reused as a new V65 training authorization. The V64 diagnostic flags are `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`.
+
+The 12 TRAIN segments in V64 form a deliberately small exploratory sample, and V63's lexical checks do not establish semantic correctness. The frozen V62 checkpoint remains the only model used for these inference-only diagnostics.
+
+Primary checkpoint --> [V64 closure and V65 readiness](MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md)
+
+## Historical checkpoint chronology - V53 to V59
+
+The following corpus and mixture narrative is preserved as a historical sequence. The verified current status is the V64 closure above.
+
 
 V53 closed canonical TRAIN at 107 records across all 29 TRAIN semantic groups.
 
@@ -895,28 +879,30 @@ Authorized V62 limits -->
 
 Persistent trainer reconstruction is verified at **345 segments / 295416 unique tokens**, with **345 terminal boundaries / 159 intermediate boundaries**. The schedule preview contains **2263 segment exposures / 1181302 tokens** with only **4 basis points** maximum stream-share deviation.
 
-### Current resume operation
+### V62 mandatory-review closure and V63/V64 diagnostic evolution
 
-**V62 TRAIN RUN 001 - CYCLE 2 MANDATORY REVIEW**
+The V62 mandatory cycle-2 review **has been executed**, not merely prepared. The model stopped after **69 optimizer steps / 597982 exposed tokens**, without continuation to cycle 4. The cycle-2 checkpoint remains frozen. The following V63/V64 evaluations used that checkpoint in read-only mode.
 
-The next run must start from the fresh V60 initialization. The V61 cycle-2 checkpoint was used only as diagnostic evidence for V62 parameter selection and must not be used as the V62 starting checkpoint.
+**V63 decoding** --> corrected EOS terminal top-1 **14/36**. The greedy decoder exhibited 0/6 EOS completions and strong repetition. Under eight-seed robustness testing, top-k 40 / top-p 0.9 / temperature 0.8 achieved **41/48** EOS completions, versus **27/48** for temperature-only.
 
-After cycle 2, compare -->
+**V63 language screen** --> on 24 private generated outputs, **20/24** ended with EOS, **0/24** were invalid UTF-8, **10/24** were flagged by lexical-form heuristics, **2/24** had zero regex-recognized words. Human review was deliberately stopped, so no human semantic result was published.
 
-- standard VALIDATION CE
-- fixed six-probe EOS completion count
-- generated length
-- repeated-trigram rate
-- UTF-8 validity and distinct outputs
-- true-terminal EOS rank / top-1
-- intermediate true-continuation versus EOS rank / top-1
-- ordinary nonterminal false EOS top-1 count
+**V64 learning diagnostic** --> the first implementation exceeded the 300-second GOGIT limit. Runtime profiling found expensive preparation, including **98.270 seconds** rebuilding TRAIN. Audit 002 eliminated redundant rebuilds and the boundary-index calculation irrelevant to standard next-token cross-entropy. Its GOGIT publication succeeded.
 
-Continuation toward cycle 4 is allowed only if terminal EOS improves while intermediate and ordinary false EOS remain controlled and validation remains healthy.
+**V64 validated measurements** --> 12 sampled TRAIN segments, CE **4.664**, top-1 **33.97%**; all 36 frozen VALIDATION segments, CE **4.733**, top-1 **29.20%**. Terminal EOS top-1 remained **14/36**. In VALIDATION, raw-byte token NLL averaged **3.386**, BPE-merged token NLL **6.268**. These differences require frequency-controlled follow-up, not an immediate tokenizer replacement.
 
-Pause checkpoint --> [V62 pause checkpoint - 2026-10-28](MINI-KUZAI-PHASE-03-V62-PAUSE-CHECKPOINT-2026-10-28.md)
+**Decision** --> architecture, tokenizer and checkpoint remain frozen. The model has learned to reduce next-token loss but has not demonstrated usable free-form conversation. V65 will examine token-frequency strata and prior training progression **before** any separate proposal for a new training authorization.
 
-The BLIND TEST remains closed.
+Verified references -->
+
+- [V64 closure and V65 proposed research gate](MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md)
+- [V63 decoding robustness report](../reports/assistant-results/history/PHASE03-SMOLTALK-V63-DECODING-ROBUSTNESS-001.json)
+- [V63 language screen report](../reports/assistant-results/history/PHASE03-SMOLTALK-V63-AUTOMATIC-LANGUAGE-SCREEN-001.json)
+- [V64 runtime trace](../reports/assistant-results/history/PHASE03-SMOLTALK-V64-RUNTIME-TRACE-001.json)
+- [V64 successful diagnostic 002](../reports/assistant-results/history/PHASE03-SMOLTALK-V64-LANGUAGE-LEARNING-DIAGNOSTIC-002.json)
+
+**BLIND TEST remains closed, and no new model training is authorized.**
+
 ---
 
 ##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
