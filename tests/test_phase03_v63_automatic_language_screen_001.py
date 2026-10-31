@@ -60,6 +60,21 @@ class AutoLanguageScreenTests(unittest.TestCase):
         self.assertEqual(result["AUTO_SUSPECT_OUTPUTS"],0)
         self.assertTrue(all(type(v) is int and v>=0 for v in result.values()))
 
+    def test_no_recognizable_words_is_reported_not_hidden(self):
+        samples=[
+            {
+                "output":"???", "prompt":"What?",
+                "eos":True, "utf8_valid":True, "role_leak":False,
+                "tokens":[11,12,A.T.EOS_ID],
+            }
+            for _ in range(24)
+        ]
+        result=A.compute(samples,{"the","hello"})
+        self.assertEqual(result["AUTO_WORDS"],0)
+        self.assertEqual(result["AUTO_ZERO_WORD_OUTPUTS"],24)
+        self.assertEqual(result["AUTO_SUSPECT_OUTPUTS"],24)
+        self.assertEqual(result["AUTO_REF_WORD_COVER_BP"],0)
+
     def test_review_is_not_a_semantic_classifier(self):
         result=A.analyze_text("The quick brown fox jumps over a dog.",
                               {"the","quick","brown","fox","jumps","over","a","dog"})
