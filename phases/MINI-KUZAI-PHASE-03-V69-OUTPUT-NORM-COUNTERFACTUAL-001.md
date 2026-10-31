@@ -2,7 +2,7 @@
 
 Date --> 2026-10-31
 
-Status --> **AUDIT AND AUTOPILOT V2 PUBLISHED / CPU + GPU LOCAL EXECUTION PENDING / NO TRAINING**
+Status --> **V69 GPU / GOGIT VERIFIED / V62 FROZEN / NO NEW TRAINING**
 
 ## Research objective
 
@@ -98,7 +98,7 @@ From a clean, synchronized local repo on fhc2 -->
 git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_phase03_v69_output_norm_counterfactual_001.py' -v && /root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_mini_kuzai_autopilot_v2.py' -v && /root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --campaign phase03-autopilot-v2.json
 ```
 
-After the runner publishes GOGIT, the numeric result can be analyzed by replying `GOGIT`. Do not conclude V69 was executed from published code alone.
+**Verified outcome** --> [V69 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001.json) is published. BASE BF16 CE 4.733 with 4 predicted IDs, HALF FP32 CE 4.892 with 4 predicted IDs, FULL FP32 CE 5.048 with 7 predicted IDs. FULL BPE top-5 rises from 6.85% to 7.71%, but the CE regression prevents adopting this intervention as a model change. The independent [V70 precision-control GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json) subsequently measured original FP32 CE 4.732 and isolated the precision confound. This diagnostic does not authorize training.
 
 ## Boundaries
 
