@@ -51,6 +51,9 @@ SOURCE_PHASE03_V64 = (
 SOURCE_PHASE03_V65 = (
     "Mini-Kuzai V65 frozen TRAIN token frequencies and VALIDATION next-token predictions"
 )
+SOURCE_PHASE03_V66 = (
+    "Mini-Kuzai V66 frozen Byte/BPE prediction confusion and probability mass"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1435,6 +1438,60 @@ METRIC_KEYS = {
     "V65_FREQ_M10P_COUNT",
     "V65_FREQ_M10P_TOP1_BP",
     "V65_FREQ_M10P_NLL_X1000",
+    "V66_BIAS_PASS",
+    "V66_BIAS_BLIND_ACCESS",
+    "V66_BIAS_GPU_BF16",
+    "V66_BIAS_GPU_PEAK_MIB",
+    "V66_BIAS_TRAIN_LEXICAL",
+    "V66_BIAS_TRAIN_TYPES",
+    "V66_BIAS_VAL_TOKENS",
+    "V66_BIAS_VAL_LEXICAL",
+    "V66_BIAS_VAL_CE_X1000",
+    "V66_BIAS_EOS_TOP1",
+    "V66_BIAS_BYTE_TARGETS",
+    "V66_BIAS_MERGE_TARGETS",
+    "V66_BIAS_CONF_B_PB",
+    "V66_BIAS_CONF_B_PM",
+    "V66_BIAS_CONF_B_PS",
+    "V66_BIAS_CONF_M_PB",
+    "V66_BIAS_CONF_M_PM",
+    "V66_BIAS_CONF_M_PS",
+    "V66_BIAS_MASS_B_B_BP",
+    "V66_BIAS_MASS_B_M_BP",
+    "V66_BIAS_MASS_B_S_BP",
+    "V66_BIAS_MASS_M_B_BP",
+    "V66_BIAS_MASS_M_M_BP",
+    "V66_BIAS_MASS_M_S_BP",
+    "V66_BIAS_B0_COUNT",
+    "V66_BIAS_B0_TOP1_BP",
+    "V66_BIAS_B0_NLL_X1000",
+    "V66_BIAS_B1_9_COUNT",
+    "V66_BIAS_B1_9_TOP1_BP",
+    "V66_BIAS_B1_9_NLL_X1000",
+    "V66_BIAS_B10_99_COUNT",
+    "V66_BIAS_B10_99_TOP1_BP",
+    "V66_BIAS_B10_99_NLL_X1000",
+    "V66_BIAS_B100_999_COUNT",
+    "V66_BIAS_B100_999_TOP1_BP",
+    "V66_BIAS_B100_999_NLL_X1000",
+    "V66_BIAS_B1000P_COUNT",
+    "V66_BIAS_B1000P_TOP1_BP",
+    "V66_BIAS_B1000P_NLL_X1000",
+    "V66_BIAS_M0_COUNT",
+    "V66_BIAS_M0_TOP1_BP",
+    "V66_BIAS_M0_NLL_X1000",
+    "V66_BIAS_M1_9_COUNT",
+    "V66_BIAS_M1_9_TOP1_BP",
+    "V66_BIAS_M1_9_NLL_X1000",
+    "V66_BIAS_M10_99_COUNT",
+    "V66_BIAS_M10_99_TOP1_BP",
+    "V66_BIAS_M10_99_NLL_X1000",
+    "V66_BIAS_M100_999_COUNT",
+    "V66_BIAS_M100_999_TOP1_BP",
+    "V66_BIAS_M100_999_NLL_X1000",
+    "V66_BIAS_M1000P_COUNT",
+    "V66_BIAS_M1000P_TOP1_BP",
+    "V66_BIAS_M1000P_NLL_X1000",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1501,6 +1558,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V64
     if tracked.startswith("tools/public-audits/phase03_v65_"):
         return SOURCE_PHASE03_V65
+    if tracked.startswith("tools/public-audits/phase03_v66_"):
+        return SOURCE_PHASE03_V66
     return SOURCE
 
 
@@ -1589,6 +1648,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
 
     v65_frequency = tracked == (
         "tools/public-audits/phase03_v65_token_frequency_diagnostic_001.py"
+    )
+
+    v66_token_bias = tracked == (
+        "tools/public-audits/phase03_v66_token_prediction_bias_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -1713,6 +1776,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v65_frequency:
         # Frequency-stratified next-token prediction is not semantic evaluation.
+        return False
+    if v66_token_bias:
+        # Decoder logits diagnostics do not measure semantic validity.
         return False
 
     if tokenizer_workstream or architecture_workstream:
