@@ -40,7 +40,7 @@ SOURCE_PHASE03_V61 = (
     "Mini-Kuzai V61 boundary-aware EOS objective preparation"
 )
 SOURCE_PHASE03_V62 = (
-    "Mini-Kuzai V62 pairwise boundary-margin objective preparation"
+    "Mini-Kuzai V62 pairwise boundary-margin objective and controlled training"
 )
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
@@ -1147,6 +1147,55 @@ METRIC_KEYS = {
     "V62_TRAINER_MAX_TOKENS",
     "V62_TRAINER_REVIEW_CYCLE",
     "V62_TRAINER_BLIND_ACCESS",
+    "V62_RUN1_COMPLETED",
+    "V62_RUN1_OPTIMIZER_STEPS",
+    "V62_RUN1_EXPOSURE_TOKENS",
+    "V62_RUN1_EVALUATIONS",
+    "V62_RUN1_INITIAL_VAL_LOSS_X1E6",
+    "V62_RUN1_FINAL_VAL_LOSS_X1E6",
+    "V62_RUN1_BEST_VAL_LOSS_X1E6",
+    "V62_RUN1_FINAL_UTF8_INVALID",
+    "V62_RUN1_FINAL_EOS",
+    "V62_RUN1_FINAL_DISTINCT",
+    "V62_RUN1_FINAL_MEAN_TOKENS_X100",
+    "V62_RUN1_FINAL_REPEAT_TRIGRAM_BP",
+    "V62_RUN1_FINAL_MAX_CHAR_RUN",
+    "V62_RUN1_FINAL_EMPTY",
+    "V62_RUN1_BLIND_ACCESS",
+    "V62_RUN1_STOP_MILESTONE",
+    "V62_RUN1_STOP_PLATEAU",
+    "V62_RUN1_STOP_EARLY_VALIDATION",
+    "V62_RUN1_STOP_MAX_STEPS",
+    "V62_RUN1_STOP_MAX_TOKENS",
+    "V62_RUN1_STOP_SAMPLER",
+    "V62_RUN1_CONTROLLED_SHARE_BP",
+    "V62_RUN1_PERSONA_SHARE_BP",
+    "V62_RUN1_GENERAL_SHARE_BP",
+    "V62_RUN1_LEGACY_SHARE_BP",
+    "V62_EOS1_LOGIT_DIAG_PASS",
+    "V62_EOS1_LOGIT_BLIND_ACCESS",
+    "V62_EOS1_TERM_POSITIONS",
+    "V62_EOS1_TERM_PROB_PPM",
+    "V62_EOS1_TERM_NLL_X1E3",
+    "V62_EOS1_TERM_MEAN_RANK_X100",
+    "V62_EOS1_TERM_MEDIAN_RANK_X100",
+    "V62_EOS1_TERM_TOP1",
+    "V62_EOS1_NONTERM_POSITIONS",
+    "V62_EOS1_NONTERM_PROB_PPM",
+    "V62_EOS1_NONTERM_MAX_PROB_PPM",
+    "V62_EOS1_NONTERM_TOP1",
+    "V62_EOS1_INTERMEDIATE_BOUNDARIES",
+    "V62_EOS1_INTERMEDIATE_PROB_PPM",
+    "V62_EOS1_INTERMEDIATE_MEAN_RANK_X100",
+    "V62_EOS1_INTERMEDIATE_TOP1",
+    "V62_EOS1_INTERMEDIATE_OVER_TRUE",
+    "V62_EOS1_PROBE_COUNT",
+    "V62_EOS1_PROBE_STEPS",
+    "V62_EOS1_PROBE_MAXPROB_MEAN_PPM",
+    "V62_EOS1_PROBE_MAXPROB_MAX_PPM",
+    "V62_EOS1_PROBE_BEST_RANK_MEAN_X100",
+    "V62_EOS1_PROBE_BEST_RANK_MEDIAN_X100",
+    "V62_EOS1_PROBE_TOP1",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1255,6 +1304,11 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v62_persistent_trainer_freeze.py",
     }
 
+    active_training_v62 = tracked in {
+        "tools/public-audits/phase03_v62_train_run_001.py",
+        "tools/public-audits/phase03_v62_train_run_001_eos_calibration.py",
+    }
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -1306,6 +1360,13 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
             and metrics.get("TRAINING_AUTHORIZED") == 1
             and metrics.get("TRAINING_STARTED") == 0
+        )
+
+    if active_training_v62:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+            and metrics.get("TRAINING_STARTED") == 1
         )
 
     if tokenizer_workstream or architecture_workstream:
