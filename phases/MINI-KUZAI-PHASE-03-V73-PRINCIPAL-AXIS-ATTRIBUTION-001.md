@@ -2,7 +2,7 @@
 
 Date --> 2026-10-31
 
-Status --> **RESEARCH PROTOCOL FROZEN / IMPLEMENTATION AND GPU EXECUTION PENDING**
+Status --> **READ-ONLY AUDIT / CPU TESTS / SOURCE-PINNED GOGIT RUNNER PUBLISHED; LOCAL EXECUTION PENDING**
 
 ## Scientific objective
 
@@ -55,7 +55,24 @@ A reduction in top-token concentration accompanied by loss of exact prediction a
 
 ## Implementation status
 
-Implementation paths, CPU tests and pinned runner will be added and verified before local execution. No V73 GPU result is asserted in this protocol.
+The implementation is now published and the numerical metric schema is registered -->
+
+- [V73 GPU audit](../tools/public-audits/phase03_v73_principal_axis_attribution_001.py)
+- [V73 CPU tests](../tests/test_phase03_v73_principal_axis_attribution_001.py)
+- [V73 pinned GOGIT runner](../tools/run_v73_principal_axis_attribution_001_job.py)
+- [GOGIT allowlist](../tools/gogit_public.py)
+
+STEP_ID --> `PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001`
+
+The runner checks an approved Git blob for the audit and the original V62 mandatory cycle-2 stop. It executes CPU tests before GPU publication. Any discrepancy, 300-second timeout, nonnumeric output or duplicate STEP_ID blocks new GOGIT output. AUTOPILOT is not modified.
+
+Local fhc2 command, on a synchronized and clean `main` -->
+
+```bash
+cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/run_v73_principal_axis_attribution_001_job.py
+```
+
+Following successful completion, respond `GOGIT` for review of the immutable numeric report. **Neither GPU execution nor a V73 result is claimed as completed here.**
 
 ---
 
