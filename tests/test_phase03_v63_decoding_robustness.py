@@ -53,8 +53,8 @@ class RobustnessDecoderTests(unittest.TestCase):
         self.assertEqual(choice.tolist(), [23] * 6)
 
     def test_repeated_grams(self):
-        self.assertEqual(D.repeated_gram_bp([1, 2, 3, 1, 2, 3], 3), 2500)
-        self.assertEqual(D.repeated_gram_bp([1, 2, 3], 8), 0)
+        self.assertEqual(D.repeated_gram_bp([11, 12, 13, 11, 12, 13], 3), 2500)
+        self.assertEqual(D.repeated_gram_bp([11, 12, 13], 8), 0)
 
     def test_aggregation_short_lengths_and_seed_extremes(self):
         samples = [[7, 8, 9, 10] for _ in range(8 * 6)]
