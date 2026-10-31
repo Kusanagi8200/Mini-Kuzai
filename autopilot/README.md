@@ -1,6 +1,6 @@
 # Mini-Kuzai AUTOPILOT V1 - MODE 2
 
-Status --> **V69 GOGIT VERIFIED / V70 AUTOPILOT V3 PUBLISHED / TRAINING DISABLED**
+Status --> **V70 GOGIT VERIFIED / V71 PROTOCOL ONLY / TRAINING DISABLED**
 
 Date --> 2026-10-31
 
@@ -48,11 +48,13 @@ The new [six-stage V3 manifest](campaigns/phase03-autopilot-v3.json) has indepen
 - AUTOPILOT V3 tests --> `tests/test_mini_kuzai_autopilot_v3.py`
 - [Scientific protocol](../phases/MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md)
 
-Once the local tests have passed, run from a clean, synchronized repository -->
+Historical V3 command for the completed V70 report (do not republish an existing GOGIT STEP_ID) -->
 
 ```bash
 /root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --campaign phase03-autopilot-v3.json
 ```
+
+**Verified V70 output -->** The immutable [V70 GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json) has `V70_CTRL_PASS=1`, BF16 CE 4.733, original FP32 CE 4.732 and FULL FP32 CE 5.048. The public GOGIT result does not expose the local six-stage AUTOPILOT state journal, so the local journal is not asserted independently verified. V71 has a [read-only scientific protocol](../phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) but **no approved registered runner or published GPU result**.
 
 No GitHub Actions AUTO-WATCH or scheduled GitHub analysis is installed. The user manually replies `GOGIT` in ChatGPT when the local job finishes. **No new training is authorized, and BLIND TEST stays closed.**
 
