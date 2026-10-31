@@ -1,6 +1,16 @@
 # Mini-Kuzai Phase 03 - V63 Semantic Generation Review 001
 
-Status --> **HUMAN REVIEW PIPELINE PREPARED / NOT YET EXECUTED**
+Status --> **HUMAN REVIEW SUSPENDED / NOT COMPLETED / NO HUMAN GOGIT REPORT**
+
+## Review suspension and successor
+
+On 2026-10-31 the local evaluation began and the first inspected generation was visibly nonsensical despite valid UTF-8 and EOS termination. The operator explicitly suspended the 24-example rating loop because further subjective scoring of this degree of language degradation was not useful at this stage.
+
+This human review was **not completed**. No human score can be inferred or fabricated. The repository contains **no** successful `PHASE03-SMOLTALK-V63-SEMANTIC-GENERATION-REVIEW-001` GOGIT history.
+
+The process below is preserved as an **archived, opt-in human-review protocol**, not the active procedure. Its 24 private samples were instead inspected by the non-interactive [V63 automatic language screen](MINI-KUZAI-PHASE-03-V63-AUTOMATIC-LANGUAGE-SCREEN-001.md). That published screen is nonsemantic and assigned **zero human ratings**.
+
+Current project checkpoint --> [V64 closure and V65 readiness](MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md).
 
 ## Objective
 
