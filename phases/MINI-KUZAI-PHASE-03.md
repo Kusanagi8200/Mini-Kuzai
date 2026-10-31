@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-10-31
 
-**V67 OUTPUT CONCENTRATION --> PUBLISHED AND VERIFIED. V68 OUTPUT HEAD --> PREPARED FOR AUTOPILOT V1 PILOT.**
+**V68 OUTPUT HEAD --> PUBLISHED AND VERIFIED. V69 NORM COUNTERFACTUAL --> PREPARED FOR AUTOPILOT V2.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -492,19 +492,22 @@ V66 predicted special      --> 50 / 9170 lexical targets
 V67 GOGIT                  --> OUTPUT CONCENTRATION 001 COMPLETE
 V67 predicted distinct      --> 4 IDS / 606 GOLD DISTINCT
 V67 dominant top1 share     --> 72.58%
-V68                        --> READ-ONLY GPU RUN PENDING
-AUTOPILOT                   --> MODE 2 PILOT PUBLISHED / TRAINING DISABLED
+V68 GOGIT                  --> OUTPUT HEAD 001 COMPLETE
+V68 mean predicted norm    --> 0.360 / expected 0.293
+V68 PAD output norm        --> 0.182
+V69                        --> GPU RUN PENDING / FROZEN MODEL
+AUTOPILOT                   --> V2 6 STAGES / TRAINING DISABLED
 New training authorized    --> NO
 New training started       --> NO
 BLIND TEST access          --> 0 during V63/V64
-Next workstream            --> AUTOPILOT PILOT V1 / V68 TIED OUTPUT HEAD
+Next workstream            --> AUTOPILOT V2 / V69 IN-MEMORY NORM COUNTERFACTUAL
 ```
 
 The previous V62 GOGIT training flags describe **historical V62 execution** and must not be reused as a new V65 training authorization. The V64 diagnostic flags are `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`.
 
 The 12 TRAIN segments in V64 form a deliberately small exploratory sample, and V63's lexical checks do not establish semantic correctness. The frozen V62 checkpoint remains the only model used for these inference-only diagnostics.
 
-Primary checkpoint --> [V67 verified concentration GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001.json), [AUTOPILOT V1](../autopilot/README.md) and [V68 prepared protocol](MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md)
+Primary checkpoint --> [V68 verified output-head GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001.json), [AUTOPILOT V2](../autopilot/README.md) and [V69 frozen protocol](MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md)
 
 ## Historical checkpoint chronology - V53 to V59
 
@@ -923,10 +926,22 @@ V66 evidence --> [report A](../reports/assistant-results/history/PHASE03-SMOLTAL
 
 V67 completed --> [published GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001.json).
 
-V68 next step --> [prepared GOGIT protocol](MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md).
+V68 completed --> [published numeric GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001.json).
 
-AUTOPILOT V1 --> [deterministic bounded campaign](../autopilot/README.md), read-only until a separate new trainer is approved.
+V69 next step --> [in-memory counterfactual protocol](MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md).
 
+AUTOPILOT V2 --> [six-stage deterministic bounded campaign](../autopilot/README.md), read-only until a separate new trainer is approved.
+
+
+### V68 completed - V69 causal counterfactual prepared
+
+V68 was published successfully on 2026-10-31, after correcting an overly strict PAD-row invariant in the tied output projection. The PAD output row was finite and nonzero (L2 norm 0.182), which is compatible with training through the tied output softmax. The final V68 GOGIT verified **CE 4.733**, **14/36 EOS top-1**, **4 distinct argmax IDs**, the same **72.58%** dominant-token share and a selected-row norm mean of **0.360** versus **0.293** for gold target rows.
+
+V69 now tests HALF and FULL output row-norm equalization in inference memory, leaving the V62 checkpoint and trainer untouched. The baseline must reproduce V67/V68 numeric values before the comparison may be published. The new AUTOPILOT V2 uses a fresh campaign ID and deterministic branches for potential diversity improvement, cross-entropy regression or persistent collapse.
+
+V69 source --> [protocol and non-training safeguards](MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md).
+
+V69 GOGIT --> **not yet published**. No semantic validation, extra training or BLIND access is authorized.
 
 Verified references -->
 
