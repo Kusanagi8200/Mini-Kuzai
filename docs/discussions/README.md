@@ -139,7 +139,7 @@ Read the [KUZ-DIN Publisher operational documentation](https://github.com/Kusana
 | Edited, unrelated, outside-category or before V74 | Not eligible | Ignored |
 | New research not explicitly authorized | No reviewed START or verified GOGIT | Must not be posted |
 
-KU-ZDIN's webhook requires the exact `Mini-Kuzai | Vxx - ...` title, the approved 72-character ASCII header, matching STEP/STATUS and the project footer. Only `Kusanagi8200` is authorized as event sender and as discussion author, plus comment author for GOGIT. Every inbound request is checked with a shared-secret HMAC-SHA256 signature. Accepted payloads are written as `0600` JSON files, deduplicated by event identity and source SHA256.
+KUZ-DIN's webhook requires the exact `Mini-Kuzai | Vxx - ...` title, the approved 72-character ASCII header, matching STEP/STATUS and the project footer. Only `Kusanagi8200` is authorized as event sender and as discussion author, plus comment author for GOGIT. Every inbound request is checked with a shared-secret HMAC-SHA256 signature. Accepted payloads are written as `0600` JSON files, deduplicated by event identity and source SHA256.
 
 The queued LinkedIn formatter preserves the research source URL, status and footer, with a **2800-character cap**. Oversized content is blocked pending an explicitly reviewed excerpt tied to the original content fingerprint. **No silent truncation of scientific findings.**
 
