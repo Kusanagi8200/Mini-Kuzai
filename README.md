@@ -18,7 +18,7 @@ Each stage is documented through source code, reproducible protocols, frozen che
 
 ## Navigate the project
 
-**[Phases](#development-phases)** · **[Research steps V48-V70](#phase-03-research-steps)** · **[Current status](#current-status---2026-10-31)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
+**[Phases](#development-phases)** · **[Research steps V48-V71](#phase-03-research-steps)** · **[Current status](#current-status---2026-10-31)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
 
 ## Development phases
 
@@ -43,6 +43,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V65-V66** | Token-frequency learning and byte/BPE prediction bias | [V65](phases/MINI-KUZAI-PHASE-03-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.md) · [V66](phases/MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md) |
 | **V67-V68** | Output concentration, tied output head, embedding norms and logit margins | [V67](phases/MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md) · [V68](phases/MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md) |
 | **V69-V70** | In-memory output-norm counterfactual and BF16/FP32 precision control | [V69](phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md) · [V70](phases/MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md) · [V70 GOGIT results](reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json) |
+| **V71 - proposed diagnostic** | Attribute output-token dominance to output-row norms versus hidden-state alignment; no implementation or GPU result yet | [V71 research protocol](phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) |
 
 ## Current status - 2026-10-31
 
@@ -58,7 +59,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **VALIDATION cross-entropy** | BF16 original 4.733 / FP32 original 4.732 / HALF 4.892 / FULL 5.048 |
 | **Observed limitation** | Only 4-5 distinct original-projection argmax tokens across 9,170 lexical validation positions |
 | **Safety** | No new training authorized, V62 unchanged, BLIND remains closed |
-| **Next research direction** | V71 output-logit dominance analysis **proposed, not implemented** |
+| **V71 protocol** | Published; read-only diagnostic implementation and GPU evaluation **not yet available** |
 
 **V70 finding -->** BF16/FP32 precision differences do not account for most of V69's cross-entropy degradation under row-norm equalization. The original frozen output projection is retained. Improved numerical loss alone does not establish conversational quality or semantic validity.
 
@@ -74,6 +75,10 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | [Latest GOGIT report](reports/assistant-results/latest.json) | Most recently published numerical results |
 | [Workflow policy](PROJECT-WORKFLOW-POLICY.md) | Fail-closed automation and authorization boundaries |
 | [Private-corpus methodology](phases/MINI-KUZAI-PHASE-03-PRIVATE-CORPUS-PIPELINE.md) | Public process description only - private source data remains local |
+
+## README maintenance
+
+Update this project index **after verified major milestones**, such as a frozen corpus/architecture revision, published GOGIT diagnostic, approved protocol or controlled training stop. Keep the current state, research-step links and next action accurate; preserve detailed methods and older results in their dedicated documents. **Code publication is not execution**, historical authorization is never renewed implicitly, and there is no background GitHub monitoring or automatic ChatGPT polling.
 
 The [original full README snapshot](README-DETAILED-20261031T192526Z.md) preserves the longer chronology, older experiment notes, architecture tables and historical decisions **without rewriting them**. Some historical status blocks there are superseded by the verified V70 status above.
 
