@@ -1,6 +1,25 @@
 # Mini-Kuzai Phase 03 - V64 Runtime Trace 001
 
-Status --> **PREPARED / NOT YET EXECUTED**
+Status --> **EXECUTED / BOUNDED TIMEOUT OBSERVED / NUMERIC GOGIT PUBLISHED**
+
+## Observed execution and follow-up
+
+GOGIT report --> [PHASE03-SMOLTALK-V64-RUNTIME-TRACE-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V64-RUNTIME-TRACE-001.json)
+
+Commit --> [`12a08e915f4c`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/12a08e915f4c0b48885190958d1432cf286f51fb)
+
+The 155-second profiling worker reached its limit. The final innermost active stage was **BOUNDARY / code 9**, and GPU scoring had not begun. Completed inclusive spans -->
+
+| Stage | Completed interval |
+| --- | --- |
+| TRAIN rebuild | 98270 ms |
+| Public TRAIN stream load inside TRAIN | 91304 ms |
+| Controlled TRAIN inside TRAIN | 6963 ms |
+| VALIDATION rebuild | 2765 ms |
+
+These nested spans must not be summed. Boundary-index creation had no completed measured duration when the worker was interrupted.
+
+The original V64 audit was preserved. V64 language-learning diagnostic **002** was subsequently published and executed successfully using single-pass verified corpus reconstruction and no unused training-boundary-index computation. See [the completed V64-002 diagnostic](MINI-KUZAI-PHASE-03-V64-LANGUAGE-LEARNING-DIAGNOSTIC-002.md).
 
 ## Incident
 
