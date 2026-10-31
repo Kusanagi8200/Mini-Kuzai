@@ -1,6 +1,6 @@
 # Mini-Kuzai AUTOPILOT V1 - MODE 2
 
-Status --> **V71 GOGIT VERIFIED / V72 STANDALONE AUDIT PREPARED / TRAINING DISABLED**
+Status --> **V72 GOGIT VERIFIED / V73 STANDALONE DIAGNOSTIC PREPARED / TRAINING DISABLED**
 
 Date --> 2026-10-31
 
@@ -54,7 +54,7 @@ Historical V3 command for the completed V70 report (do not republish an existing
 /root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --campaign phase03-autopilot-v3.json
 ```
 
-**Verified V70 output -->** The immutable [V70 GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json) has `V70_CTRL_PASS=1`, BF16 CE 4.733, original FP32 CE 4.732 and FULL FP32 CE 5.048. The public GOGIT result does not expose the local six-stage AUTOPILOT state journal, so the local journal is not asserted independently verified. V71 has a [verified GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.json); its standalone runner was completed separately. The [V72 spectrum diagnostic](../phases/MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) has a pinned standalone runner but no published GPU result; V72 remains **outside the AUTOPILOT campaign**.
+**Verified V70 output -->** The immutable [V70 GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json) has `V70_CTRL_PASS=1`, BF16 CE 4.733, original FP32 CE 4.732 and FULL FP32 CE 5.048. The public GOGIT result does not expose the local six-stage AUTOPILOT state journal, so the local journal is not asserted independently verified. V71 has a [verified GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.json); its standalone runner was completed separately. The [V72 spectrum diagnostic](../phases/MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) now has a [verified immutable GOGIT result](../reports/assistant-results/history/PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001.json), produced independently of AUTOPILOT. The [V73 principal-axis diagnostic](../phases/MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md) has code, tests and a pinned standalone runner but no local execution or GOGIT result; V73 is also **outside the AUTOPILOT campaign**.
 
 No GitHub Actions AUTO-WATCH or scheduled GitHub analysis is installed. The user manually replies `GOGIT` in ChatGPT when the local job finishes. **No new training is authorized, and BLIND TEST stays closed.**
 
