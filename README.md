@@ -18,7 +18,7 @@ Each stage is documented through source code, reproducible protocols, frozen che
 
 ## Navigate the project
 
-**[Phases](#development-phases)** · **[Research steps V48-V72](#phase-03-research-steps)** · **[Current status](#current-status---2026-10-31)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
+**[Phases](#development-phases)** · **[Research steps V48-V73](#phase-03-research-steps)** · **[Current status](#current-status---2026-10-31)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
 
 ## Development phases
 
@@ -45,6 +45,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V69-V70** | In-memory output-norm counterfactual and BF16/FP32 precision control | [V69](phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md) · [V70](phases/MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md) · [V70 GOGIT results](reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json) |
 | **V71 - GOGIT verified** | Frozen V62 norm-versus-direction attribution, 30 numeric metrics; 275 changed argmax positions out of 9170 | [V71 research protocol](phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) · [V71 audit](tools/public-audits/phase03_v71_output_dominance_attribution_001.py) · [V71 tests](tests/test_phase03_v71_output_dominance_attribution_001.py) |
 | **V72 - GOGIT verified** | Strong 128D anisotropy: centered PC1 82.88%, effective rank 1.44; mean-center switches 2889/9170 lexical predictions | [V72 protocol and findings](phases/MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) · [V72 numeric GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001.json) |
+| **V73 - diagnostic prepared** | Centered principal-axis ablations: retain/remove PC1 and PC2, measure output concentration without weight changes | [V73 protocol](phases/MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md) · [Audit](tools/public-audits/phase03_v73_principal_axis_attribution_001.py) · [Tests](tests/test_phase03_v73_principal_axis_attribution_001.py) |
 
 ## Current status - 2026-10-31
 
@@ -62,8 +63,9 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **Safety** | No new training authorized, V62 unchanged, BLIND remains closed |
 | **V71 status** | Read-only GPU GOGIT completed at [commit dcac14ea](https://github.com/Kusanagi8200/Mini-Kuzai/commit/dcac14ea7286642ec0cd9a670dded7fd981bd99c); **275/9170 argmax changed (3.00%)**, 5 to 7 predicted IDs, CE 4.732 to 5.048 |
 | **V72 status** | **GPU/GOGIT verified** at [commit `41aed7aef84c`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/41aed7aef84c832e78ae2ac7bfc2f8cd681bd1b7), original lexical top-1 correct 2673, mean-centered 2832; no new training |
+| **V73 status** | Protocol, audit, CPU tests and pinned GOGIT runner published; **local CPU/GPU tests and GOGIT result pending**. V62 frozen / BLIND closed |
 
-**V70-V72 finding -->** FP32 precision does not explain V69's row-norm CE regression, and V71 norm equalization switches only 275/9170 lexical argmax predictions. V72 finds **72.19% mean-vector energy**, **82.88% centered PC1 spectral share** and a **1.44 centered participation ratio** in a 128D representation. Subtracting the VALIDATION-derived mean changes 2889/9170 predictions (31.50%), raises predicted lexical IDs from 5 to 15, and increases lexical top-1 correctness from 2673 to 2832. This is **read-only analysis, not a deployment patch or independent generalization evidence**. Next direction --> investigate dominant principal components with an independently reviewed read-only protocol. No new training or BLIND access authorized.
+**V70-V72 finding -->** FP32 precision does not explain V69's row-norm CE regression, and V71 norm equalization switches only 275/9170 lexical argmax predictions. V72 finds **72.19% mean-vector energy**, **82.88% centered PC1 spectral share** and a **1.44 centered participation ratio** in a 128D representation. Subtracting the VALIDATION-derived mean changes 2889/9170 predictions (31.50%), raises predicted lexical IDs from 5 to 15, and increases lexical top-1 correctness from 2673 to 2832. This is **read-only analysis, not a deployment patch or independent generalization evidence**. Next direction --> V73 read-only PC1 / PC1+PC2 / PC1-only projection comparison (protocol and audit published; no result yet). No new training or BLIND access authorized.
 
 ## Code, operations and evidence
 
