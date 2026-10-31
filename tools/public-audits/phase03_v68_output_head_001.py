@@ -157,7 +157,9 @@ def evaluate(model,device,validation,norms):
             true=gold[lexical]
             selected=logits[lexical]
             top=selected.topk(2,dim=-1)
-            pred=top.indices[:,0]
+            # V67 uses argmax first-ID tie breaking. torch.topk indices
+            # are not required to use that same deterministic tie rule.
+            pred=selected.argmax(dim=-1)
             gap=(top.values[:,0]-top.values[:,1]).clamp_min(0)
             gold_logit=selected.gather(1,true.unsqueeze(1)).squeeze(1)
             deficit=(top.values[:,0]-gold_logit).clamp_min(0)
