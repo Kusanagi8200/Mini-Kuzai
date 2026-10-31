@@ -46,6 +46,7 @@ SHA256_RE=re.compile(r"[0-9a-f]{64}\Z")
 DIAGNOSTIC_RUNNERS={
     "v67-readonly":"tools/run_v67_output_concentration_001_job.py",
     "v68-head":"tools/run_v68_output_head_001_job.py",
+    "v69-norm":"tools/run_v69_output_norm_counterfactual_001_job.py",
 }
 # A subsequent, separate workstream must implement, review and register an
 # internal-budget-enforcing NEW trainer before any bounded training can run.
@@ -64,10 +65,13 @@ REPORT_PRODUCERS={
         "tools/public-audits/phase03_v68_output_head_001.py",
     "PHASE03-SMOLTALK-V68-FAILURE-PROBE-001":
         "tools/public-audits/phase03_v68_failure_probe_001.py",
+    "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001":
+        "tools/public-audits/phase03_v69_output_norm_counterfactual_001.py",
 }
 APPROVED_RUN_BLOB={
     "v67-readonly":"a5efc5cc58ec162d3b11cb9e0e11ddf30281ad57",
     "v68-head":"fae721c57c7184ab9a154d91b46a57942d85dcaf",
+    "v69-norm":"14eb37c5835a9c93c4a11da301bac25db94bbe0e",
 }
 FAILURE_PROBE_STEP="PHASE03-SMOLTALK-V68-FAILURE-PROBE-001"
 FAILURE_PROBE_SOURCE="tools/public-audits/phase03_v68_failure_probe_001.py"
