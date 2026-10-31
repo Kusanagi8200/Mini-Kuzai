@@ -1384,6 +1384,27 @@ METRIC_KEYS = {
     "V64_LANG_VAL_BYTE_NLL_X1000",
     "V64_LANG_VAL_MERGE_NLL_X1000",
     "V64_LANG_VAL_EOS_TOP1",
+    "V64_TRACE_PASS",
+    "V64_TRACE_BLIND_ACCESS",
+    "V64_TRACE_TIMEOUT",
+    "V64_TRACE_BUDGET_SEC",
+    "V64_TRACE_ELAPSED_MS",
+    "V64_TRACE_ACTIVE_STAGE",
+    "V64_TRACE_LAST_STARTED",
+    "V64_TRACE_COMPLETED_SPANS",
+    "V64_TRACE_PREFLIGHT_MS",
+    "V64_TRACE_VERIFY_RUNTIME_MS",
+    "V64_TRACE_BUILD_TRAIN_MS",
+    "V64_TRACE_BUILD_VAL_MS",
+    "V64_TRACE_LOAD_POOL_MS",
+    "V64_TRACE_LOAD_PUBLIC_MS",
+    "V64_TRACE_LOAD_CONTROLLED_MS",
+    "V64_TRACE_SCHEDULE_MS",
+    "V64_TRACE_BOUNDARY_MS",
+    "V64_TRACE_LOAD_TOKENIZER_MS",
+    "V64_TRACE_TOKEN_STATS_MS",
+    "V64_TRACE_SCORE_MS",
+    "V64_TRACE_CHECKPOINT_LOAD_MS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1529,6 +1550,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v64_language_learning_diagnostic_001.py"
     )
 
+    v64_runtime_trace = tracked == (
+        "tools/public-audits/phase03_v64_runtime_trace_001.py"
+    )
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -1645,6 +1670,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v64_language_diagnostic:
         # Tokenizer and CE diagnostics are not semantic validation.
+        return False
+    if v64_runtime_trace:
+        # A timeout profiler is not a successful training or semantic gate.
         return False
 
     if tokenizer_workstream or architecture_workstream:
