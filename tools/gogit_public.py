@@ -42,6 +42,9 @@ SOURCE_PHASE03_V61 = (
 SOURCE_PHASE03_V62 = (
     "Mini-Kuzai V62 pairwise boundary-margin objective and controlled training"
 )
+SOURCE_PHASE03_V63 = (
+    "Mini-Kuzai V63 controlled diagnostics, frozen V62 checkpoint and VALIDATION only"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1196,6 +1199,30 @@ METRIC_KEYS = {
     "V62_EOS1_PROBE_BEST_RANK_MEAN_X100",
     "V62_EOS1_PROBE_BEST_RANK_MEDIAN_X100",
     "V62_EOS1_PROBE_TOP1",
+    "V63_DIAG_PREFLIGHT_PASS",
+    "V63_DIAG_BLIND_ACCESS",
+    "V63_DIAG_GPU_BF16",
+    "V63_DIAG_GPU_BATCH",
+    "V63_DIAG_GPU_PEAK_MIB",
+    "V63_DIAG_TF_TERMINAL_COUNT",
+    "V63_DIAG_TF_TERMINAL_TOP1",
+    "V63_DIAG_TF_TERMINAL_MARGIN_OK",
+    "V63_DIAG_TF_INTERMEDIATE_COUNT",
+    "V63_DIAG_TF_INTERMEDIATE_TOP1",
+    "V63_DIAG_TF_INTERMEDIATE_MARGIN_OK",
+    "V63_DIAG_TF_INTERMEDIATE_EOS_OVER_TRUE",
+    "V63_DIAG_TF_NONTERMINAL_COUNT",
+    "V63_DIAG_TF_NONTERMINAL_TOP1",
+    "V63_DIAG_FREE_PROBES",
+    "V63_DIAG_FREE_STEPS",
+    "V63_DIAG_FREE_EOS_COMPLETIONS",
+    "V63_DIAG_FREE_EOS_TOP1",
+    "V63_DIAG_FREE_MAX_EOS_PROB_PPM",
+    "V63_DIAG_FREE_MEAN_EOS_PROB_PPM",
+    "V63_DIAG_FREE_MEAN_BEST_EOS_RANK_X100",
+    "V63_DIAG_FREE_REPEAT_TOKEN_TRIGRAM_BP",
+    "V63_DIAG_FREE_MEAN_TOKENS_X100",
+    "V63_DIAG_FREE_ENTROPY_X1000",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1256,6 +1283,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V61
     if tracked.startswith("tools/public-audits/phase03_v62_"):
         return SOURCE_PHASE03_V62
+    if tracked.startswith("tools/public-audits/phase03_v63_"):
+        return SOURCE_PHASE03_V63
     return SOURCE
 
 
@@ -1308,6 +1337,8 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v62_train_run_001.py",
         "tools/public-audits/phase03_v62_train_run_001_eos_calibration.py",
     }
+
+    v63_diagnostic = tracked == "tools/public-audits/phase03_v63_diagnostic_preflight.py"
 
     architecture_workstream = tracked.startswith(
         (
@@ -1367,6 +1398,15 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
             and metrics.get("TRAINING_AUTHORIZED") == 1
             and metrics.get("TRAINING_STARTED") == 1
+        )
+
+    if v63_diagnostic:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+            and metrics.get("TRAINING_STARTED") == 1
+            and metrics.get("V63_DIAG_PREFLIGHT_PASS") == 1
+            and metrics.get("V63_DIAG_BLIND_ACCESS") == 0
         )
 
     if tokenizer_workstream or architecture_workstream:
