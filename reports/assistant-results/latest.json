@@ -26,16 +26,16 @@
     "V63_DIAG_TF_NONTERMINAL_TOP1": 50,
     "V63_DIAG_TF_TERMINAL_COUNT": 36,
     "V63_DIAG_TF_TERMINAL_MARGIN_OK": 0,
-    "V63_DIAG_TF_TERMINAL_TOP1": 0
+    "V63_DIAG_TF_TERMINAL_TOP1": 14
   },
   "phase": "03",
   "private_conversation_data_included": false,
-  "producer": "tools/public-audits/phase03_v63_diagnostic_preflight.py",
-  "producer_sha256": "19082b42bb3e3ee674b767dd620d14d26fe1a1a316d1ac0ed64df2b713ff038b",
+  "producer": "tools/public-audits/phase03_v63_diagnostic_preflight_002.py",
+  "producer_sha256": "81c7edf8be85306809435d171a1d7a05659fd0efd745144726893d86a6b75cd2",
   "project": "Mini-Kuzai",
   "semantic_validation_complete": true,
   "source": "Mini-Kuzai V63 controlled diagnostics, frozen V62 checkpoint and VALIDATION only",
   "status": "TRAINING_AUTHORIZATION_GATE",
-  "step_id": "PHASE03-SMOLTALK-V63-DIAGNOSTIC-PREFLIGHT-001",
+  "step_id": "PHASE03-SMOLTALK-V63-DIAGNOSTIC-PREFLIGHT-002",
   "training_authorized": true
 }
