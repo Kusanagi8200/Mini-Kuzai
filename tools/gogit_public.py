@@ -48,6 +48,9 @@ SOURCE_PHASE03_V63 = (
 SOURCE_PHASE03_V64 = (
     "Mini-Kuzai V64 read-only TRAIN sample and frozen VALIDATION language-learning diagnostics"
 )
+SOURCE_PHASE03_V65 = (
+    "Mini-Kuzai V65 frozen TRAIN token frequencies and VALIDATION next-token predictions"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1405,6 +1408,33 @@ METRIC_KEYS = {
     "V64_TRACE_TOKEN_STATS_MS",
     "V64_TRACE_SCORE_MS",
     "V64_TRACE_CHECKPOINT_LOAD_MS",
+    "V65_FREQ_PASS",
+    "V65_FREQ_BLIND_ACCESS",
+    "V65_FREQ_GPU_BF16",
+    "V65_FREQ_TRAIN_LEXICAL",
+    "V65_FREQ_TRAIN_TYPES",
+    "V65_FREQ_VAL_LEXICAL",
+    "V65_FREQ_VAL_CE_X1000",
+    "V65_FREQ_VAL_EOS_TOP1",
+    "V65_FREQ_GPU_PEAK_MIB",
+    "V65_FREQ_B0_COUNT",
+    "V65_FREQ_B0_TOP1_BP",
+    "V65_FREQ_B0_NLL_X1000",
+    "V65_FREQ_B1_9_COUNT",
+    "V65_FREQ_B1_9_TOP1_BP",
+    "V65_FREQ_B1_9_NLL_X1000",
+    "V65_FREQ_B10P_COUNT",
+    "V65_FREQ_B10P_TOP1_BP",
+    "V65_FREQ_B10P_NLL_X1000",
+    "V65_FREQ_M0_COUNT",
+    "V65_FREQ_M0_TOP1_BP",
+    "V65_FREQ_M0_NLL_X1000",
+    "V65_FREQ_M1_9_COUNT",
+    "V65_FREQ_M1_9_TOP1_BP",
+    "V65_FREQ_M1_9_NLL_X1000",
+    "V65_FREQ_M10P_COUNT",
+    "V65_FREQ_M10P_TOP1_BP",
+    "V65_FREQ_M10P_NLL_X1000",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1469,6 +1499,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V63
     if tracked.startswith("tools/public-audits/phase03_v64_"):
         return SOURCE_PHASE03_V64
+    if tracked.startswith("tools/public-audits/phase03_v65_"):
+        return SOURCE_PHASE03_V65
     return SOURCE
 
 
@@ -1553,6 +1585,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
 
     v64_runtime_trace = tracked == (
         "tools/public-audits/phase03_v64_runtime_trace_001.py"
+    )
+
+    v65_frequency = tracked == (
+        "tools/public-audits/phase03_v65_token_frequency_diagnostic_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -1674,6 +1710,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v64_runtime_trace:
         # A timeout profiler is not a successful training or semantic gate.
+        return False
+    if v65_frequency:
+        # Frequency-stratified next-token prediction is not semantic evaluation.
         return False
 
     if tokenizer_workstream or architecture_workstream:
