@@ -63,6 +63,9 @@ SOURCE_PHASE03_V68 = (
 SOURCE_PHASE03_V69 = (
     "Mini-Kuzai V69 frozen output-head row-norm counterfactuals"
 )
+SOURCE_PHASE03_V70 = (
+    "Mini-Kuzai V70 FP32 control for frozen output-head norm counterfactual"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1592,6 +1595,33 @@ METRIC_KEYS = {
     "V69_NORM_FULL_MERGE_TOP5_BP",
     "V69_NORM_FULL_EOS_TOP1",
     "V69_NORM_FULL_LEX_TOP1_BP",
+    "V70_CTRL_PASS",
+    "V70_CTRL_BLIND_ACCESS",
+    "V70_CTRL_VAL_LEXICAL",
+    "V70_CTRL_BF16_CE_X1000",
+    "V70_CTRL_BF16_PRED_DISTINCT",
+    "V70_CTRL_BF16_TOP1_SHARE_BP",
+    "V70_CTRL_BF16_MERGE_TOP1_BP",
+    "V70_CTRL_BF16_MERGE_TOP5_BP",
+    "V70_CTRL_BF16_EOS_TOP1",
+    "V70_CTRL_FP32_CE_X1000",
+    "V70_CTRL_FP32_PRED_DISTINCT",
+    "V70_CTRL_FP32_TOP1_SHARE_BP",
+    "V70_CTRL_FP32_MERGE_TOP1_BP",
+    "V70_CTRL_FP32_MERGE_TOP5_BP",
+    "V70_CTRL_FP32_EOS_TOP1",
+    "V70_CTRL_HALF_CE_X1000",
+    "V70_CTRL_HALF_PRED_DISTINCT",
+    "V70_CTRL_HALF_TOP1_SHARE_BP",
+    "V70_CTRL_HALF_MERGE_TOP1_BP",
+    "V70_CTRL_HALF_MERGE_TOP5_BP",
+    "V70_CTRL_HALF_EOS_TOP1",
+    "V70_CTRL_FULL_CE_X1000",
+    "V70_CTRL_FULL_PRED_DISTINCT",
+    "V70_CTRL_FULL_TOP1_SHARE_BP",
+    "V70_CTRL_FULL_MERGE_TOP1_BP",
+    "V70_CTRL_FULL_MERGE_TOP5_BP",
+    "V70_CTRL_FULL_EOS_TOP1",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1666,6 +1696,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V68
     if tracked.startswith("tools/public-audits/phase03_v69_"):
         return SOURCE_PHASE03_V69
+    if tracked.startswith("tools/public-audits/phase03_v70_"):
+        return SOURCE_PHASE03_V70
     return SOURCE
 
 
@@ -1772,6 +1804,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
 
     v69_counterfactual = tracked == (
         "tools/public-audits/phase03_v69_output_norm_counterfactual_001.py"
+    )
+
+    v70_precision_control = tracked == (
+        "tools/public-audits/phase03_v70_precision_control_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -1908,6 +1944,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v69_counterfactual:
         # Inference-only counterfactual scores do not constitute semantic validation.
+        return False
+    if v70_precision_control:
+        # Output precision controls are not semantic model validation.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
