@@ -543,7 +543,7 @@ References -->
 
 ---
 
-### V68 verified - V69 head-norm counterfactual prepared
+### V69 verified - V70 precision control prepared
 
 On 2026-10-31 the corrected V68 tied-output-head audit completed through GOGIT, commit [`3d872b9102f7`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/3d872b9102f7708e5bff723ffd0f195ba2e0ee72). The frozen V62 checkpoint reproduces four distinct argmax tokens across 9170 lexical positions, with a **72.58%** dominant prediction share. V68 measured the PAD output row norm at **0.182**, selected-row mean norm at **0.360** and gold-row mean norm at **0.293**. The mean winning-logit deficit of BPE gold tokens was **3.466** versus **1.174** for raw-byte gold tokens.
 
@@ -553,7 +553,17 @@ V69 will test whether **output row-norm differences**, without any parameter cha
 - [V69 frozen research protocol](phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md)
 - [AUTOPILOT V2 operation and limits](autopilot/README.md)
 
-**Current V69 status** --> implementation published; local CPU/GPU results pending. V62 stays frozen.
+**V69 status** --> read-only GPU/GOGIT successfully published. **V70 status** --> BF16-versus-FP32 precision-control audit prepared, local tests and GPU evaluation pending. V62 stays frozen.
+
+---
+
+### V69 published - V70 FP32 control pending
+
+The frozen V62 model was evaluated under three in-memory output-head norm interventions in [V69 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001.json). The original BF16 cross-entropy was **4.733** with four distinct argmax IDs. Partial and full norm equalization changed cross-entropy to **4.892** and **5.048**; full normalization produced seven distinct argmax IDs and BPE top-5 improved from **6.85%** to **7.71%**. These results do not justify training, because the FP32 projection precision was not separately controlled.
+
+[V70](phases/MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md) adds an **unmodified FP32 projection control** using identical frozen hidden states. The new [AUTOPILOT V3 campaign](autopilot/campaigns/phase03-autopilot-v3.json) can execute V70 and classify numerical drift without another manual stage-by-stage interaction. Code publication does not imply GPU execution.
+
+Training remains unregistered and unauthorized. V62 and BLIND remain frozen.
 
 ---
 
@@ -671,18 +681,22 @@ V67 TOP TOKEN SHARE       --> 72.58%
 V68 GOGIT                 --> OUTPUT HEAD 001 VERIFIED
 V68 PAD NORM              --> 0.182
 V68 PREDICTED ROW NORM    --> 0.360 / EXPECTED 0.293
-V69                       --> NORM COUNTERFACTUAL CODE READY
-AUTOPILOT                 --> V2 6-STAGE CAMPAIGN PUBLISHED
+V69 GOGIT                 --> NORM COUNTERFACTUAL PUBLISHED
+V69 HALF CE / FULL CE     --> 4.892 / 5.048
+V69 HALF / FULL DISTINCT  --> 4 / 7
+V69 FULL BPE TOP5         --> 7.71% VS BASE 6.85%
+V70                       --> BF16 / FP32 CONTROL PREPARED
+AUTOPILOT                 --> V3 6-STAGE CAMPAIGN PUBLISHED
 AUTOPILOT TRAINING        --> DISABLED / NEW AUTHORIZATION REQUIRED
 New training authorized   --> NO
 New training started      --> NO
 BLIND access in V63/V64   --> 0
-Next step                 --> AUTOPILOT V2 / V69 COUNTERFACTUAL GPU AUDIT
+Next step                 --> AUTOPILOT V3 / V70 BF16-FP32 CONTROL
 ```
 
 **Status qualification** --> Earlier V62 GOGIT records `TRAINING_AUTHORIZED=1` and `TRAINING_STARTED=1` for its historical authorized and executed run. V64 reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0` and `SEMANTIC_VALIDATION_COMPLETE=0` for the present diagnostic. They must not be confused.
 
-See [verified V68 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001.json), [V69 protocol](phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md) and [AUTOPILOT V2](autopilot/README.md). Historical V53-V62 details remain documented above and in the phase archives.
+See [verified V69 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001.json), [V70 protocol](phases/MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md) and [AUTOPILOT V3](autopilot/README.md). Historical V53-V62 details remain documented above and in the phase archives.
 
 ---
 
