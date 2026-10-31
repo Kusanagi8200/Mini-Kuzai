@@ -2,7 +2,7 @@
 
 Date --> 2026-10-31
 
-Status --> **AUDIT, CPU TESTS AND PINNED GOGIT RUNNER PUBLISHED / LOCAL CPU AND GPU EXECUTION PENDING**
+Status --> **GPU GOGIT VERIFIED / V62 CHECKPOINT FROZEN / TRAINING DISABLED**
 
 ## Scientific question
 
@@ -96,7 +96,40 @@ After a successful clean fast-forward synchronization -->
 cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/run_v72_hidden_state_anisotropy_001_job.py
 ```
 
-Once the local command terminates, reply `GOGIT` so the immutable numeric report can be retrieved and interpreted. Source publication does **not** prove that CPU tests or GPU evaluation succeeded; no V72 results are currently claimed.
+The pinned local command has now produced a verified immutable V72 numeric GOGIT report. It should **not** be rerun to overwrite the existing STEP_ID; the command above is retained for historical reproducibility. The public report demonstrates completion of the numeric GPU diagnostic, not independent conversational or semantic validation.
+
+## Published V72 findings
+
+Immutable numeric result --> [V72 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001.json)
+
+Verified commit --> [41aed7aef84c](https://github.com/Kusanagi8200/Mini-Kuzai/commit/41aed7aef84c832e78ae2ac7bfc2f8cd681bd1b7)
+
+| Measure | Verified result |
+| --- | ---: |
+| Frozen lexical VALIDATION positions | 9170 |
+| Output-head hidden dimension | 128 |
+| Original FP32 CE | 4.732 |
+| Mean-vector energy share | 72.19% |
+| Raw / uncentered PC1 energy share | 74.51% |
+| Raw / uncentered first-five energy share | 99.15% |
+| Raw / uncentered participation ratio | 1.67 |
+| Centered PC1 variance share | 82.88% |
+| Centered first-five variance share | 97.38% |
+| Centered participation ratio | 1.44 |
+| Mean pairwise hidden-state cosine | 0.721 |
+| Mean hidden-state L2 norm | 11.665 |
+| Mean-vector L2 norm | 9.911 |
+| Absolute cosine: mean vector vs centered PC1 | 0.257 |
+| Original -> centered top-1 distinct lexical IDs | 5 -> 15 |
+| Original -> centered dominant-token share | 72.55% -> 57.88% |
+| Original -> centered lexical correct top-1 | 2673 -> 2832 |
+| Argmax changes after centering | 2889 / 9170 = 31.50% |
+| Changes for byte / merged-BPE gold targets | 1353 / 1536 |
+| BLIND access / new training | 0 / 0 |
+
+**Reading -->** Most energy is aligned with a shared mean vector, but centered covariance is still extremely anisotropic: PC1 explains 82.88% of its variance in 128 dimensions and participation ratio is only 1.44. The mean-center counterfactual changes about one-third of lexical winners and yields +159 exact top-1 decisions without any change to frozen weights. This does **not** demonstrate better generation or performance on independent data. The mean was estimated from the same VALIDATION split used to score the counterfactual, so it is not a held-out estimator.
+
+**Decision -->** Preserve the V62 checkpoint and original projection. The next read-only research question is whether centered PC1/PC2 directions and token-specific output alignment explain the residual anisotropy. Any future intervention must be a separately reviewed experiment, with no implicit training authorization or BLIND use.
 
 ## Decision boundary
 
