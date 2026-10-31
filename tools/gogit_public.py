@@ -1302,6 +1302,33 @@ METRIC_KEYS = {
     "V63_ROB_TOPP_DISTINCT_BP",
     "V63_ROB_TOPP_UTF8_INVALID",
     "V63_ROB_TOPP_ROLE_LEAK",
+    "V63_HUM_PASS",
+    "V63_HUM_BLIND_ACCESS",
+    "V63_HUM_SAMPLES",
+    "V63_HUM_REVIEWED",
+    "V63_HUM_SEEDS",
+    "V63_HUM_EOS",
+    "V63_HUM_SHORT16",
+    "V63_HUM_UTF8_INVALID",
+    "V63_HUM_ROLE_LEAK",
+    "V63_HUM_REL_0",
+    "V63_HUM_REL_1",
+    "V63_HUM_REL_2",
+    "V63_HUM_REL_MEAN_X100",
+    "V63_HUM_COH_0",
+    "V63_HUM_COH_1",
+    "V63_HUM_COH_2",
+    "V63_HUM_COH_MEAN_X100",
+    "V63_HUM_COG_0",
+    "V63_HUM_COG_1",
+    "V63_HUM_COG_2",
+    "V63_HUM_COG_NA",
+    "V63_HUM_COG_MEAN_X100",
+    "V63_HUM_PER_0",
+    "V63_HUM_PER_1",
+    "V63_HUM_PER_2",
+    "V63_HUM_PER_NA",
+    "V63_HUM_PER_MEAN_X100",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1434,6 +1461,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v63_decoding_robustness_001.py"
     )
 
+    v63_human_review = tracked == (
+        "tools/public-audits/phase03_v63_semantic_generation_review_001.py"
+    )
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -1533,6 +1564,17 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             and metrics.get("V63_ROB_BLIND_ACCESS") == 0
             and metrics.get("V63_ROB_GPU_BF16") == 1
             and metrics.get("V63_ROB_SEEDS") == 8
+        )
+    
+    if v63_human_review:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 0
+            and metrics.get("TRAINING_STARTED") == 0
+            and metrics.get("V63_HUM_PASS") == 1
+            and metrics.get("V63_HUM_BLIND_ACCESS") == 0
+            and metrics.get("V63_HUM_SAMPLES") == 24
+            and metrics.get("V63_HUM_REVIEWED") == 24
         )
 
     if tokenizer_workstream or architecture_workstream:
