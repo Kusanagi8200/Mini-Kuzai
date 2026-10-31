@@ -54,6 +54,9 @@ SOURCE_PHASE03_V65 = (
 SOURCE_PHASE03_V66 = (
     "Mini-Kuzai V66 frozen Byte/BPE prediction confusion and probability mass"
 )
+SOURCE_PHASE03_V67 = (
+    "Mini-Kuzai V67 frozen output concentration and stable target-rank diagnostic"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1492,6 +1495,33 @@ METRIC_KEYS = {
     "V66_BIAS_M1000P_COUNT",
     "V66_BIAS_M1000P_TOP1_BP",
     "V66_BIAS_M1000P_NLL_X1000",
+    "V67_CONC_PASS",
+    "V67_CONC_BLIND_ACCESS",
+    "V67_CONC_GPU_BF16",
+    "V67_CONC_GPU_PEAK_MIB",
+    "V67_CONC_VAL_TOKENS",
+    "V67_CONC_VAL_LEXICAL",
+    "V67_CONC_VAL_CE_X1000",
+    "V67_CONC_EOS_TOP1",
+    "V67_CONC_PRED_DISTINCT",
+    "V67_CONC_GOLD_DISTINCT",
+    "V67_CONC_PRED_BYTE_DISTINCT",
+    "V67_CONC_PRED_MERGE_DISTINCT",
+    "V67_CONC_TOP1_SHARE_BP",
+    "V67_CONC_TOP5_SHARE_BP",
+    "V67_CONC_TOP10_SHARE_BP",
+    "V67_CONC_TOP20_SHARE_BP",
+    "V67_CONC_PRED_ENTROPY_X1000",
+    "V67_CONC_BYTE_GOLD_TOP1_BP",
+    "V67_CONC_MERGE_GOLD_TOP1_BP",
+    "V67_CONC_BYTE_GOLD_TOP5_BP",
+    "V67_CONC_MERGE_GOLD_TOP5_BP",
+    "V67_CONC_BYTE_GOLD_TOP10_BP",
+    "V67_CONC_MERGE_GOLD_TOP10_BP",
+    "V67_CONC_BYTE_GOLD_TOP50_BP",
+    "V67_CONC_MERGE_GOLD_TOP50_BP",
+    "V67_CONC_BYTE_GOLD_MEDIAN_RANK",
+    "V67_CONC_MERGE_GOLD_MEDIAN_RANK",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1560,6 +1590,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V65
     if tracked.startswith("tools/public-audits/phase03_v66_"):
         return SOURCE_PHASE03_V66
+    if tracked.startswith("tools/public-audits/phase03_v67_"):
+        return SOURCE_PHASE03_V67
     return SOURCE
 
 
@@ -1655,6 +1687,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v66_token_prediction_bias_part_a_001.py",
         "tools/public-audits/phase03_v66_token_prediction_bias_part_b_001.py",
     }
+
+    v67_concentration = tracked == (
+        "tools/public-audits/phase03_v67_output_concentration_001.py"
+    )
 
     architecture_workstream = tracked.startswith(
         (
@@ -1781,6 +1817,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v66_token_bias:
         # Decoder logits diagnostics do not measure semantic validity.
+        return False
+    if v67_concentration:
+        # Stable token rank is not human semantic validation.
         return False
 
     if tokenizer_workstream or architecture_workstream:
