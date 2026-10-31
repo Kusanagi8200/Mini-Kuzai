@@ -43,7 +43,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V65-V66** | Token-frequency learning and byte/BPE prediction bias | [V65](phases/MINI-KUZAI-PHASE-03-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.md) · [V66](phases/MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md) |
 | **V67-V68** | Output concentration, tied output head, embedding norms and logit margins | [V67](phases/MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md) · [V68](phases/MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md) |
 | **V69-V70** | In-memory output-norm counterfactual and BF16/FP32 precision control | [V69](phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md) · [V70](phases/MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md) · [V70 GOGIT results](reports/assistant-results/history/PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001.json) |
-| **V71 - proposed diagnostic** | Attribute output-token dominance to output-row norms versus hidden-state alignment; no implementation or GPU result yet | [V71 research protocol](phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) |
+| **V71 - GPU diagnostic prepared** | Frozen V62 norm-versus-direction attribution, 30 approved numeric metrics; execution pending | [V71 research protocol](phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) · [V71 audit](tools/public-audits/phase03_v71_output_dominance_attribution_001.py) · [V71 tests](tests/test_phase03_v71_output_dominance_attribution_001.py) |
 
 ## Current status - 2026-10-31
 
@@ -59,7 +59,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **VALIDATION cross-entropy** | BF16 original 4.733 / FP32 original 4.732 / HALF 4.892 / FULL 5.048 |
 | **Observed limitation** | Only 4-5 distinct original-projection argmax tokens across 9,170 lexical validation positions |
 | **Safety** | No new training authorized, V62 unchanged, BLIND remains closed |
-| **V71 protocol** | Published; read-only diagnostic implementation and GPU evaluation **not yet available** |
+| **V71 status** | Read-only audit, unit tests and pinned GOGIT runner published; **local tests / GPU execution / GOGIT report pending** |
 
 **V70 finding -->** BF16/FP32 precision differences do not account for most of V69's cross-entropy degradation under row-norm equalization. The original frozen output projection is retained. Improved numerical loss alone does not establish conversational quality or semantic validity.
 
