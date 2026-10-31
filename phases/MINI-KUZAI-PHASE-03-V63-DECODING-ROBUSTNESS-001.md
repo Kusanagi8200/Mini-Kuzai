@@ -1,8 +1,26 @@
 # Mini-Kuzai Phase 03 - V63 Decoding Robustness 001
 
-Status --> **PREPARED / NOT EXECUTED / TRAINING STOPPED**
+Status --> **EXECUTED / GOGIT PUBLISHED / TRAINING STOPPED**
 
 This diagnostic checks whether the favorable Top-k / Top-p termination result from the initial six-prompt, one-seed ablation reproduces across independent random seeds.
+
+## Verified execution - 2026-10-31
+
+GOGIT step --> [PHASE03-SMOLTALK-V63-DECODING-ROBUSTNESS-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V63-DECODING-ROBUSTNESS-001.json)
+
+Commit --> [`40d77cdc0910`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/40d77cdc0910ed2c8d88f1273782c792eb50bb48)
+
+| Outcome | TEMP | TOP-K / TOP-P |
+| --- | --- | --- |
+| EOS completions | 27 / 48 | 41 / 48 |
+| Per-seed EOS range | 1-5 / 6 | 3-6 / 6 |
+| Mean generation length | 63.94 | 48.12 |
+| Token trigram repetition | 0.18% | 5.36% |
+| Token 8-gram repetition | 0% | 0% |
+| Invalid UTF-8 | 32 / 48 | 0 / 48 |
+| Outputs of 16 tokens or fewer | 6 / 48 | 12 / 48 |
+
+Top-k/top-p remains an **experimental decoder candidate** rather than a validated language-quality solution. The initial 6/6 EOS result did not persist across all seeds. No V63 training was performed.
 
 ## Frozen inputs
 
