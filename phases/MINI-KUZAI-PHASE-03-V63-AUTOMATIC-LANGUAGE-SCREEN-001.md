@@ -1,12 +1,34 @@
 # Mini-Kuzai Phase 03 - V63 Automatic Language Screen 001
 
-Status --> **AUTOMATED, NONSEMANTIC DIAGNOSTIC PREPARED / NOT YET EXECUTED**
+Status --> **EXECUTED / GOGIT PUBLISHED / NONSEMANTIC SCREEN ONLY**
 
 ## Why human review was suspended
 
 The initial private semantic review displayed visibly nonsensical output even when EOS was emitted and UTF-8 decoding succeeded. A human rating for every example would add little diagnostic value at this stage. The previous human review pipeline remains intact for auditability but is **not** used here.
 
 This stage tests whether the current V62 cycle-2 model generates recognizable English-like forms under the frozen V63 Top-k / Top-p decoder. It deliberately does not assign human semantic ratings.
+
+## Verified results - 2026-10-31
+
+GOGIT report --> [PHASE03-SMOLTALK-V63-AUTOMATIC-LANGUAGE-SCREEN-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V63-AUTOMATIC-LANGUAGE-SCREEN-001.json)
+
+Commit --> [`91c4a2f37dbe`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/91c4a2f37dbe43696d3d2d1aaa02996fc13a6d77)
+
+| Indicator | Measured |
+| --- | --- |
+| Private generations analyzed | 24 |
+| EOS terminations | 20 / 24 |
+| Invalid UTF-8 | 0 / 24 |
+| Rule-based suspect outputs | 10 / 24 |
+| Outputs with zero regex-recognized words | 2 / 24 |
+| Short nonstandard word-fragment ratio | 21.02% |
+| Words outside limited 898-word reference lexicon | 41.11% |
+| Token trigram repetition | 5.46% |
+| Human review scores | 0 |
+
+Result interpretation --> syntax, semantics, coherence and persona were **not** validated. The interrupted human-rating project remains incomplete. This screen provides only observable lexical and token-pattern signals.
+
+The succeeding V64 audit confirmed that the pretrained model reduced next-token cross-entropy but still generated poor language. See [V64 closure and V65 readiness](MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md).
 
 ## Frozen inputs and protections
 
