@@ -72,6 +72,9 @@ SOURCE_PHASE03_V71 = (
 SOURCE_PHASE03_V72 = (
     "Mini-Kuzai V72 frozen hidden-state anisotropy and mean-center controls"
 )
+SOURCE_PHASE03_V73 = (
+    "Mini-Kuzai V73 frozen centered principal-axis output projection attribution"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1682,6 +1685,33 @@ METRIC_KEYS = {
     "V72_GEOM_MEAN_PC1_ABS_COS_X1000",
     "V72_GEOM_CENTER_SWITCH_BYTE",
     "V72_GEOM_CENTER_SWITCH_MERGE",
+    "V73_AXIS_PASS",
+    "V73_AXIS_BLIND_ACCESS",
+    "V73_AXIS_VAL_LEXICAL",
+    "V73_AXIS_MODEL_DIM",
+    "V73_AXIS_CENTER_PC1_BP",
+    "V73_AXIS_CENTER_PC2_BP",
+    "V73_AXIS_CENTER_TOP1_SHARE_BP",
+    "V73_AXIS_CENTER_DISTINCT",
+    "V73_AXIS_CENTER_CORRECT",
+    "V73_AXIS_MINUS_PC1_DISTINCT",
+    "V73_AXIS_MINUS_PC1_TOP1_SHARE_BP",
+    "V73_AXIS_MINUS_PC1_CORRECT",
+    "V73_AXIS_MINUS_PC1_SWITCH",
+    "V73_AXIS_MINUS_PC1_SWITCH_BYTE",
+    "V73_AXIS_MINUS_PC1_SWITCH_MERGE",
+    "V73_AXIS_MINUS_PC12_DISTINCT",
+    "V73_AXIS_MINUS_PC12_TOP1_SHARE_BP",
+    "V73_AXIS_MINUS_PC12_CORRECT",
+    "V73_AXIS_MINUS_PC12_SWITCH",
+    "V73_AXIS_PC1_ONLY_DISTINCT",
+    "V73_AXIS_PC1_ONLY_TOP1_SHARE_BP",
+    "V73_AXIS_PC1_ONLY_CORRECT",
+    "V73_AXIS_CENTER_MARGIN_X1000",
+    "V73_AXIS_MINUS_PC1_MARGIN_X1000",
+    "V73_AXIS_MINUS_PC12_MARGIN_X1000",
+    "V73_AXIS_PC1_WIN_ABS_COS_X1000",
+    "V73_AXIS_PC1_GOLD_ABS_COS_X1000",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1762,6 +1792,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V71
     if tracked == "tools/public-audits/phase03_v72_hidden_state_anisotropy_001.py":
         return SOURCE_PHASE03_V72
+    if tracked == "tools/public-audits/phase03_v73_principal_axis_attribution_001.py":
+        return SOURCE_PHASE03_V73
     return SOURCE
 
 
@@ -1878,6 +1910,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     )
     v72_geometry = tracked == (
         "tools/public-audits/phase03_v72_hidden_state_anisotropy_001.py"
+    )
+    v73_axis = tracked == (
+        "tools/public-audits/phase03_v73_principal_axis_attribution_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -2023,6 +2058,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v72_geometry:
         # Hidden-state spectra are neither semantic nor training validation.
+        return False
+    if v73_axis:
+        # Frozen principal-axis ablations never certify semantic validity.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
