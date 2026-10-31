@@ -1,16 +1,24 @@
 # Mini-Kuzai Phase 03 - V68 tied output head and logit dominance
 
-Status --> **FIRST GPU ATTEMPT FAILED / GOGIT NOT PUBLISHED / SANITIZED FAILURE DIAGNOSTIC PREPARED**
+Status --> **GOGIT FAILURE CAUSE CONFIRMED / PAD GUARD CORRECTED / LOCAL GPU REVALIDATION PENDING**
 
 Date --> 2026-10-31
 
-## Execution incident - pending numeric root-cause confirmation
+## Confirmed incident and correction
 
-The first AUTOPILOT attempt passed 8 CPU tests. The original V68 GPU audit exited with status 1; the GOGIT wrapper refused publication and concealed its Python traceback. The actual exception has not yet been observed in an auditable result.
+The first AUTOPILOT V1 execution passed eight CPU unit tests but the original V68 audit failed before GOGIT publication. The follow-up [V68 numeric failure probe](../reports/assistant-results/history/PHASE03-SMOLTALK-V68-FAILURE-PROBE-001.json), commit [`73402e216896`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/73402e21689693db8180ae4ab776f3f2be125eb2), identified -->
 
-The original V68 source has **not** been modified by the incident response. A new separate diagnostic, [V68 failure probe 001](MINI-KUZAI-PHASE-03-V68-FAILURE-PROBE-001.md), will rerun that source in read-only mode, convert the fault to 13 allowlisted numeric counters, publish a separate immutable GOGIT report and stop AUTOPILOT.
+- `V68_FAIL_ORIGINAL_FAILED=1`
+- `V68_FAIL_EXCEPTION_CLASS_ID=1` --> RuntimeError
+- `V68_FAIL_CAUSE_ID=5` --> original `Frozen PAD embedding row nonzero` invariant
+- `V68_FAIL_SOURCE_FUNCTION_ID=2` --> `summarize_head()`
+- `V68_FAIL_SOURCE_LINE=49` --> former check
 
-No V68 head-norm, logit-gap or PAD-row metric can be claimed as measured until the original audit succeeds or the numeric probe identifies a specific error. The historical V62 checkpoint remains frozen.
+**Correction** --> `padding_idx` suppresses input embedding gradients for PAD but, under tied output-head weights, PAD remains an output softmax competitor and its shared row can change during training. The output PAD row is therefore required to be **finite**, but not exactly zero.
+
+The new diagnostic publishes `V68_HEAD_NORM_PAD_X1000` (PAD row L2 norm multiplied by 1000), replacing the old `V68_HEAD_NORM_SPECIAL_MEAN_X1000` metric **without changing the report length of 30 fields**. The weight-tied/no-bias checks, finite-row enforcement, V62 frozen checkpoint and VAL/BLIND separation remain intact. Two new CPU cases cover an intentionally nonzero PAD row and an invalid NaN row.
+
+**Status** --> source and tests corrected on GitHub. A successful GPU execution and V68 numerical report remain to be verified on fhc2. The failure-probe report remains part of the immutable incident history, not a successful V68 result.
 
 ## Research question
 
@@ -27,7 +35,7 @@ V60's frozen model defines `lm_head` as a bias-free linear projection, tied dire
 The program examines -->
 
 - Weight tying and absence of output bias
-- Mean row norms for single-byte, merged BPE and special-token families
+- Mean row norms for single-byte and merged BPE families, and the measured PAD output-row L2 norm
 - Maximum row norm and cross-vocabulary norm dispersion
 - Top-1 prediction class and distinct predicted ID count
 - Winner-to-runner-up logit margin and its 90th percentile
@@ -47,7 +55,7 @@ Runner --> `tools/run_v68_output_head_001_job.py`
 
 GOGIT step --> `PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001`
 
-Exactly 30 numeric GOGIT fields, including the standard three safety flags. No prompts, decoded text, source token IDs, individual logits or private data.
+Exactly 30 numeric GOGIT fields, including the standard three safety flags and explicit `V68_HEAD_NORM_PAD_X1000`. No prompts, decoded text, source token IDs, individual logits or private data.
 
 V68 forms the fifth stage of [AUTOPILOT V1](../autopilot/README.md), triggered only when V67 has at most 8 unique predicted IDs and top-1 concentration at least 70%.
 
