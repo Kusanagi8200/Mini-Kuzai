@@ -1,6 +1,6 @@
 # Mini-Kuzai AUTOPILOT V1 - MODE 2
 
-Status --> **V68 GPU/GOGIT VERIFIED / V69 AUTOPILOT V2 PREPARED / TRAINING DISABLED**
+Status --> **V69 GOGIT VERIFIED / V70 AUTOPILOT V3 PUBLISHED / TRAINING DISABLED**
 
 Date --> 2026-10-31
 
@@ -32,7 +32,29 @@ To execute the new V2 campaign on fhc2 after pulling a clean main -->
 /root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --campaign phase03-autopilot-v2.json
 ```
 
-Status --> scripts and manifest published to GitHub, local CPU/GPU and V69 GOGIT results not yet verified. The training-runner registry remains empty.
+Status --> V69 numeric GOGIT has been published and verified; see AUTOPILOT V3 for the next experiment. The training-runner registry remains empty.
+
+## AUTOPILOT V3 - V70 BF16/FP32 precision control
+
+The [V69 GOGIT report](../reports/assistant-results/history/PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001.json) has been published and verified. It showed cross-entropy **4.733** for BASE, **4.892** for HALF and **5.048** for FULL, with only a modest diversity increase. The BASE results used BF16, while HALF/FULL used FP32. Consequently, V69 cannot isolate the effect of output-row norms from numerical precision differences.
+
+The new V70 experiment introduces **FP32 ORIGINAL** alongside BF16 ORIGINAL, HALF FP32 and FULL FP32. All four variants are evaluated against the same frozen V62 VALIDATION sequences and captured hidden states. V70 refuses publication unless the BF16/HALF/FULL results reproduce the published V69 values exactly.
+
+The new [six-stage V3 manifest](campaigns/phase03-autopilot-v3.json) has independent ID `phase03-precision-v3`. It verifies V68/V69, runs the registered and pinned V70 GOGIT job and classifies precision-induced cross-entropy or prediction-diversity shifts. Branches write only local campaign state; they never authorize training.
+
+- V70 diagnostic --> `tools/public-audits/phase03_v70_precision_control_001.py`
+- V70 GOGIT wrapper --> `tools/run_v70_precision_control_001_job.py`
+- CPU-only V70 tests --> `tests/test_phase03_v70_precision_control_001.py`
+- AUTOPILOT V3 tests --> `tests/test_mini_kuzai_autopilot_v3.py`
+- [Scientific protocol](../phases/MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md)
+
+Once the local tests have passed, run from a clean, synchronized repository -->
+
+```bash
+/root/Mini-Kuzai/.venv/bin/python tools/mini_kuzai_autopilot.py --campaign phase03-autopilot-v3.json
+```
+
+No GitHub Actions AUTO-WATCH or scheduled GitHub analysis is installed. The user manually replies `GOGIT` in ChatGPT when the local job finishes. **No new training is authorized, and BLIND TEST stays closed.**
 
 ## Goal
 
