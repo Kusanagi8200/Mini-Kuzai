@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-10-31
 
-**V68 OUTPUT HEAD --> PUBLISHED AND VERIFIED. V69 NORM COUNTERFACTUAL --> PREPARED FOR AUTOPILOT V2.**
+**V69 NORM COUNTERFACTUAL --> PUBLISHED AND VERIFIED. V70 FP32 PRECISION CONTROL --> PREPARED FOR AUTOPILOT V3.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -495,19 +495,22 @@ V67 dominant top1 share     --> 72.58%
 V68 GOGIT                  --> OUTPUT HEAD 001 COMPLETE
 V68 mean predicted norm    --> 0.360 / expected 0.293
 V68 PAD output norm        --> 0.182
-V69                        --> GPU RUN PENDING / FROZEN MODEL
-AUTOPILOT                   --> V2 6 STAGES / TRAINING DISABLED
+V69 GOGIT                  --> NORM COUNTERFACTUAL 001 VERIFIED
+V69 HALF/FULL CE           --> 4.892 / 5.048
+V69 HALF/FULL DISTINCT     --> 4 / 7
+V70                        --> FP32 CONTROL PENDING / V62 FROZEN
+AUTOPILOT                   --> V3 6 STAGES / TRAINING DISABLED
 New training authorized    --> NO
 New training started       --> NO
 BLIND TEST access          --> 0 during V63/V64
-Next workstream            --> AUTOPILOT V2 / V69 IN-MEMORY NORM COUNTERFACTUAL
+Next workstream            --> AUTOPILOT V3 / V70 BF16-VS-FP32 CONTROL
 ```
 
 The previous V62 GOGIT training flags describe **historical V62 execution** and must not be reused as a new V65 training authorization. The V64 diagnostic flags are `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`.
 
 The 12 TRAIN segments in V64 form a deliberately small exploratory sample, and V63's lexical checks do not establish semantic correctness. The frozen V62 checkpoint remains the only model used for these inference-only diagnostics.
 
-Primary checkpoint --> [V68 verified output-head GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001.json), [AUTOPILOT V2](../autopilot/README.md) and [V69 frozen protocol](MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md)
+Primary checkpoint --> [V69 verified GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001.json), [AUTOPILOT V3](../autopilot/README.md) and [V70 frozen protocol](MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md)
 
 ## Historical checkpoint chronology - V53 to V59
 
@@ -941,7 +944,17 @@ V69 now tests HALF and FULL output row-norm equalization in inference memory, le
 
 V69 source --> [protocol and non-training safeguards](MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md).
 
-V69 GOGIT --> **not yet published**. No semantic validation, extra training or BLIND access is authorized.
+V69 GOGIT --> **published and verified**. V70 prepares an unmodified FP32 output projection control before any causal conclusion or new training authorization. No semantic validation, extra training or BLIND access is authorized.
+
+### V69 completed - V70 precision-control experiment prepared
+
+V69 numeric GOGIT confirmed that HALF and FULL row-norm equalization increased BPE top-5 coverage (6.85% baseline, 7.27% HALF, 7.71% FULL), modestly increased distinct predictions (4, 4, 7) and degraded cross-entropy (4.733, 4.892, 5.048). Original BASE used BF16; interventions used FP32. It would be premature to attribute the results exclusively to changed row norms.
+
+V70 will evaluate a **separate unmodified FP32 output projection** on identical frozen hidden states, replay the original and normalized modes and verify all V69 reported numbers before publishing. The new six-stage AUTOPILOT V3 orchestrates these read-only checks and three numerical decision branches.
+
+V70 reference --> [frozen precision-control protocol](MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md).
+
+V70 results --> **not published yet**. Training remains disabled and BLIND closed.
 
 Verified references -->
 
