@@ -45,6 +45,9 @@ SOURCE_PHASE03_V62 = (
 SOURCE_PHASE03_V63 = (
     "Mini-Kuzai V63 controlled diagnostics, frozen V62 checkpoint and VALIDATION only"
 )
+SOURCE_PHASE03_V64 = (
+    "Mini-Kuzai V64 read-only TRAIN sample and frozen VALIDATION language-learning diagnostics"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1354,6 +1357,33 @@ METRIC_KEYS = {
     "V63_AUTO_REPEAT3_BP",
     "V63_AUTO_REPEAT8_BP",
     "V63_AUTO_PROMPT_LEX_OVERLAP_BP",
+    "V64_LANG_PASS",
+    "V64_LANG_BLIND_ACCESS",
+    "V64_LANG_GPU_BF16",
+    "V64_LANG_GPU_PEAK_MIB",
+    "V64_LANG_VOCAB",
+    "V64_LANG_BPE_MERGES",
+    "V64_LANG_TRAIN_SEGMENTS",
+    "V64_LANG_VAL_SEGMENTS",
+    "V64_LANG_TRAIN_BYTES_PER_TOKEN_X1000",
+    "V64_LANG_VAL_BYTES_PER_TOKEN_X1000",
+    "V64_LANG_TRAIN_BASE_SHARE_BP",
+    "V64_LANG_VAL_BASE_SHARE_BP",
+    "V64_LANG_TRAIN_TOKENS",
+    "V64_LANG_VAL_TOKENS",
+    "V64_LANG_TRAIN_CE_X1000",
+    "V64_LANG_VAL_CE_X1000",
+    "V64_LANG_VAL_CE_GE_TRAIN",
+    "V64_LANG_ABS_CE_GAP_X1000",
+    "V64_LANG_TRAIN_TOP1_BP",
+    "V64_LANG_VAL_TOP1_BP",
+    "V64_LANG_TRAIN_BASE_TARGET_BP",
+    "V64_LANG_VAL_BASE_TARGET_BP",
+    "V64_LANG_TRAIN_BYTE_NLL_X1000",
+    "V64_LANG_TRAIN_MERGE_NLL_X1000",
+    "V64_LANG_VAL_BYTE_NLL_X1000",
+    "V64_LANG_VAL_MERGE_NLL_X1000",
+    "V64_LANG_VAL_EOS_TOP1",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1416,6 +1446,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V62
     if tracked.startswith("tools/public-audits/phase03_v63_"):
         return SOURCE_PHASE03_V63
+    if tracked.startswith("tools/public-audits/phase03_v64_"):
+        return SOURCE_PHASE03_V64
     return SOURCE
 
 
@@ -1491,6 +1523,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     )
     v63_auto_language_screen = tracked == (
         "tools/public-audits/phase03_v63_automatic_language_screen_001.py"
+    )
+
+    v64_language_diagnostic = tracked == (
+        "tools/public-audits/phase03_v64_language_learning_diagnostic_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -1606,6 +1642,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         )
     if v63_auto_language_screen:
         # This is NOT semantic validation. Keep the metadata false.
+        return False
+    if v64_language_diagnostic:
+        # Tokenizer and CE diagnostics are not semantic validation.
         return False
 
     if tokenizer_workstream or architecture_workstream:
