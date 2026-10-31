@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-10-31
 
-**V64 LANGUAGE LEARNING DIAGNOSTIC 002 --> PUBLISHED AND VERIFIED. V65 --> PROPOSED, NOT EXECUTED.**
+**V65 TOKEN FREQUENCY DIAGNOSTIC 001 --> PUBLISHED AND VERIFIED. V66 TOKEN PREDICTION BIAS --> PREPARED, NOT YET EXECUTED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -482,17 +482,21 @@ V64 TRAIN sample           --> 12 segments / CE 4.664 / top-1 33.97%
 V64 VALIDATION             --> 36 segments / CE 4.733 / top-1 29.20%
 V64 EOS terminal top-1     --> 14 / 36
 V64 GOGIT                  --> LANGUAGE LEARNING DIAGNOSTIC 002 published
+V65 GOGIT                  --> TOKEN FREQUENCY DIAGNOSTIC 001 published
+V65 BYTE TOP1              --> 52.00% / frequent targets
+V65 MERGED TOP1            --> 3.27% / frequent targets
+V66                        --> CODE PUBLISHED / GPU RUN PENDING
 New training authorized    --> NO
 New training started       --> NO
 BLIND TEST access          --> 0 during V63/V64
-Next workstream            --> V65 TOKEN LEARNING AND TRAINING READINESS
+Next workstream            --> V66 TOKEN PREDICTION BIAS DIAGNOSTIC
 ```
 
 The previous V62 GOGIT training flags describe **historical V62 execution** and must not be reused as a new V65 training authorization. The V64 diagnostic flags are `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`.
 
 The 12 TRAIN segments in V64 form a deliberately small exploratory sample, and V63's lexical checks do not establish semantic correctness. The frozen V62 checkpoint remains the only model used for these inference-only diagnostics.
 
-Primary checkpoint --> [V64 closure and V65 readiness](MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md)
+Primary checkpoint --> [V65 verified frequency results](MINI-KUZAI-PHASE-03-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.md) and [V66 prepared diagnostic](MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md)
 
 ## Historical checkpoint chronology - V53 to V59
 
@@ -892,6 +896,23 @@ The V62 mandatory cycle-2 review **has been executed**, not merely prepared. The
 **V64 validated measurements** --> 12 sampled TRAIN segments, CE **4.664**, top-1 **33.97%**; all 36 frozen VALIDATION segments, CE **4.733**, top-1 **29.20%**. Terminal EOS top-1 remained **14/36**. In VALIDATION, raw-byte token NLL averaged **3.386**, BPE-merged token NLL **6.268**. These differences require frequency-controlled follow-up, not an immediate tokenizer replacement.
 
 **Decision** --> architecture, tokenizer and checkpoint remain frozen. The model has learned to reduce next-token loss but has not demonstrated usable free-form conversation. V65 will examine token-frequency strata and prior training progression **before** any separate proposal for a new training authorization.
+
+### V65 completed - V66 planned
+
+**V65 TOKEN FREQUENCY DIAGNOSTIC 001** was executed and published on 2026-10-31. Full frozen TRAIN token frequencies cover **294726 nonspecial occurrences / 891 distinct token IDs**, with scores calculated over the **9170 nonspecial VALIDATION next-token targets**.
+
+- Frequent raw-byte token targets --> **4873 occurrences / 52.00% top-1 / NLL 3.383**
+- Frequent merged BPE targets --> **4287 occurrences / 3.27% top-1 / NLL 6.265**
+- Zero- or low-frequency targets --> **10/9170**, insufficient to explain the large family-level performance gap by themselves
+- Full VALIDATION CE --> **4.733**, terminal EOS top-1 --> **14/36**, both consistent with V64/V63
+- New training --> **not authorized**, BLIND TEST --> **closed**
+
+The new **V66 TOKEN PREDICTION BIAS** workstream is implemented but not yet executed. Its audit will measure top-1 Byte/BPE/SPECIAL confusion, full-vocabulary softmax probability mass per target class and finer frequency intervals.
+
+V65 result --> [published GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.json).
+
+V66 method --> [frozen pre-execution documentation](MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md).
+
 
 Verified references -->
 
