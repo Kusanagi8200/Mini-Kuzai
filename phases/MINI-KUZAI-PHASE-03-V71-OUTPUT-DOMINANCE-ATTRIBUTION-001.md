@@ -2,7 +2,7 @@
 
 Date --> 2026-10-31
 
-Status --> **READ-ONLY AUDIT / CPU TESTS / PINNED GOGIT RUNNER PUBLISHED; LOCAL EXECUTION PENDING**
+Status --> **GPU GOGIT VERIFIED / V62 CHECKPOINT FROZEN / NO TRAINING**
 
 ## Motivation and prior verified evidence
 
@@ -74,7 +74,7 @@ The future implementation must -->
 6. Implement unit tests, deterministic numerical/tie rules, pinned Git source identity and fail-closed GOGIT publication
 7. Keep all diagnostic branch decisions observational; no new training authorization, checkpoint replacement or architecture change follows automatically
 
-AUTOPILOT V3 does not include V71; registering a new campaign requires an independent reviewed step. V71 has a pinned, stand-alone local runner only. **Neither V71 CPU tests nor the GPU audit have been executed on fhc2 yet. No GOGIT result or training authorization is claimed.**
+AUTOPILOT V3 does not include V71. V71 executed through its stand-alone pinned runner; the published GOGIT report verifies the numeric audit. Historical V62 remains frozen, with no new training or BLIND access.
 
 ## Local execution on fhc2
 
@@ -85,6 +85,23 @@ cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root
 ```
 
 After the command exits, report **GOGIT** for GitHub-based review. Any source mismatch, prior-report disagreement, unsafe checkpoint state, timeout, invalid metrics or publication failure stops the process.
+
+## Verified V71 results
+
+GOGIT step --> [PHASE03-SMOLTALK-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.json)
+
+Commit --> [dcac14ea7286](https://github.com/Kusanagi8200/Mini-Kuzai/commit/dcac14ea7286642ec0cd9a670dded7fd981bd99c)
+
+- 9170 lexical targets: 4876 byte and 4294 merged-BPE targets
+- 275/9170 (3.00%) original-to-FULL prediction changes: 185 byte targets, 90 merged targets
+- Correct top-1: original 2673, FULL 2695; both 2626, original-only 47, FULL-only 69, neither 6428
+- Cross-entropy: FP32 original 4.732; FULL 5.048; predicted distinct IDs: 5 versus 7
+- Dominant top-1 share: original 72.55%, FULL 69.57%
+- Mean top-1/runner-up margin: 1.672 versus 0.868
+- Mean selected-to-gold output-row norm ratio: 1.229
+- Mean cosine hidden/selected: 0.914; hidden/gold: 0.396
+
+**Interpretation -->** Row norm neutralization changes only 3% of argmax positions and worsens CE while leaving extreme concentration in place. The selected-row cosine is partly a consequence of logit-based winner selection, so it is not a causal identification of a hidden-state defect. [V72 hidden-state anisotropy](MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) is a possible next read-only analysis, not an authorized training run.
 
 ## Interpretation gate
 
