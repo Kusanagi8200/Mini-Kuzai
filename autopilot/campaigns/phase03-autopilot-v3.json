@@ -1,0 +1,162 @@
+{
+  "schema": "mini-kuzai-autopilot-campaign-v1",
+  "campaign_id": "phase03-precision-v3",
+  "mode": "bounded",
+  "max_wall_seconds": 7200,
+  "steps": [
+    {
+      "id": "verify-v68",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+      "required": true,
+      "runner": null,
+      "when": [],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+          "metric": "V68_HEAD_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001",
+          "metric": "V68_HEAD_TIED_WEIGHTS",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "verify-v69",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+      "required": true,
+      "runner": null,
+      "when": [],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_FULL_CE_X1000",
+          "op": "eq",
+          "value": 5048
+        }
+      ]
+    },
+    {
+      "id": "audit-v70",
+      "kind": "diagnostic",
+      "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+      "required": true,
+      "runner": "v70-precision",
+      "when": [
+        {
+          "step": "PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001",
+          "metric": "V69_NORM_PASS",
+          "op": "eq",
+          "value": 1
+        }
+      ],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_PASS",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_VAL_LEXICAL",
+          "op": "eq",
+          "value": 9170
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_FULL_CE_X1000",
+          "op": "eq",
+          "value": 5048
+        }
+      ]
+    },
+    {
+      "id": "classify-precision-near-baseline",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+      "required": false,
+      "runner": null,
+      "when": [
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_FP32_CE_X1000",
+          "op": "le",
+          "value": 4800
+        },
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_FP32_PRED_DISTINCT",
+          "op": "le",
+          "value": 6
+        }
+      ],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_PASS",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "classify-fp32-ce-drift",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+      "required": false,
+      "runner": null,
+      "when": [
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_FP32_CE_X1000",
+          "op": "gt",
+          "value": 4800
+        }
+      ],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_PASS",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "classify-fp32-diversity-drift",
+      "kind": "verify",
+      "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+      "required": false,
+      "runner": null,
+      "when": [
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_FP32_PRED_DISTINCT",
+          "op": "gt",
+          "value": 6
+        }
+      ],
+      "rules": [
+        {
+          "step": "PHASE03-SMOLTALK-V70-PRECISION-CONTROL-001",
+          "metric": "V70_CTRL_PASS",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}
