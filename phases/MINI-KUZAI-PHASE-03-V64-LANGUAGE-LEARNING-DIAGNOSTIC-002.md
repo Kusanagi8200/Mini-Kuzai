@@ -1,6 +1,29 @@
 # Mini-Kuzai Phase 03 - V64 Language Learning Diagnostic 002
 
-Status --> **CODE PUBLISHED / GPU EXECUTION NOT YET CONFIRMED**
+Status --> **GPU EXECUTION COMPLETED / GOGIT PUBLISHED / V64 CLOSED**
+
+## Verified V64-002 results - 2026-10-31
+
+Successful GOGIT report --> [PHASE03-SMOLTALK-V64-LANGUAGE-LEARNING-DIAGNOSTIC-002](../reports/assistant-results/history/PHASE03-SMOLTALK-V64-LANGUAGE-LEARNING-DIAGNOSTIC-002.json)
+
+Commit --> [`9d8dcb62b6e9`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/9d8dcb62b6e9bc3826f95eb93953c95c28835132)
+
+| Indicator | TRAIN exploratory sample | Frozen VALIDATION |
+| --- | --- | --- |
+| Segments | 12 | 36 |
+| Next-token targets | 10115 | 9206 |
+| Cross-entropy | 4.664 | 4.733 |
+| Top-1 accuracy | 33.97% | 29.20% |
+| Bytes per non-special token | 1.970 | 1.874 |
+| Single-byte token share | 51.23% | 53.17% |
+| Raw-byte target mean NLL | 3.182 | 3.386 |
+| BPE-merged target mean NLL | 6.221 | 6.268 |
+
+Additional verified metrics --> absolute VALIDATION minus sampled-TRAIN CE difference **0.069**, VALIDATION terminal EOS top-1 **14/36**, CUDA/BF16 PASS, GPU peak allocated **133 MiB**.
+
+The TRAIN sample comprises 12 deliberately chosen segments, not a statistically representative corpus sample. A small cross-entropy difference cannot establish generalization. The raw-byte/BPE NLL gap may partly reflect token frequency and target distribution and is **not** proof that the tokenizer must be replaced.
+
+GOGIT records `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0` and `V64_LANG_BLIND_ACCESS=0`. No new training was started. The next step is the proposed [V65 readiness study](MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md), not an automatic training continuation.
 
 ## Incident and confirmed evidence
 
