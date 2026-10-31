@@ -1,0 +1,14 @@
+{
+  "schema": "mini-kuzai-autopilot-train-authorization-v1",
+  "approved": false,
+  "campaign_id": "REPLACE_WITH_NEW_TRAINING_CAMPAIGN",
+  "step_id": "REPLACE_WITH_NEW_TRAINING_GOGIT_STEP",
+  "runner": "REPLACE_WITH_NEW_VERSIONED_FROZEN_TRAINER",
+  "protocol_path": "REPLACE_WITH_NEW_FROZEN_PROTOCOL_PATH",
+  "protocol_sha256": "REPLACE_WITH_NEW_64_HEX_DIGEST",
+  "max_optimizer_steps": 0,
+  "max_exposure_tokens": 0,
+  "max_windows": 0,
+  "max_wall_seconds": 0,
+  "note": "DOCUMENTATION TEMPLATE ONLY. Never commit an approved authorization. New frozen trainer required. No V62 continuation permitted."
+}
