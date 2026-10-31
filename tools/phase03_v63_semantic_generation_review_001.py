@@ -72,6 +72,8 @@ def atomic_private(path: Path, data: dict) -> None:
             raise RuntimeError("Unsafe existing private review file")
         backups = PRIVATE / "backups"
         backups.mkdir(exist_ok=True, mode=0o700)
+        if backups.is_symlink() or not backups.is_dir():
+            raise RuntimeError("Unsafe private review backup directory")
         os.chmod(backups, 0o700)
         stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
         copy = backups / f"{path.name}.{stamp}.bak"
