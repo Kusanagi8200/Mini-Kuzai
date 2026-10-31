@@ -69,6 +69,9 @@ SOURCE_PHASE03_V70 = (
 SOURCE_PHASE03_V71 = (
     "Mini-Kuzai V71 frozen output-head norm versus directional attribution"
 )
+SOURCE_PHASE03_V72 = (
+    "Mini-Kuzai V72 frozen hidden-state anisotropy and mean-center controls"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1652,6 +1655,33 @@ METRIC_KEYS = {
     "V71_ATTR_NORM_RATIO_X1000",
     "V71_ATTR_COS_WIN_SHIFT_X1000",
     "V71_ATTR_COS_GOLD_SHIFT_X1000",
+    "V72_GEOM_PASS",
+    "V72_GEOM_BLIND_ACCESS",
+    "V72_GEOM_VAL_LEXICAL",
+    "V72_GEOM_MODEL_DIM",
+    "V72_GEOM_ORIG_CE_X1000",
+    "V72_GEOM_ORIG_DISTINCT",
+    "V72_GEOM_ORIG_TOP1_SHARE_BP",
+    "V72_GEOM_MEAN_ENERGY_BP",
+    "V72_GEOM_RAW_PC1_SHARE_BP",
+    "V72_GEOM_RAW_PC5_SHARE_BP",
+    "V72_GEOM_CENTER_PC1_SHARE_BP",
+    "V72_GEOM_CENTER_PC5_SHARE_BP",
+    "V72_GEOM_RAW_PARTICIPATION_X100",
+    "V72_GEOM_CENTER_PARTICIPATION_X100",
+    "V72_GEOM_PAIR_COS_SHIFT_X1000",
+    "V72_GEOM_MEAN_NORM_X1000",
+    "V72_GEOM_H_NORM_MEAN_X1000",
+    "V72_GEOM_CENTER_DISTINCT",
+    "V72_GEOM_CENTER_TOP1_SHARE_BP",
+    "V72_GEOM_CENTER_SWITCH",
+    "V72_GEOM_CENTER_CORRECT",
+    "V72_GEOM_ORIG_CORRECT",
+    "V72_GEOM_CENTER_GOLD_BYTE_DEF_X1000",
+    "V72_GEOM_CENTER_GOLD_MERGE_DEF_X1000",
+    "V72_GEOM_MEAN_PC1_ABS_COS_X1000",
+    "V72_GEOM_CENTER_SWITCH_BYTE",
+    "V72_GEOM_CENTER_SWITCH_MERGE",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1730,6 +1760,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V70
     if tracked == "tools/public-audits/phase03_v71_output_dominance_attribution_001.py":
         return SOURCE_PHASE03_V71
+    if tracked == "tools/public-audits/phase03_v72_hidden_state_anisotropy_001.py":
+        return SOURCE_PHASE03_V72
     return SOURCE
 
 
@@ -1843,6 +1875,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     )
     v71_attribution = tracked == (
         "tools/public-audits/phase03_v71_output_dominance_attribution_001.py"
+    )
+    v72_geometry = tracked == (
+        "tools/public-audits/phase03_v72_hidden_state_anisotropy_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -1985,6 +2020,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v71_attribution:
         # Output-logit attribution is not semantic or training validation.
+        return False
+    if v72_geometry:
+        # Hidden-state spectra are neither semantic nor training validation.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
