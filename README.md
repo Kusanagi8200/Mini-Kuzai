@@ -521,6 +521,20 @@ References -->
 
 ---
 
+### V65 verified and V66 prepared - 2026-10-31
+
+**V65 TOKEN FREQUENCY DIAGNOSTIC 001** completed successfully via GOGIT, commit [`358c6b07`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/358c6b07bbcc616ee592d763874cbf8b7bd71da5). Full TRAIN token frequency --> **294726 nonspecial token occurrences / 891 observed token IDs**. On 9170 nonspecial frozen VALIDATION targets, frequent raw-byte tokens achieved **52.00%** exact top-1 accuracy (4873 occurrences) while frequent merged Byte-BPE tokens achieved **3.27%** (4287 occurrences). This gap is **not** explained solely by rare tokens. V65 reproduced VALIDATION CE **4.733** and terminal EOS top-1 **14/36**.
+
+The next diagnostic **V66 TOKEN PREDICTION BIAS 001** is coded and documented but **not yet executed on GPU**. It will compare gold Byte/BPE targets with top-1 predicted Byte/BPE/SPECIAL tokens, the model's probability mass by class, and more detailed token-frequency bands. The result may help determine whether poor BPE accuracy reflects an output-class bias or confusion among merged-token alternatives.
+
+- [Completed V65 GOGIT report](reports/assistant-results/history/PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.json)
+- [V65 documented results](phases/MINI-KUZAI-PHASE-03-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.md)
+- [V66 pre-execution protocol](phases/MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md)
+
+**No newly authorized training, no changed checkpoint or tokenizer, and no BLIND TEST access.**
+
+---
+
 ### Private local corpus pipeline
 
 Phase 03 includes a local-only pipeline for evaluating private conversational corpora as possible future training material.
@@ -604,7 +618,7 @@ Mini-Kuzai is therefore both a language-model implementation project and a labor
 ```text
 Phase 01 checkpoint       --> FROZEN
 Phase 02 KV cache         --> PRESERVED
-Phase 03                  --> V64 COMPLETED / V65 PROPOSED
+Phase 03                  --> V65 COMPLETED / V66 PREPARED
 Controlled TRAIN          --> 107 RECORDS / 29 GROUPS
 VALIDATION                --> 36 RECORDS / 18 GROUPS FROZEN
 BLIND TEST                --> 36 RECORDS / 18 GROUPS FROZEN / CLOSED
@@ -623,15 +637,19 @@ V64 VALIDATION CE         --> 4.733 / 36 FROZEN SEGMENTS
 V64 VALIDATION TOP-1      --> 29.20%
 V64 EOS TERMINAL TOP-1    --> 14/36
 V64 GOGIT                 --> DIAGNOSTIC 002 PUBLISHED
+V65 GOGIT                 --> TOKEN FREQUENCY 001 PUBLISHED
+V65 BYTE TOP1             --> 52.00% / FREQUENT TARGETS
+V65 MERGED TOP1           --> 3.27% / FREQUENT TARGETS
+V66                       --> IMPLEMENTED / GPU EXECUTION PENDING
 New training authorized   --> NO
 New training started      --> NO
 BLIND access in V63/V64   --> 0
-Next step                 --> V65 DIAGNOSTIC PROTOCOL PROPOSAL
+Next step                 --> V66 TOKEN PREDICTION BIAS GPU AUDIT
 ```
 
 **Status qualification** --> Earlier V62 GOGIT records `TRAINING_AUTHORIZED=1` and `TRAINING_STARTED=1` for its historical authorized and executed run. V64 reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0` and `SEMANTIC_VALIDATION_COMPLETE=0` for the present diagnostic. They must not be confused.
 
-See the [verified V64 closure and V65 preparation](phases/MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md). Historical V53-V62 details remain documented above and in the phase archives.
+See the [verified V65 frequency diagnostic](phases/MINI-KUZAI-PHASE-03-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.md) and [V66 proposed audit](phases/MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md). Historical V53-V62 details remain documented above and in the phase archives.
 
 ---
 
