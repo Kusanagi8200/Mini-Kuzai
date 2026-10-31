@@ -1275,6 +1275,33 @@ METRIC_KEYS = {
     "V63_ABL_REP_REPEAT8_BP",
     "V63_ABL_REP_DISTINCT_BP",
     "V63_ABL_REP_MEAN_TOKENS_X100",
+    "V63_ROB_PASS",
+    "V63_ROB_BLIND_ACCESS",
+    "V63_ROB_SEEDS",
+    "V63_ROB_GPU_BF16",
+    "V63_ROB_GPU_PEAK_MIB",
+    "V63_ROB_TEMP_EOS",
+    "V63_ROB_TEMP_MIN_SEED_EOS",
+    "V63_ROB_TEMP_MAX_SEED_EOS",
+    "V63_ROB_TEMP_SHORT8",
+    "V63_ROB_TEMP_SHORT16",
+    "V63_ROB_TEMP_MEAN_LEN_X100",
+    "V63_ROB_TEMP_REPEAT3_BP",
+    "V63_ROB_TEMP_REPEAT8_BP",
+    "V63_ROB_TEMP_DISTINCT_BP",
+    "V63_ROB_TEMP_UTF8_INVALID",
+    "V63_ROB_TEMP_ROLE_LEAK",
+    "V63_ROB_TOPP_EOS",
+    "V63_ROB_TOPP_MIN_SEED_EOS",
+    "V63_ROB_TOPP_MAX_SEED_EOS",
+    "V63_ROB_TOPP_SHORT8",
+    "V63_ROB_TOPP_SHORT16",
+    "V63_ROB_TOPP_MEAN_LEN_X100",
+    "V63_ROB_TOPP_REPEAT3_BP",
+    "V63_ROB_TOPP_REPEAT8_BP",
+    "V63_ROB_TOPP_DISTINCT_BP",
+    "V63_ROB_TOPP_UTF8_INVALID",
+    "V63_ROB_TOPP_ROLE_LEAK",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1403,6 +1430,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v63_decoding_ablation_001.py"
     )
 
+    v63_decoding_robustness = tracked == (
+        "tools/public-audits/phase03_v63_decoding_robustness_001.py"
+    )
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -1491,6 +1522,17 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             and metrics.get("V63_ABL_BLIND_ACCESS") == 0
             and metrics.get("V63_ABL_GPU_BF16") == 1
             and metrics.get("V63_ABL_PROBES_PER_MODE") == 6
+        )
+    
+    if v63_decoding_robustness:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+            and metrics.get("TRAINING_STARTED") == 1
+            and metrics.get("V63_ROB_PASS") == 1
+            and metrics.get("V63_ROB_BLIND_ACCESS") == 0
+            and metrics.get("V63_ROB_GPU_BF16") == 1
+            and metrics.get("V63_ROB_SEEDS") == 8
         )
 
     if tokenizer_workstream or architecture_workstream:
