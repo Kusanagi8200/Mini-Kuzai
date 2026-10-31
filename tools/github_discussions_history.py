@@ -14,10 +14,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = "Kusanagi8200"
-REPOSITORY = "KuzAI"
-REPOSITORY_ID = "R_kgDON-QTtg"
-CATEGORY_ID = "DIC_kwDON-QTts4CoCRX"
-CATEGORY_NAME = "Mini-Kuzai / Local LLM From Scratch"
+REPOSITORY = "Mini-Kuzai"
+REPOSITORY_ID = "R_kgDOUI2cCw"
+CATEGORY_ID = "DIC_kwDOUI2cC84DKGl8"
+CATEGORY_NAME = "Development Log"
 
 POSTS = (
     ("Mini-Kuzai | 01 - Why Build a Language Model From Scratch?",
@@ -30,7 +30,7 @@ POSTS = (
 
 QUERY = """
 query($category: ID!, $after: String) {
-  repository(owner: "Kusanagi8200", name: "KuzAI") {
+  repository(owner: "Kusanagi8200", name: "Mini-Kuzai") {
     id
     hasDiscussionsEnabled
     viewerPermission
