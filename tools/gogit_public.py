@@ -1249,6 +1249,32 @@ METRIC_KEYS = {
     "V63_FAIL_FREE_REPEAT_8GRAM_PROBES",
     "V63_FAIL_FREE_FIRST_REPEAT_8GRAM_MEAN",
     "V63_FAIL_FREE_DISTINCT_TOKEN_BP",
+    "V63_ABL_PASS",
+    "V63_ABL_BLIND_ACCESS",
+    "V63_ABL_GPU_BF16",
+    "V63_ABL_PROBES_PER_MODE",
+    "V63_ABL_SEED",
+    "V63_ABL_GPU_PEAK_MIB",
+    "V63_ABL_GREEDY_EOS",
+    "V63_ABL_GREEDY_REPEAT3_BP",
+    "V63_ABL_GREEDY_REPEAT8_BP",
+    "V63_ABL_GREEDY_DISTINCT_BP",
+    "V63_ABL_GREEDY_MEAN_TOKENS_X100",
+    "V63_ABL_TEMP_EOS",
+    "V63_ABL_TEMP_REPEAT3_BP",
+    "V63_ABL_TEMP_REPEAT8_BP",
+    "V63_ABL_TEMP_DISTINCT_BP",
+    "V63_ABL_TEMP_MEAN_TOKENS_X100",
+    "V63_ABL_TOPP_EOS",
+    "V63_ABL_TOPP_REPEAT3_BP",
+    "V63_ABL_TOPP_REPEAT8_BP",
+    "V63_ABL_TOPP_DISTINCT_BP",
+    "V63_ABL_TOPP_MEAN_TOKENS_X100",
+    "V63_ABL_REP_EOS",
+    "V63_ABL_REP_REPEAT3_BP",
+    "V63_ABL_REP_REPEAT8_BP",
+    "V63_ABL_REP_DISTINCT_BP",
+    "V63_ABL_REP_MEAN_TOKENS_X100",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1373,6 +1399,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v63_generation_failure_analysis_001.py"
     )
 
+    v63_decoding_ablation = tracked == (
+        "tools/public-audits/phase03_v63_decoding_ablation_001.py"
+    )
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -1450,6 +1480,17 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             and metrics.get("V63_FAIL_PASS") == 1
             and metrics.get("V63_FAIL_BLIND_ACCESS") == 0
             and metrics.get("V63_FAIL_GPU_BF16") == 1
+        )
+
+    if v63_decoding_ablation:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+            and metrics.get("TRAINING_STARTED") == 1
+            and metrics.get("V63_ABL_PASS") == 1
+            and metrics.get("V63_ABL_BLIND_ACCESS") == 0
+            and metrics.get("V63_ABL_GPU_BF16") == 1
+            and metrics.get("V63_ABL_PROBES_PER_MODE") == 6
         )
 
     if tokenizer_workstream or architecture_workstream:
