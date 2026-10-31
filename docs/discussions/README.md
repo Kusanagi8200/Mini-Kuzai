@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions publication workflow
 
-Status --> **THREE HISTORICAL POSTS TRANSFERRED / VXX START AND GOGIT CLOSURE PUBLISHER IMPLEMENTED - LOCAL TESTS PENDING**
+Status --> **THREE HISTORICAL POSTS TRANSFERRED / V74+ WORKFLOW IMPLEMENTED / KUZ-DIN WEBHOOK + PREPARE TESTED / LINKEDIN LIVE DISABLED**
 
 Publication target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -120,6 +120,49 @@ Run the regression suite before using the new workflow -->
 Tests being present in GitHub is not proof that the local suite passed; record an actual PASS before live deployment.
 
 The fixed ASCII header includes `PROJECT`, `PHASE`, `STEP` and `STATUS`. Research notes and evaluation claims remain subject to review; numerical GOGIT pass metrics do not demonstrate semantic learning or a coherent persona.
+
+---
+
+## KUZ-DIN Publisher bridge - deployment checkpoint 2026-11-01
+
+The Discussions publisher is the **upstream research publication source** for a separate, optional LinkedIn distribution pipeline. A GitHub Discussion is not a LinkedIn post. The cross-posting integration runs on the KUZ-DIN VPS and has **not** been authorized to publish to LinkedIn.
+
+Read the [KUZ-DIN Publisher operational documentation](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/docs/MINI-KUZAI-LINKEDIN-PUBLISHER.md) for system architecture, validation coverage, security controls and remaining work. KUZ-DIN is a private repository, so access to that document depends on repository permissions.
+
+### Event mapping and acceptance rules
+
+| Mini-Kuzai event | GitHub action | KUZ-DIN result today |
+| --- | --- | --- |
+| Approved V74+ START | `--action start --publish` creates a `Development Log` Discussion | Signed `discussion.created` webhook can save private JSON and prepare a LinkedIn candidate |
+| Verified V74+ GOGIT | `--action close --report ... --publish` adds a comment to the same Discussion | Signed `discussion_comment.created` webhook can save a separate JSON candidate and prepare a separate SQLite record |
+| Historical #2, #3, #4 | Already published | Not automatically replayed |
+| Edited, unrelated, outside-category or before V74 | Not eligible | Ignored |
+| New research not explicitly authorized | No reviewed START or verified GOGIT | Must not be posted |
+
+KU-ZDIN's webhook requires the exact `Mini-Kuzai | Vxx - ...` title, the approved 72-character ASCII header, matching STEP/STATUS and the project footer. Only `Kusanagi8200` is authorized as event sender and as discussion author, plus comment author for GOGIT. Every inbound request is checked with a shared-secret HMAC-SHA256 signature. Accepted payloads are written as `0600` JSON files, deduplicated by event identity and source SHA256.
+
+The queued LinkedIn formatter preserves the research source URL, status and footer, with a **2800-character cap**. Oversized content is blocked pending an explicitly reviewed excerpt tied to the original content fingerprint. **No silent truncation of scientific findings.**
+
+The `kuz-din-publisher-queue.timer` runs approximately every minute under a dedicated `kuz-din` service identity. Its configured `--prepare` mode writes only eligible events to an SQLite journal with the initial state `PREPARED`. It never calls LinkedIn. Later states `IN_FLIGHT` and `PUBLISHED` are covered by offline tests, not active production posting.
+
+### Evidence and current limits
+
+- Internal signed FastAPI START / GOGIT tests --> PASS
+- Synthetic webhook to private JSON and temporary SQLite --> PASS
+- Public HTTPS signed ping and rejection of foreign authors --> PASS
+- Real GitHub webhook `ping` delivered to KUZ-DIN --> HTTP 200, 2026-10-31 23:29:54 UTC
+- Real GitHub START / GOGIT through KUZ-DIN --> **not yet verified**
+- Real LinkedIn post to the personal profile --> **never sent, publication disabled**
+- Automatic ChatGPT / OpenAI API watcher --> **not configured**
+- Mini-Kuzai scientific status --> **V73 is the latest documented verified step in this index, V74 is not authorized or published**
+
+The new Publisher OAuth application uses `openid profile w_member_social` and stores its token encrypted outside Git. A read-only LinkedIn check confirmed `GET /v2/userinfo` HTTP 200 and an OIDC subject match, while `GET /v2/me` returned HTTP 403. The final author URN compatibility must be checked during an explicitly approved live test, not inferred from offline mocks.
+
+### Non-negotiable separation
+
+Publishing a reviewed GitHub START or GOGIT requires the explicit `--publish` flag in the Mini-Kuzai project. This may trigger a **webhook capture**, not a LinkedIn post. Enabling LinkedIn publication is a separate KUZ-DIN deployment decision requiring its own audit and authorization.
+
+No automatic experiment, new training, BLIND TEST access, checkpoint alteration, GOGIT audit or LinkedIn publication is authorized by installing this bridge or editing these documents.
 
 ---
 
