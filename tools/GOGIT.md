@@ -30,43 +30,36 @@ Do not rerun this exact command --> the historical STEP_ID already exists and th
 
 Each completed run commits and pushes four **public numerical report** files when checks pass. No manual git add, commit or push is needed. Every new run requires a new, unique STEP_ID.
 
-## Current status - 2026-10-25
+## Current status - 2026-10-31
 
-GOGIT now serves multiple public Phase 03 audit families, not only external SmolTalk review.
+GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest completed immutable step is -->
 
-Current public sources include -->
+`PHASE03-SMOLTALK-V64-LANGUAGE-LEARNING-DIAGNOSTIC-002`
 
-- external public SmolTalk aggregate audits
-- Phase 03 designed VALIDATION aggregate audits
-- Phase 03 designed BLIND TEST aggregate audits.
+Verified commit --> [`9d8dcb62b6e9`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/9d8dcb62b6e9bc3826f95eb93953c95c28835132)
 
-The latest published audit state is the V55 global BLIND closure -->
+Recent completed stages -->
 
-`PHASE03-SMOLTALK-V55-BLIND-CLOSURE-001`
+| Step | Result |
+| --- | --- |
+| V62 TRAIN RUN 001 | Historical controlled training stopped at cycle 2, 69 optimizer steps |
+| V63 DECODING ROBUSTNESS 001 | Eight seeds, 41/48 EOS with top-k/top-p |
+| V63 AUTOMATIC LANGUAGE SCREEN 001 | 24 generated samples, 10/24 rule-flagged, no human scores |
+| V64 RUNTIME TRACE 001 | Bounded 155-second profiler completed and published despite internal timeout |
+| V64 LANGUAGE LEARNING DIAGNOSTIC 001 | Six CPU tests passed; original GOGIT process exceeded 300 seconds; **no** successful report |
+| V64 LANGUAGE LEARNING DIAGNOSTIC 002 | Optimized GPU diagnostic published, VALIDATION CE 4.733 / top-1 29.20% |
 
-It confirms -->
+GOGIT's process execution budget remains **300 seconds**. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
-```text
-TRAIN records                  : 107
-TRAIN groups                   : 29
-VALIDATION records             : 36
-VALIDATION groups              : 18
-SEMANTIC_VALIDATION_COMPLETE   : 1
-BLIND TEST records frozen      : 36
-BLIND behaviors frozen         : 18
-cross-split exact collisions   : 0
-TRAINING_AUTHORIZED            : 0
-```
+Read `reports/assistant-results/latest.json` for the latest published numeric report and `reports/assistant-results/history/` for immutable previous steps. Never overwrite an existing STEP_ID.
 
-Global BLIND closure has been published and verified. The controlled corpus boundary is closed, while `TRAINING_AUTHORIZED` remains `0`.
+A previous `TRAINING_AUTHORIZED=1` in V62 historical run reports is **not** an authorization for a new run. The V64 diagnostic reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `SEMANTIC_VALIDATION_COMPLETE=0`. The latter flag expressly states that the numerical learning diagnostic is not human semantic validation.
 
-Historical V42-V53 SmolTalk reports and V54 VALIDATION reports remain immutable records. Do not rewrite them or reuse a published STEP_ID.
-
-Use `reports/assistant-results/latest.json` for the newest public numeric audit and `reports/assistant-results/history/` for immutable prior reports.
+See [Phase 03 V64 closure and V65 readiness](../phases/MINI-KUZAI-PHASE-03-V64-CLOSURE-V65-READINESS-2026-10-31.md) for evidence and current decision.
 
 ## Adding a future audit
 
-Create and review a new file under `tools/public-audits/`, commit and push that script first, and ensure it operates only on public repository data appropriate for publication. The script must print only numerical aggregate counters with allowlisted keys after the results marker. Use a new unique `PHASE03-SMOLTALK-...` STEP_ID for each run.
+Create and review a new file under `tools/public-audits/`, commit and push that script first. Audit inputs may include frozen public corpus material or private local inference artifacts **only where the reviewed protocol authorizes numeric-only aggregates and explicitly prohibits raw text, identity and secrets from publication**. The GOGIT mechanism does not authorize training or disclose the underlying data. The script must print only numerical aggregate counters with allowlisted keys after the results marker. Use a new unique `PHASE03-SMOLTALK-...` STEP_ID for each run.
 
 Running a normal Python script directly does NOT automatically publish its output. Use tools/gogit_public.py as the entrypoint. Arbitrary local stdout is never sent to GitHub.
 
@@ -74,7 +67,7 @@ Running a normal Python script directly does NOT automatically publish its outpu
 
 GOGIT publishes only numeric aggregate reports from reviewed public-audit scripts committed under `tools/public-audits/`.
 
-Allowed current use includes public SmolTalk analysis and aggregate integrity/freeze metrics derived from the public Phase 03 designed TRAIN / VALIDATION / BLIND repository artifacts.
+Allowed use includes approved SmolTalk/controlled-corpus integrity audits and aggregate metrics from frozen checkpoints, TRAIN/VALIDATION evaluation and locally stored generation probes. V63/V64 outputs publish only reviewed aggregate numeric metrics, never raw prompts or private generated text. The frozen BLIND TEST must not be accessed by new V63/V64 inference audits.
 
 Never point a public audit at -->
 
@@ -83,7 +76,7 @@ Never point a public audit at -->
 - personal messages
 - credentials or secrets
 - model logs containing private dialogue
-- any combined public/private source where private-derived metrics would be disclosed.
+- any mixed public/private source where sensitive information, identity or text could be inferred from published aggregates
 
 The allowlist blocks unknown textual output and prevents accidental raw transcript publication. It cannot mathematically verify the provenance of numbers produced by a reviewed audit script, so every new public-audit script must be reviewed before first execution.
 
