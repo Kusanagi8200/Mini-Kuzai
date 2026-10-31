@@ -1,8 +1,31 @@
 # Mini-Kuzai Phase 03 - V65 Token Frequency Diagnostic 001
 
-Status --> **AUDIT PUBLISHED / GPU EXECUTION PENDING / NO TRAINING AUTHORIZATION**
+Status --> **GPU EXECUTION COMPLETED / NUMERIC GOGIT VERIFIED / NO NEW TRAINING**
 
 Date --> 2026-10-31
+
+## Verified GOGIT results - 2026-10-31
+
+Immutable report --> [PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V65-TOKEN-FREQUENCY-DIAGNOSTIC-001.json)
+
+GitHub commit --> [`358c6b07bbcc`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/358c6b07bbcc616ee592d763874cbf8b7bd71da5)
+
+The audit processed all **345** frozen TRAIN segments and evaluated **9170** nonspecial VALIDATION targets.
+
+| Frozen TRAIN frequency stratum | VALIDATION targets | Exact top-1 | Mean NLL |
+| --- | --- | --- | --- |
+| Raw byte, 0 occurrences | 3 | 0% | 8.395 |
+| Raw byte, 1-9 occurrences | 0 | N/A | N/A |
+| Raw byte, 10+ occurrences | 4873 | 52.00% | 3.383 |
+| Merged BPE, 0 occurrences | 0 | N/A | N/A |
+| Merged BPE, 1-9 occurrences | 7 | 0% | 8.123 |
+| Merged BPE, 10+ occurrences | 4287 | 3.27% | 6.265 |
+
+TRAIN lexical-token occurrences --> **294726**, unique observed token IDs --> **891**. VALIDATION CE --> **4.733**, terminal EOS top-1 --> **14/36**. CUDA/BF16 PASS, GPU peak allocated **56 MiB**.
+
+**Interpretation** --> most VALIDATION lexical targets correspond to tokens seen at least ten times in TRAIN. The large byte-versus-merged accuracy gap therefore cannot be explained solely by unseen or very rare tokens. This is still a **frequency-threshold analysis**, not proof that the tokenizer is defective or that the model systematically predicts raw-byte IDs.
+
+Next diagnostic --> [V66 TOKEN PREDICTION BIAS 001](MINI-KUZAI-PHASE-03-V66-TOKEN-PREDICTION-BIAS-001.md), prepared and not yet executed.
 
 ## Goal
 
@@ -91,7 +114,7 @@ Comparisons remain observational. Some token types can be systematically harder 
 
 After the published numeric report is analyzed by ChatGPT, choose the next diagnostic. Do not authorize more optimizer steps, unfreeze the BLIND TEST or change the V56 tokenizer on this evidence alone.
 
-Status at publication --> **the experiment is prepared, not yet measured on fhc2**.
+Historical initial status --> protocol prepared before GPU execution. Verified execution results appear above.
 
 ---
 
