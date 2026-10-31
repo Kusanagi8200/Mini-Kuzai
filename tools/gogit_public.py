@@ -1650,9 +1650,11 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v65_token_frequency_diagnostic_001.py"
     )
 
-    v66_token_bias = tracked == (
-        "tools/public-audits/phase03_v66_token_prediction_bias_001.py"
-    )
+    v66_token_bias = tracked in {
+        "tools/public-audits/phase03_v66_token_prediction_bias_001.py",
+        "tools/public-audits/phase03_v66_token_prediction_bias_part_a_001.py",
+        "tools/public-audits/phase03_v66_token_prediction_bias_part_b_001.py",
+    }
 
     architecture_workstream = tracked.startswith(
         (
