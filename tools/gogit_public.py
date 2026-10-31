@@ -60,6 +60,9 @@ SOURCE_PHASE03_V67 = (
 SOURCE_PHASE03_V68 = (
     "Mini-Kuzai V68 frozen tied output-head and logit-dominance diagnostic"
 )
+SOURCE_PHASE03_V69 = (
+    "Mini-Kuzai V69 frozen output-head row-norm counterfactuals"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1562,6 +1565,33 @@ METRIC_KEYS = {
     "V68_FAIL_SOURCE_FUNCTION_ID",
     "V68_FAIL_LAST_FILE_FAMILY",
     "V68_FAIL_LAST_LINE",
+    "V69_NORM_PASS",
+    "V69_NORM_BLIND_ACCESS",
+    "V69_NORM_GPU_BF16",
+    "V69_NORM_VAL_LEXICAL",
+    "V69_NORM_BASE_CE_X1000",
+    "V69_NORM_BASE_PRED_DISTINCT",
+    "V69_NORM_BASE_TOP1_SHARE_BP",
+    "V69_NORM_BASE_MERGE_TOP1_BP",
+    "V69_NORM_BASE_MERGE_TOP5_BP",
+    "V69_NORM_HALF_CE_X1000",
+    "V69_NORM_HALF_PRED_DISTINCT",
+    "V69_NORM_HALF_TOP1_SHARE_BP",
+    "V69_NORM_HALF_BYTE_SHARE_BP",
+    "V69_NORM_HALF_MERGE_SHARE_BP",
+    "V69_NORM_HALF_MERGE_TOP1_BP",
+    "V69_NORM_HALF_MERGE_TOP5_BP",
+    "V69_NORM_HALF_EOS_TOP1",
+    "V69_NORM_HALF_LEX_TOP1_BP",
+    "V69_NORM_FULL_CE_X1000",
+    "V69_NORM_FULL_PRED_DISTINCT",
+    "V69_NORM_FULL_TOP1_SHARE_BP",
+    "V69_NORM_FULL_BYTE_SHARE_BP",
+    "V69_NORM_FULL_MERGE_SHARE_BP",
+    "V69_NORM_FULL_MERGE_TOP1_BP",
+    "V69_NORM_FULL_MERGE_TOP5_BP",
+    "V69_NORM_FULL_EOS_TOP1",
+    "V69_NORM_FULL_LEX_TOP1_BP",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1634,6 +1664,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V67
     if tracked.startswith("tools/public-audits/phase03_v68_"):
         return SOURCE_PHASE03_V68
+    if tracked.startswith("tools/public-audits/phase03_v69_"):
+        return SOURCE_PHASE03_V69
     return SOURCE
 
 
@@ -1736,6 +1768,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
 
     v68_head = tracked == (
         "tools/public-audits/phase03_v68_output_head_001.py"
+    )
+
+    v69_counterfactual = tracked == (
+        "tools/public-audits/phase03_v69_output_norm_counterfactual_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -1869,6 +1905,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v68_head:
         # Read-only output-head logits are not a semantic validation gate.
+        return False
+    if v69_counterfactual:
+        # Inference-only counterfactual scores do not constitute semantic validation.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
