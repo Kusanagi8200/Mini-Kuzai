@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "SEMANTIC_VALIDATION_COMPLETE": 0,
+    "TRAINING_AUTHORIZED": 0,
+    "TRAINING_STARTED": 0,
+    "V68_FAIL_BLIND_ACCESS": 0,
+    "V68_FAIL_CAUSE_ID": 5,
+    "V68_FAIL_DIAG_PASS": 1,
+    "V68_FAIL_DURATION_SECONDS": 102,
+    "V68_FAIL_EXCEPTION_CLASS_ID": 1,
+    "V68_FAIL_LAST_FILE_FAMILY": 1,
+    "V68_FAIL_LAST_LINE": 49,
+    "V68_FAIL_ORIGINAL_FAILED": 1,
+    "V68_FAIL_SOURCE_FUNCTION_ID": 2,
+    "V68_FAIL_SOURCE_LINE": 49
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v68_failure_probe_001.py",
+  "producer_sha256": "0ab030b920b05bc33534a02e6aadb268d8d7bd8ff075f3b79830f32a5f4f1f67",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "Mini-Kuzai V68 frozen tied output-head and logit-dominance diagnostic",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V68-FAILURE-PROBE-001",
+  "training_authorized": false
+}
