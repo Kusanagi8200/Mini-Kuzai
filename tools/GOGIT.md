@@ -34,9 +34,9 @@ Each completed run commits and pushes four **public numerical report** files whe
 
 GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest completed immutable step is -->
 
-`PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001`
+`PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001`
 
-Verified commit --> [`7e739610b1f7`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7e739610b1f737bf089b5856bff9ebb7fbbc090e)
+Verified commit --> [`3d872b9102f7`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/3d872b9102f7708e5bff723ffd0f195ba2e0ee72)
 
 Recent completed stages -->
 
@@ -53,15 +53,16 @@ Recent completed stages -->
 | V66 TOKEN PREDICTION BIAS Part A | 30 numeric fields published, family confusion and full-vocabulary softmax mass |
 | V66 TOKEN PREDICTION BIAS Part B | 30 numeric fields published, detailed token-frequency accuracy and NLL |
 | V67 OUTPUT CONCENTRATION 001 | Executed and published, 4 distinct argmax token IDs / 606 distinct gold IDs, dominant share 72.58% |
-| V68 OUTPUT HEAD 001 | Registered and prepared for AUTOPILOT pilot, CUDA/BF16 audit not yet executed |
+| V68 OUTPUT HEAD 001 | Published after PAD zero-assumption correction, selected norm 0.360 vs gold norm 0.293, PAD norm 0.182 |
+| V69 OUTPUT NORM COUNTERFACTUAL 001 | Code and AUTOPILOT V2 prepared; CUDA inference and numeric GOGIT not yet executed |
 
-GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67 and V68 are each designed to fit exactly 30 metrics in one report. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
+GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67, V68 and V69 are each designed to fit exactly 30 metrics in one report. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
 Read `reports/assistant-results/latest.json` for the latest published numeric report and `reports/assistant-results/history/` for immutable previous steps. Never overwrite an existing STEP_ID.
 
 A previous `TRAINING_AUTHORIZED=1` in V62 historical run reports is **not** an authorization for a new run. The V64 diagnostic reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `SEMANTIC_VALIDATION_COMPLETE=0`. The latter flag expressly states that the numerical learning diagnostic is not human semantic validation.
 
-See [verified V67 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001.json), [AUTOPILOT V1](../autopilot/README.md) and [V68 read-only protocol](../phases/MINI-KUZAI-PHASE-03-V68-OUTPUT-HEAD-DIAGNOSTIC-001.md) for current evidence and the first autonomous diagnostic campaign.
+See [verified V68 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001.json), [AUTOPILOT V2](../autopilot/README.md) and [V69 research protocol](../phases/MINI-KUZAI-PHASE-03-V69-OUTPUT-NORM-COUNTERFACTUAL-001.md) for the next autonomous diagnostic campaign.
 
 ## Adding a future audit
 
