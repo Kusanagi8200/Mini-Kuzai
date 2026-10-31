@@ -1329,6 +1329,31 @@ METRIC_KEYS = {
     "V63_HUM_PER_2",
     "V63_HUM_PER_NA",
     "V63_HUM_PER_MEAN_X100",
+    "V63_AUTO_PASS",
+    "V63_AUTO_BLIND_ACCESS",
+    "V63_AUTO_HUMAN_RATINGS",
+    "V63_AUTO_SAMPLES",
+    "V63_AUTO_SEEDS",
+    "V63_AUTO_EOS",
+    "V63_AUTO_UTF8_INVALID",
+    "V63_AUTO_ROLE_LEAK",
+    "V63_AUTO_SHORT16",
+    "V63_AUTO_MAXLEN96",
+    "V63_AUTO_MEAN_LEN_X100",
+    "V63_AUTO_WORDS",
+    "V63_AUTO_MEAN_WORDS_X100",
+    "V63_AUTO_VOCAB_WORDS",
+    "V63_AUTO_REF_WORD_COVER_BP",
+    "V63_AUTO_UNKNOWN_WORD_BP",
+    "V63_AUTO_FRAGMENT_WORD_BP",
+    "V63_AUTO_SUSPECT_OUTPUTS",
+    "V63_AUTO_ZERO_WORD_OUTPUTS",
+    "V63_AUTO_ALPHABETIC_BP",
+    "V63_AUTO_WHITESPACE_BP",
+    "V63_AUTO_DISTINCT_TOKEN_BP",
+    "V63_AUTO_REPEAT3_BP",
+    "V63_AUTO_REPEAT8_BP",
+    "V63_AUTO_PROMPT_LEX_OVERLAP_BP",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1464,6 +1489,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     v63_human_review = tracked == (
         "tools/public-audits/phase03_v63_semantic_generation_review_001.py"
     )
+    v63_auto_language_screen = tracked == (
+        "tools/public-audits/phase03_v63_automatic_language_screen_001.py"
+    )
 
     architecture_workstream = tracked.startswith(
         (
@@ -1576,6 +1604,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             and metrics.get("V63_HUM_SAMPLES") == 24
             and metrics.get("V63_HUM_REVIEWED") == 24
         )
+    if v63_auto_language_screen:
+        # This is NOT semantic validation. Keep the metadata false.
+        return False
 
     if tokenizer_workstream or architecture_workstream:
         return (
