@@ -45,8 +45,9 @@ def summarize_head(model):
     norms=head.weight.detach().float().norm(dim=-1)
     if norms.numel()!=T.VOCAB_SIZE or not torch.isfinite(norms).all():
         raise RuntimeError("Frozen output-head row norms invalid")
-    if float(norms[0].item())>1e-6:
-        raise RuntimeError("Frozen PAD embedding row nonzero")
+    # PAD is excluded as an input embedding gradient by padding_idx, but
+    # output and input weights are tied: the output softmax can train this row.
+    # Finite/nonnegative row norms are enforced above; zero is not required.
     return norms
 
 
@@ -94,7 +95,7 @@ def summarize_numeric(stats,norms,peak,prior):
         "V68_HEAD_EOS_TOP1":stats["eos"],
         "V68_HEAD_NORM_BYTE_MEAN_X1000":round(norms[3:259].mean().item()*1000),
         "V68_HEAD_NORM_MERGE_MEAN_X1000":round(norms[259:].mean().item()*1000),
-        "V68_HEAD_NORM_SPECIAL_MEAN_X1000":round(norms[:3].mean().item()*1000),
+        "V68_HEAD_NORM_PAD_X1000":round(norms[T.PAD_ID].item()*1000),
         "V68_HEAD_NORM_MAX_X1000":round(norms.max().item()*1000),
         "V68_HEAD_NORM_STD_X1000":round(norms.std(unbiased=False).item()*1000),
         "V68_HEAD_PRED_DISTINCT":len(counts),
