@@ -1223,6 +1223,32 @@ METRIC_KEYS = {
     "V63_DIAG_FREE_REPEAT_TOKEN_TRIGRAM_BP",
     "V63_DIAG_FREE_MEAN_TOKENS_X100",
     "V63_DIAG_FREE_ENTROPY_X1000",
+    "V63_FAIL_PASS",
+    "V63_FAIL_BLIND_ACCESS",
+    "V63_FAIL_GPU_BF16",
+    "V63_FAIL_GPU_BATCH",
+    "V63_FAIL_GPU_PEAK_MIB",
+    "V63_FAIL_TF_TOKENS",
+    "V63_FAIL_TF_TRUE_TOP1",
+    "V63_FAIL_TF_TRUE_PROB_PPM",
+    "V63_FAIL_TF_ENTROPY_X1000",
+    "V63_FAIL_TF_TERM_GAP_DEFICIT_X1000",
+    "V63_FAIL_TF_TERM_TOP1",
+    "V63_FAIL_TF_TERM_MARGIN_OK",
+    "V63_FAIL_TF_INTER_GAP_DEFICIT_X1000",
+    "V63_FAIL_TF_INTER_TOP1",
+    "V63_FAIL_TF_INTER_MARGIN_OK",
+    "V63_FAIL_TF_NONTERM_EOS_TOP1",
+    "V63_FAIL_FREE_PROBES",
+    "V63_FAIL_FREE_EOS_COMPLETIONS",
+    "V63_FAIL_FREE_EOS_GAP_DEFICIT_X1000",
+    "V63_FAIL_FREE_TOP1_PROB_PPM",
+    "V63_FAIL_FREE_ENTROPY_X1000",
+    "V63_FAIL_FREE_REPEAT_TRIGRAM_BP",
+    "V63_FAIL_FREE_REPEAT_8GRAM_BP",
+    "V63_FAIL_FREE_REPEAT_8GRAM_PROBES",
+    "V63_FAIL_FREE_FIRST_REPEAT_8GRAM_MEAN",
+    "V63_FAIL_FREE_DISTINCT_TOKEN_BP",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1343,6 +1369,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v63_diagnostic_preflight_002.py",
     }
 
+    v63_generation_failure = tracked == (
+        "tools/public-audits/phase03_v63_generation_failure_analysis_001.py"
+    )
+
     architecture_workstream = tracked.startswith(
         (
             "tools/public-audits/phase03_v57_",
@@ -1410,6 +1440,16 @@ def semantic_validation_complete_for_audit(tracked, metrics):
             and metrics.get("TRAINING_STARTED") == 1
             and metrics.get("V63_DIAG_PREFLIGHT_PASS") == 1
             and metrics.get("V63_DIAG_BLIND_ACCESS") == 0
+        )
+
+    if v63_generation_failure:
+        return (
+            metrics.get("SEMANTIC_VALIDATION_COMPLETE") == 1
+            and metrics.get("TRAINING_AUTHORIZED") == 1
+            and metrics.get("TRAINING_STARTED") == 1
+            and metrics.get("V63_FAIL_PASS") == 1
+            and metrics.get("V63_FAIL_BLIND_ACCESS") == 0
+            and metrics.get("V63_FAIL_GPU_BF16") == 1
         )
 
     if tokenizer_workstream or architecture_workstream:
