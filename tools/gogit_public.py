@@ -1338,7 +1338,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v62_train_run_001_eos_calibration.py",
     }
 
-    v63_diagnostic = tracked == "tools/public-audits/phase03_v63_diagnostic_preflight.py"
+    v63_diagnostic = tracked in {
+        "tools/public-audits/phase03_v63_diagnostic_preflight.py",
+        "tools/public-audits/phase03_v63_diagnostic_preflight_002.py",
+    }
 
     architecture_workstream = tracked.startswith(
         (
