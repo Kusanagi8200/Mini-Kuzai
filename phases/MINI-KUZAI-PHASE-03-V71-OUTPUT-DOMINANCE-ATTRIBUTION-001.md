@@ -2,7 +2,7 @@
 
 Date --> 2026-10-31
 
-Status --> **RESEARCH PROTOCOL PUBLISHED / IMPLEMENTATION AND LOCAL GPU EXECUTION PENDING**
+Status --> **READ-ONLY AUDIT / CPU TESTS / PINNED GOGIT RUNNER PUBLISHED; LOCAL EXECUTION PENDING**
 
 ## Motivation and prior verified evidence
 
@@ -58,7 +58,9 @@ All calculations are on frozen VALIDATION positions; results are aggregate integ
 - Hidden-state/output-row cosine alignment of original winner versus gold row, with zero-vector safeguards and explicit handling of special IDs
 - Whether increased diversity comes from genuinely different winners across positions or only a changed small set of dominant tokens
 
-The audit must define a stable and reviewed **maximum 30-field public numeric schema** before any GOGIT run. Do not publish raw IDs, token sequences, prompts, text, hidden vectors, weight rows, individual logits or per-position data. Do not invent numeric results before the fhc2 GPU run.
+The committed audit defines exactly **30 allowlisted nonnegative integer metrics**, including three standard safety flags. The 27 V71 metrics cover PASS, BLIND access, evaluation denominators, V70 original/FULL replay, position-level winner switches by gold-token family, the four correctness quadrants, mean winning-logit margins, mean gold-logit deficits by family, selected-to-gold mean output-row norm ratio, and shifted cosine alignment averages. All percentage-like metrics are encoded as integers; `COS_*_SHIFT_X1000` is `round(1000 × (1 + mean cosine))` to remain nonnegative. Do not publish token IDs, sequences, prompts, text, hidden vectors, weights, individual logits or position-level observations.
+
+**V71 pinned audit source -->** [`tools/public-audits/phase03_v71_output_dominance_attribution_001.py`](../tools/public-audits/phase03_v71_output_dominance_attribution_001.py). **Tests -->** [`tests/test_phase03_v71_output_dominance_attribution_001.py`](../tests/test_phase03_v71_output_dominance_attribution_001.py). **GPU/GOGIT runner -->** [`tools/run_v71_output_dominance_attribution_001_job.py`](../tools/run_v71_output_dominance_attribution_001_job.py). **GOGIT STEP_ID -->** `PHASE03-SMOLTALK-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001`. The runner checks the published audit Git blob before allowing execution.
 
 ## Integrity and authorization boundaries
 
@@ -66,13 +68,23 @@ The future implementation must -->
 
 1. Verify the exact stopped V62 run and immutable checkpoint, 69 optimizer steps, 597982 exposure tokens and the original tokenizer/architecture
 2. Validate V67, V68, V69 and V70 immutable numeric GOGIT dependencies and source fingerprints
-3. Build **only** the frozen 36-segment VALIDATION, and preserve the 9206 next-token / 9170 lexical-position inventory
+3. Evaluate **only** the frozen 36-segment VALIDATION, and preserve the 9206 next-token / 9170 lexical-position inventory. The reused V64 preflight may also load TRAIN solely to verify the frozen 345-segment inventory; no TRAIN inference or optimization occurs
 4. Run `model.eval()` and `torch.inference_mode()`; perform no optimization, training, sampling or BLIND evaluation
 5. Capture and release frozen output-head hidden states with a removable hook and compare the tied original weights for equality afterwards
 6. Implement unit tests, deterministic numerical/tie rules, pinned Git source identity and fail-closed GOGIT publication
 7. Keep all diagnostic branch decisions observational; no new training authorization, checkpoint replacement or architecture change follows automatically
 
-AUTOPILOT integration is a separate reviewed implementation step. Its diagnostic-runner catalog and any future campaign must be pinned and bounded. **No V71 command, runner, AUTOPILOT campaign or GPU result is claimed as available by this protocol.**
+AUTOPILOT V3 does not include V71; registering a new campaign requires an independent reviewed step. V71 has a pinned, stand-alone local runner only. **Neither V71 CPU tests nor the GPU audit have been executed on fhc2 yet. No GOGIT result or training authorization is claimed.**
+
+## Local execution on fhc2
+
+From a clean, synchronized checkout, execute the committed runner; it first runs unit tests and then invokes `gogit_public.py` to publish exactly four history/latest report paths if all gates pass -->
+
+```bash
+cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && git pull --ff-only origin main && /root/Mini-Kuzai/.venv/bin/python tools/run_v71_output_dominance_attribution_001_job.py
+```
+
+After the command exits, report **GOGIT** for GitHub-based review. Any source mismatch, prior-report disagreement, unsafe checkpoint state, timeout, invalid metrics or publication failure stops the process.
 
 ## Interpretation gate
 
