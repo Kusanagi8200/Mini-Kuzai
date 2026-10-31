@@ -17,6 +17,15 @@ spec.loader.exec_module(P)
 
 
 class HistoricalDiscussionsSafetyTests(unittest.TestCase):
+    def test_target_is_mini_kuzai_development_log(self):
+        self.assertEqual(P.OWNER, "Kusanagi8200")
+        self.assertEqual(P.REPOSITORY, "Mini-Kuzai")
+        self.assertEqual(P.REPOSITORY_ID, "R_kgDOUI2cCw")
+        self.assertEqual(P.CATEGORY_ID, "DIC_kwDOUI2cC84DKGl8")
+        self.assertEqual(P.CATEGORY_NAME, "Development Log")
+        self.assertIn('repository(owner: "Kusanagi8200", name: "Mini-Kuzai")', P.QUERY)
+        self.assertNotIn('name: "KuzAI"', P.QUERY)
+
     def test_all_three_reviewed_posts_and_ascii_headers(self):
         posts = P.load_posts()
         self.assertEqual(len(posts), 3)
