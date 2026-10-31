@@ -1,6 +1,6 @@
 # Mini-Kuzai Phase 03 - V68 tied output head and logit dominance
 
-Status --> **GOGIT FAILURE CAUSE CONFIRMED / PAD GUARD CORRECTED / LOCAL GPU REVALIDATION PENDING**
+Status --> **CORRECTED V68 GPU / GOGIT VERIFIED / HISTORICAL FAILURE PRESERVED**
 
 Date --> 2026-10-31
 
@@ -18,7 +18,7 @@ The first AUTOPILOT V1 execution passed eight CPU unit tests but the original V6
 
 The new diagnostic publishes `V68_HEAD_NORM_PAD_X1000` (PAD row L2 norm multiplied by 1000), replacing the old `V68_HEAD_NORM_SPECIAL_MEAN_X1000` metric **without changing the report length of 30 fields**. The weight-tied/no-bias checks, finite-row enforcement, V62 frozen checkpoint and VAL/BLIND separation remain intact. Two new CPU cases cover an intentionally nonzero PAD row and an invalid NaN row.
 
-**Status** --> source and tests corrected on GitHub. A successful GPU execution and V68 numerical report remain to be verified on fhc2. The failure-probe report remains part of the immutable incident history, not a successful V68 result.
+**Verified closure** --> The corrected V68 GPU audit completed and published as immutable [V68 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001.json), commit [3d872b9102f7](https://github.com/Kusanagi8200/Mini-Kuzai/commit/3d872b9102f7708e5bff723ffd0f195ba2e0ee72). It recorded tied head = 1, PAD row norm 0.182, 4 predicted lexical IDs, dominant share 72.58%, CE 4.733, terminal EOS 14/36 and BLIND access 0. The original failed attempt and subsequent failure probe remain preserved as separate historical evidence.
 
 ## Research question
 
