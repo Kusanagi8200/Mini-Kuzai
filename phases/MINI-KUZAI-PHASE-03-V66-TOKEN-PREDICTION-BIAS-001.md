@@ -2,7 +2,37 @@
 
 Date --> 2026-10-31
 
-Status --> **CODE PUBLISHED / LOCAL GPU EXECUTION PENDING / NO NEW TRAINING**
+Status --> **BOTH PARTS EXECUTED / GOGIT VERIFIED / NO NEW TRAINING**
+
+## Verified V66 execution - 2026-10-31
+
+Both 30-field GOGIT reports were published successfully -->
+
+- [V66-A confusion and probability-mass GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-A-001.json), commit [`b2fdc0abe36c`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/b2fdc0abe36c35f6514453e5dd9c47dec03fdb7e)
+- [V66-B detailed frequency GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V66-TOKEN-PREDICTION-BIAS-PART-B-001.json), commit [`035f299a1399`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/035f299a139965b87dba66c03ce41a0b2ea9ee5f)
+
+The **9170** nonspecial VALIDATION targets contained **4876** true raw-byte and **4294** true merged BPE tokens.
+
+| True target family | Predicted raw-byte | Predicted merged BPE | Predicted special |
+| --- | --- | --- | --- |
+| Raw-byte | 4438 | 399 | 39 |
+| Merged BPE | 2254 | 2029 | 11 |
+
+Total argmax predictions --> **6692 raw-byte**, **2428 merged**, **50 special**. Raw-byte is selected in **72.98%** of all lexical contexts, compared with **53.17%** raw-byte gold targets.
+
+By contrast, full-vocabulary softmax probability mass for gold merged-token contexts was **34.37% raw-byte**, **64.84% merged BPE**, **0.79% special**. The model does **not** globally suppress BPE probability mass, despite frequently selecting raw-byte IDs as argmax.
+
+Fine-grained frequency top-1 accuracy -->
+
+| TRAIN frequency | Raw-byte top-1 | Merged BPE top-1 |
+| --- | --- | --- |
+| 10-99 | 0% | 0% |
+| 100-999 | 0% | 0% |
+| 1000+ | 64.64% | 12.97% |
+
+All correct lexical top-1 predictions in these strata are concentrated on tokens seen **at least 1000 times in TRAIN**. The output-token distribution itself has not yet been measured for concentration. **V67 OUTPUT CONCENTRATION 001** is designed to measure distinct predicted token IDs, frequency concentration, gold-token rank and top-k coverage.
+
+Next prepared experiment --> [V67 frozen concentration and rank diagnostic](MINI-KUZAI-PHASE-03-V67-OUTPUT-CONCENTRATION-001.md). No new training is authorized.
 
 ## GOGIT 30-metric ceiling incident and partitioned correction
 
@@ -31,7 +61,7 @@ New components -->
 - One-command resume-safe runner --> `tools/run_v66_token_prediction_bias_partitioned_001_job.py`
 - Pre-change immutable backup --> `tools/backups/V66-GOGIT-SPLIT-PRE-FIX-20261031.md`
 
-This fix is **published as code, but the two GPU audits have not yet been executed**. Do not interpret the former eight successful tests as successful GOGIT publication.
+Historical implementation note --> the split publication was initially prepared before execution. The two audits have now been published and verified, as recorded above. Do not interpret the former eight successful tests as successful GOGIT publication.
 
 ## Purpose and V65 prerequisite
 
