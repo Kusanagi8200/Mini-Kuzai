@@ -105,6 +105,24 @@ def main():
         print("STEP_ID:", STEP)
         print("TRAINING_RESTARTED: 0")
         return
+    test = subprocess.run(
+        [
+            str(PYTHON), "-m", "unittest", "discover",
+            "-s", "tests",
+            "-p", "test_phase03_v63_decoding_ablation.py",
+            "-v",
+        ],
+        cwd=REPO,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if test.returncode:
+        raise RuntimeError(
+            "V63 decoder CPU unit tests failed: "
+            + (test.stderr or test.stdout)[-2000:]
+        )
+    print("V63_DECODER_UNIT_TESTS: PASS")
     p = subprocess.run(
         [str(PYTHON), "tools/gogit_public.py", "--step", STEP, "--audit", AUDIT],
         cwd=REPO, text=True, check=False,
