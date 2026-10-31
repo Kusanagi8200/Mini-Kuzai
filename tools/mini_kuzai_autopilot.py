@@ -45,6 +45,7 @@ SHA256_RE=re.compile(r"[0-9a-f]{64}\Z")
 # are published and reviewed. No manifest-controlled arbitrary commands.
 DIAGNOSTIC_RUNNERS={
     "v67-readonly":"tools/run_v67_output_concentration_001_job.py",
+    "v68-head":"tools/run_v68_output_head_001_job.py",
 }
 # A subsequent, separate workstream must implement, review and register an
 # internal-budget-enforcing NEW trainer before any bounded training can run.
@@ -59,8 +60,13 @@ REPORT_PRODUCERS={
         "tools/public-audits/phase03_v66_token_prediction_bias_part_b_001.py",
     "PHASE03-SMOLTALK-V67-OUTPUT-CONCENTRATION-001":
         "tools/public-audits/phase03_v67_output_concentration_001.py",
+    "PHASE03-SMOLTALK-V68-OUTPUT-HEAD-001":
+        "tools/public-audits/phase03_v68_output_head_001.py",
 }
-APPROVED_RUN_BLOB={}  # Set to reviewed Git blob IDs before allowing new jobs.
+APPROVED_RUN_BLOB={
+    "v67-readonly":"a5efc5cc58ec162d3b11cb9e0e11ddf30281ad57",
+    "v68-head":"fae721c57c7184ab9a154d91b46a57942d85dcaf",
+}
 
 # Standard diagnostic GOGIT flags must be zero, independent of stage rules.
 REQUIRED_ZERO=("SEMANTIC_VALIDATION_COMPLETE","TRAINING_AUTHORIZED","TRAINING_STARTED")
@@ -127,11 +133,15 @@ def safe_relative(path:str,base:Path):
     parts=Path(path).parts
     if any(p in ("..",".") for p in parts):
         raise Halt("Directory traversal denied")
-    resolved=(base/path).resolve()
+    candidate=base/path
+    current=base.resolve()
+    for part in parts:
+        current=current/part
+        if current.is_symlink():
+            raise Halt("Symlink denied in approved path")
+    resolved=candidate.resolve()
     if not resolved.is_relative_to(base.resolve()):
         raise Halt("Path escapes its permitted directory")
-    if resolved.is_symlink():
-        raise Halt("Symlink denied")
     return resolved
 
 
