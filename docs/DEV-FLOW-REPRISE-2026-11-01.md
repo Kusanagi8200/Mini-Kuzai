@@ -85,7 +85,7 @@ No background ChatGPT watcher, OpenAI API key or paid OpenAI API is used. The lo
 | Scientific conclusion | Strong TRAIN-frequency confound for PC1_ONLY; no independent semantic or causal inference |
 | FINAL-DEV-FLOW | **NOT REQUESTED / NOT PUBLISHED** |
 
-**Important closure constraint** --> [`tools/github_discussions_step.py`](../tools/github_discussions_step.py) currently accepts one immutable GOGIT `--report` for a final Discussion comment. V74 is validated by *two* complementary reports. Before triggering an authorized FINAL-DEV-FLOW, confirm and document how the final comment will point to both reports, preserving idempotency and the LinkedIn 2800-character output limit. Neither this documentation commit nor the dual GOGIT authorizes an external publication.
+**FINAL preparation checkpoint** --> [`tools/v74_final_closure.py`](../tools/v74_final_closure.py) and [`tools/github_discussions_step.py`](../tools/github_discussions_step.py) now implement a special V74 closure: one existing request field pointing to the verified **CORE** history, with **STRATA** automatically required and cited in the same immutable GitHub comment. A fixed, compact 1900-character maximum is intended to remain below the LinkedIn 2800-character limit after formatting. Regression tests are committed but must be run on fhc2, and a real GitHub read-only dry-run must return `PUBLICATION=DISABLED`. **No `V74-final.json` request exists and no FINAL has been authorized or submitted.**
 
 ## New-chat resumption prompt
 
