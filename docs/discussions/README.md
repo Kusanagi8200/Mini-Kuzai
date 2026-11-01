@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions publication workflow
 
-Status --> **HISTORICAL POSTS TRANSFERRED / V74 START #5 PUBLISHED / LINKEDIN LIVE V74 CONFIRMED / TIMERS ACTIVE**
+Status --> **V74 START/LINKEDIN VERIFIED / CORE+STRATA GOGIT VERIFIED / FINAL-DEV-FLOW NOT TRIGGERED**
 
 Publication target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -95,7 +95,7 @@ Both commands require a clean `main` that matches `origin/main`, including a rem
 
 ### GOGIT Vxx - verified aggregate closure
 
-After the GOGIT public audit is published, identify its immutable file under `reports/assistant-results/history/` with the exact `PHASE03-SMOLTALK-V74-...json` filename. The publisher verifies its step identity, public aggregate status, PASS metric, zero BLIND access, producer SHA256, committed-file integrity and absence of private conversation data. It constructs a **numerical evidence comment** automatically with a pinned Git commit URL, the verified metric table and explicit interpretation limits. It does not infer conversational performance from a numeric PASS.
+After the GOGIT public audit is published, identify its immutable file under `reports/assistant-results/history/` with the exact `PHASE03-SMOLTALK-V74-...json` filename. V74 specifically has **two** complementary verified reports, CORE and STRATA; the existing close publisher's `--report` accepts only one and must not silently misrepresent the pair. The publisher verifies its step identity, public aggregate status, PASS metric, zero BLIND access, producer SHA256, committed-file integrity and absence of private conversation data. It constructs a **numerical evidence comment** automatically with a pinned Git commit URL, the verified metric table and explicit interpretation limits. It does not infer conversational performance from a numeric PASS.
 
 Simulate with the report's full real filename (placeholder shown below) -->
 
@@ -160,6 +160,16 @@ Inbound signature checks use HMAC-SHA256, strict approved author/category/header
 
 The immediate timer snapshot initially showed `NEXT=-`, but a subsequent check verified LAST `2026-11-01 14:51:36 UTC`, NEXT `2026-11-01 14:52:37 UTC`, six successful `STATE=IDLE` cycles and no additional queued post. Timer recurrence is confirmed.
 
+### Verified V74 GOGIT - final publication readiness
+
+- [CORE 30-field immutable report](../../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json), [commit `54dace24112f`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/54dace24112f920232cb6106422f6da7ab35d24c)
+- [STRATA 30-field immutable report](../../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001.json), [commit `7b36b3fb18c6`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7b36b3fb18c6f31037f90ada947b56469f73424f)
+- Frozen V62 and V65/V73 baselines reconciled; 9170 VALIDATION lexical positions, 294726 TRAIN tokens, zero new training, zero BLIND access
+- PC1_ONLY --> 2455 correct; TRAIN_UNIGRAM --> 2535 correct; 2449 shared correct; 6450 matching predictions
+- Full interpretation, limitations and frequency strata --> [V74 scientific protocol and findings](../../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md)
+
+**Current FINAL blocker** --> one GOGIT `--report` is used by [`tools/github_discussions_step.py`](../../tools/github_discussions_step.py) when forming a single closure comment. Since CORE and STRATA are complementary, a future reviewed FINAL workflow must reference **both** immutable reports, and satisfy the downstream LinkedIn formatting limit. Do not create two incompatible FINAL comments or invoke FINAL before this has been validated and explicitly authorized.
+
 ### Pending work and scientific boundaries
 
 - Timer schedule and six clean idle DELIVERY cycles verified; maintain routine monitoring
@@ -168,7 +178,7 @@ The immediate timer snapshot initially showed `NEXT=-`, but a subsequent check v
 - Avoid synchronizing unreviewed VPS source changes from GitHub; the documentation changes are not runtime deployments
 - Preserve V62 frozen checkpoint, zero new training and BLIND TEST closure
 
-The V74 START was completed; **do not issue another V74 START request**. The scientific V74 protocol, tests, numeric audit and GOGIT remain outstanding. A GitHub/LinkedIn publication status is not an AI training result or validation of model quality.
+The V74 START was completed; **do not issue another V74 START request**. The scientific V74 CORE and STRATA GOGIT reports are now committed and jointly verified; the research question has been evaluated, with a strong frequency-prior confound but no proof of semantic generalization. The final GitHub/LinkedIn closure is **not authorized or published**. A GOGIT PASS is not model-quality or conversational-competence validation.
 
 ---
 
