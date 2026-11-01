@@ -35,14 +35,14 @@ Two independent GOGIT records are used to respect the unchanged **30 integers pe
 
 | Report | STEP_ID | Numeric fields |
 | --- | --- | --- |
-| CORE | \`PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001\` | 30 |
-| STRATA | \`PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001\` | 30 |
+| CORE | `PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001` | 30 |
+| STRATA | `PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001` | 30 |
 
-**Both reports** --> \`SEMANTIC_VALIDATION_COMPLETE=0\`, \`TRAINING_AUTHORIZED=0\`, \`TRAINING_STARTED=0\`.
+**Both reports** --> `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`.
 
-**CORE** --> \`V74_CORE_PASS\`, \`V74_CORE_BLIND_ACCESS\`, \`V74_CORE_VAL_LEXICAL\`, four \`V74_CORE_F*_COUNT\` population fields and, for each of \`ORIG\`, \`CENTER\`, \`PC1\`, \`UNIGRAM\`, the five integers \`CORRECT\`, \`DISTINCT\`, \`TOP1_SHARE_BP\`, \`BYTE_CORRECT\`, \`MERGE_CORRECT\`.
+**CORE** --> `V74_CORE_PASS`, `V74_CORE_BLIND_ACCESS`, `V74_CORE_VAL_LEXICAL`, four `V74_CORE_F*_COUNT` population fields and, for each of `ORIG`, `CENTER`, `PC1`, `UNIGRAM`, the five integers `CORRECT`, `DISTINCT`, `TOP1_SHARE_BP`, `BYTE_CORRECT`, `MERGE_CORRECT`.
 
-**STRATA** --> \`V74_STRATA_PASS\`, \`V74_STRATA_BLIND_ACCESS\`, \`V74_STRATA_VAL_LEXICAL\`, \`V74_STRATA_TRAIN_LEXICAL\`, \`V74_STRATA_TRAIN_TYPES\`, four \`V74_STRATA_F*_COUNT\` denominators, sixteen per-mode/per-frequency-bin \`CORRECT\` fields, \`V74_STRATA_PC1_UNIGRAM_AGREE\` and \`V74_STRATA_PC1_UNIGRAM_SHARED_CORRECT\`.
+**STRATA** --> `V74_STRATA_PASS`, `V74_STRATA_BLIND_ACCESS`, `V74_STRATA_VAL_LEXICAL`, `V74_STRATA_TRAIN_LEXICAL`, `V74_STRATA_TRAIN_TYPES`, four `V74_STRATA_F*_COUNT` denominators, sixteen per-mode/per-frequency-bin `CORRECT` fields, `V74_STRATA_PC1_UNIGRAM_AGREE` and `V74_STRATA_PC1_UNIGRAM_SHARED_CORRECT`.
 
 The runner must verify full **30-field V73 replay** against the immutable V73 report before scoring V74 and reproduce these exact controls:
 
@@ -52,15 +52,15 @@ The runner must verify full **30-field V73 replay** against the immutable V73 re
 - TRAIN --> 294726 lexical tokens, 891 token types
 - VALIDATION --> 36 conversations, 9170 lexical targets, 4876 raw-byte and 4294 merged BPE
 
-Both reports must have identical bin denominators. For each projection, CORE \`CORRECT\` must equal the sum of its four STRATA \`CORRECT\` fields; CORE \`BYTE_CORRECT + MERGE_CORRECT\` must also reconcile. \`PC1_UNIGRAM_AGREE\` counts matching argmax IDs; \`PC1_UNIGRAM_SHARED_CORRECT\` counts positions where both choose the gold token.
+Both reports must have identical bin denominators. For each projection, CORE `CORRECT` must equal the sum of its four STRATA `CORRECT` fields; CORE `BYTE_CORRECT + MERGE_CORRECT` must also reconcile. `PC1_UNIGRAM_AGREE` counts matching argmax IDs; `PC1_UNIGRAM_SHARED_CORRECT` counts positions where both choose the gold token.
 
 ## Implementation and reproducibility
 
-- Shared, read-only scientific computation --> [\`tools/v74_frequency_prior.py\`](../tools/v74_frequency_prior.py)
-- Pinned public CORE audit --> [\`phase03_v74_frequency_prior_core_001.py\`](../tools/public-audits/phase03_v74_frequency_prior_core_001.py)
-- Pinned public STRATA audit --> [\`phase03_v74_frequency_prior_strata_001.py\`](../tools/public-audits/phase03_v74_frequency_prior_strata_001.py)
-- CPU regression --> [\`test_phase03_v74_frequency_prior_001.py\`](../tests/test_phase03_v74_frequency_prior_001.py)
-- Bounded sequential GPU/GOGIT runner --> [\`run_v74_frequency_prior_001_job.py\`](../tools/run_v74_frequency_prior_001_job.py)
+- Shared, read-only scientific computation --> [`tools/v74_frequency_prior.py`](../tools/v74_frequency_prior.py)
+- Pinned public CORE audit --> [`phase03_v74_frequency_prior_core_001.py`](../tools/public-audits/phase03_v74_frequency_prior_core_001.py)
+- Pinned public STRATA audit --> [`phase03_v74_frequency_prior_strata_001.py`](../tools/public-audits/phase03_v74_frequency_prior_strata_001.py)
+- CPU regression --> [`test_phase03_v74_frequency_prior_001.py`](../tests/test_phase03_v74_frequency_prior_001.py)
+- Bounded sequential GPU/GOGIT runner --> [`run_v74_frequency_prior_001_job.py`](../tools/run_v74_frequency_prior_001_job.py)
 
 The runner runs CPU regressions once, publishes CORE GOGIT, checks the immutable history, then publishes STRATA GOGIT and reconciles both public reports. It stops at the first failure, never retries an existing different history record, and can resume from a verified CORE if STRATA fails. No publication of a GitHub Discussion comment, FINAL-DEV-FLOW, LinkedIn post, new training or BLIND access is part of this runner.
 
