@@ -18,7 +18,7 @@ Each stage is documented through source code, reproducible protocols, frozen che
 
 ## Navigate the project
 
-**[Phases](#development-phases)** · **[Research steps V48-V74](#phase-03-research-steps)** · **[Current status](#current-status---2026-11-01)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
+**[Phases](#development-phases)** · **[Research steps V48-V75](#phase-03-research-steps)** · **[Current status](#current-status---2026-11-01)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
 
 ## Development phases
 
@@ -46,7 +46,8 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V71 - GOGIT verified** | Frozen V62 norm-versus-direction attribution, 30 numeric metrics; 275 changed argmax positions out of 9170 | [V71 research protocol](phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) · [V71 audit](tools/public-audits/phase03_v71_output_dominance_attribution_001.py) · [V71 tests](tests/test_phase03_v71_output_dominance_attribution_001.py) |
 | **V72 - GOGIT verified** | Strong 128D anisotropy: centered PC1 82.88%, effective rank 1.44; mean-center switches 2889/9170 lexical predictions | [V72 protocol and findings](phases/MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) · [V72 numeric GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001.json) |
 | **V73 - GOGIT verified** | PC1 alone yields 2455/9170 correct predictions with only 2 distinct output IDs; removing PC1 yields 1124/9170 correct despite 522 distinct IDs | [V73 findings](phases/MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md) · [V73 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.json) |
-| **V74 - CORE/STRATA GOGIT verified** | TRAIN unigram 2535/9170 correct vs PC1_ONLY 2455/9170; 2449 of 2455 PC1 hits shared with unigram. Research audit complete, FINAL-DEV-FLOW not yet triggered | [V74 results and limitations](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) · [CORE GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json) · [STRATA GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001.json) |
+| **V74 - CLOSED and delivered** | CORE + STRATA GOGIT verified, 2449/2455 PC1 hits shared with unigram, real START and FINAL published on GitHub and LinkedIn without duplicate | [V74 verified closure](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) · [CORE GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json) · [STRATA GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001.json) |
+| **V75 - PROPOSED / PAUSED** | TRAIN-fitted hidden-state geometry versus frozen VALIDATION, eliminating VALIDATION-fit bias; no GPU work, START request, new training or BLIND access authorized | [V75 protocol proposal](phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md) · [unpublished START draft](docs/discussions/steps/V75-start.md) |
 
 ## Current status - 2026-11-01
 
@@ -73,9 +74,9 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 
 The latest verified scientific GOGIT is **V74**, published as two immutable numeric reports, [CORE](reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json) and [STRATA](reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001.json). The reviewed [V74 research conclusion](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) supports a strong TRAIN-frequency confound for PC1_ONLY and sets out limitations. The authorized [START Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) and [START receipt](automation/dev-flow/receipts/V74-start.json) remain published.
 
-The `fhc2` DEV-FLOW worker published the approved V74 START and the GitHub receipt. The real signed webhook reached KUZ-DIN, SQLite PREPARE found one eligible event `start-V74-d5`, and the guarded LinkedIn DELIVERY service sent exactly one post, confirmed by provider URN `urn:li:share:7522669773583872000` and operator screenshot. The production cutoff `2026-11-01T13:38:23+00:00` remains in force. **LinkedIn LIVE=YES**, DELIVERY timer active/enabled, no pending events and no duplicate replay. A follow-up timer check confirmed LAST `2026-11-01 14:51:36 UTC`, NEXT `2026-11-01 14:52:37 UTC`, and six successful `STATE=IDLE` runs with no additional post. The first real FINAL/GOGIT closing publication remains untested.
+The `fhc2` DEV-FLOW worker published the approved V74 START and the GitHub receipt. The real signed webhook reached KUZ-DIN, SQLite PREPARE found one eligible event `start-V74-d5`, and the guarded LinkedIn DELIVERY service sent exactly one post, confirmed by provider URN `urn:li:share:7522669773583872000` and operator screenshot. The production cutoff `2026-11-01T13:38:23+00:00` remains in force. **LinkedIn LIVE=YES**, DELIVERY timer active/enabled, no pending events and no duplicate replay. A follow-up timer check confirmed LAST `2026-11-01 14:51:36 UTC`, NEXT `2026-11-01 14:52:37 UTC`, and six successful `STATE=IDLE` runs with no additional post. The real V74 FINAL comment was published as [#19334374](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5#discussioncomment-19334374), with a [committed FINAL receipt](automation/dev-flow/receipts/V74-final.json). KUZ-DIN journal recorded its independent LinkedIn post `urn:li:share:7522683502069190656` alongside START with both rows `PUBLISHED` and zero pending / IN_FLIGHT events.
 
-[DEV-FLOW deployment evidence and V74 GOGIT checkpoint](docs/DEV-FLOW-REPRISE-2026-11-01.md). V74 START and both scientific GOGIT records are complete; a public FINAL-DEV-FLOW is still pending a separate explicit order, and the final publication must reference both complementary reports. No documentation commit authorizes training, BLIND access or an external post.
+[Verified DEV-FLOW V74 closure and V75 resumption](docs/DEV-FLOW-REPRISE-2026-11-01.md). V74 START, FINAL and both scientific GOGIT records are complete. A V75 research draft is ready **for review only**. No START-DEV-FLOW V75 request has been issued and no training, BLIND access or scientific checkpoint change is authorized.
 
 ## Code, operations and evidence
 
@@ -85,8 +86,8 @@ The `fhc2` DEV-FLOW worker published the approved V74 START and the GitHub recei
 | [Installation](technical/installation/README.md) | Reference environment and setup |
 | [Checkpoint inventory](technical/checkpoints/README.md) | Historical Phase 01 checkpoint metadata |
 | [GOGIT](tools/GOGIT.md) | Verified numeric audit publication, immutable history and manual ChatGPT review |
-| [GitHub Discussions and KUZ-DIN Publisher](docs/discussions/README.md) | Approved V74+ START / GOGIT events, signed GitHub webhook and guarded live LinkedIn delivery verified for START V74 |
-| [DEV-FLOW checkpoint and V74 GOGIT review](docs/DEV-FLOW-REPRISE-2026-11-01.md) | Verified two-host publishing, V74 paired numeric GOGIT, pending FINAL authorization |
+| [GitHub Discussions and KUZ-DIN Publisher](docs/discussions/README.md) | V74 START and FINAL real deliveries verified, event/receipt idempotency, future V75 approval boundary |
+| [DEV-FLOW V74 closure and V75 resume checkpoint](docs/DEV-FLOW-REPRISE-2026-11-01.md) | Verified two-host publishing and dual GOGIT, future V75 design awaiting approval |
 | [AUTOPILOT](autopilot/README.md) | Bounded diagnostic campaigns, reproducibility checks and training restrictions |
 | [Latest GOGIT report](reports/assistant-results/latest.json) | Most recently published numerical results |
 | [Workflow policy](PROJECT-WORKFLOW-POLICY.md) | Fail-closed automation and authorization boundaries |
