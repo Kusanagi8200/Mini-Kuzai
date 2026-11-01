@@ -2,7 +2,7 @@
 
 Date --> 2026-11-01
 
-Status --> **PROPOSED / NOT STARTED / NO NEW TRAINING / NO BLIND ACCESS**
+Status --> **START PUBLISHED / NUMERIC SCHEMA FROZEN FOR REVIEW / GPU AUDIT NOT RUN / NO NEW TRAINING / NO BLIND ACCESS**
 
 ## Verified motivation
 
@@ -16,7 +16,7 @@ These results were measured by teacher forcing. The principal axes and mean vect
 
 A collapsed predictor can appear numerically useful by selecting a very common token. V74 should measure that confound rather than declare the dominant direction beneficial or harmful by itself.
 
-## Proposed strictly read-only experiment
+## Frozen strictly read-only experiment
 
 | Projection | Definition | Question |
 | --- | --- | --- |
@@ -27,7 +27,42 @@ A collapsed predictor can appear numerically useful by selecting a very common t
 
 Use the same 36 frozen VALIDATION conversations and original 9170 lexical positions as V73, with 4876 byte and 4294 merged-BPE gold targets. Reproduce the published V73 aggregate counts before interpreting anything new. Compute TRAIN token frequencies only from the existing frozen authorized TRAIN stream, with deterministic tie resolution. Never choose the most-frequent token using VALIDATION counts.
 
-For each condition report aggregate top-1 accuracy count, number of distinct predicted IDs, dominant predicted share and correct counts separated by byte versus merged-BPE gold targets. Compare also predeclared TRAIN-frequency strata, reporting the population denominator in each. Fix thresholds and the exact numerical metric schema before running the audit, rather than selecting them post hoc. Do not expose token identities, predictions at individual positions, text, activations or eigenvectors.
+For each condition report aggregate top-1 accuracy count, number of distinct predicted IDs, dominant predicted share and correct counts separated by byte versus merged-BPE gold targets. Frequency strata are defined using the frequency of the **gold target token in TRAIN**, with fixed bounds F0=0, F1_9=1..9, F10_99=10..99 and F100P>=100. The TRAIN_UNIGRAM predictor is the most frequent **non-special** TRAIN token; ties resolve to the lowest token ID. The same gold-target strata partition all 9170 VALIDATION lexical positions. No token identities, predictions at individual positions, text, activations or eigenvectors are published.
+
+## Predeclared public numerical schema (STEP 10)
+
+Two independent GOGIT records are used to respect the unchanged **30 integers per report** limit, including three common safety fields (0 each). In total they expose 57 unique numeric keys, 54 V74-specific and three safety gates.
+
+| Report | STEP_ID | Numeric fields |
+| --- | --- | --- |
+| CORE | \`PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001\` | 30 |
+| STRATA | \`PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001\` | 30 |
+
+**Both reports** --> \`SEMANTIC_VALIDATION_COMPLETE=0\`, \`TRAINING_AUTHORIZED=0\`, \`TRAINING_STARTED=0\`.
+
+**CORE** --> \`V74_CORE_PASS\`, \`V74_CORE_BLIND_ACCESS\`, \`V74_CORE_VAL_LEXICAL\`, four \`V74_CORE_F*_COUNT\` population fields and, for each of \`ORIG\`, \`CENTER\`, \`PC1\`, \`UNIGRAM\`, the five integers \`CORRECT\`, \`DISTINCT\`, \`TOP1_SHARE_BP\`, \`BYTE_CORRECT\`, \`MERGE_CORRECT\`.
+
+**STRATA** --> \`V74_STRATA_PASS\`, \`V74_STRATA_BLIND_ACCESS\`, \`V74_STRATA_VAL_LEXICAL\`, \`V74_STRATA_TRAIN_LEXICAL\`, \`V74_STRATA_TRAIN_TYPES\`, four \`V74_STRATA_F*_COUNT\` denominators, sixteen per-mode/per-frequency-bin \`CORRECT\` fields, \`V74_STRATA_PC1_UNIGRAM_AGREE\` and \`V74_STRATA_PC1_UNIGRAM_SHARED_CORRECT\`.
+
+The runner must verify full **30-field V73 replay** against the immutable V73 report before scoring V74 and reproduce these exact controls:
+
+- ORIGINAL --> 2673 correct; 5 predicted IDs; 7255 basis-point top1 dominance
+- CENTER --> 2832 correct; 15 predicted IDs; 5788 bp top1 dominance
+- PC1_ONLY --> 2455 correct; 2 predicted IDs; 7034 bp top1 dominance
+- TRAIN --> 294726 lexical tokens, 891 token types
+- VALIDATION --> 36 conversations, 9170 lexical targets, 4876 raw-byte and 4294 merged BPE
+
+Both reports must have identical bin denominators. For each projection, CORE \`CORRECT\` must equal the sum of its four STRATA \`CORRECT\` fields; CORE \`BYTE_CORRECT + MERGE_CORRECT\` must also reconcile. \`PC1_UNIGRAM_AGREE\` counts matching argmax IDs; \`PC1_UNIGRAM_SHARED_CORRECT\` counts positions where both choose the gold token.
+
+## Implementation and reproducibility
+
+- Shared, read-only scientific computation --> [\`tools/v74_frequency_prior.py\`](../tools/v74_frequency_prior.py)
+- Pinned public CORE audit --> [\`phase03_v74_frequency_prior_core_001.py\`](../tools/public-audits/phase03_v74_frequency_prior_core_001.py)
+- Pinned public STRATA audit --> [\`phase03_v74_frequency_prior_strata_001.py\`](../tools/public-audits/phase03_v74_frequency_prior_strata_001.py)
+- CPU regression --> [\`test_phase03_v74_frequency_prior_001.py\`](../tests/test_phase03_v74_frequency_prior_001.py)
+- Bounded sequential GPU/GOGIT runner --> [\`run_v74_frequency_prior_001_job.py\`](../tools/run_v74_frequency_prior_001_job.py)
+
+The runner runs CPU regressions once, publishes CORE GOGIT, checks the immutable history, then publishes STRATA GOGIT and reconciles both public reports. It stops at the first failure, never retries an existing different history record, and can resume from a verified CORE if STRATA fails. No publication of a GitHub Discussion comment, FINAL-DEV-FLOW, LinkedIn post, new training or BLIND access is part of this runner.
 
 ## Mandatory implementation and stop gates
 
@@ -40,11 +75,11 @@ For each condition report aggregate top-1 accuracy count, number of distinct pre
 - Keep public GOGIT results numeric and allowlisted, within the 30-metric maximum per result, with explicit no-training and no-BLIND gates
 - Stop on any provenance mismatch, unreviewed schema, missing frozen source, timeout or nonnumeric output
 
-A valid outcome may support a frequency-prior explanation, but cannot prove an independent causal role for PC1. No intervention or additional training is authorized by this protocol. A V74 implementation, test runner and GOGIT STEP_ID **do not yet exist**.
+A valid outcome may support a frequency-prior explanation, but cannot prove an independent causal role for PC1. No intervention or additional training is authorized by this protocol. The reviewed V74 scientific implementation, pinned CORE/STRATA audits, regression tests and fail-closed runner are staged on GitHub. They have **not yet passed the fhc2 GPU run**. Only a successful dual GOGIT can close the scientific study.
 
 ## Publication boundary
 
-The [V74 START draft](../docs/discussions/steps/V74-start.md) is committed **for review only**. No `START-DEV-FLOW` request, GitHub Discussion, training operation or LinkedIn publication is authorized by this document. An explicit future user command and the worker's committed request file are required before posting START. `FINAL-DEV-FLOW` requires a separate authentic V74 numerical GOGIT report.
+The [V74 START source](../docs/discussions/steps/V74-start.md) was reviewed and explicitly published by `START-DEV-FLOW`. [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5), its [START receipt](../automation/dev-flow/receipts/V74-start.json), and the corresponding personal LinkedIn post are verified. **Do not issue another START V74.** `FINAL-DEV-FLOW` remains separately prohibited until the CORE and STRATA GOGIT records are authentic, immutable, jointly reviewed and explicitly approved by the operator.
 
 See the [DEV-FLOW resumption checkpoint](../docs/DEV-FLOW-REPRISE-2026-11-01.md).
 
