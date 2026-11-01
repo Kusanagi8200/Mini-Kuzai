@@ -1,196 +1,87 @@
-# Mini-Kuzai - GitHub Discussions publication workflow
+# Mini-Kuzai - GitHub Discussions and LinkedIn DEV-FLOW
 
-Status --> **V74 START/LINKEDIN VERIFIED / CORE+STRATA GOGIT VERIFIED / FINAL-DEV-FLOW NOT TRIGGERED**
+Status --> **V74 START AND FINAL GITHUB/LINKEDIN PUBLISHED / DUAL GOGIT VERIFIED / V75 PREPARED ONLY**
 
-Publication target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
+Target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
 Category --> `Development Log` (`DIC_kwDOUI2cC84DKGl8`)
 
-Source repository --> `Kusanagi8200/Mini-Kuzai` (`R_kgDOUI2cCw`)
+Repository --> `Kusanagi8200/Mini-Kuzai` (`R_kgDOUI2cCw`)
 
-## Historical introduction series
+## Existing discussions - do not republish
 
-| Order | GitHub discussion title | Source | Published discussion |
-| --- | --- | --- | --- |
-| 01 | Mini-Kuzai - Why Build a Language Model From Scratch? | [Origins](history/01-origins.md) | [Discussion #2](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/2) |
-| 02 | Mini-Kuzai - From a Transformer to a Developing AI Personality | [Learning design](history/02-learning-design.md) | [Discussion #3](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/3) |
-| 03 | Mini-Kuzai - What the First Training Experiments Revealed | [Training results through V73](history/03-first-training-results.md) | [Discussion #4](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/4) |
+| Discussion | Purpose | Publication |
+| --- | --- | --- |
+| [#1](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/1) | Mini-Kuzai Live Dev Flow announcement | Already present |
+| [#2](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/2) | [Origins](history/01-origins.md) | Historical |
+| [#3](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/3) | [Learning design](history/02-learning-design.md) | Historical |
+| [#4](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/4) | [First training results](history/03-first-training-results.md) | Historical |
+| [#5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) | V74 scientific START and FINAL | Completed |
 
-The actual GitHub discussion titles use `Mini-Kuzai | 01`, `| 02` and `| 03` for predictable deduplication. Each body starts with the exact ASCII terminal-style header approved for the project. All contents are public and refer only to documented project milestones. Historical publication originally completed on `Kusanagi8200/KuzAI`, with the local `--publish` run reporting `CREATED=3` and `PUBLICATION=VERIFIED`. The operator subsequently transferred the three discussions to `Kusanagi8200/Mini-Kuzai`, selected category `Development Log`, and verified all three destinations using a GitHub GraphQL query. Their current links are recorded above. The central announcement remains [Mini-Kuzai - Live Dev Flow](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/1), in its own category.
+The historical posts were transferred to this repository and verified in the `Development Log` category. [`tools/github_discussions_history.py`](../../tools/github_discussions_history.py) is a separate historical tool and must not be invoked in live mode for new steps.
 
-## Local execution on fhc2
-
-GitHub CLI `gh` authenticates the GraphQL requests using the operator's existing session. This workflow does not request, store or print a GitHub token or an OpenAI API key.
-
-The historical publisher is [tools/github_discussions_history.py](../../tools/github_discussions_history.py). It is **read-only by default**.
-
-First, run offline CPU tests and an online read-only inventory/preflight -->
-
-```bash
-cd /root/GitHub-Mini-Kuzai/Mini-Kuzai
-/root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_github_discussions_history.py' -v
-/root/Mini-Kuzai/.venv/bin/python tools/github_discussions_history.py --dry-run
-```
-
-Historical posts already exist and were transferred. Do not rerun live publication unless recovering a genuinely missing historical discussion after manual review. For future work, continue with the dedicated Vxx workflow once implemented. The historical script retains the explicit write option -->
-
-```bash
-/root/Mini-Kuzai/.venv/bin/python tools/github_discussions_history.py --publish
-```
-
-The publisher checks repository identity, permission, category and every page of existing discussions; verifies content and the standard ASCII header; compares exact titles and Markdown bodies; refuses to overwrite a conflicting discussion; and rechecks GitHub after each creation. Re-running `--publish` should detect and skip identical discussions. If a discussion title exists with a different body, the script refuses to overwrite it; verify any body differences before attempting a historical recovery. No live historical publication is necessary after transfer.
-
-This script **does not create issues or pull requests** and does not modify Mini-Kuzai model code, datasets, checkpoints or GOGIT reports.
-
-## Future Vxx discussion workflow
-
-The [Vxx publisher](../../tools/github_discussions_step.py) implements two explicit operations. It always targets `Kusanagi8200/Mini-Kuzai`, category `Development Log`. The [historical publisher](../../tools/github_discussions_history.py) remains separate and should not be used to start Vxx research.
-
-An approved, committed start Markdown file is required before publishing a new research step. The script will not invent a scientific objective and does not automatically authorize training or BLIND access. The [V74 START source](steps/V74-start.md) was reviewed and committed. The operator explicitly requested `START-DEV-FLOW`; the fhc2 worker published [V74 Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) and committed its [V74 START receipt](../../automation/dev-flow/receipts/V74-start.json). Do not publish the V74 START a second time.
-
-### START Vxx - approved Markdown
-
-Review the prepared `docs/discussions/steps/V74-start.md` on clean, synchronized main before authorizing publication. The filename and version must match the selected Vxx. Example structure, with research-specific text completed and validated before any publication -->
-
-~~~~markdown
-# Mini-Kuzai | V74 - Reviewed research objective
+## Controlled Vxx publication lifecycle
 
 ```text
-========================================================================
-  MINI-KUZAI  //  FROM SCRATCH AI RESEARCH
-========================================================================
-  PROJECT  : THE KUZ NETWORK
-  PHASE    : 03
-  STEP     : V74
-  STATUS   : EXPERIMENT STARTED
-========================================================================
+Operator reviews approved Vxx scientific scope
+  -> reviewed Markdown source, frozen audit schema and safety gates
+  -> separately authorized START-DEV-FLOW request on GitHub main
+  -> fhc2 worker validates and posts one GitHub Discussion START
+  -> committed START receipt
+  -> signed GitHub webhook -> KUZ-DIN SQLite PREPARE
+  -> guarded LinkedIn DELIVERY, one publication
+  -> bounded, separately authorized scientific run and numeric GOGIT
+  -> operator reviews immutable GOGIT evidence
+  -> separately authorized FINAL-DEV-FLOW request
+  -> one verified GitHub Discussion comment + FINAL receipt
+  -> signed webhook and one guarded LinkedIn FINAL publication
 ```
 
-## Objective
+The DEV-FLOW worker requires an exact committed request and a clean, synchronized `main`. It cannot start a scientific experiment, publish a discussion or authorize training from the presence of a draft alone. Future request processing is serial and protected by a lock. Real publication is not equivalent to a scientific validation.
 
-Describe the approved scientific question, baseline, frozen data, method, scope, stop conditions and expected validation without claiming any unverified result.
+### Github publisher boundaries
 
-## Protocol
+- [`tools/github_discussions_step.py`](../../tools/github_discussions_step.py) --> reviewed START Markdown, immutable GOGIT numeric reports, GitHub GraphQL checks and idempotency
+- [`tools/dev_flow_worker.py`](../../tools/dev_flow_worker.py) --> exact START/FINAL JSON request schema, approved GitHub actor, committed receipts, one transaction per invocation
+- [`tools/v74_final_closure.py`](../../tools/v74_final_closure.py) --> special V74-only dual CORE+STRATA evidence required within one compact FINAL comment
+- [`tools/GOGIT.md`](../../tools/GOGIT.md) --> public aggregate audit and report constraints
+- [KUZ-DIN production controls](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/docs/MINI-KUZAI-LINKEDIN-PUBLISHER.md) --> signed webhook, queue, SQLite journal and receipt-gated LinkedIn delivery
 
-Explain the exact authorized experiment and reproducibility safeguards. Keep private input data, credentials, unpublished conversations and protected evaluation content out of the post.
+Each event is authenticated and tied to a source fingerprint and a committed GitHub receipt. The KUZ-DIN SQLite journal transitions `PREPARED -> IN_FLIGHT -> PUBLISHED`, never blindly retries an ambiguous in-flight POST, and rejects conflicting replays. Posts are limited to 2800 LinkedIn characters. Neither model weights nor private data are published.
 
----
+## Verified V74 scientific and production closure - 2026-11-01
 
-##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
-~~~~
-
-For a **future, not-yet-published step**, after the reviewed draft is committed, pull main on fhc2 and run a **read-only simulation**. Historical V74 example below is not a new instruction to republish -->
-
-```bash
-/root/Mini-Kuzai/.venv/bin/python tools/github_discussions_step.py --step V74 --action start
-```
-
-Only if the output reports `START=READY_TO_CREATE` or `START=EXISTS_IDENTICAL`, and the draft is correct, explicitly publish -->
-
-```bash
-/root/Mini-Kuzai/.venv/bin/python tools/github_discussions_step.py --step V74 --action start --publish
-```
-
-Both commands require a clean `main` that matches `origin/main`, including a remote SHA check. The existing category is scanned before writes. A changed title or body for an already-published Vxx blocks the operation rather than creating a duplicate.
-
-### GOGIT Vxx - verified aggregate closure
-
-After the GOGIT public audit is published, identify its immutable file under `reports/assistant-results/history/` with the exact `PHASE03-SMOLTALK-V74-...json` filename. V74 specifically has **two** complementary verified reports, CORE and STRATA; the existing close publisher's `--report` accepts only one and must not silently misrepresent the pair. The publisher verifies its step identity, public aggregate status, PASS metric, zero BLIND access, producer SHA256, committed-file integrity and absence of private conversation data. It constructs a **numerical evidence comment** automatically with a pinned Git commit URL, the verified metric table and explicit interpretation limits. It does not infer conversational performance from a numeric PASS.
-
-Simulate with the report's full real filename (placeholder shown below) -->
-
-```bash
-/root/Mini-Kuzai/.venv/bin/python tools/github_discussions_step.py --step V74 --action close --report reports/assistant-results/history/PHASE03-SMOLTALK-V74-REPLACE-WITH-REAL-STEP-ID.json
-```
-
-Once a genuine V74 GOGIT report exists and the separate `FINAL-DEV-FLOW` authorization is received, append the comment **to that same discussion** -->
-
-```bash
-/root/Mini-Kuzai/.venv/bin/python tools/github_discussions_step.py --step V74 --action close --report reports/assistant-results/history/PHASE03-SMOLTALK-V74-REPLACE-WITH-REAL-STEP-ID.json --publish
-```
-
-An already-identical START or closure is skipped. A conflicting existing comment blocks publication. Closing a step with no corresponding verified START discussion is prohibited. The standalone CLI does not poll automatically, but the enabled `fhc2` DEV-FLOW timer polls explicit committed START/FINAL requests. No paid OpenAI API or automatic ChatGPT watcher is used.
-
-Run the regression suite before using the new workflow -->
-
-```bash
-/root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_github_discussions_*.py' -v
-```
-
-Tests being present in GitHub is not proof that the local suite passed; record an actual PASS before live deployment.
-
-The fixed ASCII header includes `PROJECT`, `PHASE`, `STEP` and `STATUS`. Research notes and evaluation claims remain subject to review; numerical GOGIT pass metrics do not demonstrate semantic learning or a coherent persona.
-
----
-
-## KUZ-DIN Publisher bridge - production checkpoint 2026-11-01
-
-The Github Discussions publisher is the upstream **research approval and evidence boundary**. The separate KUZ-DIN VPS performs signed webhook intake, JSON validation, SQLite PREPARE and guarded LinkedIn DELIVERY. This flow was verified with a genuine Mini-Kuzai V74 START; it was not simulated or rebuilt.
-
-See the private [KUZ-DIN Publisher operational documentation](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/docs/MINI-KUZAI-LINKEDIN-PUBLISHER.md) for source and runtime controls.
-
-### Event mapping
-
-| Mini-Kuzai event | GitHub action | KUZ-DIN behavior |
-| --- | --- | --- |
-| Approved V74+ START | Explicit `START-DEV-FLOW`, committed request, worker creates Discussion | Signed webhook; JSON and SQLite PREPARE; matching committed GitHub receipt; cutoff and LIVE check; guarded LinkedIn post |
-| Verified V74+ GOGIT | Explicit `FINAL-DEV-FLOW` only after immutable numeric report; worker adds comment | Independent signed comment event and SQLite record; matching FINAL receipt and identical live safety gates |
-| Historical #2, #3, #4 | Already published | No automatic replay |
-| Unknown authors, edited or unrelated events | Not eligible | Ignored/rejected |
-| Unreviewed scientific step | No authorized request | No GitHub or LinkedIn publication |
-
-Inbound signature checks use HMAC-SHA256, strict approved author/category/headers and a source fingerprint. Accepted events are written as `0600` JSON records. The formatter has a **2800-character cap** and never silently truncates research findings. The SQLite journal transitions `PREPARED -> IN_FLIGHT -> PUBLISHED`, preserves uncertain outcomes, and prevents duplicates through the event ID key.
-
-### Verified real START V74
-
-| Evidence | Result |
+| Control | Verified result |
 | --- | --- |
-| Explicit START | User requested `START-DEV-FLOW` |
-| GitHub Discussion | [V74 START #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) |
-| GitHub receipt | [`V74-start.json`](../../automation/dev-flow/receipts/V74-start.json), `PUBLISHED` |
-| VPS event | `start-V74-d5` signed webhook, unique JSON |
-| PREPARE | SQLite `PREPARED`, exactly one eligible event |
-| Final preflight | 18 checks PASS; no uncertain publications; 1654 characters |
-| LIVE gate | `KUZDIN_PUBLISHER_LIVE_ENABLED=YES` with cutoff `2026-11-01T13:38:23+00:00` |
-| LinkedIn delivery | One controlled invocation, systemd exit 0 |
-| Final SQLite | `PUBLISHED`, no pending or duplicate |
-| LinkedIn URN | `urn:li:share:7522669773583872000` |
-| Human confirmation | Public post visibly confirmed on personal LinkedIn profile |
-| Timer | `kuz-din-publisher-delivery.timer` active/enabled after first post |
+| GitHub START | [Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) |
+| START request / receipt | [V74-start.json request](../../automation/dev-flow/requests/V74-start.json) / [V74-start.json receipt](../../automation/dev-flow/receipts/V74-start.json) |
+| GOGIT CORE | [Immutable report](../../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json), [commit `54dace24112f`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/54dace24112f920232cb6106422f6da7ab35d24c) |
+| GOGIT STRATA | [Immutable report](../../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001.json), [commit `7b36b3fb18c6`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7b36b3fb18c6f31037f90ada947b56469f73424f) |
+| FINAL request | [V74-final.json](../../automation/dev-flow/requests/V74-final.json), [commit `47c2c05bbadb`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/47c2c05bbadb8a02553dcf9b1f795df4e5c8c36f) |
+| GitHub FINAL | [Comment #19334374](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5#discussioncomment-19334374), one comment citing both reports |
+| FINAL receipt | [V74-final.json](../../automation/dev-flow/receipts/V74-final.json), [commit `87912cc7a5f0`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/87912cc7a5f03bbf50afbc88c67e4c943ab7d73c) |
+| START LinkedIn | `urn:li:share:7522669773583872000`, journal `start-V74-d5` --> `PUBLISHED` |
+| FINAL LinkedIn | `urn:li:share:7522683502069190656`, journal `close-V74-d5-c19334374` --> `PUBLISHED` |
+| VPS read-only control | Exactly two published rows, queue and delivery timers active, pending 0 and IN_FLIGHT 0 |
+| Scientific control | No new training, no BLIND access, V62 checkpoint frozen after 69 optimizer steps |
 
-The immediate timer snapshot initially showed `NEXT=-`, but a subsequent check verified LAST `2026-11-01 14:51:36 UTC`, NEXT `2026-11-01 14:52:37 UTC`, six successful `STATE=IDLE` cycles and no additional queued post. Timer recurrence is confirmed.
+V74's verified conclusion --> the TRAIN unigram baseline correctly predicted 2535 of 9170 lexical VALIDATION targets versus 2455 for PC1_ONLY, with 2449 shared successes. See the [V74 scientific interpretation](../../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md). This is a teacher-forced diagnostic, not a validated conversational capability.
 
-### Verified V74 GOGIT - final publication readiness
+**Both V74 START and FINAL are complete. Do not recreate or replay either event.**
 
-- [CORE 30-field immutable report](../../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json), [commit `54dace24112f`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/54dace24112f920232cb6106422f6da7ab35d24c)
-- [STRATA 30-field immutable report](../../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001.json), [commit `7b36b3fb18c6`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7b36b3fb18c6f31037f90ada947b56469f73424f)
-- Frozen V62 and V65/V73 baselines reconciled; 9170 VALIDATION lexical positions, 294726 TRAIN tokens, zero new training, zero BLIND access
-- PC1_ONLY --> 2455 correct; TRAIN_UNIGRAM --> 2535 correct; 2449 shared correct; 6450 matching predictions
-- Full interpretation, limitations and frequency strata --> [V74 scientific protocol and findings](../../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md)
+## V75 staged, not started
 
-**V74 FINAL prepared, not activated** --> the reviewed [dual-report closure formatter](../../tools/v74_final_closure.py) and [GitHub Discussion publisher](../../tools/github_discussions_step.py) now require both immutable CORE and STRATA GOGIT records in one comment. The request schema remains unchanged: `V74-final.json` will reference the **CORE** report, and the publisher automatically validates and cites STRATA. Non-V74 steps retain the original single-report behavior. The comment is bounded to 1900 characters before the LinkedIn transformation, and both publication sources are immutable commit links. The offline regression [`test_v74_final_closure.py`](../../tests/test_v74_final_closure.py) covers the dual evidence, pinned files, mutation rejection and dry-run no-publish behavior. **Runtime tests and real GitHub read-only dry-run are still required before any final request.** No `FINAL-DEV-FLOW` request has been submitted.
+- [V75 scientific proposal](../../phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md) --> TRAIN-fitted hidden-state geometry versus frozen VALIDATION
+- [Unpublished V75 START draft](steps/V75-start.md) --> text prepared for future operator review
+- **No `automation/dev-flow/requests/V75-start.json` has been created**
+- No GOGIT V75, no V75 GPU execution, no training and no BLIND access authorized
+- Before any START, approve the precise V75 research protocol, deterministic TRAIN selection, no-leakage tests, 30-metric numeric schema and resource ceiling
 
-### Final V74 read-only preflight command
+KUZ-DIN's subsequent LinkedIn title convention is START `LIVE DEV FLOW V75` and FINAL `FLOW V75 OK`. The **V74 historical title must remain unchanged** in the formatting code so repeat queue scans do not conflict with existing SQLite `post_sha256` records. The legacy compatibility correction is committed to KUZ-DIN GitHub; deploy and verify it on the VPS before issuing V75 START.
 
-After synchronizing a **clean, fast-forward** `main` on fhc2, execute the two publisher test modules and an explicit **dry-run** (no `--publish`, no FINAL request) -->
+## Recovery and change policy
 
-```bash
-/root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_github_discussions_step.py' -v
-/root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_v74_final_closure.py' -v
-/root/Mini-Kuzai/.venv/bin/python tools/github_discussions_step.py --step V74 --action close --report reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json
-```
-
-Successful preflight requires `V74_FINAL_EVIDENCE=CORE_AND_STRATA_VERIFIED`, `GOGIT_CLOSURE=READY_TO_COMMENT` or `EXISTS_IDENTICAL`, plus `PUBLICATION=DISABLED`. The real FINAL request must **not** be created automatically by a dry-run. Explicit subsequent authorization remains mandatory.
-
-### Pending work and scientific boundaries
-
-- Timer schedule and six clean idle DELIVERY cycles verified; maintain routine monitoring
-- Validate the first real FINAL-DEV-FLOW after V74 has a genuine, fully verified immutable GOGIT
-- Monitor OAuth validity and never blindly retry an `IN_FLIGHT` or ambiguous LinkedIn publication
-- Avoid synchronizing unreviewed VPS source changes from GitHub; the documentation changes are not runtime deployments
-- Preserve V62 frozen checkpoint, zero new training and BLIND TEST closure
-
-The V74 START was completed; **do not issue another V74 START request**. The scientific V74 CORE and STRATA GOGIT reports are now committed and jointly verified; the research question has been evaluated, with a strong frequency-prior confound but no proof of semantic generalization. The final GitHub/LinkedIn closure is **not authorized or published**. A GOGIT PASS is not model-quality or conversational-competence validation.
+The GitHub Discussions publisher must first pass CPU tests and a dry-run against clean synchronized `main`, with `PUBLICATION=DISABLED` in the preflight. Live writes require a distinct operator order and an exact committed request. Never reuse V74 paths to simulate future publications. On HTTP uncertainty, retain `IN_FLIGHT` and reconcile with LinkedIn manually instead of replaying. Do not publish additional GitHub comments or posts during a documentation review.
 
 ---
 
