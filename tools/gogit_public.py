@@ -75,6 +75,9 @@ SOURCE_PHASE03_V72 = (
 SOURCE_PHASE03_V73 = (
     "Mini-Kuzai V73 frozen centered principal-axis output projection attribution"
 )
+SOURCE_PHASE03_V74 = (
+    "Mini-Kuzai V74 frozen TRAIN unigram versus principal-axis frequency controls"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1712,6 +1715,60 @@ METRIC_KEYS = {
     "V73_AXIS_MINUS_PC12_MARGIN_X1000",
     "V73_AXIS_PC1_WIN_ABS_COS_X1000",
     "V73_AXIS_PC1_GOLD_ABS_COS_X1000",
+    "V74_CORE_PASS",
+    "V74_CORE_BLIND_ACCESS",
+    "V74_CORE_VAL_LEXICAL",
+    "V74_CORE_F0_COUNT",
+    "V74_CORE_F1_9_COUNT",
+    "V74_CORE_F10_99_COUNT",
+    "V74_CORE_F100P_COUNT",
+    "V74_CORE_ORIG_CORRECT",
+    "V74_CORE_ORIG_DISTINCT",
+    "V74_CORE_ORIG_TOP1_SHARE_BP",
+    "V74_CORE_ORIG_BYTE_CORRECT",
+    "V74_CORE_ORIG_MERGE_CORRECT",
+    "V74_CORE_CENTER_CORRECT",
+    "V74_CORE_CENTER_DISTINCT",
+    "V74_CORE_CENTER_TOP1_SHARE_BP",
+    "V74_CORE_CENTER_BYTE_CORRECT",
+    "V74_CORE_CENTER_MERGE_CORRECT",
+    "V74_CORE_PC1_CORRECT",
+    "V74_CORE_PC1_DISTINCT",
+    "V74_CORE_PC1_TOP1_SHARE_BP",
+    "V74_CORE_PC1_BYTE_CORRECT",
+    "V74_CORE_PC1_MERGE_CORRECT",
+    "V74_CORE_UNIGRAM_CORRECT",
+    "V74_CORE_UNIGRAM_DISTINCT",
+    "V74_CORE_UNIGRAM_TOP1_SHARE_BP",
+    "V74_CORE_UNIGRAM_BYTE_CORRECT",
+    "V74_CORE_UNIGRAM_MERGE_CORRECT",
+    "V74_STRATA_PASS",
+    "V74_STRATA_BLIND_ACCESS",
+    "V74_STRATA_VAL_LEXICAL",
+    "V74_STRATA_TRAIN_LEXICAL",
+    "V74_STRATA_TRAIN_TYPES",
+    "V74_STRATA_F0_COUNT",
+    "V74_STRATA_F1_9_COUNT",
+    "V74_STRATA_F10_99_COUNT",
+    "V74_STRATA_F100P_COUNT",
+    "V74_STRATA_ORIG_F0_CORRECT",
+    "V74_STRATA_ORIG_F1_9_CORRECT",
+    "V74_STRATA_ORIG_F10_99_CORRECT",
+    "V74_STRATA_ORIG_F100P_CORRECT",
+    "V74_STRATA_CENTER_F0_CORRECT",
+    "V74_STRATA_CENTER_F1_9_CORRECT",
+    "V74_STRATA_CENTER_F10_99_CORRECT",
+    "V74_STRATA_CENTER_F100P_CORRECT",
+    "V74_STRATA_PC1_F0_CORRECT",
+    "V74_STRATA_PC1_F1_9_CORRECT",
+    "V74_STRATA_PC1_F10_99_CORRECT",
+    "V74_STRATA_PC1_F100P_CORRECT",
+    "V74_STRATA_UNIGRAM_F0_CORRECT",
+    "V74_STRATA_UNIGRAM_F1_9_CORRECT",
+    "V74_STRATA_UNIGRAM_F10_99_CORRECT",
+    "V74_STRATA_UNIGRAM_F100P_CORRECT",
+    "V74_STRATA_PC1_UNIGRAM_AGREE",
+    "V74_STRATA_PC1_UNIGRAM_SHARED_CORRECT",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1794,6 +1851,11 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V72
     if tracked == "tools/public-audits/phase03_v73_principal_axis_attribution_001.py":
         return SOURCE_PHASE03_V73
+    if tracked in {
+        "tools/public-audits/phase03_v74_frequency_prior_core_001.py",
+        "tools/public-audits/phase03_v74_frequency_prior_strata_001.py",
+    }:
+        return SOURCE_PHASE03_V74
     return SOURCE
 
 
@@ -1914,6 +1976,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     v73_axis = tracked == (
         "tools/public-audits/phase03_v73_principal_axis_attribution_001.py"
     )
+    v74_frequency = tracked in {
+        "tools/public-audits/phase03_v74_frequency_prior_core_001.py",
+        "tools/public-audits/phase03_v74_frequency_prior_strata_001.py",
+    }
 
     architecture_workstream = tracked.startswith(
         (
@@ -2061,6 +2127,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v73_axis:
         # Frozen principal-axis ablations never certify semantic validity.
+        return False
+    if v74_frequency:
+        # Frequency-only controls are not independent semantic evaluation.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
