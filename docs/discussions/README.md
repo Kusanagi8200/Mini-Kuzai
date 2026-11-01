@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions publication workflow
 
-Status --> **THREE HISTORICAL POSTS TRANSFERRED / DEV-FLOW TIMERS ACTIVE / V74 DRAFT NOT STARTED / LINKEDIN LIVE DISABLED**
+Status --> **HISTORICAL POSTS TRANSFERRED / V74 START #5 PUBLISHED / LINKEDIN LIVE V74 CONFIRMED / TIMERS ACTIVE**
 
 Publication target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -46,7 +46,7 @@ This script **does not create issues or pull requests** and does not modify Mini
 
 The [Vxx publisher](../../tools/github_discussions_step.py) implements two explicit operations. It always targets `Kusanagi8200/Mini-Kuzai`, category `Development Log`. The [historical publisher](../../tools/github_discussions_history.py) remains separate and should not be used to start Vxx research.
 
-An approved, committed start Markdown file is required before publishing a new research step. The script will not invent a scientific objective and does not automatically authorize training or BLIND access. The [V74 START draft](steps/V74-start.md) is now prepared for review. No V74 discussion or explicit DEV-FLOW START request has been created.
+An approved, committed start Markdown file is required before publishing a new research step. The script will not invent a scientific objective and does not automatically authorize training or BLIND access. The [V74 START source](steps/V74-start.md) was reviewed and committed. The operator explicitly requested `START-DEV-FLOW`; the fhc2 worker published [V74 Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) and committed its [V74 START receipt](../../automation/dev-flow/receipts/V74-start.json). Do not publish the V74 START a second time.
 
 ### START Vxx - approved Markdown
 
@@ -79,7 +79,7 @@ Explain the exact authorized experiment and reproducibility safeguards. Keep pri
 ##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
 ~~~~
 
-After the reviewed draft is committed, pull main on fhc2 and run the **read-only simulation** -->
+For a **future, not-yet-published step**, after the reviewed draft is committed, pull main on fhc2 and run a **read-only simulation**. Historical V74 example below is not a new instruction to republish -->
 
 ```bash
 /root/Mini-Kuzai/.venv/bin/python tools/github_discussions_step.py --step V74 --action start
@@ -103,7 +103,7 @@ Simulate with the report's full real filename (placeholder shown below) -->
 /root/Mini-Kuzai/.venv/bin/python tools/github_discussions_step.py --step V74 --action close --report reports/assistant-results/history/PHASE03-SMOLTALK-V74-REPLACE-WITH-REAL-STEP-ID.json
 ```
 
-Once validated and deliberately authorized, append the comment **to that same discussion** -->
+Once a genuine V74 GOGIT report exists and the separate `FINAL-DEV-FLOW` authorization is received, append the comment **to that same discussion** -->
 
 ```bash
 /root/Mini-Kuzai/.venv/bin/python tools/github_discussions_step.py --step V74 --action close --report reports/assistant-results/history/PHASE03-SMOLTALK-V74-REPLACE-WITH-REAL-STEP-ID.json --publish
@@ -123,70 +123,52 @@ The fixed ASCII header includes `PROJECT`, `PHASE`, `STEP` and `STATUS`. Researc
 
 ---
 
-## KUZ-DIN Publisher bridge - deployment checkpoint 2026-11-01
+## KUZ-DIN Publisher bridge - production checkpoint 2026-11-01
 
-The Discussions publisher is the **upstream research publication source** for a separate, optional LinkedIn distribution pipeline. A GitHub Discussion is not a LinkedIn post. The cross-posting integration runs on the KUZ-DIN VPS and has **not** been authorized to publish to LinkedIn.
+The Github Discussions publisher is the upstream **research approval and evidence boundary**. The separate KUZ-DIN VPS performs signed webhook intake, JSON validation, SQLite PREPARE and guarded LinkedIn DELIVERY. This flow was verified with a genuine Mini-Kuzai V74 START; it was not simulated or rebuilt.
 
-Read the [KUZ-DIN Publisher operational documentation](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/docs/MINI-KUZAI-LINKEDIN-PUBLISHER.md) for system architecture, validation coverage, security controls and remaining work. KUZ-DIN is a private repository, so access to that document depends on repository permissions.
+See the private [KUZ-DIN Publisher operational documentation](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/docs/MINI-KUZAI-LINKEDIN-PUBLISHER.md) for source and runtime controls.
 
-### Event mapping and acceptance rules
+### Event mapping
 
-| Mini-Kuzai event | GitHub action | KUZ-DIN result today |
+| Mini-Kuzai event | GitHub action | KUZ-DIN behavior |
 | --- | --- | --- |
-| Approved V74+ START | `--action start --publish` creates a `Development Log` Discussion | Signed `discussion.created` webhook can save private JSON and prepare a LinkedIn candidate |
-| Verified V74+ GOGIT | `--action close --report ... --publish` adds a comment to the same Discussion | Signed `discussion_comment.created` webhook can save a separate JSON candidate and prepare a separate SQLite record |
-| Historical #2, #3, #4 | Already published | Not automatically replayed |
-| Edited, unrelated, outside-category or before V74 | Not eligible | Ignored |
-| New research not explicitly authorized | No reviewed START or verified GOGIT | Must not be posted |
+| Approved V74+ START | Explicit `START-DEV-FLOW`, committed request, worker creates Discussion | Signed webhook; JSON and SQLite PREPARE; matching committed GitHub receipt; cutoff and LIVE check; guarded LinkedIn post |
+| Verified V74+ GOGIT | Explicit `FINAL-DEV-FLOW` only after immutable numeric report; worker adds comment | Independent signed comment event and SQLite record; matching FINAL receipt and identical live safety gates |
+| Historical #2, #3, #4 | Already published | No automatic replay |
+| Unknown authors, edited or unrelated events | Not eligible | Ignored/rejected |
+| Unreviewed scientific step | No authorized request | No GitHub or LinkedIn publication |
 
-KUZ-DIN's webhook requires the exact `Mini-Kuzai | Vxx - ...` title, the approved 72-character ASCII header, matching STEP/STATUS and the project footer. Only `Kusanagi8200` is authorized as event sender and as discussion author, plus comment author for GOGIT. Every inbound request is checked with a shared-secret HMAC-SHA256 signature. Accepted payloads are written as `0600` JSON files, deduplicated by event identity and source SHA256.
+Inbound signature checks use HMAC-SHA256, strict approved author/category/headers and a source fingerprint. Accepted events are written as `0600` JSON records. The formatter has a **2800-character cap** and never silently truncates research findings. The SQLite journal transitions `PREPARED -> IN_FLIGHT -> PUBLISHED`, preserves uncertain outcomes, and prevents duplicates through the event ID key.
 
-The queued LinkedIn formatter preserves the research source URL, status and footer, with a **2800-character cap**. Oversized content is blocked pending an explicitly reviewed excerpt tied to the original content fingerprint. **No silent truncation of scientific findings.**
+### Verified real START V74
 
-The `kuz-din-publisher-queue.timer` runs approximately every minute under a dedicated `kuz-din` service identity. Its configured `--prepare` mode writes only eligible events to an SQLite journal with the initial state `PREPARED`. It never calls LinkedIn. Later states `IN_FLIGHT` and `PUBLISHED` are covered by offline tests, not active production posting.
+| Evidence | Result |
+| --- | --- |
+| Explicit START | User requested `START-DEV-FLOW` |
+| GitHub Discussion | [V74 START #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) |
+| GitHub receipt | [`V74-start.json`](../../automation/dev-flow/receipts/V74-start.json), `PUBLISHED` |
+| VPS event | `start-V74-d5` signed webhook, unique JSON |
+| PREPARE | SQLite `PREPARED`, exactly one eligible event |
+| Final preflight | 18 checks PASS; no uncertain publications; 1654 characters |
+| LIVE gate | `KUZDIN_PUBLISHER_LIVE_ENABLED=YES` with cutoff `2026-11-01T13:38:23+00:00` |
+| LinkedIn delivery | One controlled invocation, systemd exit 0 |
+| Final SQLite | `PUBLISHED`, no pending or duplicate |
+| LinkedIn URN | `urn:li:share:7522669773583872000` |
+| Human confirmation | Public post visibly confirmed on personal LinkedIn profile |
+| Timer | `kuz-din-publisher-delivery.timer` active/enabled after first post |
 
-### Evidence and current limits
+The immediate timer snapshot showed `NEXT=-` just after a recent firing. A subsequent scheduler check is still required to establish its next scheduled execution. This does **not** invalidate the successful real post or the active/enabled state.
 
-- Internal signed FastAPI START / GOGIT tests --> PASS
-- Synthetic webhook to private JSON and temporary SQLite --> PASS
-- Public HTTPS signed ping and rejection of foreign authors --> PASS
-- Real GitHub webhook `ping` delivered to KUZ-DIN --> HTTP 200, 2026-10-31 23:29:54 UTC
-- Real GitHub START / GOGIT through KUZ-DIN --> **not yet verified**
-- An introductory V5 LinkedIn post was separately confirmed (HTTP 201) but no DEV-FLOW GitHub-event-to-LinkedIn delivery has been verified; the automated live gate remains disabled
-- Automatic ChatGPT / OpenAI API watcher --> **not configured**
-- Mini-Kuzai scientific status --> **V73 last verified GOGIT, V74 protocol and START draft prepared but not authorized or published**
+### Pending work and scientific boundaries
 
-The new Publisher OAuth application uses `openid profile w_member_social` and stores its token encrypted outside Git. A read-only LinkedIn check confirmed `GET /v2/userinfo` HTTP 200 and an OIDC subject match, while `GET /v2/me` returned HTTP 403. The final author URN compatibility must be checked during an explicitly approved live test, not inferred from offline mocks.
+- Confirm the subsequent timer schedule and a clean idle DELIVERY cycle
+- Validate the first real FINAL-DEV-FLOW after V74 has a genuine, fully verified immutable GOGIT
+- Monitor OAuth validity and never blindly retry an `IN_FLIGHT` or ambiguous LinkedIn publication
+- Avoid synchronizing unreviewed VPS source changes from GitHub; the documentation changes are not runtime deployments
+- Preserve V62 frozen checkpoint, zero new training and BLIND TEST closure
 
-### Non-negotiable separation
-
-Publishing a reviewed GitHub START or GOGIT requires the explicit `--publish` flag in the Mini-Kuzai project. This may trigger a **webhook capture**, not a LinkedIn post. Enabling LinkedIn publication is a separate KUZ-DIN deployment decision requiring its own audit and authorization.
-
-No automatic experiment, new training, BLIND TEST access, checkpoint alteration, GOGIT audit or LinkedIn publication is authorized by installing this bridge or editing these documents.
-
----
-
-## DEV-FLOW delivery checkpoint - 2026-11-01
-
-The [full two-host verification and resumption record](../DEV-FLOW-REPRISE-2026-11-01.md) supersedes earlier deployment snapshots above.
-
-- fhc2 DEV-FLOW worker --> enabled local timer, clean main, no pending START/FINAL request, repeated IDLE
-- Real repository webhook --> active ID `705780264`, JSON, SSL verification enabled, both Discussion event types subscribed
-- KUZ-DIN public signed ping --> HTTP 200, `ping_ok`, no event created
-- Isolated START capture --> HTTP 202, duplicate HTTP 200, invalid HMAC HTTP 401
-- Isolated PREPARE and SQLite --> first CREATED/PREPARED, second EXISTS/PREPARED
-- Delivery --> 36 offline publisher tests PASS, START and FINAL receipt simulations PASS
-- OAuth token --> locally valid at audit, encrypted file `0600`, encryption key `0640`
-- Systemd PREPARE and DELIVERY timers --> active, delivery repeatedly `LIVE_DISABLED`
-- Activation cutoff --> `2026-11-01T13:38:23+00:00`, only events received on/after are eligible
-- Production event directory and SQLite --> not created before first real event
-- Live authorization --> **`KUZDIN_PUBLISHER_LIVE_ENABLED=NO`**
-- V74 --> [scientific protocol](../../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) and [unpublished START draft](steps/V74-start.md) committed, no START request
-
-Only an explicit user `START-DEV-FLOW` followed by a committed `automation/dev-flow/requests/V74-start.json` can make the fhc2 worker publish the reviewed GitHub Discussion. The resulting receipt is independently required by KUZ-DIN. `FINAL-DEV-FLOW` additionally needs verified real V74 GOGIT. Documentation alone authorizes neither action.
-
-**The complete automation is not production-live.** The first authentic signed GitHub START/FINAL event and a controlled authorized LinkedIn delivery remain to be tested. Earlier V5 introduction confirmation was a separate manual publication, not a DEV-FLOW pipeline test.
-
+The V74 START was completed; **do not issue another V74 START request**. The scientific V74 protocol, tests, numeric audit and GOGIT remain outstanding. A GitHub/LinkedIn publication status is not an AI training result or validation of model quality.
 
 ---
 
