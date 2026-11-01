@@ -2,7 +2,7 @@
 
 Date --> 2026-11-01
 
-Status --> **LOCAL DEV-FLOW ACTIVE / KUZ-DIN TIMERS ACTIVE / LINKEDIN LIVE DISABLED / V74 NOT STARTED**
+Status --> **V74 START PUBLISHED ON GITHUB AND LINKEDIN / LIVE DELIVERY ACTIVE / V74 DIAGNOSTICS PENDING**
 
 ## Architecture
 
@@ -15,7 +15,8 @@ Explicit user START-DEV-FLOW / FINAL-DEV-FLOW in ChatGPT
    -> VPS KUZ-DIN private JSON events
    -> PREPARE timer -> SQLite PREPARED
    -> delivery timer -> check matching GitHub DEV-FLOW receipt and cutoff
-   -> LinkedIn POST only if independent LIVE gate is explicitly authorized
+   -> guarded LinkedIn POST if independent LIVE gate and DEV-FLOW receipt match
+   -> SQLite PUBLISHED (or IN_FLIGHT for ambiguous provider outcome)
 ```
 
 No background ChatGPT watcher, OpenAI API key or paid OpenAI API is used. The local worker polls GitHub after explicit requests and remains inert otherwise.
@@ -26,7 +27,7 @@ No background ChatGPT watcher, OpenAI API key or paid OpenAI API is used. The lo
 | --- | --- |
 | Research | V73 latest verified GOGIT, V62 frozen after 69 optimizer steps / 597982 exposed tokens |
 | fhc2 | `mini-kuzai-dev-flow.timer` active and enabled, worker repeatedly IDLE, GitHub actor `Kusanagi8200`, clean worktree |
-| Request queue | No pending request, `automation/dev-flow/requests` absent before this documentation commit |
+| Request queue | START V74 committed as `automation/dev-flow/requests/V74-start.json`, processed by fhc2 worker; receipt committed as `automation/dev-flow/receipts/V74-start.json` |
 | GitHub webhook | One matching active hook, ID `705780264`, `discussion` and `discussion_comment`, JSON, SSL verification enabled |
 | VPS signed ping | HTTP 200 / `ping_ok`, no events recorded |
 | Synthetic START integration | HTTP 202 recorded, duplicate HTTP 200, invalid HMAC HTTP 401 |
@@ -34,28 +35,45 @@ No background ChatGPT watcher, OpenAI API key or paid OpenAI API is used. The lo
 | Publisher regression | 36 of 36 offline tests PASS, START and FINAL receipt mock checks PASS |
 | KUZ-DIN service | PREPARE and DELIVERY timers active, delivery one-shot repeatedly `LIVE_DISABLED` |
 | Token files | Encrypted token `0600` and key `0640`; local token validation PASS at audit time |
-| Production event directory / SQLite | Not created yet, consistent with no real START or FINAL events |
+| Production event directory / SQLite | Exactly one V74 START event/row verified, after one real delivery status `PUBLISHED`, no pending/IN_FLIGHT rows |
 | Activation cutoff | `2026-11-01T13:38:23+00:00` verified in systemd drop-in |
-| LinkedIn delivery | **`KUZDIN_PUBLISHER_LIVE_ENABLED=NO`**; no real DEV-FLOW event published |
+| LinkedIn delivery | `KUZDIN_PUBLISHER_LIVE_ENABLED=YES`, first real START V74 sent once and visually confirmed; URN `urn:li:share:7522669773583872000` |
 | LinkedIn historical introduction | One standalone V5 post previously confirmed with HTTP 201, not evidence of automated DEV-FLOW delivery |
 
-## Required checks before production LIVE
+## First production START / LinkedIn delivery - VERIFIED
 
-- Validate a genuine authorized START/FINAL GitHub webhook event in KUZ-DIN and its SQLite PREPARED record
-- Match a published GitHub DEV-FLOW receipt to the exact real GitHub event and cutoff, without exposing credentials
-- Review the final post length and LinkedIn profile destination
-- Check actual service-account file ownership and recovery of IN_FLIGHT without duplicate posting
-- Obtain separate explicit authorization before changing `LIVE=NO`; test one controlled real LinkedIn delivery and verify the provider URN
+- Explicit user order --> `START-DEV-FLOW` for V74
+- GitHub request --> [`V74-start.json`](../automation/dev-flow/requests/V74-start.json), commit `70384c5cfdbb091cd210d6b19e33647f5aa43ca3`
+- GitHub discussion --> [Mini-Kuzai V74 START #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5), published 2026-11-01 at 14:18:04 UTC
+- GitHub receipt --> [`automation/dev-flow/receipts/V74-start.json`](../automation/dev-flow/receipts/V74-start.json), status `PUBLISHED`, commit `13599845831ed66f213690bda341d7cc79299ada`
+- VPS signed webhook --> real START recorded exactly once as `start-V74-d5`
+- PREPARE --> one SQLite event, `PREPARED`, no blocked entries
+- Final production preflight --> **18 checks PASS**, only one post eligible; text 1654 characters; no previous `IN_FLIGHT`
+- Production cutoff --> `2026-11-01T13:38:23+00:00` retained
+- LIVE activation --> `KUZDIN_PUBLISHER_LIVE_ENABLED=YES`; timer stopped for controlled first send
+- VPS timestamped activation backup --> `/root/kuz-din-linkedin-live-20261101T144224Z-IDxsWG`
+- Controlled delivery --> `SYSTEMD_START_EXIT=0`, `Result=success`, `ExecMainStatus=0`
+- SQLite --> `start-V74-d5` status `PUBLISHED`, zero pending/uncertain publications
+- LinkedIn --> first V74 post visually verified by operator, provider URN `urn:li:share:7522669773583872000`
+- Delivery timer --> **active and enabled**, LIVE=YES; immediate timer snapshot `NEXT=-` after a recent firing, future scheduler recurrence to be confirmed
 
-Timers and the signed webhook are deployed, but **automatic LinkedIn posting is not yet production-ready**. Offline tests do not prove live end-to-end posting. No V74 Discussion has been created.
+**The end-to-end GitHub -> KUZ-DIN -> LinkedIn START path has passed a real production publication.** Existing journal idempotency prevents V74 duplicates. A real FINAL-DEV-FLOW/GOGIT publication has not yet been tested in production. No automatic ChatGPT watcher or separate OpenAI API charge is involved.
+
+## Outstanding operations
+
+1. Confirm the next timer trigger and subsequent successful idle DELIVERY cycle on the VPS; `NEXT=-` immediately after starting the timer is not definitive recurrence proof.
+2. Verify a subsequent *genuine and separately authorized* FINAL-DEV-FLOW/GOGIT event. No fabricated experiment result.
+3. Maintain OAuth token expiration monitoring and manual review of uncertain LinkedIn POST outcomes before any reattempt.
+4. Keep a verified source/runtime reconciliation procedure before deploying application code to `/opt/kuz-din`; documentation commits do not modify the VPS.
+5. Continue V74 read-only scientific protocol and bounded diagnostics; no new training or BLIND TEST access is authorized.
 
 ## V74 proposal and limits
 
-[V74 read-only scientific protocol](../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) proposes testing whether the V73 PC1_ONLY result is dominated by TRAIN unigram frequency. [START Discussion draft](discussions/steps/V74-start.md) is prepared and committed for human review, not published. The GPU audit, frozen numerical metric schema, pinned runner and V74 GOGIT do not exist yet. No new training and no BLIND TEST access are authorized.
+[V74 read-only scientific protocol](../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) proposes testing whether the V73 PC1_ONLY result is dominated by TRAIN unigram frequency. [START Discussion source draft](discussions/steps/V74-start.md) is committed; the real [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) has been published. The GPU audit, frozen numerical metric schema, pinned runner and V74 GOGIT do not exist yet. No new training and no BLIND TEST access are authorized.
 
 ## New-chat resumption prompt
 
-> Reprendre Mini-Kuzai Phase 03 après V73 GOGIT vérifié. Le checkpoint V62 est figé à 69 optimizer steps / 597982 tokens. V74 Frequency-Prior Control est proposé, non exécuté. Consulter `phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md`, `docs/discussions/steps/V74-start.md` et ce checkpoint. Le worker fhc2 DEV-FLOW et les timers KUZ-DIN tournent, mais `KUZDIN_PUBLISHER_LIVE_ENABLED=NO`. Cutoff `2026-11-01T13:38:23+00:00`. Avant de publier un START, vérifier la synchronisation locale, les garde-fous et confirmer explicitement `START-DEV-FLOW`. Ne pas créer de fichier dans `automation/dev-flow/requests/` sans cet ordre. Aucun entraînement ni accès BLIND. `FINAL-DEV-FLOW` seulement après V74 GOGIT réel et vérifié.
+> Reprendre Mini-Kuzai Phase 03 V74 après START-DEV-FLOW du 2026-11-01. GitHub Discussion #5 et reçu START publiés, webhook KUZ-DIN reçu, journal SQLite `start-V74-d5` PUBLISHED, LinkedIn `urn:li:share:7522669773583872000` visuellement confirmé. Livraison LIVE=YES, timer actif/activé, mais sa prochaine échéance doit encore être confirmée après le snapshot immédiat NEXT=-. V73 GOGIT demeure la base scientifique, checkpoint V62 figé à 69 optimizer steps / 597982 tokens. V74 Frequency-Prior Control doit maintenant définir/geler le schéma de métriques, tests, audit GPU et GOGIT. Aucun nouvel entraînement ni accès BLIND. FINAL-DEV-FLOW uniquement après GOGIT V74 réel vérifié et autorisation distincte; ne jamais recréer un START pour V74.
 
 ---
 
