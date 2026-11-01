@@ -2,7 +2,7 @@
 
 Date --> 2026-11-01
 
-Status --> **V74 CORE + STRATA GPU/GOGIT VERIFIED / SCIENTIFIC REVIEW COMPLETE / FINAL-DEV-FLOW NOT TRIGGERED / NO NEW TRAINING / NO BLIND ACCESS**
+Status --> **V74 CORE + STRATA GOGIT VERIFIED / START + FINAL PUBLISHED ON GITHUB AND LINKEDIN / CLOSED / NO TRAINING / NO BLIND ACCESS**
 
 ## Verified motivation
 
@@ -122,13 +122,13 @@ V74 START --> [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/
 
 V74 scientific evidence --> CORE and STRATA GOGIT verified, committed and immutable.
 
-**FINAL-DEV-FLOW --> NOT TRIGGERED.** The final public closure comment and separate LinkedIn post require an explicit future `FINAL-DEV-FLOW` command. The [V74 dual-report closure module](../tools/v74_final_closure.py) now maps a single CORE report field in the future request to **one compact comment citing both CORE and STRATA**, verifies their immutable pinned commits, reconciles the frozen numeric counts and rejects a STRATA-only request. [Offline tests](../tests/test_v74_final_closure.py) have been committed but **must pass on fhc2**, followed by a real GitHub read-only dry-run, before an authorized FINAL. No FINAL request has been created.
+**FINAL-DEV-FLOW --> PUBLISHED AND VERIFIED.** The operator authorized a real FINAL after the CPU regressions and GitHub read-only dry-run returned `FINAL_PREFLIGHT=PASS`. [Request `V74-final.json`](../automation/dev-flow/requests/V74-final.json) was committed at [`47c2c05bbadb`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/47c2c05bbadb8a02553dcf9b1f795df4e5c8c36f), and [FINAL receipt](../automation/dev-flow/receipts/V74-final.json) was published at [`87912cc7a5f0`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/87912cc7a5f03bbf50afbc88c67e4c943ab7d73c). [Discussion #5 FINAL comment #19334374](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5#discussioncomment-19334374) contains both immutable CORE and STRATA references. The KUZ-DIN signed webhook and guarded SQLite delivery produced the **single final LinkedIn post** `urn:li:share:7522683502069190656`. The START URN remains `urn:li:share:7522669773583872000`. Final VPS read-only audit --> two distinct SQLite rows, both `PUBLISHED`, QUEUE and DELIVERY timers active, zero pending, zero IN_FLIGHT. **Do not recreate START or FINAL V74.**
 
 ## Publication boundary
 
-The [V74 START source](../docs/discussions/steps/V74-start.md) was reviewed and explicitly published by `START-DEV-FLOW`. [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5), its [START receipt](../automation/dev-flow/receipts/V74-start.json), and the corresponding personal LinkedIn post are verified. **Do not issue another START V74.** `FINAL-DEV-FLOW` remains separately prohibited until the CORE and STRATA GOGIT records are authentic, immutable, jointly reviewed and explicitly approved by the operator.
+The [V74 START source](../docs/discussions/steps/V74-start.md) was reviewed and explicitly published by `START-DEV-FLOW`. [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5), its [START receipt](../automation/dev-flow/receipts/V74-start.json), and the corresponding personal LinkedIn post are verified. **Do not issue another START V74.** `FINAL-DEV-FLOW` was separately authorized, completed and reconciled against the two immutable scientific reports. No future replay or additional LinkedIn publication for V74 is authorized.
 
-See the [DEV-FLOW resumption checkpoint](../docs/DEV-FLOW-REPRISE-2026-11-01.md).
+See the [final DEV-FLOW checkpoint](../docs/DEV-FLOW-REPRISE-2026-11-01.md) and [proposed V75 research protocol](MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md).
 
 ---
 
