@@ -2,7 +2,7 @@
 
 Date --> 2026-11-01
 
-Status --> **START PUBLISHED / NUMERIC SCHEMA FROZEN FOR REVIEW / GPU AUDIT NOT RUN / NO NEW TRAINING / NO BLIND ACCESS**
+Status --> **V74 CORE + STRATA GPU/GOGIT VERIFIED / SCIENTIFIC REVIEW COMPLETE / FINAL-DEV-FLOW NOT TRIGGERED / NO NEW TRAINING / NO BLIND ACCESS**
 
 ## Verified motivation
 
@@ -75,7 +75,54 @@ The runner runs CPU regressions once, publishes CORE GOGIT, checks the immutable
 - Keep public GOGIT results numeric and allowlisted, within the 30-metric maximum per result, with explicit no-training and no-BLIND gates
 - Stop on any provenance mismatch, unreviewed schema, missing frozen source, timeout or nonnumeric output
 
-A valid outcome may support a frequency-prior explanation, but cannot prove an independent causal role for PC1. No intervention or additional training is authorized by this protocol. The reviewed V74 scientific implementation, pinned CORE/STRATA audits, regression tests and fail-closed runner are staged on GitHub. They have **not yet passed the fhc2 GPU run**. Only a successful dual GOGIT can close the scientific study.
+A valid outcome may support a frequency-prior explanation, but cannot prove an independent causal role for PC1. No intervention or additional training is authorized by this protocol. The reviewed V74 scientific implementation, pinned CORE/STRATA audits, regression tests and fail-closed runner are staged on GitHub. They passed the frozen fhc2 GPU read-only study and the two immutable numeric GOGIT publications. The dual GOGIT review is complete; this does **not** mean independent semantic evaluation or model improvement.
+
+## Verified V74 GPU/GOGIT results - 2026-11-01
+
+The two immutable, numeric, public reports were committed on GitHub following the frozen, read-only computation. Both report `PASS=1`, `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0` and `BLIND_ACCESS=0`.
+
+| Report | Immutable commit | Result |
+| --- | --- | --- |
+| [V74 CORE](../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json) | [`54dace24112f`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/54dace24112f920232cb6106422f6da7ab35d24c) | 30 numeric metrics, PASS |
+| [V74 STRATA](../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001.json) | [`7b36b3fb18c6`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7b36b3fb18c6f31037f90ada947b56469f73424f) | 30 numeric metrics, PASS |
+
+All 9170 frozen lexical VALIDATION positions are retained. The four projections yield:
+
+| Projection | Correct | Top-1 accuracy | Predicted distinct IDs | Byte correct | Merged BPE correct |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| ORIGINAL_FP32 | 2673 | 29.15% | 5 | 2533 | 140 |
+| CENTER | 2832 | 30.88% | 15 | 2764 | 68 |
+| PC1_ONLY | 2455 | 26.77% | 2 | 2449 | 6 |
+| TRAIN_UNIGRAM | 2535 | 27.64% | 1 | 2535 | 0 |
+
+Unigram exceeds PC1_ONLY by **80 correct predictions** (0.87 percentage points). Predictions match on **6450 / 9170 positions (70.34%)**. Of PC1_ONLY's 2455 correct predictions, **2449 (99.76%)** are also correct for the context-free unigram predictor. Where predictions differ, PC1_ONLY has **6 unique correct outcomes**, versus **86 unique correct outcomes** for TRAIN_UNIGRAM.
+
+The fixed, gold-target TRAIN-frequency strata contain:
+
+| TRAIN occurrences per gold token | VALIDATION positions | Share | PC1_ONLY correct | TRAIN_UNIGRAM correct |
+| --- | ---: | ---: | ---: | ---: |
+| F0 = 0 | 3 | 0.03% | 0 | 0 |
+| F1_9 = 1..9 | 7 | 0.08% | 0 | 0 |
+| F10_99 = 10..99 | 698 | 7.61% | 0 | 0 |
+| F100P >= 100 | 8462 | 92.28% | 2455 | 2535 |
+
+TRAIN frozen lexical inventory --> **294726 tokens / 891 observed types**. All four bin populations sum to 9170. Per-mode bin-wise correct counts equal CORE correct totals; byte and merged-BPE correct counts also reconcile. V72/V73 original, center and PC1 projection aggregates were reproduced exactly before V74 scoring. The published STRATA report is identical to `reports/assistant-results/latest.json` at the verified checkpoint.
+
+### Scientific interpretation and limits
+
+**V74 supports a strong frequency-prior explanation for the apparent top-1 utility of PC1_ONLY.** Almost every PC1_ONLY hit coincides with the context-free TRAIN unigram baseline, which performs slightly better overall. A strong axis can therefore appear predictive even while its top-1 output collapses to extremely frequent tokens.
+
+This **does not demonstrate causality**, prove that PC1 contains no contextual signal, or establish that removing PC1 improves generation. The V73 eigenvectors and centered mean were fitted on VALIDATION itself. This is a frozen, teacher-forced, in-sample diagnostic, not independent generalization or semantic evaluation. Low-frequency strata (3 and 7 samples in F0 and F1_9) are too sparse for robust conclusions.
+
+**Research decision** --> V74's stated frequency-prior control question has been answered within the declared diagnostic scope. No new model training, BLIND exposure, checkpoint modification or semantic-validity claim follows. A future, separately authorized research protocol would need genuinely independent evaluation and a predeclared comparison if the PC1/context hypothesis is to be investigated further.
+
+### DEV-FLOW publication state
+
+V74 START --> [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) and its LinkedIn cross-post already verified.
+
+V74 scientific evidence --> CORE and STRATA GOGIT verified, committed and immutable.
+
+**FINAL-DEV-FLOW --> NOT TRIGGERED.** The final public closure comment and separate LinkedIn post require an explicit future `FINAL-DEV-FLOW` command. In particular, the existing publication worker takes **one** GOGIT history file per FINAL request, whereas V74's verification consists of **two** complementary immutable files. Confirm how to expose both references in the closure before triggering FINAL; do not silently omit either report.
 
 ## Publication boundary
 
