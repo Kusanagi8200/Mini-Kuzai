@@ -55,13 +55,13 @@ No background ChatGPT watcher, OpenAI API key or paid OpenAI API is used. The lo
 - Controlled delivery --> `SYSTEMD_START_EXIT=0`, `Result=success`, `ExecMainStatus=0`
 - SQLite --> `start-V74-d5` status `PUBLISHED`, zero pending/uncertain publications
 - LinkedIn --> first V74 post visually verified by operator, provider URN `urn:li:share:7522669773583872000`
-- Delivery timer --> **active and enabled**, LIVE=YES; immediate timer snapshot `NEXT=-` after a recent firing, future scheduler recurrence to be confirmed
+- Delivery timer --> **active and enabled**, LIVE=YES; follow-up observed LAST `2026-11-01 14:51:36 UTC`, NEXT `2026-11-01 14:52:37 UTC`, six subsequent `STATE=IDLE` runs; SQLite still exactly one `PUBLISHED` row, PENDING=0, IN_FLIGHT=0
 
 **The end-to-end GitHub -> KUZ-DIN -> LinkedIn START path has passed a real production publication.** Existing journal idempotency prevents V74 duplicates. A real FINAL-DEV-FLOW/GOGIT publication has not yet been tested in production. No automatic ChatGPT watcher or separate OpenAI API charge is involved.
 
 ## Outstanding operations
 
-1. Confirm the next timer trigger and subsequent successful idle DELIVERY cycle on the VPS; `NEXT=-` immediately after starting the timer is not definitive recurrence proof.
+1. The timer recurrence check is complete: a concrete next trigger and six idle DELIVERY cycles confirm continuous operation. Continue standard operational monitoring.
 2. Verify a subsequent *genuine and separately authorized* FINAL-DEV-FLOW/GOGIT event. No fabricated experiment result.
 3. Maintain OAuth token expiration monitoring and manual review of uncertain LinkedIn POST outcomes before any reattempt.
 4. Keep a verified source/runtime reconciliation procedure before deploying application code to `/opt/kuz-din`; documentation commits do not modify the VPS.
@@ -73,7 +73,7 @@ No background ChatGPT watcher, OpenAI API key or paid OpenAI API is used. The lo
 
 ## New-chat resumption prompt
 
-> Reprendre Mini-Kuzai Phase 03 V74 après START-DEV-FLOW du 2026-11-01. GitHub Discussion #5 et reçu START publiés, webhook KUZ-DIN reçu, journal SQLite `start-V74-d5` PUBLISHED, LinkedIn `urn:li:share:7522669773583872000` visuellement confirmé. Livraison LIVE=YES, timer actif/activé, mais sa prochaine échéance doit encore être confirmée après le snapshot immédiat NEXT=-. V73 GOGIT demeure la base scientifique, checkpoint V62 figé à 69 optimizer steps / 597982 tokens. V74 Frequency-Prior Control doit maintenant définir/geler le schéma de métriques, tests, audit GPU et GOGIT. Aucun nouvel entraînement ni accès BLIND. FINAL-DEV-FLOW uniquement après GOGIT V74 réel vérifié et autorisation distincte; ne jamais recréer un START pour V74.
+> Reprendre Mini-Kuzai Phase 03 V74 après START-DEV-FLOW du 2026-11-01. GitHub Discussion #5 et reçu START publiés, webhook KUZ-DIN reçu, journal SQLite `start-V74-d5` PUBLISHED, LinkedIn `urn:li:share:7522669773583872000` visuellement confirmé. Livraison LIVE=YES, timer actif/activé, échéance suivante vérifiée 2026-11-01 14:52:37 UTC, six cycles IDLE et zéro doublon. V73 GOGIT demeure la base scientifique, checkpoint V62 figé à 69 optimizer steps / 597982 tokens. V74 Frequency-Prior Control doit maintenant définir/geler le schéma de métriques, tests, audit GPU et GOGIT. Aucun nouvel entraînement ni accès BLIND. FINAL-DEV-FLOW uniquement après GOGIT V74 réel vérifié et autorisation distincte; ne jamais recréer un START pour V74.
 
 ---
 
