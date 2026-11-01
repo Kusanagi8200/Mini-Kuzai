@@ -1,8 +1,8 @@
-# Mini-Kuzai - DEV-FLOW checkpoint and V74 resumption
+# Mini-Kuzai - DEV-FLOW checkpoint and V74 GOGIT scientific review
 
 Date --> 2026-11-01
 
-Status --> **V74 START PUBLISHED ON GITHUB AND LINKEDIN / LIVE DELIVERY ACTIVE / V74 DIAGNOSTICS PENDING**
+Status --> **V74 START + LINKEDIN VERIFIED / CORE + STRATA GOGIT VERIFIED / FINAL-DEV-FLOW AWAITING EXPLICIT ORDER**
 
 ## Architecture
 
@@ -25,7 +25,7 @@ No background ChatGPT watcher, OpenAI API key or paid OpenAI API is used. The lo
 
 | Component | Verified observation |
 | --- | --- |
-| Research | V73 latest verified GOGIT, V62 frozen after 69 optimizer steps / 597982 exposed tokens |
+| Research | V74 CORE and STRATA GOGIT verified; V62 frozen after 69 optimizer steps / 597982 exposure tokens |
 | fhc2 | `mini-kuzai-dev-flow.timer` active and enabled, worker repeatedly IDLE, GitHub actor `Kusanagi8200`, clean worktree |
 | Request queue | START V74 committed as `automation/dev-flow/requests/V74-start.json`, processed by fhc2 worker; receipt committed as `automation/dev-flow/receipts/V74-start.json` |
 | GitHub webhook | One matching active hook, ID `705780264`, `discussion` and `discussion_comment`, JSON, SSL verification enabled |
@@ -65,15 +65,31 @@ No background ChatGPT watcher, OpenAI API key or paid OpenAI API is used. The lo
 2. Verify a subsequent *genuine and separately authorized* FINAL-DEV-FLOW/GOGIT event. No fabricated experiment result.
 3. Maintain OAuth token expiration monitoring and manual review of uncertain LinkedIn POST outcomes before any reattempt.
 4. Keep a verified source/runtime reconciliation procedure before deploying application code to `/opt/kuz-din`; documentation commits do not modify the VPS.
-5. Execute the reviewed [V74 two-report GPU/GOGIT job](../tools/run_v74_frequency_prior_001_job.py) on fhc2 after fast-forward synchronization; it runs CPU tests, freezes V62/V65/V73 and commits immutable CORE/STRATA GOGIT results with fail-closed controls. No training or BLIND TEST access is authorized.
+5. V74 CORE/STRATA GOGIT execution and cross-verification are complete. Preserve both immutable reports. Before an explicitly requested FINAL-DEV-FLOW, review the single-report limitation in the GitHub Discussions close publisher so both V74 reports are represented. No training or BLIND TEST access is authorized.
 
 ## V74 proposal and limits
 
-[V74 read-only scientific protocol](../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) proposes testing whether the V73 PC1_ONLY result is dominated by TRAIN unigram frequency. [START Discussion source draft](discussions/steps/V74-start.md) is committed; the real [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) has been published. The frozen numerical schema (CORE 30 metrics / STRATA 30 metrics), pinned public audits, CPU regression and two-stage runner are now committed to GitHub. The fhc2 GPU run and V74 GOGIT reports are **not yet verified**. No new training and no BLIND TEST access are authorized.
+[V74 read-only scientific protocol](../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) proposes testing whether the V73 PC1_ONLY result is dominated by TRAIN unigram frequency. [START Discussion source draft](discussions/steps/V74-start.md) is committed; the real [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) has been published. The frozen numerical schema (CORE 30 metrics / STRATA 30 metrics), pinned public audits, CPU regression and two-stage runner are now committed to GitHub. The fhc2 GPU diagnostics are **complete and GOGIT verified**: [CORE](../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json) and [STRATA](../reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001.json). Their verified research conclusion is in the [V74 protocol](../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md). No new training and no BLIND TEST access are authorized.
+
+## V74 numeric GOGIT checkpoint - 2026-11-01
+
+| Check | Verified evidence |
+| --- | --- |
+| CORE GOGIT | [`54dace24112f`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/54dace24112f920232cb6106422f6da7ab35d24c), 30 metrics, PASS, no TRAIN/BLIND |
+| STRATA GOGIT | [`7b36b3fb18c6`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7b36b3fb18c6f31037f90ada947b56469f73424f), 30 metrics, PASS, no TRAIN/BLIND |
+| Cross-check | Same 9170 lexical targets, identical frequency-bin denominators, all per-mode totals reconciled |
+| PC1_ONLY | 2455 correct / 9170, 2 output IDs |
+| TRAIN_UNIGRAM | 2535 correct / 9170, 1 output ID |
+| Agreement | 6450 / 9170 predicted IDs identical; 2449 / 2455 PC1 successes also correct with unigram |
+| Frequency imbalance | F100P 8462 / 9170 positions (92.28%) |
+| Scientific conclusion | Strong TRAIN-frequency confound for PC1_ONLY; no independent semantic or causal inference |
+| FINAL-DEV-FLOW | **NOT REQUESTED / NOT PUBLISHED** |
+
+**Important closure constraint** --> [`tools/github_discussions_step.py`](../tools/github_discussions_step.py) currently accepts one immutable GOGIT `--report` for a final Discussion comment. V74 is validated by *two* complementary reports. Before triggering an authorized FINAL-DEV-FLOW, confirm and document how the final comment will point to both reports, preserving idempotency and the LinkedIn 2800-character output limit. Neither this documentation commit nor the dual GOGIT authorizes an external publication.
 
 ## New-chat resumption prompt
 
-> Reprendre Mini-Kuzai Phase 03 V74 après START-DEV-FLOW du 2026-11-01. GitHub Discussion #5 et reçu START publiés, webhook KUZ-DIN reçu, journal SQLite `start-V74-d5` PUBLISHED, LinkedIn `urn:li:share:7522669773583872000` visuellement confirmé. Livraison LIVE=YES, timer actif/activé, échéance suivante vérifiée 2026-11-01 14:52:37 UTC, six cycles IDLE et zéro doublon. V73 GOGIT demeure la base scientifique, checkpoint V62 figé à 69 optimizer steps / 597982 tokens. V74 Frequency-Prior Control dispose désormais de deux schémas de métriques gelés, tests CPU et runner GPU/GOGIT à exécuter sur fhc2; résultats numériques non publiés à ce stade. Aucun nouvel entraînement ni accès BLIND. FINAL-DEV-FLOW uniquement après GOGIT V74 réel vérifié et autorisation distincte; ne jamais recréer un START pour V74.
+> Reprendre Mini-Kuzai Phase 03 V74 après START-DEV-FLOW du 2026-11-01. GitHub Discussion #5 et reçu START publiés, webhook KUZ-DIN reçu, journal SQLite `start-V74-d5` PUBLISHED, LinkedIn `urn:li:share:7522669773583872000` visuellement confirmé. Livraison LIVE=YES, timer actif/activé, échéance suivante vérifiée 2026-11-01 14:52:37 UTC, six cycles IDLE et zéro doublon. V74 CORE (commit 54dace24112f) et STRATA (commit 7b36b3fb18c6) sont publiés et vérifiés, checkpoint V62 toujours figé après 69 optimizer steps / 597982 tokens. TRAIN_UNIGRAM 2535/9170 contre PC1_ONLY 2455/9170; 2449 succès communs. La conclusion scientifique figure dans le protocole V74. Prochaine opération éventuelle --> FINAL-DEV-FLOW uniquement sur ordre distinct, après validation que le commentaire final documente les deux rapports. Aucun nouvel entraînement ni accès BLIND. FINAL-DEV-FLOW uniquement après GOGIT V74 réel vérifié et autorisation distincte; ne jamais recréer un START pour V74.
 
 ---
 
