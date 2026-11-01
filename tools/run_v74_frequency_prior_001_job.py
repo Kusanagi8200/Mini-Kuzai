@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -84,8 +85,10 @@ def pinned_sources():
 
 
 def preflight():
-    if not PYTHON.is_file() or PYTHON.is_symlink():
-        raise RuntimeError("V74 Python interpreter missing or unsafe")
+    # A venv Python executable is normally a symlink to the system Python.
+    # Path.is_file() follows symlinks; a dangling or non-file target fails.
+    if not PYTHON.is_file() or not os.access(PYTHON, os.X_OK):
+        raise RuntimeError("V74 Python interpreter missing or not executable")
     if RUN.is_symlink() or not RUN.is_dir() or (RUN / ".training.lock").exists():
         raise RuntimeError("V74 frozen training run missing or locked")
     summary = read_json(RUN / "RUN-SUMMARY.json")
