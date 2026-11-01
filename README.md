@@ -18,7 +18,7 @@ Each stage is documented through source code, reproducible protocols, frozen che
 
 ## Navigate the project
 
-**[Phases](#development-phases)** · **[Research steps V48-V73](#phase-03-research-steps)** · **[Current status](#current-status---2026-10-31)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
+**[Phases](#development-phases)** · **[Research steps V48-V74](#phase-03-research-steps)** · **[Current status](#current-status---2026-10-31)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
 
 ## Development phases
 
@@ -46,6 +46,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V71 - GOGIT verified** | Frozen V62 norm-versus-direction attribution, 30 numeric metrics; 275 changed argmax positions out of 9170 | [V71 research protocol](phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) · [V71 audit](tools/public-audits/phase03_v71_output_dominance_attribution_001.py) · [V71 tests](tests/test_phase03_v71_output_dominance_attribution_001.py) |
 | **V72 - GOGIT verified** | Strong 128D anisotropy: centered PC1 82.88%, effective rank 1.44; mean-center switches 2889/9170 lexical predictions | [V72 protocol and findings](phases/MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) · [V72 numeric GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001.json) |
 | **V73 - GOGIT verified** | PC1 alone yields 2455/9170 correct predictions with only 2 distinct output IDs; removing PC1 yields 1124/9170 correct despite 522 distinct IDs | [V73 findings](phases/MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md) · [V73 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.json) |
+| **V74 - Proposed, NOT STARTED** | Read-only frequency-prior control proposed after V73; no V74 audit or GOGIT yet | [V74 protocol](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) · [START draft](docs/discussions/steps/V74-start.md) |
 
 ## Current status - 2026-10-31
 
@@ -67,6 +68,14 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 
 **V70-V73 finding -->** V71 equalizing output-head norms changed just 275/9170 lexical predictions. V72 found a centered hidden-state participation ratio of 1.44/128D and PC1 containing 82.88% of centered variance. V73 now shows that **deleting PC1 increases distinct predicted IDs from 15 to 522 but reduces correct predictions from 2832 to 1124**; removing PC1 plus PC2 yields 715 distinct IDs and only 818 correct. **PC1 alone** yields 2455 correct predictions from only 2 predicted IDs. This is an in-sample teacher-forced diagnostic: diversity without preserved accuracy is not useful learning. Keep V62 frozen, do not treat any ablation as a model patch, and do not use BLIND or restart training. Next decision --> critically reassess the data/training objective and design an independent read-only evaluation before any new training proposal.
 
+## DEV-FLOW and V74 checkpoint - 2026-11-01
+
+The latest scientifically verified step remains **V73**. **V74 is proposed and not started**, with a [read-only protocol](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) and [unpublished START draft](docs/discussions/steps/V74-start.md) ready for review.
+
+The `fhc2` DEV-FLOW worker has an active timer and zero pending requests. The GitHub webhook is subscribed to both Discussions event types. KUZ-DIN's PREPARE and DELIVERY timers are enabled, the synthetic webhook/SQLite pipeline passed, 36 Publisher regression tests passed and the real signed ping returned HTTP 200. The production cutoff is `2026-11-01T13:38:23+00:00`, but **LinkedIn automated publication remains disabled (`LIVE=NO`)**. Authentic START/FINAL event delivery has not yet been verified.
+
+[Deployment evidence, remaining gates and new-chat resumption](docs/DEV-FLOW-REPRISE-2026-11-01.md). No documentation commit authorizes training, BLIND access, a GitHub Discussion or an external LinkedIn post.
+
 ## Code, operations and evidence
 
 | Entry point | Content |
@@ -76,6 +85,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | [Checkpoint inventory](technical/checkpoints/README.md) | Historical Phase 01 checkpoint metadata |
 | [GOGIT](tools/GOGIT.md) | Verified numeric audit publication, immutable history and manual ChatGPT review |
 | [GitHub Discussions and KUZ-DIN Publisher](docs/discussions/README.md) | Approved V74+ START / GOGIT events, signed GitHub webhook and SQLite PREPARE validation, with live LinkedIn posts disabled |
+| [DEV-FLOW checkpoint and V74 resumption](docs/DEV-FLOW-REPRISE-2026-11-01.md) | Verified two-host deployment, publication gates and resumption plan |
 | [AUTOPILOT](autopilot/README.md) | Bounded diagnostic campaigns, reproducibility checks and training restrictions |
 | [Latest GOGIT report](reports/assistant-results/latest.json) | Most recently published numerical results |
 | [Workflow policy](PROJECT-WORKFLOW-POLICY.md) | Fail-closed automation and authorization boundaries |
@@ -83,7 +93,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 
 ## README maintenance
 
-Update this project index **after verified major milestones**, such as a frozen corpus/architecture revision, published GOGIT diagnostic, approved protocol or controlled training stop. Keep the current state, research-step links and next action accurate; preserve detailed methods and older results in their dedicated documents. **Code publication is not execution**, historical authorization is never renewed implicitly, and there is no background GitHub monitoring or automatic ChatGPT polling.
+Update this project index **after verified major milestones**, such as a frozen corpus/architecture revision, published GOGIT diagnostic, approved protocol or controlled training stop. Keep the current state, research-step links and next action accurate; preserve detailed methods and older results in their dedicated documents. **Code publication is not execution**, historical authorization is never renewed implicitly, and there is no automatic ChatGPT polling. The enabled local DEV-FLOW worker polls committed explicit requests, and cannot create a research step on its own.
 
 The [original full README snapshot](README-DETAILED-20261031T192526Z.md) preserves the longer chronology, older experiment notes, architecture tables and historical decisions **without rewriting them**. Some historical status blocks there are superseded by the verified V73 status above.
 
