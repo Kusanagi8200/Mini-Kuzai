@@ -158,11 +158,11 @@ Inbound signature checks use HMAC-SHA256, strict approved author/category/header
 | Human confirmation | Public post visibly confirmed on personal LinkedIn profile |
 | Timer | `kuz-din-publisher-delivery.timer` active/enabled after first post |
 
-The immediate timer snapshot showed `NEXT=-` just after a recent firing. A subsequent scheduler check is still required to establish its next scheduled execution. This does **not** invalidate the successful real post or the active/enabled state.
+The immediate timer snapshot initially showed `NEXT=-`, but a subsequent check verified LAST `2026-11-01 14:51:36 UTC`, NEXT `2026-11-01 14:52:37 UTC`, six successful `STATE=IDLE` cycles and no additional queued post. Timer recurrence is confirmed.
 
 ### Pending work and scientific boundaries
 
-- Confirm the subsequent timer schedule and a clean idle DELIVERY cycle
+- Timer schedule and six clean idle DELIVERY cycles verified; maintain routine monitoring
 - Validate the first real FINAL-DEV-FLOW after V74 has a genuine, fully verified immutable GOGIT
 - Monitor OAuth validity and never blindly retry an `IN_FLIGHT` or ambiguous LinkedIn publication
 - Avoid synchronizing unreviewed VPS source changes from GitHub; the documentation changes are not runtime deployments
