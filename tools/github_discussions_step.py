@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 
 import github_discussions_history as H
+import v74_final_closure as V74
 
 ROOT = Path(__file__).resolve().parents[1]
 STEP_RE = re.compile(r"V([1-9][0-9]{1,2})\Z")
@@ -303,17 +304,39 @@ def do_start(step: str, publish: bool):
 
 def do_close(step: str, relative: str, publish: bool):
     title, body, draft_path = draft(step)
-    payload, report_path, producer_path = report(step, relative)
-    commit = git_ready([draft_path, report_path, producer_path])
+    secondary_id = None
+    if step == "V74":
+        # Preserve the reviewed FINAL request schema (one CORE report field),
+        # but require both immutable V74 GOGIT records in one GitHub comment.
+        if relative != V74.CORE:
+            reject("V74 FINAL must reference CORE; STRATA is mandatory too")
+        payload, report_path, producer_path = report(step, relative)
+        second, second_path, second_producer = report(step, V74.STRATA)
+        commit = git_ready([
+            draft_path, report_path, producer_path,
+            second_path, second_producer,
+        ])
+        V74.verify_git_pins(ROOT)
+        comment_body = V74.closure_body(
+            payload, second, header=header(step, CLOSE_STATUS), footer=FOOTER,
+        )
+        secondary_id = second["step_id"]
+    else:
+        payload, report_path, producer_path = report(step, relative)
+        commit = git_ready([draft_path, report_path, producer_path])
+        comment_body = closure_body(step, payload, relative, commit)
     prior = matching_discussion(step, title, body)
     if prior is None:
         reject("No matching START discussion exists in Development Log")
-    comment_body = closure_body(step, payload, relative, commit)
     existing = matching_comment(discussion_comments(prior["id"]),
                                 step, comment_body)
     print(f"TARGET={H.OWNER}/{H.REPOSITORY}")
     print(f"STEP={step}")
     print(f"STEP_ID={payload['step_id']}")
+    if secondary_id is not None:
+        print(f"SECONDARY_STEP_ID={secondary_id}")
+        print("V74_FINAL_EVIDENCE=CORE_AND_STRATA_VERIFIED")
+        print(f"GOGIT_COMMENT_LENGTH={len(comment_body)}")
     print(f"MODE={'PUBLISH' if publish else 'DRY_RUN'}")
     print(f"DISCUSSION_URL={prior['url']}")
     print(f"GOGIT_CLOSURE={'EXISTS_IDENTICAL' if existing else 'READY_TO_COMMENT'}")
