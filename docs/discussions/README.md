@@ -168,7 +168,19 @@ The immediate timer snapshot initially showed `NEXT=-`, but a subsequent check v
 - PC1_ONLY --> 2455 correct; TRAIN_UNIGRAM --> 2535 correct; 2449 shared correct; 6450 matching predictions
 - Full interpretation, limitations and frequency strata --> [V74 scientific protocol and findings](../../phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md)
 
-**Current FINAL blocker** --> one GOGIT `--report` is used by [`tools/github_discussions_step.py`](../../tools/github_discussions_step.py) when forming a single closure comment. Since CORE and STRATA are complementary, a future reviewed FINAL workflow must reference **both** immutable reports, and satisfy the downstream LinkedIn formatting limit. Do not create two incompatible FINAL comments or invoke FINAL before this has been validated and explicitly authorized.
+**V74 FINAL prepared, not activated** --> the reviewed [dual-report closure formatter](../../tools/v74_final_closure.py) and [GitHub Discussion publisher](../../tools/github_discussions_step.py) now require both immutable CORE and STRATA GOGIT records in one comment. The request schema remains unchanged: `V74-final.json` will reference the **CORE** report, and the publisher automatically validates and cites STRATA. Non-V74 steps retain the original single-report behavior. The comment is bounded to 1900 characters before the LinkedIn transformation, and both publication sources are immutable commit links. The offline regression [`test_v74_final_closure.py`](../../tests/test_v74_final_closure.py) covers the dual evidence, pinned files, mutation rejection and dry-run no-publish behavior. **Runtime tests and real GitHub read-only dry-run are still required before any final request.** No `FINAL-DEV-FLOW` request has been submitted.
+
+### Final V74 read-only preflight command
+
+After synchronizing a **clean, fast-forward** `main` on fhc2, execute the two publisher test modules and an explicit **dry-run** (no `--publish`, no FINAL request) -->
+
+```bash
+/root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_github_discussions_step.py' -v
+/root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_v74_final_closure.py' -v
+/root/Mini-Kuzai/.venv/bin/python tools/github_discussions_step.py --step V74 --action close --report reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json
+```
+
+Successful preflight requires `V74_FINAL_EVIDENCE=CORE_AND_STRATA_VERIFIED`, `GOGIT_CLOSURE=READY_TO_COMMENT` or `EXISTS_IDENTICAL`, plus `PUBLICATION=DISABLED`. The real FINAL request must **not** be created automatically by a dry-run. Explicit subsequent authorization remains mandatory.
 
 ### Pending work and scientific boundaries
 
