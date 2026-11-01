@@ -122,7 +122,7 @@ V74 START --> [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/
 
 V74 scientific evidence --> CORE and STRATA GOGIT verified, committed and immutable.
 
-**FINAL-DEV-FLOW --> NOT TRIGGERED.** The final public closure comment and separate LinkedIn post require an explicit future `FINAL-DEV-FLOW` command. In particular, the existing publication worker takes **one** GOGIT history file per FINAL request, whereas V74's verification consists of **two** complementary immutable files. Confirm how to expose both references in the closure before triggering FINAL; do not silently omit either report.
+**FINAL-DEV-FLOW --> NOT TRIGGERED.** The final public closure comment and separate LinkedIn post require an explicit future `FINAL-DEV-FLOW` command. The [V74 dual-report closure module](../tools/v74_final_closure.py) now maps a single CORE report field in the future request to **one compact comment citing both CORE and STRATA**, verifies their immutable pinned commits, reconciles the frozen numeric counts and rejects a STRATA-only request. [Offline tests](../tests/test_v74_final_closure.py) have been committed but **must pass on fhc2**, followed by a real GitHub read-only dry-run, before an authorized FINAL. No FINAL request has been created.
 
 ## Publication boundary
 
