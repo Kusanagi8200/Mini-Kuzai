@@ -225,7 +225,7 @@ class StepPublisherTests(unittest.TestCase):
         )), patch.object(S, "git_ready", return_value="a" * 40), \
              patch.object(S, "matching_discussion", return_value=None):
             with self.assertRaises(S.H.PublicationError):
-                S.do_close("V74", self.REPORT, False)
+                S.do_close("V75", self.REPORT, False)
 
     def test_close_dry_run_no_mutation(self):
         p = self.sample_payload()
@@ -240,7 +240,7 @@ class StepPublisherTests(unittest.TestCase):
              patch.object(S, "discussion_comments", return_value=[]), \
              patch.object(S.H, "graphql") as call, \
              contextlib.redirect_stdout(io.StringIO()) as output:
-            S.do_close("V74", self.REPORT, False)
+            S.do_close("V75", self.REPORT, False)
         call.assert_not_called()
         self.assertIn("GOGIT_CLOSURE=READY_TO_COMMENT", output.getvalue())
         self.assertIn("PUBLICATION=DISABLED", output.getvalue())
@@ -248,7 +248,7 @@ class StepPublisherTests(unittest.TestCase):
     def test_close_publish_adds_exactly_one_comment(self):
         p = self.sample_payload()
         discussion = self.fake_discussion()
-        expected_body = S.closure_body("V74", p, self.REPORT, "a" * 40)
+        expected_body = S.closure_body("V75", p, self.REPORT, "a" * 40)
         created = {
             "id": "DC_mock",
             "body": expected_body,
@@ -266,7 +266,7 @@ class StepPublisherTests(unittest.TestCase):
              ]), patch.object(S.H, "graphql", return_value={
                  "addDiscussionComment": {"comment": created}
              }) as call, contextlib.redirect_stdout(io.StringIO()) as output:
-            S.do_close("V74", self.REPORT, True)
+            S.do_close("V75", self.REPORT, True)
         call.assert_called_once()
         self.assertIn("PUBLICATION=VERIFIED", output.getvalue())
 
