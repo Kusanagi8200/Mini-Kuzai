@@ -18,7 +18,7 @@ Each stage is documented through source code, reproducible protocols, frozen che
 
 ## Navigate the project
 
-**[Phases](#development-phases)** · **[Research steps V48-V74](#phase-03-research-steps)** · **[Current status](#current-status---2026-10-31)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
+**[Phases](#development-phases)** · **[Research steps V48-V74](#phase-03-research-steps)** · **[Current status](#current-status---2026-11-01)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
 
 ## Development phases
 
@@ -46,9 +46,9 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V71 - GOGIT verified** | Frozen V62 norm-versus-direction attribution, 30 numeric metrics; 275 changed argmax positions out of 9170 | [V71 research protocol](phases/MINI-KUZAI-PHASE-03-V71-OUTPUT-DOMINANCE-ATTRIBUTION-001.md) · [V71 audit](tools/public-audits/phase03_v71_output_dominance_attribution_001.py) · [V71 tests](tests/test_phase03_v71_output_dominance_attribution_001.py) |
 | **V72 - GOGIT verified** | Strong 128D anisotropy: centered PC1 82.88%, effective rank 1.44; mean-center switches 2889/9170 lexical predictions | [V72 protocol and findings](phases/MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) · [V72 numeric GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001.json) |
 | **V73 - GOGIT verified** | PC1 alone yields 2455/9170 correct predictions with only 2 distinct output IDs; removing PC1 yields 1124/9170 correct despite 522 distinct IDs | [V73 findings](phases/MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md) · [V73 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.json) |
-| **V74 - Proposed, NOT STARTED** | Read-only frequency-prior control proposed after V73; no V74 audit or GOGIT yet | [V74 protocol](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) · [START draft](docs/discussions/steps/V74-start.md) |
+| **V74 - START published, diagnostics pending** | Frequency-prior read-only protocol authorized to start; real GitHub START and LinkedIn post verified. V74 GPU audit/GOGIT not yet performed | [V74 protocol](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) · [GitHub START #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) · [DEV-FLOW receipt](automation/dev-flow/receipts/V74-start.json) |
 
-## Current status - 2026-10-31
+## Current status - 2026-11-01
 
 | Component | Verified state |
 | --- | --- |
@@ -70,11 +70,11 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 
 ## DEV-FLOW and V74 checkpoint - 2026-11-01
 
-The latest scientifically verified step remains **V73**. **V74 is proposed and not started**, with a [read-only protocol](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) and [unpublished START draft](docs/discussions/steps/V74-start.md) ready for review.
+The latest scientifically verified numerical GOGIT remains **V73**. **V74 START is published** as [GitHub Discussion #5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5), supported by its [committed START receipt](automation/dev-flow/receipts/V74-start.json). The scientific V74 read-only protocol is [documented](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md), but the GPU diagnostic and V74 GOGIT have not been executed.
 
-The `fhc2` DEV-FLOW worker has an active timer and zero pending requests. The GitHub webhook is subscribed to both Discussions event types. KUZ-DIN's PREPARE and DELIVERY timers are enabled, the synthetic webhook/SQLite pipeline passed, 36 Publisher regression tests passed and the real signed ping returned HTTP 200. The production cutoff is `2026-11-01T13:38:23+00:00`, but **LinkedIn automated publication remains disabled (`LIVE=NO`)**. Authentic START/FINAL event delivery has not yet been verified.
+The `fhc2` DEV-FLOW worker published the approved V74 START and the GitHub receipt. The real signed webhook reached KUZ-DIN, SQLite PREPARE found one eligible event `start-V74-d5`, and the guarded LinkedIn DELIVERY service sent exactly one post, confirmed by provider URN `urn:li:share:7522669773583872000` and operator screenshot. The production cutoff `2026-11-01T13:38:23+00:00` remains in force. **LinkedIn LIVE=YES**, DELIVERY timer active/enabled, no pending events and no duplicate replay. Its next timer trigger needs a later check because an immediate post-start snapshot showed `NEXT=-`. Real FINAL/GOGIT closing publication remains untested.
 
-[Deployment evidence, remaining gates and new-chat resumption](docs/DEV-FLOW-REPRISE-2026-11-01.md). No documentation commit authorizes training, BLIND access, a GitHub Discussion or an external LinkedIn post.
+[Production DEV-FLOW deployment evidence and V74 resumption](docs/DEV-FLOW-REPRISE-2026-11-01.md). The authorized V74 START is complete. No documentation commit independently authorizes training, BLIND access or a future FINAL/LinkedIn event.
 
 ## Code, operations and evidence
 
@@ -84,7 +84,7 @@ The `fhc2` DEV-FLOW worker has an active timer and zero pending requests. The Gi
 | [Installation](technical/installation/README.md) | Reference environment and setup |
 | [Checkpoint inventory](technical/checkpoints/README.md) | Historical Phase 01 checkpoint metadata |
 | [GOGIT](tools/GOGIT.md) | Verified numeric audit publication, immutable history and manual ChatGPT review |
-| [GitHub Discussions and KUZ-DIN Publisher](docs/discussions/README.md) | Approved V74+ START / GOGIT events, signed GitHub webhook and SQLite PREPARE validation, with live LinkedIn posts disabled |
+| [GitHub Discussions and KUZ-DIN Publisher](docs/discussions/README.md) | Approved V74+ START / GOGIT events, signed GitHub webhook and guarded live LinkedIn delivery verified for START V74 |
 | [DEV-FLOW checkpoint and V74 resumption](docs/DEV-FLOW-REPRISE-2026-11-01.md) | Verified two-host deployment, publication gates and resumption plan |
 | [AUTOPILOT](autopilot/README.md) | Bounded diagnostic campaigns, reproducibility checks and training restrictions |
 | [Latest GOGIT report](reports/assistant-results/latest.json) | Most recently published numerical results |
