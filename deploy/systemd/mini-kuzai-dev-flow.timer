@@ -1,0 +1,11 @@
+[Unit]
+Description=Poll explicit Mini-Kuzai DEV-FLOW requests every 30 seconds
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=30s
+AccuracySec=1s
+Unit=mini-kuzai-dev-flow.service
+
+[Install]
+WantedBy=timers.target

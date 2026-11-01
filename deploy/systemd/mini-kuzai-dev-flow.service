@@ -1,0 +1,15 @@
+[Unit]
+Description=Mini-Kuzai explicit DEV-FLOW request processor
+Documentation=https://github.com/Kusanagi8200/Mini-Kuzai
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/root/GitHub-Mini-Kuzai/Mini-Kuzai
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/root/Mini-Kuzai/.venv/bin/python /root/GitHub-Mini-Kuzai/Mini-Kuzai/tools/dev_flow_worker.py --publish
+UMask=0077
+Nice=10
+TimeoutStartSec=180
