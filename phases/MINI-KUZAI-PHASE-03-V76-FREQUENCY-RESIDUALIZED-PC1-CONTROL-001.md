@@ -1,8 +1,9 @@
 # Mini-Kuzai Phase 03 - V76 Frequency-Residualized PC1 Output Control 001
 
 Date --> 2026-11-07
+Frozen review --> 2026-11-07
 
-Status --> **PROPOSED / NOT FROZEN / START NOT AUTHORIZED / GPU NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS**
+Status --> **PROTOCOL FROZEN / START DRAFT MAY BE PREPARED / START NOT AUTHORIZED / GPU NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS**
 
 ## Why V76 follows V74 and V75
 
@@ -20,15 +21,15 @@ The remaining question is therefore not whether PC1 transfers. It does.
 
 The unresolved question is whether the output profile induced by that stable PC1 contains predictive structure beyond a static TRAIN token-frequency prior.
 
-## Proposed scientific question
+## Frozen scientific question
 
-**How much of the frozen TRAIN-PC1 output-head signature is explained by TRAIN target frequency, and does the frequency-residualized part retain independent predictive concentration on frozen VALIDATION?**
+**How much of the frozen TRAIN-PC1 output-head signature is explained by TRAIN lexical target frequency, and does the frequency-residualized part retain independent predictive concentration on frozen VALIDATION?**
 
 V76 is an output-profile decomposition study. It is not a hidden-state retraining method, a model patch, a semantic evaluation, a generation benchmark or a causal intervention on learned weights.
 
 ## Frozen inheritance from V75
 
-Any future V76 implementation must reuse the unchanged V62 cycle-2 checkpoint and must reproduce these verified values before scoring:
+V76 must reuse the unchanged V62 cycle-2 checkpoint and reproduce these verified values before scientific scoring:
 
 - V62 status --> STOPPED
 - stop reason --> MILESTONE_REVIEW_REQUIRED
@@ -38,6 +39,7 @@ Any future V76 implementation must reuse the unchanged V62 cycle-2 checkpoint an
 - TRAIN observed lexical token types --> 891
 - VALIDATION lexical positions --> 9170
 - hidden dimension --> 128
+- output vocabulary --> 1024 IDs
 - V75 TRAIN PC1 centered variance share --> 9019 basis points
 - V75 TRAIN/VALIDATION PC1 absolute cosine --> 9995 basis points
 - V75 TRAIN_PC1_ONLY correct --> 2457
@@ -50,11 +52,23 @@ Any mismatch blocks V76.
 
 BLIND remains closed.
 
-## Proposed TRAIN-only calibration
+## Frozen reviewed dependencies
 
-All calibration must occur on TRAIN only.
+The first implementation must fail closed if these reviewed Git blobs change:
 
-### 1. Recompute the V75 TRAIN geometry
+- V75 geometry/scoring helper --> `tools/v75_train_fitted_geometry_transfer.py` --> blob `8705d8ca9aebe7281779c704119d26eb82517da2`
+- V65 lexical TRAIN frequency audit --> `tools/public-audits/phase03_v65_token_frequency_diagnostic_001.py` --> blob `d88e05933686b369d5236c3bcd465729e2df3407`
+- V75 immutable scientific report --> blob `51606f42f60c5e53c437cac0be9bc6459fadbd05`
+- V74 CORE immutable report --> blob `8cf575c440d7625bd03d6ce1d77c3951c678f84a`
+- V74 STRATA immutable report --> blob `5096c81e32b6140f926930a09e0b6253fa557c01`
+
+The implementation may reuse reviewed V75 helper functions, but it must not modify V75 source or historical reports.
+
+## Frozen TRAIN-only calibration
+
+All calibration occurs on TRAIN only.
+
+### 1. Recompute V75 TRAIN geometry
 
 Recompute the exact V75 streaming FP64 TRAIN mean and leading centered PC1 without retaining the full hidden-state population.
 
@@ -62,37 +76,93 @@ Let:
 
 - `u_train` --> the frozen TRAIN-derived leading unit PC1
 - `W` --> the unchanged tied bias-free output matrix
-- `a = W u_train` --> the PC1 output-profile vector over the complete output vocabulary
+- `a = W u_train` --> raw PC1 output-profile vector over all 1024 output IDs
 
 The V75 geometry and replay invariants above must match before continuing.
 
-### 2. Build a static TRAIN frequency feature
+### 2. Build the frozen TRAIN lexical frequency vector
 
-From the frozen ordered TRAIN serialization, count every next-token target ID over the complete output vocabulary.
+Reuse the V65 lexical counting definition exactly:
 
-For output token ID `t`:
+- count only TRAIN body next-token targets
+- exclude PAD, BOS and terminal EOS
+- valid lexical IDs --> 3 through 1023
+- preserve the complete frozen 345-segment TRAIN stream
+- expected lexical total --> 294726
+- expected observed lexical types --> 891
+
+Construct a 1024-element count vector over the complete output vocabulary.
+
+For IDs 0, 1 and 2, and for lexical IDs not observed in TRAIN, the count is exactly zero.
+
+For every output ID `t`:
 
 `f_t = log(1 + count_train(t))`
 
-This count vector is TRAIN-only. VALIDATION must not influence token inclusion, counts, transforms or regression parameters.
+This preserves the exact 1024-way output competition used by V75 while making the frequency source strictly TRAIN-only.
 
-### 3. Fit the frequency component of the PC1 output profile
+### 3. Remove decision-irrelevant constant output offsets
 
-Fit an unweighted ordinary least-squares model over the complete output vocabulary:
+A constant added to all vocabulary logits cannot alter argmax.
 
-`a_t = beta0 + beta1 * f_t + r_t`
+Define the centered PC1 output profile:
+
+`q = a - mean(a)`
+
+Define centered log-frequency:
+
+`g = f - mean(f)`
+
+Require:
+
+- both vectors finite
+- `||q|| > 0`
+- `||g|| > 0`
+- exact length 1024
+
+For any VALIDATION position, `alpha * a` and `alpha * q` differ only by the same scalar offset for every output ID. Their argmax must therefore be identical. The implementation must verify this replay property.
+
+### 4. Fit the frozen frequency component
+
+Fit one deterministic unweighted OLS coefficient in FP64:
+
+`beta = dot(g, q) / dot(g, g)`
+
+Define:
+
+`c = beta * g`
+
+`r = q - c`
 
 where:
 
-- `a_t` is the PC1 output score for token `t`
-- `beta0 + beta1*f_t` is the static frequency-explained component
-- `r_t` is the frequency-residualized PC1 output profile
+- `c` --> frequency-explained centered output profile
+- `r` --> frequency-residualized centered output profile
 
-The fit is deterministic and uses TRAIN-derived quantities only.
+No VALIDATION quantity may influence `beta`, centering, token inclusion, frequency transform or any threshold.
 
-No VALIDATION-derived threshold, fit, normalization or model-selection decision is allowed.
+### 5. Frozen numerical decomposition gates
 
-## Proposed VALIDATION scoring
+Before VALIDATION scoring, require:
+
+- all `beta`, `c`, `r` values finite
+- `max_abs(q - c - r) <= 1e-12` in FP64
+- residual orthogonality to the regressor within relative tolerance `1e-10`
+- Pearson denominator finite and nonzero
+- OLS `R^2` finite and in `[0, 1]` after tolerance
+- residual-energy share finite and in `[0, 1]`
+
+Define:
+
+`corr_abs = abs(dot(g,q)) / (||g|| ||q||)`
+
+`R2 = 1 - ||r||^2 / ||q||^2`
+
+`residual_energy_share = ||r||^2 / ||q||^2`
+
+The implementation must internally verify the OLS identity between `R2` and squared Pearson correlation within numerical tolerance. No outcome threshold is used to declare scientific success.
+
+## Frozen VALIDATION scoring
 
 Use the exact frozen 9170 lexical VALIDATION positions from V73-V75.
 
@@ -100,48 +170,58 @@ For every position:
 
 `alpha = (h - mu_train) dot u_train`
 
-The following output-logit profiles are diagnostic decompositions only:
+Score these 1024-way logit profiles:
 
 | Mode | Logit contribution |
 | --- | --- |
-| TRAIN_PC1_ONLY | `alpha * a` |
-| FREQ_COMPONENT_ONLY | `alpha * (beta0 + beta1*f)` |
+| TRAIN_PC1_REPLAY | `alpha * q` |
+| FREQ_COMPONENT_ONLY | `alpha * c` |
 | FREQ_RESIDUAL_ONLY | `alpha * r` |
 
-The decomposition must satisfy numerically:
+By construction:
 
-`TRAIN_PC1_ONLY = FREQ_COMPONENT_ONLY + FREQ_RESIDUAL_ONLY`
+`TRAIN_PC1_REPLAY = FREQ_COMPONENT_ONLY + FREQ_RESIDUAL_ONLY`
 
-up to the predeclared FP64/FP32 implementation tolerance before output ranking.
+in centered logit space.
 
-No model weight, checkpoint, tokenizer or corpus file may be modified.
+TRAIN_PC1_REPLAY must reproduce the frozen V75 TRAIN_PC1_ONLY aggregate exactly:
 
-## Proposed scientific measurements
+- correct --> 2457
+- distinct predicted IDs --> 2
+- dominant top-1 share --> 7043 basis points
 
-V76 should quantify:
+The decomposition must never change model weights, checkpoint state, tokenizer files or corpus files.
 
-- absolute Pearson correlation between PC1 output scores and `log1p(TRAIN frequency)`
-- OLS coefficient of determination `R^2`
-- residual output-profile energy after the frequency fit
+## Frozen scientific measurements
+
+V76 reports:
+
+- absolute Pearson correlation between centered PC1 output scores and centered `log1p(TRAIN lexical frequency)`
+- OLS `R^2`
+- residual output-profile energy share
 - top-1 accuracy, distinct predicted IDs and dominant-token share for:
-  - TRAIN_PC1_ONLY replay
+  - TRAIN_PC1_REPLAY
   - FREQ_COMPONENT_ONLY
   - FREQ_RESIDUAL_ONLY
-- agreement of each decomposed mode with the frozen TRAIN unigram baseline
-- agreement between TRAIN_PC1_ONLY and each component
-- exact V75 geometry replay and full VALIDATION coverage
+- agreement of FREQ_COMPONENT_ONLY and FREQ_RESIDUAL_ONLY with the frozen TRAIN unigram baseline
+- shared-correct count between FREQ_RESIDUAL_ONLY and the unigram baseline
+- agreement between TRAIN_PC1_REPLAY and FREQ_COMPONENT_ONLY
+- exact V75 geometry replay
+- full VALIDATION coverage
 
 ### Interpretation rule
 
-A strong frequency fit combined with a weak/concentrated residual would support the hypothesis that the stable PC1 output signature is largely a static frequency-prior direction.
+A high frequency fit together with a weak or highly concentrated residual would support the hypothesis that the stable PC1 output signature is largely explained by a static TRAIN frequency direction.
 
-A substantial frequency-residualized signal would justify a later, separately designed test of whether that residual is context-sensitive.
+A residual that retains substantial predictive structure would justify a later, separately designed context-sensitivity test.
 
-Neither outcome establishes semantic competence, causal representation or generalization beyond the frozen teacher-forced VALIDATION population.
+Neither outcome establishes semantic competence, causal representation, personality formation or generalization beyond the frozen teacher-forced VALIDATION population.
 
-## Proposed 30-field GOGIT schema
+## Frozen 30-field GOGIT schema
 
-A future frozen implementation may publish at most these 30 aggregate integer metrics:
+STEP_ID --> `PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001`
+
+The scientific publication must contain exactly these 30 aggregate nonnegative integer metrics:
 
 1. `SEMANTIC_VALIDATION_COMPLETE`
 2. `TRAINING_AUTHORIZED`
@@ -152,40 +232,42 @@ A future frozen implementation may publish at most these 30 aggregate integer me
 7. `V76_TRAIN_TYPES`
 8. `V76_VAL_LEXICAL`
 9. `V76_HIDDEN_DIM`
-10. `V76_PC1_CORRECT`
-11. `V76_PC1_DISTINCT`
-12. `V76_PC1_TOP1_SHARE_BP`
-13. `V76_UNIGRAM_CORRECT`
-14. `V76_AXIS_FREQ_CORR_ABS_BP`
-15. `V76_AXIS_FREQ_R2_BP`
-16. `V76_FREQ_COMPONENT_CORRECT`
-17. `V76_FREQ_COMPONENT_DISTINCT`
-18. `V76_FREQ_COMPONENT_TOP1_SHARE_BP`
-19. `V76_FREQ_RESIDUAL_CORRECT`
-20. `V76_FREQ_RESIDUAL_DISTINCT`
-21. `V76_FREQ_RESIDUAL_TOP1_SHARE_BP`
-22. `V76_RESIDUAL_UNIGRAM_AGREE`
-23. `V76_RESIDUAL_UNIGRAM_SHARED_CORRECT`
-24. `V76_PC1_FREQ_COMPONENT_AGREE`
-25. `V76_PC1_FREQ_RESIDUAL_AGREE`
+10. `V76_FIT_VOCAB`
+11. `V76_PC1_CORRECT`
+12. `V76_PC1_DISTINCT`
+13. `V76_PC1_TOP1_SHARE_BP`
+14. `V76_UNIGRAM_CORRECT`
+15. `V76_AXIS_FREQ_CORR_ABS_BP`
+16. `V76_AXIS_FREQ_R2_BP`
+17. `V76_FREQ_COMPONENT_CORRECT`
+18. `V76_FREQ_COMPONENT_DISTINCT`
+19. `V76_FREQ_COMPONENT_TOP1_SHARE_BP`
+20. `V76_FREQ_RESIDUAL_CORRECT`
+21. `V76_FREQ_RESIDUAL_DISTINCT`
+22. `V76_FREQ_RESIDUAL_TOP1_SHARE_BP`
+23. `V76_RESIDUAL_UNIGRAM_AGREE`
+24. `V76_RESIDUAL_UNIGRAM_SHARED_CORRECT`
+25. `V76_PC1_FREQ_COMPONENT_AGREE`
 26. `V76_FREQ_COMPONENT_UNIGRAM_AGREE`
 27. `V76_PC1_VAR_SHARE_BP`
 28. `V76_TRAIN_VAL_PC1_COS_ABS_BP`
 29. `V76_RESIDUAL_ENERGY_SHARE_BP`
 30. `V76_COVERAGE_BP`
 
-### Proposed fixed replay expectations
+## Frozen fixed expectations
 
-If the protocol is later frozen, the following values should be required exactly before any scientific interpretation:
+A successful V76 scientific GOGIT must require exactly:
 
 - `SEMANTIC_VALIDATION_COMPLETE=0`
 - `TRAINING_AUTHORIZED=0`
 - `TRAINING_STARTED=0`
+- `V76_PASS=1`
 - `V76_BLIND_ACCESS=0`
 - `V76_TRAIN_LEXICAL=294726`
 - `V76_TRAIN_TYPES=891`
 - `V76_VAL_LEXICAL=9170`
 - `V76_HIDDEN_DIM=128`
+- `V76_FIT_VOCAB=1024`
 - `V76_PC1_CORRECT=2457`
 - `V76_PC1_DISTINCT=2`
 - `V76_PC1_TOP1_SHARE_BP=7043`
@@ -194,34 +276,62 @@ If the protocol is later frozen, the following values should be required exactly
 - `V76_TRAIN_VAL_PC1_COS_ABS_BP=9995`
 - `V76_COVERAGE_BP=10000`
 
-No expected scientific outcome is predeclared for correlation, R2, frequency-component performance, residual performance, agreement measures or residual energy.
+No expected scientific outcome is predeclared for correlation, R2, frequency-component performance, residual performance, agreement metrics or residual-energy share.
 
-## Resource and privacy boundary
+`V76_PASS=1` means only that the frozen computation, replay, decomposition, provenance, safety and coverage gates completed. It is not a positive scientific outcome.
+
+## Frozen CPU implementation review requirements
+
+Before any GPU authorization, CPU-only tests must verify at minimum:
+
+1. exact 30-field schema and GOGIT allowlist compatibility
+2. dependency/blob pin checks
+3. V65 lexical frequency definition and 1024-element zero-filled count-vector construction
+4. synthetic centered OLS recovery
+5. constant-logit-offset invariance
+6. PC1 eigenvector sign invariance
+7. exact `q = c + r` decomposition
+8. residual orthogonality to centered log-frequency
+9. Pearson/R2 identity within tolerance
+10. aggregate histogram/accounting helpers
+11. fail-closed handling of nonfinite/degenerate inputs
+12. no BLIND path or import
+13. no optimizer/checkpoint-write path
+14. no raw token text, hidden vector or per-position output in public metrics
+
+CPU preflight is not GPU authorization.
+
+## Frozen runtime/resource boundary
 
 A future implementation must remain bounded and read-only:
 
 - one CUDA device only
 - unchanged V62 checkpoint
 - evaluation/inference mode only
-- gradients globally disabled
+- `torch.set_grad_enabled(False)` plus inference/no-grad contexts
+- TRAIN batch size --> 2
+- VALIDATION batch size --> 4
+- score chunk --> 512
+- GPU peak-memory hard ceiling --> 6144 MiB
 - no optimizer
 - no checkpoint writes
 - no model-weight mutation
 - no BLIND access
 - no full hidden-state accumulation
 - no token text, private dialogue, per-position predictions or hidden vectors in GOGIT
-- only aggregate allowlisted integer metrics
-- GOGIT process budget <= 300 seconds
-- explicit memory ceiling required before GPU authorization
+- only the exact 30 allowlisted integer metrics
+- GOGIT process budget --> 300 seconds
+- OOM, timeout, nonfinite value, pin mismatch, replay mismatch or resource-gate failure --> abort without scientific GOGIT
 
 ## Authorization boundary
 
-This document is a **proposal only**.
+This protocol is now **frozen**, but no execution authorization follows from the freeze.
 
 It does not authorize:
 
 - START-DEV-FLOW V76
 - implementation execution
+- CPU preflight execution
 - GPU execution
 - new training
 - optimizer steps
@@ -230,7 +340,7 @@ It does not authorize:
 - FINAL-DEV-FLOW
 - a scientific conclusion
 
-The next allowed action is protocol review and freeze. Only after that may a V76 START draft/request be prepared for separate explicit authorization.
+A reviewed V76 START draft may now be prepared. Creating a START request or publishing the START requires a separate explicit operator authorization.
 
 ---
 
