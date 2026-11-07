@@ -108,6 +108,9 @@ SOURCE_PHASE03_V78 = (
 SOURCE_PHASE03_V78_PREFLIGHT = (
     "Mini-Kuzai V78 CPU-only implementation and safety preflight"
 )
+SOURCE_PHASE03_V78_LOOP_DIAG = (
+    "Mini-Kuzai V78 CPU regression loop diagnostic"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1939,6 +1942,11 @@ METRIC_KEYS = {
     "V78_PREFLIGHT_SCIENTIFIC_GOGIT_PRESENT",
     "V78_PREFLIGHT_GPU_LIMIT_MIB", "V78_PREFLIGHT_PATH_A_BATCH",
     "V78_PREFLIGHT_PATH_B_BATCH", "V78_PREFLIGHT_SCORE_CHUNK",
+    "V78_LOOP_PASS", "V78_LOOP_TESTS_TOTAL", "V78_LOOP_TESTS_FAILED",
+    "V78_LOOP_TESTS_ERRORS", "V78_LOOP_TESTS_SKIPPED",
+    "V78_LOOP_FIRST_FAIL_KIND", "V78_LOOP_FIRST_FAIL_TEST",
+    "V78_LOOP_FIRST_FAIL_LINE", "V78_LOOP_CPU_ONLY",
+    "V78_LOOP_GPU_EXECUTION", "V78_LOOP_BLIND_ACCESS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -2046,6 +2054,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V78
     if tracked == "tools/public-audits/phase03_v78_cpu_preflight_001.py":
         return SOURCE_PHASE03_V78_PREFLIGHT
+    if tracked == "tools/public-audits/phase03_v78_cpu_loop_diagnostic_001.py":
+        return SOURCE_PHASE03_V78_LOOP_DIAG
     return SOURCE
 
 
@@ -2181,6 +2191,7 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     v78_workstream = tracked in {
         "tools/public-audits/phase03_v78_identical_context_rebatching_numerical_control_001.py",
         "tools/public-audits/phase03_v78_cpu_preflight_001.py",
+        "tools/public-audits/phase03_v78_cpu_loop_diagnostic_001.py",
     }
 
     architecture_workstream = tracked.startswith(
