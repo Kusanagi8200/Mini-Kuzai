@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -27,7 +28,30 @@ def main():
         raise RuntimeError("V75 source import failure")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    module.main()
+    try:
+        module.main()
+    except (RuntimeError, ValueError, OSError) as exc:
+        message = str(exc).lower()
+        if "start receipt" in message:
+            code = 1
+        elif "prerequisite" in message or "report/fingerprint" in message:
+            code = 2
+        elif "train lexical" in message or "train token" in message or "train stream" in message:
+            code = 3
+        elif "geometry" in message or "covariance" in message or "eigen" in message or "spectral" in message:
+            code = 4
+        elif "validation lexical" in message or "prediction histogram" in message:
+            code = 5
+        elif "replay" in message or "v73/v74" in message:
+            code = 6
+        elif "gpu peak-memory" in message:
+            code = 7
+        elif "cuda" in message or "bf16" in message:
+            code = 8
+        else:
+            code = 99
+        print(f"V75_SAFE_FAILURE_CODE: {code}")
+        sys.exit(75)
 
 
 if __name__ == "__main__":
