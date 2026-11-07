@@ -30,13 +30,13 @@ Do not rerun this exact command --> the historical STEP_ID already exists and th
 
 Each completed run commits and pushes four **public numerical report** files when checks pass. No manual git add, commit or push is needed. Every new run requires a new, unique STEP_ID.
 
-## Current status - 2026-10-31
+## Current status - 2026-11-07
 
 GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest completed immutable step is -->
 
-`PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001`
+`PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001`
 
-Verified state --> V74 CORE + STRATA immutable GOGIT reports published; V75 START published and CPU preflight prepared for first GOGIT execution.
+Verified state --> V75 START published; CPU preflight and scientific TRAIN-fitted geometry GOGIT completed. Scientific publication commit `187b53ccfd90`; no training or BLIND access.
 
 Recent completed stages -->
 
@@ -59,6 +59,9 @@ Recent completed stages -->
 | V71 OUTPUT DOMINANCE ATTRIBUTION 001 | **GPU/GOGIT verified**; 275 of 9170 lexical top-1 predictions changed (3.00%), 5 to 7 distinct predicted IDs, CE worsened 4.732 to 5.048 |
 | V72 HIDDEN-STATE ANISOTROPY 001 | **GPU/GOGIT verified**; centered PC1 82.88%, effective rank 1.44 and 2889/9170 predictions changed under mean-centering |
 | V73 PRINCIPAL AXIS ATTRIBUTION 001 | **GPU/GOGIT verified**; CENTER 2832 correct / 15 distinct IDs, MINUS_PC1 1124 / 522, MINUS_PC12 818 / 715, PC1_ONLY 2455 / 2 |
+| V74 FREQUENCY PRIOR CORE + STRATA | **Dual GOGIT verified**; TRAIN unigram 2535/9170, PC1_ONLY 2455/9170, 2449 shared correct predictions |
+| V75 CPU PREFLIGHT 001 | **CPU/GOGIT verified**; 13 tests, exact 30-field schema, no GPU/training/BLIND |
+| V75 TRAIN-FITTED GEOMETRY TRANSFER 001 | **GPU/GOGIT verified**; TRAIN/VALIDATION PC1 abs cosine 99.95%, TRAIN_PC1_ONLY 2457/9170 with 2 IDs, TRAIN_MINUS_PC1 611/9170 with 663 IDs |
 
 GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67 through V73 have each published exactly 30 allowlisted numerical metrics; no training or semantic validation follows from these read-only diagnostics. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
