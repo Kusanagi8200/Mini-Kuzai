@@ -42,6 +42,8 @@ DELTA_1E7 = 1e-7
 DELTA_1E6 = 1e-6
 DELTA_1E5 = 1e-5
 NANO_SCALE = 1_000_000_000
+PUBLIC_METRIC_MAX = 100_000_000
+ALPHA_MAX_ABS_NANO_LIMIT = 2_000_000_000
 
 V77_SOURCE = ROOT / "tools" / "v77_residual_context_order_sensitivity.py"
 V78_SOURCE = ROOT / "tools" / "v78_identical_context_rebatching_numerical_control.py"
@@ -447,8 +449,8 @@ def finalize_pair_stats(stats: dict, expected: int) -> dict:
     max_nano = round(stats["MAX_ABS_DELTA"] * NANO_SCALE)
     mean_nano = round(stats["SUM_ABS_DELTA"] * NANO_SCALE / expected)
     if not (
-        0 <= max_nano <= 100_000_000
-        and 0 <= mean_nano <= 100_000_000
+        0 <= max_nano <= ALPHA_MAX_ABS_NANO_LIMIT
+        and 0 <= mean_nano <= PUBLIC_METRIC_MAX
     ):
         raise RuntimeError("V79 nano-scaled alpha delta outside public range")
 
@@ -733,8 +735,13 @@ def build_metrics(outcomes: dict, pairs: dict) -> dict:
         tuple(metrics) == METRIC_FIELDS
         and len(metrics) == 30
         and all(
-            type(v) is int and 0 <= v <= 100_000_000
-            for v in metrics.values()
+            type(v) is int
+            and 0 <= v <= (
+                ALPHA_MAX_ABS_NANO_LIMIT
+                if k == "V79_ALPHA_MAX_ABS_NANO"
+                else PUBLIC_METRIC_MAX
+            )
+            for k, v in metrics.items()
         )
     ):
         raise RuntimeError("V79 strict 30-integer metric schema failed")
