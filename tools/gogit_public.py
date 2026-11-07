@@ -111,6 +111,15 @@ SOURCE_PHASE03_V78_PREFLIGHT = (
 SOURCE_PHASE03_V78_LOOP_DIAG = (
     "Mini-Kuzai V78 CPU regression loop diagnostic"
 )
+SOURCE_PHASE03_V79 = (
+    "Mini-Kuzai V79 same-path context-order control"
+)
+SOURCE_PHASE03_V79_PREFLIGHT = (
+    "Mini-Kuzai V79 CPU-only implementation and safety preflight"
+)
+SOURCE_PHASE03_V79_LOOP_DIAG = (
+    "Mini-Kuzai V79 CPU regression loop diagnostic"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1947,6 +1956,34 @@ METRIC_KEYS = {
     "V78_LOOP_FIRST_FAIL_KIND", "V78_LOOP_FIRST_FAIL_TEST",
     "V78_LOOP_FIRST_FAIL_LINE", "V78_LOOP_CPU_ONLY",
     "V78_LOOP_GPU_EXECUTION", "V78_LOOP_BLIND_ACCESS",
+    "V79_PASS", "V79_BLIND_ACCESS", "V79_VAL_LEXICAL",
+    "V79_SAME_PATH_BATCH", "V79_PERTURBED_PREFIXES", "V79_UNCHANGED_PREFIXES",
+    "V79_ORIGINAL_CORRECT", "V79_ORIGINAL_DISTINCT",
+    "V79_ORIGINAL_TOP1_SHARE_BP", "V79_REVERSE_CORRECT",
+    "V79_REVERSE_DISTINCT", "V79_REVERSE_TOP1_SHARE_BP",
+    "V79_PRED_AGREE", "V79_PRED_CHANGED", "V79_SHARED_CORRECT",
+    "V79_ORIGINAL_ONLY_CORRECT", "V79_REVERSE_ONLY_CORRECT",
+    "V79_ALPHA_SIGN_AGREE", "V79_ALPHA_SIGN_CHANGED",
+    "V79_ALPHA_CORR_ABS_BP", "V79_ALPHA_DELTA_GT_1E7",
+    "V79_ALPHA_DELTA_GT_1E6", "V79_ALPHA_DELTA_GT_1E5",
+    "V79_ALPHA_MAX_ABS_NANO", "V79_ALPHA_MEAN_ABS_NANO",
+    "V79_INPUT_INVARIANTS", "V79_COVERAGE_BP",
+    "V79_PREFLIGHT_PASS", "V79_PREFLIGHT_CPU_ONLY",
+    "V79_PREFLIGHT_TESTS_TOTAL", "V79_PREFLIGHT_TESTS_FAILED",
+    "V79_PREFLIGHT_TESTS_ERRORS", "V79_PREFLIGHT_TESTS_SKIPPED",
+    "V79_PREFLIGHT_START_RECEIPT", "V79_PREFLIGHT_SCHEMA_FIELDS",
+    "V79_PREFLIGHT_ALLOWLIST_OK", "V79_PREFLIGHT_PINS_OK",
+    "V79_PREFLIGHT_DEPENDENCIES_OK", "V79_PREFLIGHT_GPU_EXECUTION",
+    "V79_PREFLIGHT_GPU_AUTHORIZED", "V79_PREFLIGHT_BLIND_ACCESS",
+    "V79_PREFLIGHT_SCIENTIFIC_GOGIT_PRESENT",
+    "V79_PREFLIGHT_GPU_LIMIT_MIB", "V79_PREFLIGHT_SAME_PATH_BATCH",
+    "V79_PREFLIGHT_SCORE_CHUNK", "V79_PREFLIGHT_V77_REPLAY",
+    "V79_PREFLIGHT_V78_REPLAY",
+    "V79_LOOP_PASS", "V79_LOOP_TESTS_TOTAL", "V79_LOOP_TESTS_FAILED",
+    "V79_LOOP_TESTS_ERRORS", "V79_LOOP_TESTS_SKIPPED",
+    "V79_LOOP_FIRST_FAIL_KIND", "V79_LOOP_FIRST_FAIL_TEST",
+    "V79_LOOP_FIRST_FAIL_LINE", "V79_LOOP_CPU_ONLY",
+    "V79_LOOP_GPU_EXECUTION", "V79_LOOP_BLIND_ACCESS",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -2056,6 +2093,12 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V78_PREFLIGHT
     if tracked == "tools/public-audits/phase03_v78_cpu_loop_diagnostic_001.py":
         return SOURCE_PHASE03_V78_LOOP_DIAG
+    if tracked == "tools/public-audits/phase03_v79_same_path_context_order_control_001.py":
+        return SOURCE_PHASE03_V79
+    if tracked == "tools/public-audits/phase03_v79_cpu_preflight_001.py":
+        return SOURCE_PHASE03_V79_PREFLIGHT
+    if tracked == "tools/public-audits/phase03_v79_cpu_loop_diagnostic_001.py":
+        return SOURCE_PHASE03_V79_LOOP_DIAG
     return SOURCE
 
 
@@ -2192,6 +2235,11 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v78_identical_context_rebatching_numerical_control_001.py",
         "tools/public-audits/phase03_v78_cpu_preflight_001.py",
         "tools/public-audits/phase03_v78_cpu_loop_diagnostic_001.py",
+    }
+    v79_workstream = tracked in {
+        "tools/public-audits/phase03_v79_same_path_context_order_control_001.py",
+        "tools/public-audits/phase03_v79_cpu_preflight_001.py",
+        "tools/public-audits/phase03_v79_cpu_loop_diagnostic_001.py",
     }
 
     architecture_workstream = tracked.startswith(
@@ -2352,6 +2400,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v78_workstream:
         # V78 rebatching control is numerical, not semantic validation or training.
+        return False
+    if v79_workstream:
+        # V79 same-path context-order control is numerical, not semantic validation.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
