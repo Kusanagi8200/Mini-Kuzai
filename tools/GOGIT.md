@@ -34,11 +34,11 @@ Each completed run commits and pushes four **public numerical report** files whe
 
 GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest **scientific** immutable step is -->
 
-`PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001`
+`PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001`
 
-The later workflow-only report `PHASE03-SMOLTALK-V75-FINAL-PREFLIGHT-001` verified read-only FINAL readiness before publication.
+The V76 CPU-only report `PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001` verified implementation and safety gates before the separately authorized GPU run.
 
-Verified state --> V75 scientific GOGIT, FINAL preflight, GitHub FINAL receipt and KUZ-DIN LinkedIn delivery are complete. V75 is CLOSED. V76 exists as a protocol proposal only; no START, GPU, training or BLIND access is authorized.
+Verified state --> V76 scientific GOGIT, GitHub FINAL receipt and KUZ-DIN LinkedIn delivery are complete. V76 is CLOSED. V77 now exists as a frozen context-order sensitivity protocol with START explicitly authorized; GPU, training and BLIND access remain unauthorized.
 
 Recent completed stages -->
 
@@ -65,6 +65,8 @@ Recent completed stages -->
 | V75 CPU PREFLIGHT 001 | **CPU/GOGIT verified**; 13 tests, exact 30-field schema, no GPU/training/BLIND |
 | V75 TRAIN-FITTED GEOMETRY TRANSFER 001 | **GPU/GOGIT verified**; TRAIN/VALIDATION PC1 abs cosine 99.95%, TRAIN_PC1_ONLY 2457/9170 with 2 IDs, TRAIN_MINUS_PC1 611/9170 with 663 IDs |
 | V75 FINAL PREFLIGHT 001 | **CPU/read-only GOGIT verified**; report, START receipt and Discussion #6 validated; publication disabled during preflight; later FINAL completed separately |
+| V76 CPU PREFLIGHT 001 | **CPU/GOGIT verified**; 15 tests, exact 30-field schema, dependency pins, zero GPU execution/training/BLIND |
+| V76 FREQUENCY-RESIDUALIZED PC1 CONTROL 001 | **GPU/GOGIT verified**; frequency R2 7.75%, residual energy 92.25%, residual 2594/9170 correct with only 2 predicted IDs |
 
 GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67 through V73 have each published exactly 30 allowlisted numerical metrics; no training or semantic validation follows from these read-only diagnostics. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
@@ -135,13 +137,36 @@ cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && ( set -euo pipefail; git fetch --no-tag
 
 After successful publication, the operator requests `GOGIT` in ChatGPT. A PASS result means only that FINAL is technically ready for a later explicit authorization. It does not authorize or publish FINAL.
 
-## V76 proposed scientific audit
+## V76 closed scientific audit and V77 next protocol
 
-The next research item is [V76 Frequency-Residualized PC1 Output Control 001](../phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md).
+V76 is closed.
 
-The protocol is now **frozen**, with STEP_ID `PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001`, an exact 30-field schema, 1024-way centered output-profile OLS decomposition, dependency pins, CPU-test requirements and a 6144 MiB GPU ceiling. The [V76 START draft](../docs/discussions/steps/V76-start.md) is prepared but unpublished.
+Scientific STEP_ID -->
 
-No V76 public-audit implementation, GOGIT execution, START request, GPU run, training or BLIND access is authorized by the protocol freeze or draft alone.
+`PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001`
+
+CPU preflight STEP_ID -->
+
+`PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001`
+
+Verified V76 findings -->
+
+- axis-frequency absolute correlation --> 27.85%
+- frequency OLS R2 --> 7.75%
+- residual-energy share --> 92.25%
+- residual correct --> 2594 / 9170
+- residual distinct predicted IDs --> 2
+- residual dominant share --> 70.43%
+- no training
+- no BLIND access
+
+The next protocol is [V77 Residual Context-Order Sensitivity Control 001](../phases/MINI-KUZAI-PHASE-03-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001.md).
+
+V77 freezes an exact 30-field scientific schema around a deterministic `REVERSE_HISTORY_KEEP_LAST` counterfactual. The transform preserves target, prefix length, token multiset, BOS and immediate preceding token while reversing only earlier context order.
+
+The [V77 START source](../docs/discussions/steps/V77-start.md) is committed and START is explicitly authorized by the operator.
+
+V77 START does not authorize scientific GPU execution, training, optimizer steps, checkpoint writes or BLIND access. CPU implementation/preflight may be prepared only after the START receipt is verified.
 
 ## Adding a future audit
 
