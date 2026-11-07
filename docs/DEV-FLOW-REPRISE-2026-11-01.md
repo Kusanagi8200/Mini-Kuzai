@@ -3,7 +3,7 @@
 Original checkpoint --> 2026-11-01
 Updated --> 2026-11-07
 
-Status --> **V74 CLOSED / V75 CLOSED / GITHUB+LINKEDIN START+FINAL VERIFIED / NEXT STEP V76 PROTOCOL ONLY**
+Status --> **V74 CLOSED / V75 CLOSED / V76 PROTOCOL FROZEN / START DRAFT PREPARED / START NOT AUTHORIZED**
 
 ## Verified two-host publishing topology
 
@@ -99,11 +99,13 @@ Safety state --> `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `V75_BLIND_ACCES
 
 1. Keep V62 frozen and BLIND closed
 2. Treat V75 START, scientific GOGIT, FINAL and LinkedIn delivery as immutable completed history
-3. Review the proposed V76 protocol only
-4. Do not create V76 START request until its scientific question, TRAIN-only calibration, metric schema, CPU tests and resource ceiling are frozen
-5. Do not authorize any new optimizer step or BLIND access from V75 closure
+3. Use the frozen V76 protocol at `phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md`
+4. Review the committed but unpublished `docs/discussions/steps/V76-start.md`
+5. Only on a separate explicit operator authorization, create `automation/dev-flow/requests/V76-start.json` and publish START
+6. After START receipt verification, implementation and CPU preflight may be prepared under the frozen protocol; GPU remains separately unauthorized
+7. Do not authorize any optimizer step or BLIND access from V75 closure
 
-**PAUSE BOUNDARY** --> V75 is fully closed. The next allowed work is V76 protocol design and review only.
+**PAUSE BOUNDARY** --> V75 is fully closed. V76 protocol and START draft are ready. The next boundary is explicit START-DEV-FLOW V76 authorization.
 
 ---
 
