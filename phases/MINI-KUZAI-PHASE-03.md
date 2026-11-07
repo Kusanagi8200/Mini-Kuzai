@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-11-07
 
-**V75 --> CLOSED AND DELIVERED. V76 --> PROTOCOL FROZEN / START DRAFT PREPARED / NOT STARTED.**
+**V76 --> CLOSED AND DELIVERED. V77 --> PROTOCOL FROZEN / START AUTHORIZED / RECEIPT PENDING.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -475,47 +475,53 @@ V62 checkpoint             --> cycle 2, stopped and frozen
 V62 optimizer steps        --> 69
 V62 exposed tokens         --> 597982
 V62 VALIDATION CE          --> 4.732514
-V74 TRAIN unigram correct  --> 2535 / 9170
-V74 PC1/unigram shared     --> 2449 correct
-V75 GOGIT                  --> TRAIN-FITTED GEOMETRY TRANSFER VERIFIED
 V75 TRAIN PC1 share        --> 90.19%
 V75 TRAIN/VAL PC1 cosine   --> 99.95% absolute
-V75 TRAIN_PC1_ONLY         --> 2457 correct / 2 distinct IDs
-V75 TRAIN_MINUS_PC1        --> 611 correct / 663 distinct IDs
-V75 GitHub START           --> PUBLISHED / Discussion #6
-V75 GitHub FINAL           --> PUBLISHED / comment #19458251
-V75 LinkedIn START         --> PUBLISHED
-V75 LinkedIn FINAL         --> PUBLISHED / valid URN verified
-KUZ-DIN journal            --> 4 PUBLISHED / 0 PREPARED / 0 IN_FLIGHT
-V75 training started       --> NO
-V75 BLIND access           --> 0
+V76 frequency R2           --> 7.75%
+V76 residual energy        --> 92.25%
+V76 PC1 replay             --> 2457 correct / 2 distinct IDs
+V76 frequency component    --> 2451 correct / 2 distinct IDs
+V76 frequency residual     --> 2594 correct / 2 distinct IDs
+V76 TRAIN unigram          --> 2535 correct
+V76 GitHub START           --> PUBLISHED / Discussion #7
+V76 GitHub FINAL           --> PUBLISHED / comment #19459204
+V76 LinkedIn START         --> PUBLISHED
+V76 LinkedIn FINAL         --> PUBLISHED / valid URN verified
+KUZ-DIN journal            --> 6 PUBLISHED / 0 PREPARED / 0 IN_FLIGHT
+V76 training started       --> NO
+V76 BLIND access           --> 0
 Checkpoint changed         --> NO
-V76                        --> FREQUENCY-RESIDUALIZED PC1 CONTROL FROZEN
-V76 START draft            --> PREPARED / UNPUBLISHED
-V76 START authorized       --> NO
-V76 GPU authorized         --> NO
+V77                        --> RESIDUAL CONTEXT-ORDER SENSITIVITY CONTROL FROZEN
+V77 START source           --> PREPARED
+V77 START authorized       --> YES
+V77 START receipt          --> PENDING
+V77 GPU authorized         --> NO
 New training authorized    --> NO
-Next workstream            --> explicit V76 START authorization boundary
+Next workstream            --> publish V77 START then CPU implementation/preflight
 ```
 
-The current scientific conclusion remains narrow. V75 shows that the dominant output-head hidden-state direction is stable across TRAIN and VALIDATION rather than being primarily a VALIDATION PCA artifact. V74 and V75 together also show that this stable direction is strongly associated with output-frequency concentration.
+The current scientific conclusion remains narrow.
 
-V76 now freezes a TRAIN-only output-profile decomposition: center the stable TRAIN-PC1 output signature and `log1p(TRAIN lexical frequency)`, fit one FP64 OLS frequency component over all 1024 output IDs, then score the frequency component and orthogonal residual separately on the same frozen VALIDATION population.
+V75 established that the dominant PC1 geometry transfers from TRAIN to VALIDATION. V76 then showed that static TRAIN lexical frequency explains only 7.75% of the centered PC1 output-profile energy. The orthogonal residual retains 92.25% and reaches 2594/9170 correct frozen VALIDATION predictions, but remains collapsed to only two predicted IDs.
 
-Immutable V75 closure evidence -->
+This makes context dependence the next unresolved question.
 
-- [V75 closed protocol and findings](MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md)
-- [V75 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json)
-- [V75 FINAL preflight GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-FINAL-PREFLIGHT-001.json)
-- [V75 FINAL receipt](../automation/dev-flow/receipts/V75-final.json)
-- [V75 Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6)
-- [KUZ-DIN V75 FINAL delivery audit](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V75-FINAL-DELIVERY-001.json)
+V77 freezes one deterministic context-order intervention. For each VALIDATION target, the counterfactual preserves target, prefix length, prefix token multiset, BOS and the immediate preceding token while reversing only the earlier prefix history. The frozen V76 residual profile is reused unchanged. V77 therefore measures whether the residual coordinate and residual-only top-1 decision respond to earlier-context order.
 
-Frozen next protocol --> [V76 Frequency-Residualized PC1 Output Control 001](MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md).
+Immutable V76 closure evidence -->
 
-Prepared but unpublished START source --> [V76-start.md](../docs/discussions/steps/V76-start.md).
+- [V76 closed protocol and findings](MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md)
+- [V76 CPU preflight GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001.json)
+- [V76 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.json)
+- [V76 FINAL receipt](../automation/dev-flow/receipts/V76-final.json)
+- [V76 Discussion #7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7)
+- [KUZ-DIN V76 FINAL delivery audit](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V76-FINAL-DELIVERY-001.json)
 
-The previous V62 and V75 authorizations are historical only. The V76 protocol freeze and START draft do not authorize V76 START publication, CPU implementation work, GPU execution, any optimizer step or BLIND access.
+Frozen next protocol --> [V77 Residual Context-Order Sensitivity Control 001](MINI-KUZAI-PHASE-03-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001.md).
+
+Reviewed START source --> [V77-start.md](../docs/discussions/steps/V77-start.md).
+
+The operator has explicitly authorized START-DEV-FLOW V77. This does not authorize V77 GPU execution, training, optimizer steps, checkpoint modification, BLIND access or FINAL publication.
 
 ## Historical checkpoint chronology - V53 to V59
 
