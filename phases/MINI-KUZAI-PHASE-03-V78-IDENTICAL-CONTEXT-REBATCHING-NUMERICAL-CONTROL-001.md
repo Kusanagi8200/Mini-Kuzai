@@ -3,7 +3,7 @@
 Date --> 2026-11-07
 Frozen review --> 2026-11-07
 
-Status --> **PROTOCOL FROZEN / START AUTHORIZED BY OPERATOR / CPU PREFLIGHT ONLY AFTER START / GPU NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS**
+Status --> **SCIENTIFIC RUN CLOSED / GOGIT PASS / GITHUB START+FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING / NO TRAINING / NO BLIND ACCESS**
 
 ## Why V78 follows V77
 
@@ -288,30 +288,37 @@ A future V78 scientific implementation must remain bounded and read-only:
 - GOGIT process budget --> 300 seconds
 - OOM, timeout, nonfinite value, provenance mismatch, replay mismatch or input-identity failure --> abort without scientific GOGIT
 
-## Authorization boundary
+## Verified closure
 
-The operator has explicitly authorized **START-DEV-FLOW V78**.
+The V78 authorization sequence is consumed.
 
-That authorization permits:
+Completed and verified:
 
-- committing this frozen V78 protocol
-- committing the reviewed V78 START source
-- committing an exact V78 START request
-- publishing one V78 START DEV-FLOW event
-- preparing implementation and CPU-only preflight after START receipt verification
+- START-DEV-FLOW V78 --> published in Discussion #9
+- CPU preflight --> PASS, 20 / 20 tests
+- bounded read-only GPU scientific run --> completed
+- scientific GOGIT --> `V78_PASS=1`
+- identical logical prefixes --> 9170 / 9170
+- top-1 prediction changes under rebatching alone --> 0
+- alpha sign changes under rebatching alone --> 0
+- PATH_A correct --> 2594
+- PATH_B correct --> 2594
+- PATH_A dominant share --> 7043 basis points
+- PATH_B dominant share --> 7043 basis points
+- absolute alpha correlation --> 10000 basis points
+- alpha delta above 1e-7 --> 4107
+- alpha delta above 1e-6 --> 1226
+- alpha delta above 1e-5 --> 1209
+- maximum absolute alpha delta --> 10442495 nano-units
+- mean absolute alpha delta --> 238663 nano-units
+- FINAL-DEV-FLOW V78 --> GitHub comment #19461051 published
+- FINAL receipt --> `PUBLISHED`
 
-It does **not** authorize:
+Scientific interpretation --> rebatching/execution-path differences produce continuous numerical alpha noise but no discrete prediction, sign or correctness change. The five discrete V77 changes are therefore not explained by rebatching alone.
 
-- V78 scientific GPU execution
-- new model training
-- optimizer steps
-- checkpoint modification
-- BLIND access
-- generation
-- FINAL-DEV-FLOW V78
-- any scientific success claim
+Production boundary --> the GitHub FINAL is verified. LinkedIn FINAL delivery must be verified independently from KUZ-DIN before it is described as production-delivered.
 
-GPU execution requires a later explicit operator authorization after a verified CPU preflight.
+No V78 authorization carries forward to V79, new training, optimizer steps, checkpoint mutation, BLIND access or generation.
 
 ---
 
