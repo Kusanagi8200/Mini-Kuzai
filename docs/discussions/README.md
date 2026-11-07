@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions and LinkedIn DEV-FLOW
 
-Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 START PUBLISHED / CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED**
+Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 SCIENTIFIC CLOSED + GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING / V79 PREPARED ONLY**
 
 Target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -20,7 +20,7 @@ Repository --> `Kusanagi8200/Mini-Kuzai` (`R_kgDOUI2cCw`)
 | [#6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6) | V75 TRAIN-fitted geometry START and FINAL | Completed |
 | [#7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7) | V76 frequency-residualized PC1 START and FINAL | Completed |
 | [#8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8) | V77 residual context-order sensitivity START and FINAL | Completed |
-| [#9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9) | V78 identical-context rebatching numerical control START | Started |
+| [#9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9) | V78 identical-context rebatching numerical control START and FINAL | GitHub completed; LinkedIn FINAL verification pending |
 
 The historical posts were transferred to this repository and verified in the `Development Log` category. [`tools/github_discussions_history.py`](../../tools/github_discussions_history.py) is a separate historical tool and must not be invoked in live mode for new steps.
 
@@ -116,6 +116,29 @@ The next version is V77. Its [frozen protocol](../../phases/MINI-KUZAI-PHASE-03-
 START-DEV-FLOW V77 is published in [Discussion #8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8). The exact [V77 START request](../../automation/dev-flow/requests/V77-start.json) and verified [START receipt](../../automation/dev-flow/receipts/V77-start.json) are committed.
 
 V77 START authorizes implementation and CPU-only preflight preparation after receipt verification. It does not authorize GPU scientific execution, training, BLIND access or FINAL.
+
+## V78 scientific and GitHub closure - 2026-11-07
+
+- [V78 protocol and verified findings](../../phases/MINI-KUZAI-PHASE-03-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001.md)
+- [V78 START source](steps/V78-start.md) --> [Discussion #9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9)
+- [V78 START receipt](../../automation/dev-flow/receipts/V78-start.json) --> `PUBLISHED`
+- [V78 CPU preflight](../../reports/assistant-results/history/PHASE03-SMOLTALK-V78-CPU-PREFLIGHT-001.json) --> PASS
+- [V78 scientific GOGIT](../../reports/assistant-results/history/PHASE03-SMOLTALK-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001.json) --> `V78_PASS=1`
+- [V78 FINAL request](../../automation/dev-flow/requests/V78-final.json) --> explicitly authorized
+- [V78 FINAL receipt](../../automation/dev-flow/receipts/V78-final.json) --> `PUBLISHED`
+- GitHub FINAL --> [comment #19461051](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9#discussioncomment-19461051)
+
+Verified scientific result --> identical logical prefixes evaluated through batch-4 FULL_CONTEXT and batch-32 prefix/rebatch paths produced 0/9170 top-1 changes, 0 alpha-sign changes and identical 2594/9170 correctness. Continuous alpha noise remained measurable, so the V77 five discrete changes are not explained by rebatching alone.
+
+Production boundary --> GitHub FINAL is verified. LinkedIn FINAL delivery must still be verified independently from KUZ-DIN before production delivery is declared complete.
+
+## V79 prepared state - 2026-11-07
+
+The next protocol is [V79 Same-Path Context-Order Control](../../phases/MINI-KUZAI-PHASE-03-V79-SAME-PATH-CONTEXT-ORDER-CONTROL-001.md).
+
+Its reviewed [START source](steps/V79-start.md) is committed and publisher-compatible, but **no V79 START request exists**.
+
+V79 is prepared only. START-DEV-FLOW, CPU execution, GPU execution, training, BLIND access and FINAL remain unauthorized.
 
 ## Recovery and change policy
 
