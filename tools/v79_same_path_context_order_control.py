@@ -424,9 +424,17 @@ def finalize_pair_stats(stats: dict, expected: int) -> dict:
         if stats[left] + stats[right] != expected:
             raise RuntimeError("V79 paired partition accounting failed")
 
+    perturbation_ok = (
+        stats["PERTURBED_PREFIXES"] + stats["UNCHANGED_PREFIXES"] == expected
+    )
+    if expected == VAL_LEXICAL:
+        perturbation_ok = (
+            stats["PERTURBED_PREFIXES"] == PERTURBED_PREFIXES
+            and stats["UNCHANGED_PREFIXES"] == UNCHANGED_PREFIXES
+        )
+
     if not (
-        stats["PERTURBED_PREFIXES"] == PERTURBED_PREFIXES
-        and stats["UNCHANGED_PREFIXES"] == UNCHANGED_PREFIXES
+        perturbation_ok
         and stats["INPUT_INVARIANTS"] == expected
         and 0 <= stats["SHARED_CORRECT"] <= expected
         and 0 <= stats["ORIGINAL_ONLY_CORRECT"] <= expected
