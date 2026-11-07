@@ -34,11 +34,11 @@ Each completed run commits and pushes four **public numerical report** files whe
 
 GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest **scientific** immutable step is -->
 
-`PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001`
+`PHASE03-SMOLTALK-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001`
 
-The V76 CPU-only report `PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001` verified implementation and safety gates before the separately authorized GPU run.
+The V77 CPU-only report `PHASE03-SMOLTALK-V77-CPU-PREFLIGHT-001` verified implementation and safety gates before the separately authorized GPU run.
 
-Verified state --> V76 is CLOSED. V77 START is published in Discussion #8, CPU preflight is PASS with 18/18 tests, and the bounded read-only V77 GPU scientific run is explicitly authorized. Training and BLIND access remain unauthorized.
+Verified state --> V77 is CLOSED and delivered. Its reverse-history intervention changed only 5/9170 top-1 predictions while preserving 2594/9170 correct predictions in both modes; alpha correlation remained 99.99%. V78 START is published in Discussion #9 to measure the numerical floor of the two execution paths with identical logical inputs. V78 GPU, training and BLIND access remain unauthorized.
 
 Recent completed stages -->
 
@@ -67,6 +67,8 @@ Recent completed stages -->
 | V75 FINAL PREFLIGHT 001 | **CPU/read-only GOGIT verified**; report, START receipt and Discussion #6 validated; publication disabled during preflight; later FINAL completed separately |
 | V76 CPU PREFLIGHT 001 | **CPU/GOGIT verified**; 15 tests, exact 30-field schema, dependency pins, zero GPU execution/training/BLIND |
 | V76 FREQUENCY-RESIDUALIZED PC1 CONTROL 001 | **GPU/GOGIT verified**; frequency R2 7.75%, residual energy 92.25%, residual 2594/9170 correct with only 2 predicted IDs |
+| V77 RESIDUAL CONTEXT-ORDER SENSITIVITY 001 | **GPU/GOGIT verified**; reverse-history changed 5/9170 top-1 predictions, FULL and REVERSE both 2594/9170 correct, alpha correlation 99.99% |
+| V78 IDENTICAL-CONTEXT REBATCHING NUMERICAL CONTROL | **START published**; protocol frozen, CPU-only implementation/preflight authorized, GPU not authorized |
 
 GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67 through V73 have each published exactly 30 allowlisted numerical metrics; no training or semantic validation follows from these read-only diagnostics. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
@@ -137,36 +139,37 @@ cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && ( set -euo pipefail; git fetch --no-tag
 
 After successful publication, the operator requests `GOGIT` in ChatGPT. A PASS result means only that FINAL is technically ready for a later explicit authorization. It does not authorize or publish FINAL.
 
-## V76 closed scientific audit and V77 next protocol
+## V77 closed scientific audit and V78 next protocol
 
-V76 is closed.
+V77 is closed.
 
 Scientific STEP_ID -->
 
-`PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001`
+`PHASE03-SMOLTALK-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001`
 
 CPU preflight STEP_ID -->
 
-`PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001`
+`PHASE03-SMOLTALK-V77-CPU-PREFLIGHT-001`
 
-Verified V76 findings -->
+Verified V77 findings -->
 
-- axis-frequency absolute correlation --> 27.85%
-- frequency OLS R2 --> 7.75%
-- residual-energy share --> 92.25%
-- residual correct --> 2594 / 9170
-- residual distinct predicted IDs --> 2
-- residual dominant share --> 70.43%
+- FULL correct --> 2594 / 9170
+- REVERSE correct --> 2594 / 9170
+- top-1 prediction changes --> 5 / 9170
+- alpha sign changes --> 5 / 9170
+- absolute alpha correlation --> 99.99%
+- alpha delta above 1e-7 --> 9123 / 9170
+- actually perturbed prefixes --> 9062 / 9170
 - no training
 - no BLIND access
 
-The next protocol is [V77 Residual Context-Order Sensitivity Control 001](../phases/MINI-KUZAI-PHASE-03-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001.md).
+The next protocol is [V78 Identical-Context Rebatching Numerical Control 001](../phases/MINI-KUZAI-PHASE-03-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001.md).
 
-V77 freezes an exact 30-field scientific schema around a deterministic `REVERSE_HISTORY_KEEP_LAST` counterfactual. The transform preserves target, prefix length, token multiset, BOS and immediate preceding token while reversing only earlier context order.
+V78 evaluates the exact same logical prefixes through the V77 FULL_CONTEXT batch-4 path and prefix/rebatch batch-32 path. It freezes a 30-field schema measuring prediction, sign and alpha differences at 1e-7, 1e-6 and 1e-5 thresholds.
 
-The [V77 START source](../docs/discussions/steps/V77-start.md) is published in [Discussion #8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8), with a committed [START receipt](../automation/dev-flow/receipts/V77-start.json).
+The [V78 START source](../docs/discussions/steps/V78-start.md) is published in [Discussion #9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9), with a committed [START receipt](../automation/dev-flow/receipts/V78-start.json).
 
-V77 CPU-only preflight is PASS. The operator has now separately authorized the bounded read-only scientific GPU execution. Training, optimizer steps, checkpoint writes and BLIND access remain prohibited.
+V78 START authorizes implementation and CPU-only preflight only. Scientific GPU execution, training, optimizer steps, checkpoint writes and BLIND access remain prohibited.
 
 ## Adding a future audit
 
