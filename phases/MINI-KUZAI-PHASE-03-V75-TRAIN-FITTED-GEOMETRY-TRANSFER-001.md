@@ -1,55 +1,225 @@
 # Mini-Kuzai Phase 03 - V75 TRAIN-Fitted Geometry Transfer 001
 
 Date --> 2026-11-01
+Frozen review --> 2026-11-07
 
-Status --> **PROTOCOL PROPOSAL ONLY / NOT AUTHORIZED / NOT STARTED / NO GOGIT / NO TRAINING / NO BLIND ACCESS**
+Status --> **PROTOCOL FROZEN / START-DEV-FLOW AUTHORIZED / GPU EXECUTION NOT YET AUTHORIZED / NO TRAINING / NO BLIND ACCESS**
 
 ## Why V75 follows V74
 
-The [verified V74 frequency-prior audit](MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) established that PC1_ONLY correctly predicts 2455 of 9170 VALIDATION lexical targets, while a context-free TRAIN_UNIGRAM predicts 2535. Of the 2455 PC1_ONLY successes, 2449 coincide with unigram successes. This supports a strong frequency-prior confound, not a causal explanation of PC1 or a semantic capability claim.
+The [verified V74 frequency-prior audit](MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) established that PC1_ONLY correctly predicts 2455 of 9170 frozen VALIDATION lexical targets, while the context-free TRAIN_UNIGRAM predicts 2535. Of the 2455 PC1_ONLY successes, 2449 coincide with unigram successes.
 
-[V72](MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) and [V73](MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md) estimated mean and principal directions **on VALIDATION itself**, then scored those same positions. Such in-sample geometric fitting may overstate the transferability of the measured directions.
+This supports a strong frequency-prior confound. It does not provide a causal explanation of PC1 and does not demonstrate semantic capability.
 
-## Proposed scientific question
+[V72](MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) and [V73](MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md) fitted the centered mean and principal directions on VALIDATION itself and then scored the same population. V75 removes that in-sample geometry fit.
 
-**Do the dominant hidden-state directions estimated exclusively from frozen TRAIN states transfer to the separate frozen VALIDATION population, or is the observed PC1 dominance partly an artifact of VAL-fitted geometry?**
+## Frozen scientific question
 
-The test concerns **geometric transfer**, not model retraining, deployment changes, causal attribution or independent language competence.
+**Do dominant output-head hidden-state directions estimated exclusively from the frozen TRAIN population transfer to the separate frozen VALIDATION population, or was part of the V72/V73 PC1 dominance specific to VALIDATION-fitted geometry?**
 
-## Proposed strictly read-only study
+V75 is a read-only geometric transfer study. It is not model retraining, a deployment change, a semantic evaluation, a generation benchmark or causal attribution.
 
-1. Verify the original frozen V62 cycle-2 checkpoint, dataset/tokenizer lineage and original V65, V72, V73 and V74 immutable GOGIT metrics and source fingerprints
-2. Define the TRAIN calibration population **before execution**, using only frozen authorized TRAIN records and a deterministic lexical token-position inclusion rule. Verify its size and disjoint split identity without exporting raw text or token IDs
-3. Run one bounded, inference-only pass over frozen TRAIN, capturing only the 128-dimensional output-head hidden states needed to accumulate the FP64 mean and covariance. Use bounded chunks, no gradients, no optimization, no tensor artifacts and no activation exports
-4. Compute a TRAIN-fitted centered mean and PC1 once, **without consulting VALIDATION to fit or select axes, thresholds or hyperparameters**
-5. Apply the fixed TRAIN mean and PC1 to the exact 9170 lexical positions of frozen VALIDATION. Compare ORIGINAL, TRAIN_CENTER, TRAIN_PC1_ONLY and TRAIN_MINUS_PC1 using the unchanged tied output matrix
-6. Predeclare the relevant fixed V73 VAL-fitted metrics as descriptive references, and the V74 TRAIN_UNIGRAM baseline as an explicit frequency-only control. Quantify the TRAIN-PC1 versus VAL-PC1 unsigned cosine alignment only as a retrospective, non-tuning diagnostic
-7. Report aggregate top-1 accuracy, distinct predicted IDs, top-token dominance, gold byte/merged-BPE correct counts, and TRAIN-prior overlaps without exposing per-position outputs or content
-8. Publish only strictly allowlisted, nonnegative integer aggregate metrics through GOGIT after a frozen protocol, exact schema, reproducibility tests and authorization have passed
+## Frozen data and checkpoint boundary
 
-## Mandatory scientific controls
+V75 must reuse the original stopped V62 cycle-2 state and the same frozen corpus/tokenizer lineage already verified by V65, V73 and V74.
 
-- Preserve **V62** after 69 optimizer steps and 597982 exposed tokens. Never resume V61, train, update weights, optimizer, model state, checkpoints or dataset
-- Keep the **BLIND TEST closed**. TRAIN is the geometric fitting population and VALIDATION is the only scoring population. Do not use VALIDATION for fitting, selecting or refitting TRAIN axes
-- Preserve original V72/V73 VALIDATION-fit numbers for audit comparison. A new TRAIN-fit result need not equal those values and must not be tuned to match them
-- Fail closed on missing data provenance, inconsistent lexical denominator, unexpected model/source hash, CUDA errors, nonfinite statistics or resource limit
-- Predeclare numerical metric names, units, strict `30 metrics per GOGIT report` limit, orientation/sign-invariant comparisons, stop gates and expected sample coverage **before running GPU inference**
-- Require independent offline tests of covariance accumulation, projection algebra, deterministic selection, spectral degeneracy, source immutability, and error gates
-- No GitHub public source can include private conversations, examples, raw hidden states, tokenizer IDs, model weights, prediction vectors or training data
-- Declare that teacher-forced VALIDATION scoring remains limited. Even a successful TRAIN-fit transfer does not demonstrate generation quality, conversation skills or persona learning
+Mandatory invariants -->
 
-## Current authorization boundary
+- V62 status --> STOPPED
+- Stop reason --> MILESTONE_REVIEW_REQUIRED
+- Optimizer steps --> 69
+- Exposure tokens --> 597982
+- Resume flag --> false
+- BLIND access during training --> false
+- TRAIN lexical population --> 294726 positions
+- TRAIN observed token types --> 891
+- VALIDATION lexical scoring population --> exactly 9170 positions
+- Hidden dimension --> 128
+- V73 VALIDATION-fitted PC1 spectral share --> 8288 basis points
+- V73 VALIDATION-fitted PC1_ONLY correct --> 2455
+- V74 TRAIN_UNIGRAM correct --> 2535
+- Original frozen FP32 correct --> 2673
+- Original frozen FP32 distinct predicted IDs --> 5
+- Original frozen FP32 dominant top-1 share --> 7255 basis points
 
-This document is **planning material only**. It is not a frozen implementation specification and does not authorize launching an audit, GPU work, training, accessing BLIND or publishing START-DEV-FLOW. The exact schema, computation resources and leakage gates require a separate review in the next discussion.
+Any mismatch blocks V75.
 
-A [V75 START draft](../docs/discussions/steps/V75-start.md) is prepared for future review. It **must not be published until the operator explicitly requests START-DEV-FLOW for V75** after accepting the proposed scope. No `V75-start.json`, `V75-final.json`, run, checkpoint or GOGIT is created by this preparation.
+The BLIND TEST remains closed. No BLIND file, record, metric or aggregate may be read.
 
-## Recommended next steps
+## Frozen TRAIN calibration population
 
-1. Confirm the two-host DEV-FLOW pipeline remains healthy after the KUZ-DIN legacy V74 hash-compatibility patch
-2. Review and freeze V75 protocol, TRAIN-only fit selection, deterministic algorithm, GPU resource budget and 30-field public GOGIT schema
-3. Create CPU-only unit tests and a fail-closed read-only GPU runner
-4. Only after explicit approval, publish V75 START and perform the controlled study, followed by numeric GOGIT and a separately authorized FINAL
+The calibration population is the complete ordered lexical TRAIN population that reproduces the V65/V74 inventory of **294726 lexical positions and 891 observed token types**.
+
+Use the same lexical inclusion rule already accepted by the frozen token-frequency diagnostics -->
+
+- include only lexical next-token positions from the authorized frozen TRAIN stream
+- exclude padding and special/non-lexical positions
+- preserve corpus and sequence order
+- do not sample, shuffle, rebalance, stratify or tune the population
+- do not inspect VALIDATION when deciding the TRAIN calibration population
+
+If the resulting TRAIN position count is not exactly 294726, fail closed.
+
+## Frozen geometry algorithm
+
+For every accepted TRAIN lexical position, run the unchanged V62 model in evaluation and inference-only mode and obtain the 128-dimensional output-head hidden state.
+
+No hidden-state list may be retained. Accumulate only streaming FP64 sufficient statistics in deterministic corpus order using a numerically stable online mean/covariance algorithm.
+
+The frozen computation is -->
+
+1. compute the FP64 TRAIN mean vector `mu_train`
+2. compute the centered 128 x 128 FP64 TRAIN covariance
+3. require all statistics to be finite and covariance symmetry to pass the implementation tolerance
+4. compute the largest centered eigenpair
+5. fail if the leading eigenvalue is nonpositive or if the implementation's predeclared spectral-degeneracy gate is triggered
+6. retain only the in-memory TRAIN mean and leading unit eigenvector for the scoring stage
+7. do not persist hidden states, eigenvectors, prediction vectors, token IDs or private text
+
+Eigenvector sign is scientifically irrelevant because all reported projection and alignment quantities are sign-invariant.
+
+## Frozen VALIDATION scoring
+
+Apply the fixed TRAIN-derived `mu_train` and PC1 to the exact same 9170 frozen lexical VALIDATION positions used in V73/V74.
+
+With `h` the unchanged output-head hidden state, `u_train` the fixed TRAIN PC1 and `W` the unchanged tied bias-free output matrix -->
+
+| Mode | Hidden-state input to output head |
+| --- | --- |
+| ORIGINAL | `h` |
+| TRAIN_CENTER | `h - mu_train` |
+| TRAIN_PC1_ONLY | `((h - mu_train)·u_train)u_train` |
+| TRAIN_MINUS_PC1 | `(h - mu_train) - ((h - mu_train)·u_train)u_train` |
+
+No VALIDATION-derived quantity may alter `mu_train`, `u_train`, thresholds, hyperparameters, chunking or inclusion rules.
+
+For retrospective comparison only, recompute the V73 VALIDATION-fitted PC1 under the frozen V73 definition and report the absolute cosine alignment with TRAIN PC1. That diagnostic must not feed back into any V75 scoring choice.
+
+## Frozen public numerical schema
+
+V75 uses one immutable GOGIT report with exactly **30 nonnegative integer metrics**.
+
+STEP_ID --> `PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001`
+
+The exact fields are -->
+
+1. `SEMANTIC_VALIDATION_COMPLETE`
+2. `TRAINING_AUTHORIZED`
+3. `TRAINING_STARTED`
+4. `V75_PASS`
+5. `V75_BLIND_ACCESS`
+6. `V75_TRAIN_LEXICAL`
+7. `V75_TRAIN_TYPES`
+8. `V75_VAL_LEXICAL`
+9. `V75_TRAIN_STATE_COUNT`
+10. `V75_HIDDEN_DIM`
+11. `V75_ORIG_CORRECT`
+12. `V75_ORIG_DISTINCT`
+13. `V75_ORIG_TOP1_SHARE_BP`
+14. `V75_TRAIN_CENTER_CORRECT`
+15. `V75_TRAIN_CENTER_DISTINCT`
+16. `V75_TRAIN_CENTER_TOP1_SHARE_BP`
+17. `V75_TRAIN_PC1_CORRECT`
+18. `V75_TRAIN_PC1_DISTINCT`
+19. `V75_TRAIN_PC1_TOP1_SHARE_BP`
+20. `V75_TRAIN_MINUS_PC1_CORRECT`
+21. `V75_TRAIN_MINUS_PC1_DISTINCT`
+22. `V75_TRAIN_MINUS_PC1_TOP1_SHARE_BP`
+23. `V75_UNIGRAM_CORRECT`
+24. `V75_PC1_UNIGRAM_AGREE`
+25. `V75_PC1_UNIGRAM_SHARED_CORRECT`
+26. `V75_VAL_PC1_CORRECT`
+27. `V75_TRAIN_VAL_PC1_COS_ABS_BP`
+28. `V75_TRAIN_PC1_VAR_SHARE_BP`
+29. `V75_VAL_PC1_VAR_SHARE_BP`
+30. `V75_COVERAGE_BP`
+
+Required fixed values -->
+
+- `SEMANTIC_VALIDATION_COMPLETE=0`
+- `TRAINING_AUTHORIZED=0`
+- `TRAINING_STARTED=0`
+- `V75_BLIND_ACCESS=0`
+- `V75_TRAIN_LEXICAL=294726`
+- `V75_TRAIN_TYPES=891`
+- `V75_VAL_LEXICAL=9170`
+- `V75_TRAIN_STATE_COUNT=294726`
+- `V75_HIDDEN_DIM=128`
+- `V75_ORIG_CORRECT=2673`
+- `V75_ORIG_DISTINCT=5`
+- `V75_ORIG_TOP1_SHARE_BP=7255`
+- `V75_UNIGRAM_CORRECT=2535`
+- `V75_VAL_PC1_CORRECT=2455`
+- `V75_VAL_PC1_VAR_SHARE_BP=8288`
+- `V75_COVERAGE_BP=10000`
+
+Basis-point metrics use a denominator of 10000 and deterministic integer rounding. `V75_TRAIN_VAL_PC1_COS_ABS_BP` is the absolute cosine between the unit TRAIN PC1 and the independently recomputed unit VALIDATION PC1, making it sign-invariant.
+
+No outcome value is predeclared for TRAIN_CENTER, TRAIN_PC1_ONLY, TRAIN_MINUS_PC1, TRAIN PC1 spectral share or TRAIN/VAL PC1 alignment.
+
+## Frozen implementation and reproducibility gates
+
+The following implementation files are authorized to be created **after V75 START**, but they do not yet exist at this protocol-freeze checkpoint -->
+
+- shared read-only computation --> `tools/v75_train_fitted_geometry_transfer.py`
+- pinned public GOGIT producer --> `tools/public-audits/phase03_v75_train_fitted_geometry_transfer_001.py`
+- CPU regression suite --> `tests/test_phase03_v75_train_fitted_geometry_transfer_001.py`
+- bounded job runner --> `tools/run_v75_train_fitted_geometry_transfer_001_job.py`
+
+Before any GPU execution, the implementation review must prove -->
+
+- exact 30-field schema and key ordering independent of model results
+- synthetic covariance fixture with a known leading axis
+- sign invariance of PC1 projection and absolute cosine metric
+- deterministic lexical inclusion and denominator reconciliation
+- deterministic streaming mean/covariance across the runner's fixed chunking strategy
+- no gradient construction and no optimizer/model mutation
+- source/report fingerprint verification for V65, V73 and V74
+- exact reproduction of all fixed reference values above
+- failure on nonfinite state/statistic, denominator mismatch, missing source, changed checkpoint, BLIND access attempt or duplicate GOGIT STEP_ID
+- no persistence of hidden states, eigenvectors, token IDs, per-position predictions or private corpus content
+
+CPU regressions must pass before a GPU job can become eligible.
+
+## Frozen resource and execution ceilings
+
+The future runner must remain fail-closed and bounded -->
+
+- one CUDA device only
+- `llama-server-a.service` must not be active during the V75 GPU job
+- evaluation/inference mode only
+- gradients globally disabled
+- no optimizer object or optimizer step
+- no checkpoint write
+- no full hidden-state accumulation in CPU or GPU memory
+- only streaming FP64 sufficient statistics plus aggregate integer counters may survive between batches
+- GOGIT producer execution remains within the existing 300-second GOGIT process budget
+- any CUDA OOM, timeout, nonfinite statistic or resource-gate failure aborts without publication
+
+The implementation must declare its fixed batch/chunk size and measured peak-memory gate before GPU execution. Those runtime constants cannot be tuned against VALIDATION outcomes.
+
+## Interpretation boundary
+
+A successful TRAIN-to-VALIDATION PC1 transfer would show that a dominant direction estimated independently on TRAIN remains measurable on frozen VALIDATION. It would not establish semantic generalization, causal usefulness, generation quality, personality learning or model improvement.
+
+A weak transfer would show that the V72/V73 VALIDATION-fitted geometry was not fully stable across splits. It would not imply that the underlying model representation is useless.
+
+Teacher-forced lexical top-1 scoring remains a narrow diagnostic.
+
+## Authorization boundary
+
+The operator explicitly authorized **START-DEV-FLOW for V75 after this protocol freeze**.
+
+The START opens the V75 development/research flow and permits implementation of the reviewed read-only tooling and CPU tests. It does **not** by itself authorize -->
+
+- GPU execution before the implementation/tests/resource gates above are reviewed and passing
+- any optimizer step or training
+- any BLIND access
+- checkpoint modification
+- FINAL-DEV-FLOW
+- a scientific success claim
+
+The committed [V75 START source](../docs/discussions/steps/V75-start.md) must pass the existing DEV-FLOW publisher validation before a request is created.
 
 ---
 
