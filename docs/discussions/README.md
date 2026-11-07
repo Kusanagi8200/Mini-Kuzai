@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions and LinkedIn DEV-FLOW
 
-Status --> **V74 CLOSED / V75 CLOSED / GITHUB+LINKEDIN START+FINAL VERIFIED / V76 NOT STARTED**
+Status --> **V74 CLOSED / V75 CLOSED / V76 PROTOCOL FROZEN / START DRAFT PREPARED / START NOT AUTHORIZED**
 
 Target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -88,7 +88,7 @@ Verified scientific result --> TRAIN and VALIDATION PC1 directions align at 99.9
 
 **Both V75 START and FINAL are complete. Do not recreate or replay either event.**
 
-The next version is V76 and remains **protocol-only / not started** until a new separately reviewed START request is explicitly authorized.
+The next version is V76. Its [frozen protocol](../../phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md) and [START draft](steps/V76-start.md) are committed for review. No `automation/dev-flow/requests/V76-start.json` exists, and no START publication, implementation execution, GPU run, training or BLIND access is authorized.
 
 ## Recovery and change policy
 
