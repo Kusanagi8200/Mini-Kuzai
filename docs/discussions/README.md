@@ -69,15 +69,19 @@ V74's verified conclusion --> the TRAIN unigram baseline correctly predicted 253
 
 **Both V74 START and FINAL are complete. Do not recreate or replay either event.**
 
-## V75 staged, not started
+## V75 START published, science verified, FINAL pending
 
-- [V75 scientific proposal](../../phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md) --> TRAIN-fitted hidden-state geometry versus frozen VALIDATION
-- [Unpublished V75 START draft](steps/V75-start.md) --> text prepared for future operator review
-- **No `automation/dev-flow/requests/V75-start.json` has been created**
-- No GOGIT V75, no V75 GPU execution, no training and no BLIND access authorized
-- Before any START, approve the precise V75 research protocol, deterministic TRAIN selection, no-leakage tests, 30-metric numeric schema and resource ceiling
+- [V75 scientific protocol and findings](../../phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md) --> TRAIN-fitted geometry transferred to frozen VALIDATION
+- [V75 START source](steps/V75-start.md) --> published as [Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6)
+- [V75 START receipt](../../automation/dev-flow/receipts/V75-start.json) --> `PUBLISHED`
+- [V75 scientific GOGIT](../../reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json) --> `V75_PASS=1`
+- Scientific publication commit --> [`187b53ccfd90`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/187b53ccfd90c38ffea32e9eb65e8672caba740b)
 
-KUZ-DIN's subsequent LinkedIn title convention is START `LIVE DEV FLOW V75` and FINAL `FLOW V75 OK`. The **V74 historical title must remain unchanged** in the formatting code so repeat queue scans do not conflict with existing SQLite `post_sha256` records. The legacy compatibility correction is committed to KUZ-DIN GitHub; deploy and verify it on the VPS before issuing V75 START.
+Verified result --> independently fitted TRAIN and VALIDATION PC1 directions align at 99.95% absolute cosine. TRAIN_PC1_ONLY gives 2457/9170 correct predictions with 2 distinct IDs; TRAIN_MINUS_PC1 gives 611/9170 with 663 distinct IDs. No training and no BLIND access occurred.
+
+**No `automation/dev-flow/requests/V75-final.json` exists at this checkpoint.** The next allowed operation is a read-only FINAL dry-run. A real FINAL publication requires a separate explicit operator authorization.
+
+KUZ-DIN's LinkedIn title convention for the eventual closure remains FINAL `FLOW V75 OK`. The V74 historical START/FINAL rows and fingerprints remain immutable and must never be replayed.
 
 ## Recovery and change policy
 
