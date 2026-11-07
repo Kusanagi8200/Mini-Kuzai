@@ -145,7 +145,7 @@ def main() -> int:
         print("V78_LOOP=DIAGNOSTIC_PUBLISHED")
         print(f"DIAGNOSTIC_STEP={step}")
         print("NEXT_ACTION=GOGIT")
-        return 2
+        return 0
 
     rc = gogit(PREFLIGHT_STEP, PREFLIGHT_AUDIT)
     if rc:
