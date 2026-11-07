@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions and LinkedIn DEV-FLOW
 
-Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 START PUBLISHED / CPU PREFLIGHT READY / GPU NOT AUTHORIZED**
+Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 START PUBLISHED / CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED**
 
 Target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -19,7 +19,8 @@ Repository --> `Kusanagi8200/Mini-Kuzai` (`R_kgDOUI2cCw`)
 | [#5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) | V74 scientific START and FINAL | Completed |
 | [#6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6) | V75 TRAIN-fitted geometry START and FINAL | Completed |
 | [#7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7) | V76 frequency-residualized PC1 START and FINAL | Completed |
-| [#8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8) | V77 residual context-order sensitivity START | Started |
+| [#8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8) | V77 residual context-order sensitivity START and FINAL | Completed |
+| [#9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9) | V78 identical-context rebatching numerical control START | Started |
 
 The historical posts were transferred to this repository and verified in the `Development Log` category. [`tools/github_discussions_history.py`](../../tools/github_discussions_history.py) is a separate historical tool and must not be invoked in live mode for new steps.
 
@@ -119,6 +120,18 @@ V77 START authorizes implementation and CPU-only preflight preparation after rec
 ## Recovery and change policy
 
 The GitHub Discussions publisher must first pass CPU tests and a dry-run against clean synchronized `main`, with `PUBLICATION=DISABLED` in the preflight. Live writes require a distinct operator order and an exact committed request. Never reuse V74 paths to simulate future publications. On HTTP uncertainty, retain `IN_FLIGHT` and reconcile with LinkedIn manually instead of replaying. Do not publish additional GitHub comments or posts during a documentation review.
+
+---
+
+##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
+
+## V78 START state - 2026-11-07
+
+START-DEV-FLOW V78 is published in [Discussion #9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9). The exact [V78 START request](../../automation/dev-flow/requests/V78-start.json) and verified [START receipt](../../automation/dev-flow/receipts/V78-start.json) are committed.
+
+The frozen V78 protocol is [Identical-Context Rebatching Numerical Control 001](../../phases/MINI-KUZAI-PHASE-03-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001.md). It compares identical logical VALIDATION prefixes through the V77 FULL_CONTEXT batch-4 path and prefix/rebatch batch-32 path to quantify execution-path numerical noise.
+
+START authorizes implementation and CPU-only preflight only. It does not authorize GPU execution, training, BLIND access or FINAL publication.
 
 ---
 
