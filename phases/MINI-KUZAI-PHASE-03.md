@@ -458,9 +458,13 @@ Current V53 evidence -->
 - [Derivative-003 independent review audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-REVIEW-001.json)
 - [Derivative-003 eligibility audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json)
 
+V78 closure --> identical-input rebatching changed no top-1 decision, alpha sign or correctness result, despite continuous alpha deltas. This rules out rebatching alone as an explanation for the five V77 discrete changes.
+
+V79 preparation --> ORIGINAL and REVERSE_HISTORY_KEEP_LAST will use the same prefix scorer and batch 32. The protocol is frozen, but START is not authorized and no V79 execution may occur.
+
 ## Current status - 2026-11-07
 
-**V77 --> CLOSED AND DELIVERED. V78 --> START PUBLISHED / CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED.**
+**V78 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING. V79 --> PREPARED ONLY / START NOT AUTHORIZED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -497,8 +501,12 @@ V77 FULL/REVERSE correct   --> 2594 / 2594
 V77 alpha correlation      --> 99.99% absolute
 V77 GitHub FINAL           --> PUBLISHED / comment #19459823
 V77 LinkedIn FINAL         --> PUBLISHED
-V78                        --> IDENTICAL-CONTEXT REBATCHING NUMERICAL CONTROL FROZEN
-V78 START source           --> PUBLISHED / Discussion #9
+V78                        --> SCIENTIFIC GOGIT PASS / GITHUB START+FINAL PUBLISHED
+V78 top-1 changes          --> 0 / 9170 UNDER IDENTICAL-INPUT REBATCHING
+V78 alpha sign changes     --> 0 / 9170
+V78 GitHub FINAL           --> Discussion #9 comment #19461051
+V79                        --> SAME-PATH CONTEXT-ORDER CONTROL FROZEN / PREPARED ONLY
+V79 START source           --> COMMITTED / REQUEST NOT CREATED
 V78 START authorized       --> CONSUMED
 V78 START receipt          --> PUBLISHED
 V78 GPU authorized         --> NO
