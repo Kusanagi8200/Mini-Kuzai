@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions and LinkedIn DEV-FLOW
 
-Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 SCIENTIFIC CLOSED + GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING / V79 PREPARED ONLY**
+Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 SCIENTIFIC CLOSED + GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING / V79 START PUBLISHED / CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED**
 
 Target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -21,6 +21,7 @@ Repository --> `Kusanagi8200/Mini-Kuzai` (`R_kgDOUI2cCw`)
 | [#7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7) | V76 frequency-residualized PC1 START and FINAL | Completed |
 | [#8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8) | V77 residual context-order sensitivity START and FINAL | Completed |
 | [#9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9) | V78 identical-context rebatching numerical control START and FINAL | GitHub completed; LinkedIn FINAL verification pending |
+| [#10](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/10) | V79 same-path context-order control START | Started |
 
 The historical posts were transferred to this repository and verified in the `Development Log` category. [`tools/github_discussions_history.py`](../../tools/github_discussions_history.py) is a separate historical tool and must not be invoked in live mode for new steps.
 
@@ -138,7 +139,7 @@ The next protocol is [V79 Same-Path Context-Order Control](../../phases/MINI-KUZ
 
 Its reviewed [START source](steps/V79-start.md) is committed and publisher-compatible, but **no V79 START request exists**.
 
-V79 is prepared only. START-DEV-FLOW, CPU execution, GPU execution, training, BLIND access and FINAL remain unauthorized.
+V79 START is published in Discussion #10 with a verified receipt. Implementation and CPU-only preflight are authorized. GPU scientific execution, training, BLIND access and FINAL remain unauthorized.
 
 ## Recovery and change policy
 
