@@ -34,9 +34,9 @@ Each completed run commits and pushes four **public numerical report** files whe
 
 GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest completed immutable step is -->
 
-`PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001`
+`PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001`
 
-Verified commit --> [`1dcd4e8dc613`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/1dcd4e8dc6138992486f70cdee3620751c4f2940)
+Verified state --> V74 CORE + STRATA immutable GOGIT reports published; V75 START published and CPU preflight prepared for first GOGIT execution.
 
 Recent completed stages -->
 
@@ -67,6 +67,47 @@ Read `reports/assistant-results/latest.json` for the latest published numeric re
 A previous `TRAINING_AUTHORIZED=1` in V62 historical run reports is **not** an authorization for a new run. The V64 diagnostic reports `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `SEMANTIC_VALIDATION_COMPLETE=0`. The latter flag expressly states that the numerical learning diagnostic is not human semantic validation.
 
 See [verified V73 GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.json) and the [V73 research record](../phases/MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md). The [pinned V73 runner](run_v73_principal_axis_attribution_001_job.py) executed independently of AUTOPILOT. Its result does not authorize any training or access to BLIND TEST.
+
+## ChatGPT review workflow and interactive-shell safety
+
+For operator-driven steps, successful aggregate results should be published through GOGIT and then reviewed from GitHub. The normal interaction is -->
+
+```text
+run reviewed local command
+  -> GOGIT commits/pushes numeric report
+  -> operator writes: GOGIT
+  -> ChatGPT reads reports/assistant-results/latest.json or the immutable history report
+```
+
+Do not copy successful terminal output into ChatGPT when a GOGIT report was published. Terminal copy/paste is reserved for a local failure that prevented GOGIT publication and therefore left no GitHub evidence to inspect.
+
+Commands that enable strict Bash options must never alter the parent interactive shell. Use a subshell -->
+
+```bash
+( set -euo pipefail; command1; command2 )
+```
+
+Do not issue a top-level `set -u`, `set -e` or `exit` in an interactive SSH shell used by the operator. This prevents prompt plugins or PS1 helpers with unset variables from terminating the session after the command finishes.
+
+### V75 CPU preflight GOGIT
+
+The CPU-only V75 implementation/safety preflight has its own immutable STEP_ID -->
+
+`PHASE03-SMOLTALK-V75-CPU-PREFLIGHT-001`
+
+Reviewed producer -->
+
+`tools/public-audits/phase03_v75_cpu_preflight_001.py`
+
+It runs the frozen V75 CPU regression suite and publishes only aggregate numeric status. It explicitly reports zero GPU execution, zero BLIND access and zero training authorization/start. It does not execute the scientific V75 GPU study.
+
+Run it from a synchronized repository with -->
+
+```bash
+cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && ( set -euo pipefail; git pull --ff-only origin main; /root/Mini-Kuzai/.venv/bin/python tools/gogit_public.py --step PHASE03-SMOLTALK-V75-CPU-PREFLIGHT-001 --audit tools/public-audits/phase03_v75_cpu_preflight_001.py )
+```
+
+After a successful publication, the operator only needs to request `GOGIT` in ChatGPT.
 
 ## Adding a future audit
 
