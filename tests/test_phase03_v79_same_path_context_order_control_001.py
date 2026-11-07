@@ -178,6 +178,8 @@ class V79SamePathContextOrderTests(unittest.TestCase):
         final = V.finalize_pair_stats(stats, 4)
         self.assertEqual(final["ALPHA_MAX_ABS_NANO"], 400)
         self.assertEqual(final["ALPHA_MEAN_ABS_NANO"], 250)
+        self.assertEqual(V.PUBLIC_METRIC_MAX, 100_000_000)
+        self.assertEqual(V.ALPHA_MAX_ABS_NANO_LIMIT, 2_000_000_000)
 
     def test_18_nonfinite_and_degenerate_stats_fail_closed(self):
         with self.assertRaises(ValueError):
@@ -241,6 +243,10 @@ class V79SamePathContextOrderTests(unittest.TestCase):
                 "phase03_v79_same_path_context_order_control_001.py"
             ),
             "Mini-Kuzai V79 same-path context-order control",
+        )
+        self.assertEqual(
+            module.METRIC_MAX_OVERRIDES,
+            {"V79_ALPHA_MAX_ABS_NANO": 2_000_000_000},
         )
 
     def test_23_scientific_audit_pins_exact_core_blob(self):
