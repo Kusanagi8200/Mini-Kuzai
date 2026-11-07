@@ -84,6 +84,9 @@ SOURCE_PHASE03_V75 = (
 SOURCE_PHASE03_V75_PREFLIGHT = (
     "Mini-Kuzai V75 CPU-only implementation and safety preflight"
 )
+SOURCE_PHASE03_V75_RUN_STATUS = (
+    "Mini-Kuzai V75 scientific-run numeric status"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1820,6 +1823,21 @@ METRIC_KEYS = {
     "V75_PREFLIGHT_TRAIN_BATCH",
     "V75_PREFLIGHT_VAL_BATCH",
     "V75_PREFLIGHT_SCORE_CHUNK",
+    "V75_RUN_STATUS_PASS",
+    "V75_RUN_STATUS_ATTEMPTED",
+    "V75_RUN_STATUS_RUNNER_EXIT",
+    "V75_RUN_STATUS_FAILURE_CODE",
+    "V75_RUN_STATUS_TIMEOUT",
+    "V75_RUN_STATUS_OOM",
+    "V75_RUN_STATUS_SYNC_FAIL",
+    "V75_RUN_STATUS_PIN_FAIL",
+    "V75_RUN_STATUS_V62_GATE_FAIL",
+    "V75_RUN_STATUS_CPU_TEST_FAIL",
+    "V75_RUN_STATUS_PREREQ_FAIL",
+    "V75_RUN_STATUS_GEOMETRY_FAIL",
+    "V75_RUN_STATUS_REPLAY_FAIL",
+    "V75_RUN_STATUS_GOGIT_FAIL",
+    "V75_RUN_STATUS_SCIENTIFIC_REPORT_PRESENT",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1911,6 +1929,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V75
     if tracked == "tools/public-audits/phase03_v75_cpu_preflight_001.py":
         return SOURCE_PHASE03_V75_PREFLIGHT
+    if tracked == "tools/public-audits/phase03_v75_run_status_001.py":
+        return SOURCE_PHASE03_V75_RUN_STATUS
     return SOURCE
 
 
