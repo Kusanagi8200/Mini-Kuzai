@@ -137,11 +137,11 @@ After successful publication, the operator requests `GOGIT` in ChatGPT. A PASS r
 
 ## V76 proposed scientific audit
 
-The next proposed research item is [V76 Frequency-Residualized PC1 Output Control 001](../phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md).
+The next research item is [V76 Frequency-Residualized PC1 Output Control 001](../phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md).
 
-At this checkpoint it is **not frozen and not authorized**. No V76 public-audit implementation, GOGIT STEP_ID execution, START request, GPU run, training or BLIND access is authorized by the presence of the protocol.
+The protocol is now **frozen**, with STEP_ID `PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001`, an exact 30-field schema, 1024-way centered output-profile OLS decomposition, dependency pins, CPU-test requirements and a 6144 MiB GPU ceiling. The [V76 START draft](../docs/discussions/steps/V76-start.md) is prepared but unpublished.
 
-The proposal defines a maximum 30-field numeric schema and a TRAIN-only decomposition of the stable V75 PC1 output profile into frequency-explained and frequency-residualized components. Those details must be reviewed and frozen before any implementation is allowed.
+No V76 public-audit implementation, GOGIT execution, START request, GPU run, training or BLIND access is authorized by the protocol freeze or draft alone.
 
 ## Adding a future audit
 
