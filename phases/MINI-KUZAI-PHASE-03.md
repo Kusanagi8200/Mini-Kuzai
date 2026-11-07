@@ -458,9 +458,9 @@ Current V53 evidence -->
 - [Derivative-003 independent review audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-REVIEW-001.json)
 - [Derivative-003 eligibility audit](../reports/assistant-results/history/PHASE03-SMOLTALK-V53-DERIV003-ELIGIBILITY-001.json)
 
-## Current status - 2026-10-31
+## Current status - 2026-11-07
 
-**V69 NORM COUNTERFACTUAL --> PUBLISHED AND VERIFIED. V70 FP32 PRECISION CONTROL --> PREPARED FOR AUTOPILOT V3.**
+**V75 TRAIN-FITTED GEOMETRY TRANSFER --> SCIENTIFIC GOGIT VERIFIED. FINAL-DEV-FLOW NOT YET AUTHORIZED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -475,42 +475,41 @@ V62 checkpoint             --> cycle 2, stopped and frozen
 V62 optimizer steps        --> 69
 V62 exposed tokens         --> 597982
 V62 VALIDATION CE          --> 4.732514
-V63 top-k/top-p EOS        --> 41 / 48 over eight seeds
-V63 automatic screen       --> 10 / 24 suspected surface-form failures
-V63 human rating review    --> suspended and incomplete
-V64 TRAIN sample           --> 12 segments / CE 4.664 / top-1 33.97%
-V64 VALIDATION             --> 36 segments / CE 4.733 / top-1 29.20%
-V64 EOS terminal top-1     --> 14 / 36
-V64 GOGIT                  --> LANGUAGE LEARNING DIAGNOSTIC 002 published
-V65 GOGIT                  --> TOKEN FREQUENCY DIAGNOSTIC 001 published
-V65 BYTE TOP1              --> 52.00% / frequent targets
-V65 MERGED TOP1            --> 3.27% / frequent targets
-V66                        --> BOTH GOGIT PARTS PUBLISHED
-V66 predicted byte         --> 6692 / 9170 lexical targets
-V66 predicted merged       --> 2428 / 9170 lexical targets
-V66 predicted special      --> 50 / 9170 lexical targets
-V67 GOGIT                  --> OUTPUT CONCENTRATION 001 COMPLETE
-V67 predicted distinct      --> 4 IDS / 606 GOLD DISTINCT
-V67 dominant top1 share     --> 72.58%
-V68 GOGIT                  --> OUTPUT HEAD 001 COMPLETE
-V68 mean predicted norm    --> 0.360 / expected 0.293
-V68 PAD output norm        --> 0.182
-V69 GOGIT                  --> NORM COUNTERFACTUAL 001 VERIFIED
-V69 HALF/FULL CE           --> 4.892 / 5.048
-V69 HALF/FULL DISTINCT     --> 4 / 7
-V70                        --> FP32 CONTROL PENDING / V62 FROZEN
-AUTOPILOT                   --> V3 6 STAGES / TRAINING DISABLED
+V70                       --> FP32 precision control verified
+V71                       --> output-dominance attribution verified
+V72                       --> hidden-state anisotropy verified
+V72 centered PC1 share     --> 82.88%
+V73 PC1_ONLY correct       --> 2455 / 9170
+V73 PC1_ONLY distinct      --> 2 IDs
+V74 TRAIN unigram correct  --> 2535 / 9170
+V74 PC1/unigram shared     --> 2449 correct
+V75 GOGIT                  --> TRAIN-FITTED GEOMETRY TRANSFER VERIFIED
+V75 TRAIN lexical          --> 294726
+V75 VALIDATION lexical     --> 9170
+V75 TRAIN PC1 share        --> 90.19%
+V75 TRAIN/VAL PC1 cosine   --> 99.95% absolute
+V75 TRAIN_PC1_ONLY         --> 2457 correct / 2 distinct IDs
+V75 TRAIN_MINUS_PC1        --> 611 correct / 663 distinct IDs
+V75 coverage               --> 100.00%
 New training authorized    --> NO
 New training started       --> NO
-BLIND TEST access          --> 0 during V63/V64
-Next workstream            --> AUTOPILOT V3 / V70 BF16-VS-FP32 CONTROL
+BLIND TEST access          --> 0
+Checkpoint changed         --> NO
+V75 START                  --> PUBLISHED / Discussion #6
+V75 FINAL                  --> NOT REQUESTED / NOT PUBLISHED
+Next workstream            --> FINAL read-only preflight, then explicit authorization boundary
 ```
 
-The previous V62 GOGIT training flags describe **historical V62 execution** and must not be reused as a new V65 training authorization. The V64 diagnostic flags are `SEMANTIC_VALIDATION_COMPLETE=0`, `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`.
+The current scientific conclusion is narrow. The dominant output-head hidden-state direction is stable across TRAIN and VALIDATION rather than being primarily an in-sample VALIDATION PCA artifact. However, V74 and V75 together show that this direction remains strongly associated with output-frequency concentration. The result is not semantic validation, not conversational competence and not a causal semantic representation claim.
 
-The 12 TRAIN segments in V64 form a deliberately small exploratory sample, and V63's lexical checks do not establish semantic correctness. The frozen V62 checkpoint remains the only model used for these inference-only diagnostics.
+Immutable V75 evidence -->
 
-Primary checkpoint --> [V69 verified GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V69-OUTPUT-NORM-COUNTERFACTUAL-001.json), [AUTOPILOT V3](../autopilot/README.md) and [V70 frozen protocol](MINI-KUZAI-PHASE-03-V70-PRECISION-CONTROL-001.md)
+- [V75 protocol and verified findings](MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md)
+- [V75 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json)
+- [V75 START receipt](../automation/dev-flow/receipts/V75-start.json)
+- [V75 Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6)
+
+The previous V62 training authorization is historical only. It does not authorize any new optimizer step. V62 remains frozen and BLIND remains closed.
 
 ## Historical checkpoint chronology - V53 to V59
 
