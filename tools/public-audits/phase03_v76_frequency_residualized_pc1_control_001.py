@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "tools" / "v76_frequency_residualized_pc1_control.py"
-FROZEN_GIT_BLOB = "7972d680a339fa371ccb790c31081fe0567e5f7e"
+FROZEN_GIT_BLOB = "d0db771c2f022a2e94293f8b0345ba834580407e"
 
 
 def main():
