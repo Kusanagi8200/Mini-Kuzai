@@ -34,11 +34,13 @@ Each completed run commits and pushes four **public numerical report** files whe
 
 GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest **scientific** immutable step is -->
 
+`PHASE03-SMOLTALK-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001`
+
 `PHASE03-SMOLTALK-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001`
 
 The V77 CPU-only report `PHASE03-SMOLTALK-V77-CPU-PREFLIGHT-001` verified implementation and safety gates before the separately authorized GPU run.
 
-Verified state --> V77 is CLOSED and delivered. Its reverse-history intervention changed only 5/9170 top-1 predictions while preserving 2594/9170 correct predictions in both modes; alpha correlation remained 99.99%. V78 START is published in Discussion #9 to measure the numerical floor of the two execution paths with identical logical inputs. V78 GPU, training and BLIND access remain unauthorized.
+Verified state --> V78 scientific GOGIT is published and PASS. Identical logical prefixes across the V77 batch-4 FULL_CONTEXT and batch-32 prefix/rebatch paths produced 0/9170 top-1 changes, 0 alpha-sign changes and identical 2594/9170 correctness, while continuous alpha deltas remained measurable. GitHub FINAL V78 is published in Discussion #9 comment #19461051; LinkedIn FINAL verification is pending. V79 is frozen and prepared only; START, execution, training and BLIND access remain unauthorized.
 
 Recent completed stages -->
 
