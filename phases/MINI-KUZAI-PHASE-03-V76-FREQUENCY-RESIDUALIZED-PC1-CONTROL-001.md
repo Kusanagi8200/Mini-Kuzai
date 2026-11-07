@@ -3,7 +3,7 @@
 Date --> 2026-11-07
 Frozen review --> 2026-11-07
 
-Status --> **PROTOCOL FROZEN / START DRAFT MAY BE PREPARED / START NOT AUTHORIZED / GPU NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS**
+Status --> **CLOSED / SCIENTIFIC GOGIT PASS / GITHUB START+FINAL PUBLISHED / LINKEDIN START+FINAL VERIFIED / NO TRAINING / NO BLIND ACCESS**
 
 ## Why V76 follows V74 and V75
 
@@ -323,24 +323,49 @@ A future implementation must remain bounded and read-only:
 - GOGIT process budget --> 300 seconds
 - OOM, timeout, nonfinite value, pin mismatch, replay mismatch or resource-gate failure --> abort without scientific GOGIT
 
+## Verified closure - 2026-11-07
+
+V76 was executed and closed under separate explicit authorizations for START, CPU preflight, GPU scientific execution and FINAL.
+
+Verified immutable evidence -->
+
+- START --> [GitHub Discussion #7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7)
+- START receipt --> [V76-start.json](../automation/dev-flow/receipts/V76-start.json)
+- CPU preflight --> [PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001.json), 15 tests, 0 failures, 0 errors
+- scientific GOGIT --> [PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.json)
+- FINAL request --> [V76-final.json](../automation/dev-flow/requests/V76-final.json)
+- GitHub FINAL --> [Discussion #7 comment #19459204](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7#discussioncomment-19459204)
+- FINAL receipt --> [V76-final.json](../automation/dev-flow/receipts/V76-final.json)
+- KUZ-DIN FINAL delivery audit --> [KUZ-DIN-V76-FINAL-DELIVERY-001](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V76-FINAL-DELIVERY-001.json)
+
+Verified scientific result -->
+
+- axis-frequency absolute correlation --> 27.85%
+- frequency OLS R2 --> 7.75%
+- residual-energy share --> 92.25%
+- full PC1 replay --> 2457 / 9170 correct
+- frequency component --> 2451 / 9170 correct
+- frequency residual --> 2594 / 9170 correct
+- TRAIN unigram --> 2535 / 9170 correct
+- residual distinct predicted IDs --> 2
+- residual dominant top-1 share --> 70.43%
+
+Interpretation --> static TRAIN lexical frequency explains only a small fraction of the stable PC1 output-profile energy. The orthogonal residual retains predictive concentration and slightly exceeds both the full PC1 replay and unigram baseline in top-1 correctness, but it remains collapsed to two predicted IDs. This is not semantic validation.
+
+Production closure --> KUZ-DIN verified two V76 events as PUBLISHED, START and FINAL, with valid LinkedIn URNs, active queue/delivery timers and zero PREPARED or IN_FLIGHT rows.
+
+V76 authorization is fully consumed. It does not carry forward to V77 GPU execution, training, BLIND access or FINAL publication.
+
+
 ## Authorization boundary
 
-This protocol is now **frozen**, but no execution authorization follows from the freeze.
+Historical V76 authorizations are fully consumed and closed.
 
-It does not authorize:
+START-DEV-FLOW, CPU preflight, bounded read-only GPU execution and FINAL-DEV-FLOW were separately authorized and completed.
 
-- START-DEV-FLOW V76
-- implementation execution
-- CPU preflight execution
-- GPU execution
-- new training
-- optimizer steps
-- checkpoint modification
-- BLIND access
-- FINAL-DEV-FLOW
-- a scientific conclusion
+No V76 authorization carries forward to V77 or to any future training run.
 
-A reviewed V76 START draft may now be prepared. Creating a START request or publishing the START requires a separate explicit operator authorization.
+V62 remains frozen. No optimizer step, checkpoint modification or BLIND access is authorized by the V76 closure.
 
 ---
 
