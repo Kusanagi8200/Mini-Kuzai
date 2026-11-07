@@ -18,7 +18,7 @@ Each stage is documented through source code, reproducible protocols, frozen che
 
 ## Navigate the project
 
-**[Phases](#development-phases)** · **[Research steps V48-V75](#phase-03-research-steps)** · **[Current status](#current-status---2026-11-01)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
+**[Phases](#development-phases)** · **[Research steps V48-V76](#phase-03-research-steps)** · **[Current status](#current-status---2026-11-07)** · **[Source code and operations](#code-operations-and-evidence)** · **[Full original documentation](README-DETAILED-20261031T192526Z.md)**
 
 ## Development phases
 
@@ -47,7 +47,8 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V72 - GOGIT verified** | Strong 128D anisotropy: centered PC1 82.88%, effective rank 1.44; mean-center switches 2889/9170 lexical predictions | [V72 protocol and findings](phases/MINI-KUZAI-PHASE-03-V72-HIDDEN-STATE-ANISOTROPY-001.md) · [V72 numeric GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V72-HIDDEN-STATE-ANISOTROPY-001.json) |
 | **V73 - GOGIT verified** | PC1 alone yields 2455/9170 correct predictions with only 2 distinct output IDs; removing PC1 yields 1124/9170 correct despite 522 distinct IDs | [V73 findings](phases/MINI-KUZAI-PHASE-03-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.md) · [V73 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V73-PRINCIPAL-AXIS-ATTRIBUTION-001.json) |
 | **V74 - CLOSED and delivered** | CORE + STRATA GOGIT verified, 2449/2455 PC1 hits shared with unigram, real START and FINAL published on GitHub and LinkedIn without duplicate | [V74 verified closure](phases/MINI-KUZAI-PHASE-03-V74-FREQUENCY-PRIOR-CONTROL-001.md) · [CORE GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-CORE-001.json) · [STRATA GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V74-FREQUENCY-PRIOR-STRATA-001.json) |
-| **V75 - SCIENTIFIC GOGIT VERIFIED / FINAL PENDING** | TRAIN-fitted PC1 transfers to frozen VALIDATION with 99.95% absolute cosine alignment; TRAIN_PC1_ONLY 2457/9170 correct, 2 predicted IDs; no training or BLIND access | [V75 verified findings](phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md) · [V75 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json) · [START Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6) |
+| **V75 - CLOSED and delivered** | TRAIN-fitted PC1 transfers to frozen VALIDATION with 99.95% absolute cosine alignment; scientific GOGIT, GitHub START/FINAL and LinkedIn START/FINAL all verified | [V75 closed findings](phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md) · [V75 GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json) · [Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6) |
+| **V76 - PROPOSED / NOT STARTED** | TRAIN-only decomposition of the stable PC1 output profile into frequency-explained and frequency-residualized components; no execution authorized | [V76 protocol proposal](phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md) |
 
 ## Current status - 2026-11-07
 
@@ -67,19 +68,22 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V72 status** | **GPU/GOGIT verified** at [commit `41aed7aef84c`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/41aed7aef84c832e78ae2ac7bfc2f8cd681bd1b7), original lexical top-1 correct 2673, mean-centered 2832; no new training |
 | **V73 status** | **GOGIT verified**, [commit `1dcd4e8dc613`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/1dcd4e8dc6138992486f70cdee3620751c4f2940). Removing PC1 changes 6841/9170 argmax decisions and reduces lexical top-1 accuracy from 30.88% to 12.26%. No training / BLIND access |
 | **V74 status** | **Dual GOGIT verified**, [CORE `54dace24112f`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/54dace24112f920232cb6106422f6da7ab35d24c) and [STRATA `7b36b3fb18c6`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7b36b3fb18c6f31037f90ada947b56469f73424f). Frozen TRAIN-unigram baseline outperforms PC1_ONLY by 80 correct predictions; safety gates 0 |
-| **V75 status** | **Scientific GOGIT verified**, [commit `187b53ccfd90`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/187b53ccfd90c38ffea32e9eb65e8672caba740b). TRAIN/VALIDATION PC1 absolute cosine alignment 99.95%; TRAIN_PC1_ONLY 2457 correct / 2 IDs; TRAIN_MINUS_PC1 611 correct / 663 IDs. FINAL-DEV-FLOW not yet authorized |
+| **V75 status** | **CLOSED**. Scientific GOGIT verified; GitHub FINAL [comment #19458251](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6#discussioncomment-19458251); FINAL receipt commit [`7c1265603ff1`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7c1265603ff102ebe54d9bd87b845e885c593c8f); KUZ-DIN delivery audit PASS with LinkedIn FINAL `PUBLISHED`, no PREPARED/IN_FLIGHT |
+| **V76 status** | **PROTOCOL PROPOSED ONLY**. Frequency-residualized PC1 output control defined; START/GPU/training/BLIND all unauthorized |
 
 **V70-V75 finding -->** V71 equalizing output-head norms changed just 275/9170 lexical predictions. V72 found a centered hidden-state participation ratio of 1.44/128D and PC1 containing 82.88% of centered variance. V73 now shows that **deleting PC1 increases distinct predicted IDs from 15 to 522 but reduces correct predictions from 2832 to 1124**; removing PC1 plus PC2 yields 715 distinct IDs and only 818 correct. **PC1 alone** yields 2455 correct predictions from only 2 predicted IDs. This is an in-sample teacher-forced diagnostic: diversity without preserved accuracy is not useful learning. Keep V62 frozen, do not treat any ablation as a model patch, and do not use BLIND or restart training. V74 confirms that 2449 of 2455 PC1_ONLY correct predictions coincide with a context-free TRAIN unigram baseline, which correctly predicts 2535 tokens. V75 then removes the VALIDATION-fit bias: the independently fitted TRAIN PC1 aligns with VALIDATION PC1 at 99.95% absolute cosine, and TRAIN_PC1_ONLY reproduces essentially the same concentrated behavior (2457 correct, 2 predicted IDs). This shows the dominant anisotropy is stable across TRAIN and VALIDATION, while remaining strongly associated with frequency concentration. It is not evidence of semantic competence or a causal semantic feature. Keep V62 frozen, BLIND closed and training unauthorized.
 
-## DEV-FLOW and V75 checkpoint - 2026-11-07
+## DEV-FLOW and V75 closure - 2026-11-07
 
-The latest verified scientific GOGIT is **V75** --> [PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001](reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json), published at [commit `187b53ccfd90`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/187b53ccfd90c38ffea32e9eb65e8672caba740b). The reviewed [V75 findings](phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md) establish a 99.95% absolute cosine alignment between independently fitted TRAIN and VALIDATION PC1 directions.
+V75 is fully closed. The immutable scientific GOGIT is [PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001](reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json), published at [commit `187b53ccfd90`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/187b53ccfd90c38ffea32e9eb65e8672caba740b).
 
-V75 START is published as [Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6), with its [START receipt](automation/dev-flow/receipts/V75-start.json). The scientific run completed read-only with `TRAINING_STARTED=0`, `V75_BLIND_ACCESS=0` and full 9170-position coverage.
+GitHub START and FINAL are both complete on [Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6). The FINAL is [comment #19458251](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6#discussioncomment-19458251), with [FINAL receipt](automation/dev-flow/receipts/V75-final.json) committed at [`7c1265603ff1`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7c1265603ff102ebe54d9bd87b845e885c593c8f).
 
-V75 FINAL has **not** been requested or published. The current boundary is **FINAL dry-run / review ready**. No `automation/dev-flow/requests/V75-final.json` may be created until a separate explicit operator authorization. V74 historical START/FINAL publications remain immutable and must not be replayed.
+KUZ-DIN independently verified the exact FINAL event `close-V75-d6-c19458251` as `PUBLISHED`. The [delivery GOGIT](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V75-FINAL-DELIVERY-001.json) reports a valid LinkedIn URN, active QUEUE/DELIVERY timers, 4 total published DEV-FLOW events and zero PREPARED / IN_FLIGHT records.
 
-[DEV-FLOW V74 closure and V75 checkpoint](docs/DEV-FLOW-REPRISE-2026-11-01.md) now records the V75 scientific completion and pending FINAL authorization.
+V62 remains frozen. `TRAINING_STARTED=0` for V75 and BLIND remained closed.
+
+The next research item is [V76 Frequency-Residualized PC1 Output Control](phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md), currently **proposal only**. It does not authorize START, GPU execution, training or BLIND access.
 
 ## Code, operations and evidence
 
@@ -89,8 +93,8 @@ V75 FINAL has **not** been requested or published. The current boundary is **FIN
 | [Installation](technical/installation/README.md) | Reference environment and setup |
 | [Checkpoint inventory](technical/checkpoints/README.md) | Historical Phase 01 checkpoint metadata |
 | [GOGIT](tools/GOGIT.md) | Verified numeric audit publication, immutable history and manual ChatGPT review |
-| [GitHub Discussions and KUZ-DIN Publisher](docs/discussions/README.md) | V75 START and scientific GOGIT verified; FINAL dry-run ready but not authorized |
-| [DEV-FLOW V74 closure and V75 checkpoint](docs/DEV-FLOW-REPRISE-2026-11-01.md) | V74 closed; V75 scientific result verified; FINAL authorization pending |
+| [GitHub Discussions and KUZ-DIN Publisher](docs/discussions/README.md) | V75 START/FINAL GitHub and LinkedIn deliveries verified; V76 not started |
+| [DEV-FLOW V74/V75 closure checkpoint](docs/DEV-FLOW-REPRISE-2026-11-01.md) | V74 and V75 closed; V76 protocol review is next |
 | [AUTOPILOT](autopilot/README.md) | Bounded diagnostic campaigns, reproducibility checks and training restrictions |
 | [Latest GOGIT report](reports/assistant-results/latest.json) | Most recently published numerical results |
 | [Workflow policy](PROJECT-WORKFLOW-POLICY.md) | Fail-closed automation and authorization boundaries |
