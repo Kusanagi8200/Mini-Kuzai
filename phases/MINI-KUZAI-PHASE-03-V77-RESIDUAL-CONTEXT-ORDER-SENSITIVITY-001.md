@@ -3,7 +3,7 @@
 Date --> 2026-11-07
 Frozen review --> 2026-11-07
 
-Status --> **PROTOCOL FROZEN / START AUTHORIZED BY OPERATOR / START REQUEST MAY BE PUBLISHED / GPU NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS**
+Status --> **PROTOCOL FROZEN / START PUBLISHED / CPU PREFLIGHT PASS / GPU SCIENTIFIC RUN AUTHORIZED / NO TRAINING / NO BLIND ACCESS / FINAL NOT AUTHORIZED**
 
 ## Why V77 follows V76
 
@@ -317,27 +317,30 @@ A future scientific implementation must remain bounded and read-only:
 
 ## Authorization boundary
 
-The V77 protocol is frozen and the operator has explicitly authorized **START-DEV-FLOW V77**.
+The V77 protocol is frozen.
 
-That authorization permits:
+Completed authorization history:
 
-- committing the reviewed V77 protocol
-- committing the V77 START source
-- committing an exact V77 START request
-- publishing one V77 START DEV-FLOW event
-- preparing implementation and CPU-only preflight after START receipt verification
+- START-DEV-FLOW V77 --> authorized and published in Discussion #8
+- CPU-only implementation preflight --> completed with `V77_PREFLIGHT_PASS=1`
+- CPU tests --> 18 / 18 passed, 0 failures, 0 errors, 0 skipped
+
+The operator explicitly authorized the **V77 scientific GPU run** after review of the CPU preflight.
+
+This GPU authorization permits exactly one bounded read-only execution of the frozen V77 scientific control and its immutable GOGIT publication.
 
 It does **not** authorize:
 
-- V77 scientific GPU execution
 - new model training
 - optimizer steps
 - checkpoint modification
 - BLIND access
+- generation
+- corpus or tokenizer modification
 - FINAL-DEV-FLOW V77
-- any scientific success claim
+- any scientific success claim before GOGIT review
 
-GPU execution requires a later explicit operator authorization after a verified CPU preflight.
+The V77 GPU authorization is consumed by the first successful scientific GOGIT publication. A failed run may only be diagnosed and corrected within the frozen scientific scope; any protocol change requires a new reviewed authorization boundary.
 
 ---
 
