@@ -3,7 +3,7 @@
 Original checkpoint --> 2026-11-01
 Updated --> 2026-11-07
 
-Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 SCIENTIFIC CLOSED + GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING / V79 PREPARED ONLY**
+Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 SCIENTIFIC CLOSED + GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING / V79 START PUBLISHED / CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED**
 
 ## Verified two-host publishing topology
 
@@ -164,7 +164,7 @@ Prepared files:
 - `phases/MINI-KUZAI-PHASE-03-V79-SAME-PATH-CONTEXT-ORDER-CONTROL-001.md`
 - `docs/discussions/steps/V79-start.md`
 
-No `automation/dev-flow/requests/V79-start.json` is authorized or created.
+V79 START is published in Discussion #10. The committed request and verified receipt are `automation/dev-flow/requests/V79-start.json` and `automation/dev-flow/receipts/V79-start.json`.
 
 ## Exact resumption order
 
@@ -172,13 +172,12 @@ No `automation/dev-flow/requests/V79-start.json` is authorized or created.
 2. Treat V74 through V77 as immutable completed history
 3. Treat V78 scientific GOGIT and GitHub START/FINAL as immutable completed history
 4. Verify the V78 LinkedIn FINAL independently in KUZ-DIN before calling production delivery fully closed
-5. Review the frozen V79 protocol and prepared START source
-6. Do not create or publish V79 START without a new explicit operator authorization
-7. After a future V79 START receipt, implementation and CPU-only preflight require their own reviewed boundary
-8. GPU scientific execution remains separately unauthorized until a future CPU preflight is reviewed
-9. No new training, optimizer steps, checkpoint writes, BLIND access or generation are authorized
+5. Treat V79 START Discussion #10 and its receipt as immutable published history
+6. Prepare and execute only V79 implementation and CPU-only preflight within the frozen protocol
+7. GPU scientific execution remains separately unauthorized until the CPU preflight is reviewed
+8. No new training, optimizer steps, checkpoint writes, BLIND access or generation are authorized
 
-**PAUSE BOUNDARY** --> V78 scientific work and GitHub FINAL are closed. V79 is prepared only. No V79 START request exists.
+**PAUSE BOUNDARY** --> V78 scientific work and GitHub FINAL are closed. V79 START is published. Implementation and CPU-only preflight are the current authorized boundary; GPU remains unauthorized.
 
 ---
 
