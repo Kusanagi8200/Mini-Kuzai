@@ -38,7 +38,7 @@ GOGIT publishes public, allowlisted numerical audit reports after local verifica
 
 The V76 CPU-only report `PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001` verified implementation and safety gates before the separately authorized GPU run.
 
-Verified state --> V76 scientific GOGIT, GitHub FINAL receipt and KUZ-DIN LinkedIn delivery are complete. V76 is CLOSED. V77 now exists as a frozen context-order sensitivity protocol with START explicitly authorized; GPU, training and BLIND access remain unauthorized.
+Verified state --> V76 scientific GOGIT, GitHub FINAL receipt and KUZ-DIN LinkedIn delivery are complete. V76 is CLOSED. V77 START is published in Discussion #8 with a committed receipt; implementation and CPU-only preflight are prepared. GPU, training and BLIND access remain unauthorized.
 
 Recent completed stages -->
 
@@ -164,9 +164,9 @@ The next protocol is [V77 Residual Context-Order Sensitivity Control 001](../pha
 
 V77 freezes an exact 30-field scientific schema around a deterministic `REVERSE_HISTORY_KEEP_LAST` counterfactual. The transform preserves target, prefix length, token multiset, BOS and immediate preceding token while reversing only earlier context order.
 
-The [V77 START source](../docs/discussions/steps/V77-start.md) is committed and START is explicitly authorized by the operator.
+The [V77 START source](../docs/discussions/steps/V77-start.md) is published in [Discussion #8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8), with a committed [START receipt](../automation/dev-flow/receipts/V77-start.json).
 
-V77 START does not authorize scientific GPU execution, training, optimizer steps, checkpoint writes or BLIND access. CPU implementation/preflight may be prepared only after the START receipt is verified.
+V77 implementation and CPU-only preflight are now prepared. START does not authorize scientific GPU execution, training, optimizer steps, checkpoint writes or BLIND access.
 
 ## Adding a future audit
 
