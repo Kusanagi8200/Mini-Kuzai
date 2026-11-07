@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions and LinkedIn DEV-FLOW
 
-Status --> **V74 CLOSED / V75 CLOSED / V76 PROTOCOL FROZEN / START DRAFT PREPARED / START NOT AUTHORIZED**
+Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 PROTOCOL FROZEN / START AUTHORIZED / START RECEIPT PENDING**
 
 Target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -18,6 +18,7 @@ Repository --> `Kusanagi8200/Mini-Kuzai` (`R_kgDOUI2cCw`)
 | [#4](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/4) | [First training results](history/03-first-training-results.md) | Historical |
 | [#5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) | V74 scientific START and FINAL | Completed |
 | [#6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6) | V75 TRAIN-fitted geometry START and FINAL | Completed |
+| [#7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7) | V76 frequency-residualized PC1 START and FINAL | Completed |
 
 The historical posts were transferred to this repository and verified in the `Development Log` category. [`tools/github_discussions_history.py`](../../tools/github_discussions_history.py) is a separate historical tool and must not be invoked in live mode for new steps.
 
@@ -88,7 +89,31 @@ Verified scientific result --> TRAIN and VALIDATION PC1 directions align at 99.9
 
 **Both V75 START and FINAL are complete. Do not recreate or replay either event.**
 
-The next version is V76. Its [frozen protocol](../../phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md) and [START draft](steps/V76-start.md) are committed for review. No `automation/dev-flow/requests/V76-start.json` exists, and no START publication, implementation execution, GPU run, training or BLIND access is authorized.
+## V76 scientific and publication closure - 2026-11-07
+
+- [V76 scientific protocol and verified findings](../../phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md)
+- [V76 START source](steps/V76-start.md) --> [Discussion #7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7)
+- [V76 START receipt](../../automation/dev-flow/receipts/V76-start.json) --> `PUBLISHED`
+- [V76 CPU preflight](../../reports/assistant-results/history/PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001.json) --> PASS
+- [V76 scientific GOGIT](../../reports/assistant-results/history/PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.json) --> `V76_PASS=1`
+- [V76 FINAL request](../../automation/dev-flow/requests/V76-final.json) --> explicitly authorized
+- [V76 FINAL receipt](../../automation/dev-flow/receipts/V76-final.json) --> `PUBLISHED`
+- GitHub FINAL --> [comment #19459204](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7#discussioncomment-19459204)
+- KUZ-DIN FINAL delivery audit --> [`KUZ-DIN-V76-FINAL-DELIVERY-001`](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V76-FINAL-DELIVERY-001.json)
+
+Verified production result --> V76 START and FINAL are both PUBLISHED in the personal LinkedIn journal. The V76 FINAL event has a valid LinkedIn URN, QUEUE and DELIVERY timers are enabled+active, and the journal contains 6 total published DEV-FLOW rows with zero PREPARED / IN_FLIGHT records.
+
+Verified scientific result --> TRAIN lexical frequency explains 7.75% of the centered PC1 output-profile energy. The residual retains 92.25% and reaches 2594/9170 correct predictions, while remaining collapsed to only 2 predicted IDs with a 70.43% dominant share.
+
+**Both V76 START and FINAL are complete. Do not recreate or replay either event.**
+
+## V77 START state - 2026-11-07
+
+The next version is V77. Its [frozen protocol](../../phases/MINI-KUZAI-PHASE-03-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001.md) and [START source](steps/V77-start.md) are committed.
+
+Operator authorization for START-DEV-FLOW V77 is explicit. The exact START request is being committed separately. Until its receipt exists, V77 has not yet been published.
+
+V77 START authorizes implementation and CPU-only preflight preparation after receipt verification. It does not authorize GPU scientific execution, training, BLIND access or FINAL.
 
 ## Recovery and change policy
 
