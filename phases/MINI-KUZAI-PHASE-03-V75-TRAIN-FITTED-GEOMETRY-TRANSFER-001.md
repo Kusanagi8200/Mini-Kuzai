@@ -3,7 +3,7 @@
 Date --> 2026-11-01
 Frozen review --> 2026-11-07
 
-Status --> **PROTOCOL FROZEN / START-DEV-FLOW AUTHORIZED / GPU EXECUTION NOT YET AUTHORIZED / NO TRAINING / NO BLIND ACCESS**
+Status --> **SCIENTIFIC GOGIT VERIFIED / V75 PASS / FINAL-DEV-FLOW READY BUT NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS**
 
 ## Why V75 follows V74
 
@@ -205,6 +205,63 @@ A successful TRAIN-to-VALIDATION PC1 transfer would show that a dominant directi
 A weak transfer would show that the V72/V73 VALIDATION-fitted geometry was not fully stable across splits. It would not imply that the underlying model representation is useless.
 
 Teacher-forced lexical top-1 scoring remains a narrow diagnostic.
+
+## Verified V75 result - 2026-11-07
+
+Immutable scientific GOGIT --> [PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json)
+
+Publication commit --> [`187b53ccfd90`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/187b53ccfd90c38ffea32e9eb65e8672caba740b)
+
+The frozen 30-field report passed all declared reference and safety gates.
+
+| Metric | Verified value |
+| --- | ---: |
+| V75_PASS | 1 |
+| TRAIN lexical positions | 294726 |
+| VALIDATION lexical positions | 9170 |
+| Hidden dimension | 128 |
+| ORIGINAL correct | 2673 |
+| ORIGINAL distinct predicted IDs | 5 |
+| ORIGINAL dominant top-1 share | 72.55% |
+| TRAIN_CENTER correct | 2784 |
+| TRAIN_CENTER distinct predicted IDs | 16 |
+| TRAIN_CENTER dominant top-1 share | 56.76% |
+| TRAIN_PC1_ONLY correct | 2457 |
+| TRAIN_PC1_ONLY distinct predicted IDs | 2 |
+| TRAIN_PC1_ONLY dominant top-1 share | 70.43% |
+| TRAIN_MINUS_PC1 correct | 611 |
+| TRAIN_MINUS_PC1 distinct predicted IDs | 663 |
+| TRAIN_MINUS_PC1 dominant top-1 share | 9.66% |
+| TRAIN_UNIGRAM correct | 2535 |
+| TRAIN_PC1 / unigram argmax agreement | 6458 |
+| TRAIN_PC1 / unigram shared correct | 2451 |
+| VALIDATION-fitted PC1 correct replay | 2455 |
+| abs cosine(TRAIN PC1, VALIDATION PC1) | 99.95% |
+| TRAIN PC1 centered variance share | 90.19% |
+| VALIDATION PC1 centered variance share | 82.88% |
+| Coverage | 100.00% |
+| Training started | 0 |
+| BLIND access | 0 |
+
+### Scientific interpretation
+
+The dominant hidden-state direction is **not primarily an artifact of fitting PCA on VALIDATION**. The independently fitted TRAIN PC1 is almost collinear with the VALIDATION-fitted PC1, with an absolute cosine alignment of 99.95%.
+
+The transfer is also visible at the output layer. TRAIN_PC1_ONLY obtains 2457 correct predictions, versus 2455 for the frozen VALIDATION-fitted PC1 replay, with two distinct predicted IDs in both cases and essentially the same dominant-token concentration.
+
+Removing the TRAIN-derived PC1 produces a much more diverse output distribution - 663 distinct predicted IDs - but lexical top-1 accuracy falls to 611/9170. This confirms that the dominant direction carries a large fraction of the model's current teacher-forced predictive behavior.
+
+The result does **not** demonstrate semantic generalization or useful representation quality. V74's frequency-prior control remains highly relevant: TRAIN_PC1_ONLY still closely tracks the context-free TRAIN unigram baseline, with 6458 matching argmax predictions and 2451 shared correct predictions.
+
+The supported conclusion is therefore narrow --> the V72/V73 anisotropy is a stable cross-split geometric property of the frozen V62 representation, strongly associated with output-frequency concentration. It is not evidence of conversational competence, personality formation or a causal semantic feature.
+
+No checkpoint changed. No optimizer step occurred. BLIND remained closed.
+
+### Publication state
+
+V75 START is already published as [GitHub Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6).
+
+The scientific GOGIT is complete and immutable. The next DEV-FLOW operation is a **FINAL dry-run and review only**. `FINAL-DEV-FLOW` is not authorized until a separate explicit operator command creates the reviewed request.
 
 ## Authorization boundary
 
