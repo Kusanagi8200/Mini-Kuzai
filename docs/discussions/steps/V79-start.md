@@ -7,7 +7,7 @@
   PROJECT  : THE KUZ NETWORK
   PHASE    : 03
   STEP     : V79
-  STATUS   : EXPERIMENT PREPARED
+  STATUS   : EXPERIMENT STARTED
 ========================================================================
 ```
 
