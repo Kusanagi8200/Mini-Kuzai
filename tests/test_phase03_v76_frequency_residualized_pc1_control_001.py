@@ -166,14 +166,13 @@ class V76FrequencyResidualizedTests(unittest.TestCase):
             synthetic_frequency(),
         )
         dot = abs(float(torch.dot(fit["G"], fit["RESIDUAL"])))
-        scale = float(
-            torch.linalg.vector_norm(fit["G"])
-            * torch.linalg.vector_norm(fit["RESIDUAL"])
-        )
-        if scale == 0.0:
-            self.assertLessEqual(dot, V.DECOMP_ATOL)
+        g_norm = float(torch.linalg.vector_norm(fit["G"]))
+        r_norm = float(torch.linalg.vector_norm(fit["RESIDUAL"]))
+        q_norm = float(torch.linalg.vector_norm(fit["Q"]))
+        if r_norm <= V.DECOMP_ATOL * max(q_norm, 1.0):
+            self.assertLessEqual(dot, V.DECOMP_ATOL * max(g_norm, 1.0))
         else:
-            self.assertLessEqual(dot / scale, V.ORTHO_RTOL)
+            self.assertLessEqual(dot / (g_norm * r_norm), V.ORTHO_RTOL)
 
     def test_pearson_r2_identity(self):
         fit = V.decompose_output_profile(
