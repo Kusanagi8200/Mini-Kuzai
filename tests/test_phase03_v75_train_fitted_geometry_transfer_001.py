@@ -1,7 +1,9 @@
 """CPU-only V75 frozen protocol, streaming geometry and safety regression."""
 from __future__ import annotations
 
+import ast
 import importlib.util
+import subprocess
 import unittest
 from collections import Counter
 from pathlib import Path
@@ -11,6 +13,9 @@ import torch
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "tools" / "v75_train_fitted_geometry_transfer.py"
 PROTOCOL = ROOT / "phases" / "MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md"
+GOGIT = ROOT / "tools" / "gogit_public.py"
+AUDIT = ROOT / "tools" / "public-audits" / "phase03_v75_train_fitted_geometry_transfer_001.py"
+RUNNER = ROOT / "tools" / "run_v75_train_fitted_geometry_transfer_001_job.py"
 
 spec = importlib.util.spec_from_file_location("v75_train_geometry_test_source", SOURCE)
 if spec is None or spec.loader is None:
@@ -160,6 +165,50 @@ class V75GeometryTransferTests(unittest.TestCase):
         self.assertEqual(
             refs["V74_STRATA"]["V74_STRATA_PC1_UNIGRAM_SHARED_CORRECT"], 2449
         )
+
+    def test_gogit_allowlist_source_mapping_and_pinned_runner(self):
+        tree = ast.parse(GOGIT.read_text(encoding="utf-8"))
+        keys = None
+        for node in tree.body:
+            if isinstance(node, ast.Assign) and any(
+                isinstance(target, ast.Name) and target.id == "METRIC_KEYS"
+                for target in node.targets
+            ):
+                keys = ast.literal_eval(node.value)
+                break
+        self.assertIsInstance(keys, set)
+        self.assertTrue(set(V.METRIC_FIELDS) <= keys)
+
+        gogit_spec = importlib.util.spec_from_file_location("v75_gogit_test", GOGIT)
+        self.assertIsNotNone(gogit_spec)
+        self.assertIsNotNone(gogit_spec.loader)
+        gogit = importlib.util.module_from_spec(gogit_spec)
+        gogit_spec.loader.exec_module(gogit)
+        audit_rel = "tools/public-audits/phase03_v75_train_fitted_geometry_transfer_001.py"
+        self.assertEqual(
+            gogit.source_for_audit(audit_rel),
+            "Mini-Kuzai V75 frozen TRAIN-fitted geometry transfer to VALIDATION",
+        )
+
+        runner_spec = importlib.util.spec_from_file_location("v75_runner_test", RUNNER)
+        self.assertIsNotNone(runner_spec)
+        self.assertIsNotNone(runner_spec.loader)
+        runner = importlib.util.module_from_spec(runner_spec)
+        runner_spec.loader.exec_module(runner)
+
+        def blob(path):
+            return subprocess.run(
+                ["git", "-C", str(ROOT), "hash-object", "--", str(path)],
+                capture_output=True,
+                text=True,
+                check=True,
+            ).stdout.strip()
+
+        self.assertEqual(runner.SOURCE_BLOB, blob(SOURCE))
+        self.assertEqual(runner.AUDIT_BLOB, blob(AUDIT))
+        self.assertEqual(runner.GOGIT_BLOB, blob(GOGIT))
+        self.assertEqual(runner.PROTOCOL_BLOB, blob(PROTOCOL))
+        self.assertEqual(runner.STEP, V.STEP_ID)
 
     def test_source_has_no_training_checkpoint_write_or_full_hidden_retention(self):
         source = SOURCE.read_text(encoding="utf-8")
