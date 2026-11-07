@@ -112,6 +112,26 @@ cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && ( set -euo pipefail; git pull --ff-only
 
 After a successful publication, the operator only needs to request `GOGIT` in ChatGPT.
 
+## V75 FINAL DEV-FLOW preflight
+
+After the verified V75 scientific GOGIT, FINAL preparation uses a separate read-only GOGIT preflight.
+
+STEP_ID --> `PHASE03-SMOLTALK-V75-FINAL-PREFLIGHT-001`
+
+Producer --> `tools/public-audits/phase03_v75_final_preflight_001.py`
+
+The audit validates the immutable 30-field V75 scientific report, the published V75 START receipt, the existing Discussion #6 and a `github_discussions_step.py` close dry-run. It requires `GOGIT_CLOSURE=READY_TO_COMMENT` and `PUBLICATION=DISABLED`.
+
+It explicitly requires both `automation/dev-flow/requests/V75-final.json` and `automation/dev-flow/receipts/V75-final.json` to be absent. It never supplies `--publish` and therefore cannot create the FINAL comment.
+
+Run from synchronized `main` -->
+
+```bash
+cd /root/GitHub-Mini-Kuzai/Mini-Kuzai && ( set -euo pipefail; git fetch --no-tags origin main; git pull --ff-only origin main; test -z "$(git status --porcelain)"; /root/Mini-Kuzai/.venv/bin/python -m unittest discover -s tests -p 'test_phase03_v75_final_preflight_001.py' -v >/dev/null; /root/Mini-Kuzai/.venv/bin/python tools/gogit_public.py --step PHASE03-SMOLTALK-V75-FINAL-PREFLIGHT-001 --audit tools/public-audits/phase03_v75_final_preflight_001.py )
+```
+
+After successful publication, the operator requests `GOGIT` in ChatGPT. A PASS result means only that FINAL is technically ready for a later explicit authorization. It does not authorize or publish FINAL.
+
 ## Adding a future audit
 
 Create and review a new file under `tools/public-audits/`, commit and push that script first. Audit inputs may include frozen public corpus material or private local inference artifacts **only where the reviewed protocol authorizes numeric-only aggregates and explicitly prohibits raw text, identity and secrets from publication**. The GOGIT mechanism does not authorize training or disclose the underlying data. The script must print only numerical aggregate counters with allowlisted keys after the results marker. Use a new unique `PHASE03-SMOLTALK-...` STEP_ID for each run.
