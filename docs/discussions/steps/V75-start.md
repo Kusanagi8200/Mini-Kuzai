@@ -13,21 +13,31 @@
 
 ## Objective
 
-Investigate whether the pronounced leading hidden-state direction observed in V72 and V73 transfers when its mean and principal axis are fitted exclusively on frozen TRAIN states, rather than fitted on the same VALIDATION states used for scoring.
+Determine whether the dominant output-head hidden-state direction transfers from the frozen TRAIN population to the separate frozen VALIDATION population when the geometry is fitted exclusively on TRAIN.
 
-V74 verified that the PC1_ONLY predictor's apparent usefulness is strongly confounded by frequent TRAIN tokens: the context-free unigram baseline achieved 2535 correct predictions versus 2455 for PC1_ONLY, and 2449 PC1 hits were shared.
+V74 showed that the earlier VALIDATION-fitted PC1_ONLY result was strongly confounded by TRAIN token frequency. V75 therefore removes the VALIDATION-fit bias before making any further interpretation of the dominant direction.
 
-## Proposed bounded research scope
+## Frozen scope
 
-Use the original stopped V62 cycle-2 checkpoint and unchanged corpus/tokenizer. Determine a deterministic TRAIN-only fitting population, compute aggregate geometry through a bounded read-only inference pass, then apply the fixed resulting mean and PC1 to the same frozen 9170 VALIDATION lexical scoring positions.
+The V75 protocol is frozen before this START.
 
-The proposed controls compare original logits, TRAIN mean-centered logits, TRAIN-PC1-only logits and TRAIN-minus-PC1 logits, with the frozen V74 frequency baseline and V73 VAL-fitted geometry as predeclared references. Publish only numeric aggregates.
+The study reuses the original stopped V62 cycle-2 checkpoint with 69 optimizer steps and 597982 exposure tokens. The complete frozen TRAIN lexical population is the calibration set and the same 9170 frozen VALIDATION lexical positions are the scoring set.
 
-## Safety and review gates
+The TRAIN mean and leading principal direction must be estimated without consulting VALIDATION. The fixed TRAIN geometry is then applied to ORIGINAL, TRAIN_CENTER, TRAIN_PC1_ONLY and TRAIN_MINUS_PC1 controls. The frozen V74 TRAIN_UNIGRAM result and the V73 VALIDATION-fitted geometry remain descriptive references only.
 
-This file is a **review-only draft**, not a claim that V75 has started. Before any START-DEV-FLOW, the operator must explicitly approve the final V75 scientific protocol, metric schema, source fingerprints, tests and GPU limits. No V75 request or GitHub Discussion should be created from this draft alone.
+One public GOGIT report is predeclared with exactly 30 nonnegative integer metrics, including explicit no-training and no-BLIND gates.
 
-No new training, optimizer step, checkpoint write, BLIND evaluation, private text export, individual token publication or change to existing model weights is authorized. A future GOGIT publication and separate FINAL-DEV-FLOW require their own verified evidence and explicit order.
+## Safety and execution gates
+
+This START opens the V75 development and research flow. It does not authorize model training or BLIND evaluation.
+
+Before any GPU execution, the V75 implementation, CPU regression tests, source fingerprints, fixed batch/chunk strategy and measured resource gate must be reviewed and pass fail-closed preflight.
+
+No optimizer step, checkpoint write, model-weight change, tokenizer/corpus modification, hidden-state export, private text publication, individual token publication or per-position prediction publication is authorized.
+
+A GPU failure, provenance mismatch, denominator mismatch, nonfinite statistic, timeout, changed checkpoint or attempted BLIND access must abort without GOGIT publication.
+
+This START makes no advance claim about the scientific result. Only immutable GOGIT evidence can be reviewed after the controlled study, and FINAL-DEV-FLOW requires a separate explicit authorization.
 
 ---
 
