@@ -38,7 +38,7 @@ GOGIT publishes public, allowlisted numerical audit reports after local verifica
 
 The V76 CPU-only report `PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001` verified implementation and safety gates before the separately authorized GPU run.
 
-Verified state --> V76 scientific GOGIT, GitHub FINAL receipt and KUZ-DIN LinkedIn delivery are complete. V76 is CLOSED. V77 START is published in Discussion #8 with a committed receipt; implementation and CPU-only preflight are prepared. GPU, training and BLIND access remain unauthorized.
+Verified state --> V76 is CLOSED. V77 START is published in Discussion #8, CPU preflight is PASS with 18/18 tests, and the bounded read-only V77 GPU scientific run is explicitly authorized. Training and BLIND access remain unauthorized.
 
 Recent completed stages -->
 
@@ -166,7 +166,7 @@ V77 freezes an exact 30-field scientific schema around a deterministic `REVERSE_
 
 The [V77 START source](../docs/discussions/steps/V77-start.md) is published in [Discussion #8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8), with a committed [START receipt](../automation/dev-flow/receipts/V77-start.json).
 
-V77 implementation and CPU-only preflight are now prepared. START does not authorize scientific GPU execution, training, optimizer steps, checkpoint writes or BLIND access.
+V77 CPU-only preflight is PASS. The operator has now separately authorized the bounded read-only scientific GPU execution. Training, optimizer steps, checkpoint writes and BLIND access remain prohibited.
 
 ## Adding a future audit
 
