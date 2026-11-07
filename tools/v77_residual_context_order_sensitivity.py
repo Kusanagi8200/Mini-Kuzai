@@ -558,9 +558,7 @@ def score_validation(
                     dtype=torch.long,
                     device=device,
                 )
-                if full_alpha.numel() != gold_all.numel() != 0:
-                    pass
-                if full_alpha.shape != gold_all.shape:
+                if full_alpha.numel() == 0 or full_alpha.shape != gold_all.shape:
                     raise RuntimeError("V77 FULL paired shape mismatch")
 
                 lexical_total += int(gold_all.numel())
