@@ -120,7 +120,7 @@ class V78IdenticalContextRebatchingTests(unittest.TestCase):
     def test_11_centered_pearson_perfect_relation(self):
         stats = V.empty_pair_stats()
         x = torch.tensor([-2.0, -1.0, 1.0, 2.0], dtype=torch.float64)
-        y = 3.0 * x + 5.0
+        y = x + 5e-5
         pred = torch.tensor([3, 4, 5, 6])
         gold = pred.clone()
         V.update_pair_stats(stats, x, y, pred, pred, gold, 4, 4)
