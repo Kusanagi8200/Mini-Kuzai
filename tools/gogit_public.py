@@ -102,6 +102,12 @@ SOURCE_PHASE03_V77 = (
 SOURCE_PHASE03_V77_PREFLIGHT = (
     "Mini-Kuzai V77 CPU-only implementation and safety preflight"
 )
+SOURCE_PHASE03_V78 = (
+    "Mini-Kuzai V78 identical-context rebatching numerical control"
+)
+SOURCE_PHASE03_V78_PREFLIGHT = (
+    "Mini-Kuzai V78 CPU-only implementation and safety preflight"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1912,6 +1918,27 @@ METRIC_KEYS = {
     "V77_PREFLIGHT_SCIENTIFIC_GOGIT_PRESENT",
     "V77_PREFLIGHT_GPU_LIMIT_MIB", "V77_PREFLIGHT_VAL_BATCH",
     "V77_PREFLIGHT_COUNTERFACTUAL_BATCH", "V77_PREFLIGHT_SCORE_CHUNK",
+    "V78_PASS", "V78_BLIND_ACCESS", "V78_VAL_LEXICAL",
+    "V78_PATH_A_BATCH", "V78_PATH_B_BATCH",
+    "V78_PATH_A_CORRECT", "V78_PATH_A_DISTINCT", "V78_PATH_A_TOP1_SHARE_BP",
+    "V78_PATH_B_CORRECT", "V78_PATH_B_DISTINCT", "V78_PATH_B_TOP1_SHARE_BP",
+    "V78_PRED_AGREE", "V78_PRED_CHANGED", "V78_SHARED_CORRECT",
+    "V78_A_ONLY_CORRECT", "V78_B_ONLY_CORRECT",
+    "V78_ALPHA_SIGN_AGREE", "V78_ALPHA_SIGN_CHANGED",
+    "V78_ALPHA_CORR_ABS_BP", "V78_ALPHA_DELTA_GT_1E7",
+    "V78_ALPHA_DELTA_GT_1E6", "V78_ALPHA_DELTA_GT_1E5",
+    "V78_ALPHA_MAX_ABS_NANO", "V78_ALPHA_MEAN_ABS_NANO",
+    "V78_IDENTICAL_PREFIXES", "V78_INPUT_MATCHES", "V78_COVERAGE_BP",
+    "V78_PREFLIGHT_PASS", "V78_PREFLIGHT_CPU_ONLY",
+    "V78_PREFLIGHT_TESTS_TOTAL", "V78_PREFLIGHT_TESTS_FAILED",
+    "V78_PREFLIGHT_TESTS_ERRORS", "V78_PREFLIGHT_TESTS_SKIPPED",
+    "V78_PREFLIGHT_START_RECEIPT", "V78_PREFLIGHT_SCHEMA_FIELDS",
+    "V78_PREFLIGHT_ALLOWLIST_OK", "V78_PREFLIGHT_PINS_OK",
+    "V78_PREFLIGHT_DEPENDENCIES_OK", "V78_PREFLIGHT_GPU_EXECUTION",
+    "V78_PREFLIGHT_GPU_AUTHORIZED", "V78_PREFLIGHT_BLIND_ACCESS",
+    "V78_PREFLIGHT_SCIENTIFIC_GOGIT_PRESENT",
+    "V78_PREFLIGHT_GPU_LIMIT_MIB", "V78_PREFLIGHT_PATH_A_BATCH",
+    "V78_PREFLIGHT_PATH_B_BATCH", "V78_PREFLIGHT_SCORE_CHUNK",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -2015,6 +2042,10 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V77
     if tracked == "tools/public-audits/phase03_v77_cpu_preflight_001.py":
         return SOURCE_PHASE03_V77_PREFLIGHT
+    if tracked == "tools/public-audits/phase03_v78_identical_context_rebatching_numerical_control_001.py":
+        return SOURCE_PHASE03_V78
+    if tracked == "tools/public-audits/phase03_v78_cpu_preflight_001.py":
+        return SOURCE_PHASE03_V78_PREFLIGHT
     return SOURCE
 
 
@@ -2146,6 +2177,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     v77_workstream = tracked in {
         "tools/public-audits/phase03_v77_residual_context_order_sensitivity_001.py",
         "tools/public-audits/phase03_v77_cpu_preflight_001.py",
+    }
+    v78_workstream = tracked in {
+        "tools/public-audits/phase03_v78_identical_context_rebatching_numerical_control_001.py",
+        "tools/public-audits/phase03_v78_cpu_preflight_001.py",
     }
 
     architecture_workstream = tracked.startswith(
@@ -2303,6 +2338,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v77_workstream:
         # V77 context-order sensitivity is not semantic validation or training.
+        return False
+    if v78_workstream:
+        # V78 rebatching control is numerical, not semantic validation or training.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
