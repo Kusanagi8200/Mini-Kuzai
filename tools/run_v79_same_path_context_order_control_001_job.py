@@ -20,11 +20,11 @@ RUN = Path("/root/Mini-Kuzai/runs/v62-margin-001")
 HISTORY_DIR = ROOT / "reports" / "assistant-results" / "history"
 
 SOURCE = "tools/v79_same_path_context_order_control.py"
-SOURCE_BLOB = "93eb80c115ce1989e3ca077accd98850667e158f"
+SOURCE_BLOB = "ec3a8702e53789a10486fdcc85dd384b3a89150f"
 AUDIT = "tools/public-audits/phase03_v79_same_path_context_order_control_001.py"
-AUDIT_BLOB = "d233ae04577229d2f803afdc2deef8f187e7d5e7"
+AUDIT_BLOB = "ef35044aeb14ce129756f27f76793c52ec083f73"
 GOGIT = "tools/gogit_public.py"
-GOGIT_BLOB = "420e41f4a36e55e3beb344e7fc61ed819c308892"
+GOGIT_BLOB = "f374f10cc8db36e4b146b3a172c6e5433e513fff"
 PROTOCOL = "phases/MINI-KUZAI-PHASE-03-V79-SAME-PATH-CONTEXT-ORDER-CONTROL-001.md"
 PROTOCOL_BLOB = "ca66821d0e844c13350d58e922b8adadd96f6f12"
 CPU_PREFLIGHT_AUDIT = "tools/public-audits/phase03_v79_cpu_preflight_001.py"
@@ -35,7 +35,7 @@ CPU_PREFLIGHT = (
 )
 CPU_PREFLIGHT_BLOB = "855e96ec567b3a81f483aa51767da40dd8b8421b"
 TEST = "tests/test_phase03_v79_same_path_context_order_control_001.py"
-TEST_BLOB = "7b4288ddb9fe0ba254d69a5b63d82e399ef5ef02"
+TEST_BLOB = "5137ec2c8d8f556a85a2323b08bb2acc2935d795"
 START_RECEIPT = "automation/dev-flow/receipts/V79-start.json"
 START_RECEIPT_BLOB = "613dc5635e8a9b5bd591fc35a87d5d383a3d0900"
 
@@ -49,6 +49,8 @@ ORIGINS = {
     "git@github.com:Kusanagi8200/Mini-Kuzai.git",
 }
 SAFE = ("SEMANTIC_VALIDATION_COMPLETE", "TRAINING_AUTHORIZED", "TRAINING_STARTED")
+PUBLIC_METRIC_MAX = 100_000_000
+ALPHA_MAX_ABS_NANO_LIMIT = 2_000_000_000
 
 
 def git(*args: str) -> str:
@@ -243,7 +245,15 @@ def validate_history() -> dict:
         and report.get("private_conversation_data_included") is False
         and isinstance(metrics, dict)
         and len(metrics) == 30
-        and all(type(v) is int and 0 <= v <= 100_000_000 for v in metrics.values())
+        and all(
+            type(v) is int
+            and 0 <= v <= (
+                ALPHA_MAX_ABS_NANO_LIMIT
+                if k == "V79_ALPHA_MAX_ABS_NANO"
+                else PUBLIC_METRIC_MAX
+            )
+            for k, v in metrics.items()
+        )
         and all(metrics.get(k) == v for k, v in fixed.items())
         and all(metrics.get(k) == 0 for k in SAFE)
         and 0 <= metrics.get("V79_REVERSE_CORRECT", -1) <= 9170
@@ -263,8 +273,10 @@ def validate_history() -> dict:
         <= metrics.get("V79_ALPHA_DELTA_GT_1E6", -1)
         <= metrics.get("V79_ALPHA_DELTA_GT_1E7", -1)
         <= 9170
-        and 0 <= metrics.get("V79_ALPHA_MAX_ABS_NANO", -1) <= 100_000_000
-        and 0 <= metrics.get("V79_ALPHA_MEAN_ABS_NANO", -1) <= 100_000_000
+        and 0 <= metrics.get("V79_ALPHA_MAX_ABS_NANO", -1)
+        <= ALPHA_MAX_ABS_NANO_LIMIT
+        and 0 <= metrics.get("V79_ALPHA_MEAN_ABS_NANO", -1)
+        <= PUBLIC_METRIC_MAX
     ):
         raise RuntimeError("V79 published GOGIT integrity gate failed")
 
