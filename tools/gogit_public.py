@@ -96,6 +96,12 @@ SOURCE_PHASE03_V76 = (
 SOURCE_PHASE03_V76_PREFLIGHT = (
     "Mini-Kuzai V76 CPU-only implementation and safety preflight"
 )
+SOURCE_PHASE03_V77 = (
+    "Mini-Kuzai V77 frozen residual context-order sensitivity control"
+)
+SOURCE_PHASE03_V77_PREFLIGHT = (
+    "Mini-Kuzai V77 CPU-only implementation and safety preflight"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1883,6 +1889,29 @@ METRIC_KEYS = {
     "V76_PREFLIGHT_SCIENTIFIC_GOGIT_PRESENT",
     "V76_PREFLIGHT_GPU_LIMIT_MIB", "V76_PREFLIGHT_TRAIN_BATCH",
     "V76_PREFLIGHT_VAL_BATCH", "V76_PREFLIGHT_SCORE_CHUNK",
+    "V77_PASS", "V77_BLIND_ACCESS", "V77_VAL_LEXICAL",
+    "V77_HIDDEN_DIM", "V77_VOCAB", "V77_FULL_CORRECT",
+    "V77_FULL_DISTINCT", "V77_FULL_TOP1_SHARE_BP",
+    "V77_FULL_UNIGRAM_AGREE", "V77_FULL_UNIGRAM_SHARED_CORRECT",
+    "V77_REVERSE_CORRECT", "V77_REVERSE_DISTINCT",
+    "V77_REVERSE_TOP1_SHARE_BP", "V77_REVERSE_UNIGRAM_AGREE",
+    "V77_REVERSE_UNIGRAM_SHARED_CORRECT", "V77_PRED_AGREE",
+    "V77_PRED_CHANGED", "V77_FULL_REVERSE_SHARED_CORRECT",
+    "V77_FULL_ONLY_CORRECT", "V77_REVERSE_ONLY_CORRECT",
+    "V77_ALPHA_SIGN_AGREE", "V77_ALPHA_SIGN_CHANGED",
+    "V77_ALPHA_CORR_ABS_BP", "V77_ALPHA_DELTA_NONZERO",
+    "V77_PERTURBED_PREFIXES", "V77_UNCHANGED_PREFIXES",
+    "V77_COVERAGE_BP",
+    "V77_PREFLIGHT_PASS", "V77_PREFLIGHT_CPU_ONLY",
+    "V77_PREFLIGHT_TESTS_TOTAL", "V77_PREFLIGHT_TESTS_FAILED",
+    "V77_PREFLIGHT_TESTS_ERRORS", "V77_PREFLIGHT_TESTS_SKIPPED",
+    "V77_PREFLIGHT_START_RECEIPT", "V77_PREFLIGHT_SCHEMA_FIELDS",
+    "V77_PREFLIGHT_ALLOWLIST_OK", "V77_PREFLIGHT_PINS_OK",
+    "V77_PREFLIGHT_DEPENDENCIES_OK", "V77_PREFLIGHT_GPU_EXECUTION",
+    "V77_PREFLIGHT_GPU_AUTHORIZED", "V77_PREFLIGHT_BLIND_ACCESS",
+    "V77_PREFLIGHT_SCIENTIFIC_GOGIT_PRESENT",
+    "V77_PREFLIGHT_GPU_LIMIT_MIB", "V77_PREFLIGHT_VAL_BATCH",
+    "V77_PREFLIGHT_COUNTERFACTUAL_BATCH", "V77_PREFLIGHT_SCORE_CHUNK",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1982,6 +2011,10 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V76
     if tracked == "tools/public-audits/phase03_v76_cpu_preflight_001.py":
         return SOURCE_PHASE03_V76_PREFLIGHT
+    if tracked == "tools/public-audits/phase03_v77_residual_context_order_sensitivity_001.py":
+        return SOURCE_PHASE03_V77
+    if tracked == "tools/public-audits/phase03_v77_cpu_preflight_001.py":
+        return SOURCE_PHASE03_V77_PREFLIGHT
     return SOURCE
 
 
@@ -2109,6 +2142,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     v76_workstream = tracked in {
         "tools/public-audits/phase03_v76_frequency_residualized_pc1_control_001.py",
         "tools/public-audits/phase03_v76_cpu_preflight_001.py",
+    }
+    v77_workstream = tracked in {
+        "tools/public-audits/phase03_v77_residual_context_order_sensitivity_001.py",
+        "tools/public-audits/phase03_v77_cpu_preflight_001.py",
     }
 
     architecture_workstream = tracked.startswith(
@@ -2263,6 +2300,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v76_workstream:
         # V76 frequency residualization is not semantic validation or training.
+        return False
+    if v77_workstream:
+        # V77 context-order sensitivity is not semantic validation or training.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
