@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "command": "FINAL-DEV-FLOW",
+  "step": "V78",
+  "report": "reports/assistant-results/history/PHASE03-SMOLTALK-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001.json"
+}
