@@ -2274,8 +2274,17 @@ def main():
             check=False
         )
         if execution.returncode:
+            safe_detail = ""
+            if tracked == "tools/public-audits/phase03_v75_train_fitted_geometry_transfer_001.py":
+                match = re.fullmatch(
+                    r"\s*V75_SAFE_FAILURE_CODE:\s*([0-9]+)\s*",
+                    execution.stdout or "",
+                )
+                if match:
+                    safe_detail = "; V75_SAFE_FAILURE_CODE=" + match.group(1)
             raise RuntimeError(
                 f"Audit exited with status {execution.returncode}; nothing published"
+                + safe_detail
             )
         metrics = numeric_metrics(execution.stdout)
         training_authorized = metrics.get("TRAINING_AUTHORIZED") == 1
