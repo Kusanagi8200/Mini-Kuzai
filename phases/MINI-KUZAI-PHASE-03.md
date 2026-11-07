@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-11-07
 
-**V76 --> CLOSED AND DELIVERED. V77 --> START PUBLISHED / CPU PREFLIGHT READY / GPU NOT AUTHORIZED.**
+**V77 --> CLOSED AND DELIVERED. V78 --> START PUBLISHED / CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -491,13 +491,19 @@ KUZ-DIN journal            --> 6 PUBLISHED / 0 PREPARED / 0 IN_FLIGHT
 V76 training started       --> NO
 V76 BLIND access           --> 0
 Checkpoint changed         --> NO
-V77                        --> RESIDUAL CONTEXT-ORDER SENSITIVITY CONTROL FROZEN
-V77 START source           --> PUBLISHED / Discussion #8
-V77 START authorized       --> CONSUMED
-V77 START receipt          --> PUBLISHED
-V77 GPU authorized         --> NO
+V77                        --> CLOSED / GOGIT PASS / START+FINAL DELIVERED
+V77 top-1 changes          --> 5 / 9170
+V77 FULL/REVERSE correct   --> 2594 / 2594
+V77 alpha correlation      --> 99.99% absolute
+V77 GitHub FINAL           --> PUBLISHED / comment #19459823
+V77 LinkedIn FINAL         --> PUBLISHED
+V78                        --> IDENTICAL-CONTEXT REBATCHING NUMERICAL CONTROL FROZEN
+V78 START source           --> PUBLISHED / Discussion #9
+V78 START authorized       --> CONSUMED
+V78 START receipt          --> PUBLISHED
+V78 GPU authorized         --> NO
 New training authorized    --> NO
-Next workstream            --> V77 CPU implementation/preflight
+Next workstream            --> V78 implementation / CPU-only preflight
 ```
 
 The current scientific conclusion remains narrow.
