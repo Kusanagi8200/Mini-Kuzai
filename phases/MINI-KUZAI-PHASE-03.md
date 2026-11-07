@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-11-07
 
-**V76 --> CLOSED AND DELIVERED. V77 --> PROTOCOL FROZEN / START AUTHORIZED / RECEIPT PENDING.**
+**V76 --> CLOSED AND DELIVERED. V77 --> START PUBLISHED / CPU PREFLIGHT READY / GPU NOT AUTHORIZED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -492,12 +492,12 @@ V76 training started       --> NO
 V76 BLIND access           --> 0
 Checkpoint changed         --> NO
 V77                        --> RESIDUAL CONTEXT-ORDER SENSITIVITY CONTROL FROZEN
-V77 START source           --> PREPARED
-V77 START authorized       --> YES
-V77 START receipt          --> PENDING
+V77 START source           --> PUBLISHED / Discussion #8
+V77 START authorized       --> CONSUMED
+V77 START receipt          --> PUBLISHED
 V77 GPU authorized         --> NO
 New training authorized    --> NO
-Next workstream            --> publish V77 START then CPU implementation/preflight
+Next workstream            --> V77 CPU implementation/preflight
 ```
 
 The current scientific conclusion remains narrow.
@@ -521,7 +521,7 @@ Frozen next protocol --> [V77 Residual Context-Order Sensitivity Control 001](MI
 
 Reviewed START source --> [V77-start.md](../docs/discussions/steps/V77-start.md).
 
-The operator has explicitly authorized START-DEV-FLOW V77. This does not authorize V77 GPU execution, training, optimizer steps, checkpoint modification, BLIND access or FINAL publication.
+START-DEV-FLOW V77 is published in Discussion #8 with a committed receipt. This opens implementation and CPU-only preflight work only. It does not authorize V77 GPU execution, training, optimizer steps, checkpoint modification, BLIND access or FINAL publication.
 
 ## Historical checkpoint chronology - V53 to V59
 
