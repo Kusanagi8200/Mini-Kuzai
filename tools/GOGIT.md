@@ -34,13 +34,13 @@ Each completed run commits and pushes four **public numerical report** files whe
 
 GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest **scientific** immutable step is -->
 
-`PHASE03-SMOLTALK-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001`
+`PHASE03-SMOLTALK-V79-SAME-PATH-CONTEXT-ORDER-CONTROL-001`
 
-`PHASE03-SMOLTALK-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001`
+Previous controls --> `PHASE03-SMOLTALK-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001` and `PHASE03-SMOLTALK-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001`
 
 The V77 CPU-only report `PHASE03-SMOLTALK-V77-CPU-PREFLIGHT-001` verified implementation and safety gates before the separately authorized GPU run.
 
-Verified state --> V78 scientific GOGIT is published and PASS. Identical logical prefixes across the V77 batch-4 FULL_CONTEXT and batch-32 prefix/rebatch paths produced 0/9170 top-1 changes, 0 alpha-sign changes and identical 2594/9170 correctness, while continuous alpha deltas remained measurable. GitHub FINAL V78 is published in Discussion #9 comment #19461051; LinkedIn FINAL verification is pending. V79 is frozen and prepared only; START, execution, training and BLIND access remain unauthorized.
+Verified state --> V79 scientific GOGIT is published and PASS. ORIGINAL and REVERSE_HISTORY_KEEP_LAST were evaluated through the same batch-32 prefix-scoring path and reproduced exactly 5/9170 top-1 changes and 5 alpha-sign changes while both modes remained 2594/9170 correct; absolute alpha correlation remained 9999 basis points. GitHub FINAL V79 is published in Discussion #10 comment #19462368 with a verified FINAL receipt. KUZ-DIN audit `KUZ-DIN-V79-FINAL-DELIVERY-001` confirms the LinkedIn FINAL event is PUBLISHED with a valid URN, 12 total PUBLISHED DEV-FLOW events, 0 PREPARED and 0 IN_FLIGHT. Training remains unauthorized and BLIND remains closed.
 
 Recent completed stages -->
 

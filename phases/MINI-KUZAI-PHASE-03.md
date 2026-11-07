@@ -460,11 +460,11 @@ Current V53 evidence -->
 
 V78 closure --> identical-input rebatching changed no top-1 decision, alpha sign or correctness result, despite continuous alpha deltas. This rules out rebatching alone as an explanation for the five V77 discrete changes.
 
-V79 preparation --> ORIGINAL and REVERSE_HISTORY_KEEP_LAST will use the same prefix scorer and batch 32. The protocol is frozen, but START is not authorized and no V79 execution may occur.
+V79 closure --> ORIGINAL and REVERSE_HISTORY_KEEP_LAST were evaluated through the same prefix scorer and batch 32. The five prediction changes and five alpha-sign changes persisted, with both modes at 2594/9170 correct and 99.99% absolute alpha correlation. GitHub FINAL and LinkedIn FINAL are verified.
 
 ## Current status - 2026-11-07
 
-**V78 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING. V79 --> PREPARED ONLY / START NOT AUTHORIZED.**
+**V78 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION NOT SEPARATELY ARCHIVED. V79 --> CLOSED / GITHUB FINAL VERIFIED / LINKEDIN FINAL VERIFIED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
