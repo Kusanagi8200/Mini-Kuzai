@@ -217,3 +217,16 @@ When speed conflicts with one of these constraints, the stronger safety, semanti
 ---
 
 ##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
+
+
+## Autonomous START / FINAL DEV-FLOW
+
+For Mini-Kuzai Vxx research discussions, the operator commands `START-DEV-FLOW` and `FINAL-DEV-FLOW` are end-to-end publication authorizations, not requests for the operator to manually execute each internal publication step.
+
+The automation must, where available, perform request creation, commit/push, worker processing, GitHub Discussion publication, receipt verification, KUZ-DIN/LinkedIn delivery verification and GOGIT reporting. Intermediate deterministic tests and corrections should be looped automatically within the already-frozen scope.
+
+A verified `FINAL-DEV-FLOW` is not complete until GitHub and LinkedIn publication are both verified. Immediately afterward, Mini-Kuzai and KUZ-DIN documentation must be reviewed and updated where stale before the next Vxx protocol is advanced.
+
+Publication authorization never implies authorization for model training, optimizer steps, checkpoint mutation, BLIND access or a new scientific protocol.
+
+Every new project discussion must carry this operating rule forward. When available conversation context approaches a critical limit, the assistant must issue `CONTEXT WARNING - REPRISE RECOMMENDED` early enough to create a complete structured handoff for a new discussion.

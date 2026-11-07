@@ -994,3 +994,37 @@ Verified references -->
 ---
 
 ##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
+
+
+## V79 same-path context-order closure - 2026-11-07
+
+V79 is scientifically and operationally closed.
+
+Verified same-path batch-32 result -->
+
+- VALIDATION lexical positions --> 9170
+- perturbed prefixes --> 9062
+- unchanged prefixes --> 108
+- ORIGINAL correct --> 2594
+- REVERSE correct --> 2594
+- prediction changes --> 5
+- alpha sign changes --> 5
+- absolute alpha correlation --> 9999 basis points
+- ORIGINAL dominant share --> 7043 basis points
+- REVERSE dominant share --> 7046 basis points
+- TRAINING_STARTED --> 0
+- BLIND access --> 0
+
+The five V77 discrete changes therefore persist when ORIGINAL and REVERSE_HISTORY_KEEP_LAST use the exact same prefix-scoring path and batch size. Rebatching alone is not the explanation. The remaining effect is weak and boundary-sensitive; it does not establish semantic competence, correct context use or reasoning.
+
+Publication closure -->
+
+- GitHub FINAL --> Discussion #10 comment #19462368
+- FINAL receipt --> PUBLISHED
+- KUZ-DIN LinkedIn FINAL audit --> PASS
+- LinkedIn event --> PUBLISHED with valid URN
+- PREPARED / IN_FLIGHT --> 0 / 0
+
+V62 remains frozen. No new training or BLIND access is authorized.
+
+The next research proposal must be separately frozen and reviewed before execution.

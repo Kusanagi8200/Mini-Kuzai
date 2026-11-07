@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions and LinkedIn DEV-FLOW
 
-Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 SCIENTIFIC CLOSED + GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING / V79 START PUBLISHED / CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED**
+Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 SCIENTIFIC CLOSED + GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION NOT SEPARATELY ARCHIVED / V79 CLOSED + GITHUB FINAL VERIFIED + LINKEDIN FINAL VERIFIED**
 
 Target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -21,7 +21,7 @@ Repository --> `Kusanagi8200/Mini-Kuzai` (`R_kgDOUI2cCw`)
 | [#7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7) | V76 frequency-residualized PC1 START and FINAL | Completed |
 | [#8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8) | V77 residual context-order sensitivity START and FINAL | Completed |
 | [#9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9) | V78 identical-context rebatching numerical control START and FINAL | GitHub completed; LinkedIn FINAL verification pending |
-| [#10](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/10) | V79 same-path context-order control START | Started |
+| [#10](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/10) | V79 same-path context-order control START and FINAL | Completed |
 
 The historical posts were transferred to this repository and verified in the `Development Log` category. [`tools/github_discussions_history.py`](../../tools/github_discussions_history.py) is a separate historical tool and must not be invoked in live mode for new steps.
 
@@ -30,14 +30,14 @@ The historical posts were transferred to this repository and verified in the `De
 ```text
 Operator reviews approved Vxx scientific scope
   -> reviewed Markdown source, frozen audit schema and safety gates
-  -> separately authorized START-DEV-FLOW request on GitHub main
+  -> operator command START-DEV-FLOW authorizes the complete autonomous START publication transaction
   -> fhc2 worker validates and posts one GitHub Discussion START
   -> committed START receipt
   -> signed GitHub webhook -> KUZ-DIN SQLite PREPARE
   -> guarded LinkedIn DELIVERY, one publication
   -> bounded, separately authorized scientific run and numeric GOGIT
   -> operator reviews immutable GOGIT evidence
-  -> separately authorized FINAL-DEV-FLOW request
+  -> operator command FINAL-DEV-FLOW authorizes the complete autonomous FINAL publication transaction
   -> one verified GitHub Discussion comment + FINAL receipt
   -> signed webhook and one guarded LinkedIn FINAL publication
 ```
@@ -160,3 +160,31 @@ START authorizes implementation and CPU-only preflight only. It does not authori
 ---
 
 ##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
+
+
+## V79 scientific and production closure - 2026-11-07
+
+- [V79 protocol](../../phases/MINI-KUZAI-PHASE-03-V79-SAME-PATH-CONTEXT-ORDER-CONTROL-001.md)
+- [V79 scientific GOGIT](../../reports/assistant-results/history/PHASE03-SMOLTALK-V79-SAME-PATH-CONTEXT-ORDER-CONTROL-001.json) --> `V79_PASS=1`
+- [V79 FINAL request](../../automation/dev-flow/requests/V79-final.json) --> committed
+- [V79 FINAL receipt](../../automation/dev-flow/receipts/V79-final.json) --> `PUBLISHED`
+- GitHub FINAL --> [comment #19462368](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/10#discussioncomment-19462368)
+- KUZ-DIN FINAL delivery audit --> [KUZ-DIN-V79-FINAL-DELIVERY-001](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V79-FINAL-DELIVERY-001.json)
+
+Scientific result --> the same-path batch-32 comparison reproduces exactly 5/9170 top-1 changes and 5 alpha-sign changes. ORIGINAL and REVERSE both remain 2594/9170 correct with all 2594 correct positions shared; absolute alpha correlation remains 9999 basis points. The effect therefore persists after removing the V77 execution-path asymmetry, but remains weak and does not establish semantic competence.
+
+Production result --> exact event `close-V79-d10-c19462368` is `PUBLISHED`; LinkedIn URN present and valid; QUEUE and DELIVERY timers enabled+active; 12 total PUBLISHED DEV-FLOW rows; 0 PREPARED / 0 IN_FLIGHT; V79 has 2 PUBLISHED events.
+
+**Both V79 START and FINAL are complete. Do not recreate or replay either event.**
+
+## Mandatory autonomous DEV-FLOW operating rule
+
+For every new Vxx discussion:
+
+- `START-DEV-FLOW` means execute the complete START transaction autonomously through GitHub receipt and LinkedIn verification.
+- `FINAL-DEV-FLOW` means execute the complete FINAL transaction autonomously through GitHub receipt, LinkedIn verification and final GOGIT.
+- Loop CPU tests, deterministic diagnostics and in-scope corrective actions as far as possible without asking the operator to manually relay intermediate results.
+- Use GOGIT as the normal verification channel.
+- After every verified FINAL, review and update Mini-Kuzai and KUZ-DIN documentation before preparing the next step.
+- Never infer permission for training, BLIND access, checkpoint mutation or a new scientific scope from DEV-FLOW publication authorization.
+- When the ChatGPT context window approaches a critical level, emit `CONTEXT WARNING - REPRISE RECOMMENDED` with enough margin to produce a structured resume checkpoint for a new discussion.
