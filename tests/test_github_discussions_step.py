@@ -187,6 +187,43 @@ class StepPublisherTests(unittest.TestCase):
                 with self.assertRaises(S.H.PublicationError):
                     S.report("V74", self.REPORT)
 
+    def test_v79_alpha_max_nano_allows_measured_public_range_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            step_id = "PHASE03-SMOLTALK-V79-TEST-001"
+            report = "reports/assistant-results/history/" + step_id + ".json"
+            p = self.sample_payload()
+            p["step_id"] = step_id
+            p["producer"] = "tools/public-audits/phase03_v79_test.py"
+            p["metrics"] = {
+                "SEMANTIC_VALIDATION_COMPLETE": 0,
+                "TRAINING_STARTED": 0,
+                "TRAINING_AUTHORIZED": 0,
+                "V79_PASS": 1,
+                "V79_BLIND_ACCESS": 0,
+                "V79_ALPHA_MAX_ABS_NANO": 1086937904,
+            }
+            producer = root / p["producer"]
+            producer.parent.mkdir(parents=True)
+            producer.write_text("# Reviewed V79 audit\n", encoding="utf-8")
+            p["producer_sha256"] = hashlib.sha256(
+                producer.read_bytes()
+            ).hexdigest()
+            out = root / report
+            out.parent.mkdir(parents=True)
+            out.write_text(json.dumps(p), encoding="utf-8")
+            with patch.object(S, "ROOT", root):
+                S.report("V79", report)
+                p["metrics"]["V79_ALPHA_MAX_ABS_NANO"] = 2000000001
+                out.write_text(json.dumps(p), encoding="utf-8")
+                with self.assertRaises(S.H.PublicationError):
+                    S.report("V79", report)
+                p["metrics"]["V79_ALPHA_MAX_ABS_NANO"] = 1086937904
+                p["metrics"]["V79_OTHER_METRIC"] = 100000001
+                out.write_text(json.dumps(p), encoding="utf-8")
+                with self.assertRaises(S.H.PublicationError):
+                    S.report("V79", report)
+
     def test_invalid_report_paths(self):
         for path in (
             "/etc/passwd", "../history/x.json", "reports/assistant-results/latest.json",
