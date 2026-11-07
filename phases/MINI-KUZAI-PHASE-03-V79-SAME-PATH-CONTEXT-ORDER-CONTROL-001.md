@@ -3,7 +3,7 @@
 Date --> 2026-11-07
 Frozen review --> 2026-11-07
 
-Status --> **PROTOCOL FROZEN / START NOT AUTHORIZED / NO GPU AUTHORIZATION / NO TRAINING / NO BLIND ACCESS**
+Status --> **PROTOCOL FROZEN / START PUBLISHED / IMPLEMENTATION + CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS / FINAL NOT AUTHORIZED**
 
 ## Why V79 follows V78
 
@@ -350,31 +350,33 @@ A future V79 scientific implementation must remain bounded and read-only:
 
 ## Authorization boundary
 
-V79 is **prepared only**.
+The operator explicitly authorized **START-DEV-FLOW V79**.
 
-The operator has not authorized START-DEV-FLOW V79.
+Verified START state:
 
-This preparation permits only:
+- START request --> committed
+- GitHub Discussion --> #10
+- START receipt --> `PUBLISHED`
+- source commit --> `5f86ce1c143f2574301c18669803d251921bffb7`
 
-- committing this frozen protocol
-- committing a reviewed V79 START source
-- documentation updates describing V79 as prepared
+This START authorization permits:
+
+- V79 implementation preparation
+- CPU-only regression development
+- CPU-only preflight execution
+- immutable CPU preflight GOGIT publication
 
 It does not authorize:
 
-- creating a V79 START request
-- publishing a V79 GitHub Discussion
-- publishing a V79 LinkedIn START
-- V79 implementation execution
-- V79 CPU preflight execution
-- V79 GPU execution
+- V79 scientific GPU execution
 - training or optimizer steps
 - checkpoint modification
 - BLIND access
 - generation
 - FINAL-DEV-FLOW V79
+- any scientific success claim before a future verified scientific GOGIT
 
-A separate explicit operator authorization is required before START-DEV-FLOW V79.
+GPU execution requires a later explicit operator authorization after CPU preflight review.
 
 ---
 
