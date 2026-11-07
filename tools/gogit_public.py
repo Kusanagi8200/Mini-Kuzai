@@ -81,6 +81,9 @@ SOURCE_PHASE03_V74 = (
 SOURCE_PHASE03_V75 = (
     "Mini-Kuzai V75 frozen TRAIN-fitted geometry transfer to VALIDATION"
 )
+SOURCE_PHASE03_V75_PREFLIGHT = (
+    "Mini-Kuzai V75 CPU-only implementation and safety preflight"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1799,6 +1802,24 @@ METRIC_KEYS = {
     "V75_TRAIN_PC1_VAR_SHARE_BP",
     "V75_VAL_PC1_VAR_SHARE_BP",
     "V75_COVERAGE_BP",
+    "V75_PREFLIGHT_PASS",
+    "V75_PREFLIGHT_CPU_ONLY",
+    "V75_PREFLIGHT_TESTS_TOTAL",
+    "V75_PREFLIGHT_TESTS_FAILED",
+    "V75_PREFLIGHT_TESTS_ERRORS",
+    "V75_PREFLIGHT_TESTS_SKIPPED",
+    "V75_PREFLIGHT_START_RECEIPT",
+    "V75_PREFLIGHT_SCHEMA_FIELDS",
+    "V75_PREFLIGHT_ALLOWLIST_OK",
+    "V75_PREFLIGHT_PINS_OK",
+    "V75_PREFLIGHT_GPU_EXECUTION",
+    "V75_PREFLIGHT_GPU_AUTHORIZED",
+    "V75_PREFLIGHT_BLIND_ACCESS",
+    "V75_PREFLIGHT_SCIENTIFIC_GOGIT_PRESENT",
+    "V75_PREFLIGHT_GPU_LIMIT_MIB",
+    "V75_PREFLIGHT_TRAIN_BATCH",
+    "V75_PREFLIGHT_VAL_BATCH",
+    "V75_PREFLIGHT_SCORE_CHUNK",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1888,6 +1909,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V74
     if tracked == "tools/public-audits/phase03_v75_train_fitted_geometry_transfer_001.py":
         return SOURCE_PHASE03_V75
+    if tracked == "tools/public-audits/phase03_v75_cpu_preflight_001.py":
+        return SOURCE_PHASE03_V75_PREFLIGHT
     return SOURCE
 
 
