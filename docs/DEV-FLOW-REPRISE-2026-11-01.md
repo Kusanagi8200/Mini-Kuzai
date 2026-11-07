@@ -1,9 +1,9 @@
-# Mini-Kuzai - V74 to V78 production checkpoint
+# Mini-Kuzai - V74 to V79 production checkpoint
 
 Original checkpoint --> 2026-11-01
 Updated --> 2026-11-07
 
-Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 START PUBLISHED / CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED**
+Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 SCIENTIFIC CLOSED + GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION PENDING / V79 PREPARED ONLY**
 
 ## Verified two-host publishing topology
 
@@ -126,18 +126,59 @@ Interpretation boundary --> the stable PC1 output profile is not mostly explaine
 
 Safety state --> `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `V76_BLIND_ACCESS=0`, checkpoint unchanged.
 
+## V78 scientific and GitHub closure
+
+- scientific GOGIT --> `PHASE03-SMOLTALK-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001`
+- V78 PASS --> 1
+- identical prefixes / input matches --> 9170 / 9170
+- PATH_A correct --> 2594
+- PATH_B correct --> 2594
+- prediction changes --> 0
+- alpha sign changes --> 0
+- alpha correlation --> 10000 basis points
+- alpha delta > 1e-7 --> 4107
+- alpha delta > 1e-6 --> 1226
+- alpha delta > 1e-5 --> 1209
+- training started --> 0
+- BLIND access --> 0
+- GitHub FINAL --> Discussion #9 comment #19461051
+- FINAL receipt --> PUBLISHED
+
+Scientific interpretation --> execution-path/rebatching differences create continuous numerical noise but do not create discrete V78 decisions. Rebatching alone therefore does not explain the five V77 changed predictions.
+
+Production caveat --> LinkedIn FINAL delivery is not yet independently verified in this repository checkpoint.
+
+## V79 prepared boundary
+
+V79 is frozen as a same-path context-order control.
+
+Both ORIGINAL and REVERSE_HISTORY_KEEP_LAST are planned to use:
+
+- the same frozen prefix scorer
+- batch 32
+- the same V76 residual profile
+- the same target and prefix invariants
+
+Prepared files:
+
+- `phases/MINI-KUZAI-PHASE-03-V79-SAME-PATH-CONTEXT-ORDER-CONTROL-001.md`
+- `docs/discussions/steps/V79-start.md`
+
+No `automation/dev-flow/requests/V79-start.json` is authorized or created.
+
 ## Exact resumption order
 
 1. Keep V62 frozen and BLIND closed
-2. Treat V74, V75, V76 and V77 START/FINAL publications and scientific GOGIT reports as immutable completed history
-3. Use the frozen V78 protocol at `phases/MINI-KUZAI-PHASE-03-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001.md`
-4. Use the committed V78 START source at `docs/discussions/steps/V78-start.md`
-5. Treat V78 START [Discussion #9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9) and its committed receipt as immutable published history
-6. Prepare and execute only the V78 CPU implementation/preflight
-7. Do not execute V78 GPU scientific work without a separate explicit authorization after CPU preflight review
-8. Do not authorize training, optimizer steps, checkpoint writes or BLIND access from V77 closure
+2. Treat V74 through V77 as immutable completed history
+3. Treat V78 scientific GOGIT and GitHub START/FINAL as immutable completed history
+4. Verify the V78 LinkedIn FINAL independently in KUZ-DIN before calling production delivery fully closed
+5. Review the frozen V79 protocol and prepared START source
+6. Do not create or publish V79 START without a new explicit operator authorization
+7. After a future V79 START receipt, implementation and CPU-only preflight require their own reviewed boundary
+8. GPU scientific execution remains separately unauthorized until a future CPU preflight is reviewed
+9. No new training, optimizer steps, checkpoint writes, BLIND access or generation are authorized
 
-**PAUSE BOUNDARY** --> V77 is fully closed. V78 START is published. CPU-only implementation/preflight is the current authorized boundary; GPU remains separately unauthorized.
+**PAUSE BOUNDARY** --> V78 scientific work and GitHub FINAL are closed. V79 is prepared only. No V79 START request exists.
 
 ---
 
