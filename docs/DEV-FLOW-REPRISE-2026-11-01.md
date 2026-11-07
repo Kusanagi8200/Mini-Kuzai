@@ -1,9 +1,9 @@
-# Mini-Kuzai - V74 to V76 production closure checkpoint
+# Mini-Kuzai - V74 to V78 production checkpoint
 
 Original checkpoint --> 2026-11-01
 Updated --> 2026-11-07
 
-Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 START PUBLISHED / CPU PREFLIGHT READY / GPU NOT AUTHORIZED**
+Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 CLOSED / V78 START PUBLISHED / CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED**
 
 ## Verified two-host publishing topology
 
@@ -129,15 +129,15 @@ Safety state --> `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `V76_BLIND_ACCES
 ## Exact resumption order
 
 1. Keep V62 frozen and BLIND closed
-2. Treat V74, V75 and V76 START/FINAL publications and GOGIT reports as immutable completed history
-3. Use the frozen V77 protocol at `phases/MINI-KUZAI-PHASE-03-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001.md`
-4. Use the committed V77 START source at `docs/discussions/steps/V77-start.md`
-5. Treat V77 START [Discussion #8](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8) and its committed receipt as immutable published history
-6. Execute and review the prepared V77 CPU-only implementation preflight
-7. Do not execute V77 GPU scientific work without a separate explicit authorization
-8. Do not authorize training, optimizer steps, checkpoint writes or BLIND access from V76 closure
+2. Treat V74, V75, V76 and V77 START/FINAL publications and scientific GOGIT reports as immutable completed history
+3. Use the frozen V78 protocol at `phases/MINI-KUZAI-PHASE-03-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001.md`
+4. Use the committed V78 START source at `docs/discussions/steps/V78-start.md`
+5. Treat V78 START [Discussion #9](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9) and its committed receipt as immutable published history
+6. Prepare and execute only the V78 CPU implementation/preflight
+7. Do not execute V78 GPU scientific work without a separate explicit authorization after CPU preflight review
+8. Do not authorize training, optimizer steps, checkpoint writes or BLIND access from V77 closure
 
-**PAUSE BOUNDARY** --> V76 is fully closed. V77 START is published and CPU preflight is the current boundary. GPU remains a later explicit authorization.
+**PAUSE BOUNDARY** --> V77 is fully closed. V78 START is published. CPU-only implementation/preflight is the current authorized boundary; GPU remains separately unauthorized.
 
 ---
 
