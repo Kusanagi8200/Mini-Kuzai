@@ -3,7 +3,7 @@
 Date --> 2026-11-01
 Frozen review --> 2026-11-07
 
-Status --> **SCIENTIFIC GOGIT VERIFIED / V75 PASS / FINAL-DEV-FLOW READY BUT NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS**
+Status --> **V75 CLOSED / SCIENTIFIC GOGIT VERIFIED / FINAL GITHUB+LINKEDIN PUBLISHED / NO TRAINING / NO BLIND ACCESS**
 
 ## Why V75 follows V74
 
@@ -259,24 +259,28 @@ No checkpoint changed. No optimizer step occurred. BLIND remained closed.
 
 ### Publication state
 
-V75 START is already published as [GitHub Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6).
+V75 is **closed**.
 
-The scientific GOGIT is complete and immutable. The next DEV-FLOW operation is a **FINAL dry-run and review only**. `FINAL-DEV-FLOW` is not authorized until a separate explicit operator command creates the reviewed request.
+- START --> [GitHub Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6), receipt [V75-start.json](../automation/dev-flow/receipts/V75-start.json)
+- Scientific GOGIT --> [PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json), commit [`187b53ccfd90`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/187b53ccfd90c38ffea32e9eb65e8672caba740b)
+- FINAL preflight --> [PHASE03-SMOLTALK-V75-FINAL-PREFLIGHT-001](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-FINAL-PREFLIGHT-001.json), PASS
+- FINAL request --> [V75-final.json](../automation/dev-flow/requests/V75-final.json), source commit [`0ddf24b8d3f8`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/0ddf24b8d3f897e15810267658fe24b3d5a1608e)
+- GitHub FINAL --> [Discussion #6 comment #19458251](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6#discussioncomment-19458251)
+- FINAL receipt --> [V75-final.json](../automation/dev-flow/receipts/V75-final.json), commit [`7c1265603ff1`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7c1265603ff102ebe54d9bd87b845e885c593c8f)
+- KUZ-DIN delivery audit --> [KUZ-DIN-V75-FINAL-DELIVERY-001](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V75-FINAL-DELIVERY-001.json), commit [`e299747256f9`](https://github.com/Kusanagi8200/KUZ-DIN/commit/e299747256f9b9948d80eabfcd3f9c83921c2618)
+- LinkedIn FINAL --> journal event `close-V75-d6-c19458251` verified `PUBLISHED`, valid LinkedIn URN present
+- KUZ-DIN journal --> 4 total DEV-FLOW publications, 0 PREPARED, 0 IN_FLIGHT; V75 has exactly 2 published events
+- QUEUE and DELIVERY timers --> enabled and active
+
+Do not recreate or replay V75 START or FINAL.
 
 ## Authorization boundary
 
-The operator explicitly authorized **START-DEV-FLOW for V75 after this protocol freeze**.
+Historical V75 authorizations are fully consumed and closed.
 
-The START opens the V75 development/research flow and permits implementation of the reviewed read-only tooling and CPU tests. It does **not** by itself authorize -->
+START-DEV-FLOW, the bounded read-only GPU scientific run and FINAL-DEV-FLOW were separately authorized and completed. None of these authorizations carries forward to V76 or to any new training run.
 
-- GPU execution before the implementation/tests/resource gates above are reviewed and passing
-- any optimizer step or training
-- any BLIND access
-- checkpoint modification
-- FINAL-DEV-FLOW
-- a scientific success claim
-
-The committed [V75 START source](../docs/discussions/steps/V75-start.md) must pass the existing DEV-FLOW publisher validation before a request is created.
+V62 remains frozen. No optimizer step, checkpoint modification or BLIND access is authorized by the V75 closure.
 
 ---
 
