@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+"""V76 numeric GOGIT producer for frozen frequency-residualized PC1 control."""
+from __future__ import annotations
+
+import importlib.util
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+SOURCE = ROOT / "tools" / "v76_frequency_residualized_pc1_control.py"
+FROZEN_GIT_BLOB = "7972d680a339fa371ccb790c31081fe0567e5f7e"
+
+
+def main():
+    if not SOURCE.is_file() or SOURCE.is_symlink():
+        raise RuntimeError("V76 frozen scientific source unavailable")
+    digest = subprocess.run(
+        ["git", "-C", str(ROOT), "hash-object", "--", str(SOURCE)],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout.strip()
+    if digest != FROZEN_GIT_BLOB:
+        raise RuntimeError("V76 frozen scientific source fingerprint mismatch")
+    spec = importlib.util.spec_from_file_location("v76_shared_control", SOURCE)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("V76 source import failure")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    try:
+        module.main()
+    except (RuntimeError, ValueError, OSError) as exc:
+        message = str(exc).lower()
+        if "start receipt" in message:
+            code = 1
+        elif "dependency blob" in message or "report integrity" in message:
+            code = 2
+        elif "frequency" in message:
+            code = 3
+        elif "geometry" in message or "covariance" in message or "pc1" in message:
+            code = 4
+        elif "ols" in message or "decomposition" in message or "orthogonality" in message:
+            code = 5
+        elif "replay" in message or "argmax" in message:
+            code = 6
+        elif "validation lexical" in message or "histogram" in message:
+            code = 7
+        elif "gpu peak-memory" in message:
+            code = 8
+        elif "cuda" in message or "bf16" in message:
+            code = 9
+        else:
+            code = 99
+        print(f"V76_SAFE_FAILURE_CODE: {code}")
+        sys.exit(76)
+
+
+if __name__ == "__main__":
+    main()
