@@ -1,8 +1,8 @@
-# Mini-Kuzai - V74 production closure and V75 resumption checkpoint
+# Mini-Kuzai - V74 closure and V75 scientific checkpoint
 
 Date --> 2026-11-01
 
-Status --> **V74 SCIENTIFIC GOGIT VERIFIED / START+FINAL DELIVERED / V75 PROPOSED BUT NOT STARTED / PAUSE**
+Status --> **V74 CLOSED / V75 START PUBLISHED / V75 SCIENTIFIC GOGIT VERIFIED / FINAL NOT YET AUTHORIZED**
 
 ## Verified two-host publishing topology
 
@@ -72,23 +72,31 @@ The first title version was deployed to VPS `/opt/kuz-din` at commit `59c915fcda
 
 **Operational status at this checkpoint** --> corrective code and tests have been committed to KUZ-DIN but have **not yet been confirmed deployed on the VPS**. A clean, backup-protected fast-forward update and CPU tests on KUZ-DIN are required before initiating V75 DEV-FLOW. Do not replay either V74 post to verify the formatting change.
 
-## Proposed V75 study - not authorized
+## V75 scientific execution - verified, FINAL pending
 
-- [V75 TRAIN-fitted geometry transfer protocol](../phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md)
-- [V75 unpublished Discussion START draft](discussions/steps/V75-start.md)
+- [V75 TRAIN-fitted geometry transfer protocol and verified findings](../phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md)
+- [V75 START source](discussions/steps/V75-start.md)
+- [V75 START receipt](../automation/dev-flow/receipts/V75-start.json)
+- [V75 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json)
 
-The scientific question is whether output-head PC1 learned solely from TRAIN states transfers to the frozen VALIDATION positions, unlike V72/V73's VALIDATION-fitted geometry. V74's context-free unigram baseline remains a control.
+V75 START was published as [GitHub Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6). The frozen scientific run then completed against the unchanged V62 checkpoint with no optimizer step and no BLIND access.
 
-**V75 has not started.** There is no V75 request, execution, training, GOGIT report or GitHub/LinkedIn post. The next operator must approve a frozen metric schema, deterministic TRAIN calibration, 30-field GOGIT gate, reproducibility tests, and bounded GPU runner before any START or GPU analysis. No BLIND access or optimizer use is authorized.
+Verified scientific result --> TRAIN-derived PC1 and independently fitted VALIDATION PC1 align at **99.95% absolute cosine**. TRAIN_PC1_ONLY produces **2457/9170** correct predictions using only **2 distinct predicted IDs**, closely matching the previous VALIDATION-fitted PC1 replay (**2455/9170**). Removing TRAIN PC1 increases diversity to **663 predicted IDs** but drops top-1 accuracy to **611/9170**. TRAIN PC1 explains **90.19%** of centered TRAIN variance; VALIDATION PC1 explains **82.88%**.
+
+Interpretation boundary --> the dominant anisotropy is stable across TRAIN and VALIDATION and is therefore not primarily a VALIDATION-fit artifact. V74's frequency-prior confound remains active: TRAIN_PC1_ONLY still closely tracks the context-free TRAIN unigram baseline. This is not semantic validation, conversational competence or causal attribution.
+
+Safety state --> `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `V75_BLIND_ACCESS=0`, checkpoint unchanged.
 
 ## Exact resumption order
 
-1. On KUZ-DIN, verify the historical V74 journal fingerprint compatibility patch is deployed, CPU regression passes, QUEUE and DELIVERY timers remain active and the journal still has only two PUBLISHED records
-2. On Mini-Kuzai, verify the committed V74 immutable reports and completed START/FINAL receipts, with no new requests or active training
-3. Review V75 proposed scientific protocol; freeze metrics, provenance, CPU tests, and resource ceilings before requesting any START
-4. Only on an explicit later command, create a V75 START request, run the authorized scientific checks, review GOGIT, and separately authorize a V75 FINAL
+1. Keep V62 frozen and BLIND closed
+2. Use the immutable V75 scientific GOGIT as the only FINAL scientific evidence
+3. Run the V75 FINAL dry-run against clean synchronized `main` and the existing Discussion #6
+4. Review the dry-run result
+5. Only after a separate explicit operator authorization, create `automation/dev-flow/requests/V75-final.json` and allow the worker to publish FINAL
+6. Reconcile the resulting GitHub receipt and KUZ-DIN LinkedIn delivery before any next research step
 
-**PAUSE** --> V74 is finished. V75 remains at the **planning / not-started** boundary. Do not act on a draft or restore a historical checkpoint as implicit permission to train.
+**PAUSE BOUNDARY** --> V75 scientific work is complete. FINAL-DEV-FLOW is prepared for read-only preflight but is **not yet authorized for publication**.
 
 ---
 
