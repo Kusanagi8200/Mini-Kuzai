@@ -25,11 +25,17 @@ SCIENTIFIC = (
     / "history"
     / "PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json"
 )
-STATUS_STEP = "PHASE03-SMOLTALK-V75-RUN-STATUS-001"
+STATUS_STEP = "PHASE03-SMOLTALK-V75-RUN-STATUS-002"
 
 
 def classify(text: str) -> dict:
     lower = text.lower()
+    safe_code = 0
+    marker = "v75_safe_failure_code="
+    if marker in lower:
+        tail = lower.split(marker, 1)[1].split()[0].strip(";,:")
+        if tail.isdigit():
+            safe_code = min(int(tail), 99)
     flags = {
         "V75_RUN_STATUS_TIMEOUT": int("timed out after 300" in lower or "timeoutexpired" in lower),
         "V75_RUN_STATUS_OOM": int("out of memory" in lower or "cuda oom" in lower),
@@ -81,7 +87,11 @@ def classify(text: str) -> dict:
         if flags[key]:
             code = value
             break
-    return {"V75_RUN_STATUS_FAILURE_CODE": code, **flags}
+    return {
+        "V75_RUN_STATUS_FAILURE_CODE": code,
+        "V75_RUN_STATUS_SAFE_FAILURE_CODE": safe_code,
+        **flags,
+    }
 
 
 def publish_status(exit_code: int, output: str) -> int:
