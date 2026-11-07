@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-11-07
 
-**V75 --> CLOSED AND DELIVERED. V76 --> PROTOCOL PROPOSED ONLY / NOT STARTED.**
+**V75 --> CLOSED AND DELIVERED. V76 --> PROTOCOL FROZEN / START DRAFT PREPARED / NOT STARTED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -490,16 +490,17 @@ KUZ-DIN journal            --> 4 PUBLISHED / 0 PREPARED / 0 IN_FLIGHT
 V75 training started       --> NO
 V75 BLIND access           --> 0
 Checkpoint changed         --> NO
-V76                        --> FREQUENCY-RESIDUALIZED PC1 CONTROL PROPOSED
+V76                        --> FREQUENCY-RESIDUALIZED PC1 CONTROL FROZEN
+V76 START draft            --> PREPARED / UNPUBLISHED
 V76 START authorized       --> NO
 V76 GPU authorized         --> NO
 New training authorized    --> NO
-Next workstream            --> V76 protocol review and freeze only
+Next workstream            --> explicit V76 START authorization boundary
 ```
 
 The current scientific conclusion remains narrow. V75 shows that the dominant output-head hidden-state direction is stable across TRAIN and VALIDATION rather than being primarily a VALIDATION PCA artifact. V74 and V75 together also show that this stable direction is strongly associated with output-frequency concentration.
 
-V76 therefore proposes a TRAIN-only output-profile decomposition: regress the stable TRAIN-PC1 output signature against static TRAIN target frequency, then evaluate the frequency-explained and frequency-residualized components separately on the same frozen VALIDATION population.
+V76 now freezes a TRAIN-only output-profile decomposition: center the stable TRAIN-PC1 output signature and `log1p(TRAIN lexical frequency)`, fit one FP64 OLS frequency component over all 1024 output IDs, then score the frequency component and orthogonal residual separately on the same frozen VALIDATION population.
 
 Immutable V75 closure evidence -->
 
@@ -510,9 +511,11 @@ Immutable V75 closure evidence -->
 - [V75 Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6)
 - [KUZ-DIN V75 FINAL delivery audit](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V75-FINAL-DELIVERY-001.json)
 
-Proposed next protocol --> [V76 Frequency-Residualized PC1 Output Control 001](MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md).
+Frozen next protocol --> [V76 Frequency-Residualized PC1 Output Control 001](MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md).
 
-The previous V62 and V75 authorizations are historical only. They do not authorize V76 START, GPU execution, any optimizer step or BLIND access.
+Prepared but unpublished START source --> [V76-start.md](../docs/discussions/steps/V76-start.md).
+
+The previous V62 and V75 authorizations are historical only. The V76 protocol freeze and START draft do not authorize V76 START publication, CPU implementation work, GPU execution, any optimizer step or BLIND access.
 
 ## Historical checkpoint chronology - V53 to V59
 
