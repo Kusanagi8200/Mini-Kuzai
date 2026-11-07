@@ -1,6 +1,6 @@
 # Mini-Kuzai - GitHub Discussions and LinkedIn DEV-FLOW
 
-Status --> **V74 START AND FINAL GITHUB/LINKEDIN PUBLISHED / DUAL GOGIT VERIFIED / V75 PREPARED ONLY**
+Status --> **V74 CLOSED / V75 CLOSED / GITHUB+LINKEDIN START+FINAL VERIFIED / V76 NOT STARTED**
 
 Target --> [Kusanagi8200/Mini-Kuzai Discussions](https://github.com/Kusanagi8200/Mini-Kuzai/discussions)
 
@@ -17,6 +17,7 @@ Repository --> `Kusanagi8200/Mini-Kuzai` (`R_kgDOUI2cCw`)
 | [#3](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/3) | [Learning design](history/02-learning-design.md) | Historical |
 | [#4](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/4) | [First training results](history/03-first-training-results.md) | Historical |
 | [#5](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/5) | V74 scientific START and FINAL | Completed |
+| [#6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6) | V75 TRAIN-fitted geometry START and FINAL | Completed |
 
 The historical posts were transferred to this repository and verified in the `Development Log` category. [`tools/github_discussions_history.py`](../../tools/github_discussions_history.py) is a separate historical tool and must not be invoked in live mode for new steps.
 
@@ -69,19 +70,25 @@ V74's verified conclusion --> the TRAIN unigram baseline correctly predicted 253
 
 **Both V74 START and FINAL are complete. Do not recreate or replay either event.**
 
-## V75 START published, science verified, FINAL pending
+## V75 scientific and publication closure - 2026-11-07
 
-- [V75 scientific protocol and findings](../../phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md) --> TRAIN-fitted geometry transferred to frozen VALIDATION
-- [V75 START source](steps/V75-start.md) --> published as [Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6)
+- [V75 scientific protocol and findings](../../phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md)
+- [V75 START source](steps/V75-start.md) --> [Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6)
 - [V75 START receipt](../../automation/dev-flow/receipts/V75-start.json) --> `PUBLISHED`
 - [V75 scientific GOGIT](../../reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json) --> `V75_PASS=1`
-- Scientific publication commit --> [`187b53ccfd90`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/187b53ccfd90c38ffea32e9eb65e8672caba740b)
+- [V75 FINAL preflight](../../reports/assistant-results/history/PHASE03-SMOLTALK-V75-FINAL-PREFLIGHT-001.json) --> PASS
+- [V75 FINAL request](../../automation/dev-flow/requests/V75-final.json) --> explicitly authorized
+- [V75 FINAL receipt](../../automation/dev-flow/receipts/V75-final.json) --> `PUBLISHED`
+- GitHub FINAL --> [comment #19458251](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6#discussioncomment-19458251)
+- KUZ-DIN FINAL delivery audit --> [`KUZ-DIN-V75-FINAL-DELIVERY-001`](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V75-FINAL-DELIVERY-001.json)
 
-Verified result --> independently fitted TRAIN and VALIDATION PC1 directions align at 99.95% absolute cosine. TRAIN_PC1_ONLY gives 2457/9170 correct predictions with 2 distinct IDs; TRAIN_MINUS_PC1 gives 611/9170 with 663 distinct IDs. No training and no BLIND access occurred.
+Verified production result --> exact FINAL event `close-V75-d6-c19458251` is `PUBLISHED`; LinkedIn URN is present and valid; QUEUE and DELIVERY timers are enabled+active; journal contains 4 total PUBLISHED DEV-FLOW rows and zero PREPARED / IN_FLIGHT records.
 
-**No `automation/dev-flow/requests/V75-final.json` exists at this checkpoint.** The next allowed operation is a read-only FINAL dry-run. A real FINAL publication requires a separate explicit operator authorization.
+Verified scientific result --> TRAIN and VALIDATION PC1 directions align at 99.95% absolute cosine; TRAIN_PC1_ONLY gives 2457/9170 correct predictions from 2 distinct IDs; TRAIN_MINUS_PC1 gives 611/9170 with 663 distinct IDs. No training and no BLIND access occurred.
 
-KUZ-DIN's LinkedIn title convention for the eventual closure remains FINAL `FLOW V75 OK`. The V74 historical START/FINAL rows and fingerprints remain immutable and must never be replayed.
+**Both V75 START and FINAL are complete. Do not recreate or replay either event.**
+
+The next version is V76 and remains **protocol-only / not started** until a new separately reviewed START request is explicitly authorized.
 
 ## Recovery and change policy
 
