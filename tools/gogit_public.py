@@ -1987,6 +1987,7 @@ METRIC_KEYS = {
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
+METRIC_MAX_OVERRIDES = {"V79_ALPHA_MAX_ABS_NANO": 2_000_000_000}
 
 
 def git(*args):
@@ -2437,7 +2438,8 @@ def numeric_metrics(raw):
         if key not in METRIC_KEYS or key in metrics:
             raise RuntimeError("Unknown or repeated metric rejected")
         metrics[key] = int(value)
-        if metrics[key] > 100000000:
+        limit = METRIC_MAX_OVERRIDES.get(key, 100_000_000)
+        if metrics[key] > limit:
             raise RuntimeError("Unreasonably large metric rejected")
     if len(metrics) > 30:
         raise RuntimeError("Too many metrics")
