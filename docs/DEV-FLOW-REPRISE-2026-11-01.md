@@ -1,8 +1,8 @@
-# Mini-Kuzai - V74 closure and V75 scientific checkpoint
+# Mini-Kuzai - V74 and V75 production closure checkpoint
 
 Date --> 2026-11-01
 
-Status --> **V74 CLOSED / V75 START PUBLISHED / V75 SCIENTIFIC GOGIT VERIFIED / FINAL NOT YET AUTHORIZED**
+Status --> **V74 CLOSED / V75 CLOSED / GITHUB+LINKEDIN START+FINAL VERIFIED / NEXT STEP V76 PROTOCOL ONLY**
 
 ## Verified two-host publishing topology
 
@@ -10,7 +10,7 @@ Status --> **V74 CLOSED / V75 START PUBLISHED / V75 SCIENTIFIC GOGIT VERIFIED / 
 Mini-Kuzai / fhc2
   Explicit START-DEV-FLOW or FINAL-DEV-FLOW request on GitHub main
     -> mini-kuzai-dev-flow.timer / approved operator account
-    -> GitHub Discussions Development Log #5
+    -> GitHub Discussions Development Log
     -> verified matching request receipt committed to GitHub
                          |
                          v
@@ -70,33 +70,39 @@ The first title version was deployed to VPS `/opt/kuz-din` at commit `59c915fcda
 
 **Corrective action on GitHub** --> KUZ-DIN now preserves `LIVE DEV FLOW V74` for the V74 historical FINAL when rebuilding its fingerprint. New titles apply only to FINAL V75 and higher. A regression test verifies that an already `PUBLISHED` V74 SQLite event remains idempotent after formatting.
 
-**Operational status at this checkpoint** --> corrective code and tests have been committed to KUZ-DIN but have **not yet been confirmed deployed on the VPS**. A clean, backup-protected fast-forward update and CPU tests on KUZ-DIN are required before initiating V75 DEV-FLOW. Do not replay either V74 post to verify the formatting change.
+**Operational status at this checkpoint** --> the V75 live flow exercised the corrected formatter successfully. KUZ-DIN published both V75 START and FINAL without replaying V74. The V75 FINAL delivery audit confirmed QUEUE and DELIVERY timers enabled+active, LIVE gate enabled, 4 total published DEV-FLOW rows, 0 PREPARED and 0 IN_FLIGHT.
 
-## V75 scientific execution - verified, FINAL pending
+## V75 scientific and production closure - verified
 
 - [V75 TRAIN-fitted geometry transfer protocol and verified findings](../phases/MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md)
 - [V75 START source](discussions/steps/V75-start.md)
 - [V75 START receipt](../automation/dev-flow/receipts/V75-start.json)
 - [V75 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json)
+- [V75 FINAL preflight GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-FINAL-PREFLIGHT-001.json)
+- [V75 FINAL request](../automation/dev-flow/requests/V75-final.json)
+- [V75 FINAL receipt](../automation/dev-flow/receipts/V75-final.json)
 
-V75 START was published as [GitHub Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6). The frozen scientific run then completed against the unchanged V62 checkpoint with no optimizer step and no BLIND access.
+GitHub START --> [Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6).
 
-Verified scientific result --> TRAIN-derived PC1 and independently fitted VALIDATION PC1 align at **99.95% absolute cosine**. TRAIN_PC1_ONLY produces **2457/9170** correct predictions using only **2 distinct predicted IDs**, closely matching the previous VALIDATION-fitted PC1 replay (**2455/9170**). Removing TRAIN PC1 increases diversity to **663 predicted IDs** but drops top-1 accuracy to **611/9170**. TRAIN PC1 explains **90.19%** of centered TRAIN variance; VALIDATION PC1 explains **82.88%**.
+GitHub FINAL --> [Discussion #6 comment #19458251](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6#discussioncomment-19458251). Receipt commit --> [`7c1265603ff1`](https://github.com/Kusanagi8200/Mini-Kuzai/commit/7c1265603ff102ebe54d9bd87b845e885c593c8f).
 
-Interpretation boundary --> the dominant anisotropy is stable across TRAIN and VALIDATION and is therefore not primarily a VALIDATION-fit artifact. V74's frequency-prior confound remains active: TRAIN_PC1_ONLY still closely tracks the context-free TRAIN unigram baseline. This is not semantic validation, conversational competence or causal attribution.
+KUZ-DIN FINAL delivery verification --> [`KUZ-DIN-V75-FINAL-DELIVERY-001`](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V75-FINAL-DELIVERY-001.json), GOGIT commit [`e299747256f9`](https://github.com/Kusanagi8200/KUZ-DIN/commit/e299747256f9b9948d80eabfcd3f9c83921c2618). The exact event `close-V75-d6-c19458251` is `PUBLISHED`, a valid LinkedIn URN is present, and there are no PREPARED or IN_FLIGHT records.
+
+Verified scientific result --> TRAIN-derived PC1 and independently fitted VALIDATION PC1 align at **99.95% absolute cosine**. TRAIN_PC1_ONLY produces **2457/9170** correct predictions using only **2 distinct predicted IDs**. Removing TRAIN PC1 increases diversity to **663 predicted IDs** but drops top-1 accuracy to **611/9170**.
+
+Interpretation boundary --> the dominant anisotropy is stable across TRAIN and VALIDATION, but remains strongly associated with output-frequency concentration. This is not semantic validation, conversational competence or causal attribution.
 
 Safety state --> `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `V75_BLIND_ACCESS=0`, checkpoint unchanged.
 
 ## Exact resumption order
 
 1. Keep V62 frozen and BLIND closed
-2. Use the immutable V75 scientific GOGIT as the only FINAL scientific evidence
-3. Run the V75 FINAL dry-run against clean synchronized `main` and the existing Discussion #6
-4. Review the dry-run result
-5. Only after a separate explicit operator authorization, create `automation/dev-flow/requests/V75-final.json` and allow the worker to publish FINAL
-6. Reconcile the resulting GitHub receipt and KUZ-DIN LinkedIn delivery before any next research step
+2. Treat V75 START, scientific GOGIT, FINAL and LinkedIn delivery as immutable completed history
+3. Review the proposed V76 protocol only
+4. Do not create V76 START request until its scientific question, TRAIN-only calibration, metric schema, CPU tests and resource ceiling are frozen
+5. Do not authorize any new optimizer step or BLIND access from V75 closure
 
-**PAUSE BOUNDARY** --> V75 scientific work is complete. FINAL-DEV-FLOW is prepared for read-only preflight but is **not yet authorized for publication**.
+**PAUSE BOUNDARY** --> V75 is fully closed. The next allowed work is V76 protocol design and review only.
 
 ---
 
