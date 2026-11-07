@@ -460,7 +460,7 @@ Current V53 evidence -->
 
 ## Current status - 2026-11-07
 
-**V75 TRAIN-FITTED GEOMETRY TRANSFER --> SCIENTIFIC GOGIT VERIFIED. FINAL-DEV-FLOW NOT YET AUTHORIZED.**
+**V75 --> CLOSED AND DELIVERED. V76 --> PROTOCOL PROPOSED ONLY / NOT STARTED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -475,41 +475,44 @@ V62 checkpoint             --> cycle 2, stopped and frozen
 V62 optimizer steps        --> 69
 V62 exposed tokens         --> 597982
 V62 VALIDATION CE          --> 4.732514
-V70                       --> FP32 precision control verified
-V71                       --> output-dominance attribution verified
-V72                       --> hidden-state anisotropy verified
-V72 centered PC1 share     --> 82.88%
-V73 PC1_ONLY correct       --> 2455 / 9170
-V73 PC1_ONLY distinct      --> 2 IDs
 V74 TRAIN unigram correct  --> 2535 / 9170
 V74 PC1/unigram shared     --> 2449 correct
 V75 GOGIT                  --> TRAIN-FITTED GEOMETRY TRANSFER VERIFIED
-V75 TRAIN lexical          --> 294726
-V75 VALIDATION lexical     --> 9170
 V75 TRAIN PC1 share        --> 90.19%
 V75 TRAIN/VAL PC1 cosine   --> 99.95% absolute
 V75 TRAIN_PC1_ONLY         --> 2457 correct / 2 distinct IDs
 V75 TRAIN_MINUS_PC1        --> 611 correct / 663 distinct IDs
-V75 coverage               --> 100.00%
-New training authorized    --> NO
-New training started       --> NO
-BLIND TEST access          --> 0
+V75 GitHub START           --> PUBLISHED / Discussion #6
+V75 GitHub FINAL           --> PUBLISHED / comment #19458251
+V75 LinkedIn START         --> PUBLISHED
+V75 LinkedIn FINAL         --> PUBLISHED / valid URN verified
+KUZ-DIN journal            --> 4 PUBLISHED / 0 PREPARED / 0 IN_FLIGHT
+V75 training started       --> NO
+V75 BLIND access           --> 0
 Checkpoint changed         --> NO
-V75 START                  --> PUBLISHED / Discussion #6
-V75 FINAL                  --> NOT REQUESTED / NOT PUBLISHED
-Next workstream            --> FINAL read-only preflight, then explicit authorization boundary
+V76                        --> FREQUENCY-RESIDUALIZED PC1 CONTROL PROPOSED
+V76 START authorized       --> NO
+V76 GPU authorized         --> NO
+New training authorized    --> NO
+Next workstream            --> V76 protocol review and freeze only
 ```
 
-The current scientific conclusion is narrow. The dominant output-head hidden-state direction is stable across TRAIN and VALIDATION rather than being primarily an in-sample VALIDATION PCA artifact. However, V74 and V75 together show that this direction remains strongly associated with output-frequency concentration. The result is not semantic validation, not conversational competence and not a causal semantic representation claim.
+The current scientific conclusion remains narrow. V75 shows that the dominant output-head hidden-state direction is stable across TRAIN and VALIDATION rather than being primarily a VALIDATION PCA artifact. V74 and V75 together also show that this stable direction is strongly associated with output-frequency concentration.
 
-Immutable V75 evidence -->
+V76 therefore proposes a TRAIN-only output-profile decomposition: regress the stable TRAIN-PC1 output signature against static TRAIN target frequency, then evaluate the frequency-explained and frequency-residualized components separately on the same frozen VALIDATION population.
 
-- [V75 protocol and verified findings](MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md)
+Immutable V75 closure evidence -->
+
+- [V75 closed protocol and findings](MINI-KUZAI-PHASE-03-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.md)
 - [V75 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-TRAIN-FITTED-GEOMETRY-TRANSFER-001.json)
-- [V75 START receipt](../automation/dev-flow/receipts/V75-start.json)
+- [V75 FINAL preflight GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V75-FINAL-PREFLIGHT-001.json)
+- [V75 FINAL receipt](../automation/dev-flow/receipts/V75-final.json)
 - [V75 Discussion #6](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/6)
+- [KUZ-DIN V75 FINAL delivery audit](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V75-FINAL-DELIVERY-001.json)
 
-The previous V62 training authorization is historical only. It does not authorize any new optimizer step. V62 remains frozen and BLIND remains closed.
+Proposed next protocol --> [V76 Frequency-Residualized PC1 Output Control 001](MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md).
+
+The previous V62 and V75 authorizations are historical only. They do not authorize V76 START, GPU execution, any optimizer step or BLIND access.
 
 ## Historical checkpoint chronology - V53 to V59
 
