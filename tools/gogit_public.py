@@ -78,6 +78,9 @@ SOURCE_PHASE03_V73 = (
 SOURCE_PHASE03_V74 = (
     "Mini-Kuzai V74 frozen TRAIN unigram versus principal-axis frequency controls"
 )
+SOURCE_PHASE03_V75 = (
+    "Mini-Kuzai V75 frozen TRAIN-fitted geometry transfer to VALIDATION"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1769,6 +1772,33 @@ METRIC_KEYS = {
     "V74_STRATA_UNIGRAM_F100P_CORRECT",
     "V74_STRATA_PC1_UNIGRAM_AGREE",
     "V74_STRATA_PC1_UNIGRAM_SHARED_CORRECT",
+    "V75_PASS",
+    "V75_BLIND_ACCESS",
+    "V75_TRAIN_LEXICAL",
+    "V75_TRAIN_TYPES",
+    "V75_VAL_LEXICAL",
+    "V75_TRAIN_STATE_COUNT",
+    "V75_HIDDEN_DIM",
+    "V75_ORIG_CORRECT",
+    "V75_ORIG_DISTINCT",
+    "V75_ORIG_TOP1_SHARE_BP",
+    "V75_TRAIN_CENTER_CORRECT",
+    "V75_TRAIN_CENTER_DISTINCT",
+    "V75_TRAIN_CENTER_TOP1_SHARE_BP",
+    "V75_TRAIN_PC1_CORRECT",
+    "V75_TRAIN_PC1_DISTINCT",
+    "V75_TRAIN_PC1_TOP1_SHARE_BP",
+    "V75_TRAIN_MINUS_PC1_CORRECT",
+    "V75_TRAIN_MINUS_PC1_DISTINCT",
+    "V75_TRAIN_MINUS_PC1_TOP1_SHARE_BP",
+    "V75_UNIGRAM_CORRECT",
+    "V75_PC1_UNIGRAM_AGREE",
+    "V75_PC1_UNIGRAM_SHARED_CORRECT",
+    "V75_VAL_PC1_CORRECT",
+    "V75_TRAIN_VAL_PC1_COS_ABS_BP",
+    "V75_TRAIN_PC1_VAR_SHARE_BP",
+    "V75_VAL_PC1_VAR_SHARE_BP",
+    "V75_COVERAGE_BP",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1856,6 +1886,8 @@ def source_for_audit(tracked):
         "tools/public-audits/phase03_v74_frequency_prior_strata_001.py",
     }:
         return SOURCE_PHASE03_V74
+    if tracked == "tools/public-audits/phase03_v75_train_fitted_geometry_transfer_001.py":
+        return SOURCE_PHASE03_V75
     return SOURCE
 
 
