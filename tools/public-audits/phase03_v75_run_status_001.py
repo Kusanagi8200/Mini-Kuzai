@@ -27,6 +27,7 @@ EXPECTED_KEYS = {
     "V75_RUN_STATUS_REPLAY_FAIL",
     "V75_RUN_STATUS_GOGIT_FAIL",
     "V75_RUN_STATUS_SCIENTIFIC_REPORT_PRESENT",
+    "V75_RUN_STATUS_SAFE_FAILURE_CODE",
 }
 
 
@@ -42,6 +43,8 @@ def main():
         raise RuntimeError("V75 run-status attempt marker missing")
     if obj["V75_RUN_STATUS_PASS"] not in (0, 1):
         raise RuntimeError("V75 run-status pass marker invalid")
+    if not 0 <= obj["V75_RUN_STATUS_SAFE_FAILURE_CODE"] <= 99:
+        raise RuntimeError("V75 safe failure code invalid")
 
     metrics = {
         "SEMANTIC_VALIDATION_COMPLETE": 0,
