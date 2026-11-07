@@ -111,7 +111,7 @@ Verified scientific result --> TRAIN lexical frequency explains 7.75% of the cen
 
 The next version is V77. Its [frozen protocol](../../phases/MINI-KUZAI-PHASE-03-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001.md) and [START source](steps/V77-start.md) are committed.
 
-Operator authorization for START-DEV-FLOW V77 is explicit. The exact START request is being committed separately. Until its receipt exists, V77 has not yet been published.
+Operator authorization for START-DEV-FLOW V77 is explicit. The exact [V77 START request](../../automation/dev-flow/requests/V77-start.json) is committed. Until its receipt exists, V77 has not yet been published.
 
 V77 START authorizes implementation and CPU-only preflight preparation after receipt verification. It does not authorize GPU scientific execution, training, BLIND access or FINAL.
 
