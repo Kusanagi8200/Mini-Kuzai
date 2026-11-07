@@ -310,12 +310,14 @@ def centered_ols(q: torch.Tensor, g: torch.Tensor) -> dict:
 
     residual_norm = float(torch.linalg.vector_norm(residual))
     orthogonal = abs(float(torch.dot(g64, residual)))
-    ortho_scale = g_norm * residual_norm
-    if ortho_scale == 0.0:
-        if orthogonal > DECOMP_ATOL:
+    numerical_zero = residual_norm <= DECOMP_ATOL * max(q_norm, 1.0)
+    if numerical_zero:
+        if orthogonal > DECOMP_ATOL * max(g_norm, 1.0):
             raise RuntimeError("V76 zero-residual orthogonality failed")
-    elif orthogonal / ortho_scale > ORTHO_RTOL:
-        raise RuntimeError("V76 residual orthogonality failed")
+    else:
+        ortho_scale = g_norm * residual_norm
+        if ortho_scale <= 0.0 or orthogonal / ortho_scale > ORTHO_RTOL:
+            raise RuntimeError("V76 residual orthogonality failed")
 
     corr_abs = abs(gq) / (g_norm * q_norm)
     residual_energy = (residual_norm * residual_norm) / (q_norm * q_norm)
