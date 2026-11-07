@@ -90,6 +90,12 @@ SOURCE_PHASE03_V75_RUN_STATUS = (
 SOURCE_PHASE03_V75_FINAL_PREFLIGHT = (
     "Mini-Kuzai V75 FINAL DEV-FLOW read-only preflight"
 )
+SOURCE_PHASE03_V76 = (
+    "Mini-Kuzai V76 frozen frequency-residualized TRAIN-PC1 output control"
+)
+SOURCE_PHASE03_V76_PREFLIGHT = (
+    "Mini-Kuzai V76 CPU-only implementation and safety preflight"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -1855,6 +1861,28 @@ METRIC_KEYS = {
     "V75_FINAL_PREFLIGHT_FINAL_AUTHORIZED",
     "V75_FINAL_PREFLIGHT_V75_PASS",
     "V75_FINAL_PREFLIGHT_COVERAGE_BP",
+    "V76_PASS", "V76_BLIND_ACCESS", "V76_TRAIN_LEXICAL",
+    "V76_TRAIN_TYPES", "V76_VAL_LEXICAL", "V76_HIDDEN_DIM",
+    "V76_FIT_VOCAB", "V76_PC1_CORRECT", "V76_PC1_DISTINCT",
+    "V76_PC1_TOP1_SHARE_BP", "V76_UNIGRAM_CORRECT",
+    "V76_AXIS_FREQ_CORR_ABS_BP", "V76_AXIS_FREQ_R2_BP",
+    "V76_FREQ_COMPONENT_CORRECT", "V76_FREQ_COMPONENT_DISTINCT",
+    "V76_FREQ_COMPONENT_TOP1_SHARE_BP", "V76_FREQ_RESIDUAL_CORRECT",
+    "V76_FREQ_RESIDUAL_DISTINCT", "V76_FREQ_RESIDUAL_TOP1_SHARE_BP",
+    "V76_RESIDUAL_UNIGRAM_AGREE", "V76_RESIDUAL_UNIGRAM_SHARED_CORRECT",
+    "V76_PC1_FREQ_COMPONENT_AGREE", "V76_FREQ_COMPONENT_UNIGRAM_AGREE",
+    "V76_PC1_VAR_SHARE_BP", "V76_TRAIN_VAL_PC1_COS_ABS_BP",
+    "V76_RESIDUAL_ENERGY_SHARE_BP", "V76_COVERAGE_BP",
+    "V76_PREFLIGHT_PASS", "V76_PREFLIGHT_CPU_ONLY",
+    "V76_PREFLIGHT_TESTS_TOTAL", "V76_PREFLIGHT_TESTS_FAILED",
+    "V76_PREFLIGHT_TESTS_ERRORS", "V76_PREFLIGHT_TESTS_SKIPPED",
+    "V76_PREFLIGHT_START_RECEIPT", "V76_PREFLIGHT_SCHEMA_FIELDS",
+    "V76_PREFLIGHT_ALLOWLIST_OK", "V76_PREFLIGHT_PINS_OK",
+    "V76_PREFLIGHT_DEPENDENCIES_OK", "V76_PREFLIGHT_GPU_EXECUTION",
+    "V76_PREFLIGHT_GPU_AUTHORIZED", "V76_PREFLIGHT_BLIND_ACCESS",
+    "V76_PREFLIGHT_SCIENTIFIC_GOGIT_PRESENT",
+    "V76_PREFLIGHT_GPU_LIMIT_MIB", "V76_PREFLIGHT_TRAIN_BATCH",
+    "V76_PREFLIGHT_VAL_BATCH", "V76_PREFLIGHT_SCORE_CHUNK",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -1950,6 +1978,10 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V75_RUN_STATUS
     if tracked == "tools/public-audits/phase03_v75_final_preflight_001.py":
         return SOURCE_PHASE03_V75_FINAL_PREFLIGHT
+    if tracked == "tools/public-audits/phase03_v76_frequency_residualized_pc1_control_001.py":
+        return SOURCE_PHASE03_V76
+    if tracked == "tools/public-audits/phase03_v76_cpu_preflight_001.py":
+        return SOURCE_PHASE03_V76_PREFLIGHT
     return SOURCE
 
 
@@ -2073,6 +2105,10 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     v74_frequency = tracked in {
         "tools/public-audits/phase03_v74_frequency_prior_core_001.py",
         "tools/public-audits/phase03_v74_frequency_prior_strata_001.py",
+    }
+    v76_workstream = tracked in {
+        "tools/public-audits/phase03_v76_frequency_residualized_pc1_control_001.py",
+        "tools/public-audits/phase03_v76_cpu_preflight_001.py",
     }
 
     architecture_workstream = tracked.startswith(
@@ -2224,6 +2260,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v74_frequency:
         # Frequency-only controls are not independent semantic evaluation.
+        return False
+    if v76_workstream:
+        # V76 frequency residualization is not semantic validation or training.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
