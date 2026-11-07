@@ -1,9 +1,9 @@
-# Mini-Kuzai - V74 and V75 production closure checkpoint
+# Mini-Kuzai - V74 to V76 production closure checkpoint
 
 Original checkpoint --> 2026-11-01
 Updated --> 2026-11-07
 
-Status --> **V74 CLOSED / V75 CLOSED / V76 PROTOCOL FROZEN / START DRAFT PREPARED / START NOT AUTHORIZED**
+Status --> **V74 CLOSED / V75 CLOSED / V76 CLOSED / V77 PROTOCOL FROZEN / START AUTHORIZED / START RECEIPT PENDING**
 
 ## Verified two-host publishing topology
 
@@ -95,17 +95,49 @@ Interpretation boundary --> the dominant anisotropy is stable across TRAIN and V
 
 Safety state --> `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `V75_BLIND_ACCESS=0`, checkpoint unchanged.
 
+## V76 scientific and production closure - verified
+
+- [V76 frequency-residualized PC1 protocol and findings](../phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md)
+- [V76 START source](discussions/steps/V76-start.md)
+- [V76 START receipt](../automation/dev-flow/receipts/V76-start.json)
+- [V76 CPU preflight GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001.json)
+- [V76 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.json)
+- [V76 FINAL request](../automation/dev-flow/requests/V76-final.json)
+- [V76 FINAL receipt](../automation/dev-flow/receipts/V76-final.json)
+
+GitHub START --> [Discussion #7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7).
+
+GitHub FINAL --> [Discussion #7 comment #19459204](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7#discussioncomment-19459204).
+
+KUZ-DIN FINAL delivery verification --> [`KUZ-DIN-V76-FINAL-DELIVERY-001`](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V76-FINAL-DELIVERY-001.json). START and FINAL are both PUBLISHED, the FINAL LinkedIn URN is valid, timers are active, and no PREPARED or IN_FLIGHT row remains.
+
+Verified scientific result -->
+
+- frequency OLS R2 --> 7.75%
+- residual-energy share --> 92.25%
+- PC1 replay correct --> 2457 / 9170
+- frequency component correct --> 2451 / 9170
+- frequency residual correct --> 2594 / 9170
+- TRAIN unigram correct --> 2535 / 9170
+- residual predicted IDs --> 2
+- residual dominant share --> 70.43%
+
+Interpretation boundary --> the stable PC1 output profile is not mostly explained by static TRAIN lexical frequency. The residual retains predictive concentration but remains extremely low-diversity. V76 does not establish semantics, useful context use or generalization.
+
+Safety state --> `TRAINING_AUTHORIZED=0`, `TRAINING_STARTED=0`, `V76_BLIND_ACCESS=0`, checkpoint unchanged.
+
 ## Exact resumption order
 
 1. Keep V62 frozen and BLIND closed
-2. Treat V75 START, scientific GOGIT, FINAL and LinkedIn delivery as immutable completed history
-3. Use the frozen V76 protocol at `phases/MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md`
-4. Review the committed but unpublished `docs/discussions/steps/V76-start.md`
-5. Only on a separate explicit operator authorization, create `automation/dev-flow/requests/V76-start.json` and publish START
-6. After START receipt verification, implementation and CPU preflight may be prepared under the frozen protocol; GPU remains separately unauthorized
-7. Do not authorize any optimizer step or BLIND access from V75 closure
+2. Treat V74, V75 and V76 START/FINAL publications and GOGIT reports as immutable completed history
+3. Use the frozen V77 protocol at `phases/MINI-KUZAI-PHASE-03-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001.md`
+4. Use the committed V77 START source at `docs/discussions/steps/V77-start.md`
+5. Process the explicitly authorized V77 START request and verify its receipt
+6. After START receipt verification, prepare V77 implementation and CPU-only preflight
+7. Do not execute V77 GPU scientific work without a separate explicit authorization
+8. Do not authorize training, optimizer steps, checkpoint writes or BLIND access from V76 closure
 
-**PAUSE BOUNDARY** --> V75 is fully closed. V76 protocol and START draft are ready. The next boundary is explicit START-DEV-FLOW V76 authorization.
+**PAUSE BOUNDARY** --> V76 is fully closed. V77 protocol is frozen and START is authorized. GPU remains a later explicit boundary.
 
 ---
 
