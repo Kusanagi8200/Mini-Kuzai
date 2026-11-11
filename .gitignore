@@ -17,3 +17,6 @@ local-corpus/
 data/private/
 *.private.jsonl
 *.private.jsonl.gz
+
+# Repository-local backup artifacts are not versioned
+tools/backups/
