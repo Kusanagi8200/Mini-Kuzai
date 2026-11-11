@@ -261,6 +261,34 @@ For V80+ -->
 - YouTube rendering, OAuth, upload or publication failure must never invalidate a completed scientific FINAL
 - YouTube does not authorize model training, optimizer steps, checkpoint writes or BLIND access
 - production OAuth readiness and upload preflight are validated
-- real upload remains gated until a future eligible FINAL reaches the publication gate
-- no extra upload is required merely to prove readiness
+- real public YouTube upload is enabled and V80 is the first verified production FINAL Short
+- duplicate media is blocked by the Mini-Kuzai_YOUTUBE SHA256 journal
+- V81+ media uses the revised 5-55 second narration window
+- LinkedIn native-video publication and GitHub media publication are separate downstream gates validated first through FLOW-PRESENTATION-001
+
+
+
+## 10. Cross-channel FINAL media extension
+
+For V81+ the intended communication flow extends FINAL-DEV-FLOW after the scientific GitHub receipt exists.
+
+```text
+FINAL receipt
+  -> build and audit MP4
+  -> YouTube public publication
+  -> LinkedIn native-video publication through KUZ-DIN
+  -> GitHub media publication or verified YouTube fallback
+  -> verify publication receipts
+  -> update repository documentation
+```
+
+Boundary rules -->
+
+- START-DEV-FLOW never triggers media publication
+- scientific FINAL remains authoritative even if a downstream media sink fails
+- the media pipeline cannot authorize training or BLIND access
+- LinkedIn video uses a separate KUZ-DIN live gate and media SHA256 journal
+- GitHub native Discussion attachment automation must be independently validated before activation
+- `FLOW-PRESENTATION-001` is the pre-V81 non-scientific integration test
+- no FLOW-PRESENTATION result may be represented as V81 scientific evidence
 
