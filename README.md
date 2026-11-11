@@ -144,3 +144,19 @@ V79 is fully closed. Scientific GOGIT, GitHub FINAL receipt/comment and KUZ-DIN 
 No new training is authorized. V62 remains frozen and BLIND remains closed.
 
 Operational rule for subsequent Vxx steps --> `START-DEV-FLOW` and `FINAL-DEV-FLOW` are treated as autonomous end-to-end commands. The flow must create/consume the committed request, verify GitHub publication and receipt, verify KUZ-DIN/LinkedIn delivery through GOGIT, and after a verified FINAL perform a documentation review of both Mini-Kuzai and KUZ-DIN before preparing the next step. Technical tests and deterministic corrections should be looped as far as safely possible inside the frozen scope. When conversation context becomes critical, issue `CONTEXT WARNING - REPRISE RECOMMENDED` early enough to produce a complete resume checkpoint.
+
+
+## YouTube DEV-FLOW publication
+
+Mini-Kuzai development Shorts are handled by the separate [Mini-Kuzai_YOUTUBE](https://github.com/Kusanagi8200/Mini-Kuzai_YOUTUBE) repository.
+
+Publication boundary -->
+
+- GitHub scientific FINAL remains authoritative
+- LinkedIn remains handled independently through KUZ-DIN
+- YouTube is FINAL-only and never triggered by START
+- the YouTube worker is isolated from the scientific worker
+- production OAuth readiness and no-upload preflight are validated
+- real Short upload remains gated until a future eligible FINAL-DEV-FLOW
+- a YouTube failure never invalidates scientific completion
+
