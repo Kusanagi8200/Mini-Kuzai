@@ -460,11 +460,13 @@ Current V53 evidence -->
 
 V78 closure --> identical-input rebatching changed no top-1 decision, alpha sign or correctness result, despite continuous alpha deltas. This rules out rebatching alone as an explanation for the five V77 discrete changes.
 
-V79 closure --> ORIGINAL and REVERSE_HISTORY_KEEP_LAST were evaluated through the same prefix scorer and batch 32. The five prediction changes and five alpha-sign changes persisted, with both modes at 2594/9170 correct and 99.99% absolute alpha correlation. GitHub FINAL and LinkedIn FINAL are verified.
+V79 closure --> ORIGINAL and REVERSE_HISTORY_KEEP_LAST were evaluated through the same prefix scorer and batch 32. The five prediction changes and five alpha-sign changes persisted, with both modes at 2594/9170 correct and 99.99% absolute alpha correlation.
 
-## Current status - 2026-11-07
+V80 closure --> the exact V79 comparison was replayed against frozen decision-boundary thresholds. All five changed positions remained outside the widest 1e-3 near-zero band. GitHub FINAL, LinkedIn FINAL and the first production YouTube FINAL Short are verified.
 
-**V78 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL VERIFICATION NOT SEPARATELY ARCHIVED. V79 --> CLOSED / GITHUB FINAL VERIFIED / LINKEDIN FINAL VERIFIED.**
+## Current status - 2026-11-11
+
+**V80 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL PUBLISHED / YOUTUBE FINAL PUBLIC. V81 --> NOT SCIENTIFICALLY STARTED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -479,48 +481,38 @@ V62 checkpoint             --> cycle 2, stopped and frozen
 V62 optimizer steps        --> 69
 V62 exposed tokens         --> 597982
 V62 VALIDATION CE          --> 4.732514
-V75 TRAIN PC1 share        --> 90.19%
 V75 TRAIN/VAL PC1 cosine   --> 99.95% absolute
 V76 frequency R2           --> 7.75%
 V76 residual energy        --> 92.25%
-V76 PC1 replay             --> 2457 correct / 2 distinct IDs
-V76 frequency component    --> 2451 correct / 2 distinct IDs
 V76 frequency residual     --> 2594 correct / 2 distinct IDs
-V76 TRAIN unigram          --> 2535 correct
-V76 GitHub START           --> PUBLISHED / Discussion #7
-V76 GitHub FINAL           --> PUBLISHED / comment #19459204
-V76 LinkedIn START         --> PUBLISHED
-V76 LinkedIn FINAL         --> PUBLISHED / valid URN verified
-KUZ-DIN journal            --> 6 PUBLISHED / 0 PREPARED / 0 IN_FLIGHT
-V76 training started       --> NO
-V76 BLIND access           --> 0
-Checkpoint changed         --> NO
-V77                        --> CLOSED / GOGIT PASS / START+FINAL DELIVERED
 V77 top-1 changes          --> 5 / 9170
-V77 FULL/REVERSE correct   --> 2594 / 2594
-V77 alpha correlation      --> 99.99% absolute
-V77 GitHub FINAL           --> PUBLISHED / comment #19459823
-V77 LinkedIn FINAL         --> PUBLISHED
-V78                        --> SCIENTIFIC GOGIT PASS / GITHUB START+FINAL PUBLISHED
-V78 top-1 changes          --> 0 / 9170 UNDER IDENTICAL-INPUT REBATCHING
-V78 alpha sign changes     --> 0 / 9170
-V78 GitHub FINAL           --> Discussion #9 comment #19461051
-V79                        --> SAME-PATH CONTEXT-ORDER CONTROL FROZEN / PREPARED ONLY
-V79 START source           --> COMMITTED / REQUEST NOT CREATED
-V78 START authorized       --> CONSUMED
-V78 START receipt          --> PUBLISHED
-V78 GPU authorized         --> NO
+V78 identical-input changes--> 0 / 9170
+V79 same-path changes      --> 5 / 9170
+V79 alpha sign changes     --> 5 / 9170
+V80 replayed changes       --> 5 / 9170
+V80 changed <= 1e-3       --> 0 / 5
+V80 boundary mean          --> 0.030173315
+V80 boundary max           --> 0.059604287
+V80 crossing mean          --> 0.150983569
+V80 crossing max           --> 0.249839202
+V80 GitHub FINAL           --> Discussion #11 comment #19546266
+V80 LinkedIn FINAL         --> PUBLISHED
+V80 YouTube FINAL          --> PUBLIC / y-YnlPLbT9Q
+FLOW-PRESENTATION-001      --> TRI-CHANNEL MEDIA PASS
 New training authorized    --> NO
-Next workstream            --> V78 implementation / CPU-only preflight
+Training started after V62 --> NO
+BLIND access               --> NO
+Checkpoint changed         --> NO
+Next scientific step       --> V81 NOT STARTED
 ```
 
 The current scientific conclusion remains narrow.
 
-V75 established that the dominant PC1 geometry transfers from TRAIN to VALIDATION. V76 then showed that static TRAIN lexical frequency explains only 7.75% of the centered PC1 output-profile energy. The orthogonal residual retains 92.25% and reaches 2594/9170 correct frozen VALIDATION predictions, but remains collapsed to only two predicted IDs.
+V75 established that the dominant PC1 geometry transfers from TRAIN to VALIDATION. V76 showed that static TRAIN lexical frequency explains only a small fraction of the centered PC1 output-profile energy while the residual remains extremely low-diversity. V77 introduced a controlled context-order perturbation and changed five residual top-1 decisions. V78 showed that identical-input rebatching alone does not reproduce those discrete changes. V79 then reproduced the same five context-order changes through a single batch-32 scorer path. V80 showed that those five changes are not concentrated inside the frozen 1e-3 near-zero decision-boundary band.
 
-This makes context dependence the next unresolved question.
+This strengthens evidence for a weak, reproducible context-order sensitivity in the frozen teacher-forced residual diagnostic. It does not establish semantic competence, reasoning ability, useful free-form generation or a causal semantic feature.
 
-V77 freezes one deterministic context-order intervention. For each VALIDATION target, the counterfactual preserves target, prefix length, prefix token multiset, BOS and the immediate preceding token while reversing only the earlier prefix history. The frozen V76 residual profile is reused unchanged. V77 therefore measures whether the residual coordinate and residual-only top-1 decision respond to earlier-context order.
+V81 scientific work has not started. Before any V81 scientific execution, its protocol and authorization boundary must be separately reviewed and frozen. The validated pre-V81 media work concerns publication infrastructure only.
 
 Immutable V76 closure evidence -->
 
