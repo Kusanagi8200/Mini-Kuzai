@@ -290,5 +290,7 @@ Boundary rules -->
 - LinkedIn video uses a separate KUZ-DIN live gate and media SHA256 journal
 - GitHub native Discussion attachment automation must be independently validated before activation
 - `FLOW-PRESENTATION-001` is the pre-V81 non-scientific integration test
+- FLOW-PRESENTATION-001 has validated this cross-channel path with YouTube public, LinkedIn native video and GitHub Discussion #12
 - no FLOW-PRESENTATION result may be represented as V81 scientific evidence
+- the next required engineering step is automatic orchestration from a genuine V81 FINAL receipt
 
