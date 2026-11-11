@@ -1,6 +1,8 @@
 # Mini-Kuzai AUTOPILOT V1 - MODE 2
 
-Status --> **V73 GOGIT VERIFIED / STANDALONE DIAGNOSTICS OUTSIDE AUTOPILOT / TRAINING DISABLED**
+Status --> **HISTORICAL / FROZEN AFTER V73 / NOT USED FOR V74-V80 / TRAINING DISABLED**
+
+Current operational note --> V74-V80 were executed as explicit standalone scientific controls outside this autopilot subsystem. V80 is closed. V62 remains the latest trained checkpoint, no new training is authorized, and V81 scientific work has not started. The remainder of this README preserves the historical autopilot design and incident record.
 
 Date --> 2026-10-31
 
