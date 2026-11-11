@@ -197,6 +197,13 @@ def verify_v79_report() -> dict:
     return metrics
 
 
+def sign_classes(values: torch.Tensor) -> torch.Tensor:
+    x = values.detach().to(device="cpu", dtype=torch.float64)
+    if x.ndim != 1 or x.numel() == 0 or not torch.isfinite(x).all():
+        raise ValueError("V80 invalid alpha vector")
+    return torch.sign(x).to(dtype=torch.int8)
+
+
 def boundary_distance(
     alpha_original: torch.Tensor,
     alpha_reverse: torch.Tensor,
@@ -256,8 +263,7 @@ def update_boundary_stats(
     boundary, crossing = boundary_distance(x, y)
     changed = po.ne(pr)
 
-    V79 = imported("v80_sign_helper", V79_SOURCE)
-    sign_changed = V79.sign_classes(x).ne(V79.sign_classes(y))
+    sign_changed = sign_classes(x).ne(sign_classes(y))
 
     stats["COUNT"] += int(x.numel())
     stats["CHANGED_COUNT"] += int(changed.sum())
