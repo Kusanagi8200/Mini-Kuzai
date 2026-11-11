@@ -3,7 +3,7 @@
 Date --> 2026-11-07
 Frozen review --> 2026-11-07
 
-Status --> **PROTOCOL FROZEN / START PUBLISHED / CPU PREFLIGHT PASS / GPU SCIENTIFIC EXECUTION AUTHORIZED / NO TRAINING / NO BLIND ACCESS / NO GENERATION / FINAL NOT AUTHORIZED**
+Status --> **SCIENTIFIC GOGIT VERIFIED / START PUBLISHED / NO TRAINING / NO BLIND ACCESS / NO GENERATION / FINAL NOT AUTHORIZED**
 
 ## Why V80 follows V79
 
@@ -370,3 +370,48 @@ GPU scientific execution was explicitly authorized by the operator after the ver
 ---
 
 ##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
+
+
+## Verified V80 scientific result
+
+Scientific GOGIT --> `PHASE03-SMOLTALK-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001`
+
+Verified replay:
+
+- V80 PASS --> 1
+- VALIDATION lexical positions --> 9170
+- same-path batch --> 32
+- perturbed prefixes --> 9062
+- unchanged prefixes --> 108
+- V79 prediction changes replay --> 5
+- V79 alpha-sign changes replay --> 5
+- ORIGINAL correct replay --> 2594
+- REVERSE correct replay --> 2594
+- training authorized --> 0
+- training started --> 0
+- BLIND access --> 0
+
+Decision-boundary result:
+
+- all positions within 1e-7 --> 0
+- all positions within 1e-6 --> 0
+- all positions within 1e-5 --> 0
+- all positions within 1e-4 --> 0
+- all positions within 1e-3 --> 0
+- changed positions within 1e-7 through 1e-3 --> 0
+- sign-changing positions within 1e-7 through 1e-5 --> 0
+- maximum boundary distance among changed positions --> 59604287 nano-units
+- mean boundary distance among changed positions --> 30173315 nano-units
+- maximum crossing span among changed positions --> 249839202 nano-units
+- mean crossing span among changed positions --> 150983569 nano-units
+
+Interpretation -->
+
+The five V79 prediction/sign changes are not confined to numerically tiny neighborhoods of the frozen residual decision boundary. Every changed position remains outside the widest frozen proximity threshold of 1e-3.
+
+The earlier interpretation of the V79 effect as merely a near-zero fragile flip is therefore not supported by V80. The reverse-history intervention moves the residual coordinate across zero from materially larger distances in the measured residual coordinate.
+
+This strengthens evidence for a real context-order sensitivity in the frozen residual diagnostic, but it still does not establish semantic competence, correct contextual reasoning, useful generation quality or a causal semantic feature.
+
+V62 remains frozen. No training, optimizer step, checkpoint write, BLIND access or generation was performed.
+
