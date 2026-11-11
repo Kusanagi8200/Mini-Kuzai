@@ -3,7 +3,7 @@
 Date --> 2026-11-07
 Frozen review --> 2026-11-07
 
-Status --> **PROTOCOL FROZEN / PREPARED ONLY / START NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS / NO GENERATION**
+Status --> **PROTOCOL FROZEN / START PUBLISHED / IMPLEMENTATION + CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS / NO GENERATION / FINAL NOT AUTHORIZED**
 
 ## Why V80 follows V79
 
@@ -335,28 +335,37 @@ A future V80 scientific implementation must remain bounded and read-only:
 
 ## Authorization boundary
 
-V80 is **PREPARED ONLY**.
+The operator explicitly authorized **START-DEV-FLOW V80**.
 
-This preparation permits only:
+Verified START state:
 
-- protocol review
-- START source review
-- static code review of future implementation proposals
+- START request --> committed
+- GitHub Discussion --> #11
+- START receipt --> `PUBLISHED`
+- source commit --> `06ea2aa2cea7290aa6c53a2944e5c2ed91ce52b9`
+- LinkedIn START --> published through KUZ-DIN
+- publisher journal --> 13 PUBLISHED / 0 PREPARED / 0 IN_FLIGHT
+- QUEUE timer --> active
+- DELIVERY timer --> active
+
+This START authorization permits:
+
+- V80 implementation preparation
+- CPU-only regression development
+- CPU-only preflight execution
+- immutable CPU preflight GOGIT publication
 
 It does not authorize:
 
-- START-DEV-FLOW V80
-- GitHub or LinkedIn publication
-- implementation execution
-- CPU preflight execution
-- GPU execution
+- V80 scientific GPU execution
 - training or optimizer steps
 - checkpoint modification
 - BLIND access
 - generation
 - FINAL-DEV-FLOW V80
+- any scientific success claim before a future verified scientific GOGIT
 
-A separate explicit `START-DEV-FLOW` operator command is required before the V80 publication transaction and implementation/preflight scope may begin.
+GPU execution requires a later explicit operator authorization after CPU preflight review.
 
 ---
 
