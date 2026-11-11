@@ -62,6 +62,10 @@ class V80DecisionBoundaryProximityTests(unittest.TestCase):
         self.assertEqual(m["V79_REVERSE_CORRECT"], 2594)
 
     def test_07_boundary_distance_definition(self):
+        self.assertEqual(
+            V.sign_classes(torch.tensor([-1.0, -0.0, 0.0, 2.0])).tolist(),
+            [-1, 0, 0, 1],
+        )
         x = torch.tensor([-2.0, -0.25, 0.0, 3.0], dtype=torch.float64)
         y = torch.tensor([-1.0, 0.5, 0.1, -4.0], dtype=torch.float64)
         boundary, crossing = V.boundary_distance(x, y)
