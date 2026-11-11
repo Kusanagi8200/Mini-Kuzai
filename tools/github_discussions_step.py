@@ -26,6 +26,13 @@ FOOTER = "##### **" + chr(96) + "THE KUZ NETWORK - KUSANAGI8200 - @2026" + chr(9
 START_STATUS = "EXPERIMENT STARTED"
 CLOSE_STATUS = "EXPERIMENT COMPLETED - GOGIT VERIFIED"
 REPORT_DIR = "reports/assistant-results/history/"
+METRIC_MAX_OVERRIDES = {
+    "V79_ALPHA_MAX_ABS_NANO": 2_000_000_000,
+    "V80_BOUNDARY_MAX_NANO_CHANGED": 2_000_000_000,
+    "V80_BOUNDARY_MEAN_NANO_CHANGED": 2_000_000_000,
+    "V80_CROSSING_MAX_NANO_CHANGED": 2_000_000_000,
+    "V80_CROSSING_MEAN_NANO_CHANGED": 2_000_000_000,
+}
 
 COMMENTS_QUERY = """
 query($discussion: ID!, $after: String) {
@@ -181,7 +188,7 @@ def report(step: str, relative: str):
         and payload.get("private_conversation_data_included") is False
         and isinstance(metrics, dict) and metrics
         and all(re.fullmatch(r"[A-Z][A-Z0-9_]*", k) and type(v) is int
-                and 0 <= v <= (2000000000 if k == "V79_ALPHA_MAX_ABS_NANO" else 100000000)
+                and 0 <= v <= METRIC_MAX_OVERRIDES.get(k, 100_000_000)
                 for k, v in metrics.items())
         and any(k.startswith(step + "_") and k.endswith("_PASS") and v == 1
                 for k, v in metrics.items())
