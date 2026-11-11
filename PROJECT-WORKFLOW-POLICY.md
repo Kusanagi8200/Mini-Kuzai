@@ -230,3 +230,37 @@ A verified `FINAL-DEV-FLOW` is not complete until GitHub and LinkedIn publicatio
 Publication authorization never implies authorization for model training, optimizer steps, checkpoint mutation, BLIND access or a new scientific protocol.
 
 Every new project discussion must carry this operating rule forward. When available conversation context approaches a critical limit, the assistant must issue `CONTEXT WARNING - REPRISE RECOMMENDED` early enough to create a complete structured handoff for a new discussion.
+
+
+## 8. Execution target policy
+
+Every operator command must identify the execution target before the command block.
+
+Canonical targets -->
+
+- `fhc2` --> Mini-Kuzai scientific repository and Mini-Kuzai_YOUTUBE runtime
+- `VPS KUZAI.ORG / ov-19d492` --> production KUZAI.ORG repository under `/var/www/kuzai.org`
+- `fhc` --> interactive browser / SSH tunnel helper when an OAuth loopback flow needs a graphical browser
+
+Rules -->
+
+- never leave the target machine implicit
+- separate multi-host workflows by machine
+- GOGIT instructions must identify the machine and repository that publish the report
+- do not ask again for the machine when the active workflow already determines it
+
+## 9. YouTube FINAL publication sink
+
+YouTube is a downstream communication sink and is not part of the scientific authority chain.
+
+For V80+ -->
+
+- `START-DEV-FLOW` never triggers YouTube
+- only a verified, committed and published `FINAL-DEV-FLOW` receipt may produce a YouTube Short brief
+- the Mini-Kuzai_YOUTUBE worker remains separate from the Mini-Kuzai scientific DEV-FLOW worker
+- YouTube rendering, OAuth, upload or publication failure must never invalidate a completed scientific FINAL
+- YouTube does not authorize model training, optimizer steps, checkpoint writes or BLIND access
+- production OAuth readiness and upload preflight are validated
+- real upload remains gated until a future eligible FINAL reaches the publication gate
+- no extra upload is required merely to prove readiness
+
