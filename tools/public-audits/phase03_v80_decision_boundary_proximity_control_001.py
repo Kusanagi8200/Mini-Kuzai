@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "tools" / "v80_decision_boundary_proximity_control.py"
-FROZEN_GIT_BLOB = "2584fe39f91c064c3aa7e0e2ecc6349afda6336d"
+FROZEN_GIT_BLOB = "3f395ed8eeaab0caf957323ecd438dc83b5d14dc"
 
 
 def main():
