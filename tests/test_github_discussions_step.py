@@ -224,6 +224,41 @@ class StepPublisherTests(unittest.TestCase):
                 with self.assertRaises(S.H.PublicationError):
                     S.report("V79", report)
 
+    def test_v80_nano_metrics_allow_reviewed_public_range_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            step_id = "PHASE03-SMOLTALK-V80-TEST-001"
+            report = "reports/assistant-results/history/" + step_id + ".json"
+            p = self.sample_payload()
+            p["step_id"] = step_id
+            p["producer"] = "tools/public-audits/phase03_v80_test.py"
+            p["metrics"] = {
+                "SEMANTIC_VALIDATION_COMPLETE": 0,
+                "TRAINING_STARTED": 0,
+                "TRAINING_AUTHORIZED": 0,
+                "V80_PASS": 1,
+                "V80_BLIND_ACCESS": 0,
+                "V80_BOUNDARY_MAX_NANO_CHANGED": 59604287,
+                "V80_BOUNDARY_MEAN_NANO_CHANGED": 30173315,
+                "V80_CROSSING_MAX_NANO_CHANGED": 249839202,
+                "V80_CROSSING_MEAN_NANO_CHANGED": 150983569,
+            }
+            producer = root / p["producer"]
+            producer.parent.mkdir(parents=True)
+            producer.write_text("# Reviewed V80 audit\n", encoding="utf-8")
+            p["producer_sha256"] = hashlib.sha256(
+                producer.read_bytes()
+            ).hexdigest()
+            out = root / report
+            out.parent.mkdir(parents=True)
+            out.write_text(json.dumps(p), encoding="utf-8")
+            with patch.object(S, "ROOT", root):
+                S.report("V80", report)
+                p["metrics"]["V80_CROSSING_MAX_NANO_CHANGED"] = 2000000001
+                out.write_text(json.dumps(p), encoding="utf-8")
+                with self.assertRaises(S.H.PublicationError):
+                    S.report("V80", report)
+
     def test_invalid_report_paths(self):
         for path in (
             "/etc/passwd", "../history/x.json", "reports/assistant-results/latest.json",
