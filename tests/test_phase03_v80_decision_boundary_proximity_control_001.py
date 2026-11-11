@@ -77,8 +77,8 @@ class V80DecisionBoundaryProximityTests(unittest.TestCase):
 
     def test_09_thresholds_are_cumulative_and_inclusive(self):
         stats = V.empty_boundary_stats()
-        x = torch.tensor([0.0, 0.0, 0.0, 0.0, 0.0], dtype=torch.float64)
-        y = torch.tensor([1e-7, 1e-6, 1e-5, 1e-4, 1e-3], dtype=torch.float64)
+        x = torch.tensor([1e-7, 1e-6, 1e-5, 1e-4, 1e-3], dtype=torch.float64)
+        y = x * 2.0
         po = torch.tensor([3, 3, 3, 3, 3])
         pr = torch.tensor([4, 4, 4, 4, 4])
         V.update_boundary_stats(stats, x, y, po, pr)
@@ -92,7 +92,7 @@ class V80DecisionBoundaryProximityTests(unittest.TestCase):
     def test_10_changed_and_sign_counts_are_independent(self):
         stats = V.empty_boundary_stats()
         x = torch.tensor([-1e-8, -2e-8, 3e-8, 4e-8], dtype=torch.float64)
-        y = torch.tensor([1e-8, -3e-8, -4e-8, 5e-8], dtype=torch.float64)
+        y = torch.tensor([1e-8, -3e-8, -4e-8, -5e-8], dtype=torch.float64)
         po = torch.tensor([3, 4, 5, 6])
         pr = torch.tensor([7, 4, 8, 6])
         V.update_boundary_stats(stats, x, y, po, pr)
