@@ -3,7 +3,7 @@
 Date --> 2026-11-07
 Frozen review --> 2026-11-07
 
-Status --> **PROTOCOL FROZEN / START PUBLISHED / IMPLEMENTATION + CPU PREFLIGHT AUTHORIZED / GPU NOT AUTHORIZED / NO TRAINING / NO BLIND ACCESS / NO GENERATION / FINAL NOT AUTHORIZED**
+Status --> **PROTOCOL FROZEN / START PUBLISHED / CPU PREFLIGHT PASS / GPU SCIENTIFIC EXECUTION AUTHORIZED / NO TRAINING / NO BLIND ACCESS / NO GENERATION / FINAL NOT AUTHORIZED**
 
 ## Why V80 follows V79
 
@@ -365,7 +365,7 @@ It does not authorize:
 - FINAL-DEV-FLOW V80
 - any scientific success claim before a future verified scientific GOGIT
 
-GPU execution requires a later explicit operator authorization after CPU preflight review.
+GPU scientific execution was explicitly authorized by the operator after the verified V80 CPU preflight. This authorization is limited to the frozen read-only V80 scientific control and does not authorize training, optimizer steps, checkpoint writes, BLIND access, generation or FINAL-DEV-FLOW V80.
 
 ---
 
