@@ -76,7 +76,7 @@ Read the steps in order, or open the relevant protocol directly. The detailed hi
 | **V77 status** | **CLOSED**. Scientific GOGIT PASS; only 5/9170 top-1 decisions changed under reverse-history while correctness remained 2594/9170 in both modes; GitHub FINAL [comment #19459823](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/8#discussioncomment-19459823); LinkedIn FINAL `PUBLISHED`; no training / BLIND access |
 | **V78 status** | **SCIENTIFIC CLOSED / GitHub FINAL PUBLISHED**. GOGIT PASS with 0 prediction changes and 0 sign changes under identical-input rebatching; [FINAL comment #19461051](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/9#discussioncomment-19461051) and [FINAL receipt](automation/dev-flow/receipts/V78-final.json) verified. LinkedIn FINAL verification pending; no training / BLIND access |
 | **V79 status** | **CLOSED**. Scientific GOGIT PASS; same-path ORIGINAL/REVERSE preserved 2594/9170 correctness with exactly 5/9170 prediction changes and 5 alpha-sign changes; GitHub FINAL [comment #19462368](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/10#discussioncomment-19462368); FINAL receipt verified; KUZ-DIN V79 FINAL delivery PASS with valid LinkedIn URN, 0 PREPARED / 0 IN_FLIGHT; no training / BLIND access |
-| **V80 status** | **SCIENTIFIC GOGIT VERIFIED**. Exact V79 replay preserved 5 prediction/sign changes and 2594/9170 correctness in both modes. None of the changed positions fell within the frozen 1e-3 boundary-proximity threshold; mean boundary distance was 0.030173315 and maximum 0.059604287. No training / BLIND access; FINAL remains unauthorized. |
+| **V80 status** | **CLOSED AND DELIVERED**. Exact V79 replay preserved 5 prediction/sign changes and 2594/9170 correctness in both modes. None of the changed positions fell within the frozen 1e-3 boundary-proximity threshold; mean boundary distance was 0.030173315 and maximum 0.059604287. GitHub FINAL, LinkedIn FINAL and public YouTube Short are verified. No training / BLIND access. |
 
 **V70-V75 finding -->** V71 equalizing output-head norms changed just 275/9170 lexical predictions. V72 found a centered hidden-state participation ratio of 1.44/128D and PC1 containing 82.88% of centered variance. V73 now shows that **deleting PC1 increases distinct predicted IDs from 15 to 522 but reduces correct predictions from 2832 to 1124**; removing PC1 plus PC2 yields 715 distinct IDs and only 818 correct. **PC1 alone** yields 2455 correct predictions from only 2 predicted IDs. This is an in-sample teacher-forced diagnostic: diversity without preserved accuracy is not useful learning. Keep V62 frozen, do not treat any ablation as a model patch, and do not use BLIND or restart training. V74 confirms that 2449 of 2455 PC1_ONLY correct predictions coincide with a context-free TRAIN unigram baseline, which correctly predicts 2535 tokens. V75 then removes the VALIDATION-fit bias: the independently fitted TRAIN PC1 aligns with VALIDATION PC1 at 99.95% absolute cosine, and TRAIN_PC1_ONLY reproduces essentially the same concentrated behavior (2457 correct, 2 predicted IDs). V76 further shows that TRAIN lexical frequency explains only 7.75% of the centered PC1 output-profile energy; the residual retains 92.25% and reaches 2594 correct predictions, but still collapses to 2 output IDs. V77 found that reversing earlier history changed only 5/9170 top-1 decisions while preserving 2594/9170 correct predictions in both modes, with 99.99% absolute alpha correlation. Because alpha deltas above 1e-7 appeared on 9123 positions although only 9062 prefixes were actually perturbed, V78 measured the numerical floor of the two execution paths using identical logical inputs. V78 found 0/9170 top-1 changes and 0 alpha-sign changes despite measurable continuous alpha noise, so rebatching alone does not explain the five V77 discrete changes. V79 repeated ORIGINAL versus REVERSE_HISTORY_KEEP_LAST through the same prefix scorer and batch 32 and reproduced exactly five prediction changes and five alpha-sign changes. This strengthens evidence that the weak effect is tied to context-order perturbation rather than rebatching alone, but it remains a teacher-forced boundary-sensitive diagnostic and does not establish semantic competence or a causal semantic feature. Keep V62 frozen, BLIND closed and training unauthorized.
 
@@ -160,4 +160,37 @@ Publication boundary -->
 - production OAuth readiness and no-upload preflight are validated
 - real Short upload remains gated until a future eligible FINAL-DEV-FLOW
 - a YouTube failure never invalidates scientific completion
+
+
+
+## V80 full publication closure - 2026-11-11
+
+V80 scientific GOGIT --> PASS.
+
+GitHub FINAL --> Discussion #11 comment #19546266.
+
+FINAL receipt --> `automation/dev-flow/receipts/V80-final.json`, status `PUBLISHED`.
+
+LinkedIn FINAL --> event `close-V80-d11-c19546266`, status `PUBLISHED`, provider URN `urn:li:share:7526323656042455041`.
+
+YouTube FINAL --> public Short `y-YnlPLbT9Q`, worker state `PUBLIC_PUBLISHED`.
+
+Verified media SHA256 --> `f2788466831c8f17886df4a531fad058e1f18d8aa02adcdeb14f08f4e13a8ca6`.
+
+V80 therefore validates the first real GitHub + LinkedIn + YouTube FINAL publication flow.
+
+The V80 video remains an immutable historical 10-50 second narration-window artifact.
+
+For V81+ the media contract changes to a 5-55 second narration window. Before V81 scientific work advances, the non-scientific `FLOW-PRESENTATION-001` publication is used to validate the extended media path:
+
+```text
+verified MP4
+  -> YouTube public
+  -> LinkedIn native video
+  -> GitHub media publication / YouTube fallback
+  -> publication verification
+  -> documentation update
+```
+
+This presentation test is communication infrastructure only. It is not V81 scientific evidence and does not authorize training, optimizer steps, checkpoint mutation or BLIND access.
 
