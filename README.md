@@ -194,3 +194,26 @@ verified MP4
 
 This presentation test is communication infrastructure only. It is not V81 scientific evidence and does not authorize training, optimizer steps, checkpoint mutation or BLIND access.
 
+
+
+## Pre-V81 cross-channel media validation - completed
+
+`FLOW-PRESENTATION-001` validated the extended media path before V81.
+
+Verified result -->
+
+- media SHA256 --> `c34b3dc19788e6770e4edb9dffc2331df2438b23c6663858b7d5299ad5731034`
+- 60-second Short
+- narration window --> 5-55 seconds
+- YouTube --> PUBLIC, video ID `vhQmddUuMcg`
+- LinkedIn --> native video PUBLISHED, post URN `urn:li:ugcPost:7526340708715327488`
+- GitHub --> Discussion #12, using the verified public YouTube media fallback
+
+Discussion #12 -->
+
+https://github.com/Kusanagi8200/Mini-Kuzai/discussions/12
+
+This test is communication infrastructure only. It is not V81 scientific evidence.
+
+The remaining V81 engineering objective is orchestration: once a genuine V81 FINAL receipt exists, the validated media path should execute automatically without manual transfer or publication commands.
+
