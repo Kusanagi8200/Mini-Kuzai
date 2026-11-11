@@ -30,47 +30,57 @@ Do not rerun this exact command --> the historical STEP_ID already exists and th
 
 Each completed run commits and pushes four **public numerical report** files when checks pass. No manual git add, commit or push is needed. Every new run requires a new, unique STEP_ID.
 
-## Current status - 2026-11-07
+## Current status - 2026-11-11
 
-GOGIT publishes public, allowlisted numerical audit reports after local verification. The latest **scientific** immutable step is -->
+GOGIT publishes public, allowlisted numerical audit reports after local verification.
 
-`PHASE03-SMOLTALK-V79-SAME-PATH-CONTEXT-ORDER-CONTROL-001`
+The latest **scientific** immutable step is -->
 
-Previous controls --> `PHASE03-SMOLTALK-V78-IDENTICAL-CONTEXT-REBATCHING-NUMERICAL-CONTROL-001` and `PHASE03-SMOLTALK-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001`
+`PHASE03-SMOLTALK-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001`
 
-The V77 CPU-only report `PHASE03-SMOLTALK-V77-CPU-PREFLIGHT-001` verified implementation and safety gates before the separately authorized GPU run.
+Primary report -->
 
-Verified state --> V79 scientific GOGIT is published and PASS. ORIGINAL and REVERSE_HISTORY_KEEP_LAST were evaluated through the same batch-32 prefix-scoring path and reproduced exactly 5/9170 top-1 changes and 5 alpha-sign changes while both modes remained 2594/9170 correct; absolute alpha correlation remained 9999 basis points. GitHub FINAL V79 is published in Discussion #10 comment #19462368 with a verified FINAL receipt. KUZ-DIN audit `KUZ-DIN-V79-FINAL-DELIVERY-001` confirms the LinkedIn FINAL event is PUBLISHED with a valid URN, 12 total PUBLISHED DEV-FLOW events, 0 PREPARED and 0 IN_FLIGHT. Training remains unauthorized and BLIND remains closed.
+`reports/assistant-results/history/PHASE03-SMOLTALK-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001.json`
 
-Recent completed stages -->
+Verified V80 state -->
+
+- report --> PASS
+- VALIDATION lexical positions --> 9,170
+- V79 prediction changes replayed --> 5
+- V79 alpha-sign changes replayed --> 5
+- ORIGINAL correct --> 2,594
+- REVERSE correct --> 2,594
+- changed positions within 1e-3 --> 0
+- boundary mean on changed positions --> 0.030173315
+- boundary maximum --> 0.059604287
+- crossing mean --> 0.150983569
+- crossing maximum --> 0.249839202
+- training authorized --> 0
+- training started --> 0
+- BLIND access --> 0
+
+Publication closure -->
+
+- GitHub FINAL --> Discussion #11 comment #19546266
+- committed FINAL receipt --> `automation/dev-flow/receipts/V80-final.json`
+- LinkedIn FINAL --> PUBLISHED
+- YouTube FINAL --> PUBLIC / `y-YnlPLbT9Q`
+
+Recent completed scientific stages -->
 
 | Step | Result |
 | --- | --- |
-| V62 TRAIN RUN 001 | Historical controlled training stopped at cycle 2, 69 optimizer steps |
-| V63 DECODING ROBUSTNESS 001 | Eight seeds, 41/48 EOS with top-k/top-p |
-| V63 AUTOMATIC LANGUAGE SCREEN 001 | 24 generated samples, 10/24 rule-flagged, no human scores |
-| V64 RUNTIME TRACE 001 | Bounded 155-second profiler completed and published despite internal timeout |
-| V64 LANGUAGE LEARNING DIAGNOSTIC 001 | Six CPU tests passed; original GOGIT process exceeded 300 seconds; **no** successful report |
-| V64 LANGUAGE LEARNING DIAGNOSTIC 002 | Optimized GPU diagnostic published, VALIDATION CE 4.733 / top-1 29.20% |
-| V65 TOKEN FREQUENCY DIAGNOSTIC 001 | Frozen token-frequency audit, raw-byte 52.00% vs BPE 3.27% frequent top-1 |
-| V66 TOKEN PREDICTION BIAS original | Eight unit tests passed but **57 metrics exceeded the 30-field GOGIT cap**; no successful original report |
-| V66 TOKEN PREDICTION BIAS Part A | 30 numeric fields published, family confusion and full-vocabulary softmax mass |
-| V66 TOKEN PREDICTION BIAS Part B | 30 numeric fields published, detailed token-frequency accuracy and NLL |
-| V67 OUTPUT CONCENTRATION 001 | Executed and published, 4 distinct argmax token IDs / 606 distinct gold IDs, dominant share 72.58% |
-| V68 OUTPUT HEAD 001 | Published after PAD zero-assumption correction, selected norm 0.360 vs gold norm 0.293, PAD norm 0.182 |
-| V69 OUTPUT NORM COUNTERFACTUAL 001 | Verified: BASE CE 4.733, HALF 4.892, FULL 5.048; 4/4/7 predicted IDs, BPE top-5 improves modestly |
-| V70 PRECISION CONTROL 001 | **GPU/GOGIT verified**; BF16 original CE 4.733, FP32 original CE 4.732, FULL CE 5.048, no new training or BLIND access |
-| V71 OUTPUT DOMINANCE ATTRIBUTION 001 | **GPU/GOGIT verified**; 275 of 9170 lexical top-1 predictions changed (3.00%), 5 to 7 distinct predicted IDs, CE worsened 4.732 to 5.048 |
-| V72 HIDDEN-STATE ANISOTROPY 001 | **GPU/GOGIT verified**; centered PC1 82.88%, effective rank 1.44 and 2889/9170 predictions changed under mean-centering |
-| V73 PRINCIPAL AXIS ATTRIBUTION 001 | **GPU/GOGIT verified**; CENTER 2832 correct / 15 distinct IDs, MINUS_PC1 1124 / 522, MINUS_PC12 818 / 715, PC1_ONLY 2455 / 2 |
-| V74 FREQUENCY PRIOR CORE + STRATA | **Dual GOGIT verified**; TRAIN unigram 2535/9170, PC1_ONLY 2455/9170, 2449 shared correct predictions |
-| V75 CPU PREFLIGHT 001 | **CPU/GOGIT verified**; 13 tests, exact 30-field schema, no GPU/training/BLIND |
-| V75 TRAIN-FITTED GEOMETRY TRANSFER 001 | **GPU/GOGIT verified**; TRAIN/VALIDATION PC1 abs cosine 99.95%, TRAIN_PC1_ONLY 2457/9170 with 2 IDs, TRAIN_MINUS_PC1 611/9170 with 663 IDs |
-| V75 FINAL PREFLIGHT 001 | **CPU/read-only GOGIT verified**; report, START receipt and Discussion #6 validated; publication disabled during preflight; later FINAL completed separately |
-| V76 CPU PREFLIGHT 001 | **CPU/GOGIT verified**; 15 tests, exact 30-field schema, dependency pins, zero GPU execution/training/BLIND |
-| V76 FREQUENCY-RESIDUALIZED PC1 CONTROL 001 | **GPU/GOGIT verified**; frequency R2 7.75%, residual energy 92.25%, residual 2594/9170 correct with only 2 predicted IDs |
-| V77 RESIDUAL CONTEXT-ORDER SENSITIVITY 001 | **GPU/GOGIT verified**; reverse-history changed 5/9170 top-1 predictions, FULL and REVERSE both 2594/9170 correct, alpha correlation 99.99% |
-| V78 IDENTICAL-CONTEXT REBATCHING NUMERICAL CONTROL | **START published**; protocol frozen, CPU-only implementation/preflight authorized, GPU not authorized |
+| V74 FREQUENCY PRIOR CORE + STRATA | Dual GOGIT verified; TRAIN unigram 2535/9170, PC1_ONLY 2455/9170 |
+| V75 TRAIN-FITTED GEOMETRY TRANSFER | TRAIN/VALIDATION PC1 absolute cosine 99.95% |
+| V76 FREQUENCY-RESIDUALIZED PC1 CONTROL | Frequency R2 7.75%, residual energy 92.25%, residual 2594/9170 correct with 2 IDs |
+| V77 RESIDUAL CONTEXT-ORDER SENSITIVITY | 5/9170 top-1 changes; both paths 2594/9170 correct |
+| V78 IDENTICAL-CONTEXT REBATCHING CONTROL | 0/9170 prediction changes and 0 alpha-sign changes |
+| V79 SAME-PATH CONTEXT-ORDER CONTROL | Exact five V77 prediction/sign changes reproduced through same batch-32 path |
+| V80 DECISION-BOUNDARY PROXIMITY CONTROL | All five changed positions outside frozen 1e-3 near-zero band |
+
+The current interpretation remains intentionally narrow. V80 strengthens evidence that the five reproducible context-order changes are not merely near-zero numerical flips under the frozen threshold set. It does not establish semantic competence, reasoning ability or useful generation.
+
+V81 scientific work has not started. `FLOW-PRESENTATION-001` validates communication infrastructure only and is not a GOGIT scientific step.
 
 GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67 through V73 have each published exactly 30 allowlisted numerical metrics; no training or semantic validation follows from these read-only diagnostics. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
