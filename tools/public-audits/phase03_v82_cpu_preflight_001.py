@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[2]
 TEST_DIR = ROOT / "tests"
 TEST_PATTERN = "test_phase03_v82_post_continuation_context_order_replication_001.py"
 CORE = ROOT / "tools" / "v82_post_continuation_context_order_replication.py"
-CORE_BLOB = "8de656ae9c52711049d7dd47861bf1124fa7dbf1"
+CORE_BLOB = "1e0d95235d23c0e7c3a56c3ee99257dc81c6f5f8"
 SCIENTIFIC_AUDIT = ROOT / "tools" / "public-audits" / (
     "phase03_v82_post_continuation_context_order_replication_001.py"
 )
@@ -156,7 +156,7 @@ def main():
 
     keys = gogit_metric_keys()
     if not (
-        total == 12
+        total == 13
         and len(core.METRIC_FIELDS) == 30
         and set(core.METRIC_FIELDS) <= keys
         and receipt["step"] == "V82"
