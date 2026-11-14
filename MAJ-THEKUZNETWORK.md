@@ -33,6 +33,20 @@ When the next Mini-Kuzai scientific step reaches its public development boundary
 
 After every verified `FINAL-DEV-FLOW`, run `MAJ-THEKUZNETWORK` before advancing the next Vxx step.
 
+## FINAL closure verification
+
+For V83 and later, a `FINAL-DEV-FLOW` is operationally complete only after all of the following are verified -->
+
+- the Mini-Kuzai scientific FINAL receipt is committed
+- the cross-channel media receipt is committed in `Mini-Kuzai_YOUTUBE`
+- YouTube, LinkedIn native video and GitHub media fallback are verified
+- the read-only end-to-end closure audit passes
+- the automatic GOGIT report `Vxx-FINAL-DEV-FLOW-AUTO-VERIFY-001` exists and reports `FINAL_FLOW=PASS` and `MEDIA_RECEIPT=PASS`
+
+Normal `MAJ-THEKUZNETWORK` execution follows that verified closure. Recovery/audit work may run earlier only to repair the publication system itself.
+
+This closure evidence never authorizes training, BLIND access, optimizer steps or checkpoint mutation.
+
 ---
 
 ##### **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
