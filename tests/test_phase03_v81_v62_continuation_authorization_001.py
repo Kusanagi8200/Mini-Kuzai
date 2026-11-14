@@ -54,6 +54,16 @@ class V81ContinuationAuthorizationTests(unittest.TestCase):
         self.assertIn('"--resume"', source)
         self.assertIn('"TRAINING_STARTED=0"', source)
 
+    def test_launcher_progress_monitor_is_live_and_non_scientific(self):
+        source = LAUNCHER.read_text(encoding="utf-8")
+        self.assertIn("def _progress_bar(", source)
+        self.assertIn("def _monitor_training(", source)
+        self.assertIn("subprocess.Popen(", source)
+        self.assertIn('RUN / "metrics.jsonl"', source)
+        self.assertIn("V81 VERIFY_RUNTIME", source)
+        self.assertIn("V81 TRAIN", source)
+        self.assertNotIn("from tqdm", source)
+
     def test_authorization_producer_never_starts_training(self):
         tree = ast.parse(AUTH.read_text(encoding="utf-8"))
         imported = set()
