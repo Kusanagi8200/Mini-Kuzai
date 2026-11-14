@@ -132,6 +132,9 @@ SOURCE_PHASE03_V81_READINESS = (
 SOURCE_PHASE03_V81_AUTH = (
     "Mini-Kuzai V81 bounded V62 continuation training authorization"
 )
+SOURCE_PHASE03_V81_AUTH_PREFLIGHT = (
+    "Mini-Kuzai V81 V62 continuation authorization CPU-only preflight"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -2162,6 +2165,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V81_READINESS
     if tracked == "tools/public-audits/phase03_v81_v62_continuation_authorization_001.py":
         return SOURCE_PHASE03_V81_AUTH
+    if tracked == "tools/public-audits/phase03_v81_v62_continuation_authorization_preflight_001.py":
+        return SOURCE_PHASE03_V81_AUTH_PREFLIGHT
     return SOURCE
 
 
