@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import ast
 import importlib.util
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -63,6 +64,39 @@ class V81ContinuationAuthorizationTests(unittest.TestCase):
         self.assertIn("V81 VERIFY_RUNTIME", source)
         self.assertIn("V81 TRAIN", source)
         self.assertNotIn("from tqdm", source)
+
+    def test_progress_jsonl_reader_preserves_partial_line(self):
+        spec = importlib.util.spec_from_file_location("v81_launcher", LAUNCHER)
+        module = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(module)
+
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "metrics.jsonl"
+            path.write_bytes(
+                b'{"type":"train_step","step":70,"exposure_tokens":600000'
+            )
+
+            rows, offset, carry = module._read_appended_jsonl(
+                path,
+                0,
+                b"",
+            )
+            self.assertEqual(rows, [])
+            self.assertTrue(carry)
+
+            with path.open("ab") as handle:
+                handle.write(b',"train_loss":4.1}\n')
+
+            rows, offset, carry = module._read_appended_jsonl(
+                path,
+                offset,
+                carry,
+            )
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["step"], 70)
+            self.assertEqual(rows[0]["exposure_tokens"], 600000)
+            self.assertEqual(carry, b"")
 
     def test_authorization_producer_never_starts_training(self):
         tree = ast.parse(AUTH.read_text(encoding="utf-8"))
