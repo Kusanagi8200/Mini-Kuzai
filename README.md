@@ -35,7 +35,7 @@ The current trained state remains on the **V62 run lineage**, but V81 explicitly
 | BLIND access | **CLOSED** |
 | V81 semantic claim | **0 / NONE** |
 | V81 media flow | **CLOSED / TRI-CHANNEL VERIFIED** |
-| Next step | **V82 - preparation only / not started** |
+| Next step | **V82 protocol frozen / START-DEV-FLOW required** |
 
 ## Development phases
 
@@ -165,7 +165,7 @@ V81 scientific GOGIT PASS
   -> V81 media flow closed
 ```
 
-The media engineering prerequisite is complete and V81 has now exercised the genuine production path end to end. The next scientific work belongs to V82 and must remain separate from the completed V81 authorization.
+The media engineering prerequisite is complete and V81 has exercised the genuine production path end to end. The V82 read-only post-continuation replication protocol is now frozen and its START publication source is prepared. No V82 execution has occurred. The next boundary is explicit `START-DEV-FLOW V82`.
 
 ## Safety boundary
 
