@@ -468,7 +468,7 @@ V81 closure --> the frozen V62 cycle-2 checkpoint was resumed under an explicit 
 
 ## Current status - 2026-11-14
 
-**V82 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / YOUTUBE FINAL PUBLIC / LINKEDIN NATIVE VIDEO PUBLISHED / CROSS-CHANNEL MEDIA RECEIPT COMMITTED. V83 --> NOT STARTED / START-DEV-FLOW REQUIRED.**
+**V83 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / YOUTUBE FINAL PUBLIC / LINKEDIN NATIVE VIDEO PUBLISHED / CROSS-CHANNEL MEDIA RECEIPT COMMITTED / AUTOMATIC CLOSURE GOGIT PASS. V84 --> NOT STARTED / START-DEV-FLOW REQUIRED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -490,37 +490,42 @@ V81 baseline best loss     --> 4.732514
 V81 final best loss        --> 4.030447
 V81 best-loss improvement  --> 14.83%
 V81 stop reason            --> MAX_EXPOSURE_TOKENS
-V82 baseline pred changes  --> 5
-V82 final pred changes     --> 38
-V82 baseline sign changes  --> 5
-V82 final sign changes     --> 38
-V82 GitHub FINAL           --> Discussion #14 comment #19613543
-V82 YouTube FINAL          --> PUBLIC / JZJzBawTxAw
-V82 LinkedIn native media  --> PUBLISHED / urn:li:ugcPost:7527384513589481472
-V82 GitHub media fallback  --> Discussion #14 comment #19614290
+V83 inherited pred changes --> 38
+V83 refitted pred changes  --> 34
+V83 inherited sign changes --> 38
+V83 refitted sign changes  --> 34
+V83 PC1 old/refit cosine   --> 96.45%
+V83 residual old/refit cos --> 86.58%
+V83 GitHub FINAL           --> Discussion #15 comment #19617158
+V83 YouTube FINAL          --> PUBLIC / iNYNmxaNKbQ
+V83 LinkedIn native media  --> PUBLISHED / urn:li:ugcPost:7527431180539867136
+V83 GitHub media fallback  --> Discussion #15 comment #19617184
+V83 closure GOGIT          --> PASS
 New training authorized    --> NO
 BLIND access               --> NO
 Semantic validation        --> NOT COMPLETE
 Semantic claim             --> NO
-Next scientific step       --> V83 NOT STARTED / START REQUIRED
+Next scientific step       --> V84 NOT STARTED / START REQUIRED
 ```
 
 The current scientific conclusion remains narrow.
 
 V75-V80 established a weak but reproducible context-order-sensitive residual effect under controlled teacher-forced diagnostics. V81 completed the remaining explicitly authorized initial training window on the unchanged V62 lineage and improved validation loss under the frozen objective.
 
-V82 then replayed the frozen context-order diagnostic after V81 without training. Prediction and sign changes increased from 5 to 38 across the same 9,170 lexical positions. This is a controlled numerical observation only. It does **not** establish semantic competence, reasoning ability or correct conversational context use.
+V82 replayed the frozen context-order diagnostic after V81 without training and measured 38 / 38 prediction/sign changes in the inherited coordinate. V83 then refitted the TRAIN-derived mean, PC1 and frequency-residualized output profile on the same final V81 checkpoint and repeated the identical frozen VALIDATION prefix-pair evaluation. The effect persisted at 34 / 34 changes, showing modest coordinate dependence but not disappearing under the refit. This remains a controlled teacher-forced numerical observation only. It does **not** establish semantic competence, reasoning ability or correct conversational context use.
 
 BLIND remains closed. Any additional optimizer step requires a new protocol and explicit authorization.
 
-V82 closure evidence -->
+V83 closure evidence -->
 
-- [V82 post-continuation context-order replication](MINI-KUZAI-PHASE-03-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.md)
-- [V82 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.json)
-- [V82 FINAL receipt](../automation/dev-flow/receipts/V82-final.json)
-- [V82 Discussion #14](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/14)
+- [V83 post-V81 refitted-coordinate control](MINI-KUZAI-PHASE-03-V83-POST-V81-REFITTED-COORDINATE-CONTEXT-ORDER-CONTROL-001.md)
+- [V83 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V83-POST-V81-REFITTED-COORDINATE-CONTEXT-ORDER-001.json)
+- [V83 FINAL receipt](../automation/dev-flow/receipts/V83-final.json)
+- [V83 Discussion #15](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/15)
+- cross-channel media receipt --> `Mini-Kuzai_YOUTUBE/automation/publication-receipts/V83-final.json`
+- automatic closure GOGIT --> `V83-FINAL-DEV-FLOW-AUTO-VERIFY-001` / PASS
 
-The next scientific step is V83. It has not started. The operator must be explicitly warned that `START-DEV-FLOW V83` is required before V83 implementation, preflight or scientific evaluation begins.
+The next scientific step is V84. It has not started. The operator must be explicitly warned that `START-DEV-FLOW V84` is required before V84 implementation, preflight or scientific evaluation begins.
 
 Immutable V81 closure evidence -->
 
@@ -531,7 +536,7 @@ Immutable V81 closure evidence -->
 
 ## Historical checkpoint chronology - V53 to V59
 
-The following corpus and mixture narrative is preserved as a historical sequence. The verified current status is the V64 closure above.
+The following corpus and mixture narrative is preserved as a historical sequence. The verified current status is the V83 closure above.
 
 
 V53 closed canonical TRAIN at 107 records across all 29 TRAIN semantic groups.
