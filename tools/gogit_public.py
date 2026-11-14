@@ -135,6 +135,9 @@ SOURCE_PHASE03_V81_AUTH = (
 SOURCE_PHASE03_V81_AUTH_PREFLIGHT = (
     "Mini-Kuzai V81 V62 continuation authorization CPU-only preflight"
 )
+SOURCE_PHASE03_V81_TRAIN = (
+    "Mini-Kuzai V81 bounded V62 continuation post-train audit"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -2060,6 +2063,19 @@ METRIC_KEYS = {
     "V81_AUTH_PREFLIGHT_MAX_REMAINING_EXPOSURE",
     "V81_AUTH_PREFLIGHT_FINAL_REVIEW_CYCLE",
     "V81_AUTH_PREFLIGHT_FROZEN_SCOPE_CHANGES",
+    "V81_TRAIN_PASS", "V81_TRAIN_BLIND_ACCESS", "V81_TRAIN_RESUME",
+    "V81_TRAIN_STOP_MAX_TOKENS", "V81_TRAIN_STOP_MAX_STEPS",
+    "V81_TRAIN_STOP_SAMPLER", "V81_TRAIN_START_STEPS",
+    "V81_TRAIN_FINAL_STEPS", "V81_TRAIN_DELTA_STEPS",
+    "V81_TRAIN_MAX_STEPS", "V81_TRAIN_START_EXPOSURE",
+    "V81_TRAIN_FINAL_EXPOSURE", "V81_TRAIN_DELTA_EXPOSURE",
+    "V81_TRAIN_MAX_EXPOSURE", "V81_TRAIN_UNUSED_EXPOSURE",
+    "V81_TRAIN_EVALUATIONS", "V81_TRAIN_BEST_VAL_LOSS_X1E6",
+    "V81_TRAIN_FINAL_VAL_LOSS_X1E6", "V81_TRAIN_CONTROLLED_SHARE_BP",
+    "V81_TRAIN_PERSONA_SHARE_BP", "V81_TRAIN_GENERAL_SHARE_BP",
+    "V81_TRAIN_LEGACY_SHARE_BP", "V81_TRAIN_CYCLE2_CHECKPOINT",
+    "V81_TRAIN_CYCLE4_CHECKPOINT", "V81_TRAIN_LAST_CHECKPOINT",
+    "V81_TRAIN_BEST_CHECKPOINT", "V81_TRAIN_WINDOW_CLOSED",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -2192,6 +2208,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V81_AUTH
     if tracked == "tools/public-audits/phase03_v81_v62_continuation_authorization_preflight_001.py":
         return SOURCE_PHASE03_V81_AUTH_PREFLIGHT
+    if tracked == "tools/public-audits/phase03_v81_v62_continuation_train_001.py":
+        return SOURCE_PHASE03_V81_TRAIN
     return SOURCE
 
 
@@ -2336,6 +2354,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     }
     v81_readiness = tracked == (
         "tools/public-audits/phase03_v81_v62_continuation_readiness_001.py"
+    )
+    v81_training = tracked == (
+        "tools/public-audits/phase03_v81_v62_continuation_train_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -2502,6 +2523,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v81_readiness:
         # V81 readiness is a non-training authorization preflight, not semantics.
+        return False
+    if v81_training:
+        # The bounded continuation run uses VALIDATION but is not semantic validation.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
