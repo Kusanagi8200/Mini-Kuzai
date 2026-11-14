@@ -443,6 +443,47 @@ def score_validation(
     )
 
 
+def load_cycle2_runtime():
+    authorization, _freeze, _ = T.verify_authorization()
+    trainer_freeze = T.verify_trainer_freeze(
+        ROOT / "mini_kuzai" / "phase03_v62_trainer.py",
+        ROOT / "tools" / "train_v62_margin.py",
+    )
+    protocol = T.load_protocol()
+
+    if not torch.cuda.is_available() or not torch.cuda.is_bf16_supported():
+        raise RuntimeError("V82 requires CUDA BF16")
+
+    streams, train_inventory = T.build_training_streams()
+    validation, validation_inventory = T.build_validation_segments()
+    if train_inventory != trainer_freeze.get("training_inventory"):
+        raise RuntimeError("V82 TRAIN inventory differs from frozen trainer")
+    if validation_inventory != trainer_freeze.get("validation_inventory"):
+        raise RuntimeError("V82 VALIDATION inventory differs from frozen trainer")
+    if T.build_schedule_preview(streams, protocol) != trainer_freeze.get(
+        "schedule_preview"
+    ):
+        raise RuntimeError("V82 sampler preview differs from frozen trainer")
+
+    state = verify_checkpoint_state(
+        CYCLE2,
+        expected_step=69,
+        expected_exposure=597982,
+        runtime={
+            "authorization": authorization,
+            "trainer_freeze": trainer_freeze,
+        },
+    )
+    device = torch.device("cuda")
+    model = T.MODEL.MiniKuzaiPhase03V60(T.MODEL.Phase03Config()).to(device)
+    if T.MODEL.count_parameters(model) != T.MODEL_PARAMETERS:
+        raise RuntimeError("V82 model parameter count changed")
+    model.load_state_dict(state["model"], strict=True)
+    del state
+    model.eval()
+    return model, device, streams, validation
+
+
 def prepare_frozen_coordinate(V80):
     V80.verify_dependency_blobs()
     V80.verify_start_receipt()
@@ -462,9 +503,8 @@ def prepare_frozen_coordinate(V80):
     v76 = V77.imported("v82_frozen_v76_control", V77.V76_SOURCE)
     v75 = V77.imported("v82_frozen_v75_geometry", V77.V75_SOURCE)
     v65 = V77.imported("v82_frozen_v65_frequency", V77.V65_SOURCE)
-    v64 = v75.imported("v82_frozen_v64_preflight", v75.V64)
 
-    model, device, streams, validation = v64.preflight()
+    model, device, streams, validation = load_cycle2_runtime()
     if device.type != "cuda":
         raise RuntimeError("V82 requires reviewed CUDA inference path")
     if not torch.cuda.is_bf16_supported():
