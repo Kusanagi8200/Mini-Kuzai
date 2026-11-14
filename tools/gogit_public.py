@@ -138,6 +138,9 @@ SOURCE_PHASE03_V81_AUTH_PREFLIGHT = (
 SOURCE_PHASE03_V81_TRAIN = (
     "Mini-Kuzai V81 bounded V62 continuation post-train audit"
 )
+SOURCE_PHASE03_V81_FINAL = (
+    "Mini-Kuzai V81 final closure review"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -2076,6 +2079,17 @@ METRIC_KEYS = {
     "V81_TRAIN_LEGACY_SHARE_BP", "V81_TRAIN_CYCLE2_CHECKPOINT",
     "V81_TRAIN_CYCLE4_CHECKPOINT", "V81_TRAIN_LAST_CHECKPOINT",
     "V81_TRAIN_BEST_CHECKPOINT", "V81_TRAIN_WINDOW_CLOSED",
+    "V81_FINAL_PASS", "V81_FINAL_BLIND_ACCESS",
+    "V81_FINAL_WINDOW_CLOSED", "V81_FINAL_FURTHER_TRAINING_AUTHORIZED",
+    "V81_FINAL_START_RECEIPT", "V81_FINAL_POST_TRAIN_GOGIT",
+    "V81_FINAL_STOP_MAX_TOKENS", "V81_FINAL_STEPS",
+    "V81_FINAL_EXPOSURE", "V81_FINAL_MAX_EXPOSURE",
+    "V81_FINAL_UNUSED_EXPOSURE", "V81_FINAL_BASELINE_BEST_LOSS_X1E6",
+    "V81_FINAL_BEST_LOSS_X1E6", "V81_FINAL_BEST_LOSS_IMPROVEMENT_X1E6",
+    "V81_FINAL_BEST_LOSS_IMPROVEMENT_BP", "V81_FINAL_SEMANTIC_CLAIM",
+    "V81_FINAL_CHECKPOINT_LAST", "V81_FINAL_CHECKPOINT_BEST",
+    "V81_FINAL_CHECKPOINT_CYCLE2", "V81_FINAL_CHECKPOINT_CYCLE4",
+    "V81_FINAL_TRAIN_LOCK",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -2210,6 +2224,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V81_AUTH_PREFLIGHT
     if tracked == "tools/public-audits/phase03_v81_v62_continuation_train_001.py":
         return SOURCE_PHASE03_V81_TRAIN
+    if tracked == "tools/public-audits/phase03_v81_final_closure_001.py":
+        return SOURCE_PHASE03_V81_FINAL
     return SOURCE
 
 
@@ -2357,6 +2373,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
     )
     v81_training = tracked == (
         "tools/public-audits/phase03_v81_v62_continuation_train_001.py"
+    )
+    v81_final = tracked == (
+        "tools/public-audits/phase03_v81_final_closure_001.py"
     )
 
     architecture_workstream = tracked.startswith(
@@ -2526,6 +2545,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v81_training:
         # The bounded continuation run uses VALIDATION but is not semantic validation.
+        return False
+    if v81_final:
+        # Final closure summarizes the run; it is not semantic validation.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
