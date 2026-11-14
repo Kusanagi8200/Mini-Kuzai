@@ -1,6 +1,6 @@
 # `Mini-Kuzai GitHub Discussions / DEV-FLOW`
 
-Status --> **V74-V80 CLOSED / V80 TRI-CHANNEL FINAL VERIFIED / FLOW-PRESENTATION-001 PASS**
+Status --> **V74-V81 CLOSED / V81 SCIENTIFIC + TRI-CHANNEL MEDIA FINAL VERIFIED**
 
 This directory documents the public GitHub Discussions publication history used by Mini-Kuzai.
 
@@ -18,6 +18,7 @@ GitHub Discussions are communication records. Scientific authority remains in th
 | [#10](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/10) | V79 same-path context-order control | START + FINAL completed |
 | [#11](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/11) | V80 decision-boundary proximity control | START + FINAL completed |
 | [#12](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/12) | FLOW-PRESENTATION-001 | Non-scientific media-flow publication completed |
+| [#13](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/13) | V81 bounded V62 continuation | START + FINAL + downstream media completed |
 
 ## `V80 closure`
 
@@ -100,25 +101,30 @@ The automation may not -->
 - invent a scientific protocol
 - publish a scientific FINAL without the required GOGIT evidence
 
-## `V81 boundary`
+## `V81 closure`
 
-V81 scientific work has not started.
+V81 scientific work is closed.
 
-The pre-V81 media primitives are validated and the automatic V81+ orchestration is now installed. A future genuine V81 FINAL receipt will follow -->
+Verified scientific state -->
 
-```text
-scientific GOGIT PASS
-  -> GitHub FINAL
-  -> receipt
-  -> automatic media brief
-  -> audited MP4
-  -> YouTube public
-  -> LinkedIn native video
-  -> GitHub verified public YouTube fallback
-  -> committed cross-channel media receipt
-```
+- final scientific GOGIT --> `PHASE03-SMOLTALK-V81-FINAL-CLOSURE-001`
+- GitHub FINAL --> Discussion #13 comment #19611736
+- FINAL receipt --> `automation/dev-flow/receipts/V81-final.json`
+- final optimizer steps --> 136
+- final exposure tokens --> 1,181,302
+- best validation loss --> 4.030447
+- training window closed --> yes
+- further training authorized --> no
+- BLIND access --> no
 
-This completes the media engineering prerequisite. V81 scientific work remains not started, training remains unauthorized and BLIND remains closed.
+Verified downstream media -->
+
+- YouTube --> PUBLIC / `EAMRSevA2zk`
+- LinkedIn native video --> `urn:li:ugcPost:7527349657677594624`
+- GitHub media fallback --> Discussion #13 comment #19612381
+- committed cross-channel receipt --> Mini-Kuzai_YOUTUBE `automation/publication-receipts/V81-final.json`
+
+V82 has not started. Before V82 reaches public scientific execution, the operator must be explicitly warned that `START-DEV-FLOW` is required.
 
 ## `Historical source files`
 
