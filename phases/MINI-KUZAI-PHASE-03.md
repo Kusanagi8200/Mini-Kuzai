@@ -468,7 +468,7 @@ V81 closure --> the frozen V62 cycle-2 checkpoint was resumed under an explicit 
 
 ## Current status - 2026-11-14
 
-**V81 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL PUBLISHED / YOUTUBE FINAL PUBLIC / CROSS-CHANNEL MEDIA RECEIPT COMMITTED. V82 --> NOT STARTED.**
+**V81 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL PUBLISHED / YOUTUBE FINAL PUBLIC / CROSS-CHANNEL MEDIA RECEIPT COMMITTED. V82 --> PROTOCOL FROZEN / START NOT PUBLISHED / EXECUTION NOT STARTED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -498,7 +498,7 @@ New training authorized    --> NO
 BLIND access               --> NO
 Semantic validation        --> NOT COMPLETE
 Semantic claim             --> NO
-Next scientific step       --> V82 NOT STARTED
+Next scientific step       --> V82 PROTOCOL READY / START REQUIRED
 ```
 
 The current scientific conclusion remains narrow.
@@ -507,7 +507,12 @@ V75-V80 established a weak but reproducible context-order-sensitive residual eff
 
 V81 does **not** establish semantic competence, reasoning ability or useful free-form conversation. BLIND remains closed. Any additional optimizer step requires a new protocol and explicit authorization.
 
-The next scientific step is V82. V82 may be prepared and reviewed, but execution must not begin until its protocol scope is frozen. When V82 reaches the public development boundary, the operator must be explicitly warned that `START-DEV-FLOW` is required before launch.
+The next scientific step is V82. Its read-only post-continuation context-order replication protocol is now frozen and the START publication source is prepared. No V82 execution has occurred. The operator must now be explicitly warned that `START-DEV-FLOW V82` is required before implementation, preflight or scientific evaluation begins.
+
+V82 prepared protocol -->
+
+- [V82 post-continuation context-order replication](MINI-KUZAI-PHASE-03-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.md)
+- [V82 START publication source](../docs/discussions/steps/V82-start.md)
 
 Immutable V81 closure evidence -->
 
