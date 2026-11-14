@@ -464,9 +464,11 @@ V79 closure --> ORIGINAL and REVERSE_HISTORY_KEEP_LAST were evaluated through th
 
 V80 closure --> the exact V79 comparison was replayed against frozen decision-boundary thresholds. All five changed positions remained outside the widest 1e-3 near-zero band. GitHub FINAL, LinkedIn FINAL and the first production YouTube FINAL Short are verified.
 
-## Current status - 2026-11-11
+V81 closure --> the frozen V62 cycle-2 checkpoint was resumed under an explicit bounded continuation authorization. The unchanged frozen trainer stopped at the maximum authorized exposure boundary after 136 optimizer steps and 1,181,302 exposure tokens. Best validation loss improved from 4.732514 to 4.030447. The window is closed, 362 exposure tokens remain unusable below the ceiling, BLIND was not accessed, and no further training is authorized.
 
-**V80 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL PUBLISHED / YOUTUBE FINAL PUBLIC. V81 --> NOT SCIENTIFICALLY STARTED.**
+## Current status - 2026-11-14
+
+**V81 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL PUBLISHED / YOUTUBE FINAL PUBLIC / CROSS-CHANNEL MEDIA RECEIPT COMMITTED. V82 --> NOT STARTED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -477,57 +479,42 @@ Total controlled corpus    --> 179 records / 65 groups
 V59 training mix           --> 272 conversations / 345 segments / 295416 unique tokens
 Tokenizer                  --> V56 BYTE-BPE WHITESPACE / 1024
 Architecture               --> V58 / V60, 1,184,512 parameters
-V62 checkpoint             --> cycle 2, stopped and frozen
-V62 optimizer steps        --> 69
-V62 exposed tokens         --> 597982
-V62 VALIDATION CE          --> 4.732514
-V75 TRAIN/VAL PC1 cosine   --> 99.95% absolute
-V76 frequency R2           --> 7.75%
-V76 residual energy        --> 92.25%
-V76 frequency residual     --> 2594 correct / 2 distinct IDs
-V77 top-1 changes          --> 5 / 9170
-V78 identical-input changes--> 0 / 9170
-V79 same-path changes      --> 5 / 9170
-V79 alpha sign changes     --> 5 / 9170
-V80 replayed changes       --> 5 / 9170
-V80 changed <= 1e-3       --> 0 / 5
-V80 boundary mean          --> 0.030173315
-V80 boundary max           --> 0.059604287
-V80 crossing mean          --> 0.150983569
-V80 crossing max           --> 0.249839202
-V80 GitHub FINAL           --> Discussion #11 comment #19546266
-V80 LinkedIn FINAL         --> PUBLISHED
-V80 YouTube FINAL          --> PUBLIC / y-YnlPLbT9Q
-FLOW-PRESENTATION-001      --> TRI-CHANNEL MEDIA PASS
+Training lineage           --> V62 run resumed under V81
+V81 start steps            --> 69
+V81 start exposure         --> 597982
+V81 final steps            --> 136
+V81 final exposure         --> 1181302
+V81 max exposure           --> 1181664
+V81 unused exposure        --> 362
+V81 baseline best loss     --> 4.732514
+V81 final best loss        --> 4.030447
+V81 best-loss improvement  --> 14.83%
+V81 stop reason            --> MAX_EXPOSURE_TOKENS
+V81 GitHub FINAL           --> Discussion #13 comment #19611736
+V81 YouTube FINAL          --> PUBLIC / EAMRSevA2zk
+V81 LinkedIn native media  --> PUBLISHED / urn:li:ugcPost:7527349657677594624
+V81 GitHub media fallback  --> Discussion #13 comment #19612381
 New training authorized    --> NO
-Training started after V62 --> NO
 BLIND access               --> NO
-Checkpoint changed         --> NO
-Next scientific step       --> V81 NOT STARTED
+Semantic validation        --> NOT COMPLETE
+Semantic claim             --> NO
+Next scientific step       --> V82 NOT STARTED
 ```
 
 The current scientific conclusion remains narrow.
 
-V75 established that the dominant PC1 geometry transfers from TRAIN to VALIDATION. V76 showed that static TRAIN lexical frequency explains only a small fraction of the centered PC1 output-profile energy while the residual remains extremely low-diversity. V77 introduced a controlled context-order perturbation and changed five residual top-1 decisions. V78 showed that identical-input rebatching alone does not reproduce those discrete changes. V79 then reproduced the same five context-order changes through a single batch-32 scorer path. V80 showed that those five changes are not concentrated inside the frozen 1e-3 near-zero decision-boundary band.
+V75-V80 established a weak but reproducible context-order-sensitive residual effect under controlled teacher-forced diagnostics. V81 did not convert that evidence into a semantic claim. It only completed the remaining explicitly authorized initial training window on the unchanged V62 lineage and improved validation loss under the frozen objective.
 
-This strengthens evidence for a weak, reproducible context-order sensitivity in the frozen teacher-forced residual diagnostic. It does not establish semantic competence, reasoning ability, useful free-form generation or a causal semantic feature.
+V81 does **not** establish semantic competence, reasoning ability or useful free-form conversation. BLIND remains closed. Any additional optimizer step requires a new protocol and explicit authorization.
 
-V81 scientific work has not started. Before any V81 scientific execution, its protocol and authorization boundary must be separately reviewed and frozen. The validated pre-V81 media work concerns publication infrastructure only.
+The next scientific step is V82. V82 may be prepared and reviewed, but execution must not begin until its protocol scope is frozen. When V82 reaches the public development boundary, the operator must be explicitly warned that `START-DEV-FLOW` is required before launch.
 
-Immutable V76 closure evidence -->
+Immutable V81 closure evidence -->
 
-- [V76 closed protocol and findings](MINI-KUZAI-PHASE-03-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.md)
-- [V76 CPU preflight GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V76-CPU-PREFLIGHT-001.json)
-- [V76 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V76-FREQUENCY-RESIDUALIZED-PC1-CONTROL-001.json)
-- [V76 FINAL receipt](../automation/dev-flow/receipts/V76-final.json)
-- [V76 Discussion #7](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/7)
-- [KUZ-DIN V76 FINAL delivery audit](https://github.com/Kusanagi8200/KUZ-DIN/blob/main/reports/assistant-results/history/KUZ-DIN-V76-FINAL-DELIVERY-001.json)
-
-Frozen next protocol --> [V77 Residual Context-Order Sensitivity Control 001](MINI-KUZAI-PHASE-03-V77-RESIDUAL-CONTEXT-ORDER-SENSITIVITY-001.md).
-
-Reviewed START source --> [V77-start.md](../docs/discussions/steps/V77-start.md).
-
-START-DEV-FLOW V77 is published in Discussion #8 with a committed receipt. This opens implementation and CPU-only preflight work only. It does not authorize V77 GPU execution, training, optimizer steps, checkpoint modification, BLIND access or FINAL publication.
+- [V81 readiness protocol](MINI-KUZAI-PHASE-03-V81-V62-CONTINUATION-READINESS-001.md)
+- [V81 final scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V81-FINAL-CLOSURE-001.json)
+- [V81 FINAL receipt](../automation/dev-flow/receipts/V81-final.json)
+- [V81 Discussion #13](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/13)
 
 ## Historical checkpoint chronology - V53 to V59
 
