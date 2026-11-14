@@ -126,6 +126,9 @@ SOURCE_PHASE03_V80 = (
 SOURCE_PHASE03_V80_PREFLIGHT = (
     "Mini-Kuzai V80 CPU-only implementation and safety preflight"
 )
+SOURCE_PHASE03_V81_READINESS = (
+    "Mini-Kuzai V81 frozen V62 continuation readiness gate"
+)
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
@@ -2013,6 +2016,19 @@ METRIC_KEYS = {
     "V80_PREFLIGHT_SCIENTIFIC_GOGIT_PRESENT",
     "V80_PREFLIGHT_GPU_LIMIT_MIB", "V80_PREFLIGHT_SAME_PATH_BATCH",
     "V80_PREFLIGHT_SCORE_CHUNK", "V80_PREFLIGHT_THRESHOLDS",
+    "V81_PASS", "V81_BLIND_ACCESS", "V81_V80_CLOSED",
+    "V81_V62_RUN_STOPPED", "V81_V62_STOP_MILESTONE",
+    "V81_RESUME_SUPPORTED", "V81_CHECKPOINT_CYCLE2_PRESENT",
+    "V81_CHECKPOINT_LAST_PRESENT", "V81_TRAIN_LOCK_PRESENT",
+    "V81_CURRENT_STEPS", "V81_CURRENT_EXPOSURE", "V81_MAX_STEPS",
+    "V81_MAX_EXPOSURE", "V81_REMAINING_STEPS",
+    "V81_REMAINING_EXPOSURE", "V81_INITIAL_WINDOW_CYCLES",
+    "V81_REVIEW_CYCLE", "V81_TERMINAL_BOUNDARIES",
+    "V81_INTERMEDIATE_BOUNDARIES", "V81_TRAIN_SEGMENTS",
+    "V81_TRAIN_UNIQUE_TOKENS", "V81_AUTH_FREEZE_MATCH",
+    "V81_TRAINER_FREEZE_MATCH", "V81_OBJECTIVE_FREEZE_MATCH",
+    "V81_CORPUS_FREEZE_MATCH", "V81_PREFLIGHT_CHECKPOINT_WRITE",
+    "V81_GPU_EXECUTION",
 }
 STEP_RE = re.compile(r"PHASE03-SMOLTALK-[A-Z0-9][A-Z0-9-]{3,80}\Z")
 METRIC_RE = re.compile(r"([A-Z][A-Z0-9_]+):\s*([0-9]+)\Z")
@@ -2139,6 +2155,8 @@ def source_for_audit(tracked):
         return SOURCE_PHASE03_V80
     if tracked == "tools/public-audits/phase03_v80_cpu_preflight_001.py":
         return SOURCE_PHASE03_V80_PREFLIGHT
+    if tracked == "tools/public-audits/phase03_v81_v62_continuation_readiness_001.py":
+        return SOURCE_PHASE03_V81_READINESS
     return SOURCE
 
 
@@ -2281,6 +2299,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         "tools/public-audits/phase03_v79_cpu_preflight_001.py",
         "tools/public-audits/phase03_v79_cpu_loop_diagnostic_001.py",
     }
+    v81_readiness = tracked == (
+        "tools/public-audits/phase03_v81_v62_continuation_readiness_001.py"
+    )
 
     architecture_workstream = tracked.startswith(
         (
@@ -2443,6 +2464,9 @@ def semantic_validation_complete_for_audit(tracked, metrics):
         return False
     if v79_workstream:
         # V79 same-path context-order control is numerical, not semantic validation.
+        return False
+    if v81_readiness:
+        # V81 readiness is a non-training authorization preflight, not semantics.
         return False
     if tracked == "tools/public-audits/phase03_v68_failure_probe_001.py":
         # A numeric fault report can never be semantic training validation.
