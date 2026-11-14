@@ -16,6 +16,8 @@ import hashlib
 import json
 import os
 import subprocess
+import tempfile
+import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -68,6 +70,93 @@ def canonical_sha(value: dict) -> str:
         ensure_ascii=True,
     ).encode("utf-8")
     return hashlib.sha256(payload).hexdigest()
+
+
+def _progress_bar(current: int, total: int, width: int = 34) -> str:
+    if total <= 0:
+        return "[" + ("-" * width) + "]"
+    ratio = min(1.0, max(0.0, current / total))
+    filled = int(round(ratio * width))
+    return "[" + ("#" * filled) + ("-" * (width - filled)) + "]"
+
+
+def _monitor_training(process: subprocess.Popen, metrics_path: Path) -> None:
+    initial_size = metrics_path.stat().st_size if metrics_path.is_file() else 0
+    offset = initial_size
+    started = time.monotonic()
+    last_step = START_STEPS
+    last_exposure = START_EXPOSURE
+    last_train_loss = None
+    last_validation_loss = None
+    spinner = "|/-\\"
+    spin_index = 0
+
+    while process.poll() is None:
+        if metrics_path.is_file():
+            try:
+                with metrics_path.open(encoding="utf-8") as stream:
+                    stream.seek(offset)
+                    for raw in stream:
+                        if not raw.strip():
+                            continue
+                        try:
+                            row = json.loads(raw)
+                        except ValueError:
+                            continue
+                        if not isinstance(row, dict):
+                            continue
+                        row_type = row.get("type")
+                        if row_type == "train_step":
+                            step = int(row.get("step", -1))
+                            exposure = int(row.get("exposure_tokens", -1))
+                            if step > START_STEPS and exposure >= START_EXPOSURE:
+                                last_step = step
+                                last_exposure = exposure
+                                last_train_loss = float(row["train_loss"])
+                        elif row_type == "validation":
+                            step = int(row.get("step", -1))
+                            if step > START_STEPS:
+                                last_validation_loss = float(
+                                    row["validation_loss"]
+                                )
+                    offset = stream.tell()
+            except OSError:
+                pass
+
+        elapsed = int(time.monotonic() - started)
+        if last_step > START_STEPS:
+            done = max(0, last_exposure - START_EXPOSURE)
+            total = MAX_EXPOSURE - START_EXPOSURE
+            pct = min(100.0, done * 100.0 / total)
+            loss_text = (
+                f"{last_train_loss:.4f}"
+                if last_train_loss is not None
+                else "-"
+            )
+            val_text = (
+                f"{last_validation_loss:.4f}"
+                if last_validation_loss is not None
+                else "-"
+            )
+            line = (
+                f"\rV81 TRAIN {_progress_bar(done, total)} "
+                f"{pct:6.2f}%  "
+                f"step {last_step}/{MAX_STEPS}  "
+                f"tokens {last_exposure}/{MAX_EXPOSURE}  "
+                f"loss {loss_text}  val {val_text}  "
+                f"elapsed {elapsed}s"
+            )
+        else:
+            line = (
+                f"\rV81 VERIFY_RUNTIME {spinner[spin_index % len(spinner)]} "
+                f"elapsed {elapsed}s"
+            )
+            spin_index += 1
+
+        print(line, end="", flush=True)
+        time.sleep(1.0)
+
+    print()
 
 
 def verify_authorization() -> str:
@@ -192,28 +281,46 @@ def main() -> int:
     if os.environ.get("MINI_KUZAI_V81_TRAINING_ENABLED") != "YES":
         fail("V81 training live gate is disabled")
 
-    result = subprocess.run(
-        [
-            str(PYTHON),
-            str(V62_CLI),
-            "--run-dir",
-            str(RUN),
-            "--resume",
-        ],
-        cwd=REPO,
-        text=True,
-        capture_output=True,
-        check=False,
-    )
+    metrics_path = RUN / "metrics.jsonl"
+    with tempfile.TemporaryFile(mode="w+t", encoding="utf-8") as log:
+        process = subprocess.Popen(
+            [
+                str(PYTHON),
+                str(V62_CLI),
+                "--run-dir",
+                str(RUN),
+                "--resume",
+            ],
+            cwd=REPO,
+            text=True,
+            stdout=log,
+            stderr=subprocess.STDOUT,
+        )
 
-    if result.returncode != 0:
-        detail = result.stderr.strip() or result.stdout.strip()
+        try:
+            _monitor_training(process, metrics_path)
+        except KeyboardInterrupt:
+            process.terminate()
+            try:
+                process.wait(timeout=15)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                process.wait()
+            raise
+
+        returncode = process.wait()
+        log.seek(0)
+        output = log.read().strip()
+
+    if returncode != 0:
+        detail = output[-4000:] if output else ""
         raise LaunchError(
             "Frozen V62 resume failed"
             + (f": {detail}" if detail else "")
         )
 
-    print(result.stdout.rstrip())
+    if output:
+        print(output)
     print("V81_TRAIN_LAUNCH=PASS")
     return 0
 
