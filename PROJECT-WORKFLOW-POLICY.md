@@ -270,16 +270,16 @@ For V80+ -->
 
 ## 10. Cross-channel FINAL media extension
 
-For V81+ the intended communication flow extends FINAL-DEV-FLOW after the scientific GitHub receipt exists.
+For V81+ the active communication flow extends FINAL-DEV-FLOW after the scientific GitHub receipt exists.
 
 ```text
 FINAL receipt
+  -> deterministic committed media brief
   -> build and audit MP4
   -> YouTube public publication
   -> LinkedIn native-video publication through KUZ-DIN
-  -> GitHub media publication or verified YouTube fallback
-  -> verify publication receipts
-  -> update repository documentation
+  -> GitHub verified public YouTube fallback
+  -> committed cross-channel media receipt
 ```
 
 Boundary rules -->
@@ -292,5 +292,6 @@ Boundary rules -->
 - `FLOW-PRESENTATION-001` is the pre-V81 non-scientific integration test
 - FLOW-PRESENTATION-001 has validated this cross-channel path with YouTube public, LinkedIn native video and GitHub Discussion #12
 - no FLOW-PRESENTATION result may be represented as V81 scientific evidence
-- the next required engineering step is automatic orchestration from a genuine V81 FINAL receipt
+- automatic orchestration from a genuine V81+ FINAL receipt is installed and active in Mini-Kuzai_YOUTUBE
+- media orchestration completion does not start V81 scientific work or authorize training
 
