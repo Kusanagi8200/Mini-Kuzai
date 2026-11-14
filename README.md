@@ -30,12 +30,12 @@ The current trained state remains on the **V62 run lineage**, but V81 explicitly
 | Final exposure tokens | **1,181,302** |
 | Best validation loss | **4.030447** |
 | V81 unused exposure budget | **362 tokens** |
-| Latest scientific step | **V81 CLOSED** |
+| Latest scientific step | **V82 CLOSED** |
 | Training authorization | **0 / NOT AUTHORIZED** |
 | BLIND access | **CLOSED** |
-| V81 semantic claim | **0 / NONE** |
-| V81 media flow | **CLOSED / TRI-CHANNEL VERIFIED** |
-| Next step | **V82 protocol frozen / START-DEV-FLOW required** |
+| V82 semantic claim | **0 / NONE** |
+| V82 media flow | **CLOSED / TRI-CHANNEL VERIFIED** |
+| Next step | **V83 NOT STARTED / START-DEV-FLOW required** |
 
 ## Development phases
 
@@ -63,6 +63,7 @@ Historical detailed chronology remains available in [README-DETAILED-20261031T19
 | **V79** | Same-path batch-32 control reproduces the exact five context-order prediction/sign changes |
 | **V80** | Decision-boundary proximity control shows the five V79 changes are not confined to the frozen 1e-3 near-zero band |
 | **V81** | Explicitly authorized bounded continuation of the frozen V62 run lineage to the remaining initial-window exposure limit; final state closed at 136 steps / 1,181,302 tokens |
+| **V82** | Read-only post-continuation replication of the frozen context-order diagnostic; prediction/sign changes increased from 5 to 38 without training or BLIND access |
 
 ## V81 verified result
 
@@ -94,6 +95,35 @@ Primary evidence -->
 - [V81 FINAL receipt](automation/dev-flow/receipts/V81-final.json)
 - [Discussion #13](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/13)
 
+## V82 verified result
+
+V82 is a read-only post-continuation replication control. It reused the same frozen validation positions and diagnostic coordinate after V81. No optimizer step, checkpoint mutation, BLIND access or semantic validation was authorized.
+
+Verified closure -->
+
+- VALIDATION lexical positions --> **9,170**
+- perturbed prefixes --> **9,062**
+- unchanged prefixes --> **108**
+- baseline prediction changes --> **5**
+- final prediction changes --> **38**
+- baseline sign changes --> **5**
+- final sign changes --> **38**
+- final original correct --> **2,552**
+- final reverse correct --> **2,560**
+- final absolute alpha correlation --> **0.9999**
+- training started --> **0**
+- BLIND access --> **0**
+- semantic validation complete --> **0**
+
+Interpretation --> **Class C / effect increases**. The frozen diagnostic shows a larger context-order sensitivity after the V81 continuation. This is a controlled numerical observation only and does not establish semantic competence, reasoning ability or correct conversational context use.
+
+Primary evidence -->
+
+- [V82 protocol](phases/MINI-KUZAI-PHASE-03-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.md)
+- [V82 scientific GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.json)
+- [V82 FINAL receipt](automation/dev-flow/receipts/V82-final.json)
+- [Discussion #14](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/14)
+
 ## DEV-FLOW publication system
 
 Mini-Kuzai separates scientific authority from communication publication.
@@ -117,15 +147,15 @@ FINAL-DEV-FLOW
 downstream communication sinks
 ```
 
-For V81 -->
+For V82 -->
 
-- GitHub FINAL --> **PUBLISHED**, Discussion #13
-- LinkedIn FINAL text publication --> **PUBLISHED through KUZ-DIN**
+- GitHub FINAL --> **PUBLISHED**, Discussion #14 comment #19613543
 - YouTube FINAL Short --> **PUBLIC**
-- YouTube video ID --> `EAMRSevA2zk`
-- LinkedIn native media post --> `urn:li:ugcPost:7527349657677594624`
-- GitHub media fallback --> Discussion #13 comment #19612381
-- cross-channel media receipt --> `Mini-Kuzai_YOUTUBE/automation/publication-receipts/V81-final.json`
+- YouTube video ID --> `JZJzBawTxAw`
+- LinkedIn native media post --> `urn:li:ugcPost:7527384513589481472`
+- LinkedIn video asset --> `urn:li:video:D4E10AQHlGGjXpoeprA`
+- GitHub media fallback --> Discussion #14 comment #19614290
+- cross-channel media receipt --> `Mini-Kuzai_YOUTUBE/automation/publication-receipts/V82-final.json`
 
 A downstream communication failure never invalidates the underlying scientific result.
 
@@ -148,24 +178,28 @@ Verified publication -->
 
 The test proves the media primitives required for V81 publication. It is **not V81 scientific evidence**.
 
-## V81+ publication orchestration
+## V83+ publication orchestration
 
-Automatic cross-channel orchestration is now installed and active for future genuine V81+ FINAL receipts -->
+The publication runtime has been hardened after the V82 closure. For V83+ a bounded reconciler can advance one verified FINAL through all idempotent communication stages and produce the final GOGIT closure automatically -->
 
 ```text
-V81 scientific GOGIT PASS
+scientific GOGIT PASS
   -> GitHub FINAL
   -> FINAL receipt
-  -> automatic media brief
+  -> deterministic media brief
+  -> Piper timing preflight/adaptation
   -> 60-second audited MP4
   -> YouTube public
-  -> LinkedIn native video
+  -> LinkedIn native video only
   -> GitHub media publication
   -> committed cross-channel media receipt
-  -> V81 media flow closed
+  -> read-only end-to-end closure audit
+  -> automatic GOGIT FINAL verification
 ```
 
-The media engineering prerequisite is complete and V81 has exercised the genuine production path end to end. The V82 read-only post-continuation replication protocol is now frozen and its START publication source is prepared. No V82 execution has occurred. The next boundary is explicit `START-DEV-FLOW V82`.
+The reconciler is bounded and stops on unknown failures. It may only auto-recover known idempotent states. Media publication remains independent from scientific validity.
+
+V82 is scientifically and operationally closed. V83 has not started. The next boundary is explicit `START-DEV-FLOW V83`.
 
 ## Safety boundary
 
