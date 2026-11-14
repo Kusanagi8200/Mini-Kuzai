@@ -468,7 +468,7 @@ V81 closure --> the frozen V62 cycle-2 checkpoint was resumed under an explicit 
 
 ## Current status - 2026-11-14
 
-**V81 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / LINKEDIN FINAL PUBLISHED / YOUTUBE FINAL PUBLIC / CROSS-CHANNEL MEDIA RECEIPT COMMITTED. V82 --> PROTOCOL FROZEN / START NOT PUBLISHED / EXECUTION NOT STARTED.**
+**V82 --> SCIENTIFIC CLOSED / GITHUB FINAL PUBLISHED / YOUTUBE FINAL PUBLIC / LINKEDIN NATIVE VIDEO PUBLISHED / CROSS-CHANNEL MEDIA RECEIPT COMMITTED. V83 --> NOT STARTED / START-DEV-FLOW REQUIRED.**
 
 ```text
 Primary project axis       --> COGNITIVE AND CREATIVE PERSONA
@@ -490,29 +490,37 @@ V81 baseline best loss     --> 4.732514
 V81 final best loss        --> 4.030447
 V81 best-loss improvement  --> 14.83%
 V81 stop reason            --> MAX_EXPOSURE_TOKENS
-V81 GitHub FINAL           --> Discussion #13 comment #19611736
-V81 YouTube FINAL          --> PUBLIC / EAMRSevA2zk
-V81 LinkedIn native media  --> PUBLISHED / urn:li:ugcPost:7527349657677594624
-V81 GitHub media fallback  --> Discussion #13 comment #19612381
+V82 baseline pred changes  --> 5
+V82 final pred changes     --> 38
+V82 baseline sign changes  --> 5
+V82 final sign changes     --> 38
+V82 GitHub FINAL           --> Discussion #14 comment #19613543
+V82 YouTube FINAL          --> PUBLIC / JZJzBawTxAw
+V82 LinkedIn native media  --> PUBLISHED / urn:li:ugcPost:7527384513589481472
+V82 GitHub media fallback  --> Discussion #14 comment #19614290
 New training authorized    --> NO
 BLIND access               --> NO
 Semantic validation        --> NOT COMPLETE
 Semantic claim             --> NO
-Next scientific step       --> V82 PROTOCOL READY / START REQUIRED
+Next scientific step       --> V83 NOT STARTED / START REQUIRED
 ```
 
 The current scientific conclusion remains narrow.
 
-V75-V80 established a weak but reproducible context-order-sensitive residual effect under controlled teacher-forced diagnostics. V81 did not convert that evidence into a semantic claim. It only completed the remaining explicitly authorized initial training window on the unchanged V62 lineage and improved validation loss under the frozen objective.
+V75-V80 established a weak but reproducible context-order-sensitive residual effect under controlled teacher-forced diagnostics. V81 completed the remaining explicitly authorized initial training window on the unchanged V62 lineage and improved validation loss under the frozen objective.
 
-V81 does **not** establish semantic competence, reasoning ability or useful free-form conversation. BLIND remains closed. Any additional optimizer step requires a new protocol and explicit authorization.
+V82 then replayed the frozen context-order diagnostic after V81 without training. Prediction and sign changes increased from 5 to 38 across the same 9,170 lexical positions. This is a controlled numerical observation only. It does **not** establish semantic competence, reasoning ability or correct conversational context use.
 
-The next scientific step is V82. Its read-only post-continuation context-order replication protocol is now frozen and the START publication source is prepared. No V82 execution has occurred. The operator must now be explicitly warned that `START-DEV-FLOW V82` is required before implementation, preflight or scientific evaluation begins.
+BLIND remains closed. Any additional optimizer step requires a new protocol and explicit authorization.
 
-V82 prepared protocol -->
+V82 closure evidence -->
 
 - [V82 post-continuation context-order replication](MINI-KUZAI-PHASE-03-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.md)
-- [V82 START publication source](../docs/discussions/steps/V82-start.md)
+- [V82 scientific GOGIT](../reports/assistant-results/history/PHASE03-SMOLTALK-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.json)
+- [V82 FINAL receipt](../automation/dev-flow/receipts/V82-final.json)
+- [V82 Discussion #14](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/14)
+
+The next scientific step is V83. It has not started. The operator must be explicitly warned that `START-DEV-FLOW V83` is required before V83 implementation, preflight or scientific evaluation begins.
 
 Immutable V81 closure evidence -->
 
