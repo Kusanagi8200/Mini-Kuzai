@@ -36,13 +36,13 @@ GOGIT publishes public, allowlisted numerical audit reports after local verifica
 
 The latest **scientific** immutable step is -->
 
-`PHASE03-SMOLTALK-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001`
+`PHASE03-SMOLTALK-V83-POST-V81-REFITTED-COORDINATE-CONTEXT-ORDER-001`
 
 Primary report -->
 
-`reports/assistant-results/history/PHASE03-SMOLTALK-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.json`
+`reports/assistant-results/history/PHASE03-SMOLTALK-V83-POST-V81-REFITTED-COORDINATE-CONTEXT-ORDER-001.json`
 
-Verified V82 closure -->
+Verified V83 closure -->
 
 - report --> PASS
 - training started --> 0
@@ -50,8 +50,11 @@ Verified V82 closure -->
 - final exposure tokens --> 1,181,302
 - validation lexical positions --> 9,170
 - perturbed prefixes --> 9,062
-- baseline prediction/sign changes --> 5 / 5
-- final prediction/sign changes --> 38 / 38
+- inherited-coordinate prediction/sign changes --> 38 / 38
+- refitted-coordinate prediction/sign changes --> 34 / 34
+- refitted PC1 variance share --> 61.26%
+- inherited/refitted PC1 absolute cosine --> 96.45%
+- inherited/refitted residual-profile absolute cosine --> 86.58%
 - further training authorized --> 0
 - BLIND access --> 0
 - semantic validation complete --> 0
@@ -59,12 +62,13 @@ Verified V82 closure -->
 
 Publication closure -->
 
-- GitHub FINAL --> Discussion #14 comment #19613543
-- committed FINAL receipt --> `automation/dev-flow/receipts/V82-final.json`
-- YouTube FINAL --> PUBLIC / `JZJzBawTxAw`
-- LinkedIn native media --> `urn:li:ugcPost:7527384513589481472`
-- LinkedIn video asset --> `urn:li:video:D4E10AQHlGGjXpoeprA`
-- GitHub media fallback --> Discussion #14 comment #19614290
+- GitHub FINAL --> Discussion #15 comment #19617158
+- committed FINAL receipt --> `automation/dev-flow/receipts/V83-final.json`
+- YouTube FINAL --> PUBLIC / `iNYNmxaNKbQ`
+- LinkedIn native media --> `urn:li:ugcPost:7527431180539867136`
+- LinkedIn video asset --> `urn:li:video:D4E10AQHOFgNRwxHSAA`
+- GitHub media fallback --> Discussion #15 comment #19617184
+- automatic closure GOGIT --> `V83-FINAL-DEV-FLOW-AUTO-VERIFY-001` / PASS
 
 Recent completed scientific stages -->
 
@@ -79,8 +83,9 @@ Recent completed scientific stages -->
 | V80 DECISION-BOUNDARY PROXIMITY CONTROL | All five changed positions outside frozen 1e-3 near-zero band |
 | V81 BOUNDED V62 CONTINUATION | Closed at 136 steps / 1,181,302 exposure tokens; best validation loss 4.030447 |
 | V82 POST-CONTINUATION CONTEXT-ORDER REPLICATION | Read-only control; prediction/sign changes increased from 5 to 38 across the frozen diagnostic |
+| V83 POST-V81 REFITTED-COORDINATE CONTROL | Read-only TRAIN-only coordinate refit on the same final checkpoint; prediction/sign changes persist at 34 / 34 |
 
-V82 is scientifically closed. V83 has not started. No further training is authorized and BLIND remains closed. `START-DEV-FLOW V83` must be explicitly requested before V83 scientific work begins.
+V83 is scientifically and operationally closed. V84 has not started. No further training is authorized and BLIND remains closed. `START-DEV-FLOW V84` must be explicitly requested before V84 scientific work begins.
 
 GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67 through V73 have each published exactly 30 allowlisted numerical metrics; no training or semantic validation follows from these read-only diagnostics. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
