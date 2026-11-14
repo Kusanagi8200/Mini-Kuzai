@@ -124,7 +124,9 @@ Verified downstream media -->
 - GitHub media fallback --> Discussion #13 comment #19612381
 - committed cross-channel receipt --> Mini-Kuzai_YOUTUBE `automation/publication-receipts/V81-final.json`
 
-V82 has not started. Before V82 reaches public scientific execution, the operator must be explicitly warned that `START-DEV-FLOW` is required.
+V82 protocol preparation is complete. The protocol and START publication source are committed, but no V82 Discussion or START receipt exists yet and no scientific execution has occurred.
+
+Next boundary --> explicit operator launch of `START-DEV-FLOW V82`.
 
 ## `Historical source files`
 
