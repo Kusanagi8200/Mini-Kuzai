@@ -301,5 +301,5 @@ The pre-V81 communication flow is now validated end to end.
 
 Resume boundary -->
 
-The media primitives are validated. Before advancing V81 scientific work, the remaining implementation task is to connect the genuine V81 FINAL receipt to the media builder and downstream publication sinks automatically.
+The media primitives and automatic V81+ cross-channel orchestration are now validated and installed. No genuine V81 FINAL receipt exists yet, so the media runtime is idle. The remaining project boundary is scientific only --> review and freeze the V81 protocol and authorization scope before any V81 execution. Training remains unauthorized and BLIND remains closed.
 
