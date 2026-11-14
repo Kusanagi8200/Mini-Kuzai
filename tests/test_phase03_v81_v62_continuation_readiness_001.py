@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "tools/public-audits/phase03_v81_v62_continuation_readiness_001.py"
+GOGIT = ROOT / "tools/gogit_public.py"
 
 spec = importlib.util.spec_from_file_location(
     "phase03_v81_v62_continuation_readiness_001",
@@ -88,6 +89,50 @@ class V81V62ContinuationReadinessTests(unittest.TestCase):
         self.assertIn('"V81_BLIND_ACCESS": 0', source)
         self.assertIn('"V81_PREFLIGHT_CHECKPOINT_WRITE": 0', source)
         self.assertIn('"V81_GPU_EXECUTION": 0', source)
+
+    def test_gogit_allowlist_and_source_mapping(self):
+        spec_g = importlib.util.spec_from_file_location(
+            "gogit_public_v81",
+            GOGIT,
+        )
+        gogit = importlib.util.module_from_spec(spec_g)
+        assert spec_g.loader is not None
+        spec_g.loader.exec_module(gogit)
+
+        tree = ast.parse(AUDIT.read_text(encoding="utf-8"))
+        keys = set()
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Assign):
+                if (
+                    len(node.targets) == 1
+                    and isinstance(node.targets[0], ast.Name)
+                    and node.targets[0].id == "metrics"
+                    and isinstance(node.value, ast.Dict)
+                ):
+                    for key in node.value.keys:
+                        if isinstance(key, ast.Constant) and isinstance(key.value, str):
+                            keys.add(key.value)
+
+        self.assertEqual(len(keys), 30)
+        self.assertTrue(keys <= gogit.METRIC_KEYS)
+        self.assertEqual(
+            gogit.source_for_audit(
+                "tools/public-audits/"
+                "phase03_v81_v62_continuation_readiness_001.py"
+            ),
+            "Mini-Kuzai V81 frozen V62 continuation readiness gate",
+        )
+        self.assertFalse(
+            gogit.semantic_validation_complete_for_audit(
+                "tools/public-audits/"
+                "phase03_v81_v62_continuation_readiness_001.py",
+                {
+                    "SEMANTIC_VALIDATION_COMPLETE": 0,
+                    "TRAINING_AUTHORIZED": 0,
+                    "TRAINING_STARTED": 0,
+                },
+            )
+        )
 
 
 if __name__ == "__main__":
