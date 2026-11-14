@@ -1,8 +1,8 @@
 # Mini-Kuzai AUTOPILOT V1 - MODE 2
 
-Status --> **HISTORICAL / FROZEN AFTER V73 / NOT USED FOR V74-V80 / TRAINING DISABLED**
+Status --> **HISTORICAL / FROZEN AFTER V73 / NOT USED FOR V74-V81 / TRAINING DISABLED**
 
-Current operational note --> V74-V80 were executed as explicit standalone scientific controls outside this autopilot subsystem. V80 is closed. V62 remains the latest trained checkpoint, no new training is authorized, and V81 scientific work has not started. The remainder of this README preserves the historical autopilot design and incident record.
+Current operational note --> V74-V80 were executed as explicit standalone scientific controls outside this autopilot subsystem. V81 then performed an explicitly authorized bounded continuation of the V62 run lineage outside AUTOPILOT and is now closed at 136 optimizer steps / 1,181,302 exposure tokens. No further training is authorized, BLIND remains closed, and V82 has not started. The remainder of this README preserves the historical autopilot design and incident record.
 
 Date --> 2026-10-31
 
