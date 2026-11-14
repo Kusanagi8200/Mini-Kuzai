@@ -80,7 +80,7 @@ class V83RefittedCoordinateTests(unittest.TestCase):
     def test_07_refit_uses_final_model_before_train_geometry(self):
         source = SOURCE.read_text(encoding="utf-8")
         final_load = source.index('model.load_state_dict(final_state["model"], strict=True)')
-        old_replay = source.index("exact_old_replay_gate(")
+        old_replay = source.index("exact_old_replay_gate(old_outcomes", final_load)
         collect = source.index("v75.collect_geometry(")
         refit_score = source.rindex("V82.score_validation(")
         self.assertLess(final_load, old_replay)
