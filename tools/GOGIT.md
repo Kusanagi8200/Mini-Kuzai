@@ -30,41 +30,43 @@ Do not rerun this exact command --> the historical STEP_ID already exists and th
 
 Each completed run commits and pushes four **public numerical report** files when checks pass. No manual git add, commit or push is needed. Every new run requires a new, unique STEP_ID.
 
-## Current status - 2026-11-11
+## Current status - 2026-11-14
 
 GOGIT publishes public, allowlisted numerical audit reports after local verification.
 
 The latest **scientific** immutable step is -->
 
-`PHASE03-SMOLTALK-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001`
+`PHASE03-SMOLTALK-V81-FINAL-CLOSURE-001`
 
 Primary report -->
 
-`reports/assistant-results/history/PHASE03-SMOLTALK-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001.json`
+`reports/assistant-results/history/PHASE03-SMOLTALK-V81-FINAL-CLOSURE-001.json`
 
-Verified V80 state -->
+Verified V81 closure -->
 
 - report --> PASS
-- VALIDATION lexical positions --> 9,170
-- V79 prediction changes replayed --> 5
-- V79 alpha-sign changes replayed --> 5
-- ORIGINAL correct --> 2,594
-- REVERSE correct --> 2,594
-- changed positions within 1e-3 --> 0
-- boundary mean on changed positions --> 0.030173315
-- boundary maximum --> 0.059604287
-- crossing mean --> 0.150983569
-- crossing maximum --> 0.249839202
-- training authorized --> 0
-- training started --> 0
+- training started --> 1
+- final optimizer steps --> 136
+- final exposure tokens --> 1,181,302
+- maximum exposure --> 1,181,664
+- unused exposure --> 362
+- baseline best validation loss --> 4.732514
+- final best validation loss --> 4.030447
+- best-loss improvement --> 14.83%
+- window closed --> 1
+- further training authorized --> 0
 - BLIND access --> 0
+- semantic validation complete --> 0
+- semantic claim --> 0
 
 Publication closure -->
 
-- GitHub FINAL --> Discussion #11 comment #19546266
-- committed FINAL receipt --> `automation/dev-flow/receipts/V80-final.json`
+- GitHub FINAL --> Discussion #13 comment #19611736
+- committed FINAL receipt --> `automation/dev-flow/receipts/V81-final.json`
 - LinkedIn FINAL --> PUBLISHED
-- YouTube FINAL --> PUBLIC / `y-YnlPLbT9Q`
+- YouTube FINAL --> PUBLIC / `EAMRSevA2zk`
+- LinkedIn native media --> `urn:li:ugcPost:7527349657677594624`
+- GitHub media fallback --> Discussion #13 comment #19612381
 
 Recent completed scientific stages -->
 
@@ -77,10 +79,9 @@ Recent completed scientific stages -->
 | V78 IDENTICAL-CONTEXT REBATCHING CONTROL | 0/9170 prediction changes and 0 alpha-sign changes |
 | V79 SAME-PATH CONTEXT-ORDER CONTROL | Exact five V77 prediction/sign changes reproduced through same batch-32 path |
 | V80 DECISION-BOUNDARY PROXIMITY CONTROL | All five changed positions outside frozen 1e-3 near-zero band |
+| V81 BOUNDED V62 CONTINUATION | Closed at 136 steps / 1,181,302 exposure tokens; best validation loss 4.030447 |
 
-The current interpretation remains intentionally narrow. V80 strengthens evidence that the five reproducible context-order changes are not merely near-zero numerical flips under the frozen threshold set. It does not establish semantic competence, reasoning ability or useful generation.
-
-V81 scientific work has not started. `FLOW-PRESENTATION-001` validates communication infrastructure only and is not a GOGIT scientific step.
+V81 is scientifically closed. V82 has not started. No further training is authorized and BLIND remains closed. When the V82 public development boundary is reached, `START-DEV-FLOW` must be explicitly requested before launch.
 
 GOGIT's process execution budget remains **300 seconds**, and the parser rejects more than **30 metrics per publication**. V66 therefore published two validated 30-field reports with three repeated safety fields, preserving 57 unique fields. V67 through V73 have each published exactly 30 allowlisted numerical metrics; no training or semantic validation follows from these read-only diagnostics. The 155-second V64 stage profiler is a separate worker with its own internal limit, not a change to GOGIT.
 
