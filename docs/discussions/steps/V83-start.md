@@ -7,7 +7,7 @@
   PROJECT  : THE KUZ NETWORK
   PHASE    : 03
   STEP     : V83
-  STATUS   : START REQUESTED ONLY AFTER EXPLICIT OPERATOR AUTHORIZATION
+  STATUS   : EXPERIMENT STARTED
 ========================================================================
 ```
 
