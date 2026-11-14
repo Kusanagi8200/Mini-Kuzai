@@ -383,9 +383,15 @@ def main() -> int:
         if args.write:
             write(freeze, report)
 
+    public_metrics = metrics(report)
+    if not args.from_report and not args.authorize:
+        public_metrics["TRAINING_AUTHORIZED"] = 0
+        public_metrics["V81_AUTH_PASS"] = 0
+
     print("##### SECTION RESULTS FOR ASSISTANT ######")
-    for key, value in sorted(metrics(report).items()):
+    for key, value in sorted(public_metrics.items()):
         print(f"{key}: {value}")
+    print(f"AUTHORIZATION_REQUESTED={int(args.authorize)}")
     print(f"AUTHORIZATION_WRITE={int(args.write)}")
     return 0
 
