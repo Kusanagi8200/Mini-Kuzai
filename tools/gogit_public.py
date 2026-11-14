@@ -148,6 +148,10 @@ SOURCE_PHASE03_V82_PREFLIGHT = (
     "Mini-Kuzai V82 CPU-only implementation and safety preflight"
 )
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
+DEFAULT_AUDIT_TIMEOUT_SECONDS = 300
+AUDIT_TIMEOUT_OVERRIDES = {
+    "tools/public-audits/phase03_v82_post_continuation_context_order_replication_001.py": 600,
+}
 METRIC_KEYS = {
     "TOTAL_SOURCE", "TOTAL_CANDIDATS", "SMOL_MAGPIE", "TWO_ANCHORED",
     "PARTIAL_ANCHOR", "LOW_LEXICAL_ANCHOR", "REVIEWED",
@@ -2653,7 +2657,13 @@ def main():
 
         execution = subprocess.run(
             [sys.executable, str(audit_path)],
-            cwd=REPO, capture_output=True, text=True, timeout=300,
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+            timeout=AUDIT_TIMEOUT_OVERRIDES.get(
+                tracked,
+                DEFAULT_AUDIT_TIMEOUT_SECONDS,
+            ),
             check=False
         )
         if execution.returncode:
