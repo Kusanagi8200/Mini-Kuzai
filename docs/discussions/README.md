@@ -104,7 +104,7 @@ The automation may not -->
 
 V81 scientific work has not started.
 
-The pre-V81 media test has proven the required publication primitives. The remaining engineering objective is orchestration from a future genuine V81 FINAL receipt -->
+The pre-V81 media primitives are validated and the automatic V81+ orchestration is now installed. A future genuine V81 FINAL receipt will follow -->
 
 ```text
 scientific GOGIT PASS
@@ -114,10 +114,11 @@ scientific GOGIT PASS
   -> audited MP4
   -> YouTube public
   -> LinkedIn native video
-  -> GitHub media publication
-  -> receipts
-  -> documentation
+  -> GitHub verified public YouTube fallback
+  -> committed cross-channel media receipt
 ```
+
+This completes the media engineering prerequisite. V81 scientific work remains not started, training remains unauthorized and BLIND remains closed.
 
 ## `Historical source files`
 
