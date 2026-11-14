@@ -14,9 +14,9 @@
 
 It is not built from pretrained weights and is not presented as a production chatbot. The project is a controlled research laboratory for understanding model behavior, training dynamics, representation geometry, token-frequency effects and conversational-model design.
 
-The current scientific checkpoint remains **V62**. No training has occurred since that bounded run. V63-V80 are read-only diagnostics over the frozen checkpoint.
+The current trained state remains on the **V62 run lineage**, but V81 explicitly resumed the frozen cycle-2 checkpoint and completed the remaining authorized initial-window budget. The continuation is now closed and no further optimizer step is authorized.
 
-## Current checkpoint - 2026-11-11
+## Current checkpoint - 2026-11-14
 
 | Component | Verified state |
 | --- | --- |
@@ -25,16 +25,17 @@ The current scientific checkpoint remains **V62**. No training has occurred sinc
 | Tokenizer | Byte-BPE, 1,024-token vocabulary |
 | Controlled corpus | 107 TRAIN / 36 VALIDATION / 36 BLIND conversations |
 | Training inventory | 345 segments |
-| Frozen checkpoint | **V62** |
-| V62 optimizer steps | 69 |
-| V62 exposure tokens | 597,982 |
-| Best V62 validation loss | 4.732514 |
-| Latest scientific step | **V80 CLOSED** |
+| Training lineage | **V62 run resumed under V81** |
+| Final optimizer steps | **136** |
+| Final exposure tokens | **1,181,302** |
+| Best validation loss | **4.030447** |
+| V81 unused exposure budget | **362 tokens** |
+| Latest scientific step | **V81 CLOSED** |
 | Training authorization | **0 / NOT AUTHORIZED** |
-| Training started after V62 | **0** |
 | BLIND access | **CLOSED** |
-| Latest communication test | **FLOW-PRESENTATION-001 PASS** |
-| Next step | **V81 - not yet scientifically started** |
+| V81 semantic claim | **0 / NONE** |
+| V81 media flow | **CLOSED / TRI-CHANNEL VERIFIED** |
+| Next step | **V82 - preparation only / not started** |
 
 ## Development phases
 
@@ -61,37 +62,37 @@ Historical detailed chronology remains available in [README-DETAILED-20261031T19
 | **V78** | Identical-input rebatching produces continuous numerical noise but 0/9,170 discrete prediction changes |
 | **V79** | Same-path batch-32 control reproduces the exact five context-order prediction/sign changes |
 | **V80** | Decision-boundary proximity control shows the five V79 changes are not confined to the frozen 1e-3 near-zero band |
+| **V81** | Explicitly authorized bounded continuation of the frozen V62 run lineage to the remaining initial-window exposure limit; final state closed at 136 steps / 1,181,302 tokens |
 
-## V80 verified result
+## V81 verified result
 
-V80 replayed the exact V79 same-path ORIGINAL / REVERSE_HISTORY_KEEP_LAST comparison over **9,170 frozen VALIDATION lexical positions**.
+V81 resumed the frozen V62 cycle-2 checkpoint under an explicit bounded continuation authorization. The frozen V62 trainer and objective were reused unchanged with `--resume`; no tokenizer, architecture, corpus, stream-weight or scheduler change was introduced.
 
-Verified metrics -->
+Verified closure -->
 
-- prediction changes --> **5**
-- alpha-sign changes --> **5**
-- ORIGINAL correct --> **2,594 / 9,170**
-- REVERSE correct --> **2,594 / 9,170**
-- changed positions inside 1e-3 boundary threshold --> **0**
-- mean boundary distance on changed positions --> **0.030173315**
-- maximum boundary distance on changed positions --> **0.059604287**
-- mean crossing distance --> **0.150983569**
-- maximum crossing distance --> **0.249839202**
-- new training --> **0**
+- starting optimizer steps --> **69**
+- starting exposure tokens --> **597,982**
+- final optimizer steps --> **136**
+- final exposure tokens --> **1,181,302**
+- maximum authorized exposure --> **1,181,664**
+- unused exposure budget --> **362 tokens**
+- stop reason --> **MAX_EXPOSURE_TOKENS**
+- best validation loss --> **4.030447**
+- baseline best validation loss --> **4.732514**
+- best-loss improvement --> **14.83%**
 - BLIND access --> **0**
+- further training authorized --> **0**
+- semantic validation complete --> **0**
+- semantic claim --> **0**
 
-Interpretation -->
-
-The five discrete V79 changes are not explained by mere extremely-near-zero numerical fragility under the frozen V80 thresholds. The result strengthens evidence for a weak context-order sensitivity in this teacher-forced residual diagnostic.
-
-It does **not** establish semantic competence, reasoning ability or useful conversational behavior.
+The continuation stopped because the next segment would have exceeded the frozen exposure ceiling. The absence of a cycle-4 checkpoint is therefore expected and is not a failed milestone.
 
 Primary evidence -->
 
-- [V80 protocol](phases/MINI-KUZAI-PHASE-03-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001.md)
-- [V80 scientific GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001.json)
-- [V80 FINAL receipt](automation/dev-flow/receipts/V80-final.json)
-- [Discussion #11](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/11)
+- [V81 readiness protocol](phases/MINI-KUZAI-PHASE-03-V81-V62-CONTINUATION-READINESS-001.md)
+- [V81 final scientific GOGIT](reports/assistant-results/history/PHASE03-SMOLTALK-V81-FINAL-CLOSURE-001.json)
+- [V81 FINAL receipt](automation/dev-flow/receipts/V81-final.json)
+- [Discussion #13](https://github.com/Kusanagi8200/Mini-Kuzai/discussions/13)
 
 ## DEV-FLOW publication system
 
@@ -116,12 +117,15 @@ FINAL-DEV-FLOW
 downstream communication sinks
 ```
 
-For V80 -->
+For V81 -->
 
-- GitHub FINAL --> **PUBLISHED**
-- LinkedIn FINAL --> **PUBLISHED**
+- GitHub FINAL --> **PUBLISHED**, Discussion #13
+- LinkedIn FINAL text publication --> **PUBLISHED through KUZ-DIN**
 - YouTube FINAL Short --> **PUBLIC**
-- YouTube video ID --> `y-YnlPLbT9Q`
+- YouTube video ID --> `EAMRSevA2zk`
+- LinkedIn native media post --> `urn:li:ugcPost:7527349657677594624`
+- GitHub media fallback --> Discussion #13 comment #19612381
+- cross-channel media receipt --> `Mini-Kuzai_YOUTUBE/automation/publication-receipts/V81-final.json`
 
 A downstream communication failure never invalidates the underlying scientific result.
 
@@ -161,15 +165,15 @@ V81 scientific GOGIT PASS
   -> V81 media flow closed
 ```
 
-The media engineering prerequisite is complete. The scientific V81 protocol itself remains not started and must now be reviewed and frozen separately before any V81 execution or training authorization decision.
+The media engineering prerequisite is complete and V81 has now exercised the genuine production path end to end. The next scientific work belongs to V82 and must remain separate from the completed V81 authorization.
 
 ## Safety boundary
 
 Current frozen rules -->
 
-- V62 remains the latest trained checkpoint
-- no optimizer step is authorized
-- no checkpoint mutation is authorized
+- the latest trained state is the closed V81 continuation on the V62 run lineage
+- no further optimizer step is authorized
+- no further checkpoint mutation is authorized
 - BLIND remains closed
 - publication authorization is never training authorization
 - media generation is never scientific evidence
@@ -189,6 +193,7 @@ Current frozen rules -->
 | [reports/assistant-results/history/](reports/assistant-results/history/) | Immutable GOGIT reports |
 | [docs/discussions/](docs/discussions/) | GitHub Discussion publication history |
 | [PROJECT-WORKFLOW-POLICY.md](PROJECT-WORKFLOW-POLICY.md) | Current execution and publication policy |
+| [MAJ-THEKUZNETWORK.md](MAJ-THEKUZNETWORK.md) | Cross-repository THE KUZ NETWORK maintenance command |
 | [docs/DEV-FLOW-REPRISE-2026-11-01.md](docs/DEV-FLOW-REPRISE-2026-11-01.md) | Detailed operational checkpoint |
 
 ## Related repositories
@@ -196,6 +201,7 @@ Current frozen rules -->
 - Mini-Kuzai YouTube pipeline --> [Kusanagi8200/Mini-Kuzai_YOUTUBE](https://github.com/Kusanagi8200/Mini-Kuzai_YOUTUBE)
 - LinkedIn bridge --> [Kusanagi8200/KUZ-DIN](https://github.com/Kusanagi8200/KUZ-DIN)
 - public project website --> [Kusanagi8200/KUZAI.ORG-VS2](https://github.com/Kusanagi8200/KUZAI.ORG-VS2)
+- local KUZAI application --> [Kusanagi8200/KUZAI-CHAT](https://github.com/Kusanagi8200/KUZAI-CHAT)
 
 ---
 
