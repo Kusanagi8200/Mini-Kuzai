@@ -186,7 +186,17 @@ class V82PostContinuationReplicationTests(unittest.TestCase):
         ).stdout.strip()
         self.assertIn(f'FROZEN_GIT_BLOB = "{blob}"', audit)
 
-    def test_12_required_evidence_files_exist(self):
+    def test_12_cycle2_loader_does_not_reuse_historical_v64_stop_gate(self):
+        source = SOURCE.read_text(encoding="utf-8")
+        self.assertIn("def load_cycle2_runtime():", source)
+        self.assertIn("T.build_training_streams()", source)
+        self.assertIn("T.build_validation_segments()", source)
+        self.assertIn("T.build_schedule_preview(streams, protocol)", source)
+        self.assertIn("expected_step=69", source)
+        self.assertIn("expected_exposure=597982", source)
+        self.assertNotIn("v64.preflight()", source)
+
+    def test_13_required_evidence_files_exist(self):
         for path in (START, V81_FINAL, PROTOCOL, AUDIT):
             self.assertTrue(path.is_file())
             self.assertFalse(path.is_symlink())
