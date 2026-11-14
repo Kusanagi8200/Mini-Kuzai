@@ -1,0 +1,15 @@
+{
+  "authorization_scope": "V81_V62_INITIAL_WINDOW_REMAINDER_ONLY",
+  "blind_test_during_training": false,
+  "final_review_cycle": 4,
+  "freeze_fingerprint": "a28c7249157a7e2ae94d2a6dc39aa653d28ea8e41af134822638ca54bfa4cb1d",
+  "max_remaining_exposure_tokens": 583682,
+  "max_remaining_optimizer_steps": 76,
+  "max_total_exposure_tokens": 1181664,
+  "max_total_optimizer_steps": 145,
+  "resume_required": true,
+  "schema_version": "v81-v62-continuation-authorization-1",
+  "status": "FROZEN",
+  "training_authorized": true,
+  "training_started": false
+}
