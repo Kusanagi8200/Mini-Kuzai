@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "SEMANTIC_VALIDATION_COMPLETE": 0,
+    "TRAINING_AUTHORIZED": 0,
+    "TRAINING_STARTED": 0,
+    "V83_PRESTART_BLIND_ACCESS": 0,
+    "V83_PRESTART_CHECKPOINTS": 3,
+    "V83_PRESTART_PASS": 1,
+    "V83_PRESTART_PROTOCOL": 1,
+    "V83_PRESTART_PUBLICATION": 0,
+    "V83_PRESTART_START_SOURCE": 1,
+    "V83_PRESTART_TRAINING_LOCK": 0,
+    "V83_PRESTART_V82_FINAL_RECEIPT": 1,
+    "V83_PRESTART_V82_REPLAY": 1
+  },
+  "phase": "03",
+  "private_conversation_data_included": false,
+  "producer": "tools/public-audits/phase03_v83_prestart_integrity_001.py",
+  "producer_sha256": "e77fe0bba4fc0ee6d6ee44374a5af1bf7c9376480bf98db9d63bc33ea4e4fa19",
+  "project": "Mini-Kuzai",
+  "semantic_validation_complete": false,
+  "source": "Mini-Kuzai V83 pre-START read-only integrity gate",
+  "status": "PUBLIC_AGGREGATE_REVIEW_ONLY",
+  "step_id": "PHASE03-SMOLTALK-V83-PRESTART-INTEGRITY-001",
+  "training_authorized": false
+}
