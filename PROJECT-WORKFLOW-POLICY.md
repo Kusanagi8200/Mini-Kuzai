@@ -225,9 +225,23 @@ For Mini-Kuzai Vxx research discussions, the operator commands `START-DEV-FLOW` 
 
 The automation must, where available, perform request creation, commit/push, worker processing, GitHub Discussion publication, receipt verification, KUZ-DIN/LinkedIn delivery verification and GOGIT reporting. Intermediate deterministic tests and corrections should be looped automatically within the already-frozen scope.
 
-A verified `FINAL-DEV-FLOW` is not complete until GitHub and LinkedIn publication are both verified. Immediately afterward, Mini-Kuzai and KUZ-DIN documentation must be reviewed and updated where stale before the next Vxx protocol is advanced.
+A verified `FINAL-DEV-FLOW` is not complete until GitHub and LinkedIn publication are both verified. Immediately afterward, the operator command `MAJ-THEKUZNETWORK` must audit all five canonical repositories and update stale current documentation before the next Vxx protocol is advanced.
 
 Publication authorization never implies authorization for model training, optimizer steps, checkpoint mutation, BLIND access or a new scientific protocol.
+
+## THE KUZ NETWORK maintenance command
+
+The ChatGPT operator command `MAJ-THEKUZNETWORK` always covers -->
+
+- `Kusanagi8200/Mini-Kuzai_YOUTUBE`
+- `Kusanagi8200/Mini-Kuzai`
+- `Kusanagi8200/KUZAI.ORG-VS2`
+- `Kusanagi8200/KUZ-DIN`
+- `Kusanagi8200/KUZAI-CHAT`
+
+Every invocation must inspect current code/configuration, README files, current operational documentation, shared project state and cross-repository links. Each repository is then classified as UPDATED or NO CHANGE. Frozen protocols, historical GOGIT reports, receipts and dated historical snapshots remain immutable evidence.
+
+Before any future Mini-Kuzai scientific step is started, the operator must be explicitly warned when `START-DEV-FLOW` becomes required. `MAJ-THEKUZNETWORK` itself never authorizes training or scientific execution.
 
 Every new project discussion must carry this operating rule forward. When available conversation context approaches a critical limit, the assistant must issue `CONTEXT WARNING - REPRISE RECOMMENDED` early enough to create a complete structured handoff for a new discussion.
 
