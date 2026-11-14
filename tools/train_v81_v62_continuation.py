@@ -80,9 +80,51 @@ def _progress_bar(current: int, total: int, width: int = 34) -> str:
     return "[" + ("#" * filled) + ("-" * (width - filled)) + "]"
 
 
+def _read_appended_jsonl(
+    metrics_path: Path,
+    offset: int,
+    carry: bytes,
+) -> tuple[list[dict], int, bytes]:
+    if not metrics_path.is_file():
+        return [], offset, carry
+
+    try:
+        size = metrics_path.stat().st_size
+        if size < offset:
+            offset = 0
+            carry = b""
+
+        with metrics_path.open("rb") as stream:
+            stream.seek(offset)
+            chunk = stream.read()
+            new_offset = stream.tell()
+    except OSError:
+        return [], offset, carry
+
+    if not chunk:
+        return [], new_offset, carry
+
+    parts = (carry + chunk).split(b"\n")
+    next_carry = parts.pop()
+    rows: list[dict] = []
+
+    for raw in parts:
+        if not raw.strip():
+            continue
+        try:
+            value = json.loads(raw.decode("utf-8"))
+        except (UnicodeDecodeError, ValueError):
+            continue
+        if isinstance(value, dict):
+            rows.append(value)
+
+    return rows, new_offset, next_carry
+
+
 def _monitor_training(process: subprocess.Popen, metrics_path: Path) -> None:
     initial_size = metrics_path.stat().st_size if metrics_path.is_file() else 0
     offset = initial_size
+    carry = b""
     started = time.monotonic()
     last_step = START_STEPS
     last_exposure = START_EXPOSURE
@@ -92,36 +134,26 @@ def _monitor_training(process: subprocess.Popen, metrics_path: Path) -> None:
     spin_index = 0
 
     while process.poll() is None:
-        if metrics_path.is_file():
-            try:
-                with metrics_path.open(encoding="utf-8") as stream:
-                    stream.seek(offset)
-                    for raw in stream:
-                        if not raw.strip():
-                            continue
-                        try:
-                            row = json.loads(raw)
-                        except ValueError:
-                            continue
-                        if not isinstance(row, dict):
-                            continue
-                        row_type = row.get("type")
-                        if row_type == "train_step":
-                            step = int(row.get("step", -1))
-                            exposure = int(row.get("exposure_tokens", -1))
-                            if step > START_STEPS and exposure >= START_EXPOSURE:
-                                last_step = step
-                                last_exposure = exposure
-                                last_train_loss = float(row["train_loss"])
-                        elif row_type == "validation":
-                            step = int(row.get("step", -1))
-                            if step > START_STEPS:
-                                last_validation_loss = float(
-                                    row["validation_loss"]
-                                )
-                    offset = stream.tell()
-            except OSError:
-                pass
+        rows, offset, carry = _read_appended_jsonl(
+            metrics_path,
+            offset,
+            carry,
+        )
+        for row in rows:
+            row_type = row.get("type")
+            if row_type == "train_step":
+                step = int(row.get("step", -1))
+                exposure = int(row.get("exposure_tokens", -1))
+                if step > START_STEPS and exposure >= START_EXPOSURE:
+                    last_step = step
+                    last_exposure = exposure
+                    last_train_loss = float(row["train_loss"])
+            elif row_type == "validation":
+                step = int(row.get("step", -1))
+                if step > START_STEPS:
+                    last_validation_loss = float(
+                        row["validation_loss"]
+                    )
 
         elapsed = int(time.monotonic() - started)
         if last_step > START_STEPS:
