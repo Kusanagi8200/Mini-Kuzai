@@ -144,9 +144,9 @@ Verified publication -->
 
 The test proves the media primitives required for V81 publication. It is **not V81 scientific evidence**.
 
-## Target V81 publication orchestration
+## V81+ publication orchestration
 
-The next engineering target is full orchestration after a genuine future V81 FINAL receipt -->
+Automatic cross-channel orchestration is now installed and active for future genuine V81+ FINAL receipts -->
 
 ```text
 V81 scientific GOGIT PASS
@@ -157,12 +157,11 @@ V81 scientific GOGIT PASS
   -> YouTube public
   -> LinkedIn native video
   -> GitHub media publication
-  -> publication receipts
-  -> documentation update
-  -> V81 CLOSED
+  -> committed cross-channel media receipt
+  -> V81 media flow closed
 ```
 
-The scientific V81 protocol itself is not started by this publication work.
+The media engineering prerequisite is complete. The scientific V81 protocol itself remains not started and must now be reviewed and frozen separately before any V81 execution or training authorization decision.
 
 ## Safety boundary
 
